@@ -119,8 +119,17 @@ class VoiceOutput:
             query_response.raise_for_status()
             query = query_response.json()
             
-            # 音声パラメータ適用
-            query.update(self.voice_settings)
+            # 音声パラメータ適用（安全に）
+            if "speedScale" in self.voice_settings:
+                query["speedScale"] = self.voice_settings["speedScale"]
+            if "pitchScale" in self.voice_settings:
+                query["pitchScale"] = self.voice_settings["pitchScale"]  
+            if "intonationScale" in self.voice_settings:
+                query["intonationScale"] = self.voice_settings["intonationScale"]
+            
+            # デバッグ情報
+            print(f"[音声] 📤 合成パラメータ: speaker={self.speaker_id}")
+            print(f"[音声] 📤 音声設定: {self.voice_settings}")
             
             # 音声合成
             synthesis_response = requests.post(
@@ -129,6 +138,11 @@ class VoiceOutput:
                 json=query,
                 timeout=10
             )
+            
+            if synthesis_response.status_code != 200:
+                print(f"[音声] ❌ 合成エラー詳細: {synthesis_response.status_code}")
+                print(f"[音声] ❌ レスポンス: {synthesis_response.text}")
+                
             synthesis_response.raise_for_status()
             
             # キャッシュ保存
