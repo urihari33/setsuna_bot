@@ -1,0 +1,31 @@
+✅ Windowsで仮想環境に入る手順
+① コマンドプロンプトを開く
+Win + R → cmd と入力して実行
+
+② 仮想環境の場所に移動
+仮想環境が D:\setsuna_bot\setsuna_env\ にある場合：
+
+bash
+コピーする
+編集する
+D:
+cd D:\setsuna_bot
+③ 仮想環境をアクティベート
+bash
+コピーする
+編集する
+call setsuna_env\Scripts\activate
+→ 入ると、プロンプトが次のように変わります：
+
+scss
+コピーする
+編集する
+(setsuna_env) D:\setsuna_bot>
+これで仮想環境に入った状態になります。
+
+🔚 終了したいときは：
+bash
+コピーする
+編集する
+deactivate
+必要なら .bat にして自動化も可能です。仮想環境内で次に何かインストールしたいもの（例：edge-tts）があれば教えてください。

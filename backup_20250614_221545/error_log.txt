@@ -1,0 +1,34 @@
+Exception in thread Thread-4 (record_audio):
+Traceback (most recent call last):
+  File "C:\Users\coszi\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\coszi\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\setsuna_bot\setsuna_hotkey_mode.py", line 25, in record_audio
+    with mic as source:
+  File "D:\setsuna_bot\setsuna_env\lib\site-packages\speech_recognition\__init__.py", line 166, in __enter__
+    assert self.stream is None, "This audio source is already inside a context manager"
+AssertionError: This audio source is already inside a context manager
+Exception in thread Thread-9 (record_audio):
+Traceback (most recent call last):
+  File "C:\Users\coszi\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\coszi\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\setsuna_bot\setsuna_hotkey_mode.py", line 25, in record_audio
+    with mic as source:
+  File "D:\setsuna_bot\setsuna_env\lib\site-packages\speech_recognition\__init__.py", line 166, in __enter__
+    assert self.stream is None, "This audio source is already inside a context manager"
+AssertionError: This audio source is already inside a context manager
+Exception in thread Thread-12 (record_audio):
+Traceback (most recent call last):
+  File "C:\Users\coszi\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\coszi\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\setsuna_bot\setsuna_hotkey_mode.py", line 25, in record_audio
+    with mic as source:
+  File "D:\setsuna_bot\setsuna_env\lib\site-packages\speech_recognition\__init__.py", line 166, in __enter__
+    assert self.stream is None, "This audio source is already inside a context manager"
+AssertionError: This audio source is already inside a context manager
+^C

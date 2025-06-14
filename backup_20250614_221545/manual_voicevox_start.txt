@@ -1,0 +1,34 @@
+VOICEVOX Manual Startup Instructions for WSL2
+==============================================
+
+Option 1: Engine Only (Recommended - Lighter)
+----------------------------------------------
+1. Open Command Prompt or PowerShell
+2. Run:
+   cd "%LOCALAPPDATA%\Programs\VOICEVOX\vv-engine"
+   run.exe --host 0.0.0.0 --port 50021
+
+Option 2: Full VOICEVOX Application
+-----------------------------------
+1. Open Command Prompt or PowerShell  
+2. Run:
+   cd "%LOCALAPPDATA%\Programs\VOICEVOX"
+   VOICEVOX.exe --host 0.0.0.0 --port 50021
+
+Option 3: Alternative Path Check
+--------------------------------
+If above paths don't work, check these locations:
+- C:\Program Files\VOICEVOX\
+- C:\Users\[Username]\AppData\Local\Programs\VOICEVOX\
+
+Key Points:
+-----------
+- MUST use --host 0.0.0.0 for WSL2 access
+- Default localhost won't work from WSL2
+- Wait 15-30 seconds after startup
+- Look for "サーバーを開始しました" message
+
+Verification:
+-------------
+Windows: curl http://localhost:50021/version
+WSL2: python test_voicevox_connection.py
