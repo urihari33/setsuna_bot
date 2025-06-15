@@ -181,12 +181,13 @@ class VoiceOutput:
         except Exception as e:
             print(f"[音声] ❌ 再生エラー: {e}")
     
-    def speak(self, text):
+    def speak(self, text, save_path=None):
         """
         テキストを音声で再生（合成+再生の統合関数）
         
         Args:
             text: 話すテキスト
+            save_path: 保存先パス（指定時はキャッシュをコピー）
         """
         if not text.strip():
             return
@@ -197,8 +198,19 @@ class VoiceOutput:
         audio_path = self.synthesize(text)
         
         if audio_path:
-            # 音声再生
-            self.play(audio_path)
+            # save_pathが指定されている場合はコピー
+            if save_path:
+                try:
+                    import shutil
+                    shutil.copy2(audio_path, save_path)
+                    print(f"[音声] 💾 ファイル保存: {save_path}")
+                    return  # 保存のみの場合は再生しない
+                except Exception as e:
+                    print(f"[音声] ❌ ファイル保存エラー: {e}")
+            
+            # 音声再生（save_pathが指定されていない場合）
+            if not save_path:
+                self.play(audio_path)
         else:
             print("[音声] ❌ 音声合成失敗")
     
