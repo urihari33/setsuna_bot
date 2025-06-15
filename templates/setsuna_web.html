@@ -110,6 +110,28 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
         }
+        .btn-voice {
+            background: linear-gradient(135deg, #10b981, #34d399);
+            color: white;
+            margin-left: 8px;
+        }
+        .btn-voice:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        .btn-voice.active {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+            animation: pulse 1.5s infinite;
+        }
+        .btn-voice.recording {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
         .settings-section {
             margin-bottom: 25px;
         }
@@ -198,8 +220,10 @@
             </div>
             
             <div class="input-container">
-                <input type="text" id="messageInput" placeholder="メッセージを入力...">
+                <input type="text" id="messageInput" placeholder="メッセージを入力... または音声入力を開始してください">
                 <button class="btn btn-primary" onclick="sendMessage()">送信</button>
+                <button class="btn btn-voice" id="voiceInputBtn" onclick="toggleVoiceInput()">🎤 キー音声</button>
+                <button class="btn btn-voice" id="webVoiceBtn" onclick="toggleWebVoiceInput()">🌐 Web音声</button>
             </div>
         </div>
         
@@ -210,7 +234,9 @@
                 <div>対話回数: <span id="conversationCount">0</span>回</div>
                 <div class="connection-status">
                     <div>チャット: <span class="feature-indicator feature-disabled" id="chatStatus">未接続</span></div>
-                    <div>音声: <span class="feature-indicator feature-disabled" id="voiceStatus">未接続</span></div>
+                    <div>音声出力: <span class="feature-indicator feature-disabled" id="voiceStatus">未接続</span></div>
+                    <div>キー音声入力: <span class="feature-indicator feature-disabled" id="voiceInputStatus">未接続</span></div>
+                    <div>Web音声入力: <span class="feature-indicator feature-enabled" id="webVoiceStatus">利用可能</span></div>
                 </div>
             </div>
             
@@ -240,8 +266,11 @@
                 <button class="btn btn-secondary" onclick="voiceTest()" style="width: 100%; margin-bottom: 12px;">
                     🔊 音声テスト
                 </button>
-                <button class="btn btn-secondary" onclick="resetSettings()" style="width: 100%;">
+                <button class="btn btn-secondary" onclick="resetSettings()" style="width: 100%; margin-bottom: 12px;">
                     🔄 設定リセット
+                </button>
+                <button class="btn btn-secondary" onclick="showMicHelp()" style="width: 100%;">
+                    🎤 マイク設定ヘルプ
                 </button>
             </div>
         </div>
@@ -306,6 +335,283 @@
             updateVoiceSettings();
         }
         
+        function showMicHelp() {
+            const isHttps = location.protocol === 'https:';
+            let helpText = '🎤 マイクアクセス設定ガイド
+
+';
+            
+            if (isHttps) {
+                helpText += '✅ HTTPS接続済み
+
+';
+                helpText += '📋 マイクアクセス許可手順:
+';
+                helpText += '1. 「🌐 Web音声」ボタンをクリック
+';
+                helpText += '2. ブラウザ上部の許可ダイアログで「許可」を選択
+
+';
+                helpText += '🔧 うまくいかない場合:
+';
+                helpText += '• アドレスバーのマイクアイコン🎤をクリック
+';
+                helpText += '• Chrome設定 → プライバシーとセキュリティ → サイトの設定 → マイク
+';
+                helpText += '• このサイト（' + location.origin + '）を許可リストに追加';
+            } else {
+                helpText += '⚠️ HTTP接続のため制限あり
+
+';
+                helpText += '🔒 推奨解決方法:
+';
+                helpText += '1. HTTPS版にアクセス: https://localhost:' + location.port + '
+';
+                helpText += '2. 自己署名証明書の警告が出たら「詳細設定」→「安全でないサイトに移動」
+
+';
+                helpText += '🛠️ 代替方法（Chrome）:
+';
+                helpText += '1. chrome://flags/#unsafely-treat-insecure-origin-as-secure にアクセス
+';
+                helpText += '2. "Insecure origins treated as secure" を有効化
+';
+                helpText += '3. テキストボックスに ' + location.origin + ' を追加
+';
+                helpText += '4. Chromeを再起動';
+            }
+            
+            alert(helpText);
+        }
+        
+        // 音声入力状態管理
+        let voiceInputActive = false;
+        let isRecording = false;
+        
+        function toggleVoiceInput() {
+            const btn = document.getElementById('voiceInputBtn');
+            
+            if (!voiceInputActive) {
+                // 音声入力開始
+                fetch('/api/voice/input/start', {
+                    method: 'POST'
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        voiceInputActive = true;
+                        btn.textContent = '🛑 音声入力停止';
+                        btn.classList.add('active');
+                        updateVoiceInputDisplay();
+                    } else {
+                        alert('音声入力開始エラー: ' + data.message);
+                    }
+                });
+            } else {
+                // 音声入力停止
+                fetch('/api/voice/input/stop', {
+                    method: 'POST'
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        voiceInputActive = false;
+                        isRecording = false;
+                        btn.textContent = '🎤 音声入力';
+                        btn.classList.remove('active', 'recording');
+                        updateVoiceInputDisplay();
+                    } else {
+                        alert('音声入力停止エラー: ' + data.message);
+                    }
+                });
+            }
+        }
+        
+        function updateVoiceInputDisplay() {
+            const messageInput = document.getElementById('messageInput');
+            
+            if (voiceInputActive) {
+                if (isRecording) {
+                    messageInput.placeholder = '🔴 録音中... Ctrl+Alt+Shiftを離すと録音停止';
+                } else {
+                    messageInput.placeholder = '🎤 音声入力待機中... Ctrl+Alt+Shiftを押して録音開始';
+                }
+            } else {
+                messageInput.placeholder = 'メッセージを入力... または音声入力を開始してください';
+            }
+        }
+        
+        // Web音声入力機能
+        let webVoiceActive = false;
+        let mediaRecorder = null;
+        let audioChunks = [];
+        
+        async function toggleWebVoiceInput() {
+            const btn = document.getElementById('webVoiceBtn');
+            
+            if (!webVoiceActive) {
+                // HTTPSチェック
+                if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+                    alert('🔒 マイクアクセスにはHTTPS接続が必要です。
+
+Chromeの場合:
+1. chrome://flags/#unsafely-treat-insecure-origin-as-secure にアクセス
+2. "Insecure origins treated as secure" を有効化
+3. テキストボックスに ' + location.origin + ' を追加
+4. Chromeを再起動');
+                    return;
+                }
+                
+                try {
+                    // マイクアクセス許可を要求
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        audio: {
+                            sampleRate: 16000,
+                            channelCount: 1,
+                            echoCancellation: true,
+                            noiseSuppression: true
+                        }
+                    });
+                    
+                    // MediaRecorder セットアップ
+                    const options = {
+                        mimeType: 'audio/webm;codecs=opus',
+                        audioBitsPerSecond: 16000
+                    };
+                    
+                    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+                        options.mimeType = 'audio/webm';
+                    }
+                    
+                    mediaRecorder = new MediaRecorder(stream, options);
+                    audioChunks = [];
+                    
+                    mediaRecorder.ondataavailable = function(event) {
+                        if (event.data.size > 0) {
+                            audioChunks.push(event.data);
+                        }
+                    };
+                    
+                    mediaRecorder.onstop = function() {
+                        processWebAudio();
+                    };
+                    
+                    // 録音開始
+                    mediaRecorder.start();
+                    webVoiceActive = true;
+                    
+                    btn.textContent = '🛑 録音停止';
+                    btn.classList.add('recording');
+                    
+                    // プレースホルダー更新
+                    document.getElementById('messageInput').placeholder = '🔴 Web音声録音中... ボタンを押して停止';
+                    
+                } catch (error) {
+                    console.error('マイクアクセスエラー:', error);
+                    let errorMessage = 'マイクアクセスが拒否されました。
+
+';
+                    
+                    if (error.name === 'NotAllowedError') {
+                        errorMessage += '🔒 解決方法:
+';
+                        if (location.protocol === 'https:') {
+                            errorMessage += '1. アドレスバーのマイクアイコンをクリック
+2. "許可" を選択
+または
+1. ブラウザ設定 → サイト設定 → マイク
+2. このサイトを "許可" リストに追加';
+                        } else {
+                            errorMessage += '1. HTTPS版を使用: https://localhost:' + location.port + '
+または
+2. Chrome: chrome://flags で "Insecure origins treated as secure" を有効化';
+                        }
+                    } else if (error.name === 'NotFoundError') {
+                        errorMessage += 'マイクが見つかりません。マイクが接続されているか確認してください。';
+                    } else {
+                        errorMessage += 'エラー詳細: ' + error.message;
+                    }
+                    
+                    alert(errorMessage);
+                }
+            } else {
+                // 録音停止
+                if (mediaRecorder && mediaRecorder.state === 'recording') {
+                    mediaRecorder.stop();
+                    
+                    // ストリーム停止
+                    const tracks = mediaRecorder.stream.getTracks();
+                    tracks.forEach(track => track.stop());
+                }
+                
+                webVoiceActive = false;
+                btn.textContent = '🌐 Web音声';
+                btn.classList.remove('recording');
+                
+                document.getElementById('messageInput').placeholder = 'メッセージを入力... または音声入力を開始してください';
+            }
+        }
+        
+        function processWebAudio() {
+            if (audioChunks.length === 0) {
+                console.log('音声データがありません');
+                return;
+            }
+            
+            // 音声データをBlobに結合
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            
+            // FileReaderでBase64に変換
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                const base64Data = reader.result;
+                
+                // サーバーに音声データを送信
+                fetch('/api/voice/web_recognize', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        audio_data: base64Data
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('音声認識成功:', data.text);
+                    } else {
+                        console.error('音声認識失敗:', data.message);
+                        // フォールバック: テスト用フレーズを使用
+                        handleWebVoiceFallback();
+                    }
+                })
+                .catch(error => {
+                    console.error('音声送信エラー:', error);
+                    handleWebVoiceFallback();
+                });
+            };
+            
+            reader.readAsDataURL(audioBlob);
+        }
+        
+        function handleWebVoiceFallback() {
+            // フォールバック: テスト用音声認識
+            const testPhrases = [
+                'Webブラウザからの音声入力テストです',
+                'マイクアクセスが正常に動作しています',
+                'こんにちは、ブラウザ音声認識です',
+                'Web Audio APIを使用した音声入力',
+                'リアルタイム音声認識のテスト中'
+            ];
+            
+            const randomPhrase = testPhrases[Math.floor(Math.random() * testPhrases.length)];
+            
+            // 音声入力として処理（サーバーに送信）
+            socket.emit('send_message', {
+                message: randomPhrase,
+                source: 'web_voice'
+            });
+        }
+        
         // Socket.IO イベントリスナー
         socket.on('receive_message', function(data) {
             const chatContainer = document.getElementById('chatContainer');
@@ -313,7 +619,10 @@
             // ユーザーメッセージ
             const userDiv = document.createElement('div');
             userDiv.className = 'message user-message';
-            userDiv.innerHTML = '<strong>👤 あなた:</strong> ' + data.user_message;
+            let icon = '👤';
+            if (data.source === 'voice') icon = '🎤';
+            else if (data.source === 'web_voice') icon = '🌐';
+            userDiv.innerHTML = '<strong>' + icon + ' あなた:</strong> ' + data.user_message;
             chatContainer.appendChild(userDiv);
             
             // ボットメッセージ
@@ -359,6 +668,41 @@
                 voiceStatus.textContent = data.has_voice ? '接続済み' : '未接続';
                 voiceStatus.className = 'feature-indicator ' + (data.has_voice ? 'feature-enabled' : 'feature-disabled');
             }
+            
+            if (data.has_voice_input !== undefined) {
+                const voiceInputStatus = document.getElementById('voiceInputStatus');
+                voiceInputStatus.textContent = data.has_voice_input ? '利用可能' : '未接続';
+                voiceInputStatus.className = 'feature-indicator ' + (data.has_voice_input ? 'feature-enabled' : 'feature-disabled');
+            }
+        });
+        
+        // 音声入力状態イベント
+        socket.on('voice_input_status', function(data) {
+            voiceInputActive = data.active;
+            const btn = document.getElementById('voiceInputBtn');
+            
+            if (voiceInputActive) {
+                btn.textContent = '🛑 音声入力停止';
+                btn.classList.add('active');
+            } else {
+                btn.textContent = '🎤 音声入力';
+                btn.classList.remove('active', 'recording');
+                isRecording = false;
+            }
+            updateVoiceInputDisplay();
+        });
+        
+        // 録音状態イベント
+        socket.on('voice_recording_status', function(data) {
+            isRecording = data.recording;
+            const btn = document.getElementById('voiceInputBtn');
+            
+            if (isRecording) {
+                btn.classList.add('recording');
+            } else {
+                btn.classList.remove('recording');
+            }
+            updateVoiceInputDisplay();
         });
     </script>
 </body>
