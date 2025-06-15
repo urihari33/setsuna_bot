@@ -19,6 +19,14 @@ load_dotenv()
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'core'))
 
+# シンプルホットキー音声システムをインポート
+try:
+    from simple_hotkey_voice import SimpleHotkeyVoice
+    print("✅ シンプルホットキー音声システムを読み込みました")
+except ImportError as e:
+    print(f"⚠️ シンプルホットキー音声システムの読み込みに失敗: {e}")
+    SimpleHotkeyVoice = None
+
 try:
     from setsuna_chat import SetsunaChat
     from voice_output import VoiceOutput
@@ -56,6 +64,8 @@ class SetsunaDiscordBotSimple(commands.Bot):
         self.setsuna_chat = None
         self.voice_output = None
         self.voice_dialog_active = False
+        self.simple_hotkey_voice = None
+        self.hotkey_voice_active = False
         
         # コア機能初期化
         try:
@@ -66,6 +76,15 @@ class SetsunaDiscordBotSimple(commands.Bot):
             print(f"⚠️  コア機能初期化エラー: {e}")
             self.setsuna_chat = SetsunaChat()  # フォールバック版を使用
             self.voice_output = VoiceOutput()  # フォールバック版を使用
+        
+        # シンプルホットキー音声システム初期化
+        if SimpleHotkeyVoice:
+            try:
+                self.simple_hotkey_voice = SimpleHotkeyVoice(self)
+                print("✅ シンプルホットキー音声システム初期化完了")
+            except Exception as e:
+                print(f"⚠️ ホットキー音声システム初期化エラー: {e}")
+                self.simple_hotkey_voice = None
         
         print("🤖 せつなBot Discord版（簡易）初期化中...")
     
@@ -136,6 +155,44 @@ class SetsunaDiscordBotSimple(commands.Bot):
             print(f"❌ チャット応答エラー: {e}")
             await message.reply("申し訳ありません、エラーが発生しました。")
     
+    async def handle_simple_voice_input(self, recognized_text):
+        """シンプルホットキー音声入力処理"""
+        try:
+            if not self.voice_dialog_active or not self.voice_client:
+                print("⚠️ 音声対話モードが無効です")
+                return
+            
+            print(f"🎤 ホットキー音声入力: {recognized_text}")
+            
+            # 応答生成
+            if self.setsuna_chat:
+                response = self.setsuna_chat.get_response(recognized_text)
+            else:
+                response = f"音声入力を受け取りました: {recognized_text}"
+            
+            # テキストチャンネルに結果表示
+            guild = self.voice_client.guild
+            text_channel = discord.utils.get(guild.text_channels, name='general')
+            if not text_channel:
+                text_channel = guild.text_channels[0] if guild.text_channels else None
+            
+            if text_channel:
+                embed = discord.Embed(
+                    title="🎮 ホットキー音声入力",
+                    color=0x00ff00
+                )
+                embed.add_field(name="認識内容", value=recognized_text, inline=False)
+                embed.add_field(name="せつなの応答", value=response, inline=False)
+                embed.add_field(name="システム", value="PyAudio不要・軽量実装", inline=True)
+                
+                await text_channel.send(embed=embed)
+            
+            # 音声応答
+            await self.play_voice_response_local(response)
+            
+        except Exception as e:
+            print(f"❌ ホットキー音声入力処理エラー: {e}")
+    
     async def play_voice_response_local(self, text):
         """音声応答（ローカル再生）"""
         try:
@@ -181,6 +238,11 @@ async def leave_voice(ctx):
     if bot.voice_client is None:
         await ctx.send("❌ ボイスチャンネルに参加していません。")
         return
+    
+    # ホットキー音声入力も停止
+    if bot.hotkey_voice_active and bot.simple_hotkey_voice:
+        bot.simple_hotkey_voice.stop_listening()
+        bot.hotkey_voice_active = False
     
     await bot.voice_client.disconnect()
     bot.voice_client = None
@@ -230,6 +292,12 @@ async def stop_voice_dialog(ctx):
         return
     
     bot.voice_dialog_active = False
+    
+    # ホットキー音声入力も停止
+    if bot.hotkey_voice_active and bot.simple_hotkey_voice:
+        bot.simple_hotkey_voice.stop_listening()
+        bot.hotkey_voice_active = False
+    
     await ctx.send("🛑 **音声対話モード停止**")
 
 @bot.command(name='say')
@@ -260,6 +328,68 @@ async def voice_say(ctx, *, message):
     except Exception as e:
         await ctx.send(f"❌ 音声対話エラー: {e}")
 
+@bot.command(name='hotkey_start')
+async def start_hotkey_voice(ctx):
+    """ホットキー音声入力開始"""
+    if not bot.voice_dialog_active:
+        await ctx.send("❌ 先に `!voice_start` で音声対話モードを開始してください")
+        return
+    
+    if not bot.simple_hotkey_voice:
+        await ctx.send("❌ ホットキー音声システムが利用できません")
+        return
+    
+    if bot.hotkey_voice_active:
+        await ctx.send("❌ 既にホットキー音声入力が開始されています")
+        return
+    
+    try:
+        success = bot.simple_hotkey_voice.start_listening()
+        
+        if success:
+            bot.hotkey_voice_active = True
+            
+            embed = discord.Embed(
+                title="🎮 ホットキー音声入力開始",
+                description="Ctrl+Shift+Alt 同時押しで音声録音（PyAudio不要）",
+                color=0x00ff00
+            )
+            embed.add_field(
+                name="✨ 軽量実装",
+                value="• PyAudio依存なし\n• Windows標準機能を使用\n• テスト音声でフォールバック\n• 簡単なホットキー検出",
+                inline=False
+            )
+            embed.add_field(
+                name="使用方法",
+                value="1. Ctrl+Shift+Alt を同時に押す\n2. 押している間に話す\n3. キーを離すと認識・応答",
+                inline=False
+            )
+            embed.add_field(
+                name="注意",
+                value="ホットキーはDiscordフォーカス外でも動作します",
+                inline=False
+            )
+            
+            await ctx.send(embed=embed)
+        else:
+            await ctx.send("❌ ホットキーリスナーの開始に失敗しました")
+    
+    except Exception as e:
+        await ctx.send(f"❌ ホットキー音声入力開始エラー: {e}")
+
+@bot.command(name='hotkey_stop')
+async def stop_hotkey_voice(ctx):
+    """ホットキー音声入力停止"""
+    if not bot.hotkey_voice_active:
+        await ctx.send("❌ ホットキー音声入力が開始されていません")
+        return
+    
+    if bot.simple_hotkey_voice:
+        bot.simple_hotkey_voice.stop_listening()
+    
+    bot.hotkey_voice_active = False
+    await ctx.send("🛑 **ホットキー音声入力停止**")
+
 @bot.command(name='status')
 async def bot_status(ctx):
     """Bot状態確認"""
@@ -280,6 +410,10 @@ async def bot_status(ctx):
     # 音声対話
     dialog_status = "✅ 有効" if bot.voice_dialog_active else "❌ 無効"
     embed.add_field(name="🗣️ 音声対話", value=dialog_status, inline=True)
+    
+    # ホットキー音声
+    hotkey_status = "✅ 有効" if bot.hotkey_voice_active else "❌ 無効"
+    embed.add_field(name="🎮 ホットキー音声", value=hotkey_status, inline=True)
     
     await ctx.send(embed=embed)
 
@@ -305,14 +439,20 @@ async def help_command(ctx):
     )
     
     embed.add_field(
+        name="🎮 ホットキー音声入力",
+        value="`!hotkey_start` - ホットキー音声入力開始\n`!hotkey_stop` - ホットキー音声入力停止\nCtrl+Shift+Alt - 音声録音",
+        inline=False
+    )
+    
+    embed.add_field(
         name="💬 テキストチャット",
         value="@せつな メッセージ - テキストで対話\nDM - ダイレクトメッセージでも対話可能",
         inline=False
     )
     
     embed.add_field(
-        name="🗣️ 音声対話の使い方",
-        value="1. `!join` でボイスチャンネル参加\n2. `!voice_start` で音声対話開始\n3. @せつな でメッセージ送信\n4. 音声応答がローカル（Windows）で再生",
+        name="🗣️ 完全な音声対話の使い方",
+        value="1. `!join` でボイスチャンネル参加\n2. `!voice_start` で音声対話開始\n3. `!hotkey_start` でホットキー音声入力開始\n4. Ctrl+Shift+Alt で音声入力\n5. 音声応答がローカル（Windows）で再生",
         inline=False
     )
     
@@ -336,7 +476,10 @@ if __name__ == "__main__":
     except discord.errors.LoginFailure:
         print("❌ Discord Bot Tokenが無効です")
     except KeyboardInterrupt:
-        print("\n✅ Bot を正常終了しました")
+        print("\n🛑 Bot終了中...")
+        if bot.simple_hotkey_voice and bot.hotkey_voice_active:
+            bot.simple_hotkey_voice.stop_listening()
+        print("✅ Bot を正常終了しました")
     except Exception as e:
         print(f"❌ Bot起動エラー: {e}")
     finally:

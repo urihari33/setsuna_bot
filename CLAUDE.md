@@ -65,3 +65,33 @@ The web application uses a global `bot_state` dictionary for tracking conversati
 - VOICEVOX speaker ID is set to 20 (Setsuna voice) in `voice_output.py`
 - Voice parameters (speed, pitch, intonation) are adjustable via web UI
 - OpenAI model is set to "gpt-4" with max 150 tokens for voice-appropriate responses
+
+## Development Methodology
+
+**実装時の基本方針**: すべての新機能実装において、以下の段階的アプローチを採用する：
+
+### 1. 段階的実装プロセス
+- **Phase 1**: 個別機能の単体テスト作成・実行
+- **Phase 2**: 統合テスト実施・問題特定
+- **Phase 3**: 実装修正・再テスト
+- **Phase 4**: 最終統合・動作確認
+
+### 2. テスト駆動の確認手順
+- 各実装段階で専用テストファイルを作成
+- Windows環境とWSL2環境の違いを考慮
+- 依存関係の段階的確認（ライブラリ→基本機能→統合機能）
+- 成功・失敗の明確な判定基準設定
+
+### 3. ユーザーとのコミュニケーション
+- 各テスト結果の詳細説明
+- 問題発生時の原因分析・代替案提示
+- 次のステップの明確な提示
+- 実装方針の事前確認
+
+### 4. 実装品質基準
+- フォールバック機能の必須実装
+- エラーハンドリングの完全性
+- ログ出力の詳細性
+- 段階的な機能有効化
+
+この方針により、複雑な機能でも確実に動作する実装を実現する。

@@ -18,6 +18,14 @@ import threading
 import time
 from pynput import keyboard
 
+# 音声監視システムをインポート
+try:
+    from voice_monitor_system import VoiceMonitorSystem
+    print("✅ 音声監視システムを読み込みました")
+except ImportError as e:
+    print(f"⚠️ 音声監視システムの読み込みに失敗: {e}")
+    VoiceMonitorSystem = None
+
 # 環境変数読み込み
 load_dotenv()
 
@@ -231,8 +239,13 @@ class SetsunaDiscordBotComplete(commands.Bot):
         self.voice_dialog_active = False
         self.hotkey_voice_active = False
         
-        # ホットキーリスナー
+        # ホットキーリスナー（旧版）
         self.hotkey_listener = HotkeyVoiceListener(self)
+        
+        # 音声監視システム（新版）
+        self.voice_monitor = None
+        if VoiceMonitorSystem:
+            self.voice_monitor = VoiceMonitorSystem(self)
         
         # コア機能初期化
         try:
@@ -313,8 +326,46 @@ class SetsunaDiscordBotComplete(commands.Bot):
             print(f"❌ チャット応答エラー: {e}")
             await message.reply("申し訳ありません、エラーが発生しました。")
     
+    async def handle_voice_input(self, recognized_text):
+        """音声入力処理（新統合版）"""
+        try:
+            if not self.voice_dialog_active or not self.voice_client:
+                print("⚠️ 音声対話モードが無効です")
+                return
+            
+            print(f"🎤 音声入力: {recognized_text}")
+            
+            # 応答生成
+            if self.setsuna_chat:
+                response = self.setsuna_chat.get_response(recognized_text)
+            else:
+                response = f"音声入力を受け取りました: {recognized_text}"
+            
+            # テキストチャンネルに結果表示
+            guild = self.voice_client.guild
+            text_channel = discord.utils.get(guild.text_channels, name='general')
+            if not text_channel:
+                text_channel = guild.text_channels[0] if guild.text_channels else None
+            
+            if text_channel:
+                embed = discord.Embed(
+                    title="🎤 音声入力",
+                    color=0x00ff00
+                )
+                embed.add_field(name="認識内容", value=recognized_text, inline=False)
+                embed.add_field(name="せつなの応答", value=response, inline=False)
+                embed.add_field(name="システム", value="常時監視 + ホットキートリガー", inline=True)
+                
+                await text_channel.send(embed=embed)
+            
+            # 音声応答
+            await self.play_voice_response_local(response)
+            
+        except Exception as e:
+            print(f"❌ 音声入力処理エラー: {e}")
+
     async def handle_hotkey_voice_input(self, recognized_text):
-        """ホットキー音声入力処理"""
+        """ホットキー音声入力処理（旧版互換）"""
         try:
             if not self.voice_dialog_active or not self.voice_client:
                 print("⚠️ 音声対話モードが無効です")
@@ -457,9 +508,70 @@ async def stop_voice_dialog(ctx):
     
     await ctx.send("🛑 **音声対話モード停止**")
 
+@bot.command(name='voice_monitor_start')
+async def start_voice_monitor(ctx):
+    """常時音声監視開始（新版）"""
+    if not bot.voice_dialog_active:
+        await ctx.send("❌ 先に `!voice_start` で音声対話モードを開始してください")
+        return
+    
+    if not bot.voice_monitor:
+        await ctx.send("❌ 音声監視システムが利用できません")
+        return
+    
+    if bot.voice_monitor.is_monitoring:
+        await ctx.send("❌ 既に音声監視が開始されています")
+        return
+    
+    try:
+        success = bot.voice_monitor.start_monitoring()
+        
+        if success:
+            embed = discord.Embed(
+                title="🎤 常時音声監視開始",
+                description="Ctrl+Shift+Alt を押している間の音声を認識",
+                color=0x00ff00
+            )
+            embed.add_field(
+                name="✨ 新機能",
+                value="• 常時バックグラウンド音声監視\n• ホットキー押下時のみ認識\n• 独り言フィルタリング\n• 音声レベル検知（VAD）",
+                inline=False
+            )
+            embed.add_field(
+                name="使用方法",
+                value="1. Ctrl+Shift+Alt を同時に押す\n2. 押している間に「せつな」に話しかける\n3. キーを離すと自動認識・応答",
+                inline=False
+            )
+            embed.add_field(
+                name="独り言フィルタ",
+                value="「せつな」「こんにちは」等の呼びかけや\n疑問文・感嘆文のみ処理されます",
+                inline=False
+            )
+            
+            await ctx.send(embed=embed)
+        else:
+            await ctx.send("❌ 音声監視の開始に失敗しました")
+    
+    except Exception as e:
+        await ctx.send(f"❌ 音声監視開始エラー: {e}")
+
+@bot.command(name='voice_monitor_stop')
+async def stop_voice_monitor(ctx):
+    """常時音声監視停止"""
+    if not bot.voice_monitor or not bot.voice_monitor.is_monitoring:
+        await ctx.send("❌ 音声監視が開始されていません")
+        return
+    
+    try:
+        bot.voice_monitor.stop_monitoring()
+        await ctx.send("🛑 **常時音声監視停止**")
+    
+    except Exception as e:
+        await ctx.send(f"❌ 音声監視停止エラー: {e}")
+
 @bot.command(name='hotkey_start')
 async def start_hotkey_voice(ctx):
-    """ホットキー音声入力開始"""
+    """ホットキー音声入力開始（旧版）"""
     if not bot.voice_dialog_active:
         await ctx.send("❌ 先に `!voice_start` で音声対話モードを開始してください")
         return
@@ -475,18 +587,18 @@ async def start_hotkey_voice(ctx):
             bot.hotkey_voice_active = True
             
             embed = discord.Embed(
-                title="🎮 ホットキー音声入力開始",
+                title="🎮 ホットキー音声入力開始（旧版）",
                 description="Ctrl+Shift+Alt 同時押しで音声録音",
-                color=0x00ff00
+                color=0xffaa00
+            )
+            embed.add_field(
+                name="⚠️ 制限事項",
+                value="この旧版はDiscordフォーカス時に動作しない場合があります。\n`!voice_monitor_start` の使用を推奨します。",
+                inline=False
             )
             embed.add_field(
                 name="使用方法",
                 value="1. Ctrl+Shift+Alt を同時に押す\n2. 押している間に話す\n3. キーを離すと認識・応答",
-                inline=False
-            )
-            embed.add_field(
-                name="注意事項",
-                value="• 管理者権限でBotを実行推奨\n• PyAudioライブラリが必要\n• `!hotkey_stop` で停止",
                 inline=False
             )
             
