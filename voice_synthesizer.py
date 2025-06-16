@@ -14,13 +14,13 @@ import platform
 from typing import Optional
 
 class VoiceVoxSynthesizer:
-    """VOICEVOX音声合成システム（WSL2/Windows対応）"""
+    """VOICEVOX音声合成システム（Windows専用）"""
     
     def __init__(self):
         # VOICEVOX設定
         self.speaker_id = 20  # せつなの音声ID
         self.voicevox_url = None
-        self.is_wsl2 = self._detect_wsl2()
+        self.is_windows = self._detect_windows()
         
         # キャッシュ設定
         self.cache_dir = "voice_cache"
@@ -30,30 +30,24 @@ class VoiceVoxSynthesizer:
         self._auto_detect_voicevox_url()
         
         print(f"🔊 VOICEVOX音声合成システム初期化")
-        print(f"   - WSL2環境: {self.is_wsl2}")
+        print(f"   - Windows環境: {self.is_windows}")
         print(f"   - VOICEVOX URL: {self.voicevox_url}")
         print(f"   - Speaker ID: {self.speaker_id} (せつな)")
         print(f"   - キャッシュディレクトリ: {self.cache_dir}")
     
-    def _detect_wsl2(self) -> bool:
-        """WSL2環境の検出"""
+    def _detect_windows(self) -> bool:
+        """Windows環境の検出"""
         try:
-            # /proc/version にMicrosoftの文字列があるかチェック
-            if os.path.exists('/proc/version'):
-                with open('/proc/version', 'r') as f:
-                    version_info = f.read().lower()
-                    if 'microsoft' in version_info:
-                        print("🐧 WSL2環境を検出")
-                        return True
-            
-            # プラットフォーム情報でもチェック
-            if platform.system() == 'Linux' and 'microsoft' in platform.release().lower():
-                print("🐧 WSL2環境を検出（platform情報）")
+            system_name = platform.system()
+            if system_name == 'Windows':
+                print("🖥️ Windows環境を検出")
                 return True
+            else:
+                print(f"🐧 非Windows環境を検出: {system_name}")
+                return False
                 
-            return False
         except Exception as e:
-            print(f"⚠️ WSL2検出エラー: {e}")
+            print(f"⚠️ 環境検出エラー: {e}")
             return False
     
     def _auto_detect_voicevox_url(self):
@@ -64,27 +58,7 @@ class VoiceVoxSynthesizer:
             "http://localhost:50021"
         ]
         
-        # WSL2の場合はWindows ホストIPも追加
-        if self.is_wsl2:
-            try:
-                # WSL2のゲートウェイIP（Windows ホスト）を取得
-                result = subprocess.run([
-                    'ip', 'route', 'show', 'default'
-                ], capture_output=True, text=True, timeout=5)
-                
-                if result.returncode == 0:
-                    lines = result.stdout.strip().split('\n')
-                    for line in lines:
-                        if 'default' in line:
-                            parts = line.split()
-                            if len(parts) >= 3:
-                                gateway_ip = parts[2]
-                                wsl2_url = f"http://{gateway_ip}:50021"
-                                url_candidates.insert(0, wsl2_url)  # 最優先
-                                print(f"🌐 WSL2 Windows ホストIP: {gateway_ip}")
-                                break
-            except Exception as e:
-                print(f"⚠️ WSL2 IP取得エラー: {e}")
+        # Windows環境では標準のlocalhostを使用
         
         print(f"🔍 VOICEVOX接続テスト開始...")
         
@@ -202,7 +176,7 @@ class VoiceVoxSynthesizer:
             return None
     
     def play_voice(self, wav_path: str) -> bool:
-        """音声再生（クロスプラットフォーム対応）"""
+        """音声再生（Windows専用）"""
         if not wav_path or not os.path.exists(wav_path):
             print("❌ 音声ファイルが見つかりません")
             return False
@@ -211,60 +185,66 @@ class VoiceVoxSynthesizer:
             file_size = os.path.getsize(wav_path)
             print(f"🔊 音声再生開始: {wav_path} ({file_size} bytes)")
             
-            # プラットフォーム別再生方法
-            if self.is_wsl2:
-                # WSL2の場合：Windows側で再生
-                print("🐧 WSL2環境: Windowsでの音声再生")
-                # PowerShellを使ってWindows側で再生
-                ps_command = f'powershell.exe -c "Add-Type -AssemblyName presentationCore; $mediaPlayer = New-Object system.windows.media.mediaplayer; $mediaPlayer.open([uri]\\"{wav_path}\\"); $mediaPlayer.Play(); Start-Sleep 5"'
-                result = subprocess.run(ps_command, shell=True, capture_output=True, timeout=10)
-                
-                if result.returncode == 0:
-                    print("✅ Windows音声再生完了")
-                    return True
-                else:
-                    print(f"⚠️ PowerShell再生エラー: {result.stderr.decode()}")
-                    # フォールバック: wslview使用
-                    return self._fallback_play_wsl2(wav_path)
+            if self.is_windows:
+                # Windows環境：winsoundを使用
+                return self._play_windows(wav_path)
             else:
-                # Linuxの場合：通常の再生
-                return self._play_linux(wav_path)
+                # 非Windows環境のフォールバック
+                print("⚠️ Windows以外の環境です")
+                return self._play_fallback(wav_path)
                 
         except Exception as e:
             print(f"❌ 音声再生エラー: {e}")
             return False
     
-    def _fallback_play_wsl2(self, wav_path: str) -> bool:
-        """WSL2でのフォールバック再生"""
+    def _play_windows(self, wav_path: str) -> bool:
+        """Windows環境での音声再生"""
         try:
-            # wslviewでWindows側のデフォルトアプリで開く
-            result = subprocess.run(['wslview', wav_path], timeout=5)
-            print("✅ wslview経由で音声再生")
+            # winsoundを使用（Windowsの標準ライブラリ）
+            import winsound
+            winsound.PlaySound(wav_path, winsound.SND_FILENAME)
+            print("✅ Windows音声再生完了（winsound）")
             return True
-        except:
-            print("⚠️ wslview再生も失敗")
+        except ImportError:
+            print("⚠️ winsoundが利用できません、playsoundを試行")
+            try:
+                # playsoundライブラリを試行
+                import playsound
+                playsound.playsound(wav_path)
+                print("✅ Windows音声再生完了（playsound）")
+                return True
+            except:
+                print("⚠️ playsoundも利用できません、osコマンドを試行")
+                return self._play_windows_command(wav_path)
+        except Exception as e:
+            print(f"⚠️ winsound再生エラー: {e}")
+            return self._play_windows_command(wav_path)
+    
+    def _play_windows_command(self, wav_path: str) -> bool:
+        """Windowsコマンドでの音声再生"""
+        try:
+            # PowerShellを使用
+            abs_path = os.path.abspath(wav_path).replace('\\', '\\\\')
+            ps_command = f'[System.Media.SoundPlayer]::new("{abs_path}").PlaySync()'
+            
+            result = subprocess.run([
+                'powershell.exe', '-Command', ps_command
+            ], capture_output=True, timeout=10)
+            
+            if result.returncode == 0:
+                print("✅ Windows音声再生完了（PowerShell）")
+                return True
+            else:
+                print(f"⚠️ PowerShell再生エラー: {result.stderr.decode()}")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Windows音声再生失敗: {e}")
             return False
     
-    def _play_linux(self, wav_path: str) -> bool:
-        """Linux環境での音声再生"""
-        # 利用可能な再生コマンドを順番に試行
-        play_commands = [
-            ['aplay', wav_path],           # ALSA
-            ['paplay', wav_path],          # PulseAudio  
-            ['play', wav_path],            # SoX
-            ['ffplay', '-nodisp', '-autoexit', wav_path]  # FFmpeg
-        ]
-        
-        for cmd in play_commands:
-            try:
-                result = subprocess.run(cmd, timeout=10, capture_output=True)
-                if result.returncode == 0:
-                    print(f"✅ Linux音声再生完了: {cmd[0]}")
-                    return True
-            except:
-                continue
-        
-        print("❌ Linux音声再生：全てのコマンドが失敗")
+    def _play_fallback(self, wav_path: str) -> bool:
+        """フォールバック音声再生"""
+        print("❌ Windows環境ではありません。音声再生をスキップします。")
         return False
     
     def test_connection(self) -> bool:

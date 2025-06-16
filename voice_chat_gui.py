@@ -148,6 +148,13 @@ class SetsunaGUI:
             text="履歴クリア 🗑️",
             command=self.clear_history
         )
+        
+        # キャッシュ統計ボタン
+        self.cache_stats_button = ttk.Button(
+            self.input_frame,
+            text="キャッシュ統計 📊",
+            command=self.show_cache_stats
+        )
     
     def _setup_layout(self):
         """レイアウト設定"""
@@ -177,8 +184,9 @@ class SetsunaGUI:
         button_container = ttk.Frame(input_container)
         button_container.pack(side=tk.RIGHT, fill=tk.Y)
         
-        self.send_button.pack(pady=(0, 5))
-        self.clear_button.pack()
+        self.send_button.pack(pady=(0, 2))
+        self.clear_button.pack(pady=(0, 2))
+        self.cache_stats_button.pack()
         
         # Enterキーで送信
         self.text_input.bind('<Control-Return>', lambda event: self.send_text_message())
@@ -426,6 +434,26 @@ class SetsunaGUI:
         self.history_text.config(state=tk.DISABLED)
         print("🗑️ 会話履歴をクリアしました")
     
+    def show_cache_stats(self):
+        """キャッシュ統計情報を表示"""
+        if self.setsuna_chat:
+            stats = self.setsuna_chat.get_cache_stats()
+            
+            if "message" in stats:
+                self.add_message_to_history("システム", stats["message"], "text")
+            else:
+                stats_message = f"""📊 キャッシュ統計情報:
+• ヒット率: {stats.get('hit_rate', 0):.1%}
+• 総リクエスト: {stats.get('total_requests', 0)}件
+• キャッシュヒット: {stats.get('hits', 0)}件
+• キャッシュミス: {stats.get('misses', 0)}件
+• キャッシュサイズ: {stats.get('cache_size_current', 0)}件"""
+                
+                self.add_message_to_history("システム", stats_message, "text")
+                print("📊 キャッシュ統計表示完了")
+        else:
+            self.add_message_to_history("システム", "チャットシステムが初期化されていません", "text")
+    
     def run(self):
         """GUI実行"""
         print("🚀 GUI開始")
@@ -441,6 +469,11 @@ class SetsunaGUI:
     def _on_closing(self):
         """アプリケーション終了処理"""
         print("👋 アプリケーション終了中...")
+        
+        # キャッシュ保存
+        if self.setsuna_chat:
+            self.setsuna_chat.save_cache()
+            print("✅ キャッシュ保存完了")
         
         # ホットキーリスナー停止
         if self.hotkey_listener:

@@ -27,10 +27,11 @@ The system follows a simplified modular architecture with integrated voice conve
 ## Running the Application
 
 ### Prerequisites
-- Python 3.9+ with required packages: speech_recognition, pynput, openai, requests
-- VOICEVOX running on Windows host (automatically detected via WSL2 gateway IP)
+- Python 3.9+ with required packages: speech_recognition, pynput, openai, requests, pyaudio
+- VOICEVOX running on Windows localhost
 - OpenAI API key in `.env` file: `OPENAI_API_KEY=your_key_here`
 - Microphone and speakers/headphones
+- Windows環境（WSL2は非対応）
 
 ### Start the Voice Chat System
 ```bash
@@ -106,13 +107,15 @@ The voice chat application maintains conversation history through the SetsunaCha
 ## 重要な実行環境に関する注意事項
 
 ### 実行環境
-**すべてのPythonスクリプトはWindows環境で実行すること**。WSL2環境ではなく、Windows上で直接実行する必要がある。
+**すべてのPythonスクリプトはWindows環境で直接実行すること**。WSL2環境は非対応です。
 
-### 外部サービスとの連携テスト
-**VOICEVOXやその他の外部ツールとの連携テストは必ずユーザーに確認すること**。WSL2環境からWindowsホストへのアクセスは制限があり、外部サービスとの接続テストが正常に動作しない場合がある。
+### Windows環境での要件
+- VOICEVOXはWindows上で直接起動する必要があります
+- 音声入出力デバイスへの直接アクセスが必要です
+- Windows標準の音声再生機能（winsound）を使用します
 
-特に以下の場合は事前にユーザーに確認が必要：
-- VOICEVOX APIへの接続テスト
-- Windows固有のサービスやAPI呼び出し
-- ネットワーク経由でのサービスアクセス
+### 外部サービステスト
+VOICEVOXとの連携テストは通常のWindows環境で実行してください：
+- VOICEVOX APIへの接続テスト（localhost:50021）
 - 音声入出力デバイスへのアクセス
+- Windows音声再生システム
