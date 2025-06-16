@@ -8,43 +8,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is せつなBot (Setsuna Bot), a Japanese conversational AI system with voice synthesis capabilities. The project provides a web-based interface for real-time chat with an AI character named "片無せつな" (Katanashi Setsuna) using OpenAI GPT for conversation and VOICEVOX for Japanese text-to-speech synthesis.
+This is せつなBot (Setsuna Bot), a Japanese conversational AI system with voice synthesis capabilities. The project provides a hotkey-based voice conversation interface with an AI character named "片無せつな" (Katanashi Setsuna) using OpenAI GPT-4-Turbo for conversation and VOICEVOX for Japanese text-to-speech synthesis.
 
 ## Architecture
 
-The system follows a modular architecture with three main layers:
+The system follows a simplified modular architecture with integrated voice conversation:
 
-### Core Components (`core/` directory)
-- **setsuna_chat.py**: OpenAI GPT integration with character-specific prompts and conversation history management
-- **voice_output.py**: VOICEVOX API integration with caching, WSL2 network detection, and audio playback via pygame
-- **voice_input.py**: Audio input handling (various implementations available)
-- **hotkey_listener.py**: Keyboard shortcut handling
-
-### Web Application Layer
-- **setsuna_web_app.py**: Flask/SocketIO web server that integrates all core components
-- **templates/setsuna_web.html**: Single-page web interface with real-time chat and voice controls
+### Core Components
+- **voice_chat_gpt4.py**: Main application integrating voice recognition, GPT-4-Turbo conversation, and voice synthesis with hotkey controls
+- **core/setsuna_chat.py**: OpenAI GPT-4-Turbo integration with character-specific prompts and conversation history management  
+- **voice_synthesizer.py**: VOICEVOX API integration with caching, WSL2 network detection, and audio playback
 
 ### Data Flow
-1. User input → Web UI → Flask SocketIO → SetsunaChat (GPT) → response generation
-2. Response text → VoiceOutput → VOICEVOX API → audio synthesis → browser playback
-3. Voice settings updates flow through Flask API → VoiceOutput parameter updates
+1. Hotkey press (Ctrl+Shift+Alt) → Voice recording (15 seconds) → Google Speech Recognition
+2. Recognized text → SetsunaChat (GPT-4-Turbo) → Character response generation
+3. Response text → VoiceVoxSynthesizer → VOICEVOX API → Audio synthesis → Playback
 
 ## Running the Application
 
 ### Prerequisites
-- Python 3.9+ with required packages: flask, flask-socketio, openai, requests, pygame, python-dotenv
+- Python 3.9+ with required packages: speech_recognition, pynput, openai, requests
 - VOICEVOX running on Windows host (automatically detected via WSL2 gateway IP)
 - OpenAI API key in `.env` file: `OPENAI_API_KEY=your_key_here`
+- Microphone and speakers/headphones
 
-### Start the Web Application
+### Start the Voice Chat System
 ```bash
-python setsuna_web_app.py
+python voice_chat_gpt4.py
 ```
-Access via browser at `http://localhost:5000`
+Use Ctrl+Shift+Alt hotkey combination to start voice input, Ctrl+C to exit
 
-### Testing Voice Functionality
+### Testing Individual Components
 ```bash
-python core/voice_output.py  # Test VOICEVOX connection and synthesis
+python core/setsuna_chat.py      # Test GPT-4-Turbo chat integration
+python voice_synthesizer.py     # Test VOICEVOX connection and synthesis
 ```
 
 ## Development Notes
@@ -59,12 +56,13 @@ The AI character "せつな" has a defined personality implemented through syste
 Both chat and voice systems include fallback mechanisms. Chat falls back to simple pattern matching if OpenAI is unavailable. Voice synthesis degrades gracefully if VOICEVOX is not accessible.
 
 ### State Management
-The web application uses a global `bot_state` dictionary for tracking conversation count, voice settings, system status, and chat history. This state is synchronized with clients via SocketIO events.
+The voice chat application maintains conversation history through the SetsunaChat class, with global state management for hotkey detection and voice processing status. Voice cache is maintained automatically to improve response times for repeated phrases.
 
 ### Configuration
-- VOICEVOX speaker ID is set to 20 (Setsuna voice) in `voice_output.py`
-- Voice parameters (speed, pitch, intonation) are adjustable via web UI
-- OpenAI model is set to "gpt-4" with max 150 tokens for voice-appropriate responses
+- VOICEVOX speaker ID is set to 20 (Setsuna voice) in `voice_synthesizer.py`
+- OpenAI model is set to "gpt-4-turbo" with max 150 tokens for voice-appropriate responses
+- Voice recording timeout set to 15 seconds for longer conversations
+- Audio preprocessing optimized for fast response times
 
 ## Development Methodology
 

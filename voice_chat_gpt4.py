@@ -133,10 +133,14 @@ def main():
             voice_recognizer.adjust_for_ambient_noise(source, duration=0.5)
         print("✅ 音声認識システム初期化完了")
     except Exception as e:
-        print(f"⚠️ 音声認識システム初期化失敗: {e}")
-        print("   標準の音声認識で続行します")
-        voice_recognizer = sr.Recognizer()
-        microphone = sr.Microphone()
+        print(f"❌ 音声認識システム初期化失敗: {e}")
+        print("⚠️ PyAudioライブラリが見つかりません")
+        print("   以下のコマンドでインストールしてください:")
+        print("   conda install pyaudio")
+        print("   または")
+        print("   pip install pyaudio")
+        print("\n💡 PyAudioインストール後に再実行してください")
+        return
     
     # 音声合成システム初期化
     print("🔊 音声合成システム初期化中...")
