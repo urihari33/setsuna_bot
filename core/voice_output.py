@@ -73,8 +73,15 @@ class VoiceOutput:
         try:
             response = requests.get(f"{self.voicevox_url}/version", timeout=3)
             if response.status_code == 200:
-                version = response.json()
-                print(f"[音声] ✅ VOICEVOX接続成功 (v{version.get('version', 'unknown')})")
+                try:
+                    version_data = response.json()
+                    if isinstance(version_data, dict):
+                        version = version_data.get('version', 'unknown')
+                    else:
+                        version = str(version_data)
+                    print(f"[音声] ✅ VOICEVOX接続成功 (v{version})")
+                except:
+                    print(f"[音声] ✅ VOICEVOX接続成功")
                 return True
             else:
                 print(f"[音声] ❌ VOICEVOX接続失敗: HTTP {response.status_code}")
