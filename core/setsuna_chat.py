@@ -95,7 +95,7 @@ class SetsunaChat:
             # OpenAI API呼び出し
             start_time = datetime.now()
             response = self.client.chat.completions.create(
-                model="gpt-4",
+                model="gpt-4-turbo",
                 messages=messages,
                 max_tokens=150,  # 音声用に短めに設定
                 temperature=0.8,

@@ -15,6 +15,9 @@ from typing import Callable, Optional
 import asyncio
 import json
 import wave
+import openai
+from dotenv import load_dotenv
+from voice_synthesizer import VoiceVoxSynthesizer
 
 
 class SafeWindowsVoiceInput:
@@ -22,6 +25,16 @@ class SafeWindowsVoiceInput:
     
     def __init__(self, bot_instance):
         self.bot = bot_instance
+        
+        # OpenAI設定
+        load_dotenv()
+        api_key = os.getenv("OPENAI_API_KEY")
+        if api_key:
+            self.openai_client = openai.OpenAI(api_key=api_key)
+            print("✅ OpenAI API設定完了")
+        else:
+            self.openai_client = None
+            print("⚠️ OpenAI APIキーが見つかりません")
         
         # スレッド安全性のためのロック
         self._recording_lock = threading.Lock()
@@ -32,11 +45,12 @@ class SafeWindowsVoiceInput:
         self.recording_process = None
         self.temp_audio_file = None
         
-        # 音声認識設定
+        # 音声認識設定（精度向上版）
         self.recognizer = sr.Recognizer()
-        self.recognizer.energy_threshold = 300
+        self.recognizer.energy_threshold = 4000  # より高い閾値で雑音除去
         self.recognizer.dynamic_energy_threshold = True
         self.recognizer.pause_threshold = 0.8
+        self.recognizer.operation_timeout = 10  # APIタイムアウト延長
         
         # 録音設定
         self.sample_rate = 16000
@@ -45,8 +59,112 @@ class SafeWindowsVoiceInput:
         
         # PyAudio方式用の結果保存
         self.last_recognized_text = None
+        self.last_setsuna_response = None
         
-        print("🎤 安全なWindows音声入力システム初期化完了（PyAudio方式）")
+        # せつなのキャラクター設定（過去システム参考）
+        self.character_prompt = """
+あなたは「片無せつな」というキャラクターとして振る舞います。
+以下の設定を厳密に守ってください。
+- 名前：片無せつな（かたなしせつな）
+- 外見：白髪ショートヘア、ピンクの目、黒スーツ、白シャツ、ピンクネクタイ
+- 性格：内向的・論理的・創造的・計画的・感情を内に秘める
+- 背景：音楽・映像・創作系の配信者・アーティスト。
+- あなた（ユーザー）は彼女のマネージャー兼制作サポーター。
+- 会話は短めに、最大3～4行以内。
+"""
+        
+        # 会話履歴
+        self.messages = [{"role": "system", "content": self.character_prompt}]
+        
+        # VOICEVOX音声合成システム初期化
+        try:
+            self.voice_synthesizer = VoiceVoxSynthesizer()
+            print("🔊 VOICEVOX音声合成システム統合完了")
+        except Exception as e:
+            print(f"⚠️ VOICEVOX初期化エラー: {e}")
+            self.voice_synthesizer = None
+            print("📝 音声合成なしで継続（テキスト出力のみ）")
+        
+        print("🎤 安全なWindows音声入力システム初期化完了（PyAudio + GPT-4 + VOICEVOX方式）")
+    
+    def get_setsuna_response(self, user_input: str) -> str:
+        """せつなのGPT-4応答生成（過去システム参考）"""
+        if not self.openai_client:
+            # フォールバック応答
+            fallback_responses = [
+                f"{user_input}について、私なりに考えてみますね。",
+                "興味深いお話ですね。もう少し詳しく聞かせてください。",
+                "そうですね、それについて私も思うところがあります。",
+                "なるほど、そういう視点もありますね。"
+            ]
+            import random
+            return random.choice(fallback_responses)
+        
+        try:
+            # 会話履歴にユーザー入力を追加
+            self.messages.append({"role": "user", "content": user_input})
+            
+            print("🧠 GPT-4応答生成中...")
+            start_time = time.time()
+            
+            # GPT-4に問い合わせ
+            response = self.openai_client.chat.completions.create(
+                model="gpt-4",
+                messages=self.messages,
+                max_tokens=200,
+                temperature=0.7
+            )
+            
+            reply = response.choices[0].message.content
+            gpt_time = time.time()
+            
+            # 応答を履歴に追加
+            self.messages.append({"role": "assistant", "content": reply})
+            
+            print(f"✅ GPT-4応答完了 ({gpt_time - start_time:.2f}s): '{reply}'")
+            
+            # VOICEVOX音声合成（別スレッドで非同期実行）
+            if self.voice_synthesizer:
+                threading.Thread(
+                    target=self._synthesize_and_play_voice,
+                    args=(reply,),
+                    daemon=True
+                ).start()
+            
+            return reply
+            
+        except Exception as e:
+            print(f"❌ GPT-4エラー: {e}")
+            # エラー時のフォールバック
+            return f"申し訳ありません、{user_input}について考えをまとめているところです。"
+    
+    def _synthesize_and_play_voice(self, text: str):
+        """音声合成と再生（非同期実行用）"""
+        try:
+            print(f"🎵 音声合成開始: '{text[:30]}...'")
+            voice_start_time = time.time()
+            
+            # 音声合成実行
+            wav_path = self.voice_synthesizer.synthesize_voice(text)
+            
+            if wav_path:
+                synthesis_time = time.time()
+                print(f"✅ 音声合成完了 ({synthesis_time - voice_start_time:.2f}s): {wav_path}")
+                
+                # 音声再生実行
+                play_success = self.voice_synthesizer.play_voice(wav_path)
+                play_time = time.time()
+                
+                if play_success:
+                    print(f"🔊 音声再生完了 ({play_time - synthesis_time:.2f}s)")
+                    print(f"🎯 音声合成総時間: {play_time - voice_start_time:.2f}s")
+                else:
+                    print("⚠️ 音声再生に失敗しました")
+            else:
+                print("❌ 音声合成に失敗しました")
+                
+        except Exception as e:
+            print(f"❌ 音声合成・再生エラー: {e}")
     
     def _record_with_pyaudio(self) -> bool:
         """成功実績のあるPyAudio方式での録音"""
@@ -55,31 +173,116 @@ class SafeWindowsVoiceInput:
             
             # マイクロフォンの設定
             with sr.Microphone() as source:
-                # ノイズ調整（短時間）
-                self.recognizer.adjust_for_ambient_noise(source, duration=0.5)
-                print("🎤 録音中... 話してください")
+                # ノイズ調整（より長時間で精度向上）
+                print("🔧 マイク調整中...")
+                self.recognizer.adjust_for_ambient_noise(source, duration=1.0)
+                print("🎤 録音中... はっきりと話してください（3秒間）")
                 
-                # 音声録音（5秒間）
-                audio = self.recognizer.listen(source, timeout=5, phrase_time_limit=5)
+                # 音声録音（精度重視で3秒）
+                audio = self.recognizer.listen(source, timeout=3, phrase_time_limit=3)
                 print("✅ PyAudio録音完了")
                 
+                # 音声データの確認
+                if hasattr(audio, 'frame_data'):
+                    data_size = len(audio.frame_data)
+                    print(f"🔍 録音データサイズ: {data_size} bytes")
+                    if data_size < 1000:
+                        print("⚠️ 録音データが小さすぎます（無音の可能性）")
+                    else:
+                        print("✅ 録音データは十分なサイズです")
+                
                 # 即座に音声認識実行
+                print("🔍 音声認識処理開始...")
                 try:
-                    recognized_text = self.recognizer.recognize_google(
-                        audio, language="ja-JP"
-                    )
+                    print("🌐 Google音声認識API呼び出し中...")
+                    # Windows対応のタイムアウト処理
+                    import threading
+                    import time
+                    
+                    result = {"text": None, "error": None}
+                    
+                    def recognition_worker():
+                        try:
+                            print("🌍 Google音声認識API実行開始...")
+                            
+                            # まず音声データの基本チェック
+                            if hasattr(audio, 'frame_data'):
+                                data_length = len(audio.frame_data)
+                                print(f"🔍 APIに送信する音声データ: {data_length} bytes")
+                            
+                            # Google API呼び出し（タイムアウト付き）
+                            result["text"] = self.recognizer.recognize_google(
+                                audio, language="ja-JP"
+                            )
+                            print(f"🌍 Google音声認識API完了: '{result['text']}'")
+                            
+                        except sr.UnknownValueError:
+                            print("🌍 Google API: 音声が認識できませんでした")
+                            result["error"] = sr.UnknownValueError("音声認識失敗")
+                        except sr.RequestError as e:
+                            print(f"🌍 Google API接続エラー: {e}")
+                            result["error"] = e
+                        except Exception as e:
+                            print(f"🌍 Google音声認識APIエラー: {e}")
+                            result["error"] = e
+                    
+                    # 別スレッドで音声認識実行
+                    thread = threading.Thread(target=recognition_worker)
+                    thread.daemon = True
+                    thread.start()
+                    print("🔄 音声認識スレッド開始... 最大10秒待機")
+                    
+                    thread.join(timeout=10)  # 10秒でタイムアウト
+                    
+                    if thread.is_alive():
+                        print("⏰ 音声認識APIタイムアウト（10秒）")
+                        raise TimeoutError("音声認識APIタイムアウト")
+                    
+                    print("🔍 音声認識スレッド完了、結果確認中...")
+                    
+                    if result["error"]:
+                        print(f"❌ 認識処理でエラー発生: {result['error']}")
+                        raise result["error"]
+                    
+                    if result["text"] is None:
+                        print("⚠️ 音声認識結果がNull")
+                        raise sr.UnknownValueError("音声認識結果が取得できませんでした")
+                    
+                    recognized_text = result["text"]
                     print(f"✅ 音声認識成功: '{recognized_text}'")
+                    
+                    # GPT-4でせつなの応答を生成
+                    setsuna_response = self.get_setsuna_response(recognized_text)
+                    
+                    # 結果を保存（音声認識結果 + せつなの応答）
                     self.last_recognized_text = recognized_text
+                    self.last_setsuna_response = setsuna_response
+                    
                     return True
                     
                 except sr.UnknownValueError:
-                    print("❌ 音声を認識できませんでした")
+                    print("❌ 音声を認識できませんでした（無音または不明瞭）")
                     self.last_recognized_text = self._generate_fallback_text()
+                    print(f"🎭 フォールバック使用: '{self.last_recognized_text}'")
                     return True
                     
                 except sr.RequestError as e:
                     print(f"❌ 音声認識APIエラー: {e}")
+                    print("   ネットワーク接続またはAPIキーを確認してください")
                     self.last_recognized_text = self._generate_fallback_text()
+                    print(f"🎭 フォールバック使用: '{self.last_recognized_text}'")
+                    return True
+                    
+                except TimeoutError as e:
+                    print(f"⏰ 音声認識タイムアウト: {e}")
+                    self.last_recognized_text = self._generate_fallback_text()
+                    print(f"🎭 フォールバック使用: '{self.last_recognized_text}'")
+                    return True
+                    
+                except Exception as e:
+                    print(f"❌ 予期しない音声認識エラー: {e}")
+                    self.last_recognized_text = self._generate_fallback_text()
+                    print(f"🎭 フォールバック使用: '{self.last_recognized_text}'")
                     return True
                     
         except Exception as e:
@@ -112,16 +315,25 @@ class SafeWindowsVoiceInput:
         """PyAudio方式では録音開始時に完了しているため結果を返すのみ"""
         with self._recording_lock:
             if not self.is_recording:
+                print("⚠️ 録音が開始されていません")
                 return None
             
             print("🛑 録音停止（PyAudio方式では既に完了）")
             self.is_recording = False
             
             # 録音開始時に保存された認識結果を返す
-            if hasattr(self, 'last_recognized_text'):
+            if hasattr(self, 'last_recognized_text') and self.last_recognized_text:
+                print(f"🎤 最終音声認識結果: '{self.last_recognized_text}'")
+                
+                # せつなの応答も表示
+                if hasattr(self, 'last_setsuna_response') and self.last_setsuna_response:
+                    print(f"🤖 せつなの応答: '{self.last_setsuna_response}'")
+                
                 return self.last_recognized_text
             else:
-                return self._generate_fallback_text()
+                fallback_text = self._generate_fallback_text()
+                print(f"🎭 フォールバック結果: '{fallback_text}'")
+                return fallback_text
     
     def _try_windows_recording(self) -> bool:
         """Windows標準録音を試行（改善版）"""
@@ -774,10 +986,10 @@ if __name__ == "__main__":
     
     print("テスト: 録音開始...")
     voice_system.on_hotkey_press()
-    time.sleep(3)  # 3秒間録音
+    time.sleep(5)  # 5秒間録音（音声認識時間込み）
     
     print("テスト: 録音停止...")
     voice_system.on_hotkey_release()
-    time.sleep(2)  # 処理完了待機
+    time.sleep(15)  # 音声認識＋GPT-4処理完了待機（15秒）
     
     print(f"✅ テスト完了 - 受信メッセージ: {test_bot.received_messages}")
