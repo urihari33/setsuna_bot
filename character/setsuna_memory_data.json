@@ -5,33 +5,130 @@
       "date": "2025-06-17",
       "conversation_count": 3,
       "topics": [],
-      "timestamp": "2025-06-17T21:30:27.541839"
+      "timestamp": "2025-06-17T22:14:01.199072"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 3,
+      "topics": [],
+      "timestamp": "2025-06-17T22:14:36.335049"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:23:32.201758"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:23:35.064372"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:23:37.749953"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:23:41.050639"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:23:43.938395"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:23:48.841489"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:24:04.961319"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T22:24:23.432674"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 2,
+      "topics": [],
+      "timestamp": "2025-06-17T23:26:56.739126"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 1,
+      "topics": [],
+      "timestamp": "2025-06-17T23:38:40.318989"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T23:44:27.913343"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T23:47:38.054597"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T23:56:53.704700"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T23:57:05.379566"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-17T23:58:50.994260"
+    },
+    {
+      "date": "2025-06-17",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-18T00:01:52.532543"
+    },
+    {
+      "date": "2025-06-18",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-18T00:06:43.332145"
+    },
+    {
+      "date": "2025-06-18",
+      "conversation_count": 0,
+      "topics": [],
+      "timestamp": "2025-06-18T00:11:42.504395"
     }
   ],
   "learned_facts": [
     {
       "category": "名前",
-      "content": "私の名前は田中です",
-      "timestamp": "2025-06-17T21:30:27.541806",
-      "confidence": 0.8
-    },
-    {
-      "category": "名前",
-      "content": "趣味は写真撮影です",
-      "timestamp": "2025-06-17T21:30:27.541817",
-      "confidence": 0.8
-    },
-    {
-      "category": "趣味",
-      "content": "趣味は写真撮影です",
-      "timestamp": "2025-06-17T21:30:27.541820",
-      "confidence": 0.8
-    },
-    {
-      "category": "仕事",
-      "content": "仕事はプログラマーをしています",
-      "timestamp": "2025-06-17T21:30:27.541825",
-      "confidence": 0.8
+      "content": "対話者の名前は「うりはり」",
+      "timestamp": "2025-06-17T22:24:04.961319",
+      "confidence": 1.0,
+      "manual": true
     }
   ],
   "relationship_level": 1

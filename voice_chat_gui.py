@@ -6,7 +6,7 @@ Phase 1: GUI基本構造作成
 """
 
 import tkinter as tk
-from tkinter import ttk, scrolledtext
+from tkinter import ttk, scrolledtext, messagebox
 import threading
 import time
 from datetime import datetime
@@ -112,19 +112,49 @@ class SetsunaGUI:
             foreground='blue'
         )
         
+        # タブコントロール作成
+        self.notebook = ttk.Notebook(self.root)
+        
+        # チャットタブ
+        self.chat_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.chat_tab, text="💬 チャット")
+        
+        # 記憶編集タブ
+        self.memory_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.memory_tab, text="🧠 記憶編集")
+        
+        # プロジェクトタブ
+        self.project_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.project_tab, text="📽️ プロジェクト")
+        
+        # チャットタブのウィジェット作成
+        self._create_chat_widgets()
+        
+        # 記憶編集タブのウィジェット作成
+        self._create_memory_widgets()
+        
+        # プロジェクトタブのウィジェット作成
+        self._create_project_widgets()
+    
+    def _create_chat_widgets(self):
+        """チャットタブのウィジェット作成"""
+        
         # 会話履歴表示エリア
-        self.history_frame = ttk.LabelFrame(self.root, text="会話履歴", padding=10)
+        self.history_frame = ttk.LabelFrame(self.chat_tab, text="会話履歴", padding=10)
         self.history_text = scrolledtext.ScrolledText(
             self.history_frame,
             wrap=tk.WORD,
-            height=20,
+            height=12,  # 高さを小さくして入力欄が表示されるようにする
             width=70,
-            font=('Arial', 11),
-            state=tk.DISABLED
+            font=('Arial', 10),  # フォントサイズを少し小さく
+            state=tk.DISABLED,
+            spacing1=2,  # 段落前の間隔
+            spacing2=0,  # 行間隔
+            spacing3=2   # 段落後の間隔
         )
         
-        # テキスト入力エリア
-        self.input_frame = ttk.LabelFrame(self.root, text="テキスト入力", padding=10)
+        # テキスト入力エリア（高さを固定）
+        self.input_frame = ttk.LabelFrame(self.chat_tab, text="テキスト入力", padding=10)
         
         # テキスト入力フィールド
         self.text_input = tk.Text(
@@ -141,20 +171,274 @@ class SetsunaGUI:
             text="送信 📤",
             command=self.send_text_message
         )
+    
+    def _create_memory_widgets(self):
+        """記憶編集タブのウィジェット作成"""
         
-        # クリアボタン
-        self.clear_button = ttk.Button(
-            self.input_frame,
-            text="履歴クリア 🗑️",
-            command=self.clear_history
+        # メインフレーム
+        main_frame = ttk.Frame(self.memory_tab, padding=10)
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # タイトル
+        title_label = ttk.Label(
+            main_frame, 
+            text="🧠 せつなが学習した事実（編集可能）",
+            font=('Arial', 12, 'bold')
+        )
+        title_label.pack(pady=(0, 10))
+        
+        # 学習事実リストフレーム
+        facts_frame = ttk.LabelFrame(main_frame, text="学習した事実", padding=10)
+        facts_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+        
+        # スクロール可能なリストボックス
+        facts_container = ttk.Frame(facts_frame)
+        facts_container.pack(fill=tk.BOTH, expand=True)
+        
+        # リストボックスとスクロールバー
+        self.facts_listbox = tk.Listbox(
+            facts_container,
+            font=('Arial', 10),
+            height=15,
+            selectmode=tk.SINGLE
         )
         
-        # キャッシュ統計ボタン
-        self.cache_stats_button = ttk.Button(
-            self.input_frame,
-            text="キャッシュ統計 📊",
-            command=self.show_cache_stats
+        scrollbar = ttk.Scrollbar(facts_container, orient=tk.VERTICAL, command=self.facts_listbox.yview)
+        self.facts_listbox.configure(yscrollcommand=scrollbar.set)
+        
+        self.facts_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # 手動追加フレーム
+        add_frame = ttk.LabelFrame(main_frame, text="手動で事実を追加", padding=10)
+        add_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # カテゴリ選択
+        category_frame = ttk.Frame(add_frame)
+        category_frame.pack(fill=tk.X, pady=(0, 5))
+        
+        ttk.Label(category_frame, text="カテゴリ:").pack(side=tk.LEFT)
+        self.category_var = tk.StringVar(value="名前")
+        category_combo = ttk.Combobox(
+            category_frame,
+            textvariable=self.category_var,
+            values=["名前", "趣味", "仕事", "年齢", "住んでいる", "好み", "特徴", "その他"],
+            state="readonly",
+            width=15
         )
+        category_combo.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # 内容入力
+        content_frame = ttk.Frame(add_frame)
+        content_frame.pack(fill=tk.X, pady=(0, 5))
+        
+        ttk.Label(content_frame, text="内容:").pack(side=tk.LEFT)
+        self.content_entry = tk.Entry(
+            content_frame,
+            font=('Arial', 10),
+            width=50
+        )
+        self.content_entry.pack(side=tk.LEFT, padx=(5, 0), fill=tk.X, expand=True)
+        
+        # 追加ボタン
+        add_button = ttk.Button(
+            content_frame,
+            text="追加 ➕",
+            command=self.add_manual_fact
+        )
+        add_button.pack(side=tk.RIGHT, padx=(5, 0))
+        
+        # Enterキーで追加
+        self.content_entry.bind('<Return>', lambda event: self.add_manual_fact())
+        
+        # ボタンフレーム
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # 削除ボタン
+        delete_button = ttk.Button(
+            button_frame,
+            text="選択した事実を削除 🗑️",
+            command=self.delete_selected_fact
+        )
+        delete_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # セッション記憶クリアボタン
+        clear_session_button = ttk.Button(
+            button_frame,
+            text="セッション記憶クリア 🔄",
+            command=self.clear_session_memory_tab
+        )
+        clear_session_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # 全記憶クリアボタン
+        clear_all_button = ttk.Button(
+            button_frame,
+            text="全記憶クリア ⚠️",
+            command=self.clear_all_memory_tab
+        )
+        clear_all_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # 更新ボタン
+        refresh_button = ttk.Button(
+            button_frame,
+            text="更新 🔄",
+            command=self.refresh_facts_list
+        )
+        refresh_button.pack(side=tk.RIGHT)
+        
+        # 統計情報フレーム
+        stats_frame = ttk.LabelFrame(main_frame, text="記憶統計", padding=10)
+        stats_frame.pack(fill=tk.X)
+        
+        self.memory_stats_label = ttk.Label(stats_frame, text="統計情報読み込み中...")
+        self.memory_stats_label.pack()
+        
+        # タブが切り替わった時に更新するためのバインド
+        self.notebook.bind("<<NotebookTabChanged>>", self.on_tab_changed)
+    
+    def _create_project_widgets(self):
+        """プロジェクトタブのウィジェット作成"""
+        
+        # メインフレーム
+        main_frame = ttk.Frame(self.project_tab, padding=10)
+        main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # タイトル
+        title_label = ttk.Label(
+            main_frame, 
+            text="📽️ 創作プロジェクト管理",
+            font=('Arial', 12, 'bold')
+        )
+        title_label.pack(pady=(0, 10))
+        
+        # 上部フレーム（進行中プロジェクト + アイデア）
+        top_frame = ttk.Frame(main_frame)
+        top_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+        
+        # 進行中プロジェクトフレーム
+        projects_frame = ttk.LabelFrame(top_frame, text="進行中のプロジェクト", padding=10)
+        projects_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 5))
+        
+        # プロジェクトリストボックス
+        self.projects_listbox = tk.Listbox(
+            projects_frame,
+            font=('Arial', 10),
+            height=8,
+            selectmode=tk.SINGLE
+        )
+        projects_scrollbar = ttk.Scrollbar(projects_frame, orient=tk.VERTICAL, command=self.projects_listbox.yview)
+        self.projects_listbox.configure(yscrollcommand=projects_scrollbar.set)
+        
+        self.projects_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        projects_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # アイデアストックフレーム
+        ideas_frame = ttk.LabelFrame(top_frame, text="アイデアストック", padding=10)
+        ideas_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=(5, 0))
+        
+        # アイデアリストボックス
+        self.ideas_listbox = tk.Listbox(
+            ideas_frame,
+            font=('Arial', 10),
+            height=8,
+            selectmode=tk.SINGLE
+        )
+        ideas_scrollbar = ttk.Scrollbar(ideas_frame, orient=tk.VERTICAL, command=self.ideas_listbox.yview)
+        self.ideas_listbox.configure(yscrollcommand=ideas_scrollbar.set)
+        
+        self.ideas_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        ideas_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # 新規作成フレーム
+        create_frame = ttk.LabelFrame(main_frame, text="新規作成", padding=10)
+        create_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # プロジェクト作成行
+        project_create_frame = ttk.Frame(create_frame)
+        project_create_frame.pack(fill=tk.X, pady=(0, 5))
+        
+        ttk.Label(project_create_frame, text="プロジェクト:").pack(side=tk.LEFT)
+        self.project_title_entry = tk.Entry(project_create_frame, width=30)
+        self.project_title_entry.pack(side=tk.LEFT, padx=(5, 5))
+        
+        ttk.Label(project_create_frame, text="種類:").pack(side=tk.LEFT)
+        self.project_type_var = tk.StringVar(value="動画")
+        project_type_combo = ttk.Combobox(
+            project_create_frame,
+            textvariable=self.project_type_var,
+            values=["動画", "音楽", "イラスト", "脚本", "その他"],
+            state="readonly",
+            width=10
+        )
+        project_type_combo.pack(side=tk.LEFT, padx=(5, 5))
+        
+        create_project_button = ttk.Button(
+            project_create_frame,
+            text="プロジェクト作成 🎬",
+            command=self.create_new_project
+        )
+        create_project_button.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # アイデア作成行
+        idea_create_frame = ttk.Frame(create_frame)
+        idea_create_frame.pack(fill=tk.X)
+        
+        ttk.Label(idea_create_frame, text="アイデア:").pack(side=tk.LEFT)
+        self.idea_content_entry = tk.Entry(idea_create_frame, width=40)
+        self.idea_content_entry.pack(side=tk.LEFT, padx=(5, 5))
+        
+        ttk.Label(idea_create_frame, text="カテゴリ:").pack(side=tk.LEFT)
+        self.idea_category_var = tk.StringVar(value="動画")
+        idea_category_combo = ttk.Combobox(
+            idea_create_frame,
+            textvariable=self.idea_category_var,
+            values=["動画", "音楽", "イラスト", "脚本", "その他"],
+            state="readonly",
+            width=10
+        )
+        idea_category_combo.pack(side=tk.LEFT, padx=(5, 5))
+        
+        create_idea_button = ttk.Button(
+            idea_create_frame,
+            text="アイデア追加 💡",
+            command=self.create_new_idea
+        )
+        create_idea_button.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # ボタンフレーム
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # 削除ボタン
+        delete_project_button = ttk.Button(
+            button_frame,
+            text="プロジェクト削除 🗑️",
+            command=self.delete_selected_project
+        )
+        delete_project_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        delete_idea_button = ttk.Button(
+            button_frame,
+            text="アイデア削除 🗑️",
+            command=self.delete_selected_idea
+        )
+        delete_idea_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # 更新ボタン
+        refresh_projects_button = ttk.Button(
+            button_frame,
+            text="更新 🔄",
+            command=self.refresh_projects_list
+        )
+        refresh_projects_button.pack(side=tk.RIGHT)
+        
+        # 統計情報フレーム
+        project_stats_frame = ttk.LabelFrame(main_frame, text="プロジェクト統計", padding=10)
+        project_stats_frame.pack(fill=tk.X)
+        
+        self.project_stats_label = ttk.Label(project_stats_frame, text="統計情報読み込み中...")
+        self.project_stats_label.pack()
     
     def _setup_layout(self):
         """レイアウト設定"""
@@ -168,25 +452,36 @@ class SetsunaGUI:
         self.voice_status_label.pack(side=tk.LEFT)
         self.hotkey_info_label.pack(side=tk.RIGHT)
         
-        # 会話履歴
-        self.history_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        # タブコントロール
+        self.notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        
+        # チャットタブのレイアウト
+        self._setup_chat_layout()
+    
+    def _setup_chat_layout(self):
+        """チャットタブのレイアウト設定"""
+        
+        # テキスト入力エリアを先に配置（下部固定）
+        self.input_frame.pack(fill=tk.X, padx=5, pady=5, side=tk.BOTTOM)
+        
+        # テキスト入力フィールドを上部に配置（高さを固定）
+        self.text_input.pack(fill=tk.X, pady=(0, 5), expand=False)
+        
+        # 会話履歴（残りのスペースを使用）
+        self.history_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=(5, 0))
         self.history_text.pack(fill=tk.BOTH, expand=True)
         
-        # テキスト入力
-        self.input_frame.pack(fill=tk.X, padx=10, pady=5)
+        # ボタンを横並びで下部に配置
+        button_frame = ttk.Frame(self.input_frame)
+        button_frame.pack(fill=tk.X)
         
-        # 入力フィールドと送信ボタンを横並び
-        input_container = ttk.Frame(self.input_frame)
-        input_container.pack(fill=tk.X, pady=5)
-        
-        self.text_input.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 5))
-        
-        button_container = ttk.Frame(input_container)
-        button_container.pack(side=tk.RIGHT, fill=tk.Y)
-        
-        self.send_button.pack(pady=(0, 2))
-        self.clear_button.pack(pady=(0, 2))
-        self.cache_stats_button.pack()
+        # 送信ボタンを button_frame に配置
+        self.send_button = ttk.Button(
+            button_frame,
+            text="送信 📤",
+            command=self.send_text_message
+        )
+        self.send_button.pack(side=tk.LEFT)
         
         # Enterキーで送信
         self.text_input.bind('<Control-Return>', lambda event: self.send_text_message())
@@ -215,12 +510,12 @@ class SetsunaGUI:
             speaker_color = "green"
             type_icon = "🤖"
         
-        # メッセージを追加
+        # メッセージを追加（行間を詰める）
         self.history_text.insert(tk.END, f"[{timestamp}] {type_icon} {speaker}: ", (speaker_color,))
-        self.history_text.insert(tk.END, f"{message}\n\n")
+        self.history_text.insert(tk.END, f"{message}\n")
         
         # タグ設定
-        self.history_text.tag_config(speaker_color, foreground=speaker_color, font=('Arial', 11, 'bold'))
+        self.history_text.tag_config(speaker_color, foreground=speaker_color, font=('Arial', 10, 'bold'))
         
         # 最下部にスクロール
         self.history_text.see(tk.END)
@@ -440,7 +735,8 @@ class SetsunaGUI:
             stats = self.setsuna_chat.get_cache_stats()
             
             if "message" in stats:
-                self.add_message_to_history("システム", stats["message"], "text")
+                # システムメッセージは表示しない（ダイアログで表示）
+                messagebox.showinfo("キャッシュ統計", stats["message"])
             else:
                 stats_message = f"""📊 キャッシュ統計情報:
 • ヒット率: {stats.get('hit_rate', 0):.1%}
@@ -449,10 +745,293 @@ class SetsunaGUI:
 • キャッシュミス: {stats.get('misses', 0)}件
 • キャッシュサイズ: {stats.get('cache_size_current', 0)}件"""
                 
-                self.add_message_to_history("システム", stats_message, "text")
+                # システムメッセージは表示しない（ダイアログで表示）
+                messagebox.showinfo("キャッシュ統計", stats_message)
                 print("📊 キャッシュ統計表示完了")
         else:
-            self.add_message_to_history("システム", "チャットシステムが初期化されていません", "text")
+            # システムメッセージは表示しない（ダイアログで表示）
+            messagebox.showerror("エラー", "チャットシステムが初期化されていません")
+    
+    def on_tab_changed(self, event):
+        """タブ切り替え時の処理"""
+        current_tab = self.notebook.tab(self.notebook.select(), "text")
+        if current_tab == "🧠 記憶編集":
+            # 記憶編集タブが選択されたら記憶リストを更新
+            self.refresh_facts_list()
+        elif current_tab == "📽️ プロジェクト":
+            # プロジェクトタブが選択されたらプロジェクトリストを更新
+            self.refresh_projects_list()
+    
+    def refresh_facts_list(self):
+        """記憶事実リストを更新"""
+        if not self.setsuna_chat:
+            return
+        
+        try:
+            # リストボックスをクリア
+            self.facts_listbox.delete(0, tk.END)
+            
+            # 学習した事実を取得
+            facts = self.setsuna_chat.get_learned_facts()
+            
+            for i, fact in enumerate(facts):
+                # 表示用テキスト作成
+                timestamp = fact.get('timestamp', '')[:10]  # 日付のみ
+                category = fact.get('category', '不明')
+                content = fact.get('content', '')[:50]  # 50文字まで
+                confidence = fact.get('confidence', 0)
+                
+                display_text = f"[{timestamp}] {category}: {content}... (信頼度: {confidence:.1f})"
+                self.facts_listbox.insert(tk.END, display_text)
+            
+            # 統計情報を更新
+            stats = self.setsuna_chat.get_memory_stats()
+            stats_text = f"""学習事実: {stats.get('learned_facts', 0)}件
+セッション会話: {stats.get('session_conversations', 0)}件
+会話セッション: {stats.get('conversation_sessions', 0)}回
+関係レベル: {stats.get('relationship_level', 1)}"""
+            
+            if hasattr(self, 'memory_stats_label'):
+                self.memory_stats_label.config(text=stats_text)
+            
+            print(f"🔄 記憶リスト更新: {len(facts)}件の事実")
+        except Exception as e:
+            print(f"❌ 記憶リスト更新エラー: {e}")
+    
+    def delete_selected_fact(self):
+        """選択された事実を削除"""
+        selection = self.facts_listbox.curselection()
+        if not selection:
+            messagebox.showwarning("警告", "削除する事実を選択してください")
+            return
+        
+        fact_index = selection[0]
+        facts = self.setsuna_chat.get_learned_facts()
+        
+        if fact_index < len(facts):
+            fact = facts[fact_index]
+            content = fact.get('content', '')[:50]
+            
+            # 確認ダイアログ
+            result = messagebox.askyesno(
+                "確認", 
+                f"以下の事実を削除しますか？\n\n{content}..."
+            )
+            
+            if result:
+                success = self.setsuna_chat.delete_memory_fact(fact_index)
+                if success:
+                    self.refresh_facts_list()
+                    # システムメッセージは表示しない（コンソールログのみ）
+                    print(f"✅ 記憶削除成功: {content}...")
+                else:
+                    messagebox.showerror("エラー", "記憶の削除に失敗しました")
+    
+    def clear_session_memory_tab(self):
+        """セッション記憶をクリア（タブ用）"""
+        result = messagebox.askyesno(
+            "確認", 
+            "今回のセッションでの会話記憶をクリアします。\n（学習した事実は残ります）\n\nよろしいですか？"
+        )
+        
+        if result:
+            self.setsuna_chat.clear_session_memory()
+            self.refresh_facts_list()
+            # システムメッセージは表示しない（コンソールログのみ）
+            print("✅ セッション記憶クリア完了")
+    
+    def clear_all_memory_tab(self):
+        """全記憶をクリア（タブ用）"""
+        result = messagebox.askyesno(
+            "⚠️ 警告", 
+            "せつなの全ての記憶（学習した事実・セッション記憶）を削除します。\n\nこの操作は取り消せません。本当によろしいですか？"
+        )
+        
+        if result:
+            # 二重確認
+            result2 = messagebox.askyesno(
+                "⚠️ 最終確認", 
+                "本当に全ての記憶を削除しますか？\n\nせつながあなたについて学んだことが全て失われます。"
+            )
+            
+            if result2:
+                self.setsuna_chat.clear_all_memory()
+                self.refresh_facts_list()
+                # システムメッセージは表示しない（コンソールログのみ）
+                print("✅ 全記憶クリア完了")
+    
+    def add_manual_fact(self):
+        """手動で事実を追加"""
+        if not self.setsuna_chat:
+            messagebox.showerror("エラー", "チャットシステムが初期化されていません")
+            return
+        
+        category = self.category_var.get()
+        content = self.content_entry.get().strip()
+        
+        if not content:
+            messagebox.showwarning("警告", "内容を入力してください")
+            self.content_entry.focus()
+            return
+        
+        # 手動追加実行
+        success = self.setsuna_chat.add_manual_memory(category, content)
+        
+        if success:
+            # 成功時の処理
+            self.content_entry.delete(0, tk.END)  # 入力フィールドをクリア
+            self.refresh_facts_list()  # リストを更新
+            # システムメッセージは表示しない（コンソールログのみ）
+            print(f"✅ 手動記憶追加成功: {category} - {content}")
+        else:
+            # 失敗時（重複など）
+            messagebox.showinfo("情報", f"この事実は既に記憶されています：\n{content}")
+            print(f"⚠️ 重複する記憶: {category} - {content}")
+    
+    # プロジェクト管理機能
+    def refresh_projects_list(self):
+        """プロジェクトリストを更新"""
+        if not self.setsuna_chat:
+            return
+        
+        try:
+            # プロジェクトリストをクリア
+            self.projects_listbox.delete(0, tk.END)
+            self.ideas_listbox.delete(0, tk.END)
+            
+            # 進行中プロジェクトを取得・表示
+            active_projects = self.setsuna_chat.get_active_projects()
+            for project in active_projects:
+                status = project.get('status', '未設定')
+                progress = project.get('progress', 0)
+                next_step = project.get('next_steps', ['未設定'])[0] if project.get('next_steps') else '未設定'
+                
+                display_text = f"{project['title']} ({project['type']}) - {status} {progress}%"
+                self.projects_listbox.insert(tk.END, display_text)
+            
+            # アイデアストックを取得・表示
+            idea_stock = self.setsuna_chat.get_idea_stock()
+            for idea in idea_stock:
+                category = idea.get('category', '未設定')
+                content = idea.get('content', '')[:40]
+                
+                display_text = f"[{category}] {content}..."
+                self.ideas_listbox.insert(tk.END, display_text)
+            
+            # 統計情報を更新
+            stats = self.setsuna_chat.get_project_stats()
+            stats_text = f"""進行中: {stats.get('active_projects', 0)}件
+アイデア: {stats.get('idea_stock', 0)}件
+完了済み: {stats.get('completed_projects', 0)}件
+総プロジェクト: {stats.get('total_projects', 0)}件"""
+            
+            if hasattr(self, 'project_stats_label'):
+                self.project_stats_label.config(text=stats_text)
+            
+            print(f"🔄 プロジェクトリスト更新: 進行中{len(active_projects)}件, アイデア{len(idea_stock)}件")
+            
+        except Exception as e:
+            print(f"❌ プロジェクトリスト更新エラー: {e}")
+    
+    def create_new_project(self):
+        """新しいプロジェクトを作成"""
+        title = self.project_title_entry.get().strip()
+        project_type = self.project_type_var.get()
+        
+        if not title:
+            messagebox.showwarning("警告", "プロジェクト名を入力してください")
+            self.project_title_entry.focus()
+            return
+        
+        # プロジェクト作成
+        project = self.setsuna_chat.create_project(title, "", None, project_type)
+        
+        if project:
+            self.project_title_entry.delete(0, tk.END)
+            self.refresh_projects_list()
+            # システムメッセージは表示しない（コンソールログのみ）
+            print(f"✅ プロジェクト作成成功: {title}")
+        else:
+            messagebox.showerror("エラー", "プロジェクトの作成に失敗しました")
+    
+    def create_new_idea(self):
+        """新しいアイデアを追加"""
+        content = self.idea_content_entry.get().strip()
+        category = self.idea_category_var.get()
+        
+        if not content:
+            messagebox.showwarning("警告", "アイデア内容を入力してください")
+            self.idea_content_entry.focus()
+            return
+        
+        # アイデア追加
+        success = self.setsuna_chat.add_idea(content, category, "手動追加")
+        
+        if success:
+            self.idea_content_entry.delete(0, tk.END)
+            self.refresh_projects_list()
+            # システムメッセージは表示しない（コンソールログのみ）
+            print(f"✅ アイデア追加成功: {content}")
+        else:
+            messagebox.showerror("エラー", "アイデアの追加に失敗しました")
+    
+    def delete_selected_project(self):
+        """選択されたプロジェクトを削除"""
+        selection = self.projects_listbox.curselection()
+        if not selection:
+            messagebox.showwarning("警告", "削除するプロジェクトを選択してください")
+            return
+        
+        project_index = selection[0]
+        active_projects = self.setsuna_chat.get_active_projects()
+        
+        if project_index < len(active_projects):
+            project = active_projects[project_index]
+            
+            # 確認ダイアログ
+            result = messagebox.askyesno(
+                "確認", 
+                f"以下のプロジェクトを削除しますか？\n\n{project['title']} ({project['type']})"
+            )
+            
+            if result:
+                success = self.setsuna_chat.delete_project(project['id'])
+                if success:
+                    self.refresh_projects_list()
+                    # システムメッセージは表示しない（コンソールログのみ）
+                    print(f"✅ プロジェクト削除成功: {project['title']}")
+                else:
+                    messagebox.showerror("エラー", "プロジェクトの削除に失敗しました")
+    
+    def delete_selected_idea(self):
+        """選択されたアイデアを削除"""
+        selection = self.ideas_listbox.curselection()
+        if not selection:
+            messagebox.showwarning("警告", "削除するアイデアを選択してください")
+            return
+        
+        idea_index = selection[0]
+        idea_stock = self.setsuna_chat.get_idea_stock()
+        
+        if idea_index < len(idea_stock):
+            idea = idea_stock[idea_index]
+            content = idea.get('content', '')[:50]
+            
+            # 確認ダイアログ
+            result = messagebox.askyesno(
+                "確認", 
+                f"以下のアイデアを削除しますか？\n\n{content}..."
+            )
+            
+            if result:
+                success = self.setsuna_chat.delete_idea(idea['id'])
+                if success:
+                    self.refresh_projects_list()
+                    # システムメッセージは表示しない（コンソールログのみ）
+                    print(f"✅ アイデア削除成功: {content}...")
+                else:
+                    messagebox.showerror("エラー", "アイデアの削除に失敗しました")
+    
     
     def run(self):
         """GUI実行"""
@@ -470,10 +1049,10 @@ class SetsunaGUI:
         """アプリケーション終了処理"""
         print("👋 アプリケーション終了中...")
         
-        # キャッシュ保存
+        # 全データ保存
         if self.setsuna_chat:
-            self.setsuna_chat.save_cache()
-            print("✅ キャッシュ保存完了")
+            self.setsuna_chat.save_all_data()
+            print("✅ 全データ保存完了")
         
         # ホットキーリスナー停止
         if self.hotkey_listener:
@@ -493,13 +1072,9 @@ if __name__ == "__main__":
     
     gui = SetsunaGUI()
     
-    # テスト用メッセージ（システム初期化後）
-    def show_instructions():
-        gui.add_message_to_history("システム", "🎉 統合音声・テキスト対話システム起動完了！", "text")
-        gui.add_message_to_history("システム", "📝 テキスト入力: このフィールドで入力・送信", "text")
-        gui.add_message_to_history("システム", "🎤 音声入力: Ctrl+Shift+Alt を押しながら話す", "text")
-        gui.add_message_to_history("システム", "両方の入力が統合され、せつなが応答します！", "text")
-    
-    gui.root.after(2000, show_instructions)
+    # システム起動完了（システムメッセージは表示しない）
+    print("🎉 統合音声・テキスト対話システム起動完了！")
+    print("📝 テキスト入力: テキストフィールドで入力・送信")
+    print("🎤 音声入力: Ctrl+Shift+Alt を押しながら話す")
     
     gui.run()

@@ -14,6 +14,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from cache_system import ResponseCache
 from memory_system import SimpleMemorySystem
+from project_system import ProjectSystem
 
 class SetsunaChat:
     def __init__(self):
@@ -53,6 +54,14 @@ class SetsunaChat:
         except Exception as e:
             print(f"[チャット] ⚠️ 記憶システム初期化失敗: {e}")
             self.memory_system = None
+        
+        # プロジェクト管理システム初期化
+        try:
+            self.project_system = ProjectSystem()
+            print("[チャット] ✅ プロジェクト管理システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ プロジェクト管理システム初期化失敗: {e}")
+            self.project_system = None
         
         print("[チャット] ✅ せつなチャットシステム初期化完了")
     
@@ -182,6 +191,12 @@ class SetsunaChat:
                 if memory_context:
                     system_prompt += f"\n\n【記憶・経験】\n{memory_context}"
             
+            # プロジェクトコンテキストを追加
+            if self.project_system:
+                project_context = self.project_system.get_project_context()
+                if project_context:
+                    system_prompt += f"\n\n【創作プロジェクト】\n{project_context}"
+            
             if context_info:
                 system_prompt += f"\n\n【現在の会話コンテキスト】\n{context_info}"
             
@@ -223,6 +238,10 @@ class SetsunaChat:
             # 記憶システムに会話を記録
             if self.memory_system:
                 self.memory_system.process_conversation(user_input, setsuna_response)
+            
+            # プロジェクト関連会話を分析
+            if self.project_system:
+                self.project_system.analyze_conversation_for_projects(user_input, setsuna_response)
             
             return setsuna_response
             
@@ -302,6 +321,12 @@ class SetsunaChat:
         if self.memory_system:
             self.memory_system.save_memory()
     
+    def save_all_data(self):
+        """全データを保存"""
+        self.save_cache()
+        self.save_memory()
+        self.save_projects()
+    
     def get_cache_stats(self):
         """キャッシュ統計情報取得"""
         if self.response_cache:
@@ -313,6 +338,121 @@ class SetsunaChat:
         if self.memory_system:
             return self.memory_system.get_memory_stats()
         return {"message": "記憶システムが無効です"}
+    
+    def get_learned_facts(self):
+        """学習した事実のリストを取得"""
+        if self.memory_system:
+            return self.memory_system.get_learned_facts_list()
+        return []
+    
+    def delete_memory_fact(self, fact_index: int) -> bool:
+        """記憶事実を削除"""
+        if self.memory_system:
+            success = self.memory_system.delete_learned_fact(fact_index)
+            if success:
+                self.memory_system.save_memory()  # 即座に保存
+            return success
+        return False
+    
+    def edit_memory_fact(self, fact_index: int, new_content: str) -> bool:
+        """記憶事実を編集"""
+        if self.memory_system:
+            success = self.memory_system.edit_learned_fact(fact_index, new_content)
+            if success:
+                self.memory_system.save_memory()  # 即座に保存
+            return success
+        return False
+    
+    def clear_session_memory(self):
+        """セッション記憶をクリア"""
+        if self.memory_system:
+            self.memory_system.clear_session_memory()
+    
+    def clear_all_memory(self):
+        """全記憶をクリア"""
+        if self.memory_system:
+            self.memory_system.clear_all_learned_facts()
+            self.memory_system.clear_session_memory()
+            self.memory_system.save_memory()
+            print("🗑️ 全記憶をクリアしました")
+    
+    def add_manual_memory(self, category: str, content: str) -> bool:
+        """手動で記憶を追加"""
+        if self.memory_system:
+            success = self.memory_system.add_manual_fact(category, content)
+            if success:
+                self.memory_system.save_memory()  # 即座に保存
+            return success
+        return False
+    
+    # プロジェクト管理メソッド
+    def get_active_projects(self):
+        """進行中プロジェクト一覧を取得"""
+        if self.project_system:
+            return self.project_system.get_active_projects()
+        return []
+    
+    def get_idea_stock(self):
+        """アイデアストック一覧を取得"""
+        if self.project_system:
+            return self.project_system.get_idea_stock()
+        return []
+    
+    def get_completed_projects(self):
+        """完了プロジェクト一覧を取得"""
+        if self.project_system:
+            return self.project_system.get_completed_projects()
+        return []
+    
+    def create_project(self, title: str, description: str, deadline: str = None, project_type: str = "動画"):
+        """新しいプロジェクトを作成"""
+        if self.project_system:
+            return self.project_system.create_project(title, description, deadline, project_type)
+        return {}
+    
+    def update_project_progress(self, project_id: str, progress: int, status: str = None, next_step: str = None):
+        """プロジェクト進捗を更新"""
+        if self.project_system:
+            success = self.project_system.update_project_progress(project_id, progress, status, next_step)
+            if success:
+                self.project_system.save_project_data()
+            return success
+        return False
+    
+    def complete_project(self, project_id: str, outcome: str = "", lessons: str = ""):
+        """プロジェクトを完了"""
+        if self.project_system:
+            return self.project_system.complete_project(project_id, outcome, lessons)
+        return False
+    
+    def add_idea(self, content: str, category: str = "動画", source: str = "雑談"):
+        """アイデアをストックに追加"""
+        if self.project_system:
+            return self.project_system.add_idea(content, category, source)
+        return False
+    
+    def delete_project(self, project_id: str):
+        """プロジェクトを削除"""
+        if self.project_system:
+            return self.project_system.delete_project(project_id)
+        return False
+    
+    def delete_idea(self, idea_id: str):
+        """アイデアを削除"""
+        if self.project_system:
+            return self.project_system.delete_idea(idea_id)
+        return False
+    
+    def get_project_stats(self):
+        """プロジェクト統計情報を取得"""
+        if self.project_system:
+            return self.project_system.get_project_stats()
+        return {"message": "プロジェクトシステムが無効です"}
+    
+    def save_projects(self):
+        """プロジェクトデータを保存"""
+        if self.project_system:
+            self.project_system.save_project_data()
 
 # 簡単な使用例とテスト
 if __name__ == "__main__":

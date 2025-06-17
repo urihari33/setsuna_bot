@@ -172,6 +172,64 @@ class SimpleMemorySystem:
             "session_start": datetime.now().isoformat()
         }
         print("🗑️ セッション記憶をクリアしました")
+    
+    def get_learned_facts_list(self) -> List[Dict]:
+        """学習した事実のリストを取得（編集用）"""
+        return self.persistent_memory.get("learned_facts", [])
+    
+    def delete_learned_fact(self, fact_index: int) -> bool:
+        """指定インデックスの学習事実を削除"""
+        try:
+            if 0 <= fact_index < len(self.persistent_memory["learned_facts"]):
+                deleted_fact = self.persistent_memory["learned_facts"].pop(fact_index)
+                print(f"🗑️ 事実を削除: {deleted_fact['category']} - {deleted_fact['content'][:30]}...")
+                return True
+            return False
+        except Exception as e:
+            print(f"❌ 事実削除エラー: {e}")
+            return False
+    
+    def edit_learned_fact(self, fact_index: int, new_content: str) -> bool:
+        """指定インデックスの学習事実を編集"""
+        try:
+            if 0 <= fact_index < len(self.persistent_memory["learned_facts"]):
+                old_fact = self.persistent_memory["learned_facts"][fact_index]
+                old_fact["content"] = new_content
+                old_fact["timestamp"] = datetime.now().isoformat()
+                print(f"✏️ 事実を編集: {old_fact['category']} - {new_content[:30]}...")
+                return True
+            return False
+        except Exception as e:
+            print(f"❌ 事実編集エラー: {e}")
+            return False
+    
+    def clear_all_learned_facts(self):
+        """全ての学習事実をクリア"""
+        count = len(self.persistent_memory["learned_facts"])
+        self.persistent_memory["learned_facts"] = []
+        print(f"🗑️ 全ての学習事実をクリア: {count}件削除")
+    
+    def add_manual_fact(self, category: str, content: str) -> bool:
+        """手動で事実を追加"""
+        try:
+            fact = {
+                "category": category,
+                "content": content,
+                "timestamp": datetime.now().isoformat(),
+                "confidence": 1.0,  # 手動追加は信頼度100%
+                "manual": True
+            }
+            
+            if not self._is_duplicate_fact(fact):
+                self.persistent_memory["learned_facts"].append(fact)
+                print(f"➕ 手動で事実を追加: {category} - {content[:30]}...")
+                return True
+            else:
+                print(f"⚠️ 重複する事実: {category} - {content[:30]}...")
+                return False
+        except Exception as e:
+            print(f"❌ 手動事実追加エラー: {e}")
+            return False
 
 # テスト用
 if __name__ == "__main__":
@@ -201,6 +259,28 @@ if __name__ == "__main__":
     stats = memory.get_memory_stats()
     print(f"\n📊 記憶統計:")
     for key, value in stats.items():
+        print(f"   - {key}: {value}")
+    
+    # 手動追加テスト
+    print(f"\n🔧 手動追加テスト:")
+    manual_facts = [
+        ("好み", "コーヒーが好き"),
+        ("特徴", "早起きが得意"),
+        ("好み", "コーヒーが好き"),  # 重複テスト
+    ]
+    
+    for category, content in manual_facts:
+        print(f"\n🔧 手動追加: {category} - {content}")
+        success = memory.add_manual_fact(category, content)
+        if success:
+            print("  ✅ 追加成功")
+        else:
+            print("  ⚠️ 追加失敗（重複）")
+    
+    # 最終統計
+    final_stats = memory.get_memory_stats()
+    print(f"\n📊 最終統計:")
+    for key, value in final_stats.items():
         print(f"   - {key}: {value}")
     
     # 記憶保存

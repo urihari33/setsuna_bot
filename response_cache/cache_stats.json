@@ -1,6 +1,6 @@
 {
-  "hits": 4,
-  "misses": 8,
-  "total_requests": 12,
-  "cache_size": 8
+  "hits": 9,
+  "misses": 12,
+  "total_requests": 21,
+  "cache_size": 12
 }
