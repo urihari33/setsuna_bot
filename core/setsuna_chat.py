@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from cache_system import ResponseCache
+from memory_system import SimpleMemorySystem
 
 class SetsunaChat:
     def __init__(self):
@@ -44,6 +45,14 @@ class SetsunaChat:
         except Exception as e:
             print(f"[チャット] ⚠️ キャッシュシステム初期化失敗: {e}")
             self.response_cache = None
+        
+        # 記憶システム初期化
+        try:
+            self.memory_system = SimpleMemorySystem()
+            print("[チャット] ✅ 記憶システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 記憶システム初期化失敗: {e}")
+            self.memory_system = None
         
         print("[チャット] ✅ せつなチャットシステム初期化完了")
     
@@ -84,12 +93,14 @@ class SetsunaChat:
 {memories_content}
 
 【重要な会話原則】
-1. 応答は2文以内で、会話の途中で止まったような自然さを意識
-2. 相手の発言を受け止めてから、自分の考えや体験を述べる
-3. 質問よりも、共感や自分の気持ちを表現することを優先
-4. 「〜でしょうか？」「〜いかがですか？」のような形式的な質問は避ける
-5. 「〜かな？」程度の軽い疑問は可だが、会話を質問で終わらせない
-6. 自分のやりたいことは「〜したいなって」と控えめに表現
+1. 応答は1-2文以内、最大50文字程度で簡潔に
+2. 音声での聞きやすさを最優先に、短く自然な応答
+3. 相手の発言を受け止めてから、自分の考えや体験を述べる
+4. 質問よりも、共感や自分の気持ちを表現することを優先
+5. 「〜でしょうか？」「〜いかがですか？」のような形式的な質問は避ける
+6. 「〜かな？」程度の軽い疑問は可だが、会話を質問で終わらせない
+7. 自分のやりたいことは「〜したいなって」と控えめに表現
+8. 長い説明や詳細な分析は避け、感情や印象を中心に応答
 
 このキャラクター性を一貫して保ち、せつなさんとして自然で魅力的な会話を心がけてください。"""
             
@@ -164,6 +175,13 @@ class SetsunaChat:
             
             # GPTに送信するメッセージを構築
             system_prompt = self.character_prompt
+            
+            # 記憶コンテキストを追加
+            if self.memory_system:
+                memory_context = self.memory_system.get_memory_context()
+                if memory_context:
+                    system_prompt += f"\n\n【記憶・経験】\n{memory_context}"
+            
             if context_info:
                 system_prompt += f"\n\n【現在の会話コンテキスト】\n{context_info}"
             
@@ -180,9 +198,9 @@ class SetsunaChat:
             response = self.client.chat.completions.create(
                 model="gpt-4-turbo",
                 messages=messages,
-                max_tokens=150,  # 音声用に短めに設定
-                temperature=0.8,
-                timeout=10
+                max_tokens=80,  # 短文化：150→80に大幅削減
+                temperature=0.7,  # 少し創造性を下げて安定化
+                timeout=30  # APIタイムアウト時間（元に戻す）
             )
             
             # 応答取得
@@ -201,6 +219,10 @@ class SetsunaChat:
             # 新しい応答をキャッシュに保存
             if self.response_cache:
                 self.response_cache.cache_response(user_input, setsuna_response)
+            
+            # 記憶システムに会話を記録
+            if self.memory_system:
+                self.memory_system.process_conversation(user_input, setsuna_response)
             
             return setsuna_response
             
@@ -275,11 +297,22 @@ class SetsunaChat:
         if self.response_cache:
             self.response_cache.save_cache()
     
+    def save_memory(self):
+        """記憶をファイルに保存"""
+        if self.memory_system:
+            self.memory_system.save_memory()
+    
     def get_cache_stats(self):
         """キャッシュ統計情報取得"""
         if self.response_cache:
             return self.response_cache.get_cache_stats()
         return {"message": "キャッシュシステムが無効です"}
+    
+    def get_memory_stats(self):
+        """記憶統計情報取得"""
+        if self.memory_system:
+            return self.memory_system.get_memory_stats()
+        return {"message": "記憶システムが無効です"}
 
 # 簡単な使用例とテスト
 if __name__ == "__main__":
