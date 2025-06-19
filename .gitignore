@@ -56,3 +56,7 @@ youtube_token.json
 # データベースバックアップ（大容量）
 **/backups/
 **/config_backups/
+
+# YouTube OAuth トークン（セキュリティ除外）
+config/youtube_token.json
+youtube_token.json
