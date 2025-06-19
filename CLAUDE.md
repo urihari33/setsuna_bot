@@ -104,6 +104,32 @@ The voice chat application maintains conversation history through the SetsunaCha
 - コマンドライン実行手順の詳細提示
 - 仮想環境のアクティベーション方法の説明
 
+## ファイルパス設定の重要な注意事項
+
+**Windows環境でのパス設定**: この環境はWSL2上で動作しているが、実際のファイル保存・読み込みはWindows側で行う必要がある。そのため、Pythonファイル内でのパス指定では以下の規則を厳守すること：
+
+### 正しいパス設定
+```python
+# 正しい：Windows環境での実際のパス
+DATA_DIR = Path("D:/setsuna_bot/youtube_knowledge_system/data")
+output_path = Path("D:/setsuna_bot/output/result.json")
+```
+
+### 間違ったパス設定
+```python
+# 間違い：WSL2のマウントパス（ファイル保存に失敗する）
+DATA_DIR = Path("/mnt/d/setsuna_bot/youtube_knowledge_system/data")
+output_path = Path("/mnt/d/setsuna_bot/output/result.json")
+```
+
+### 適用対象
+- すべてのデータ保存処理
+- 設定ファイルの読み込み
+- ログファイルの出力
+- 一時ファイルの作成
+
+この規則に従わない場合、ファイルの保存・読み込みが失敗し、機能が正常に動作しない。
+
 ## 重要な実行環境に関する注意事項
 
 ### 実行環境

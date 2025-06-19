@@ -1,0 +1,37 @@
+{
+  "configs": {
+    "PL4R2l8ETuvxueMZJo63H8ykV_OY0LuzfX": {
+      "playlist_id": "PL4R2l8ETuvxueMZJo63H8ykV_OY0LuzfX",
+      "display_name": "MV",
+      "url": "https://www.youtube.com/playlist?list=PL4R2l8ETuvxueMZJo63H8ykV_OY0LuzfX",
+      "update_frequency": "manual",
+      "priority": 3,
+      "enabled": true,
+      "category": "other",
+      "auto_analyze": true,
+      "max_videos": null,
+      "description": "",
+      "tags": [],
+      "created_at": "2025-06-19T22:32:05.466672",
+      "last_updated": "2025-06-20T01:57:19.269958"
+    },
+    "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": {
+      "playlist_id": "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp",
+      "display_name": "お手伝いした動画リスト",
+      "url": "https://www.youtube.com/watch?v=ILvbrEtUw7A&list=PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp",
+      "update_frequency": "manual",
+      "priority": 3,
+      "enabled": true,
+      "category": "other",
+      "auto_analyze": true,
+      "max_videos": null,
+      "description": "",
+      "tags": [],
+      "created_at": "2025-06-20T01:33:23.162622",
+      "last_updated": "2025-06-20T01:33:23.162622"
+    }
+  },
+  "last_updated": "2025-06-20T01:57:19.269958",
+  "total_playlists": 2,
+  "database_version": "1.0"
+}
