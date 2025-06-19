@@ -45,3 +45,14 @@ config.json
 token.txt
 *.key
 secrets/
+config
+
+# YouTube OAuth認証情報
+config/youtube_credentials.json
+config/youtube_token.json
+youtube_credentials.json
+youtube_token.json
+
+# データベースバックアップ（大容量）
+**/backups/
+**/config_backups/

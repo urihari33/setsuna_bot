@@ -39,7 +39,8 @@
       "Bash(# テスト用ファイルをバックアップに移動\nmv test_*.py backup_20250615_225359_cleanup/ 2>/dev/null || true\nmv test_*.bat backup_20250615_225359_cleanup/ 2>/dev/null || true)",
       "Bash(# coreディレクトリの不要ファイルも整理\nmv core/setsuna_gui*.py backup_20250615_225359_cleanup/\nmv core/voice_conversation.py backup_20250615_225359_cleanup/\nmv core/voice_input_*.py backup_20250615_225359_cleanup/\nmv core/hotkey_listener.py backup_20250615_225359_cleanup/)",
       "Bash(# web関連ファイルをバックアップに移動\nmv templates backup_20250615_225359_cleanup/\nmv ssl backup_20250615_225359_cleanup/)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }
