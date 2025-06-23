@@ -12,7 +12,8 @@ from pathlib import Path
 # パス設定
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
-from managers.playlist_manager import PlaylistManager
+from storage.unified_storage import UnifiedStorage
+from config.settings import DATA_DIR
 
 
 class StatusPanel(ttk.Frame):
@@ -20,7 +21,7 @@ class StatusPanel(ttk.Frame):
     
     def __init__(self, parent, **kwargs):
         super().__init__(parent, **kwargs)
-        self.playlist_manager = PlaylistManager()
+        self.storage = UnifiedStorage(DATA_DIR)
         
         # ウィジェット作成
         self.create_widgets()
@@ -101,87 +102,82 @@ class StatusPanel(ttk.Frame):
     def update_status(self):
         """状況を更新"""
         try:
-            # プレイリスト状況取得
-            status = self.playlist_manager.get_playlist_status()
+            # データベースの再読み込みを強制
+            self.storage._database = None
             
-            if 'error' in status:
-                self.stats_label.config(text=f"❌ エラー: {status['error']}")
-                return
+            # 統計情報取得
+            stats = self.storage.get_statistics()
             
             # 統計情報更新
-            db_stats = status['database_stats']
-            config_stats = status['config_stats']
-            
             stats_text = (
-                f"📊 プレイリスト: {config_stats['total_playlists']}件 | "
-                f"動画: {db_stats['total_videos']}件 | "
-                f"分析済み: {db_stats['total_analyzed']}件"
+                f"📊 プレイリスト: {stats['total_playlists']}件 | "
+                f"動画: {stats['total_videos']}件 | "
+                f"分析済み: {stats['analyzed_videos']}件"
             )
             self.stats_label.config(text=stats_text)
             
             # 進捗バー更新
-            if db_stats['total_videos'] > 0:
-                analysis_percentage = (db_stats['total_analyzed'] / db_stats['total_videos']) * 100
+            if stats['total_videos'] > 0:
+                analysis_percentage = stats['analysis_success_rate'] * 100
                 self.progress_var.set(analysis_percentage)
                 self.progress_label.config(
-                    text=f"{db_stats['total_analyzed']}/{db_stats['total_videos']} ({analysis_percentage:.1f}%)"
+                    text=f"{stats['analyzed_videos']}/{stats['total_videos']} ({analysis_percentage:.1f}%)"
                 )
             else:
                 self.progress_var.set(0)
                 self.progress_label.config(text="0/0 (0%)")
             
             # 詳細情報更新
-            self.update_details(status)
+            self.update_details(stats)
+            
+            print(f"📊 ステータス更新完了: 動画{stats['total_videos']}件, プレイリスト{stats['total_playlists']}件")
             
         except Exception as e:
-            self.stats_label.config(text=f"❌ 状況取得エラー: {e}")
+            error_message = f"❌ 状況取得エラー: {e}"
+            self.stats_label.config(text=error_message)
+            print(error_message)
     
-    def update_details(self, status):
+    def update_details(self, stats):
         """詳細情報を更新"""
         details = []
         
         # プレイリスト別情報
-        playlist_details = status.get('playlist_details', [])
+        playlists = stats.get('playlists', {})
         
-        if playlist_details:
+        if playlists:
             details.append("📋 プレイリスト詳細:")
-            for detail in playlist_details:
-                enabled_icon = "✅" if detail['enabled'] else "❌"
-                db_icon = "📁" if detail['in_database'] else "🆕"
-                
+            for playlist_id, playlist_info in playlists.items():
                 line = (
-                    f"{enabled_icon}{db_icon} {detail['display_name']} "
-                    f"({detail['category']}) - "
-                    f"{detail['total_videos']}動画, "
-                    f"{detail['analyzed_videos']}分析済み "
-                    f"({detail['analysis_rate']:.1%})"
+                    f"📁 {playlist_info['title']} - "
+                    f"{playlist_info['total_videos']}動画, "
+                    f"{playlist_info['analyzed_videos']}分析済み "
+                    f"({playlist_info['analysis_rate']:.1%})"
                 )
                 details.append(line)
-                
-                if detail['last_sync']:
-                    details.append(f"    最終同期: {detail['last_sync']}")
-                else:
-                    details.append(f"    最終同期: 未実行")
+                details.append(f"    最終同期: {playlist_info['last_sync']}")
                 details.append("")  # 空行
         else:
             details.append("プレイリストが登録されていません")
         
-        # カテゴリ別統計
-        config_stats = status.get('config_stats', {})
-        category_stats = config_stats.get('category_stats', {})
-        
-        if category_stats:
-            details.append("📊 カテゴリ別統計:")
-            for category, count in category_stats.items():
-                details.append(f"  {category}: {count}件")
+        # クリエイター統計
+        total_creators = stats.get('total_creators', 0)
+        if total_creators > 0:
+            details.append(f"👥 クリエイター: {total_creators}名")
             details.append("")
         
-        # 更新頻度別統計
-        frequency_stats = config_stats.get('frequency_stats', {})
-        if frequency_stats:
-            details.append("⏰ 更新頻度別統計:")
-            for frequency, count in frequency_stats.items():
-                details.append(f"  {frequency}: {count}件")
+        # タグ・テーマ統計
+        total_tags = stats.get('total_tags', 0)
+        total_themes = stats.get('total_themes', 0)
+        if total_tags > 0 or total_themes > 0:
+            details.append(f"🏷️ タグ: {total_tags}件")
+            details.append(f"🎨 テーマ: {total_themes}件")
+            details.append("")
+        
+        # データベース情報
+        last_updated = stats.get('last_updated', 'N/A')
+        database_version = stats.get('database_version', 'N/A')
+        details.append(f"💾 データベースバージョン: {database_version}")
+        details.append(f"🕒 最終更新: {last_updated}")
         
         # テキスト更新
         self.details_text.config(state='normal')

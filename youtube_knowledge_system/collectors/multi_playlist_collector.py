@@ -300,6 +300,98 @@ class MultiPlaylistCollector:
         print(f"  ✅ 詳細取得完了: 成功 {len(video_details)}件, 失敗 {len(failed_ids)}件")
         return video_details, failed_ids
     
+    def process_playlist_by_id(self, playlist_id: str, display_name: str = "") -> Tuple[bool, str, Dict[str, Any]]:
+        """プレイリストIDを直接指定して処理（設定管理なし）
+        
+        Args:
+            playlist_id: プレイリストID
+            display_name: 表示名（オプション）
+        
+        Returns:
+            (成功フラグ, メッセージ, 処理結果)
+        """
+        if not display_name:
+            display_name = f"プレイリスト_{playlist_id[:8]}"
+        
+        result = {
+            'playlist_id': playlist_id,
+            'display_name': display_name,
+            'videos_found': 0,
+            'new_videos': 0,
+            'updated_videos': 0,
+            'errors': []
+        }
+        
+        try:
+            print(f"\n🔄 プレイリスト処理開始: {display_name}")
+            print(f"   ID: {playlist_id}")
+            
+            # プレイリストアクセス検証
+            accessible, verify_msg, playlist_info = self.verify_playlist_access(playlist_id)
+            if not accessible:
+                error_msg = f"アクセス検証失敗: {verify_msg}"
+                result['errors'].append(error_msg)
+                return False, error_msg, result
+            
+            print(f"   ✅ {verify_msg}")
+            
+            # 動画ID収集
+            success, video_ids, collect_msg = self.collect_playlist_videos(playlist_id)
+            
+            if not success:
+                result['errors'].append(collect_msg)
+                return False, collect_msg, result
+            
+            result['videos_found'] = len(video_ids)
+            self.stats['total_videos_found'] += len(video_ids)
+            
+            # 新規動画の特定
+            db = self.storage.load_database()
+            existing_playlist = db.playlists.get(playlist_id)
+            
+            if existing_playlist:
+                existing_video_ids = set(existing_playlist.video_ids)
+                new_video_ids = [vid for vid in video_ids if vid not in existing_video_ids]
+            else:
+                new_video_ids = video_ids
+                existing_video_ids = set()
+            
+            result['new_videos'] = len(new_video_ids)
+            
+            print(f"   📊 既存: {len(existing_video_ids)}件, 新規: {len(new_video_ids)}件")
+            
+            if new_video_ids:
+                # 新規動画の詳細取得
+                video_details, failed_ids = self.collect_video_details(new_video_ids)
+                
+                if failed_ids:
+                    result['errors'].append(f"動画詳細取得失敗: {len(failed_ids)}件")
+                
+                # データベースに追加（設定なし版）
+                added_count = self._add_videos_to_database_simple(
+                    video_details, 
+                    playlist_id
+                )
+                
+                result['updated_videos'] = added_count
+                self.stats['new_videos_added'] += added_count
+                
+                print(f"   ✅ 新規動画追加: {added_count}件")
+            
+            # プレイリスト情報更新（設定なし版）
+            self._update_playlist_metadata_simple(playlist_id, playlist_info, video_ids, display_name)
+            
+            # データベース保存
+            self.storage.save_database()
+            
+            return True, f"処理完了: 新規 {result['new_videos']}件", result
+            
+        except Exception as e:
+            error_msg = f"プレイリスト処理エラー: {e}"
+            result['errors'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            return False, error_msg, result
+    
     def process_single_playlist(self, config: PlaylistConfig) -> Tuple[bool, str, Dict[str, Any]]:
         """単一プレイリストの処理
         
@@ -452,6 +544,125 @@ class MultiPlaylistCollector:
                 print(f"      ❌ 動画追加エラー ({video_data['id']}): {e}")
         
         return added_count
+    
+    def _add_videos_to_database_simple(
+        self, 
+        video_details: List[Dict[str, Any]], 
+        playlist_id: str
+    ) -> int:
+        """動画をデータベースに追加（設定なし版）"""
+        added_count = 0
+        
+        for video_data in video_details:
+            try:
+                # VideoMetadata作成
+                metadata = VideoMetadata(
+                    id=video_data['id'],
+                    title=video_data['title'],
+                    description=video_data['description'],
+                    published_at=datetime.fromisoformat(video_data['published_at'].replace('Z', '+00:00')),
+                    channel_title=video_data['channel_title'],
+                    channel_id=video_data['channel_id'],
+                    duration=video_data['duration'],
+                    view_count=video_data['view_count'],
+                    like_count=video_data['like_count'],
+                    comment_count=video_data['comment_count'],
+                    tags=video_data['tags'],
+                    category_id=video_data['category_id'],
+                    collected_at=datetime.fromisoformat(video_data['collected_at'])
+                )
+                
+                # 既存動画の確認・更新
+                db = self.storage.load_database()
+                existing_video = db.videos.get(video_data['id'])
+                
+                if existing_video:
+                    # 既存動画のプレイリスト追加
+                    if playlist_id not in existing_video.playlists:
+                        existing_video.playlists.append(playlist_id)
+                        existing_video.playlist_positions[playlist_id] = len(existing_video.playlists) - 1
+                        existing_video.updated_at = datetime.now()
+                        self.storage.add_video(existing_video)
+                        added_count += 1
+                else:
+                    # 新規動画作成（分析は手動で実行）
+                    video = Video(
+                        source=ContentSource.YOUTUBE,
+                        metadata=metadata,
+                        playlists=[playlist_id],
+                        playlist_positions={playlist_id: 0},
+                        analysis_status=AnalysisStatus.PENDING,
+                        creative_insight=None,
+                        analysis_error=None,
+                        created_at=datetime.now(),
+                        updated_at=datetime.now()
+                    )
+                    
+                    self.storage.add_video(video)
+                    added_count += 1
+                
+            except Exception as e:
+                print(f"      ❌ 動画追加エラー ({video_data['id']}): {e}")
+        
+        return added_count
+    
+    def _update_playlist_metadata_simple(
+        self, 
+        playlist_id: str, 
+        playlist_info: Dict[str, Any], 
+        video_ids: List[str],
+        display_name: str
+    ):
+        """プレイリストメタデータを更新（設定なし版）"""
+        try:
+            # プレイリストメタデータ作成
+            metadata = PlaylistMetadata(
+                id=playlist_id,
+                title=playlist_info.get('title', display_name),
+                description=playlist_info.get('description', ''),
+                channel_title=playlist_info.get('channel_title', ''),
+                channel_id=playlist_info.get('channel_id', ''),
+                published_at=datetime.fromisoformat(playlist_info['published_at'].replace('Z', '+00:00')),
+                item_count=playlist_info['item_count'],
+                collected_at=datetime.now()
+            )
+            
+            # 既存プレイリストの確認
+            db = self.storage.load_database()
+            existing_playlist = db.playlists.get(playlist_id)
+            
+            if existing_playlist:
+                # 既存プレイリスト更新
+                existing_playlist.metadata = metadata
+                existing_playlist.video_ids = video_ids
+                existing_playlist.total_videos = len(video_ids)
+                existing_playlist.last_incremental_sync = datetime.now()
+                existing_playlist.updated_at = datetime.now()
+                playlist = existing_playlist
+            else:
+                # 新規プレイリスト作成
+                playlist = Playlist(
+                    source=ContentSource.YOUTUBE,
+                    metadata=metadata,
+                    video_ids=video_ids,
+                    last_full_sync=datetime.now(),
+                    last_incremental_sync=datetime.now(),
+                    sync_settings={
+                        'auto_analyze': False,  # 手動分析
+                        'update_frequency': 'manual',
+                        'priority': 3
+                    },
+                    total_videos=len(video_ids),
+                    analyzed_videos=0,
+                    analysis_success_rate=0.0,
+                    created_at=datetime.now(),
+                    updated_at=datetime.now()
+                )
+            
+            self.storage.add_playlist(playlist)
+            
+        except Exception as e:
+            print(f"      ❌ プレイリストメタデータ更新エラー: {e}")
     
     def _update_playlist_metadata(
         self, 

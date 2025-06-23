@@ -145,6 +145,54 @@ class UnifiedStorage:
         db = self.load_database()
         return list(db.theme_index.keys())
     
+    def get_all_videos(self) -> Dict[str, Video]:
+        """全動画を取得"""
+        db = self.load_database()
+        return db.videos
+    
+    def update_video_analysis(self, video_id: str, analysis_status: str, 
+                            creative_insight: Optional[str] = None, 
+                            analysis_error: Optional[str] = None) -> bool:
+        """動画の分析状況を更新"""
+        try:
+            db = self.load_database()
+            if video_id in db.videos:
+                video = db.videos[video_id]
+                
+                # 分析状況を更新
+                from core.data_models import AnalysisStatus
+                video.analysis_status = AnalysisStatus(analysis_status)
+                
+                # 分析結果を更新
+                if creative_insight:
+                    from core.data_models import CreativeInsight
+                    from datetime import datetime
+                    video.creative_insight = CreativeInsight(
+                        creators=[],
+                        music_info=None,
+                        tools_used=[],
+                        themes=[],
+                        visual_elements=[],
+                        analysis_confidence=0.8,
+                        analysis_timestamp=datetime.now(),
+                        analysis_model="GPT-4",
+                        insights=creative_insight
+                    )
+                
+                if analysis_error:
+                    video.analysis_error = analysis_error
+                
+                # 更新日時を設定
+                video.updated_at = datetime.now()
+                
+                # データベースを保存
+                self.save_database()
+                return True
+            return False
+        except Exception as e:
+            print(f"動画分析更新エラー: {e}")
+            return False
+    
     def get_statistics(self) -> Dict[str, Any]:
         """統計情報を取得"""
         db = self.load_database()

@@ -143,6 +143,7 @@ class CreativeInsight:
     analysis_confidence: float
     analysis_timestamp: datetime
     analysis_model: str  # GPT-4, etc.
+    insights: str = ""  # 分析結果テキスト
 
 
 @dataclass
