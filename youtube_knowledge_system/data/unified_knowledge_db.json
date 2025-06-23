@@ -8777,9 +8777,9 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 8
       },
-      "analysis_status": "pending",
+      "analysis_status": "failed",
       "creative_insight": null,
-      "analysis_error": null,
+      "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
       "updated_at": "2025-06-23T21:13:07.830184"
     },
@@ -8806,11 +8806,43 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 9
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:10:30.029910",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "天月",
+            "movie": "イクミ",
+            "illustration": "メレ",
+            "composer": "ryo(supercell)",
+            "arranger": "fu-rin",
+            "mix": "kain",
+            "lyricist": null
+          },
+          "lyrics": null,
+          "tools": {
+            "software": null,
+            "instruments": null
+          },
+          "music_info": {
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:10:30.029910",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:10:30.029910"
     },
     "J2r955bRQLQ": {
       "source": "youtube",
@@ -8835,11 +8867,49 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 11
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:10:34.304875",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "天月(Amatsuki), 96猫(96neko), 超学生(Chogakusei)",
+            "movie": "Ikumi",
+            "composer": "Ryo’LEFTY’Miyata",
+            "lyricist": "Ryo’LEFTY’Miyata",
+            "arranger": "Ryo’LEFTY’Miyata",
+            "mix": "kain",
+            "illustration": "Tama",
+            "costume_design": "Oyo",
+            "3D_assistant": "kurobe",
+            "director": "yamasan（kafuu）",
+            "assistant_director": "Tora（kafuu）"
+          },
+          "lyrics": null,
+          "tools": {
+            "software": null,
+            "instruments": null
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:10:34.304875",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:10:34.304875"
     },
     "PI9I-lmY5Ys": {
       "source": "youtube",
@@ -8864,11 +8934,45 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 12
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:10:50.935685",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "天月",
+            "movie": "イクミ",
+            "composer": "*Luna",
+            "lyricist": null,
+            "arranger": null,
+            "mix": "kain",
+            "illustration": "みっ君"
+          },
+          "lyrics": "振り返れば随分と長い道を歩いてきた\n遠い未来に見えたのは　いつしかここにあった\n\nただ進むこと　顔上げること\n決して簡単だったことはない\n\nほら広がるよ　繋がってくよ\n眩しい日差しも夜の闇も\n君と僕　同じように\n刻んだ確かな日々だ\n\nあぁ　この音が　聞こえるかい\nあぁ　また僕を　奪うのかい\nもう虜になってんだ\nざわつく心が　今　叫びたがってるんだ\n\nきっとこの瞬間のために　生きてきたんだろうな\n震えて　掠れて　それでも\n心が躍っていたいって　僕にそう言うんだ\nじゃあ仕方ないね　最後まで付き合ってやるからさ\n\n続けてくこと　信じ切ること\n決して簡単だったことはない\n\n捨てたくなって　取り替えたって　誰かを羨ましがったって\n結局ここに戻ってんだ　僕は僕を　偽れない\n\nほら掬うから　連れてくから\n拙い過去も先の光も\n君と僕　同じように\n刻んでく確かな日々を\n\nあぁ　この音が　聞こえるかい\nあぁ　また僕を　奪うのかい\n手放せなくなってんだ\n叫んでる心が　今　収まってくれないんだ\n\nきっとこの瞬間のために　生きてきたんだろうな\n感じて　抱いて　それでも\n心がまだ足りないって　僕にそう言うんだ\nじゃあ飽きるまで　探してみようか\n\n振り返れば随分と長い道を歩いてきた\nなんてまだ　早すぎたかな\nゴールさえ見えない程に道の途中\n僕たちは　どこへ行くんだろう\n\nあぁ　この音が　聞こえるかい\nあぁ　今そこで　泣いてるかい\nいっそ流してしまえ\nしぶとくまた世界を回し始めるんだ\n\nきっとこの瞬間のために　生きてきたんだろうな\n震えて　掠れて　それでも\n心の居場所はここに　あるって思うんだ\n僕が思うんだ　最後まで付き合ってくれるかい",
+          "tools": {
+            "software": null,
+            "instruments": null
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:10:50.935685",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:10:50.935685"
     },
     "HXOwje0iXEw": {
       "source": "youtube",
@@ -8893,11 +8997,42 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 13
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:10:53.931033",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "超学生",
+            "movie": "七原しえ, イクミ",
+            "composer": "煮ル果実",
+            "lyricist": "煮ル果実",
+            "arranger": "煮ル果実",
+            "mix": "超学生"
+          },
+          "lyrics": "お前も",
+          "tools": {
+            "software": null,
+            "instruments": null
+          },
+          "music_info": {
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:10:53.931033",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:10:53.931033"
     },
     "aTbr5xgafxs": {
       "source": "youtube",
@@ -8922,11 +9057,45 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 14
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:10:56.432656",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "Amatsuki",
+            "movie": "Ikumi",
+            "composer": "Sho Watanabe",
+            "lyricist": "Sho Watanabe",
+            "arranger": "Masato Nakayama",
+            "mix": "kain",
+            "illustration": "Tama"
+          },
+          "lyrics": null,
+          "tools": {
+            "software": null,
+            "instruments": null
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:10:56.432056",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:10:56.432656"
     },
     "QVDOEHbP6to": {
       "source": "youtube",
@@ -34403,7 +34572,7 @@
     ]
   },
   "theme_index": {},
-  "last_updated": "2025-06-24T02:10:13.765875",
+  "last_updated": "2025-06-24T02:10:56.439644",
   "total_videos": 449,
   "total_playlists": 4,
   "database_version": "1.0"
