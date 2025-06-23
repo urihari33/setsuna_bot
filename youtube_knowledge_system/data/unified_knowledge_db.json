@@ -8518,11 +8518,45 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 3
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:09:43.977891",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "ゆきむら。",
+            "movie": "イクミ",
+            "composer": "Saku",
+            "lyricist": "Saku",
+            "arranger": null,
+            "mix": "棚橋UNA信仁",
+            "illustration": "はくり"
+          },
+          "lyrics": "真っ白なまま 破り捨てたページ\n誰も見えない 想いを綴った\n浮かび上がって 消えてしまって\n孤独の再放送\n\n主役は誰だ 問いかけ続けて\n気付かぬうちに 今日が死んでゆく\n脈略のない 明日を生きて\n誰にもなれないまま\n\n壊れそうな心が 震える指先が\n本当の自分を描き出そうとすんだ\n何十回 何百回 何千回 繰り返せばいい？\n戸惑い続けながら\n\n真っ黒にして 塗りつぶしたページ\n消したくなっても 消せないタトゥーみたいで\n焼き付けながら 抱きしめながら\n誰にも見せないまま\n\n暗闇の中を彷徨って\n声にならない声で叫んだ\n誰かが呼んでる気がしたんだ\n光はいつでもここにあった\n\n零れ落ちたナミダ 拭った指先で\n次のページ そろそろ進もうか\n僕がぼくであるための理由は\n後付けだっていいや 探し続けるんだ\n何十回 何百回 何千回 繰り返せばいい\n躊躇い続けながら",
+          "tools": {
+            "software": null,
+            "instruments": null
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:09:43.977891",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:09:43.977891"
     },
     "KH8I1FiSxaQ": {
       "source": "youtube",
@@ -8547,11 +8581,47 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 4
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:09:49.217313",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "天月",
+            "movie": "イクミ",
+            "composer": "Ryo 'LEFTY' Miyata",
+            "lyricist": "谷絹 茉優(Chevon)",
+            "arranger": "Ryo 'LEFTY' Miyata",
+            "mix": "kain",
+            "illustration": "ねここ"
+          },
+          "lyrics": null,
+          "tools": {
+            "software": null,
+            "instruments": [
+              "Guitar"
+            ]
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:09:49.217313",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:09:49.217313"
     },
     "fRrmUvp1eWM": {
       "source": "youtube",
@@ -8576,11 +8646,48 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 5
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:09:53.539314",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "天月-あまつき-",
+            "movie": null,
+            "composer": "星熊南巫",
+            "lyricist": null,
+            "arranger": "丸山 漠 from a crowd of rebellion",
+            "mix": null,
+            "illustration": "椎名はる",
+            "imageboard": "HAR",
+            "art_direction": "kafuu"
+          },
+          "lyrics": null,
+          "tools": {
+            "software": null,
+            "instruments": null,
+            "equipment": null
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:09:53.539314",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:09:53.539314"
     },
     "7oYbEQ1_pjg": {
       "source": "youtube",
@@ -8605,11 +8712,47 @@
       "playlist_positions": {
         "PLKosfnGdlrBXVS-zL2aeOjkrXjKCL6drp": 6
       },
-      "analysis_status": "pending",
-      "creative_insight": null,
+      "analysis_status": "completed",
+      "creative_insight": {
+        "creators": [],
+        "music_info": null,
+        "tools_used": [],
+        "themes": [],
+        "visual_elements": [],
+        "analysis_confidence": 0.8,
+        "analysis_timestamp": "2025-06-24T02:10:13.756365",
+        "analysis_model": "GPT-4",
+        "insights": {
+          "creators": {
+            "vocal": "天月",
+            "movie": "イクミ",
+            "composer": "宮田'レフティ'リョウ",
+            "lyricist": "宮田'レフティ'リョウ",
+            "arranger": "宮田'レフティ'リョウ",
+            "mix": "kain",
+            "illustration": "しづ"
+          },
+          "lyrics": "新たな記録の幕開け\nどこまでもおりて行こう\n最果てのその先へ\n\n「何者」かになりたくて\n何か見つかる気がして　\n迷い込んだアンダーグラウンド\nでも重なるフラストレーション\n何にも持ってないって\n何度も気付かぬフリしたって\n現実は刃物\nみたいに突き刺さる\n\n惨めな根性論\n心の奥深く灯して\n今に見てろって\nぼやいてる日々を\n終わらせるんだ\n\n(Get UpStart)\n誰も知らない世界へ\n君とならきっと行ける\n闇貫いて\n(Get up now)\n新たな記録の幕開け\nどこまでもおりて行こう\n最果てのその先へ\n\nDon’t look down on me 叫びたいのに\n身体じゅうよぎるトラウマ\nDon't wanna meant to be\nここでひとり\n大人しくモブで終わんのは\n\nRun away run away 逃げ出した\nあの日 の自分の残像\n消し去って　もう一回\n走れ　走れ　Border line の向こうへ\n\nNobody knows, no one can help me…\nぼやいてる日々を\n終わらせるんだ\n\n(Get UpStart)\n影と光に塗れて\n予測不能なストーリーに カラダ委ねて\n(Get up now)\n新たな記録の幕開け\nどこまでもおりて行こう\n最果てのその先へ\n\n「何者」かになりたくて\n何か見つかる気がして　\n迷い込んだアンダーグラウンド\nから始めるレボリューション\n\n(Get UpStart)\n誰も知らない世界へ\n君とならきっと行ける\n闇貫いて\n(Get up now)\n新たな記録の幕開け\nどこまでもおりて行こう\n最果てのその先へ",
+          "tools": {
+            "software": null,
+            "instruments": [
+              "Guitar"
+            ]
+          },
+          "music_info": {
+            "bpm": null,
+            "key": null,
+            "genre": null,
+            "mood": null
+          },
+          "confidence_score": 0.8,
+          "analyzed_at": "2025-06-24T02:10:13.756365",
+          "analysis_model": "gpt-4-turbo"
+        }
+      },
       "analysis_error": null,
       "created_at": "2025-06-23T21:13:07.830184",
-      "updated_at": "2025-06-23T21:13:07.830184"
+      "updated_at": "2025-06-24T02:10:13.756365"
     },
     "d3Yn683FQ4k": {
       "source": "youtube",
@@ -34260,7 +34403,7 @@
     ]
   },
   "theme_index": {},
-  "last_updated": "2025-06-24T02:09:35.078913",
+  "last_updated": "2025-06-24T02:10:13.765875",
   "total_videos": 449,
   "total_playlists": 4,
   "database_version": "1.0"
