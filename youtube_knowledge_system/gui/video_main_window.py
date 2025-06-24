@@ -87,8 +87,6 @@ class VideoMainWindow:
         # ファイルメニュー
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="ファイル", menu=file_menu)
-        file_menu.add_command(label="データ更新", command=self.refresh_data)
-        file_menu.add_separator()
         file_menu.add_command(label="エクスポート...", command=self.export_data)
         file_menu.add_separator()
         file_menu.add_command(label="終了", command=self.on_closing)
@@ -97,6 +95,8 @@ class VideoMainWindow:
         playlist_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="プレイリスト", menu=playlist_menu)
         playlist_menu.add_command(label="プレイリスト追加...", command=self.add_playlist_dialog)
+        playlist_menu.add_command(label="動画追加...", command=self.add_video_dialog)
+        playlist_menu.add_separator()
         playlist_menu.add_command(label="プレイリスト同期", command=self.sync_playlists)
         
         # 分析メニュー
@@ -106,6 +106,7 @@ class VideoMainWindow:
         analysis_menu.add_command(label="少量分析 (10件)", command=lambda: self.run_batch_analysis(10))
         analysis_menu.add_command(label="カスタム分析...", command=self.run_custom_batch_analysis)
         analysis_menu.add_separator()
+        analysis_menu.add_command(label="🔄 失敗動画を再分析", command=self.retry_failed_videos)
         analysis_menu.add_command(label="選択動画分析", command=self.analyze_selected_video)
         analysis_menu.add_separator()
         analysis_menu.add_command(label="分析進捗確認", command=self.show_analysis_progress)
@@ -130,6 +131,7 @@ class VideoMainWindow:
         self.video_list = VideoListWidget(parent)
         self.video_list.pack(fill='both', expand=True, padx=5, pady=5)
         self.video_list.set_selection_callback(self.on_video_selected)
+        self.video_list.set_delete_callback(self.on_video_delete)
         
         # 初期データ読み込みを明示的に実行
         self.root.after(100, self.video_list.load_videos)
@@ -148,7 +150,7 @@ class VideoMainWindow:
         
         ttk.Button(
             left_frame,
-            text="🔄 データ更新",
+            text="🔄 全体更新",
             command=self.refresh_data,
             width=12
         ).pack(side='left', padx=(0, 5))
@@ -158,6 +160,13 @@ class VideoMainWindow:
             text="➕ プレイリスト追加",
             command=self.add_playlist_dialog,
             width=15
+        ).pack(side='left', padx=(0, 5))
+        
+        ttk.Button(
+            left_frame,
+            text="🎬 動画追加",
+            command=self.add_video_dialog,
+            width=12
         ).pack(side='left', padx=(0, 5))
         
         ttk.Button(
@@ -237,24 +246,47 @@ class VideoMainWindow:
     
     def on_video_selected(self, video_id: str, video):
         """動画選択時の処理"""
-        self.video_detail.display_video(video_id, video)
+        # 動画詳細パネルが存在する場合のみ表示更新
+        if hasattr(self, 'video_detail'):
+            self.video_detail.display_video(video_id, video)
+        else:
+            # デバッグ用：選択された動画情報をコンソールに出力
+            print(f"選択された動画: {video.metadata.title}")
+            print(f"チャンネル: {video.metadata.channel_title}")
+            print(f"動画ID: {video_id}")
+            print(f"YouTube URL: https://www.youtube.com/watch?v={video_id}")
     
     def refresh_data(self):
-        """データを更新"""
+        """統合データ更新 - 全ての表示エリアを一括更新
+        
+        以下の更新処理を統合実行:
+        1. 動画リスト表示の更新 (video_list.refresh)
+        2. ステータスパネルの更新 (status_panel.update_status)  
+        3. データベースキャッシュのクリア
+        """
         try:
             self.status_var.set("データを更新中...")
             
-            # 統合ストレージの再読み込みを強制
+            # 統合ストレージの完全初期化
             self.storage._database = None
+            self.storage._cache_valid = False  # キャッシュも無効化
+            
+            # video_listのストレージも再初期化
+            self.video_list.storage._database = None
+            if hasattr(self.video_list.storage, '_cache_valid'):
+                self.video_list.storage._cache_valid = False
             
             # 各コンポーネントの更新
+            print("🔄 動画リスト更新開始...")
             self.video_list.refresh()
+            print("🔄 ステータスパネル更新開始...")
             self.status_panel.update_status()
             
             # 最新の統計情報を取得して表示
             stats = self.storage.get_statistics()
             update_message = f"データを更新しました (動画: {stats['total_videos']}件, プレイリスト: {stats['total_playlists']}件)"
             self.status_var.set(update_message)
+            print(f"🔄 更新完了: {update_message}")
             
             # 5秒後に通常状態に戻す
             self.root.after(5000, lambda: self.status_var.set("準備完了"))
@@ -621,12 +653,94 @@ class VideoMainWindow:
             self.on_analysis_complete
         )
     
+    def retry_failed_videos(self):
+        """失敗動画の再分析実行"""
+        # 再試行可能な失敗動画を取得
+        failed_videos = self.storage.get_failed_videos_for_retry()
+        
+        if len(failed_videos) == 0:
+            messagebox.showinfo("情報", "再試行可能な失敗動画がありません\n（最大再試行回数3回に達した動画は除外されます）")
+            return
+        
+        # 確認ダイアログ
+        result = messagebox.askyesno(
+            "失敗動画再分析確認",
+            f"失敗動画の再分析を実行しますか？\n\n対象動画: {len(failed_videos)}件\n※ OpenAI APIを使用します\n※ 最大3回まで再試行できます"
+        )
+        if not result:
+            return
+        
+        def worker(progress_callback):
+            analyzed_count = 0
+            failed_count = 0
+            
+            for i, video in enumerate(failed_videos):
+                if progress_callback:
+                    progress_callback(f"失敗動画再分析中... ({i+1}/{len(failed_videos)}) - {video.metadata.title[:30]}...")
+                
+                video_id = video.metadata.id
+                
+                # 再試行前に状態をリセット
+                self.storage.update_video_analysis(video_id, 'pending')
+                
+                if video.metadata.description:
+                    try:
+                        result = self.analyzer.analyze_description(video.metadata.description, video.metadata.title)
+                        if result:
+                            self.storage.update_video_analysis(video_id, 'completed', creative_insight=str(result))
+                            analyzed_count += 1
+                            print(f"   ✅ 再分析成功: {video.metadata.title}")
+                        else:
+                            self.storage.update_video_analysis(video_id, 'failed', analysis_error='再分析でも結果なし')
+                            failed_count += 1
+                            print(f"   ❌ 再分析失敗（結果なし）: {video.metadata.title}")
+                    except Exception as e:
+                        self.storage.update_video_analysis(video_id, 'failed', analysis_error=f'再分析エラー: {str(e)}')
+                        failed_count += 1
+                        print(f"   ❌ 再分析エラー: {video.metadata.title} - {e}")
+                else:
+                    self.storage.update_video_analysis(video_id, 'failed', analysis_error='概要欄が空（再分析）')
+                    failed_count += 1
+                    print(f"   ❌ 概要欄なし: {video.metadata.title}")
+                
+                # 5件ごとに中間保存
+                if (i + 1) % 5 == 0:
+                    self.storage.save_database()
+            
+            # 最終保存
+            self.storage.save_database()
+            
+            return {'analyzed_count': analyzed_count, 'failed_count': failed_count}
+        
+        self.run_async_task(
+            "失敗動画再分析",
+            worker,
+            f"失敗動画を再分析中... (対象{len(failed_videos)}件)",
+            self.on_analysis_complete
+        )
+    
     def add_playlist_dialog(self):
         """プレイリスト追加ダイアログ"""
         dialog = SimplePlaylistAddDialog(self.root, self.collector, self.storage)
         if dialog.result:
             self.refresh_data()
             messagebox.showinfo("成功", f"プレイリストを追加しました\n{dialog.result_message}")
+    
+    def add_video_dialog(self):
+        """動画追加ダイアログ"""
+        dialog = SimpleVideoAddDialog(self.root, self.collector, self.storage)
+        if dialog.result:
+            self.refresh_data()
+            messagebox.showinfo("成功", f"動画を追加しました\n{dialog.result_message}")
+    
+    def on_video_delete(self, video_id: str, video):
+        """動画削除時の処理"""
+        # 削除確認ダイアログを表示
+        dialog = VideoDeleteDialog(self.root, video_id, video, self.storage)
+        
+        # 削除が実行された場合はGUIを更新
+        if dialog.result:
+            self.refresh_data()
     
     def sync_playlists(self):
         """既存プレイリストの再同期実行"""
@@ -878,6 +992,295 @@ class SimplePlaylistAddDialog:
                 return match.group(1)
         
         return ""
+
+
+class SimpleVideoAddDialog:
+    """シンプルな動画追加ダイアログ（統合データベース直接更新）"""
+    
+    def __init__(self, parent, collector, storage):
+        self.parent = parent
+        self.collector = collector
+        self.storage = storage
+        self.result = False
+        self.result_message = ""
+        
+        self.dialog = tk.Toplevel(parent)
+        self.dialog.title("動画追加")
+        self.dialog.geometry("500x300")
+        self.dialog.resizable(False, False)
+        self.dialog.transient(parent)
+        self.dialog.grab_set()
+        
+        self.create_widgets()
+        self.center_on_parent()
+    
+    def center_on_parent(self):
+        """親ウィンドウの中央に配置"""
+        self.dialog.update_idletasks()
+        
+        parent_x = self.parent.winfo_x()
+        parent_y = self.parent.winfo_y()
+        parent_width = self.parent.winfo_width()
+        parent_height = self.parent.winfo_height()
+        
+        dialog_width = self.dialog.winfo_reqwidth()
+        dialog_height = self.dialog.winfo_reqheight()
+        
+        x = parent_x + (parent_width - dialog_width) // 2
+        y = parent_y + (parent_height - dialog_height) // 2
+        
+        self.dialog.geometry(f"{dialog_width}x{dialog_height}+{x}+{y}")
+    
+    def create_widgets(self):
+        """ウィジェットを作成"""
+        # メインフレーム
+        main_frame = ttk.Frame(self.dialog, padding="20")
+        main_frame.pack(fill='both', expand=True)
+        
+        # タイトル
+        title_label = ttk.Label(
+            main_frame,
+            text="🎬 動画追加",
+            font=('Segoe UI', 14, 'bold')
+        )
+        title_label.pack(pady=(0, 20))
+        
+        # 説明
+        desc_label = ttk.Label(
+            main_frame,
+            text="YouTube動画のURLまたは動画IDを入力してください。\n動画データは統合データベースに直接追加されます。",
+            foreground="gray"
+        )
+        desc_label.pack(pady=(0, 20))
+        
+        # URL入力
+        url_frame = ttk.LabelFrame(main_frame, text="動画情報", padding="15")
+        url_frame.pack(fill='x', pady=(0, 20))
+        
+        ttk.Label(url_frame, text="YouTube動画URL または 動画ID:").pack(anchor='w')
+        self.url_var = tk.StringVar()
+        url_entry = ttk.Entry(url_frame, textvariable=self.url_var, font=('Consolas', 10))
+        url_entry.pack(fill='x', pady=(10, 10))
+        
+        # 例示
+        example_label = ttk.Label(
+            url_frame, 
+            text="例: https://www.youtube.com/watch?v=dQw4w9WgXcQ\n　　https://youtu.be/dQw4w9WgXcQ\n　　dQw4w9WgXcQ",
+            foreground="gray",
+            font=('Consolas', 9)
+        )
+        example_label.pack(anchor='w', pady=(5, 0))
+        
+        # ボタンフレーム
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill='x', pady=(20, 0))
+        
+        def safe_close():
+            try:
+                self.dialog.destroy()
+            except:
+                pass
+        
+        ttk.Button(button_frame, text="キャンセル", command=safe_close).pack(side='right', padx=(5, 0))
+        ttk.Button(
+            button_frame, 
+            text="追加して詳細取得", 
+            command=self.add_video,
+            style='Accent.TButton'
+        ).pack(side='right')
+        
+        # URL入力フィールドにフォーカス
+        url_entry.focus_set()
+    
+    def add_video(self):
+        """動画追加実行"""
+        url = self.url_var.get().strip()
+        if not url:
+            messagebox.showwarning("警告", "URLまたは動画IDを入力してください")
+            return
+        
+        try:
+            # 動画ID抽出
+            video_id = self._extract_video_id(url)
+            if not video_id:
+                messagebox.showerror("エラー", "有効なYouTube動画URLまたは動画IDを入力してください")
+                return
+            
+            # API初期化
+            if not self.collector._initialize_service():
+                messagebox.showerror("エラー", "YouTube API認証に失敗しました")
+                return
+            
+            # 動画収集実行
+            success, message, result = self.collector.process_single_video_by_id(video_id)
+            
+            if success:
+                video_title = result.get('video_title', '不明')
+                status = ""
+                if result.get('is_new_video'):
+                    status = "新規追加"
+                elif result.get('is_existing_video'):
+                    status = "既存動画・手動カテゴリに関連付け"
+                
+                self.result_message = f"動画: {video_title}\n状態: {status}"
+                self.result = True
+                self.dialog.destroy()
+            else:
+                messagebox.showerror("エラー", f"動画追加に失敗しました:\n{message}")
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"動画追加でエラーが発生しました:\n{e}")
+    
+    def _extract_video_id(self, url_or_id: str) -> str:
+        """URLまたはIDからYouTube動画IDを抽出"""
+        if not url_or_id:
+            return ""
+        
+        # 既に動画IDの場合（11文字の英数字）
+        if len(url_or_id) == 11 and url_or_id.isalnum():
+            return url_or_id
+        
+        # URL の場合
+        import re
+        patterns = [
+            r'watch\?v=([a-zA-Z0-9_-]{11})',  # youtube.com/watch?v=
+            r'youtu\.be/([a-zA-Z0-9_-]{11})',  # youtu.be/
+            r'embed/([a-zA-Z0-9_-]{11})',     # youtube.com/embed/
+            r'v=([a-zA-Z0-9_-]{11})',         # v= parameter
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, url_or_id)
+            if match:
+                return match.group(1)
+        
+        return ""
+
+
+class VideoDeleteDialog:
+    """動画削除確認ダイアログ"""
+    
+    def __init__(self, parent, video_id, video, storage):
+        self.parent = parent
+        self.video_id = video_id
+        self.video = video
+        self.storage = storage
+        self.result = False
+        
+        self.dialog = tk.Toplevel(parent)
+        self.dialog.title("動画削除の確認")
+        self.dialog.geometry("500x250")
+        self.dialog.resizable(False, False)
+        self.dialog.transient(parent)
+        self.dialog.grab_set()
+        
+        self.create_widgets()
+        self.center_on_parent()
+    
+    def center_on_parent(self):
+        """親ウィンドウの中央に配置"""
+        self.dialog.update_idletasks()
+        
+        parent_x = self.parent.winfo_x()
+        parent_y = self.parent.winfo_y()
+        parent_width = self.parent.winfo_width()
+        parent_height = self.parent.winfo_height()
+        
+        dialog_width = self.dialog.winfo_reqwidth()
+        dialog_height = self.dialog.winfo_reqheight()
+        
+        x = parent_x + (parent_width - dialog_width) // 2
+        y = parent_y + (parent_height - dialog_height) // 2
+        
+        self.dialog.geometry(f"{dialog_width}x{dialog_height}+{x}+{y}")
+    
+    def create_widgets(self):
+        """ウィジェットを作成"""
+        # メインフレーム
+        main_frame = ttk.Frame(self.dialog, padding="20")
+        main_frame.pack(fill='both', expand=True)
+        
+        # タイトル
+        title_label = ttk.Label(
+            main_frame,
+            text="🗑️ 動画削除の確認",
+            font=('Segoe UI', 14, 'bold')
+        )
+        title_label.pack(pady=(0, 20))
+        
+        # 動画情報フレーム
+        info_frame = ttk.LabelFrame(main_frame, text="削除対象の動画", padding="15")
+        info_frame.pack(fill='x', pady=(0, 20))
+        
+        # 動画タイトル
+        title_text = self.video.metadata.title
+        if len(title_text) > 50:
+            title_text = title_text[:47] + "..."
+        
+        ttk.Label(info_frame, text="動画:", font=('Segoe UI', 9, 'bold')).pack(anchor='w')
+        ttk.Label(info_frame, text=title_text, foreground="blue").pack(anchor='w', pady=(0, 10))
+        
+        # チャンネル名
+        ttk.Label(info_frame, text="チャンネル:", font=('Segoe UI', 9, 'bold')).pack(anchor='w')
+        ttk.Label(info_frame, text=self.video.metadata.channel_title).pack(anchor='w', pady=(0, 10))
+        
+        # 警告メッセージ
+        warning_label = ttk.Label(
+            main_frame,
+            text="この動画をデータベースから完全に削除しますか？\n※この操作は取り消せません",
+            foreground="red",
+            font=('Segoe UI', 9, 'bold')
+        )
+        warning_label.pack(pady=(0, 20))
+        
+        # ボタンフレーム
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill='x')
+        
+        def safe_close():
+            try:
+                self.dialog.destroy()
+            except:
+                pass
+        
+        # キャンセルボタン
+        ttk.Button(
+            button_frame, 
+            text="キャンセル", 
+            command=safe_close
+        ).pack(side='right', padx=(5, 0))
+        
+        # 削除実行ボタン
+        delete_button = ttk.Button(
+            button_frame, 
+            text="削除実行", 
+            command=self.delete_video
+        )
+        delete_button.pack(side='right')
+        
+        # 削除ボタンを強調表示（危険な操作であることを示す）
+        delete_button.configure(style='Accent.TButton')
+    
+    def delete_video(self):
+        """動画削除実行"""
+        try:
+            # 削除処理実行
+            success, message = self.storage.remove_video_completely(self.video_id)
+            
+            if success:
+                # データベース保存
+                self.storage.save_database()
+                self.result = True
+                self.dialog.destroy()
+                
+                # 成功メッセージ
+                messagebox.showinfo("削除完了", message)
+            else:
+                # エラーメッセージ
+                messagebox.showerror("削除失敗", f"動画の削除に失敗しました:\n{message}")
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"削除処理でエラーが発生しました:\n{e}")
 
 
 class CustomAnalysisDialog:

@@ -33,6 +33,7 @@ class VideoListWidget(ttk.Frame):
         
         # イベント
         self.selection_callback = None
+        self.delete_callback = None  # 削除コールバック
         
         # ウィジェット作成
         self.create_widgets()
@@ -64,13 +65,6 @@ class VideoListWidget(ttk.Frame):
         status_combo.pack(side='left', padx=(0, 10))
         status_combo.bind('<<ComboboxSelected>>', self.on_filter_changed)
         
-        # 更新ボタン
-        ttk.Button(
-            search_frame,
-            text="🔄 更新",
-            command=self.refresh,
-            width=8
-        ).pack(side='right')
         
         # 動画一覧テーブル
         self.create_video_table()
@@ -91,7 +85,7 @@ class VideoListWidget(ttk.Frame):
             'title': {'text': 'タイトル', 'width': 300, 'anchor': 'w'},
             'channel': {'text': 'チャンネル', 'width': 150, 'anchor': 'w'},
             'analysis': {'text': '分析状況', 'width': 80, 'anchor': 'center'},
-            'published': {'text': '公開日', 'width': 100, 'anchor': 'center'},
+            'published': {'text': 'YouTubeで開く', 'width': 120, 'anchor': 'center'},
             'duration': {'text': '時間', 'width': 60, 'anchor': 'center'},
             'playlists': {'text': 'プレイリスト', 'width': 100, 'anchor': 'center'}
         }
@@ -116,6 +110,8 @@ class VideoListWidget(ttk.Frame):
         # イベントバインド
         self.tree.bind('<<TreeviewSelect>>', self.on_selection_changed)
         self.tree.bind('<Double-1>', self.on_double_click)
+        self.tree.bind('<Button-1>', self.on_single_click)
+        self.tree.bind('<Button-3>', self.on_right_click)  # 右クリック
     
     def load_videos(self):
         """動画データを読み込み"""
@@ -171,10 +167,10 @@ class VideoListWidget(ttk.Frame):
                 channel = channel[:17] + "..."
             
             # 分析状況
-            analysis_status = self.get_analysis_status_text(video.analysis_status)
+            analysis_status = self.get_analysis_status_text(video.analysis_status, video)
             
-            # 公開日
-            published_date = video.metadata.published_at.strftime('%Y-%m-%d')
+            # YouTubeリンク
+            published_date = "🔗 YouTube"
             
             # 動画時間
             duration = self.format_duration(video.metadata.duration)
@@ -215,14 +211,20 @@ class VideoListWidget(ttk.Frame):
         else:
             return '🟡'
     
-    def get_analysis_status_text(self, status: AnalysisStatus) -> str:
+    def get_analysis_status_text(self, status: AnalysisStatus, video: Video = None) -> str:
         """分析状況のテキストを取得"""
         status_map = {
             'completed': '完了',
             'pending': '未分析',
             'failed': '失敗'
         }
-        return status_map.get(status.value, '不明')
+        base_text = status_map.get(status.value, '不明')
+        
+        # 失敗状況で再試行回数がある場合
+        if status.value == 'failed' and video and hasattr(video, 'retry_count') and video.retry_count > 0:
+            base_text += f"({video.retry_count}回)"
+        
+        return base_text
     
     def format_duration(self, duration_str: str) -> str:
         """動画時間をフォーマット"""
@@ -295,6 +297,25 @@ class VideoListWidget(ttk.Frame):
                 if video_id in self.videos:
                     self.selection_callback(video_id, self.videos[video_id])
     
+    def on_single_click(self, event):
+        """シングルクリック時の処理（YouTubeリンク列のクリック）"""
+        # クリック位置の確認
+        region = self.tree.identify_region(event.x, event.y)
+        if region == "cell":
+            # どの列がクリックされたかを確認
+            column = self.tree.identify_column(event.x)
+            if column == '#5':  # published列（5番目）
+                item = self.tree.identify_row(event.y)
+                if item:
+                    tags = self.tree.item(item, 'tags')
+                    if tags:
+                        video_id = tags[0]
+                        # YouTube URLを開く
+                        import webbrowser
+                        youtube_url = f"https://www.youtube.com/watch?v={video_id}"
+                        webbrowser.open(youtube_url)
+                        return 'break'  # イベントの伝播を停止
+    
     def on_double_click(self, event):
         """ダブルクリック時の処理"""
         selection = self.tree.selection()
@@ -307,6 +328,59 @@ class VideoListWidget(ttk.Frame):
                 import webbrowser
                 youtube_url = f"https://www.youtube.com/watch?v={video_id}"
                 webbrowser.open(youtube_url)
+    
+    def on_right_click(self, event):
+        """右クリック時のコンテキストメニュー表示"""
+        # クリックされた行を特定
+        item = self.tree.identify_row(event.y)
+        if not item:
+            return
+        
+        # 該当行を選択
+        self.tree.selection_set(item)
+        
+        # 動画情報取得
+        tags = self.tree.item(item, 'tags')
+        if not tags:
+            return
+        
+        video_id = tags[0]
+        if video_id not in self.videos:
+            return
+        
+        video = self.videos[video_id]
+        
+        # コンテキストメニューを作成
+        context_menu = tk.Menu(self.tree, tearoff=0)
+        context_menu.add_command(
+            label="🔗 YouTubeで開く",
+            command=lambda: self._open_youtube(video_id)
+        )
+        context_menu.add_separator()
+        context_menu.add_command(
+            label="🗑️ 動画を削除",
+            command=lambda: self._delete_video(video_id, video)
+        )
+        
+        # メニューを表示
+        try:
+            context_menu.tk_popup(event.x_root, event.y_root)
+        finally:
+            context_menu.grab_release()
+    
+    def _open_youtube(self, video_id: str):
+        """YouTube動画を開く"""
+        import webbrowser
+        youtube_url = f"https://www.youtube.com/watch?v={video_id}"
+        webbrowser.open(youtube_url)
+    
+    def _delete_video(self, video_id: str, video: Video):
+        """動画削除処理"""
+        if self.delete_callback:
+            self.delete_callback(video_id, video)
+        else:
+            # デフォルトの処理（コンソール出力）
+            print(f"削除コールバックが設定されていません: {video.metadata.title}")
     
     def get_selected_video(self) -> Optional[tuple]:
         """選択された動画を取得"""
@@ -322,11 +396,27 @@ class VideoListWidget(ttk.Frame):
     
     def refresh(self):
         """データを再読み込み"""
+        print("📋 video_list.refresh() 実行開始")
+        # ストレージの完全初期化
+        self.storage._database = None
+        if hasattr(self.storage, '_cache_valid'):
+            self.storage._cache_valid = False
+        
+        # 既存の動画データをクリア
+        self.videos.clear()
+        self.filtered_videos.clear()
+        
+        # データ再読み込み
         self.load_videos()
+        print("📋 video_list.refresh() 実行完了")
     
     def set_selection_callback(self, callback):
         """選択変更時のコールバックを設定"""
         self.selection_callback = callback
+    
+    def set_delete_callback(self, callback):
+        """動画削除時のコールバックを設定"""
+        self.delete_callback = callback
 
 
 def main():

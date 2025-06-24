@@ -166,6 +166,10 @@ class Video:
     created_at: datetime
     updated_at: datetime
     
+    # 再試行関連（デフォルト値あり）
+    retry_count: int = 0  # 再試行回数
+    last_analysis_error: Optional[str] = None  # 最後のエラー内容
+    
     def to_dict(self) -> Dict[str, Any]:
         """辞書形式に変換（JSON保存用）"""
         data = asdict(self)
@@ -181,6 +185,10 @@ class Video:
         # Enum を文字列に変換
         data['source'] = self.source.value
         data['analysis_status'] = self.analysis_status.value
+        
+        # 再試行情報を確実に含める
+        data['retry_count'] = self.retry_count
+        data['last_analysis_error'] = self.last_analysis_error
         
         return data
     
@@ -221,6 +229,8 @@ class Video:
             analysis_status=AnalysisStatus(data['analysis_status']),
             creative_insight=creative_insight,
             analysis_error=data.get('analysis_error'),
+            retry_count=data.get('retry_count', 0),  # 新フィールド（後方互換性）
+            last_analysis_error=data.get('last_analysis_error'),  # 新フィールド（後方互換性）
             created_at=datetime.fromisoformat(data['created_at']),
             updated_at=datetime.fromisoformat(data['updated_at'])
         )

@@ -42,13 +42,6 @@ class StatusPanel(ttk.Frame):
         )
         title_label.pack(side='left')
         
-        self.refresh_button = ttk.Button(
-            title_frame,
-            text="🔄 更新",
-            command=self.update_status,
-            width=8
-        )
-        self.refresh_button.pack(side='right')
         
         # 統計情報フレーム
         stats_frame = ttk.LabelFrame(self, text="システム状況")

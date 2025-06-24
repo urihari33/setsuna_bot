@@ -91,6 +91,66 @@ class UnifiedStorage:
         db.add_playlist(playlist)
         self._database = db
     
+    def remove_video_completely(self, video_id: str) -> tuple[bool, str]:
+        """動画を完全削除（すべてのプレイリストからも除外）
+        
+        Args:
+            video_id: 削除する動画のID
+            
+        Returns:
+            (成功フラグ, メッセージ)
+        """
+        try:
+            print(f"\n🗑️ 動画完全削除開始: {video_id}")
+            
+            db = self.load_database()
+            
+            # 動画の存在確認
+            if video_id not in db.videos:
+                error_msg = f"動画が見つかりません: {video_id}"
+                print(f"   ❌ {error_msg}")
+                return False, error_msg
+            
+            video = db.videos[video_id]
+            video_title = video.metadata.title
+            
+            print(f"   📺 削除対象: {video_title}")
+            
+            # 動画が属するプレイリストから除外
+            removed_from_playlists = []
+            for playlist_id in video.playlists:
+                if playlist_id in db.playlists:
+                    playlist = db.playlists[playlist_id]
+                    if video_id in playlist.video_ids:
+                        playlist.video_ids.remove(video_id)
+                        playlist.total_videos = len(playlist.video_ids)
+                        playlist.updated_at = datetime.now()
+                        removed_from_playlists.append(playlist_id)
+                        print(f"   📋 プレイリストから除外: {playlist.metadata.title}")
+            
+            # 動画をデータベースから削除
+            del db.videos[video_id]
+            
+            # データベース統計更新
+            db.total_videos = len(db.videos)
+            db.updated_at = datetime.now()
+            
+            # データベース保存
+            self._database = db
+            
+            print(f"   ✅ 動画削除完了: {video_title}")
+            print(f"   📊 除外プレイリスト数: {len(removed_from_playlists)}")
+            
+            success_msg = f"動画を削除しました: {video_title}"
+            return True, success_msg
+            
+        except Exception as e:
+            error_msg = f"動画削除エラー: {e}"
+            print(f"   ❌ {error_msg}")
+            import traceback
+            traceback.print_exc()
+            return False, error_msg
+    
     def get_video(self, video_id: str) -> Optional[Video]:
         """動画を取得"""
         db = self.load_database()
@@ -150,6 +210,20 @@ class UnifiedStorage:
         db = self.load_database()
         return db.videos
     
+    def get_failed_videos_for_retry(self, max_retry_count: int = 3) -> List[Video]:
+        """再試行可能な失敗動画を取得"""
+        db = self.load_database()
+        from core.data_models import AnalysisStatus
+        
+        failed_videos = []
+        for video in db.videos.values():
+            if (video.analysis_status == AnalysisStatus.FAILED and 
+                video.retry_count < max_retry_count):
+                failed_videos.append(video)
+        
+        print(f"🔄 再試行可能な失敗動画: {len(failed_videos)}件 (最大再試行回数: {max_retry_count})")
+        return failed_videos
+    
     def update_video_analysis(self, video_id: str, analysis_status: str, 
                             creative_insight: Optional[str] = None, 
                             analysis_error: Optional[str] = None) -> bool:
@@ -161,12 +235,19 @@ class UnifiedStorage:
                 
                 # 分析状況を更新
                 from core.data_models import AnalysisStatus
-                video.analysis_status = AnalysisStatus(analysis_status)
+                new_status = AnalysisStatus(analysis_status)
+                
+                # 分析失敗時の再試行カウント更新
+                if new_status == AnalysisStatus.FAILED and video.analysis_status != AnalysisStatus.FAILED:
+                    video.retry_count += 1
+                    video.last_analysis_error = analysis_error
+                    print(f"   📊 動画 {video.metadata.title}: 再試行回数 {video.retry_count}")
+                
+                video.analysis_status = new_status
                 
                 # 分析結果を更新
                 if creative_insight:
                     from core.data_models import CreativeInsight
-                    from datetime import datetime
                     video.creative_insight = CreativeInsight(
                         creators=[],
                         music_info=None,
