@@ -392,6 +392,171 @@ class MultiPlaylistCollector:
             print(f"   ❌ {error_msg}")
             return False, error_msg, result
     
+    def process_single_video_by_id(self, video_id: str) -> Tuple[bool, str, Dict[str, Any]]:
+        """動画IDを直接指定して単体処理（手動追加用）
+        
+        Args:
+            video_id: YouTube動画ID
+        
+        Returns:
+            (成功フラグ, メッセージ, 処理結果)
+        """
+        MANUAL_PLAYLIST_ID = "MANUAL_ADDED"
+        
+        result = {
+            'video_id': video_id,
+            'is_new_video': False,
+            'is_existing_video': False,
+            'video_title': '',
+            'errors': []
+        }
+        
+        try:
+            print(f"\n🎬 動画単体処理開始: {video_id}")
+            
+            # API初期化確認
+            if not self.service:
+                if not self._initialize_service():
+                    error_msg = "YouTube API初期化失敗"
+                    result['errors'].append(error_msg)
+                    return False, error_msg, result
+            
+            # 動画詳細取得
+            video_details, failed_ids = self.collect_video_details([video_id])
+            
+            if failed_ids or not video_details:
+                error_msg = f"動画が見つかりません: {video_id}"
+                result['errors'].append(error_msg)
+                return False, error_msg, result
+            
+            video_data = video_details[0]
+            result['video_title'] = video_data['title']
+            
+            print(f"   📺 動画取得成功: {video_data['title']}")
+            print(f"   📺 チャンネル: {video_data['channel_title']}")
+            
+            # 既存動画の確認
+            db = self.storage.load_database()
+            existing_video = db.videos.get(video_id)
+            
+            if existing_video:
+                # 既存動画に手動追加プレイリストを関連付け
+                if MANUAL_PLAYLIST_ID not in existing_video.playlists:
+                    existing_video.playlists.append(MANUAL_PLAYLIST_ID)
+                    existing_video.playlist_positions[MANUAL_PLAYLIST_ID] = len(existing_video.playlists) - 1
+                    existing_video.updated_at = datetime.now()
+                    self.storage.add_video(existing_video)
+                    
+                    result['is_existing_video'] = True
+                    print(f"   ✅ 既存動画を手動追加カテゴリに関連付け")
+                else:
+                    print(f"   ℹ️ 既に手動追加カテゴリに存在")
+                    result['is_existing_video'] = True
+            else:
+                # 新規動画作成
+                metadata = VideoMetadata(
+                    id=video_data['id'],
+                    title=video_data['title'],
+                    description=video_data['description'],
+                    published_at=datetime.fromisoformat(video_data['published_at'].replace('Z', '+00:00')),
+                    channel_title=video_data['channel_title'],
+                    channel_id=video_data['channel_id'],
+                    duration=video_data['duration'],
+                    view_count=video_data['view_count'],
+                    like_count=video_data['like_count'],
+                    comment_count=video_data['comment_count'],
+                    tags=video_data['tags'],
+                    category_id=video_data['category_id'],
+                    collected_at=datetime.fromisoformat(video_data['collected_at'])
+                )
+                
+                video = Video(
+                    source=ContentSource.YOUTUBE,
+                    metadata=metadata,
+                    playlists=[MANUAL_PLAYLIST_ID],
+                    playlist_positions={MANUAL_PLAYLIST_ID: 0},
+                    analysis_status=AnalysisStatus.PENDING,
+                    creative_insight=None,
+                    analysis_error=None,
+                    created_at=datetime.now(),
+                    updated_at=datetime.now()
+                )
+                
+                self.storage.add_video(video)
+                result['is_new_video'] = True
+                print(f"   ✅ 新規動画追加完了")
+            
+            # 手動追加プレイリストの更新
+            self._update_manual_playlist_metadata(video_id, video_data)
+            
+            # データベース保存
+            self.storage.save_database()
+            
+            message = f"動画追加完了: {video_data['title']}"
+            if result['is_new_video']:
+                message += " (新規)"
+            else:
+                message += " (既存・関連付け)"
+            
+            return True, message, result
+            
+        except Exception as e:
+            error_msg = f"動画処理エラー: {e}"
+            result['errors'].append(error_msg)
+            print(f"   ❌ {error_msg}")
+            return False, error_msg, result
+    
+    def _update_manual_playlist_metadata(self, video_id: str, video_data: Dict[str, Any]):
+        """手動追加プレイリストのメタデータを更新"""
+        MANUAL_PLAYLIST_ID = "MANUAL_ADDED"
+        
+        try:
+            db = self.storage.load_database()
+            existing_playlist = db.playlists.get(MANUAL_PLAYLIST_ID)
+            
+            if existing_playlist:
+                # 既存の手動追加プレイリストに動画ID追加
+                if video_id not in existing_playlist.video_ids:
+                    existing_playlist.video_ids.append(video_id)
+                    existing_playlist.total_videos = len(existing_playlist.video_ids)
+                    existing_playlist.updated_at = datetime.now()
+            else:
+                # 手動追加プレイリストを新規作成
+                metadata = PlaylistMetadata(
+                    id=MANUAL_PLAYLIST_ID,
+                    title="手動追加動画",
+                    description="個別に追加されたYouTube動画のコレクション",
+                    channel_title="YouTube知識システム",
+                    channel_id="system",
+                    item_count=1,
+                    published_at=datetime.now(),
+                    collected_at=datetime.now()
+                )
+                
+                playlist = Playlist(
+                    source=ContentSource.YOUTUBE,
+                    metadata=metadata,
+                    video_ids=[video_id],
+                    last_full_sync=datetime.now(),
+                    last_incremental_sync=datetime.now(),
+                    sync_settings={
+                        'auto_analyze': True,
+                        'update_frequency': 'manual',
+                        'priority': 1
+                    },
+                    total_videos=1,
+                    analyzed_videos=0,
+                    analysis_success_rate=0.0,
+                    created_at=datetime.now(),
+                    updated_at=datetime.now()
+                )
+            
+            self.storage.add_playlist(playlist)
+            print(f"   📋 手動追加プレイリスト更新")
+            
+        except Exception as e:
+            print(f"   ❌ 手動追加プレイリスト更新エラー: {e}")
+    
     def process_single_playlist(self, config: PlaylistConfig) -> Tuple[bool, str, Dict[str, Any]]:
         """単一プレイリストの処理
         

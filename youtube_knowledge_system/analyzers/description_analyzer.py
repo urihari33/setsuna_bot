@@ -33,20 +33,27 @@ class DescriptionAnalyzer:
         """分析用プロンプトを作成（コスト削減版）"""
         return """YouTube概要欄から制作情報をJSON抽出。不明な項目はnull。
 
+重要: JSONレスポンスは正確な形式で出力してください。
+- 文字列内の改行は \\n でエスケープ
+- 引用符は \\" でエスケープ  
+- 末尾カンマは禁止
+
 抽出項目：
 1. クリエイター（vocal,movie,illustration,composer,lyricist,arranger,mix等）
-2. 歌詞（完全テキスト）
+2. 歌詞（最初の500文字まで、改行は\\nでエスケープ）
 3. ツール（software,instruments,equipment）
 4. 音楽情報（bpm,key,genre,mood）
 
-JSON形式：
+JSON形式（必ず```jsonと```で囲む）：
+```json
 {
   "creators": {"vocal": "名前", "movie": "名前", "composer": "名前"},
-  "lyrics": "歌詞全文",
+  "lyrics": "歌詞全文（改行は\\\\nでエスケープ）",
   "tools": {"software": ["ツール名"], "instruments": ["楽器名"]},
   "music_info": {"genre": "ジャンル", "mood": "雰囲気"},
   "confidence_score": 0.8
 }
+```
 
 概要欄：
 """
@@ -60,14 +67,14 @@ JSON形式：
             # プロンプトに概要欄テキストを追加
             full_prompt = self.analysis_prompt + f"\n\n動画タイトル: {video_title}\n\n概要欄:\n{description}"
             
-            # OpenAI API呼び出し（コスト削減版）
+            # OpenAI API呼び出し（トークン数を調整）
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
-                    {"role": "system", "content": "あなたは音楽・映像制作の専門家です。"},
+                    {"role": "system", "content": "あなたは音楽・映像制作の専門家です。正確なJSON形式で回答してください。"},
                     {"role": "user", "content": full_prompt}
                 ],
-                max_tokens=800,  # さらに削減
+                max_tokens=1200,  # トークン数を増加（JSON完了を確保）
                 temperature=0.1
             )
             
@@ -87,7 +94,7 @@ JSON形式：
                 # JSON形式のマーカーがない場合、全体をJSONとして試行
                 json_text = response_text
             
-            # JSONパース
+            # JSONパース（エラー処理強化）
             try:
                 analysis_result = json.loads(json_text)
                 analysis_result['analyzed_at'] = datetime.now().isoformat()
@@ -95,12 +102,114 @@ JSON形式：
                 return analysis_result
             except json.JSONDecodeError as e:
                 print(f"JSON解析エラー: {e}")
-                print(f"レスポンステキスト: {response_text[:500]}...")
+                print(f"レスポンステキスト: {response_text}")
+                
+                # JSON修復を試行
+                try:
+                    fixed_json = self._fix_json_response(json_text)
+                    if fixed_json:
+                        analysis_result = json.loads(fixed_json)
+                        analysis_result['analyzed_at'] = datetime.now().isoformat()
+                        analysis_result['analysis_model'] = "gpt-4-turbo"
+                        print("✅ JSON修復成功")
+                        return analysis_result
+                except Exception as fix_error:
+                    print(f"JSON修復失敗: {fix_error}")
+                
                 return None
             
         except Exception as e:
             print(f"概要欄分析エラー: {e}")
             return None
+    
+    def _fix_json_response(self, json_text: str) -> Optional[str]:
+        """不正なJSONレスポンスを修復"""
+        try:
+            import re
+            
+            print(f"🔧 JSON修復開始...")
+            print(f"元のJSON（最初の200文字）: {json_text[:200]}...")
+            
+            # Step 1: 基本的なクリーニング
+            fixed_text = json_text.strip()
+            
+            # Step 2: 不完全なJSONを検出して修復
+            # 最後の } がない場合や、文字列が途中で切れている場合を処理
+            
+            # 開いた引用符の数をチェック
+            quote_count = fixed_text.count('"')
+            if quote_count % 2 == 1:
+                # 奇数の場合、最後に引用符を追加
+                print("🔧 不完全な文字列を検出、引用符を追加")
+                fixed_text = fixed_text + '"'
+            
+            # lyrics フィールドが不完全な場合の特別処理
+            lyrics_match = re.search(r'"lyrics":\s*"([^"]*)', fixed_text)
+            if lyrics_match and not re.search(r'"lyrics":\s*"[^"]*"', fixed_text):
+                # lyrics が途中で切れている場合
+                print("🔧 不完全なlyricsフィールドを検出")
+                # 安全な終了処理
+                lyrics_start = lyrics_match.start(1)
+                before_lyrics = fixed_text[:lyrics_start]
+                # lyrics内容を安全に終了
+                safe_ending = '",\n  "tools": null,\n  "music_info": null,\n  "confidence_score": 0.6\n}'
+                fixed_text = before_lyrics + safe_ending
+            
+            # Step 3: JSONの構造を補完
+            # 基本的なJSONオブジェクトの構造をチェック
+            if not fixed_text.strip().endswith('}'):
+                # JSONオブジェクトが完了していない場合
+                print("🔧 不完全なJSONオブジェクトを検出、終了ブレースを追加")
+                
+                # 最低限の構造を確保
+                if '"creators":' in fixed_text and not '"confidence_score":' in fixed_text:
+                    # 基本フィールドを追加
+                    if fixed_text.strip().endswith(','):
+                        fixed_text = fixed_text.rstrip(',')
+                    if not fixed_text.strip().endswith('}'):
+                        fixed_text += ',\n  "confidence_score": 0.5\n}'
+                elif not fixed_text.strip().endswith('}'):
+                    fixed_text += '\n}'
+            
+            # Step 4: 改行をエスケープ（lyrics内のみ）
+            def escape_lyrics_content(match):
+                lyrics_content = match.group(1)
+                # 改行をエスケープ
+                lyrics_content = lyrics_content.replace('\n', '\\n').replace('\r', '\\r')
+                # 内部の引用符をエスケープ
+                lyrics_content = lyrics_content.replace('"', '\\"')
+                return f'"lyrics": "{lyrics_content}"'
+            
+            # lyrics フィールドのみエスケープ処理
+            fixed_text = re.sub(r'"lyrics":\s*"([^"]*(?:\\"[^"]*)*)"', escape_lyrics_content, fixed_text, flags=re.DOTALL)
+            
+            # Step 5: 最終的なクリーニング
+            # 末尾のカンマを削除
+            fixed_text = re.sub(r',(\s*[}\]])', r'\1', fixed_text)
+            
+            print(f"🔧 修復後JSON（最初の200文字）: {fixed_text[:200]}...")
+            
+            # Step 6: JSON構文の妥当性確認
+            json.loads(fixed_text)
+            print("✅ JSON修復成功")
+            return fixed_text
+            
+        except Exception as e:
+            print(f"❌ JSON修復処理エラー: {e}")
+            
+            # 最後の手段：最小限のJSONを返す
+            try:
+                minimal_json = {
+                    "creators": {},
+                    "lyrics": "解析失敗",
+                    "tools": None,
+                    "music_info": None,
+                    "confidence_score": 0.1
+                }
+                print("🔧 最小限のJSONで代替")
+                return json.dumps(minimal_json, ensure_ascii=False)
+            except:
+                return None
     
     def batch_analyze_videos(self, videos: List[Dict[str, Any]], delay: float = 1.0) -> List[Dict[str, Any]]:
         """複数動画の概要欄を一括分析"""
