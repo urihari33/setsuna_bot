@@ -1,0 +1,26 @@
+{
+  "genre_preferences": {
+    "その他": {
+      "score": 1.0,
+      "interaction_count": 28,
+      "positive_count": 6,
+      "negative_count": 0,
+      "last_interaction": "2025-06-27T00:03:26.319112"
+    }
+  },
+  "creator_preferences": {},
+  "time_patterns": {
+    "late_night": {}
+  },
+  "topic_clusters": {},
+  "mood_patterns": {},
+  "learning_config": {
+    "enable_genre_learning": true,
+    "enable_creator_learning": true,
+    "enable_time_learning": true,
+    "enable_mood_learning": true,
+    "max_history_days": 90,
+    "min_interactions_for_pattern": 3
+  },
+  "last_updated": "2025-06-27T00:03:26.319112"
+}

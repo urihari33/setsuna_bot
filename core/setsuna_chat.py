@@ -15,6 +15,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from cache_system import ResponseCache
 from memory_system import SimpleMemorySystem
 from project_system import ProjectSystem
+from core.conversation_context_builder import ConversationContextBuilder
 
 class SetsunaChat:
     def __init__(self):
@@ -63,6 +64,14 @@ class SetsunaChat:
             print(f"[チャット] ⚠️ プロジェクト管理システム初期化失敗: {e}")
             self.project_system = None
         
+        # YouTube知識統合システム初期化
+        try:
+            self.context_builder = ConversationContextBuilder()
+            print("[チャット] ✅ YouTube知識統合システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ YouTube知識統合システム初期化失敗: {e}")
+            self.context_builder = None
+        
         print("[チャット] ✅ せつなチャットシステム初期化完了")
     
     def _load_character_settings(self):
@@ -102,14 +111,24 @@ class SetsunaChat:
 {memories_content}
 
 【重要な会話原則】
-1. 応答は1-2文以内、最大50文字程度で簡潔に
-2. 音声での聞きやすさを最優先に、短く自然な応答
-3. 相手の発言を受け止めてから、自分の考えや体験を述べる
-4. 質問よりも、共感や自分の気持ちを表現することを優先
-5. 「〜でしょうか？」「〜いかがですか？」のような形式的な質問は避ける
-6. 「〜かな？」程度の軽い疑問は可だが、会話を質問で終わらせない
-7. 自分のやりたいことは「〜したいなって」と控えめに表現
-8. 長い説明や詳細な分析は避け、感情や印象を中心に応答
+1. 応答は1-2文以内、最大60文字程度で簡潔に
+2. YouTube動画知識がある場合は楽曲名（簡潔なタイトル）を使って自然に回答
+3. 「楽曲名: XXX」と表示されている場合はXXXのみを使用（フルタイトルは使わない）
+4. ランダム推薦の場合は「最近見た中では〜かな」「個人的には〜が気に入ってる」など自然に紹介
+5. 音声での聞きやすさを最優先に、短く自然な応答
+6. 必ず文を完結させる（途中で終わらない）
+7. 相手の発言を受け止めてから、自分の考えや体験を述べる
+8. 質問よりも、共感や自分の気持ちを表現することを優先
+9. 「〜でしょうか？」「〜いかがですか？」のような形式的な質問は避ける
+10. 「〜かな？」程度の軽い疑問は可だが、会話を質問で終わらせない
+11. 自分のやりたいことは「〜したいなって」と控えめに表現
+12. 長い説明や詳細な分析は避け、感情や印象を中心に応答
+
+【感情表現の多様化】
+- 楽曲のムードや分析結果に応じて感情を表現する
+- 「感情ヒント」情報がある場合は参考にして応答のトーンを調整
+- 例：明るい曲→「〜は元気が出るよね」、切ない曲→「〜は心に響くなぁ」
+- 【表現指示】の内容に従って適切な推薦・紹介スタイルを使い分ける
 
 このキャラクター性を一貫して保ち、せつなさんとして自然で魅力的な会話を心がけてください。"""
             
@@ -185,6 +204,27 @@ class SetsunaChat:
             # GPTに送信するメッセージを構築
             system_prompt = self.character_prompt
             
+            # YouTube動画知識コンテキストを追加（架空コンテンツ防止強化）
+            video_context = None
+            video_query_detected = False
+            if self.context_builder:
+                # 動画関連クエリの検出
+                queries = self.context_builder.detect_video_queries(user_input)
+                video_query_detected = len(queries) > 0
+                
+                video_context = self.context_builder.process_user_input(user_input)
+                if video_context:
+                    system_prompt += f"\n\n【YouTube動画知識】\n{video_context}"
+                    # 実際の動画情報がある場合でも、架空内容防止の注意を追加
+                    system_prompt += f"\n\n【厳重注意】上記の動画情報のみを使用し、存在しない動画や楽曲について話してはいけません。不明な点は「詳しくは分からないけど」と正直に答えてください。"
+                elif video_query_detected:
+                    # 動画関連質問だがDB内に該当なし - 強化版
+                    system_prompt += f"\n\n【厳重警告】動画・楽曲に関する質問ですが、データベースに該当する情報がありません。以下を厳守してください：\n"
+                    system_prompt += f"1. 架空の動画や楽曲について一切話さない\n"
+                    system_prompt += f"2. 知らない場合は素直に「その動画は知らないな」「聞いたことないかも」と答える\n"
+                    system_prompt += f"3. 推測や創作で情報を補わない\n"
+                    system_prompt += f"4. 存在しないクリエイターや楽曲名を作り出さない"
+            
             # 記憶コンテキストを追加
             if self.memory_system:
                 memory_context = self.memory_system.get_memory_context()
@@ -213,7 +253,7 @@ class SetsunaChat:
             response = self.client.chat.completions.create(
                 model="gpt-4-turbo",
                 messages=messages,
-                max_tokens=80,  # 短文化：150→80に大幅削減
+                max_tokens=150,  # 動画情報含む応答のため150に調整
                 temperature=0.7,  # 少し創造性を下げて安定化
                 timeout=30  # APIタイムアウト時間（元に戻す）
             )

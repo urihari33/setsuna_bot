@@ -1,0 +1,491 @@
+{
+  "video_conversations": {
+    "test_video_1": {
+      "video_title": "アドベンチャー",
+      "conversation_count": 3,
+      "first_talked": "2025-06-26T22:59:19.405916",
+      "last_talked": "2025-06-26T22:59:19.414891",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "positive"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.405916",
+          "input": "アドベンチャーってどんな曲？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.407952",
+          "input": "この曲すごくいいね！",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-26T22:59:19.414891",
+          "input": "またアドベンチャー聞きたい",
+          "reaction": "positive"
+        }
+      ],
+      "familiarity_score": 0.6
+    },
+    "test_video_2": {
+      "video_title": "XOXO",
+      "conversation_count": 2,
+      "first_talked": "2025-06-26T22:59:19.420467",
+      "last_talked": "2025-06-26T22:59:19.425145",
+      "user_reactions": [
+        "neutral",
+        "negative"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.420467",
+          "input": "XOXOについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.425145",
+          "input": "この曲はちょっと微妙かも",
+          "reaction": "negative"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "familiarity_test": {
+      "video_title": "テスト楽曲",
+      "conversation_count": 5,
+      "first_talked": "2025-06-26T22:59:19.436628",
+      "last_talked": "2025-06-26T22:59:19.454937",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "positive",
+        "neutral",
+        "positive"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.436628",
+          "input": "テスト楽曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.438043",
+          "input": "この曲いいね",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-26T22:59:19.443817",
+          "input": "もう一度聞きたい",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-26T22:59:19.449753",
+          "input": "テスト楽曲の詳細は？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.454937",
+          "input": "やっぱりこの曲好き",
+          "reaction": "positive"
+        }
+      ],
+      "familiarity_score": 0.7799999999999999
+    },
+    "new_video": {
+      "video_title": "新規楽曲",
+      "conversation_count": 1,
+      "first_talked": "2025-06-26T22:59:19.466234",
+      "last_talked": "2025-06-26T22:59:19.466234",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.466234",
+          "input": "新規楽曲について",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "familiar_video": {
+      "video_title": "馴染み楽曲",
+      "conversation_count": 4,
+      "first_talked": "2025-06-26T22:59:19.467701",
+      "last_talked": "2025-06-26T22:59:19.484480",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "positive",
+        "positive"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.467701",
+          "input": "馴染み楽曲について",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.473675",
+          "input": "この曲好き",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-26T22:59:19.479212",
+          "input": "また聞きたい",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-26T22:59:19.484480",
+          "input": "やっぱりいいね",
+          "reaction": "positive"
+        }
+      ],
+      "familiarity_score": 0.725
+    },
+    "negative_video": {
+      "video_title": "微妙楽曲",
+      "conversation_count": 2,
+      "first_talked": "2025-06-26T22:59:19.490341",
+      "last_talked": "2025-06-26T22:59:19.496265",
+      "user_reactions": [
+        "negative",
+        "negative"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.490341",
+          "input": "微妙楽曲について",
+          "reaction": "negative"
+        },
+        {
+          "date": "2025-06-26T22:59:19.496265",
+          "input": "この曲はイマイチかも",
+          "reaction": "negative"
+        }
+      ],
+      "familiarity_score": 0.1
+    },
+    "Av3xaZkVpJs": {
+      "video_title": "アドベンチャー",
+      "conversation_count": 10,
+      "first_talked": "2025-06-26T22:59:19.583808",
+      "last_talked": "2025-06-27T00:01:52.970550",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "positive",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.583808",
+          "input": "アドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.600946",
+          "input": "アドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:00:49.777064",
+          "input": "アドベンチャーって知ってる",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:01:31.526932",
+          "input": "さっきのアドベンチャー",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:43:44.388717",
+          "input": "アドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:59:48.390601",
+          "input": "アドベンチャーについて教え",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:00:08.427819",
+          "input": "この曲すごい好きなんだよね 私も",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-27T00:00:24.585143",
+          "input": "また アドベンチャー 聞こうか",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-27T00:01:33.701934",
+          "input": "その動画のクリエイター",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:52.970550",
+          "input": "似たような曲って",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.82
+    },
+    "2Z_qydIQGG4": {
+      "video_title": "アオペラの「ア」-introduction song-",
+      "conversation_count": 9,
+      "first_talked": "2025-06-26T22:59:19.585314",
+      "last_talked": "2025-06-27T00:01:52.972902",
+      "user_reactions": [
+        "neutral",
+        "neutral",
+        "positive",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T22:59:19.585314",
+          "input": "アドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T22:59:19.602500",
+          "input": "アドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:00:49.797082",
+          "input": "アドベンチャーって知ってる",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:01:31.528436",
+          "input": "さっきのアドベンチャー",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:43:44.393147",
+          "input": "アドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-26T23:59:48.393110",
+          "input": "アドベンチャーについて教え",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:00:08.427819",
+          "input": "この曲すごい好きなんだよね 私も",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-27T00:01:33.702932",
+          "input": "その動画のクリエイター",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:52.972902",
+          "input": "似たような曲って",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.7599999999999999
+    },
+    "z6c-5qYMRO0": {
+      "video_title": "青く青く光る",
+      "conversation_count": 1,
+      "first_talked": "2025-06-26T23:11:49.210033",
+      "last_talked": "2025-06-26T23:11:49.210033",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T23:11:49.210033",
+          "input": "最近のおすすめの動画とか",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "oFtcyOp7ZXw": {
+      "video_title": "DAYBREAK FRONTLINE",
+      "conversation_count": 1,
+      "first_talked": "2025-06-26T23:11:49.213034",
+      "last_talked": "2025-06-26T23:11:49.213034",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T23:11:49.213034",
+          "input": "最近のおすすめの動画とか",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "9_hG6FjOHH4": {
+      "video_title": "サマー シンドローム",
+      "conversation_count": 5,
+      "first_talked": "2025-06-26T23:43:44.505234",
+      "last_talked": "2025-06-27T00:01:52.974087",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T23:43:44.505234",
+          "input": "ボカロの曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:00:08.429323",
+          "input": "この曲すごい好きなんだよね 私も",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-27T00:00:43.546848",
+          "input": "ボカロの曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:33.704435",
+          "input": "その動画のクリエイター",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:52.974087",
+          "input": "似たような曲って",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.66
+    },
+    "wj_gULGftds": {
+      "video_title": "黒の召喚士",
+      "conversation_count": 5,
+      "first_talked": "2025-06-26T23:43:44.509767",
+      "last_talked": "2025-06-27T00:01:52.975090",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T23:43:44.509767",
+          "input": "ボカロの曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:00:08.430327",
+          "input": "この曲すごい好きなんだよね 私も",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-27T00:00:43.548371",
+          "input": "ボカロの曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:33.705440",
+          "input": "その動画のクリエイター",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:52.975090",
+          "input": "似たような曲って",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.66
+    },
+    "29B3tG4bBZ8": {
+      "video_title": "Teddy Loid",
+      "conversation_count": 5,
+      "first_talked": "2025-06-26T23:43:44.519681",
+      "last_talked": "2025-06-27T00:01:52.976092",
+      "user_reactions": [
+        "neutral",
+        "positive",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-26T23:43:44.519681",
+          "input": "ボカロの曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:00:08.430327",
+          "input": "この曲すごい好きなんだよね 私も",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-27T00:00:43.549370",
+          "input": "ボカロの曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:33.706441",
+          "input": "その動画のクリエイター",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-27T00:01:52.976092",
+          "input": "似たような曲って",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.66
+    },
+    "CkvWJNt77mU": {
+      "video_title": "ヨルシカ",
+      "conversation_count": 1,
+      "first_talked": "2025-06-27T00:03:26.316524",
+      "last_talked": "2025-06-27T00:03:26.316524",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-27T00:03:26.316524",
+          "input": "プロトディスク ヨルシカの曲じゃなく",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "bh7oZ9WU8vg": {
+      "video_title": "いちプロ",
+      "conversation_count": 1,
+      "first_talked": "2025-06-27T00:03:26.317568",
+      "last_talked": "2025-06-27T00:03:26.317568",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-27T00:03:26.317568",
+          "input": "プロトディスク ヨルシカの曲じゃなく",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    }
+  },
+  "last_updated": "2025-06-27T00:03:26.317568"
+}
