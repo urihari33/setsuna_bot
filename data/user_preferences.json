@@ -2,10 +2,10 @@
   "genre_preferences": {
     "その他": {
       "score": 1.0,
-      "interaction_count": 28,
-      "positive_count": 6,
+      "interaction_count": 64,
+      "positive_count": 9,
       "negative_count": 0,
-      "last_interaction": "2025-06-27T00:03:26.319112"
+      "last_interaction": "2025-06-30T00:07:54.875487"
     }
   },
   "creator_preferences": {},
@@ -22,5 +22,5 @@
     "max_history_days": 90,
     "min_interactions_for_pattern": 3
   },
-  "last_updated": "2025-06-27T00:03:26.319112"
+  "last_updated": "2025-06-30T00:07:54.875516"
 }

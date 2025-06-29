@@ -1,44 +1,47 @@
 {
   "current_session": {
-    "session_id": "session_20250626_235944",
-    "start_time": "2025-06-26T23:59:44.452415",
+    "session_id": "session_20250630_000738",
+    "start_time": "2025-06-30T00:07:38.871531",
     "state": "topic_established",
     "turns": [
       {
         "turn_number": 1,
-        "timestamp": "2025-06-26T23:59:48.396112",
-        "user_input": "アドベンチャーについて教え",
+        "timestamp": "2025-06-30T00:07:49.452424",
+        "user_input": "YOASOBI知ってる？",
         "context_analysis": {
-          "input": "アドベンチャーについて教え",
-          "timestamp": "2025-06-26T23:59:48.370910",
+          "input": "YOASOBI知ってる？",
+          "timestamp": "2025-06-30T00:07:49.417793",
           "pronoun_references": [],
           "continuity_indicators": [],
           "emotional_signals": {
             "positive": 0.0,
             "negative": 0.0,
             "excitement": 0.0,
-            "curiosity": 0.0,
+            "curiosity": 0.7,
             "satisfaction": 0.0,
-            "detected_emotions": []
+            "detected_emotions": [
+              {
+                "emotion": "curiosity",
+                "strength": 0.7
+              }
+            ]
           },
           "topic_relevance": {
-            "Av3xaZkVpJs": {
+            "N4PtDsU2iSU": {
               "relevance_score": 1.0,
               "topic_data": {
-                "video_id": "Av3xaZkVpJs",
-                "title": "アドベンチャー",
-                "channel": "Ayase / YOASOBI",
+                "video_id": "N4PtDsU2iSU",
+                "title": "YOASOBI",
+                "channel": "Raon",
                 "genre": "",
                 "keywords": [
-                  "Ayase / YOASOBI",
-                  "アドベンチャー"
+                  "Raon"
                 ],
-                "last_mentioned": "2025-06-26T23:43:44.404808",
+                "last_mentioned": "2025-06-29T23:41:24.993061",
                 "mention_count": 1
               },
               "related_keywords": [
-                "アドベンチャー",
-                "アドベンチャー"
+                "YOASOBI"
               ]
             }
           },
@@ -47,18 +50,25 @@
         "system_response": "",
         "mentioned_videos": [
           {
+            "video_id": "N4PtDsU2iSU",
+            "title": "YOASOBI",
+            "channel": "Raon",
+            "genre": "",
+            "search_score": 86
+          },
+          {
             "video_id": "Av3xaZkVpJs",
             "title": "アドベンチャー",
             "channel": "Ayase / YOASOBI",
             "genre": "",
-            "search_score": 65
+            "search_score": 77
           },
           {
-            "video_id": "2Z_qydIQGG4",
-            "title": "アオペラの「ア」-introduction song-",
-            "channel": "アオペラ -aoppella!?- 公式",
+            "video_id": "Jj1_mfUzjOs",
+            "title": "〈物語〉シリーズ オフ&モンスターシーズン",
+            "channel": "Ayase / YOASOBI",
             "genre": "",
-            "search_score": 12
+            "search_score": 77
           }
         ],
         "previous_state": "initial",
@@ -66,309 +76,32 @@
           "positive": 0.0,
           "negative": 0.0,
           "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "state_transition": {
-          "should_transition": false,
-          "new_state": "initial",
-          "confidence": 0.0,
-          "reasons": []
-        },
-        "new_state": "initial"
-      },
-      {
-        "turn_number": 2,
-        "timestamp": "2025-06-27T00:00:08.447337",
-        "user_input": "この曲すごい好きなんだよね 私も",
-        "context_analysis": {
-          "input": "この曲すごい好きなんだよね 私も",
-          "timestamp": "2025-06-27T00:00:08.427819",
-          "pronoun_references": [
-            {
-              "type": "demonstrative",
-              "text": "この曲",
-              "position": [
-                0,
-                3
-              ],
-              "confidence": 0.9
-            },
-            {
-              "type": "demonstrative",
-              "text": "この",
-              "position": [
-                0,
-                2
-              ],
-              "confidence": 0.9
-            }
-          ],
-          "continuity_indicators": [
-            {
-              "type": "agreement",
-              "text": "好き",
-              "position": [
-                6,
-                8
-              ],
-              "strength": "strong"
-            }
-          ],
-          "emotional_signals": {
-            "positive": 1.0,
-            "negative": 0.0,
-            "excitement": 0.0,
-            "curiosity": 0.0,
-            "satisfaction": 0.0,
-            "detected_emotions": [
-              {
-                "emotion": "positive",
-                "strength": 2.0
-              }
-            ]
-          },
-          "topic_relevance": {
-            "Av3xaZkVpJs": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "Av3xaZkVpJs",
-                "title": "アドベンチャー",
-                "channel": "Ayase / YOASOBI",
-                "genre": "",
-                "keywords": [
-                  "Ayase / YOASOBI",
-                  "アドベンチャー"
-                ],
-                "last_mentioned": "2025-06-26T23:59:48.395109",
-                "mention_count": 2
-              },
-              "related_keywords": []
-            },
-            "2Z_qydIQGG4": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "2Z_qydIQGG4",
-                "title": "アオペラの「ア」-introduction song-",
-                "channel": "アオペラ -aoppella!?- 公式",
-                "genre": "",
-                "keywords": [
-                  "アオペラ",
-                  "アオペラ -aoppella!?- 公式"
-                ],
-                "last_mentioned": "2025-06-26T23:59:48.395109",
-                "mention_count": 2
-              },
-              "related_keywords": []
-            },
-            "9_hG6FjOHH4": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "9_hG6FjOHH4",
-                "title": "サマー シンドローム",
-                "channel": "雨沢レイ(Ray)",
-                "genre": "",
-                "keywords": [
-                  "シンドローム",
-                  "雨沢レイ(Ray)",
-                  "サマー"
-                ],
-                "last_mentioned": "2025-06-26T23:43:44.527724",
-                "mention_count": 1
-              },
-              "related_keywords": []
-            },
-            "wj_gULGftds": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "wj_gULGftds",
-                "title": "黒の召喚士",
-                "channel": "レトベア Official / RetBear",
-                "genre": "",
-                "keywords": [
-                  "レトベア Official / RetBear",
-                  "黒の召喚士"
-                ],
-                "last_mentioned": "2025-06-26T23:43:44.527728",
-                "mention_count": 1
-              },
-              "related_keywords": []
-            },
-            "29B3tG4bBZ8": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "29B3tG4bBZ8",
-                "title": "Teddy Loid",
-                "channel": "TheOneAndOnlySame",
-                "genre": "",
-                "keywords": [
-                  "TheOneAndOnlySame"
-                ],
-                "last_mentioned": "2025-06-26T23:43:44.527733",
-                "mention_count": 1
-              },
-              "related_keywords": []
-            }
-          },
-          "requires_resolution": true
-        },
-        "system_response": "",
-        "mentioned_videos": [
-          {
-            "video_id": "Av3xaZkVpJs",
-            "title": "アドベンチャー",
-            "channel": "Ayase / YOASOBI",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "2Z_qydIQGG4",
-            "title": "アオペラの「ア」-introduction song-",
-            "channel": "アオペラ -aoppella!?- 公式",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "9_hG6FjOHH4",
-            "title": "サマー シンドローム",
-            "channel": "雨沢レイ(Ray)",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "wj_gULGftds",
-            "title": "黒の召喚士",
-            "channel": "レトベア Official / RetBear",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "29B3tG4bBZ8",
-            "title": "Teddy Loid",
-            "channel": "TheOneAndOnlySame",
-            "genre": "",
-            "search_score": 80.0
-          }
-        ],
-        "previous_state": "initial",
-        "emotional_signals": {
-          "positive": 1.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
+          "curiosity": 0.7,
           "satisfaction": 0.0,
           "detected_emotions": [
             {
-              "emotion": "positive",
-              "strength": 2.0
+              "emotion": "curiosity",
+              "strength": 0.7
             }
           ]
         },
         "state_transition": {
           "should_transition": true,
           "new_state": "topic_established",
-          "confidence": 1.0,
+          "confidence": 0.85,
           "reasons": [
-            "条件満足: to_topic_established (信頼度: 1.00)"
+            "条件満足: to_topic_established (信頼度: 0.85)"
           ]
         },
         "new_state": "topic_established"
       },
       {
-        "turn_number": 3,
-        "timestamp": "2025-06-27T00:00:24.588096",
-        "user_input": "また アドベンチャー 聞こうか",
+        "turn_number": 2,
+        "timestamp": "2025-06-30T00:07:54.879179",
+        "user_input": "最新のVTuber動画教えて",
         "context_analysis": {
-          "input": "また アドベンチャー 聞こうか",
-          "timestamp": "2025-06-27T00:00:24.584098",
-          "pronoun_references": [
-            {
-              "type": "relative",
-              "text": "また",
-              "position": [
-                0,
-                2
-              ],
-              "confidence": 0.7
-            }
-          ],
-          "continuity_indicators": [
-            {
-              "type": "continuation",
-              "text": "また",
-              "position": [
-                0,
-                2
-              ],
-              "strength": "medium"
-            }
-          ],
-          "emotional_signals": {
-            "positive": 0.0,
-            "negative": 0.0,
-            "excitement": 0.0,
-            "curiosity": 0.0,
-            "satisfaction": 0.0,
-            "detected_emotions": []
-          },
-          "topic_relevance": {
-            "Av3xaZkVpJs": {
-              "relevance_score": 1.0,
-              "topic_data": {
-                "video_id": "Av3xaZkVpJs",
-                "title": "アドベンチャー",
-                "channel": "Ayase / YOASOBI",
-                "genre": "",
-                "keywords": [
-                  "Ayase / YOASOBI",
-                  "アドベンチャー"
-                ],
-                "last_mentioned": "2025-06-27T00:00:08.431327",
-                "mention_count": 3
-              },
-              "related_keywords": [
-                "アドベンチャー",
-                "アドベンチャー"
-              ]
-            }
-          },
-          "requires_resolution": true
-        },
-        "system_response": "",
-        "mentioned_videos": [
-          {
-            "video_id": "Av3xaZkVpJs",
-            "title": "アドベンチャー",
-            "channel": "Ayase / YOASOBI",
-            "genre": "",
-            "search_score": 100.0
-          }
-        ],
-        "previous_state": "topic_established",
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "state_transition": {
-          "should_transition": false,
-          "new_state": "topic_established",
-          "confidence": 0.0,
-          "reasons": []
-        },
-        "new_state": "topic_established"
-      },
-      {
-        "turn_number": 4,
-        "timestamp": "2025-06-27T00:00:43.551370",
-        "user_input": "ボカロの曲について教えて",
-        "context_analysis": {
-          "input": "ボカロの曲について教えて",
-          "timestamp": "2025-06-27T00:00:43.492798",
+          "input": "最新のVTuber動画教えて",
+          "timestamp": "2025-06-30T00:07:54.849587",
           "pronoun_references": [],
           "continuity_indicators": [],
           "emotional_signals": {
@@ -390,25 +123,25 @@
         "system_response": "",
         "mentioned_videos": [
           {
-            "video_id": "9_hG6FjOHH4",
-            "title": "サマー シンドローム",
-            "channel": "雨沢レイ(Ray)",
+            "video_id": "TMeaXo1rpsY",
+            "title": "ADAMAS",
+            "channel": "巫てんり / Kannagi Tenri ",
             "genre": "",
-            "search_score": 39
+            "search_score": 65
           },
           {
-            "video_id": "wj_gULGftds",
-            "title": "黒の召喚士",
-            "channel": "レトベア Official / RetBear",
+            "video_id": "afpbZTjqW4M",
+            "title": "Ado",
+            "channel": "巫てんり / Kannagi Tenri ",
             "genre": "",
-            "search_score": 12
+            "search_score": 65
           },
           {
-            "video_id": "29B3tG4bBZ8",
-            "title": "Teddy Loid",
-            "channel": "TheOneAndOnlySame",
+            "video_id": "fTtJAf0KWBQ",
+            "title": "original",
+            "channel": "合法‼︎バツ子ﾁｬﾝBatsuko",
             "genre": "",
-            "search_score": 12
+            "search_score": 65
           }
         ],
         "previous_state": "topic_established",
@@ -432,546 +165,105 @@
           "reasons": []
         },
         "new_state": "topic_established"
-      },
-      {
-        "turn_number": 5,
-        "timestamp": "2025-06-27T00:01:33.708440",
-        "user_input": "その動画のクリエイター",
-        "context_analysis": {
-          "input": "その動画のクリエイター",
-          "timestamp": "2025-06-27T00:01:33.701934",
-          "pronoun_references": [
-            {
-              "type": "demonstrative",
-              "text": "その動画",
-              "position": [
-                0,
-                4
-              ],
-              "confidence": 0.9
-            },
-            {
-              "type": "demonstrative",
-              "text": "その",
-              "position": [
-                0,
-                2
-              ],
-              "confidence": 0.9
-            }
-          ],
-          "continuity_indicators": [],
-          "emotional_signals": {
-            "positive": 0.0,
-            "negative": 0.0,
-            "excitement": 0.0,
-            "curiosity": 0.0,
-            "satisfaction": 0.0,
-            "detected_emotions": []
-          },
-          "topic_relevance": {
-            "Av3xaZkVpJs": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "Av3xaZkVpJs",
-                "title": "アドベンチャー",
-                "channel": "Ayase / YOASOBI",
-                "genre": "",
-                "keywords": [
-                  "Ayase / YOASOBI",
-                  "アドベンチャー"
-                ],
-                "last_mentioned": "2025-06-27T00:00:24.586098",
-                "mention_count": 4
-              },
-              "related_keywords": []
-            },
-            "2Z_qydIQGG4": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "2Z_qydIQGG4",
-                "title": "アオペラの「ア」-introduction song-",
-                "channel": "アオペラ -aoppella!?- 公式",
-                "genre": "",
-                "keywords": [
-                  "アオペラ",
-                  "アオペラ -aoppella!?- 公式"
-                ],
-                "last_mentioned": "2025-06-27T00:00:08.431327",
-                "mention_count": 3
-              },
-              "related_keywords": []
-            },
-            "9_hG6FjOHH4": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "9_hG6FjOHH4",
-                "title": "サマー シンドローム",
-                "channel": "雨沢レイ(Ray)",
-                "genre": "",
-                "keywords": [
-                  "シンドローム",
-                  "サマー",
-                  "雨沢レイ(Ray)"
-                ],
-                "last_mentioned": "2025-06-27T00:00:43.549370",
-                "mention_count": 3
-              },
-              "related_keywords": []
-            },
-            "wj_gULGftds": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "wj_gULGftds",
-                "title": "黒の召喚士",
-                "channel": "レトベア Official / RetBear",
-                "genre": "",
-                "keywords": [
-                  "レトベア Official / RetBear",
-                  "黒の召喚士"
-                ],
-                "last_mentioned": "2025-06-27T00:00:43.549370",
-                "mention_count": 3
-              },
-              "related_keywords": []
-            },
-            "29B3tG4bBZ8": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "29B3tG4bBZ8",
-                "title": "Teddy Loid",
-                "channel": "TheOneAndOnlySame",
-                "genre": "",
-                "keywords": [
-                  "TheOneAndOnlySame"
-                ],
-                "last_mentioned": "2025-06-27T00:00:43.549370",
-                "mention_count": 3
-              },
-              "related_keywords": []
-            }
-          },
-          "requires_resolution": true
-        },
-        "system_response": "",
-        "mentioned_videos": [
-          {
-            "video_id": "Av3xaZkVpJs",
-            "title": "アドベンチャー",
-            "channel": "Ayase / YOASOBI",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "2Z_qydIQGG4",
-            "title": "アオペラの「ア」-introduction song-",
-            "channel": "アオペラ -aoppella!?- 公式",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "9_hG6FjOHH4",
-            "title": "サマー シンドローム",
-            "channel": "雨沢レイ(Ray)",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "wj_gULGftds",
-            "title": "黒の召喚士",
-            "channel": "レトベア Official / RetBear",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "29B3tG4bBZ8",
-            "title": "Teddy Loid",
-            "channel": "TheOneAndOnlySame",
-            "genre": "",
-            "search_score": 80.0
-          }
-        ],
-        "previous_state": "topic_established",
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "state_transition": {
-          "should_transition": false,
-          "new_state": "topic_established",
-          "confidence": 0.0,
-          "reasons": []
-        },
-        "new_state": "topic_established"
-      },
-      {
-        "turn_number": 6,
-        "timestamp": "2025-06-27T00:01:52.978090",
-        "user_input": "似たような曲って",
-        "context_analysis": {
-          "input": "似たような曲って",
-          "timestamp": "2025-06-27T00:01:52.970550",
-          "pronoun_references": [
-            {
-              "type": "relative",
-              "text": "似たような",
-              "position": [
-                0,
-                5
-              ],
-              "confidence": 0.7
-            }
-          ],
-          "continuity_indicators": [],
-          "emotional_signals": {
-            "positive": 0.0,
-            "negative": 0.0,
-            "excitement": 0.0,
-            "curiosity": 0.0,
-            "satisfaction": 0.0,
-            "detected_emotions": []
-          },
-          "topic_relevance": {
-            "Av3xaZkVpJs": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "Av3xaZkVpJs",
-                "title": "アドベンチャー",
-                "channel": "Ayase / YOASOBI",
-                "genre": "",
-                "keywords": [
-                  "Ayase / YOASOBI",
-                  "アドベンチャー"
-                ],
-                "last_mentioned": "2025-06-27T00:01:33.706441",
-                "mention_count": 5
-              },
-              "related_keywords": []
-            },
-            "2Z_qydIQGG4": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "2Z_qydIQGG4",
-                "title": "アオペラの「ア」-introduction song-",
-                "channel": "アオペラ -aoppella!?- 公式",
-                "genre": "",
-                "keywords": [
-                  "アオペラ",
-                  "アオペラ -aoppella!?- 公式"
-                ],
-                "last_mentioned": "2025-06-27T00:01:33.706441",
-                "mention_count": 4
-              },
-              "related_keywords": []
-            },
-            "9_hG6FjOHH4": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "9_hG6FjOHH4",
-                "title": "サマー シンドローム",
-                "channel": "雨沢レイ(Ray)",
-                "genre": "",
-                "keywords": [
-                  "シンドローム",
-                  "サマー",
-                  "雨沢レイ(Ray)"
-                ],
-                "last_mentioned": "2025-06-27T00:01:33.706441",
-                "mention_count": 4
-              },
-              "related_keywords": []
-            },
-            "wj_gULGftds": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "wj_gULGftds",
-                "title": "黒の召喚士",
-                "channel": "レトベア Official / RetBear",
-                "genre": "",
-                "keywords": [
-                  "レトベア Official / RetBear",
-                  "黒の召喚士"
-                ],
-                "last_mentioned": "2025-06-27T00:01:33.706441",
-                "mention_count": 4
-              },
-              "related_keywords": []
-            },
-            "29B3tG4bBZ8": {
-              "relevance_score": 0.8,
-              "topic_data": {
-                "video_id": "29B3tG4bBZ8",
-                "title": "Teddy Loid",
-                "channel": "TheOneAndOnlySame",
-                "genre": "",
-                "keywords": [
-                  "TheOneAndOnlySame"
-                ],
-                "last_mentioned": "2025-06-27T00:01:33.706441",
-                "mention_count": 4
-              },
-              "related_keywords": []
-            }
-          },
-          "requires_resolution": true
-        },
-        "system_response": "",
-        "mentioned_videos": [
-          {
-            "video_id": "Av3xaZkVpJs",
-            "title": "アドベンチャー",
-            "channel": "Ayase / YOASOBI",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "2Z_qydIQGG4",
-            "title": "アオペラの「ア」-introduction song-",
-            "channel": "アオペラ -aoppella!?- 公式",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "9_hG6FjOHH4",
-            "title": "サマー シンドローム",
-            "channel": "雨沢レイ(Ray)",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "wj_gULGftds",
-            "title": "黒の召喚士",
-            "channel": "レトベア Official / RetBear",
-            "genre": "",
-            "search_score": 80.0
-          },
-          {
-            "video_id": "29B3tG4bBZ8",
-            "title": "Teddy Loid",
-            "channel": "TheOneAndOnlySame",
-            "genre": "",
-            "search_score": 80.0
-          }
-        ],
-        "previous_state": "topic_established",
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "state_transition": {
-          "should_transition": false,
-          "new_state": "topic_established",
-          "confidence": 0.0,
-          "reasons": []
-        },
-        "new_state": "topic_established"
-      },
-      {
-        "turn_number": 7,
-        "timestamp": "2025-06-27T00:03:26.320165",
-        "user_input": "プロトディスク ヨルシカの曲じゃなく",
-        "context_analysis": {
-          "input": "プロトディスク ヨルシカの曲じゃなく",
-          "timestamp": "2025-06-27T00:03:26.289403",
-          "pronoun_references": [],
-          "continuity_indicators": [],
-          "emotional_signals": {
-            "positive": 0.0,
-            "negative": 0.0,
-            "excitement": 0.0,
-            "curiosity": 0.0,
-            "satisfaction": 0.0,
-            "detected_emotions": []
-          },
-          "topic_relevance": {},
-          "requires_resolution": false
-        },
-        "system_response": "",
-        "mentioned_videos": [
-          {
-            "video_id": "CkvWJNt77mU",
-            "title": "ヨルシカ",
-            "channel": "ヨルシカ / n-buna Official",
-            "genre": "",
-            "search_score": 77
-          },
-          {
-            "video_id": "bh7oZ9WU8vg",
-            "title": "いちプロ",
-            "channel": "FIRST STAGE PRODUCTION",
-            "genre": "",
-            "search_score": 12
-          }
-        ],
-        "previous_state": "topic_established",
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "state_transition": {
-          "should_transition": false,
-          "new_state": "topic_established",
-          "confidence": 0.0,
-          "reasons": []
-        },
-        "new_state": "topic_established"
       }
     ],
     "active_topics": {
+      "N4PtDsU2iSU": {
+        "video_info": {
+          "video_id": "N4PtDsU2iSU",
+          "title": "YOASOBI",
+          "channel": "Raon",
+          "genre": "",
+          "search_score": 86
+        },
+        "first_mentioned": "2025-06-30T00:07:49.452481",
+        "mention_count": 1,
+        "last_emotional_response": {},
+        "last_mentioned": "2025-06-30T00:07:49.452483"
+      },
       "Av3xaZkVpJs": {
         "video_info": {
           "video_id": "Av3xaZkVpJs",
           "title": "アドベンチャー",
           "channel": "Ayase / YOASOBI",
           "genre": "",
-          "search_score": 65
+          "search_score": 77
         },
-        "first_mentioned": "2025-06-26T23:59:48.396112",
-        "mention_count": 5,
+        "first_mentioned": "2025-06-30T00:07:49.452485",
+        "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:01:52.978090"
+        "last_mentioned": "2025-06-30T00:07:49.452486"
       },
-      "2Z_qydIQGG4": {
+      "Jj1_mfUzjOs": {
         "video_info": {
-          "video_id": "2Z_qydIQGG4",
-          "title": "アオペラの「ア」-introduction song-",
-          "channel": "アオペラ -aoppella!?- 公式",
-          "genre": "",
-          "search_score": 12
-        },
-        "first_mentioned": "2025-06-26T23:59:48.396112",
-        "mention_count": 4,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:01:52.978090"
-      },
-      "9_hG6FjOHH4": {
-        "video_info": {
-          "video_id": "9_hG6FjOHH4",
-          "title": "サマー シンドローム",
-          "channel": "雨沢レイ(Ray)",
-          "genre": "",
-          "search_score": 80.0
-        },
-        "first_mentioned": "2025-06-27T00:00:08.448236",
-        "mention_count": 4,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:01:52.978090"
-      },
-      "wj_gULGftds": {
-        "video_info": {
-          "video_id": "wj_gULGftds",
-          "title": "黒の召喚士",
-          "channel": "レトベア Official / RetBear",
-          "genre": "",
-          "search_score": 80.0
-        },
-        "first_mentioned": "2025-06-27T00:00:08.448236",
-        "mention_count": 4,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:01:52.978090"
-      },
-      "29B3tG4bBZ8": {
-        "video_info": {
-          "video_id": "29B3tG4bBZ8",
-          "title": "Teddy Loid",
-          "channel": "TheOneAndOnlySame",
-          "genre": "",
-          "search_score": 80.0
-        },
-        "first_mentioned": "2025-06-27T00:00:08.448236",
-        "mention_count": 4,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:01:52.978090"
-      },
-      "CkvWJNt77mU": {
-        "video_info": {
-          "video_id": "CkvWJNt77mU",
-          "title": "ヨルシカ",
-          "channel": "ヨルシカ / n-buna Official",
+          "video_id": "Jj1_mfUzjOs",
+          "title": "〈物語〉シリーズ オフ&モンスターシーズン",
+          "channel": "Ayase / YOASOBI",
           "genre": "",
           "search_score": 77
         },
-        "first_mentioned": "2025-06-27T00:03:26.320165",
+        "first_mentioned": "2025-06-30T00:07:49.452487",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:03:26.320165"
+        "last_mentioned": "2025-06-30T00:07:49.452488"
       },
-      "bh7oZ9WU8vg": {
+      "TMeaXo1rpsY": {
         "video_info": {
-          "video_id": "bh7oZ9WU8vg",
-          "title": "いちプロ",
-          "channel": "FIRST STAGE PRODUCTION",
+          "video_id": "TMeaXo1rpsY",
+          "title": "ADAMAS",
+          "channel": "巫てんり / Kannagi Tenri ",
           "genre": "",
-          "search_score": 12
+          "search_score": 65
         },
-        "first_mentioned": "2025-06-27T00:03:26.320165",
+        "first_mentioned": "2025-06-30T00:07:54.879225",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-27T00:03:26.320165"
+        "last_mentioned": "2025-06-30T00:07:54.879227"
+      },
+      "afpbZTjqW4M": {
+        "video_info": {
+          "video_id": "afpbZTjqW4M",
+          "title": "Ado",
+          "channel": "巫てんり / Kannagi Tenri ",
+          "genre": "",
+          "search_score": 65
+        },
+        "first_mentioned": "2025-06-30T00:07:54.879229",
+        "mention_count": 1,
+        "last_emotional_response": {},
+        "last_mentioned": "2025-06-30T00:07:54.879230"
+      },
+      "fTtJAf0KWBQ": {
+        "video_info": {
+          "video_id": "fTtJAf0KWBQ",
+          "title": "original",
+          "channel": "合法‼︎バツ子ﾁｬﾝBatsuko",
+          "genre": "",
+          "search_score": 65
+        },
+        "first_mentioned": "2025-06-30T00:07:54.879231",
+        "mention_count": 1,
+        "last_emotional_response": {},
+        "last_mentioned": "2025-06-30T00:07:54.879232"
       }
     },
-    "user_preferences": {
-      "positive": [
-        {
-          "topic_id": "Av3xaZkVpJs",
-          "emotion": "positive",
-          "strength": 1.0,
-          "timestamp": "2025-06-27T00:00:08.448236"
-        },
-        {
-          "topic_id": "2Z_qydIQGG4",
-          "emotion": "positive",
-          "strength": 1.0,
-          "timestamp": "2025-06-27T00:00:08.448236"
-        },
-        {
-          "topic_id": "9_hG6FjOHH4",
-          "emotion": "positive",
-          "strength": 1.0,
-          "timestamp": "2025-06-27T00:00:08.448236"
-        },
-        {
-          "topic_id": "wj_gULGftds",
-          "emotion": "positive",
-          "strength": 1.0,
-          "timestamp": "2025-06-27T00:00:08.448236"
-        },
-        {
-          "topic_id": "29B3tG4bBZ8",
-          "emotion": "positive",
-          "strength": 1.0,
-          "timestamp": "2025-06-27T00:00:08.448236"
-        }
-      ]
-    },
+    "user_preferences": {},
     "conversation_goals": [],
     "emotional_trajectory": [
       {
-        "timestamp": "2025-06-27T00:00:08.448236",
-        "turn_number": 2,
+        "timestamp": "2025-06-30T00:07:49.452491",
+        "turn_number": 1,
         "emotions": [
           {
-            "emotion": "positive",
-            "strength": 2.0
+            "emotion": "curiosity",
+            "strength": 0.7
           }
         ],
-        "dominant_emotion": "positive"
+        "dominant_emotion": "curiosity"
       },
       {
-        "timestamp": "2025-06-27T00:00:43.551370",
-        "turn_number": 4,
+        "timestamp": "2025-06-30T00:07:54.879235",
+        "turn_number": 2,
         "emotions": [
           {
             "emotion": "curiosity",
@@ -989,5 +281,5 @@
     "min_turns_for_deep_discussion": 3,
     "preference_confidence_threshold": 0.7
   },
-  "last_updated": "2025-06-27T00:03:26.320165"
+  "last_updated": "2025-06-30T00:07:54.879251"
 }

@@ -158,12 +158,13 @@ class SetsunaChat:
 
 このキャラクターとして、自然で魅力的な会話を心がけてください。"""
 
-    def get_response(self, user_input):
+    def get_response(self, user_input, mode="full_search"):
         """
         ユーザー入力に対するせつなの応答を生成
         
         Args:
             user_input: ユーザーの入力テキスト
+            mode: レスポンスモード ("full_search": 通常モード, "fast_response": 高速モード)
             
         Returns:
             str: せつなの応答テキスト
@@ -172,7 +173,8 @@ class SetsunaChat:
             return "何か話してくれますか？"
         
         try:
-            print(f"[チャット] 🤔 考え中: '{user_input}'")
+            mode_display = "高速モード" if mode == "fast_response" else "通常モード" 
+            print(f"[チャット] 🤔 考え中 ({mode_display}): '{user_input}'")
             
             # キャッシュから応答をチェック
             if self.response_cache:
@@ -204,10 +206,13 @@ class SetsunaChat:
             # GPTに送信するメッセージを構築
             system_prompt = self.character_prompt
             
-            # YouTube動画知識コンテキストを追加（架空コンテンツ防止強化）
+            # YouTube動画知識コンテキストを追加（高速モードでは既存知識のみ使用）
             video_context = None
             video_query_detected = False
-            if self.context_builder:
+            if self.context_builder and mode == "full_search":
+                # 通常モード: 完全なYouTube検索を実行
+                print(f"[チャット] 🔍 YouTube知識検索実行中...")
+                
                 # 動画関連クエリの検出
                 queries = self.context_builder.detect_video_queries(user_input)
                 video_query_detected = len(queries) > 0
@@ -224,6 +229,20 @@ class SetsunaChat:
                     system_prompt += f"2. 知らない場合は素直に「その動画は知らないな」「聞いたことないかも」と答える\n"
                     system_prompt += f"3. 推測や創作で情報を補わない\n"
                     system_prompt += f"4. 存在しないクリエイターや楽曲名を作り出さない"
+            elif self.context_builder and mode == "fast_response":
+                # 高速モード: 既存の会話履歴のみを参照（新規検索はスキップ）
+                print(f"[チャット] ⚡ 高速モード: YouTube検索スキップ、既存知識のみ使用")
+                
+                # 既存の会話履歴から動画情報を抽出（簡略版）
+                try:
+                    existing_video_context = self.context_builder.get_existing_conversation_context()
+                    if existing_video_context:
+                        system_prompt += f"\n\n【既存の動画知識】\n{existing_video_context}"
+                        system_prompt += f"\n\n【高速モード制限】新規検索はせず、既存の会話内容と一般的な知識のみで応答してください。"
+                except Exception as e:
+                    print(f"[チャット] ⚠️ 既存コンテキスト取得失敗: {e}")
+                    # 高速モードでは検索処理をスキップ
+                    system_prompt += f"\n\n【高速モード】既存知識と一般的な会話能力のみで応答します。具体的な動画情報が必要な場合は通常モードをご利用ください。"
             
             # 記憶コンテキストを追加
             if self.memory_system:
@@ -248,15 +267,27 @@ class SetsunaChat:
             recent_history = self.conversation_history[-10:]  # 最新10メッセージ
             messages.extend(recent_history)
             
-            # OpenAI API呼び出し
+            # OpenAI API呼び出し（高速モードでは設定を最適化）
             start_time = datetime.now()
-            response = self.client.chat.completions.create(
-                model="gpt-4-turbo",
-                messages=messages,
-                max_tokens=150,  # 動画情報含む応答のため150に調整
-                temperature=0.7,  # 少し創造性を下げて安定化
-                timeout=30  # APIタイムアウト時間（元に戻す）
-            )
+            
+            if mode == "fast_response":
+                # 高速モード: より短いレスポンス、短いタイムアウト
+                response = self.client.chat.completions.create(
+                    model="gpt-4-turbo",
+                    messages=messages,
+                    max_tokens=100,  # 高速モードでは100に制限
+                    temperature=0.6,  # より安定したレスポンス
+                    timeout=15  # 短いタイムアウト
+                )
+            else:
+                # 通常モード: 従来設定
+                response = self.client.chat.completions.create(
+                    model="gpt-4-turbo",
+                    messages=messages,
+                    max_tokens=150,  # 動画情報含む応答のため150に調整
+                    temperature=0.7,  # 少し創造性を下げて安定化
+                    timeout=30  # APIタイムアウト時間（元に戻す）
+                )
             
             # 応答取得
             setsuna_response = response.choices[0].message.content.strip()

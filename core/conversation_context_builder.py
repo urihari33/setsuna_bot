@@ -977,6 +977,100 @@ class ConversationContextBuilder:
         print("[コンテキスト] ✅ 文脈参照処理完了")
         return final_context
 
+    def get_existing_conversation_context(self) -> Optional[str]:
+        """
+        既存の会話履歴から動画コンテキストを取得（高速モード用）
+        新規検索は行わず、過去の会話で言及された動画情報のみを返す
+        
+        Returns:
+            既存の動画コンテキスト文字列（なければNone）
+        """
+        try:
+            print("[コンテキスト] ⚡ 既存会話コンテキスト取得開始")
+            
+            # マルチターン会話管理から既存の活動トピックを取得
+            active_topics = []
+            if self.multi_turn_manager:
+                try:
+                    current_session = self.multi_turn_manager.get_current_session()
+                    if current_session and "active_topics" in current_session:
+                        active_topics = list(current_session["active_topics"].values())
+                        print(f"[コンテキスト] 📝 活動トピック: {len(active_topics)}件")
+                except Exception as e:
+                    print(f"[コンテキスト] ⚠️ マルチターン履歴取得失敗: {e}")
+            
+            # 会話履歴から最近の動画情報を取得
+            recent_videos = []
+            if self.conversation_history:
+                try:
+                    conversation_stats = self.conversation_history.get_conversation_stats()
+                    recent_count = min(3, len(conversation_stats.get("recent_conversations", [])))
+                    
+                    for conv in conversation_stats.get("recent_conversations", [])[:recent_count]:
+                        video_id = conv.get("video_id", "")
+                        video_title = conv.get("video_title", "")
+                        
+                        if video_id and video_title:
+                            recent_videos.append({
+                                "video_id": video_id,
+                                "title": video_title,
+                                "last_discussed": conv.get("last_discussed", ""),
+                                "discussion_count": conv.get("count", 1)
+                            })
+                    
+                    print(f"[コンテキスト] 📚 最近の会話動画: {len(recent_videos)}件")
+                except Exception as e:
+                    print(f"[コンテキスト] ⚠️ 会話履歴取得失敗: {e}")
+            
+            # 既存コンテキストがない場合
+            if not active_topics and not recent_videos:
+                print("[コンテキスト] ❌ 既存会話コンテキストなし")
+                return None
+            
+            # 簡略版コンテキストフォーマット生成
+            context_parts = []
+            
+            # 活動トピックを追加
+            if active_topics:
+                context_parts.append("【現在の会話トピック】")
+                for topic in active_topics[:2]:  # 最大2件
+                    video_info = topic.get("video_info", {})
+                    title = video_info.get("title", "")
+                    channel = video_info.get("channel", "")
+                    mention_count = topic.get("mention_count", 1)
+                    
+                    if title:
+                        topic_line = f"楽曲名: {title}"
+                        if channel:
+                            topic_line += f" / {channel}"
+                        topic_line += f" (言及回数: {mention_count}回)"
+                        context_parts.append(f"• {topic_line}")
+            
+            # 最近の会話動画を追加  
+            if recent_videos:
+                context_parts.append("【最近話した動画】")
+                for video in recent_videos[:2]:  # 最大2件
+                    title = video.get("title", "")
+                    discussion_count = video.get("discussion_count", 1)
+                    
+                    if title:
+                        video_line = f"楽曲名: {title} (会話回数: {discussion_count}回)"
+                        context_parts.append(f"• {video_line}")
+            
+            # 高速モード用の指示を追加
+            context_parts.append("【高速モード注意】")
+            context_parts.append("• 新規検索は実行していません")
+            context_parts.append("• 上記の既存情報のみを参考にしてください") 
+            context_parts.append("• 不明な点は「詳しくは知らないけど」と答えてください")
+            
+            result = "\n".join(context_parts)
+            print(f"[コンテキスト] ✅ 既存コンテキスト構築完了")
+            return result
+            
+        except Exception as e:
+            print(f"[コンテキスト] ❌ 既存コンテキスト取得エラー: {e}")
+            return None
+
 
 if __name__ == "__main__":
     # テスト実行

@@ -814,6 +814,10 @@ class MultiTurnConversationManager:
         
         return quality_metrics
 
+    def get_current_session(self) -> Dict[str, Any]:
+        """現在のセッション情報を取得（高速モード用）"""
+        return self.current_session.copy()
+
 
 # 使用例・テスト
 if __name__ == "__main__":

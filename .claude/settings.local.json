@@ -42,7 +42,9 @@
       "Bash(curl:*)",
       "Bash(git add:*)",
       "Bash(git rm:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }

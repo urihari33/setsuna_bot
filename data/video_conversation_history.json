@@ -170,47 +170,17 @@
     },
     "Av3xaZkVpJs": {
       "video_title": "アドベンチャー",
-      "conversation_count": 10,
+      "conversation_count": 16,
       "first_talked": "2025-06-26T22:59:19.583808",
-      "last_talked": "2025-06-27T00:01:52.970550",
+      "last_talked": "2025-06-30T00:07:49.435713",
       "user_reactions": [
         "neutral",
-        "positive",
-        "positive",
+        "neutral",
+        "neutral",
         "neutral",
         "neutral"
       ],
       "conversation_contexts": [
-        {
-          "date": "2025-06-26T22:59:19.583808",
-          "input": "アドベンチャーについて教えて",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T22:59:19.600946",
-          "input": "アドベンチャーについて教えて",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T23:00:49.777064",
-          "input": "アドベンチャーって知ってる",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T23:01:31.526932",
-          "input": "さっきのアドベンチャー",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T23:43:44.388717",
-          "input": "アドベンチャーについて教えて",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T23:59:48.390601",
-          "input": "アドベンチャーについて教え",
-          "reaction": "neutral"
-        },
         {
           "date": "2025-06-27T00:00:08.427819",
           "input": "この曲すごい好きなんだよね 私も",
@@ -230,9 +200,39 @@
           "date": "2025-06-27T00:01:52.970550",
           "input": "似たような曲って",
           "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:08:48.194366",
+          "input": "こんにちは yoasobi のアドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:09:12.826517",
+          "input": "この曲の歌詞のさ 感情を分析してほしいんだけど",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:10:43.480663",
+          "input": "そうなの 似たような曲も知ってたら推薦してくれ",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:11:12.895164",
+          "input": "yoasobi 以外でさ 似た曲の人っている",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:41:24.980128",
+          "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T00:07:49.435713",
+          "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
         }
       ],
-      "familiarity_score": 0.82
+      "familiarity_score": 0.7
     },
     "2Z_qydIQGG4": {
       "video_title": "アオペラの「ア」-introduction song-",
@@ -485,7 +485,306 @@
         }
       ],
       "familiarity_score": 0.2
+    },
+    "N4PtDsU2iSU": {
+      "video_title": "YOASOBI",
+      "conversation_count": 6,
+      "first_talked": "2025-06-29T23:08:48.191366",
+      "last_talked": "2025-06-30T00:07:49.429805",
+      "user_reactions": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:08:48.191366",
+          "input": "こんにちは yoasobi のアドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:09:12.825510",
+          "input": "この曲の歌詞のさ 感情を分析してほしいんだけど",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:10:43.479661",
+          "input": "そうなの 似たような曲も知ってたら推薦してくれ",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:11:12.894096",
+          "input": "yoasobi 以外でさ 似た曲の人っている",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:41:24.974530",
+          "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T00:07:49.429805",
+          "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.7
+    },
+    "Jj1_mfUzjOs": {
+      "video_title": "〈物語〉シリーズ オフ&モンスターシーズン",
+      "conversation_count": 6,
+      "first_talked": "2025-06-29T23:08:48.195366",
+      "last_talked": "2025-06-30T00:07:49.446099",
+      "user_reactions": [
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:08:48.195366",
+          "input": "こんにちは yoasobi のアドベンチャーについて教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:09:12.827517",
+          "input": "この曲の歌詞のさ 感情を分析してほしいんだけど",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:10:43.482896",
+          "input": "そうなの 似たような曲も知ってたら推薦してくれ",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:11:12.896179",
+          "input": "yoasobi 以外でさ 似た曲の人っている",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:41:24.987675",
+          "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T00:07:49.446099",
+          "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.7
+    },
+    "3qL0Njp8rq4": {
+      "video_title": "東京グレートベアーズ",
+      "conversation_count": 3,
+      "first_talked": "2025-06-29T23:10:15.472077",
+      "last_talked": "2025-06-29T23:11:12.897293",
+      "user_reactions": [
+        "positive",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:10:15.472077",
+          "input": "これはね 実際のユニバーサルスタジオジャパンを舞台にした MV で それがなんかアニメーションと現実がマッチしてていいんだよね",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-29T23:10:43.483895",
+          "input": "そうなの 似たような曲も知ってたら推薦してくれ",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:11:12.897293",
+          "input": "yoasobi 以外でさ 似た曲の人っている",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.5
+    },
+    "rtw9iea8QIw": {
+      "video_title": "擬態ごっこ",
+      "conversation_count": 3,
+      "first_talked": "2025-06-29T23:10:15.474077",
+      "last_talked": "2025-06-29T23:11:12.898625",
+      "user_reactions": [
+        "positive",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:10:15.474077",
+          "input": "これはね 実際のユニバーサルスタジオジャパンを舞台にした MV で それがなんかアニメーションと現実がマッチしてていいんだよね",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-29T23:10:43.484895",
+          "input": "そうなの 似たような曲も知ってたら推薦してくれ",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:11:12.898625",
+          "input": "yoasobi 以外でさ 似た曲の人っている",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.5
+    },
+    "MbxxocZ5RQo": {
+      "video_title": "めちゃめちゃカリスマ",
+      "conversation_count": 3,
+      "first_talked": "2025-06-29T23:10:15.475077",
+      "last_talked": "2025-06-29T23:11:12.899624",
+      "user_reactions": [
+        "positive",
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:10:15.475077",
+          "input": "これはね 実際のユニバーサルスタジオジャパンを舞台にした MV で それがなんかアニメーションと現実がマッチしてていいんだよね",
+          "reaction": "positive"
+        },
+        {
+          "date": "2025-06-29T23:10:43.484895",
+          "input": "そうなの 似たような曲も知ってたら推薦してくれ",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-29T23:11:12.899624",
+          "input": "yoasobi 以外でさ 似た曲の人っている",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.5
+    },
+    "TMeaXo1rpsY": {
+      "video_title": "ADAMAS",
+      "conversation_count": 2,
+      "first_talked": "2025-06-29T23:41:31.047713",
+      "last_talked": "2025-06-30T00:07:54.858736",
+      "user_reactions": [
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:41:31.047713",
+          "input": "最新のVTuber動画教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T00:07:54.858736",
+          "input": "最新のVTuber動画教えて",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.30000000000000004
+    },
+    "afpbZTjqW4M": {
+      "video_title": "Ado",
+      "conversation_count": 2,
+      "first_talked": "2025-06-29T23:41:31.055580",
+      "last_talked": "2025-06-30T00:07:54.863780",
+      "user_reactions": [
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:41:31.055580",
+          "input": "最新のVTuber動画教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T00:07:54.863780",
+          "input": "最新のVTuber動画教えて",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.30000000000000004
+    },
+    "fTtJAf0KWBQ": {
+      "video_title": "original",
+      "conversation_count": 2,
+      "first_talked": "2025-06-29T23:41:31.061551",
+      "last_talked": "2025-06-30T00:07:54.871212",
+      "user_reactions": [
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-29T23:41:31.061551",
+          "input": "最新のVTuber動画教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T00:07:54.871212",
+          "input": "最新のVTuber動画教えて",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.30000000000000004
+    },
+    "t1XM0ECUqTE": {
+      "video_title": "ドクター＝ファンクビート",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T00:04:57.782029",
+      "last_talked": "2025-06-30T00:04:57.782029",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T00:04:57.782029",
+          "input": "こんにちは ドクターファングビートって知ってる",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "OhYxV0CL3r0": {
+      "video_title": "フランドール",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T00:04:57.785036",
+      "last_talked": "2025-06-30T00:04:57.785036",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T00:04:57.785036",
+          "input": "こんにちは ドクターファングビートって知ってる",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "nYbeAHREKWw": {
+      "video_title": "推しの子",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T00:04:57.786040",
+      "last_talked": "2025-06-30T00:04:57.786040",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T00:04:57.786040",
+          "input": "こんにちは ドクターファングビートって知ってる",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
     }
   },
-  "last_updated": "2025-06-27T00:03:26.317568"
+  "last_updated": "2025-06-30T00:07:54.871233"
 }

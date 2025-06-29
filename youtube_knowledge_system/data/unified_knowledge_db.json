@@ -2294,7 +2294,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:12:23.378995",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月, となりの坂田。, nqrse', 'movie': 'イクミ', 'composer': '宮田’レフティ’リョウ', 'lyricist': '宮田’レフティ’リョウ, 天月, nqrse', 'arranger': '宮田’レフティ’リョウ', 'mix': 'kain', 'illustration': '狂zip'}, 'lyrics': 'ウェルカム This is ヒトトキのショータイム\\n生娘は 僕・私・俺がご招待 ナビゲートは無論適当\\nだがマスターピース 口だけじゃない Ready or not, I see\\n最初からチョイスは決まって ホラ ここでキス\\n逃さない景色 Mr.Photogenic\\n理性を溶かす寝息 此処\\u3000凍らす溜息\\n召しませ魔性 まるで狡猾なレディ\\n揺らすこの空気 プラス物好き\\nまるごと閉じ込めりゃフラスコの住人\\nこの手を取るなら まだ今じゃないって分かってる\\n未だスカす子のフリ？\\nランクは１・２・３じゃないぜ １だけ\\u3000これは君が選んで離した手？ それ嫌ったつもりかい (助かりもしない)\\nさあどうぞ 縋って頂戴\\n辿り着いた答えなど決まりきっているんだ\\n君じゃないといけない\\nWe are \"PUA\" 建前のreason\\n交わしたら 始まるrhythm\\nLet\\'s do it do it 焦らさないで\\u3000所詮は戯れ\\nJust a matter of time 飲み干したbottle\\n君のこと知りたいよもっと\\u3000\\n教えて who will you choose??\\n(Me?) (Me?) (Me!?)\\nCrazy game of Love\\nもう少し居たい 勿体振ンないで\\nああ 恋じゃ収まらないから ここで2人 1抜けよう\\nストップは聞こえぬフリ したり顔のままレッツバウンス\\n胸の内はもう決まりきったろ\\n聞こえる\"Freeze\"君が笑う\\n心に棲みつく 偽りの愛情とhaze\\n君の名前になんて興味はない\\nさあ好きなことを好きなだけPrincess Bride\\n奪い奪われ 魔性に落ちる Myself\\nほら脳内をアップデートして\\n天使のような悪魔でいようぜ\\n嘘みたいに思うだろう\\n浮かんだ言葉も君の前じゃ言えない\\nWe are \"PUA\" 建前のreason\\n交わしたら 始まるrhythm\\nLet\\'s do it do it 焦らさないで\\u3000所詮は戯れ\\nI love... なんて言わせないよ\\n可能性あるのならkiss you\\n教えて who will you choose??\\n(Me?) (Me?) (Me!?)\\nNever end with play\\nShall we dance? 必要なんでしょ\\n仮初め 満たすだけのショー\\nありふれた\"君じゃないと何も意味がない\"\\nって言葉並べても君には響かない\\nPUA そう呼んだって実の所はって話さ\\n夜が明けそう Lady お喋りはこのくらいにしよう\\nWe are \"PUA\" 建前のreason\\n交わしたら 始まるrhythm\\nLet\\'s do it do it 焦らさないで\\u3000所詮は戯れ\\nJust a matter of time 飲み干したbottle\\n君のこと知りたいよもっと\\u3000\\n教えて who will you choose??\\n(Me?) (Me?) (Me!?)\\nCrazy game of Love', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:12:23.378995', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -3507,7 +3507,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:12:31.657750",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '月村手毬 (CV. 小鹿なお)', 'movie': '萩森じあ', 'composer': '美波'}, 'lyrics': '歌：月村手毬 (CV. 小鹿なお)\\n作詞作曲：美波\\n編曲：美波、真船勝博\\n\\nElectric Guitar：美波\\nElectric Guitar：大塚巧 \\nBass：難部一真 \\nDrums：柏倉隆史 \\nPiano：渡辺シュンスケ\\nSynth & Programming：真船勝博\\nStrings Arrangement：徳澤青弦\\n1st Vn. ：藤堂昌彦\\n2nd Vn. ：徳永友美\\nVa. ：二木美里\\nVc, ：徳澤青弦\\nHorn Arrangement：武嶋聡、美波\\nTrumpet：真砂陽地\\nTrumpet：松井秀太郎\\nTrombone：和田充弘\\nTenor Sax, Flute, Piccolo：武嶋聡\\nRecording Engineer：吉井 雅之\\nMixing Engineer：高桑秋朝 \\nManagement：Water Reflection\\nInstrumental Technician：西木 章智', 'tools': {'software': None, 'instruments': ['Electric Guitar', 'Bass', 'Drums', 'Piano', 'Synth', 'Strings', 'Horn', 'Trumpet', 'Trombone', 'Tenor Sax', 'Flute', 'Piccolo']}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:12:31.657750', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.267121",
@@ -4130,7 +4130,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:12:51.106185",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'Ginnique', 'movie': 'Whitelines', 'composer': 'ZiXS', 'lyricist': 'Ginnique, HOPs', 'arranger': 'Quentin', 'mix': 'Quentin'}, 'lyrics': '[Intro]\\nต่อให้จะเพียรพยายาม หรือจะเซียนกันมานาน\\nหรืออักษรบนตำรา เดี๋ยวสักวันก็คงจาง\\nอีกไม่นานก็คงจาง หมุนไปตามกาลเวลา\\nที่มันเปลี่ยนก็ต้องเปลี่ยน ถ้าจะเสี่ยงก็ต้องเสี่ยง\\nไม่ได้จัดฉาก เดี๋ยวโดนสาดกลับ\\nมีแค่ฝักดาบ เพราะว่าดาบหัก\\nเสียงของสัตว์ป่า ติดในกับดัก\\nเหมือนว่าบาปหนัก but but but but but \\n\\n[Chorus]\\nตอนนี้ฉันอยาก Lock time\\nไปกับห้วงเวลาที่มีตัวตนและ Lock down\\nเพราะตอนนี้ตัวฉันไม่อยากจะโดนใคร Knock down\\nบินขึ้นไปให้สูงกว่าเดิมอีก Can you help me help me\\nLock time\\nอยากมีตัวตน ให้เธอจำ ให้เธอฟัง มันอีกครั้ง พร้อมกับ Lock down\\nเพราะตอนนี้ตัวฉันไม่อยากจะโดนใคร Knock down\\nบินขึ้นไปให้สูงกว่าเดิมอีก Can you help me help me\\n\\n[Verse1]\\nฉันก็ไม่ได้คิดว่าสิ่งที่สั้นมันคือชีวิตอยู่ในภวังค์ที่เห็นนิมิต\\nมันไวจนตาไม่ทันกระพริบ\\nHuh ?\\nแล้วแต่ใครจะคิดเพราะทุกชีวิตมีความสำคัญ\\nเพราะว่าร่างกายและจิตวิญญาณทุกอย่างมันมักจะเชื่อมถึงกัน\\nRun again! Come again!\\nกาลเวลาเริ่มหมุนไป แต่ว่าฉันไม่หายไป\\nมีชีวิตเพื่อหายใจ ถ้ามัวแต่คิดก็สายไป\\nเพราะถ้าไม่ทำคงเสียใจ ถ้าตรงไม่ได้ก็เลี่ยงไป\\n\\nจุดที่ต้องไปคือเส้นชัยเอารางวัลมาประดับ สิ่งที่ถนัด\\nเป็นดั่งกับเสียงที่มันดังยามราตรีที่มันเงียบและสงัด สิ่งที่สัมผัส\\nมันคือรางวัลที่ควรได้ เพราะว่าฉันจะไม่พ่าย\\nคงไม่ล้มลงง่าย ๆ เอาทุกสิ่งและทุกอย่างที่ฉันได้\\nหลอมมันรวมไปกับไฟ เพราะว่าไพ่อยู่บนมือ\\nที่ฉันถือมันคือ kings do it\\n\\nback to basics กลับไป basics\\nLike a magic automatic\\nLike a sonic ไม่ต้อง Panic\\nแค่มี gambit rap rap present Ya ya like a cinematic\\nI want to be free in the sky like a bird\\nShall we go together? Cuz like, I’m not a thug\\nYou always be first and I’ll give you the earth\\nYou can get through it. Lemme help you spark it !\\n\\n[Chorus]\\nตอนนี้ฉันอยาก Lock time\\nไปกับห้วงเวลาที่มีตัวตนและ Lock down\\nเพราะตอนนี้ตัวฉันไม่อยากจะโดนใคร Knock down\\nบินขึ้นไปให้สูงกว่าเดิมอีก Can you help me help me\\nlock time\\nอยากมีตัวตน ให้เธอจำ ให้เธอฟังมันอีกครั้งพร้อมกับ Lock down\\nเพราะตอนนี้ตัวฉันไม่อยากจะโดนใคร Knock down\\nบินขึ้นไปให้สูงกว่าเดิมอีก Can you help me help me\\n\\n[Verse2]\\nขอโทษนะครับถ้าหากฟังกันไม่ทัน\\nไปอ่านซับเอาละกันมีความหมายในทุกคำ\\nเพราะว่าจับคำสัมผัสก่อนจะกลับแล้วค่อยสับ\\nปรับ Flow ในระดับ ให้สดับฟัง\\nไม่ต้องกลับคำ เดี๋ยวจะจัดทำ\\nอย่าเพิ่งปรักปรำ คงไม่กลับลำ\\nแค่จำกัดคำ ทำทำทำ และก็ทำ และก็ทำ\\nให้มันจำ เพราะว่าทำ เป็นประจำ\\nตั้งแต่จันทร์ไปถึงจันทร์ แต่ก็ยัง\\n\\nอย่าให้ฉันต้องเดือด ถ้าทำแบบนี้มันก็แค่เกือบ\\nรสชาติไม่ดีมันก็แค่เฝื่อน ร่างกายดีดีเดี๋ยวคงได้เสื่อม\\nถ้ายังไม่เชื่อมาลองกับตา ไม่มีความเชื่อก็ลองศรัทธา\\nต้องแลกด้วยเลือดพันธสัญญา ถ้าไปไม่รอดก็ลองกลับมา\\nแต่ว่าต้องไปไม่ว่ายังไงก็เพราะเป้าหมายมันคือเส้นชัย\\nฉันเลยวาดฝันเอาไว้ตั้งไกล จะไม่ให้ทำมันเลยได้ไง\\nเหมือน cyanide มันก็คือพิษเพราะอันตรายก็ถึงชีวิต\\nอาจอยู่ใน choice ที่คุณไม่คิดบางทีเกมนี้เราอาจจะพลิก\\n\\n[Chorus]\\nตอนนี้ฉันอยาก Lock time\\nไปกับห้วงเวลาที่มีตัวตนและ Lock down\\nเพราะตอนนี้ตัวฉันไม่อยากจะโดนใคร Knock down\\nบินขึ้นไปให้สูงกว่าเดิม', 'confidence_score': 0.5, 'analyzed_at': '2025-06-25T00:12:51.106185', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.807182",
@@ -5270,7 +5270,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:13:02.700704",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '不破湊', 'movie': 'ハノ(momo inc.)', 'composer': 'D.watt(IOSYS)', 'lyricist': '七条レタス'}, 'lyrics': '「ご指名ありがとうございます！\\n今夜は一生、俺と一緒にいてもらう感じで… いっすか…？」\\n\\nWelcome to the party everyone\\nPlease “Ittan” stay tonight…\\nせーの！\\n\\nSTAY！ (はい！) TONIGHT！！ (はい！)\\nなんだか気分は (フワフワ)\\nYES！ (はい！) シャンパン！！ (はい！)\\n歯の浮くセリフが (フワフワ)\\nSTAY！ (はい！) TONIGHT！！ (はい！)\\n姫様一緒に (フワフワ)\\n今夜はお前と (一旦ステイ！)\\n\\nお前のモーニンコールで本日六時に降臨 (六時に降臨)\\nオールでドリンキン 記憶ないやいやいや\\n会いたくなるのは俺のせいかい\\nそいつはしゃあない (しゃあないしゃあない)\\nお財布届けてくれてサンキュー\\n\\nなにせ フワリ フワリ フワリ\\nナイトのバタフライ (バタフライ Fooo)\\nえらくリリカル (リリカル) マジカル (マジカル)\\nフッ軽 始まる ワンダラン (ワンダラン)\\nそんな世界に0泊2日酔い\\n\\n「そんな顔されたら俺、もうわかんなくなっちゃうよ…？」\\n\\n夜はこれから\\nアゲて アゲて (Foo！！)\\n下げて アゲて (Foo！！)\\nお気に召すまま What you want？？？ (Fuwa Fuwa！！！)\\n現実だとか (呑んで呑んで)\\nリアリティだとか (騒いで騒いで)\\nブッこわしたっていいじゃない One Night\\n(Fuwa Fuwa Fuwa Fuwa)\\n\\nねぇ行かないで (Foo！！)\\nまじでまじで (Foo！！)\\n今夜お前がプリンセス (Foooo！！！)\\n帰りの馬車は行っちゃうけど\\n零時の (零時の) 扉を (扉を)\\nバーン！これ開けて\\nお気に召すまま 一旦、一旦、一旦ステイ TONIGHT…', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:13:02.700704', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.809172",
@@ -5376,7 +5376,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:13:22.233998",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'しぐれうい（9さい）', 'movie': '鬼灯わらべ', 'illustration': 'ががめ', 'composer': 'D.watt', 'lyricist': 'まろん'}, 'lyrics': 'Lonely ロリロリ神、降臨\\n鐘を鳴らせばこの通り\\nこれは救済のレクイエム\\n\\nせーのっ\\n触ったら逮捕！（Ah！）極Chu♡ de 点呼！（Uh！）\\nいちにーさんしー？（ごめんなさーい）\\nハァ？( ﾟДﾟ) ごめんなさいが、聞こえなーい（え〜！）\\n粛聖!! ロリ神レクイエム☆\\n\\n将来は\\u3000お前なんかに\\n好かれたくない（ない！）\\n泥水で\\u3000口を洗え\\n法廷で\\u3000会おう？♡（ねっ）\\nさぁ\\u3000おまわりさん\\n連れて行って\\n妄想しか取り柄のない\\nかわいそな人\\n\\n（ういちゃん！ういちゃん！待ってよういちゃん！）\\nその姿親に見せられますかぁ？\\n（ういちゃん！ういちゃん！かわいいよォ〜！）\\nわぁ、ありがとう。お疲れ様です〜＾＾\\n\\nロリロリ神、降臨（ずっきゅーん！）\\nマジヤバ奴等に用心（ばっきゅーん！）\\nまともじゃないなら\\u3000早く消えてください\\nLovely ロリロリ神、降臨（ずっきゅーん！）\\n鐘を鳴らせばこの通り（Yes！）\\nとても優しくて\\u3000素敵なお兄ちゃん\\n楽園でホラ\\u3000ねんねしな\\n\\n（ういちゃん・・・）\\nほら。世の中には、こんなに気持ち悪い人たちが\\n蔓延っているんですっ！\\nみーんな、晒しageますよ。\\n（ういちゃん・・・うい、こっち向いてェ〜〜〜）\\n\\n触ったら逮捕！（Ah！）極Chu♡ de 点呼！（Uh！）\\nいちにーさんしー？（ごめんなさーい）\\nハァ？( ﾟДﾟ) ごめんなさいが、聞こえなーい（え〜！）\\n粛聖!! ロリ神レクイエム☆\\n\\nはぁーい、獄中にいるみなしゃァーん\\n刑務所ファンミーティングのお時間でぇーす\\nその、腐りきった耳をゴリゴリかっぽじって\\nよぉーく聴いてくださいね\\n\\nざぁーこ\\u3000\\u3000（助かる〜ゥ）\\nキモキモ\\u3000\\u3000（助かる〜ゥ）\\nうるさい\\u3000\\u3000（助かる〜ゥ）\\n黙ってもらっていいですか？\\n嫌いです\\u3000\\u3000（助かる〜ゥ）\\nかわいそ\\u3000\\u3000（助かる〜ゥ）\\nだーさっ\\u3000よーわっ\\u3000みっともな〜！w\\n\\nどうしようもない\\u3000お兄ちゃんお姉ちゃん\\nもう希望もない\\u3000ゴミだおめーら\\n汚物消毒\\u3000１１０番\\n固有結界\\u3000は・つ・ど・う♡\\n\\n粛聖☆ういビーーーーム（あぁぁあぁぁぁ〜〜〜）\\nもういっちょ！ういビーーーーム（あぁぁあぁぁぁ〜〜〜）\\nまだまだぁ！ういビーーーーム（あぁぁあぁぁぁ〜〜〜）\\nういビーーーーム（あぁぁあぁぁぁ〜〜〜）\\n\\n怒りの日。聖なるインターネットに、血の雨が降り注いだ日。\\n愚かなロリコンを骨の髄まで浄化する、一筋の光。\\nそれが、ういビームなのである。\\n\\n「ういは、全てを赦します・・・」\\n\\n嗚呼\\u3000この世の醜さを\\n集めて描いてみるよ\\n真っ白なキャンバスが\\u3000穢れて泣いている\\nLonely\\u3000振り向いた少女は\\nそっと手を掴む・・・\\n『楽園など無いから』\\n\\nおっきなお友達のみんなえ\\nお前らが打ち込んでいる虚無には、何の意味があるの？\\nねぇ、教えてよ。うい、ぜんぜぇーんわかんないんだ！\\n\\nロリロリ神、降臨（ずっきゅーん！）\\nさよなら笑顔でバイバイ（ばっきゅーん！）\\nピリオドをどうぞ\\u3000この手で押してあげゆ\\nLovely ロリロリ神、降臨', 'confidence_score': 0.5, 'analyzed_at': '2025-06-25T00:13:22.233998', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.810172",
@@ -5460,7 +5460,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:13:40.196208",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'ikura', 'movie': '篠田 利隆', 'composer': 'Ayase'}, 'lyrics': \"UNHAPPY?\\n悩める人の子よ\\nUNLUCKY?\\n人成らざる者も\\nBE HAPPY!\\n弛まず目指せよ\\n生きているんだし\\n目を逸らした過去も\\n退屈な未来も\\nカウンセリング\\nやれやれ\\n古今東西\\nピースピース\\n\\nねえ何だかどうして\\n戦ってるようなそんな気がするの\\n触れられない 触れたくもない\\n過去の自分自分自分自分と\\nもうとっくに死んでる\\n透明な亡霊と対決\\n幼気で痛い記憶の奥\\n\\n残念？ もう居ないのに\\nあれ？ そっちが良い？ アイロニーね\\n透かされているのは現在の自分？\\nナンセンス\\n消えないレッテル\\nYes!\\u3000要はコンプレックス\\n取り憑かれているみたい\\n\\n巻き付いたまま\\nまだ離れない\\n在りし日の自分\\n\\nUNDEAD\\n死んじゃいない\\nお前とお前の連鎖\\n生きていることとは変わり続けることだ\\n不幸に甘んじて\\n満足するなよ\\n幸せになろうとしないなんて卑怯だ\\n\\nこの世この世は\\n奇怪奇怪ファンタジー\\n次は鬼が出るか蛇が出るか\\n出会って遭ってやっと始まる物語\\nさあ人か化物か\\n閑話休題\\nピースピース\\n\\nPast & Future\\ncan't change the Past\\nPast & Future\\nrun for the Future\\n\\nカットイン\\n\\n何だかどうして\\n未来になんぞ\\n何の希望もない期待出来ない\\nような気がして\\nもう随分生きている\\n既視感とテンプレで食傷\\n素敵な出来事の気配もない\\n\\n残念\\n積んだ経験の因果\\n形骸化された神話と退屈な進化\\n要は刺激が欲しいんだ\\n飽きちゃった\\n慣れちゃった\\nなんて\\n整っていくガイダンス\\n増えるコンプライアンス\\n蓋されていくみたい\\n\\n吸い尽くして\\nあれもこれもどれも\\n同じ味がする\\n\\nUNDEAD\\n死んじゃいない\\u3000\\nお前とお前の連鎖\\n何時の世も\\n過去も未来も現在にあるんだ\\n生きていることを\\n愚直に果たせよ\\n目指せハッピーエンド\\n\\nUNDEAD\\n死んじゃいない\\nお前に言っているんだ\\n幸せを諦めてしまうな\\n人で在れ\\nただ苦しみに慣れて\\n耐えているだけじゃ\\n死んでいるも同然\\n屍のアンデッド\\n\\nUNHAPPY?\\n悩める人の子よ\\nUNLUCKY?\\n人成らざる者のも\\nBE HAPPY!\\n弛まず目指せよ\\n生きているんだろ\\n不幸に浸るも\\n幸せになるのも\\nそう全部全部お前だ\\n古今東西\\n一切合切\\n森羅万象\\nピースピース\\n\\nPast & Future\\ncan't change the Past\\nPast & Future\\nrun for the Future\\n\\n人の在る所に何時も憂い事\\n生き抜けこの化物ばかりの物語\", 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:13:40.196208', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.810677",
@@ -6319,7 +6319,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:13:49.497797",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': None, 'movie': '筆者', 'composer': 'Erik Lidbom, RUSH EYE', 'lyricist': 'Funk Uchino, Gigi', 'arranger': 'RUSH EYE', 'mix': '安宅秀紀', 'illustration': 'ちゃっぴー', 'character_animation': 'お菊'}, 'lyrics': '焼きつけて\\u3000離さない\\n「TAKE ACTION」\\n\\n際限なく\\u3000ほら\\u3000Action ! \\n変えよう\\u3000運命ごと\\u3000Let’s roll\\u3000(Let’s roll out)\\nC’mon !\\u3000“ACT together”\\u3000(Oh-Oh-Oh-Oh-Oh)\\nEverybody !\\n\\n無我夢中に\\u3000さあ\\u3000加速させろ！\\n燃えるように\\u3000身体中、醒めない Fever\\n応答せよ\\u3000無限の冒険衝動\\u3000躊躇いは None No more\\n誰一人も\\u3000置いて行かない！\\n\\n新たなる旅路を\\n想像以上の\\u3000シナリオ描こう！\\n地図にない World\\u3000辞書にない Word\\nHeart to Heart\\u3000繋ぎ合わせていま\\nCan’t stop dreaming on !\\n\\nTake action !\\u3000このまま\\u3000Hit it !\\u3000(Hey)\\nYes Y’all !\\u3000どこまでも\\u3000Beat it !\\u3000(Hey)\\nSay Oh oh oh !\\u3000もっと…！\\n焼きつけて\\u3000離さない\\nTake action !\\u3000何度も\\u3000Do it !\\u3000(Hey)\\n世界中\\u3000巻き込んで\\u3000Bang it !\\u3000(Hey)\\nSay Oh oh oh !\\u3000ずっと…！\\nGet ready !\\u3000行くぞ！\\u3000Take action !\\n\\n際限なく\\u3000ほら\\u3000Action !\\n変えよう\\u3000運命ごと\\u3000Let’s roll\\nC’mon !\\u3000“ACT together”\\u3000(Oh-Oh-Oh-Oh-Oh)\\nOh, that’s right\\u3000“ACT together”', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:13:49.497797', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.812677",
@@ -6555,7 +6555,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:14:04.249696",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'ルウル/LeuR', 'movie': '水豹', 'composer': 'wotaku', 'lyricist': 'wotaku', 'arranger': 'wotaku', 'mix': None, 'illustration': None}, 'lyrics': 'ポップアップ止まんないよ\\nI miss you 聞いて\\n空メール転送がクセになって\\n\\nCookieをちょうだいよ\\nTrick or Treat お願い\\nパスワード変えないでよ\\nずっと貴方が見たいから\\n\\n今日なんか良いことあった？\\n予約したフィギュアがあったね\\n\\n来月出るゲームはどうする？\\nその分 バイトを増やすんですか\\nそですか\\n\\nアップデートしないほうが\\nバグが無くていいんだって\\n\\n大人にならないほうが\\nいいんじゃなかったっけ\\n\\nショートカット作んないで\\nデスクトップ埋まっちゃうじゃん\\n\\nバックドアからピンポンダッシュ\\n\\nポップアップ止まんないよ\\nI miss you\\u3000聞いて\\n空メール転送がクセになって\\n\\nCookieをちょうだいよ\\nTrick or Treat お願い\\nパスワード変えないでよ\\nずっと貴方が見たいから\\n\\nもう駄目だ 良いことないや\\nそんなこと言わなくなったね\\n\\nちゃんとストレージは空いてる？\\nギガバイトは重すぎじゃないんですか\\n\\nラップトップじゃないほうが\\nグラボが積めていいんだって\\n\\nスマートじゃないほうが\\nロマンがあったって\\n\\nブックマーク忘れないで\\n＠を☆にしないで\\n\\nチャットルームでみんな待ってる\\n\\nポップアップ止まんないよ\\nI miss you 聞いて\\nパラメータ改竄がクセになって\\n\\nCookieをちょうだいよ\\nTrick or Treat お願い\\nログアウトさせないから\\nずっと\\n\\nF5連打 早くしてよレンダラー\\nフィクションのレイヤー スクリーンセーバー\\nアンチマルウェアも飼い慣らしてさ\\nP2Pのセットアップ Syncしよう\\nねぇ まだ？\\n\\n全てのCookieを承認して\\n全ての規約に同意して\\n全てのルールを承認して\\n全てのルールに同意して\\n\\nポップアップ止まんないよ\\nI miss you 聞いて\\nサルベージ出来ない あのFlash\\n\\n3rd Party Cookie \\nバイナリーでもいい\\n\\nメタデータ変えないでよ\\nずっと貴方が見たいから\\n\\n全てのミームを把握して\\n全てのゲームをハックして\\n全てのルームを監視して\\n全てのリークを傍受して\\n全てのCookieを承認して\\n全ての規約に同意して\\n全てのルールを承認して\\n全てのルールに同意して', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:14:04.249696', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.813677",
@@ -7333,7 +7333,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:14:18.654402",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月', 'movie': 'イクミ', 'composer': '渡辺拓也', 'lyricist': '渡辺拓也', 'arranger': '渡辺拓也', 'mix': 'kain', 'illustration': ['小夏一花', 'たま', '茶々ごま', 'ふすい'], 'violin': '吉田 翔平', 'drum': '田辺貴広', 'storyboard': ['すこっち', 'イクミ']}, 'lyrics': 'きっと僕らの物語は 続いていくから\\n君がそばにいて笑うなら\\n何もいらないんだよ\\nずっと残酷で救いようもない世界は変わらないけれど\\nさぁ今⽇までの⽇々を讃え合おう\\n祝福の歌を響かせよう\\n\\n⻑い道のりをここまで歩いて来たんだ\\n⼿探りで迷い⾒えない⽇もあった\\n純粋な想い ただひたすらに⼀杯で\\n誰かに認められたくて歌っていたっけ\\n\\n痛みを知らない⼦供のように\\n無邪気に誰かを傷つけていた\\n飲み込まれないに虚勢を張っていたんだろう\\n後悔も全て背負って⾏くんだ\\n果てを⽬指して 誇れるように\\n\\nきっと僕らの物語は続いていくから\\n君がそばにいて笑うなら\\n何もいらないんだよ\\nずっと残酷で救いようもない世界は\\n変わらないけれど\\nさぁ今⽇までの⽇々を讃え合おう\\n祝福の歌を響かせよう\\n\\n別れを選んだ⼈もいました\\n想いがすれ違う時もあった\\nあれほど互いの夢を語り合ったのに\\n涙を流してぶつけ合ったあの⾔葉を\\n胸に抱いて\\n歩くよ 今\\n\\nきっと僕らの物語に終わりはないから\\n悲しみや痛みさえ全て\\n抱えて来たんだよ\\n今⽇も世界のどこかで悲劇は⽣まれ続けるけど\\nさぁ幸せの意味を探しにいこう\\n祝福の歌を響かせよう\\n\\n何者でもない僕らは\\n「なにか」になりたくて足掻いてた\\n踏み出した一歩は「未来」だった\\nたったひとつだけ 君が前を向けるように\\nこの声を証に残すよ あぁ\\n\\nきっと僕らの物語は続いていくから\\n君がそばにいて笑うなら 何もいらないんだよ\\nずっと残酷で救いようもない世界で⾒つけた答えを\\nいま抱きしめて 君と分かち合おう\\n祝福の歌を響かせよう\\n\\nLalala', 'tools': {'software': None, 'instruments': ['Violin', 'Drum']}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:14:18.654402', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -7594,7 +7594,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:14:32.710515",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '缶缶', 'movie': 'イクミ', 'composer': 'FAKE TYPE.', 'lyricist': 'TOPHAMHAT-KYO', 'arranger': 'DYES IWASAKI', 'mix': 'Ishizuka Yota', 'vocal_edit': 'あいとも', 'illustration': 'TERU', 'character': 'REDTAIL 青蜂 ワタナベ', 'guitar': 'Johngarabushi'}, 'lyrics': '影のように潜みあそばせる\\n人目付くのも付かないのもあっちの勝手でしょ\\n興味本位捏ねまわす (ヒソヒソ)\\n火もなく煙はあがらんぜ\\n\\n麗\\u3000大名行列\\u3000大層強烈\\n豈図らんや\\u3000いざカーニバル\\nI gotcha から始まる\\nいなせに参ります\\u3000退屈は埋葬送別\\n\\n落日の空\\u3000真っ黒け\\u3000鳴り物入りで現れる\\n透波乱波\\u3000伊賀も甲賀も吃驚仰天さ Waaaa!\\n\\n-HOOK-\\n傾いちゃって踊りゃんせ\\u3000蟒蛇の如く通りゃんせ\\n嗚呼\\u3000引っ掻き回す\\u3000本能のまま\\nさぁさ皆さま\\u3000見せな粋な様\\n口三味線\\u3000ホラ吹き\\u3000太鼓持ちの三拍子 (斬ルイキリ夜叉)\\n宵闇に限らず大乱闘\\u3000血潮湧く祭囃子\\n\\nおどろおどろしい\\u3000ヒュードロロ\\n背後に憑くのも憑かないのもこっちの勝手でしょ\\n忽ち化けて出る (コソコソ)\\n隠れたままではナンセンス\\n\\n麗\\u3000大輪蒼炎\\u3000怪異総出\\n不透明な存在\\u3000太めな音素材\\u3000混ぜ合わす\\nおっかなびっくりわっしょい\\u3000満員御礼\\n\\n白日の下\\u3000轟け\\u3000あの世この世で騒がれる\\n擦った揉んだの挙句どっちらけなんてことはないぜ  Waaaa!\\n\\n-HOOK-Repeat\\n\\n堅苦しい挨拶は抜きにして\\u3000決まりなどないどうぞ好きにして\\n抗えない狂喜\\u3000猟奇的笑み\\nこの声が凶器\\u3000剛毅で威勢いい宣誓\\n一心不乱に豪胆に夜回り (はんなり)\\n朧月を背にし纏う\\u3000アヤカシたらしめる縁\\n\\nご来光要らずの我ら (さぁさ皆さま)\\n存分に暴れな (あいやいやささ)\\n夜のようで\\u3000夜じゃない\\u3000ところにより\\u3000寄る辺ない\\nチンドン屋も真っ青のアヤカシ道中\\n狂い酒\\u3000宵越しなどない (さぁさ皆さま)\\n星を飲み干す (あいやいやささ)\\n乾き知らずの盃の水面に映るは百鬼と不夜城', 'tools': {'software': None, 'instruments': ['Guitar']}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:14:32.710515', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -7719,7 +7719,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:14:49.516508",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月, まふまふ, un:c, Gero, 少年T, そらる, 超学生, となりの坂田。, luz', 'movie': 'イクミ', 'illustration': 'しづ', 'composer': 'まふまふ', 'lyricist': 'まふまふ', 'arranger': 'まふまふ', 'mix': 'kain'}, 'lyrics': 'いつかあの⽇のボクらみたい\\n覆⾯ 顔を隠し\\nあっちこっちで次元を超えて\\n⼤の流⾏中って話さ\\n\\n寄っておいでのデジタリティ\\nそっぽむいたらみなし余⽣\\n置いて 枯れちゃう⾝の上に\\n肩⾝の狭い正義の翼\\n\\nかませ かませ かまされる前にかませ\\n順応性 想像託そう\\nやっぱりセルフィ― ちっとも慣れない\\nそれでもボクを探している\\n君に捧げましょう\\n\\nパーペキヒーロー さあ⾝を正せ\\n１抜け 四の五の⾔わせるな\\n時代錯誤感に⽬を逸らせ\\nそれでもボクら正義の⼼臓\\n\\nそれゆけ 花咲かれば上々\\nたとえ⽕の中 仰せのままに\\nボクらは戦うパーペキヒーロー\\n\\nマッチポンプでもなければ\\nあくびが⽌められない\\nこんな平和な世の中じゃ\\nああ お役御免みたいって話さ\\n\\n何かなるなるで出直せ\\nそれで地獄へおいでませ\\nすったもんだの繰り返し\\n出しそびれた正義の御業\\n\\nかませ かませ かまされる前にかませ\\nいつだって信じてくれた君のもとへ\\n\\nパーペキヒーロー さあ⼿を叩け\\nエンドは誰が決めさせるか\\n敗⾊が順当に逆巻けば\\nむしろ⾼鳴る正義の⼼臓\\n\\nここら⼀帯も夢の延⻑\\nそこに確かに君がいるなら\\nボクらは戦うパーペキヒーロー\\n\\n「ヒーローなんて時代遅れだ」\\nなんて⾔われても ボクを呼ぶ声が\\nたったひとりの声が聞こえるから\\n\\nかませ かませ かまされる前にかませ\\nかませ かませ 超必殺のわざ みさらせ\\nかませ かませ かまされる前にかませ\\n\\nいつまで笑えるかなあ あー あー！\\n\\nパーペキヒーロー さあ⾝を正せ\\n１抜け 四の五の⾔わせるな\\n時代錯誤感に⽬を逸らせ\\nそれでもボクら正義の⼼臓\\n\\n絶対絶命に⾝を晒せ\\n⽚⼿間で誰が守れるか\\n敗⾊が順当に逆巻けば\\nむしろ⾼鳴る正義の⼼臓\\n\\nそれゆけ 花咲かれば上々\\nたとえ⽕の中 仰せのままに\\nボクらは戦うパーペキヒーロー\\n\\nまだ\\n⽴ち上がれるさ ヒーロー', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:14:49.516508', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -7899,7 +7899,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:15:04.191962",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月', 'movie': 'イクミ@ikumi_OH20', 'composer': 'すりぃ@iii0303_8', 'lyricist': 'すりぃ@iii0303_8', 'arranger': 'すりぃ@iii0303_8', 'mix': 'kain@kain2525', 'illustration': '夏炉@karohroka', 'bass': 'malo'}, 'lyrics': '負け犬のリベンジ\\n毛並み最強じゃん\\u3000お座りエレガント\\nワオーンワオーン遠吠えて\\n対戦！犬生はジェラシー\\n負け犬のリベンジだ\\n気にされたいから噛み付いて\\n無視するようならやめないぞ\\nチラつく好物よだれ垂れ\\n待てなんてないからね\\nいいとこ気取りで吠えないな\\n育ちが尾っぽに出てるから\\n可愛いそぶりで人気取り\\nムカつく態度だな\\n狩りで勝負だ\\u3000怖気ついたか\\n牙はないのか\\u3000走るジャンプでキャッチして\\nあぁ気持ちハイだろ\\u3000骨を噛んでろ\\nこれが負け犬のリベンジだ\\n最強じゃん\\u3000お座りエレガント\\nワオーンワオーン遠吠えて\\n対戦！犬生はジェラシー\\n喉鳴らせ逆転芸\\n嗚呼いい子ではないけれど\\n誰にも負けない愛情が\\n嗚呼その胸に飛び込んで\\n少しだけ振り向いて\\nボロボロなるまで噛み付いて\\n叱られ態度じゃ反省です\\nお子ちゃまですねとすまし顔\\nムカつくワンコだね\\n力勝負だ\\u3000怖気ついたか\\n爪はないのか\\u3000吠えるタイプじゃないようで\\nなぁ本音あんだろ\\u3000暴れたいだろ\\n見てろ\\u3000負け犬のリベンジさ\\n英才じゃん\\u3000退屈なエレガント\\nワオーンワオーン遠吠えたい\\n大胆！セーブなしカロリー\\n野生心捨てないぞ\\n嗚呼人気なの優等生\\n怒鳴っても悪さはやめないよ\\n嗚呼それなのに求める愛\\nわがままで生きていこう\\nいい子だと生きやすいね\\n媚びてりゃ都合よくて\\nゴミから這い上がって\\n噛み付いてやるさ\\n僕に愛情がないならば吠えて\\nワオーンワオーンやめないで\\n最低！飼い主の義務じゃん\\n負け犬のリベンジだ\\n最強じゃん\\u3000お座りエレガント\\nワオーンワオーン遠吠えて\\n対戦！犬生はジェラシー\\n喉鳴らせ逆転芸\\n嗚呼いい子ではないけれど\\n誰にも負けない愛情が\\n嗚呼その胸に飛び込んで\\n少しだけ振り向いて\\n吠えろワンワン届くまで', 'tools': {'software': None, 'instruments': ['Bass']}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:15:04.191962', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -8378,7 +8378,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:15:22.436973",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月', 'movie': 'WoAIb, イクミ, すこっち', 'composer': 'FAKE TYPE.', 'lyricist': 'TOPHAMHAT-KYO(FAKE TYPE.)', 'arranger': 'DYES IWASAKI (FAKE TYPE.)', 'mix': 'kain', 'illustration': '寺田てら'}, 'lyrics': 'Uh lalalala...\\n手招く遍くお利巧さん(Wo wo)\\nあらら正気かな?\\u3000月夜に掛かる\\n雲抜けてまで昇る Rail coaster\\nほらおいでなさい\\u3000君ら顔パス\\n海底まで落ちてくミラコスタ (Pow!)\\nぐるりんぐるりんぐるりん\\u3000まるでDJ\\n今夜も自由に回る Merry go round, Forever (Forever)\\n大胆不敵な快楽主義者\\u3000舞えばネオンが歌うよ\\n\\n-HOOK-\\nあいや無上に誘う\\n興味津々\\u3000執心ならざるを得ない幸福の楽園\\n正気忘れ\\u3000狂喜乱舞さ\\u3000享楽の牢獄\\n囚われとなる信者 Freak out\\n\\nRerere... 朝が来るなど永遠にない\\nRerere... 目覚めさせない夢の園\\n\\n脅威はなく\\u3000ただ不要に笑う\\n浮世忘れさせ降ろさない Ferris wheel\\nほらおいでなさい\\u3000賑わうサイコパス\\n見目 Kawaii 中毒必至フリーアイスクリーム (Yummy!)\\n蹂躙蹂躙蹂躙\\u3000不可避ストレスは急死\\nスケジュールなど What ever\\u3000(What ever)\\n竜頭竜尾な大満足を約束すると謳うよ\\n\\n-HOOK-Repeat\\nあいや無上に誘う\\n興味津々\\u3000執心ならざるを得ない幸福の楽園\\n正気忘れ\\u3000狂喜乱舞さ\\u3000享楽の牢獄\\n囚われとなる信者 Freak out\\n\\nWow wow woo...\\nTell your frinends\\n二度と帰さない\\u3000イカレタ園へようこそ\\n君の心離さない\\u3000枯れない園で踊ろう (Fooo!)\\n支配者の身からすれば洗脳すら謙虚 (Ayeee!)\\n半永久的ジェネリック・ハピネス (Hahaaa!)\\n無慈悲な多幸感が襲う\\u3000アブノーマルの巣窟\\n\\nあいや無上に誘う\\n興味津々\\u3000執心ならざるを得ない幸福の楽園\\n正気忘れ\\u3000狂喜乱舞さ\\u3000享楽の牢獄\\n二度と戻らぬ信者 Freak out\\n\\nRerere... 朝が来るなど永遠にない\\nRerere... 目覚めさせない夢の園\\n\\nFunfair... ただ幸福を\\nFunfair... 無闇に押付ける園', 'tools': {'software': None, 'instruments': ['Guitar']}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:15:22.436973', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -8419,7 +8419,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:15:31.801648",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月', 'movie': 'WoAIb', 'composer': 'buzzG', 'illustration': 'みっ君', 'illustration_assistant': 'Souha/日々'}, 'lyrics': 'ティアドロップ\\n\\n雨上がりの街に揺れる\\n艶めく紫陽花が告げた\\u3000\\nそうだ、今年もまた\\n\\n離れ離れの寂しさが\\n大事なものをあぶり出して\\nああ、君に会いたい\\n\\n今夜、月の舟を盗もうか\\nその美しい涙を象った瑠璃色の雨が降る\\n\\n星のない空で君を探してた\\n気が触れるほどの暗闇の中\\n手足が砕けて\\u3000声が嗄れても\\u3000\\n迷いは何もないよ\\n離さないから\\u3000\\n今だけはそばにいたい\\n\\n夜露に濡れた短冊が再会の日を飾るから\\nねえ、雨宿りをしようよ\\n\\n二人を隔てた銀河\\nどうか離れた体のぶんだけ心を近づけてよ\\n\\nあの日の僕らが幼いままで\\n鼻が触れるくらいの距離で結んだ\\n願い事は儚い夢の中へ\\n\\n横たわる河のようさ\\u3000\\n現在（いま）と未来が憎いよ\\n閉ざされた雨がやがて僕らを導くなら\\n\\n星のない空で君を探してた\\n気が触れるほどの暗闇の中\\n手足が砕けて\\u3000声が嗄れても\\u3000\\n迷わないよ\\u3000君のもとへ\\n隠さないで\\u3000\\nその美しい涙を何度でも掬いに行くよ\\n離さないで\\u3000\\n今だけはそばにいて', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:15:31.801648', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.830184",
@@ -9161,7 +9161,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:15:52.537248",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '天月-あまつき-', 'movie': 'WOAIb', 'illustration': '望月けい', 'composer': 'halyosy', 'arranger': '酒井拓也', 'mix': 'kain'}, 'lyrics': '僕の色はなんだ?(なんだ?)\\n君の色はなんだ?(なんだ?)\\nカラフルな街ん中\\nFind a color\\n僕らの色で染めるから!\\n\\nUPSIDE DOWN WORLD\\nTAG TEAM MATCH\\n\\nReady? GO!\\n限られた命(タイム)\\n最後まで塗り尽くせ人生(ステージ)\\n足場から固めたら道筋をイメージ\\n単独じゃ即アウトじゃん\\nならタッグで溜めるゲージ\\n\\nUPSIDE DOWN WORLD\\nTAG TEAM MATCH\\n\\nピンクイエローブルーオレンジ\\n誰かの色に染まる陣地\\n夢を野望にギアチェンジ\\n天地を返せ逆境ピンチ\\n\\n未来が敵に回ろうとも\\nFind a color 君となら\\n世界が何処に隠しても\\nFind a color 見つけるよ\\n\\nAll day (All day)\\nAll night (All night)\\n邪魔する奴は KNOCK Da, Da, DOWN\\nAll day (All day)\\nAll night (All night)\\n背中合わせで GET Da, Da, DOWN\\nI can count on you\\nこれからもずっと\\nYou can count on me\\nよろしくね TAG TEAM\\n\\nUPSIDE DOWN WORLD\\nTAG TEAM MATCH\\n\\nRank UP!!\\n磨くウデマエ スペシャルで抜け駆け\\nブチ撒け波風 勝ち取れ明日へ\\n\\nFinish!\\nリアルに巡り会う\\nネーム刻むフェスティバル\\n\\nUPSIDE DOWN WORLD\\nTAG TEAM MATCH\\n\\nまるでレオナルド・ダ・ヴィンチ\\n僕らの色に染まる陣地\\nスロットに込めた愛と意地\\nガチで生き抜け革命シティ\\n\\n時代が塗り重ねようとも\\nFind a color 何度だって\\n期待通りにいかなくても\\nFind a color 立ち上がるよ\\n\\nAll day (All day)\\nAll night (All night)\\n邪魔する奴は KNOCK Da, Da, DOWN\\nAll day (All day)\\nAll night (All night)\\n背中合わせで GET Da, Da, DOWN\\nI can count on you\\n何が起きたって\\nYou can count on me\\n変わらない TAG TEAM\\n\\n僕の色はこうだ!(こうだ!)\\n君の色はそうだ!(そうだ!)\\n望もうが拒もうが\\nFind a color\\nそれが生まれ持ったルールなんだから!\\n\\nもし僕が道を外れたら\\n水をぶっかけて引き止めて\\nもし君が道に迷ったら\\n派手に打ち上げて合図しよう\\n\\n何を言うかじゃない\\n誰が言うかだ\\nこの騒がしい街で\\n君の声だけが\\nこんなにもハッキリと聞こえる\\n\\n未来が敵に回ろうとも......\\n世界が何処に隠しても......\\n時代が塗り重ねようとも......\\n期待通りにいかなくても......\\n\\n立ち上がるよ\\n\\n未来が敵に回ろうとも\\nFind a color 君となら\\n世界が何処に隠しても\\nFind a color 見つけるよ\\n\\nAll day (All day)\\nAll night (All night)\\n邪魔する奴は KNOCK Da, Da, DOWN\\nAll day (All day)\\nAll night (All night)\\n背中合わせで GET Da, Da, DOWN\\nI can count on you\\nこれからもずっと\\nYou can count on me\\nよろしくね TAG TEAM, Yeah...', 'tools': {'software': None, 'instruments': ['A.Guitar', 'E.Guitar', 'Piano', 'Bass', 'Trumpet', 'Alto Sax']}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:15:52.537248', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T21:13:07.831687",
@@ -9583,7 +9583,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:16:08.725906",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'そらる', 'movie': 'MONO-Devoid', 'illustration': '萩森じあ', 'arranger': 'まふまふ', 'mix': 'そらる', 'lyricist': 'まふまふ'}, 'lyrics': \"白い吐息に寝静まる街\\u3000かじかむ指を温め\\n水銀灯の下を起こさないように\\u3000つま先立てて歩いた\\n暗い夜道を見渡せるように\\n一番背の高い木の上で\\u3000待ち合わせしようよ\\n\\n銀世界の歩道は\\u3000描きわすれのスケッチみたい\\n拾い集めたサンタの忘れ物\\n\\nいつの間にだろう\\u3000冬の匂いに目が覚める\\n\\n（抜き足は抑えられない\\n\\u3000スキップに変えたらメゾフォルテ\\n\\u3000もうすぐ君に会えるんだ！）\\n\\n怖い空がおどけていく\\n世界は\\u3000子どもがこぼしたアイスクリームみたいに\\n暗い夜に星散らせば\\u3000甘い甘い夢のはじまり\\n\\n恋や偽物のアイラビューに泣いた\\u3000微熱を冷まして！\\n冷たい夢はおいしいに決まっているから\\n止められないな\\n\\nごくん\\u3000ひとつ飲み干したら\\u3000アイスクリームコンプレックス\\n\\n幸せと不幸なんて辻褄合わせの関係で\\u3000アップルパイに入れるシナモン\\nそのままじゃとても食べられたもんじゃない\\nこの世界に不要なものなんてひとつすらないんだ\\nだってナイフとフォークで切り分けた\\u3000どれもに頬を落としそうで\\n\\nきっとボクらも\\u3000もちろん君も\\n必要としてもらえる日々が\\u3000どこかにあるんだ\\n\\n時が経てば\\u3000君も\\u3000どうして大人になっちゃうの？\\nまだまだ不思議や夢をみたいよ\\n\\n嫌なことは小さじ１杯から２杯まで\\u3000今日のシチューに混ぜこんちゃえばいい\\n\\n泣いたら笑えるだけ笑い\\u3000白昼ぐっすり\\u3000サンタマリア\\nそしたらまた目を覚まして\\u3000Let's party!!\\n\\n内緒話も\\u3000恋も\\u3000この世界も\\n食後に出てきたシャーベットみたいで\\n一度食べたら病みつきで\\u3000ボクは少し怖くなっちゃいそうだ\\n\\n枕元にある続きがどんな結末だとしたって\\n冷たい夢はおいしいに決まっているから\\n止められないや\\u3000もう一口だけ\\n\\nああ\\n\\n一生続いてよ\\u3000この不幸も\\nきっと明日生きるのに必要なものなんだ\\nそうだよね？\\u3000ねえ！\\n\\nハンドベルで合図\\u3000デザートはまだ！？\\n遅いなあもう\\u3000喰らいつくしちゃお！\\n手につかない\\u3000ボクらはみんな\\nアイスクリームコンプレックス\", 'tools': {'software': None, 'instruments': ['ギター']}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:16:08.725906', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.267121",
@@ -10373,7 +10373,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:16:17.841662",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'tai', 'movie': 'Kayowa', 'composer': 'ナツノセ(Natsunose)', 'lyricist': 'ナツノセ(Natsunose)', 'arranger': 'ナツノセ(Natsunose)', 'mix': 'Orbit'}, 'lyrics': '\"Don\\'t kid yourself that you\\'re beautiful just because you can\\'t go back.\"\\nThe carbonated water you drank, the tap water splashing against the blue sky\\nMy heart is so smooth as I remember you laughing when you played a prank on me.\\nI\\'m just remembering the past, I\\'m just remembering summer\\nI want to play and speak something that sways beside you forever.\\nI was wearing summer, the depths of my heart was screaming\\nSwallowed by the hustle and bustle of the city, the reality of broken dreams comes upon us.\\nThere was no meaning after all, I had no value, but still, I just wanted to laugh with you, at least for a little while.\\n\\nI couldn\\'t convey my love to you.\\nI threw my ashes into the sea and everything disappeared.\\n\"I\\'ll go see you again someday in the summer.\"\\nThat\\'s so stupid.\\nHave I already forgotten you?\\n\\nAre you just singing about love?\\nAre you singing the voice of your heart?\\nBecause of that, even now\\nA stupid Vocaloid p that no one pays attention to\\nForever about you\\nI wanted it to be an anemone\\nI\\'m going to kill this song soon though\\n\\nJust being alive makes me feel anxious about that summer.\\nI was looking at the clouds reflecting on the Metropolitan Expressway No. 3 Shibuya Line elevated bridge in the crowd.\\nI want to gather up the remains of those days and touch that shining summer.\\n\"I was cursed by those words of yours.\"\\n\"If you were by my side, I wouldn\\'t need anything else.\"\\n\"I\\'m sure I can\\'t be the main character of the song.\"', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:16:17.841662', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.268120",
@@ -11238,7 +11238,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:16:23.270301",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {}, 'lyrics': '解析失敗', 'tools': None, 'music_info': None, 'confidence_score': 0.1, 'analyzed_at': '2025-06-25T00:16:23.270301', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.268120",
@@ -11466,7 +11466,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:16:35.545855",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'Gic', 'movie': None, 'illustration': '萩森じあ', 'composer': 'Gic', 'lyricist': 'Gic', 'arranger': 'Gic', 'mix': 'Gic'}, 'lyrics': '間違ってるのかすれ違いのまま\\u3000金銭ばかり着飾り満たしていた\\n夢語り明かした思い出に\\u3000蓋をして開けないままでいる\\n\\n叶わない夢の代わりに今は\\u3000金銭ばかりこだわり数えていた\\nこれはこれで良いだろ\\u3000良い筈だろ\\nまだ足りない気がしてる\\u3000いまは会えない人がいる\\n\\nこの割り切れない感情(もの)はなんだ\\n難しい表情でばっか自分が息をしているのはどうだろう\\n君は何してるだろうか\\u3000綺麗なままだといいな\\n気づいたら遠くへ来たけど\\n\\n風景は変わってもう立派な大人だ\\u3000変わらない方がおかしな事だ\\nそんなふうに言い放ってただ空見てた\\u3000あの空を見ている\\n\\nカラッカラに渇いた砂の城みたい\\u3000瞬く間崩れてしまいそうな予感\\n目の前には止まらないいつも通りが\\u3000せわしなく溢れている\\n\\nあの頃からもう年月が経って\\u3000いくつか手に入れてきたんだ\\nそれなのに迷っているのはどうにも\\u3000情けない話だよな\\n空っぽなまま動き出した\\u3000それなりに元気でいるけど\\n\\n偶然重なってまた出逢えたなら\\u3000何から話せば良いんだろう\\nそんな風に気になってる時間は無駄だって\\u3000またサヨナラをしている\\n\\n遠い昔思い出す心\\u3000いまだに忘れないのに\\n通り過ぎた容易く\\u3000何も言わずに悲しみと\\n少しの微笑みをこの手に握り締めてる\\n\\n風景は変わってもう立派な大人だ\\u3000変わらない方がおかしな事だ\\nそんなふうに言い放ってまだ空見てた\\u3000どこまでも綺麗だ\\n\\n風景は変わって\\u3000届かない程に', 'tools': {'software': None, 'instruments': None, 'equipment': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:16:35.545855', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.269120",
@@ -11936,7 +11936,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:16:52.618593",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'Libre Nocturne -りたーん-', 'movie': 'てでぃ', 'composer': 'らずり。', 'lyricist': 'peroa', 'arranger': 'なりょー', 'illustration': '萩森じあ', 'rap_lyricist': 'くぼ'}, 'lyrics': '螺旋の藍色 仄かに混ざり合った\\n見栄を張って 取り繕ったappearance\\n相応しい言葉 見せ掛けのreplica\\n最終のベルが鳴った\\n\\n蹲み込んでしまった 停滞のpanorama\\n前例はない 踏襲出来なかったknowledge\\nガラスの向こう側は 見えなかった\\n曖昧なまま 仕舞った\\n\\n星屑の光る夜に ココロは彷徨った\\n変わらなくちゃ このままでいちゃ\\n戸惑い 焦燥の中\\n\\n『Are you with me?? ───』\\n投げられた賽に 弾丸を撃ち放った\\n取り戻してみせる No pain, No gain.\\nその鳥籠を思いっ切り 飛び出して\\n曝ければ 自由が待っているから\\n\\n美々たる林檎には甘い猛毒があった\\n所詮 blur 若しくはfakeかbluffか\\n差違に気付けずに 手遅れに成る前に\\n一徹短慮はcatharsis\\n\\n安上がりの盾を重ねてもno meaning\\nプラスティックのシャンデリアにridicule\\n悪意も 善意も 理解らないのなら\\n一回全部 取っ払って\\n\\n俯いた向日葵が また顔上げるまで\\n続けなくちゃ 意味 消えちゃうから\\n疾うに迷いは無くなった\\n\\n『Are you with me?? ───』\\n狂いのない 一縷の弾道はどうだい\\n悪戯に微笑む No light, No life.\\n鳥籠の外に見つけた 人生に\\n感情の枯渇は もうないから\\n\\n何時までもBrand new shit\\n研ぎ澄ました自由への探究心\\nまた繰り返す今日に 涙流す度\\n完成するmasterpiece\\n\\nslow down 簡素なBorder\\n情はNoなorder 網羅して超える評価\\n撃ち抜いて心の臓 落ちるピンゾロ まるで陰と陽\\n\\n繋ぐPuzzle 羽ばたける日まで\\n掴む心が弾むまで unstoppable\\n\\n最後に飾るのは 有終の美さ\\nいつだってGo my way.\\n\\n空疎だった頃に比べ 微々にでも近付けたなら\\nまだ まだ 足を止めないで\\n\\n『Are you with me?? ───』\\n投げられた賽に 弾丸を撃ち放った\\n取り戻してみせる No pain, No gain.\\nその鳥籠を思いっ切り 飛び出して\\n曝ければ 自由が待っているから\\n\\nほら 狂いのない 一縷の弾道はどうだい\\n悪戯に微笑む No light, No life.\\n鳥籠の外に見つけた 人生に\\n感情の枯渇は もうないから\\n鳴り止んだベルの音\\n『Did you make it?? ───』', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:16:52.618593', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.269120",
@@ -12209,7 +12209,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:17:05.665939",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'ゆた', 'movie': '△me', 'illustration': '萩森じあ', 'composer': '野田洋次郎', 'lyricist': None, 'arranger': None, 'mix': 'そーせき'}, 'lyrics': 'カラスが増えたから殺します\\nさらに猿が増えたから減らします\\nでもパンダは減ったから増やします\\nけど人類は増えても増やします\\n\\n僕らはいつでも神様に\\n願って拝んでても\\u3000いつしか\\nそうさ僕ら人類が\\u3000神様に\\n気付いたらなってたの\\u3000何様なのさ\\n\\n僕は見たことはないんだ\\nあちらこちらの絵画で見るんだ\\nさらに話で聞いてる神様\\nはどれもこれも人の形なんだ\\n\\n偶然の一致か\\u3000運命の合致\\nはたまた\\u3000自分勝手スケッチ\\nあっち\\u3000こっちそっちってどっち\\n一体どうなってるんダ・ヴィンチ\\n\\n来世があったって\\u3000仮に無くたって\\u3000だから何だって言うんだ\\n生まれ変わったって\\u3000変わらなくたって\\u3000んなこたぁどうだっていいんだ\\n人はいつだって\\u3000全て好き勝手\\u3000なんとかって言った連鎖の\\n上に立ったって\\u3000なおもてっぺんが\\u3000あるんだって言い張んだよ\\n\\nもしもこの僕が神様ならば\\u3000全てを決めてもいいなら\\n7日間で世界を作るような\\u3000真似はきっと僕はしないだろう\\nきっともっとちゃんと時間をかけて\\u3000また\\u3000きちっとした計画を立てて\\nだって焦って急いで\\u3000作ったせいで\\u3000切って張って\\u3000作って壊して\\n\\n増やして減らして\\u3000減らしたら増やして\\nなして\\u3000どうして\\u3000ってなんでかって?\\n「?」出したフリして\\u3000分かってるくせして\\n「話して\\u3000聞かせて\\u3000なんでなんで」', 'tools': {'software': None, 'instruments': ['Drums', 'Bass', 'Guitar']}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:17:05.665939', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-23T22:05:13.269120",
@@ -16018,7 +16018,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:17:13.096759",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '巡音ルカ', 'movie': 'GA', 'illustration': 'ぐんじょう', 'composer': '書店太郎', 'lyricist': '書店太郎'}, 'lyrics': 'I got nothing but feeling in my right hand and my fighting now.\\nGet back on my feet, No more wasting time!\\n\\n未完成の衝動を 決して忘れないように刻み込んで\\n相対す残響を 叫ぶように掻き消して！\\n\\nHey, you! Snap out of it!\\nHey, you! Just trust yourself!!\\nHey, you! Set the fire now!\\nHey, you! What are you waiting for?\\n\\nThis is “LIT”!!!\\nDon’t stand it anymore!!!\\nAre you ready?\\nOne,Two! One,Two! \\n（One,Two! One,Two!）\\nOne,Two! One,Two! \\nGive me more!!\\n\\n満たされない時間（とき）を超えて！\\nKeep it up!\\nOne,Two! One,Two! \\n（One,Two! One,Two!）\\nOne,Two! One,Two! \\nGet yourself!!\\n\\n震えるほどに昂まって！\\n狂おしいほど熱くなる！\\nその火を灯す魂で！\\nOne,Two! One,Two! \\nLet’s keep it up!!!', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:17:13.096759', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.268363",
@@ -17915,7 +17915,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:17:26.855940",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '花譜_KAF, 理芽_RIM, 春猿火_HARUSARUHI, ヰ世界情緒_ISEKAIJOUCHO, 幸祜_KOKO', 'movie': 'Nate(nim)', 'composer': 'Iori Kanzaki'}, 'lyrics': 'V.W.P\\u3000 V.W.P\\nV.W.P\\u3000 V.W.P\\n目覚めたら我が物顔で佇んでいた\\n君達は名を運命だとキザったらしく言った\\n「命が欲しいなら僕を殺せ」\\n「逃げるなら不確かなままで死ね」\\nそういう君達は僕らと同じ顔をしていた\\nテステスマイクチェック\\u3000ワンツー？\\n奪い合う準備は出来たかい？\\nバイバイ\\n残機はゼロみたい\\n悲しみって味がするんだね\\n吐きそうだよ\\n寂しさって肌寒いんだね\\n凍えそうだよ\\n君もそうでしょ僕自身なら\\n暖め合おうじゃないか\\nそれなのに\\n憎み合っても意味はないのに\\nどうしょうもない人生を\\n運命だとか言っちゃって\\nそんな君たちを変えてやる\\n僕らはV.W.P\\n鼻につくその正義感どっかで見たと思ったよ\\n昔の僕らにそっくりだ\\n「どうにもこうにもつまらない」\\n「価値観ばっかり振りかざしてる」\\n「ナイフみたいに尖ってるその考え」\\n「どっかでみたことあんだよね」\\n凝り固まってる思想が首を狙ってる\\nテステスマイクチェック\\u3000ワンツー？\\n奪い合う正義は何色？\\n全然混ざりあえないね\\n縛りつけられ動けないまま\\n絡む鎖解けないまま\\n過ぎた日々に囚われたまま\\n生きていくのはもう沢山だ\\n霞揺らぐ脳味噌が叫ぶ\\n言葉\\u3000糧に命が駆ける\\n壁を壊せ（HEY）\\u3000ここにいるぜ（HEY）\\n今ある景色をひっくり返せ\\n魔女だろうと偽善だろうと\\n生きてきたんだよ\\n生きたくって生きたくって\\nもがいてきたんだよ\\n今更なんだよ\\n我が物顔で奪いにきてさ\\n運命ってさ振りかざしてさ\\n見え張るなよ\\n流されちゃって苦しくなって\\n受け入れたんだろ\\n君達とは違う\\n争う意思があるから\\n憎み合っても意味はないんだよ\\nそれでも正義だって言うなら\\nリアルなんてもう運命はもう\\nいらないんだよ\\n反逆者である僕らの\\n生恥を目に焼き付けろ\\n定めに争い続ける\\n僕らはV.W.P', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:17:26.855940', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.304461",
@@ -17985,7 +17985,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:17:34.195514",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {}, 'lyrics': '解析失敗', 'tools': None, 'music_info': None, 'confidence_score': 0.1, 'analyzed_at': '2025-06-25T00:17:34.195514', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.305461",
@@ -18350,7 +18350,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:17:56.320910",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '花譜', 'movie': 'Suguru Asakura', 'composer': 'カンザキイオリ', 'lyricist': 'カンザキイオリ', 'arranger': 'カンザキイオリ', 'mix': 'Yuya Saito', 'illustration': 'Nagisa Akagi'}, 'lyrics': 'わたしだけのうた。\\nみんなとわたしだけのうた。\\n仮想世界からあなたへ。\\n物語をつむぐよ。\\n\\n────────────\\n「邂逅」\\n歌唱／花譜\\n作詞・作曲・編曲・ドラム／カンザキイオリ\\n\\nMix Engineer：Yuya Saito（birdie house）\\nMastering Engineer：Mitsuyasu Abe（Sony Music Studios Tokyo）\\n\\nDirector/Composite：Suguru Asakura\\nAssistant Director：Nagi Onami\\nIllustration：Nagisa Akagi\\nKey Animation / illustration：Tokito Sato（Studio EIGHTCOLORS）\\nInbetween / Paint：Mayuko Kanosue,Yoshifumi Wada,Aoi Saibara\\nAnimation Producer：Nonie (Eallin )\\nTypo Design：Tomotaka Iwasa\\nProduction Manager：Kentaro Iwaki\\nProducer：Hideyuki Negishi\\nExecutive Producer：PIEDPIPER\\n\\nProduced by KAMITSUBAKI STUDIO\\n────────────\\n\\n3rd Album「狂想」発売中！！\\n「狂想α」\\nhttps://findmestore.thinkr.jp/collections/kaf/products/kaf-album-kyousou%CE%B1\\n「狂想β」\\nhttps://findmestore.thinkr.jp/collections/kaf/products/kaf-album-kyousou%CE%B2\\n■各種配信サイト\\nhttps://KAF-KAMITSUBAKI.lnk.to/Crazy-for-you\\n\\n=================================\\n＜花譜＞\\n■Official Website\\nhttps://kamitsubaki.jp/artist/kaf/\\n\\n■CD&GOODS オフィシャルサイト\\nhttps://findmestore.thinkr.jp/collections/kaf\\n\\n■各種配信サイト\\n＜コラボ企画「組曲」シリーズ＞\\n第十二弾 花譜×ズーカラデル「秘密の言葉」（2023.4.5Release）\\nhttps://KAF-ZOOKARADERU.lnk.to/secret-word\\n第十一弾 花譜×東京ゲゲゲイ「メイドインあたし」（2023.3.8Release）\\nhttps://KAF-TOKYOGEGEGAY.lnk.to/Made-in-me\\n第十弾 花譜×ORESAMA「CAN-VERSE」（2022.10.12Release）\\nhttps://lnk.to/kaf_can-verse\\n第九弾 花譜×可不「流線形メーデー」（2022.7.13Release）\\nhttps://lnk.to/kaf_streamline_shape_mayday\\n第八弾 花譜×MIYAVI「Beyond META」（2022.5.11 Release）\\nhttps://lnk.to/kaf_miyavi_beyond_meta\\n第七弾 花譜×長谷川白紙「蕾に雷」（2022.4.20 Release）\\nhttps://lnk.to/kaf_thunder_in_bud\\n第六弾 花譜×くじら「春陽」（2022.3.23 Release）\\nhttps://lnk.to/kaf_springtime\\n第五弾 花譜×羽生まゐご「わたしの線香」（2022.2.23 Release）\\nhttps://lnk.to/kaf_maigohanyuu_myincense\\n第四弾 花譜×たなか「飛翔するmeme」（2022.1.19 Release）\\nhttps://lnk.to/kaf_tanaka_flymeme\\n第三弾 花譜×佐倉綾音「あさひ」（2021.12.8 Release）\\nhttps://lnk.to/kaf_ayanesakura\\n第二弾 花譜×大森靖子「イマジナリーフレンド」（2021.11.17 Release）\\nhttps://lnk.to/kaf_imaginaryfriend\\n第一弾 花譜×GLIM SPANKY「鏡よ鏡」（2021.10.27 Release）\\nhttps://lnk.to/kaf_mirrormirroronthewall\\n\\n＜オリジナル＞\\nSingle「海に化ける」（2021.6.30 Release）\\nhttps://lnk.to/kaf_turnintothesea\\nSingle「例えば」\\nhttps://lnk.to/kaf_forexample\\n2nd Album「魔法」（2020.11.25 Release）\\nhttps://lnk.to/kaf_magic\\nKizuna AI×花譜 Single「愛と花」（2020.9.23 Release）\\nhttps://lnk.to/kaf_kizunaai_loveandfl...\\n2nd EP「花と解答」（2020.7.22 Release）\\nhttps://lnk.to/kaf-flower_answer\\nSingle「戸惑いテレパシー」（2020.6.10', 'confidence_score': 0.5, 'analyzed_at': '2025-06-25T00:17:56.320910', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.309966",
@@ -18448,7 +18448,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:18:02.968255",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'Guiano', 'movie': 'yujureal works', 'composer': 'Guiano'}, 'lyrics': '全ての理由は自分が抱えていなければいけない、人のせいにはするな、人を恨んではいけない、愛した人には愛していると言え。しかし、全ては選択なのだ、この言葉達を正しいと決めるも決めないも自分次第なのだ。\\n\\n泣きそうな日々ばっか でも涙は流れないや\\n死にたいとも思えないや こんなこと言えないけれど\\nなんだか空っぽになったようだ 何もかも上手くいかねえや\\n少しだけ昔を思い出した\\n\\n僕はあの日からまだ 何も変わっていないままだよ\\n嫌なことは一人で抱えよう 辛いのは僕のせいにしよう\\nそれは優しさではなく弱さなんだ 優しさを盾に逃げているんだ\\n分かってる 分かってる\\n\\n愛する人のために人を殺せるか 見たくないものに立ち向かえるか\\n人に嫌われながら人を愛し生きることができるか\\n君が決めたことは最後までやれるか 得るために捨てることを選べるか\\n優しいやつはいつだって 誰かの中じゃ悪人だ', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:18:02.968255', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.310966",
@@ -18634,7 +18634,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:18:19.194079",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'ikura', 'movie': '中山直哉', 'composer': 'Ayase', 'lyricist': None, 'arranger': None, 'mix': None}, 'lyrics': '無敵の笑顔で荒らすメディア\\n知りたいその秘密ミステリアス\\n抜けてるとこさえ彼女のエリア\\n完璧で嘘つきな君は\\n天才的なアイドル様\\n\\n今日何食べた？\\n好きな本は？\\n遊びに行くならどこに行くの？\\n何も食べてない\\nそれは内緒\\n何を聞かれても\\nのらりくらり\\n\\nそう淡々と\\nだけど燦々と\\n見えそうで見えない秘密は蜜の味\\nあれもないないない\\nこれもないないない\\n好きなタイプは？\\n相手は？\\nさあ答えて\\n\\n「誰かを好きになることなんて\\n私分からなくてさ」\\n嘘か本当か知り得ない\\nそんな言葉に\\nまた一人堕ちる\\nまた好きにさせる\\n\\n誰もが目を奪われていく\\n君は完璧で究極のアイドル\\n金輪際現れない\\n一番星の生まれ変わり\\nその笑顔で\\n愛してるで\\n誰も彼も虜にしていく\\nその瞳が\\nその言葉が\\n嘘でもそれは\\n完全なアイ\\n\\nはいはいあの子は特別です\\n我々は端からおまけです\\n全てがあの子のお陰な訳ない\\nしゃらくさい\\n妬み嫉妬なんてない訳がない\\nこれはネタじゃない\\nからこそ許せない\\n完璧じゃない君じゃ許せない\\n自分を許せない\\n誰よりも強い君以外は認めない\\n\\n誰もが信じ崇めてる\\nまさに最強で無敵のアイドル\\n弱点なんて見当たらない\\n一番星を宿している\\n弱いとこなんて見せちゃ\\nダメダメ\\n知りたくないとこは見せずに\\n唯一無二じゃなくちゃ\\nイヤイヤ\\nそれこそ本物のアイ\\n\\n得意の笑顔で沸かすメディア\\n隠しきるこの秘密だけは\\n愛してるって嘘で積むキャリア\\nこれこそ私なりの愛だ\\n\\n流れる汗も綺麗なアクア\\nルビーを隠したこの瞼\\n歌い踊り舞う私はマリア\\nそう嘘はとびきりの愛だ\\n\\n誰かに愛されたことも\\n誰かのこと愛したこともない\\nそんな私の嘘がいつか本当になること\\n信じてる\\n\\nいつかきっと全部手に入れる\\n私はそう欲張りなアイドル\\n等身大でみんなのこと\\nちゃんと愛したいから\\n今日も嘘をつくの\\nこの言葉が\\nいつか本当になる日を願って\\nそれでもまだ\\n君と君にだけは言えずにいたけど\\nやっと言えた\\nこれは絶対嘘じゃない\\n愛してる', 'tools': {'software': [], 'instruments': []}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:18:19.194079', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.312978",
@@ -20399,7 +20399,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:18:34.554763",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': '鳴花ミコト', 'movie': 'IshiTchi', 'illustration': 'くろうめ', 'composer': 'ユギカ'}, 'lyrics': 'Ah\\u3000鳴り止まない\\nAh\\u3000張り裂けそう\\nAh\\u3000伝わんない\\n愛です\\n\\nねえ\\u3000気付いてよ\\nねえ\\u3000映してよ\\nわからないで相殺\\u3000そうかい？\\n解脱\\u3000Enemy\\n\\nフラストレーション鮮明故に\\n不埒な構想自問罰Trace\\n咲いた薊に想Ditortion\\nフラフラ不ラブはフレイルね\\n\\n待っていたって性がないさ\\nだけど「はあ」動けない\\nあなたの待てだもん体で狙っちゃうわ？\\n\\n気付かないうちに知ってた\\nことを知らない振りして隠した\\n僕はだんだん上手くなる嘘と笑顔に\\n嫌気が差して自ら刻んだ\\n\\n知らない聞こえないわからない皆様\\nそれは愛じゃない\\u3000孤独だ\\n\\nLa ta ta\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(なんでなんで知らないの？)\\nYeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(笑い飛ばしちゃおうぜ？)\\nYeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(曖昧な言葉も気持ちも届かない)\\n知らない\\u3000わからない\\nそれって相手だけ？\\n\\n孤独だっていい？→足りないんじゃない？\\nわからなくていい→自分だけじゃない？\\nこんな綺麗な月の下でさあ\\n毒だ糞食らえ踊り明かそう\\n\\n無意識だ 自分じゃないさ\\nくだらない感性で\\n感情論かい さあ第三者 イかせて？\\nUh la la\\n\\nUh la la\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(届かないことは知っていたさ)\\nYeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(カラカラだ痛いだけだ)\\nYeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(最愛の想いはいつしか消えってった)\\n死にたいわけじゃない 叶わない 「消え去りたい」\\n\\n不満はない 大好きだ\\n他じゃ駄目 想うほど\\n冷静じゃいられない 強くない 狂っていいかい\\n\\n伝える程ほらふわふわ崩れた\\n壊れる故また繰り返す\\n届かぬ度より求めて喚いて\\n僕は何年 変わったんだ\\n\\n美しい 美しい あなたに 惹かれて\\n失うものすら 見失う\\n\\nLa ta ta\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(最初っから知っていたんだ)\\nYeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(笑い飛ばしちゃおうぜ)\\nYeah\\u3000Yeah\\u3000Yeah\\u3000Yeah\\u3000Yeah(最低だ心も身体も伝えた)\\n塞がる 筈もない 毒が溜まるだけ', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:18:34.554763', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.332990",
@@ -21240,7 +21240,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:18:49.768009",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'syudou', 'movie': 'ヤスタツ', 'composer': 'syudou', 'lyricist': 'syudou', 'arranger': None, 'mix': None}, 'lyrics': 'ちょっと待ってやっぱよくないって\\n明日も続く地獄だね 出口が無い\\n一切見つからないんだけど\\nアナタなんか知ってる？\\n\\n思えば出会いは単純だった\\nキツめの酒を喰らった様に\\n頭がぐらぐらぐらした\\nそして目が合った\\n\\n一瞬の新興と引き換えに\\n一生と心臓を渡すのさ\\n永遠続く不安と悪夢\\n目覚めた時には毒虫になっていた\\n\\nジャンクで汚れたこの声で\\nうるせぇ外野を黙らせる\\nアンタがとやかく言わずとも\\nこちら側が殴り込んでやる\\n邪悪な輩と蔑んだ\\n奴らの思考の外に出る\\n愛だかなんだか知らねぇが\\n望み通り深く堕ちてやるんだ\\n\\n辿り着いたぜアンタの背だけを追って\\nこの呪縛と束縛逃れてやるから\\n\\n知ったこっちゃないって言われる様な\\n価値も意味も無いプライドの理由は何一体\\n気づいていない様で実は全部知ってる\\n\\n求愛だ崇拝だふざけんな\\n無い方が楽勝に生きれるさ\\n散々流してきた涙\\n救いもせずただ音楽は鳴っていた\\n\\nだけどさっさと切るべきプライドを\\n一つも捨てずに成し遂げる\\n愛した苦汁と辛酸だ\\n一粒も残さず飲んでやる\\n一種の若気の至りだと\\n舐めてた奴らに恥かかす\\nこっちは生まれたその日から\\n言葉と刃なら研いである\\n\\n思えば出会いは単純だった\\n恥に恥を塗る生涯だった\\nそれでも俺は一つ勝ち取った\\n眠れぬ夜や消えぬ後悔が\\n何度も何度も何度も何度も\\n何度もあったがここで歌っている\\n\\nジャンクで汚れたこの声で\\nうるせぇ外野を黙らせる\\nアンタがとやかく言わずとも\\nこちら側が殴り込んでやる\\n邪悪な輩と蔑んだ\\n奴らの思考の外に出る\\n愛だかなんだか知らねぇが\\n望み通り深く堕ちてやるんだ\\n\\n辿り着いたぜアンタの背だけを追って\\nこの呪縛と束縛逃れてやるから\\n\\nちょっと待ってやっぱまたループ\\nlike the backroom 憧れに出口は無い\\n実際まだ出れないんだけど\\nアナタなんか知ってる？', 'tools': {'software': None, 'instruments': ['Guitar', 'Bass']}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:18:49.768009', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.347495",
@@ -22254,7 +22254,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:19:07.001510",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'ザ・おめでたズ', 'movie': 'taro', 'illustration': 'hihi', 'composer': 'ザ・おめでたズ', 'lyricist': 'ザ・おめでたズ', 'arranger': 'やじまたくま（ザ・おめでたズ）', 'mix': None}, 'lyrics': '今日だけはFOOL FOOL FOOL\\nバカな言葉で切り取る景色を\\nきみとFOOL FOOL FOOL\\n歌えば おめでたい日になる\\n\\n最初はグー\\n俺たちいつでも頭はパー\\nI’m so fool でも案外feel so good\\nHobbyならお祝い\\n褒美はいらない\\nシワ増えてもやめられない\\nしがなくても楽しむこのLIFE\\n\\nジャンケンぽん\\n全員チョキならあいこでピースサイン\\n詞がないビートに\\nwitな詞のせて遊んでたーいヤ\\n踊るアホに見るアホ\\n同じアホなら踊って\\n楽しんだもん勝ちでしょ\\n\\nくだらないことをおもしろがりたい\\n何気ない日々を祝いたい\\n\\n今日だけはFOOL FOOL FOOL\\nバカな言葉で切り取る景色を\\nきみとFOOL FOOL FOOL\\n歌えば おめでたい日になる\\n\\n俺たちアイムファインセンキュ(and you?)\\n年中無休でめでてえ連中\\nLUCKにパラメーター鬼ブリ\\nラッキーマンばり茶柱立ち\\n君にも幸あれBIGLOVEで\\nカッ飛ばすいい具合に\\n色々世知辛えことあるけどねえ\\nでも春はアゲポヨ\\n\\n春の陽気より超陽気\\n前途洋洋の開運ボーイ勢揃い\\nYo!Yo!バースを蹴っ飛ばーす\\nありふれた日常が晴れ舞台\\n駆けつけて祝いたい\\nそれいけ！あんぽんたん\\n呼ばれなくても\\nじゃじゃじゃじゃじゃじゃ じゃ～～ん！\\n\\nくだらないことをおもしろがりたい\\n何気ない日々を祝いたい\\n\\n今日だけはFOOL FOOL FOOL\\nバカな言葉で切り取る景色を\\nきみとFOOL FOOL FOOL\\n歌えば おめでたい日になる\\n\\nアレがくだらねえ コレがつまらねえ\\n言ってないでこっちおいでカモン\\nもういっそバカになろう\\n一緒に踊ろうよ\\nいつだって上機嫌\\n腐ってもめで鯛 気にせん賞味期限\\nカメ万年 ツル千年\\n僕たちアホちゃいまんねん\\nパーでんねん\\n\\nめでたいヤジビーツに乗って\\n担ぐゲンとラジカセ\\nいなたいメンツでマイクパス\\nいつもより多めに回しております\\nなんでもない日も自分次第で\\nMake My Day\\nバカに騒いで たまにはハメ\\nはずしてもダイジョブここが解放区\\n\\n今日だけはFOOL FOOL FOOL\\nバカな言葉で切り取る景色を\\nきみとFOOL FOOL FOOL\\n歌えばおめでたい日になる', 'tools': {'software': None, 'instruments': None}, 'music_info': {'bpm': None, 'key': None, 'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:19:07.001510', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.385861",
@@ -22704,7 +22704,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:19:26.215081",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'Eve', 'movie': '吉﨑響', 'composer': 'Eve', 'lyricist': 'Eve', 'arranger': 'Numa'}, 'lyrics': '愛はないよ しょうがないね\\nガラガラ声に嗤っちまう\\n不確かな才に 縋っちまって\\n夜を濡らしては泣いてる\\n\\n十年経っても同じような\\nそこはかとなく浮かんでる\\n何者でもない 想い綴って\\n夜を駆けるようにランデブー\\n\\n酩酊 名前もないような 意味のない毎日を徘徊して\\n一体どれくらいの言葉にやられて病んでる\\n\\n感情は渋滞です この不快感さえも単純で\\n最低な存在です 古今東西見落とさないで\\n\\n恋をしたような 眩暈に溺れそうな\\n息巻くように吠えた\\n\\n最後くらい声をあげてくれ\\nまだやれるかい この体じゃ\\n死に場所も選べないようだ\\n\\n君の才能なんて知ったこっちゃないね\\nもう放っといてくれないか\\nこの旗は折れずにいる\\n本当はただずっと 認めてほしくって\\n\\n修羅の炎に身を焼かれた為 再起不能な僕を囲んでは\\n\"よい子のみんな真似をしてはいけない\"と処された\\nああ そうだ 馬鹿な奴ばっか\\nくだらない正義感さえ 振りかざせば\\nもう戻れない くたばれやしない\\n嘲笑う道化 秀才の眼\\n\\nただ想いを飲み込めば\\n\\n段々声が遠く離れていく\\nその期待も 理想さえも\\n君が未だ呪いになっている\\n\\nだから世界の果てに落っこちてしまっても\\n僕の目はまだ死なずにいる\\n今までもずっと これからもイメージして\\n\\n愛はないよ しょうがないね\\nガラガラ声に嗤っちまう\\n不確かな才に 縋っちまって\\n夜を濡らしては泣いてる\\n\\n十年経っても同じような\\nそこはかとなく浮かんでる\\n何者でもない 想い綴って\\n夜を駆けるようにランデブー\\n\\nああ 将来は明るい未来になりますよう\\n君との約束は果たせそうにないけど\\n言葉は息をするように 願いを繋いでいく\\nごめんね パパ ママ 理想になれなくて\\n\\n最後くらい声をあげてくれ\\nまだやれるかい この体じゃ\\n死に場所も選べないようだ\\n\\n君の才能なんて知ったこっちゃないね\\nもう放っといてくれないか\\nこの旗は折れずにいる\\n\\n段々声が遠く離れていく\\nその期待も 理想さえも\\n君が未だ呪いになっている\\n\\nだから世界の果てに落っこちてしまっても\\n僕の目はまだ死なずにいる\\n今までもずっと これからもイメージして\\n\\n今ならまだきっと 言えるような気がして', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:19:26.214078', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.393398",
@@ -23010,7 +23010,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:19:39.631086",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'Nexus-Cry', 'movie': 'そゐち', 'composer': 'syudou', 'lyricist': 'syudou', 'arranger': '堀江晶太'}, 'lyrics': '一刀両断yeah!!\\n\\nどうしていたって忘れられない\\n想いがあったんだここにただ一つ\\n損だとはわかっていたんだ\\nこんなに傷つけど尚\\n\\n嗚呼 誰かの書いた道に沿った\\n都合の良い存在にはならない\\n浮かぶのは言えない事ばっか\\nまだまだまだまだ\\n\\n即KO 即行で行けよ\\u3000\\n\\n僕らの真価を評価出来る存在はゼロ\\n本当に欲しいものはあなたと共に\\nそう築き上げた先にあると即証明\\n\\n重ねた想いが伝わる時\\nその輝きに向けて手を伸ばしたから\\n\\nさぁ全然興味がない\\n評価はいらない勝利も要らない\\n(それより)ここに感じる関係性\\xa0\\xa0\\xa0\\xa0 \\u3000\\u3000\\u3000\\u3000\\u3000\\n君に君に微笑んで欲しい(歌うの)\\n\\n全然上手くいかない\\nホントの想いは一回じゃ録れない\\nそれでも(きっと)歌おう(ずっと)\\nツギハギだらけでもいいからさ(yeah!!)\\nメロディーメロディー\\nどんな未来だって笑っていたい(君と)\\nメロディーメロディー\\nさぁ全力で\\n\\n一刀両断 そうこれはSHOWレース\\n才能が無い事が罪になる\\n一方向じゃ測れない価値を\\n一個ずつちゃんと受け止めて(aye)\\n誰が誰と比べここがこう(うっせぇ)\\n上はない(そして)下もない(そう)\\n絶対君だけの色で前に進め\\nただただただただ\\n\\n敗れた願いも繋げるため\\n拳を開いて代わりに握ったのは\\n\\n全然終わりじゃない\\nもっと言うなら始まってもいない\\n(僕らは)君の心の最前を\\n強く強く勝ち取ってみたい\\n絶対君じゃなきゃ僕らの価値はきっと測れない\\nそれでも(きっと)歌おう(ずっと)\\nツギハギも味と笑ってくれ\\n\\nさぁ全然興味がない\\n評価はいらない勝利も要らない\\n(それより)ここに感じる関係性\\xa0\\xa0\\xa0\\xa0 \\u3000\\u3000\\u3000\\u3000\\u3000\\n君に君に微笑んで欲しい(歌うの)\\n\\n全然上手くいかない\\nホントの想いは一回じゃ録れない\\nそれでも(きっと)歌おう(ずっと)\\nツギハギだらけでもいいからさ(yeah!!)\\nメロディーメロディー\\nどんな未来だって笑っていたい(君と)\\n\\nメロディーメロディー\\nさぁ全力の先の善力で', 'tools': {'software': None, 'instruments': None}, 'music_info': {'genre': None, 'mood': None}, 'confidence_score': 0.8, 'analyzed_at': '2025-06-25T00:19:39.631086', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T01:54:26.398398",
@@ -25046,7 +25046,7 @@
         "analysis_confidence": 0.8,
         "analysis_timestamp": "2025-06-25T00:20:01.598075",
         "analysis_model": "GPT-4",
-        "insights": ""
+        "insights": "{'creators': {'vocal': 'HIMEHINA', 'lyricist': 'Gohgo', 'composer': 'Shinji Suzuki & Gohgo', 'arranger': 'Shinji Suzuki', 'mix': 'Sora Tamiya'}, 'lyrics': '完にして全、終にして園を求め僕達は生きている\\n生まれる熱は動力となり生存を維持する\\n\\n完なれば止、終にして死に至り\\nその動熱は失われる\\nそして園は円を維持できずΦとなる\\n\\nπならば良し、Φと成らず\\n愛もまた良し、Φと成らず\\n割り切れない不完全で在り続ける心の情動が今日も人類を生かしている\\n\\n終わらないラブコール\\n止まらないおかわりのアンコール\\n割り切れぬほど続けよう、人類最高のダンスタイムを\\n\\n2023年8月5日 僕らを包んだ蕩けるような夏に捧ぐ\\n\\n愛包ダンスホール 今日はボレロ\\n蕩けった少年 甘酸っぱい感情\\n求愛人類♥満杯\\n\\nオーブントースターは漏れ漏れよ\\nおかわりはアンコール次第ね\\nオワラナイ・ラブコール・ノ・ダンス・デ\\n\\n愛包ダンスホール\\nおかわりならもう欲しい\\n愛包ダンスホール\\n\\n3.1415926535のπだって\\n割り切れない気持ち抱えてるよ\\nロボ人も幻人も猿人も円陣組んで仲良くやれたらとか\\n割り切れない生命諍いのヘブン\\n\\n今宵はいいんじゃない？\\nほらオエオエオエオエよ\\n踊ればいいんじゃない？\\nほらフリフリフラレば\\n\\n休戦しようぜ 涙腺が源泉温泉\\n汗ばんだらガンダーラサンサーラ\\nなに言ってんだ？(自問自答)\\n\\n高まった感動の再会\\n集まった愛情のWi-Fi\\n持寄った常灯の人提灯\\n愛してるが重なって\\n包まった人類の状態\\n熱いミートパイみたいだね\\n\\nパパッパッパッパパ パイ！♥？\\n\\n愛包！愛一杯！で惚れ惚れよ\\n蕩けった少年 甘酸っぱい感情\\n求愛人類♥満杯だい\\n\\n完敗！完全に惚れ惚れよ\\nミルフィーユみたいね愛ほろり\\n頭んなかパッパラッパッパー\\n\\n艶やかな脳内の脳裏のジョンレノンも愛包家\\nイマジンオールザピーポーの祭典\\nダンスホールじゃ暇人もヒーロー\\n乾杯ね 今日はボレロ\\n交わって人類 馬鹿んなって笑って\\nおかわり欲しいでしょ？\\n\\n全人類公正舞踏会の目指すべき一日は\\nレンジでチンしてパイになる様な\\n脳みそもトロトロの世の実現をスローガンにオールナイト\\n踊りまして煩悩は早退\\nつきまして聖人を増産\\nパパッパッパッパパ パイ！\\n\\n人類最高のダンスタイム\\n\\n愛包ダンスホール\\n嗚呼ライライ愛包ダンスホール\\n愛包ダンスホール\\n\\n僕等が生まれて初めて知る音は心臓の鼓動だろ\\nトトン トトン タトン タトン タテン タトンタ\\nそれはリズムと知った\\nいにしえもいまどきも\\n♥BEATが僕達を包んで繋いでんだろ？\\n\\nパパッパッパッパパ パイ！♥？\\n\\n愛包！愛いっぱいで惚れ惚れよ\\n蕩けった少年 甘酸っぱい感情\\n求愛人類♥満杯だい\\n\\n完敗！完全に惚れ惚れよ\\nミルフィーユみたいね愛ほろり\\n頭んなかパッパラッパッパー\\n\\nララララララララララ\\nまるでバージンロードで踊ってるみたい\\n生まれ変わった様な気分でして\\n乾杯ね 今日はボレロ\\n交わって人類 馬鹿んなって笑っ照れ\\nてってってっ照れってってー\\n\\n寂しいよな 終わりは近づくけどさ\\n終わらないπの様に続けりゃいい\\n計算なんてできないが・・・！\\n愛いっぱい！\\n\\n愛包ダンスホール 今日はボレロ\\n蕩けった少年 甘酸っぱい感情\\n求愛人類♥は', 'confidence_score': 0.5, 'analyzed_at': '2025-06-25T00:20:01.598075', 'analysis_model': 'gpt-4-turbo'}"
       },
       "analysis_error": "分析失敗",
       "created_at": "2025-06-24T23:18:02.038240",
@@ -25112,94 +25112,6 @@
       "analysis_error": null,
       "created_at": "2025-06-24T23:49:09.562366",
       "updated_at": "2025-06-24T23:49:42.903101",
-      "retry_count": 0,
-      "last_analysis_error": null
-    },
-    "7oE8YnXumMk": {
-      "source": "youtube",
-      "metadata": {
-        "id": "7oE8YnXumMk",
-        "title": "HIMEHINA『V』MV #ヴィー",
-        "description": "🫧NEW ALBUM『Bubblin』XFD公開中！\nStreaming & Download ☞ https://himehina.lnk.to/V../\n\nVocal：HIMEHINA\n            🍡HIME TANAKA https://twitter.com/HimeTanaka_HH\n            🦈HINA SUZUKI https://twitter.com/HinaSuzuki_HH\nLyric：Gohgo https://twitter.com/Gohgo55 https://www.youtube.com/@Gohgo555\nCompose：Soma Genda  & pw.a & Gohgo\nArrange：pw.a\n\nIは引き割かれVとなった\nVは持て囃され怪物となった\n二股に割かれた身\n心だけが底を繋ぎ止める\n本当の私と幽像の私\n互いを嫌い互いを求め\nいつかまたIへと戻る\nI am a V. I'm a V. I'm a 泡々よ\n\n\n◤◢◤NEWS◢◤◢\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿\n🫧NEW ALBUM『Bubblin』\n￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n2025年7月2日、4thアルバム発売、予約受付中\n8種類の初回限定特典盤にはLIVE先行抽選や1on1撮影会の応募券も\nhttps://himehina.jp/pages/4th-album-bubblin\n\nStreaming & Downloadの事前予約で限定壁紙やデジタルブックレットがもらえる\nhttps://himehina.lnk.to/bubblin\n\nXFD公開中\nhttps://youtu.be/9Nv72ioXrxs\n\n＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿\n🎉LIVE 2025『LIFETIME is BUBBLIN』in パシフィコ横浜\n￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n2025年11月22日＆23日にパシフィコ横浜にて2Days開催決定！\nチケットはFC＆CD抽選のW最速先行にて\nhttps://himehina.jp/post/lifetime-is-bubblin\n\n\n◤◢◤PLAYLIST◢◤◢\nhttps://www.youtube.com/playlist?list=PL1tX8zAv8bPk85chzXCyh6CgEyqFAdxwV\nhttps://www.youtube.com/playlist?list=PL1tX8zAv8bPlL68x0sS_DRP0jmRFq5ybW\nhttps://www.youtube.com/playlist?list=PL1tX8zAv8bPlHlTIICF11GfzKqorbA2OT\n\n\n◤◢◤DISTRIBUTION◢◤◢\nモーションやヒメヒナと一緒に踊れるGB素材、正面カメラ映像など配布中！\nGuideline：https://himehina.jp/guideline\n\nInst. / Lyric \n🔗https://himehina.jp/post/v-audio-1\n\nMotion(MMD/FBX) \n🔗https://himehina.jp/post/v-motion-1\n\nDanceGB/DanceVideo/Typography\n🔗https://himehina.jp/post/v-video-1\n\n\nVOCALOID ver.\nhttps://youtu.be/W9eytW6iZKY\n\nMV ProjectFile(AE)\n🔗https://himehina.jp/post/v-vocalo-pj \n\n\n◤◢◤PRODUCTION◢◤◢\nMusic ─────────\nMusic Producer：Gohgo\nMusic Director：Tetsuya Ohyama\nGuitar : Yusuke Koshiro\nProg.&Other Inst. : pw.a\nMix：Sora Tamiya\nVocal REC：Yuuka Suzuki\nSupport：Studio LaRa OTOGUMI\n\nMovie ─────────\nDirection / Art & Edit：ChangSang & Studio LaRa MEGUMI\nStyling / Engineering：Studio LaRa GIGUMI\nCamera：Bouto https://twitter.com/yukkuri_bouto\nChoreographer / Dance Teacher：\n  Akari(ATY) https://twitter.com/akari_ATY\n  Yukari(ATY) https://twitter.com/yukari_ATY\nDance Support：Studio LaRa ODOGUMI\nCostume & HairArtist / General Supervisor：Natsumusi https://twitter.com/natsu6si\nExecutive Director：Nakajima https://twitter.com/bokunakajima\n\n💜Super Special Thanks!!!💜\n藍沢エマ        https://www.youtube.com/@AizawaEma\nAZKi        https://www.youtube.com/@AZKi\n空澄セナ        https://www.youtube.com/@asumi_sena\n石狩あかり        https://www.youtube.com/@akari0415\n因幡はねる        https://www.youtube.com/@Inaba_Haneru\n犬山たまき        https://www.youtube.com/@noripro\n大神ミオ        https://www.youtube.com/@OokamiMio\n音霊魂子        https://www.youtube.com/@tamako0212\n尾丸ポルカ        https://www.youtube.com/@OmaruPolka\nおめがリオ        https://www.youtube.com/@omesis\nおめがレイ        https://www.youtube.com/@omesis\n花京院ちえり        https://www.youtube.com/@ChieriKakyoin\n風真いろは        https://www.youtube.com/@kazamairoha\n我部りえる        https://www.youtube.com/@rieru0830\n神成きゅぴ        https://www.youtube.com/@KaminariQpi\n栗駒こまる        https://www.youtube.com/@komaru0814\n胡桃のあ        https://www.youtube.com/@963Noah\n小森めと        https://www.youtube.com/@Met_Komori\nさくらみこ        https://www.youtube.com/@SakuraMiko\n渋谷ハル        https://www.youtube.com/@ShibuyaHAL\n白波らむね        https://www.youtube.com/@shiranamiramune\n白雪レイド        https://www.youtube.com/@Shirayuki_Reid\n周防パトラ        https://www.youtube.com/@Patra_Suou\n電脳少女シロ        https://www.youtube.com/@CyberGirlSiro\nときのそら        https://www.youtube.com/@TokinoSora\n常闇トワ        https://www.youtube.com/@TokoyamiTowa\n夏色まつり        https://www.youtube.com/@NatsuiroMatsuri\n猫汰つな        https://www.youtube.com/@tsuna_nekota\n猫宮ひなた        https://www.youtube.com/@NekomiyaHinata\nばあちゃる        https://www.youtube.com/@_Ubiba\n博衣こより        https://www.youtube.com/@HakuiKoyori\n英リサ        https://www.youtube.com/@lisahanabusa\n春雨麗女        https://www.youtube.com/@urame0711\nぷわぷわぽぷら        https://www.youtube.com/@popura0119\n宝鐘マリン        https://www.youtube.com/@HoushouMarine\nもこ田めめめ        https://www.youtube.com/@MememeMokota\n桃鈴ねね        https://www.youtube.com/@MomosuzuNene\n八雲べに        https://www.youtube.com/@yakumo_beni\n雪花ラミィ        https://www.youtube.com/@YukihanaLamy\n癒月ちょこ        https://www.youtube.com/@YuzukiChoco\n夢野あかり        https://www.youtube.com/@akarindao\nロボ子さん        https://www.youtube.com/@Robocosan\n\nProduced by Studio LaRa https://twitter.com/LaRa_km10\n\n\n◤◢◤LINK◢◤◢\nALL LINKs：https://lit.link/HIMEHINA\nWeb & Fanclub：https://himehina.jp/\nTikTok：https://tiktok.com/@himehina.80\nInstagram：https://instagram.com/himehina_official/\nSpotify：https://open.spotify.com/intl-ja/artist/5OBmR4AY53SS26qHZ4uwnq\nDiscord：https://discord.gg/XJbKHW2g9t\n\n\n#HIMEHINA #ヴィー  #VTuber",
-        "published_at": "2025-06-13T12:00:11+00:00",
-        "channel_title": "HIMEHINA Channel",
-        "channel_id": "UCFv2z4iM5vHrS8bZPq4fHQQ",
-        "duration": "PT3M37S",
-        "view_count": 2371476,
-        "like_count": 55409,
-        "comment_count": 1656,
-        "tags": [
-          "鈴木ヒナ",
-          "ヒメヒナ",
-          "himehinachannel",
-          "UCFv2z4iM5vHrS8bZPq4fHQQ",
-          "VTuber",
-          "バーチャルYouTuber",
-          "MV",
-          "愛包ダンスホール",
-          "Kpop",
-          "dance",
-          "choreo",
-          "ダンス",
-          "ヴィー",
-          "アニメ",
-          "藍沢エマ",
-          "AZKi",
-          "空澄セナ",
-          "石狩あかり",
-          "因幡はねる",
-          "犬山たまき",
-          "大神ミオ",
-          "音霊魂子",
-          "尾丸ポルカ",
-          "おめがリオ",
-          "おめがレイ",
-          "花京院ちえり",
-          "風真いろは",
-          "我部りえる",
-          "神成きゅぴ",
-          "栗駒こまる",
-          "胡桃のあ",
-          "小森めと",
-          "さくらみこ",
-          "渋谷ハル",
-          "白波らむね",
-          "白雪レイド",
-          "周防パトラ",
-          "電脳少女シロ",
-          "ときのそら",
-          "常闇トワ",
-          "夏色まつり",
-          "猫汰つな",
-          "猫宮ひなた",
-          "ばあちゃる",
-          "博衣こより",
-          "英リサ",
-          "春雨麗女",
-          "ぷわぷわぽぷら",
-          "宝鐘マリン",
-          "もこ田めめめ",
-          "桃鈴ねね",
-          "八雲べに",
-          "雪花ラミィ",
-          "癒月ちょこ",
-          "夢野あかり",
-          "ロボ子さん"
-        ],
-        "category_id": "10",
-        "collected_at": "2025-06-25T00:25:12.204660"
-      },
-      "playlists": [
-        "MANUAL_ADDED"
-      ],
-      "playlist_positions": {
-        "MANUAL_ADDED": 0
-      },
-      "analysis_status": "pending",
-      "creative_insight": null,
-      "analysis_error": null,
-      "created_at": "2025-06-25T00:25:12.367246",
-      "updated_at": "2025-06-25T00:25:12.367246",
       "retry_count": 0,
       "last_analysis_error": null
     }
@@ -25803,8 +25715,7 @@
         "GgOOykZcfnI",
         "YzBr_c61TsU",
         "bnofYmfKLeo",
-        "WTBycStPfJM",
-        "7oE8YnXumMk"
+        "WTBycStPfJM"
       ],
       "last_full_sync": "2025-06-24T23:09:39.060069",
       "last_incremental_sync": "2025-06-24T23:09:39.060069",
@@ -25813,11 +25724,11 @@
         "update_frequency": "manual",
         "priority": 1
       },
-      "total_videos": 5,
+      "total_videos": 4,
       "analyzed_videos": 0,
       "analysis_success_rate": 0.0,
       "created_at": "2025-06-24T23:09:39.060069",
-      "updated_at": "2025-06-25T00:25:12.368761"
+      "updated_at": "2025-06-24T23:49:09.563364"
     }
   },
   "creator_index": {
@@ -26131,8 +26042,7 @@
       "g_xhozfctqo",
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "VTuber": [
       "D7xjC200qxo",
@@ -26171,8 +26081,7 @@
       "K26fPtPcCys",
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "YouTuber": [
       "D7xjC200qxo",
@@ -26248,8 +26157,7 @@
       "vV-WPn2qCJs",
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "anime": [
       "D7xjC200qxo",
@@ -26877,8 +26785,7 @@
       "KxF7a9M1FP8",
       "bgal_zCI1VQ",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "ヨアソビ": [
       "Av3xaZkVpJs",
@@ -27444,8 +27351,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "ロボ子さん": [
       "ShXmOdYGuG8",
@@ -27464,8 +27370,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "夜空メル": [
       "ShXmOdYGuG8",
@@ -27557,8 +27462,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "湊あくあ": [
       "ShXmOdYGuG8",
@@ -27633,8 +27537,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "大空スバル": [
       "ShXmOdYGuG8",
@@ -27672,8 +27575,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "さくらみこ": [
       "ShXmOdYGuG8",
@@ -27692,8 +27594,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "猫又おかゆ": [
       "ShXmOdYGuG8",
@@ -27808,8 +27709,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "白銀ノエル": [
       "ShXmOdYGuG8",
@@ -27848,8 +27748,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "星街すいせい": [
       "ShXmOdYGuG8",
@@ -27945,8 +27844,7 @@
       "YPm9T622OX0",
       "g-K6PJi7b0o",
       "TfOx00AOfKo",
-      "nbB3KsFRv4U",
-      "7oE8YnXumMk"
+      "nbB3KsFRv4U"
     ],
     "姫森ルーナ": [
       "ShXmOdYGuG8",
@@ -27981,8 +27879,7 @@
       "3T0wEUW1THE",
       "YPm9T622OX0",
       "g-K6PJi7b0o",
-      "TfOx00AOfKo",
-      "7oE8YnXumMk"
+      "TfOx00AOfKo"
     ],
     "桃鈴ねね": [
       "ShXmOdYGuG8",
@@ -27999,8 +27896,7 @@
       "3T0wEUW1THE",
       "YPm9T622OX0",
       "g-K6PJi7b0o",
-      "TfOx00AOfKo",
-      "7oE8YnXumMk"
+      "TfOx00AOfKo"
     ],
     "獅白ぼたん": [
       "ShXmOdYGuG8",
@@ -28032,8 +27928,7 @@
       "3T0wEUW1THE",
       "YPm9T622OX0",
       "g-K6PJi7b0o",
-      "TfOx00AOfKo",
-      "7oE8YnXumMk"
+      "TfOx00AOfKo"
     ],
     "chronoir": [
       "45l-i4URN9M",
@@ -29141,8 +29036,7 @@
     ],
     "犬山たまき": [
       "KwtbdUs3NgQ",
-      "qSWZJh8AmD8",
-      "7oE8YnXumMk"
+      "qSWZJh8AmD8"
     ],
     "佃煮のりお": [
       "KwtbdUs3NgQ",
@@ -34181,8 +34075,7 @@
       "3T0wEUW1THE"
     ],
     "博衣こより": [
-      "3T0wEUW1THE",
-      "7oE8YnXumMk"
+      "3T0wEUW1THE"
     ],
     "沙花叉クロヱ": [
       "3T0wEUW1THE"
@@ -34191,8 +34084,7 @@
       "3T0wEUW1THE"
     ],
     "風真いろは": [
-      "3T0wEUW1THE",
-      "7oE8YnXumMk"
+      "3T0wEUW1THE"
     ],
     "鷹嶺ルイ": [
       "3T0wEUW1THE"
@@ -37287,26 +37179,22 @@
     "鈴木ヒナ": [
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "ヒメヒナ": [
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "himehinachannel": [
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "UCFv2z4iM5vHrS8bZPq4fHQQ": [
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "3DCG": [
       "GgOOykZcfnI",
@@ -37315,8 +37203,7 @@
     "愛包ダンスホール": [
       "GgOOykZcfnI",
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "涙の薫りがする": [
       "GgOOykZcfnI"
@@ -37347,20 +37234,16 @@
     ],
     "Kpop": [
       "bnofYmfKLeo",
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "dance": [
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "choreo": [
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "ダンス": [
-      "WTBycStPfJM",
-      "7oE8YnXumMk"
+      "WTBycStPfJM"
     ],
     "レディクレ": [
       "WTBycStPfJM"
@@ -37376,95 +37259,11 @@
     ],
     "LADYCRAZY": [
       "WTBycStPfJM"
-    ],
-    "ヴィー": [
-      "7oE8YnXumMk"
-    ],
-    "藍沢エマ": [
-      "7oE8YnXumMk"
-    ],
-    "空澄セナ": [
-      "7oE8YnXumMk"
-    ],
-    "石狩あかり": [
-      "7oE8YnXumMk"
-    ],
-    "因幡はねる": [
-      "7oE8YnXumMk"
-    ],
-    "音霊魂子": [
-      "7oE8YnXumMk"
-    ],
-    "おめがリオ": [
-      "7oE8YnXumMk"
-    ],
-    "おめがレイ": [
-      "7oE8YnXumMk"
-    ],
-    "花京院ちえり": [
-      "7oE8YnXumMk"
-    ],
-    "我部りえる": [
-      "7oE8YnXumMk"
-    ],
-    "神成きゅぴ": [
-      "7oE8YnXumMk"
-    ],
-    "栗駒こまる": [
-      "7oE8YnXumMk"
-    ],
-    "胡桃のあ": [
-      "7oE8YnXumMk"
-    ],
-    "小森めと": [
-      "7oE8YnXumMk"
-    ],
-    "渋谷ハル": [
-      "7oE8YnXumMk"
-    ],
-    "白波らむね": [
-      "7oE8YnXumMk"
-    ],
-    "白雪レイド": [
-      "7oE8YnXumMk"
-    ],
-    "周防パトラ": [
-      "7oE8YnXumMk"
-    ],
-    "電脳少女シロ": [
-      "7oE8YnXumMk"
-    ],
-    "猫汰つな": [
-      "7oE8YnXumMk"
-    ],
-    "猫宮ひなた": [
-      "7oE8YnXumMk"
-    ],
-    "ばあちゃる": [
-      "7oE8YnXumMk"
-    ],
-    "英リサ": [
-      "7oE8YnXumMk"
-    ],
-    "春雨麗女": [
-      "7oE8YnXumMk"
-    ],
-    "ぷわぷわぽぷら": [
-      "7oE8YnXumMk"
-    ],
-    "もこ田めめめ": [
-      "7oE8YnXumMk"
-    ],
-    "八雲べに": [
-      "7oE8YnXumMk"
-    ],
-    "夢野あかり": [
-      "7oE8YnXumMk"
     ]
   },
   "theme_index": {},
-  "last_updated": "2025-06-25T00:25:12.388799",
-  "total_videos": 453,
+  "last_updated": "2025-06-25T00:20:01.681665",
+  "total_videos": 452,
   "total_playlists": 5,
   "database_version": "1.0"
 }

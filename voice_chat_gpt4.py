@@ -18,9 +18,11 @@ listening = False
 recording = False
 current_keys = set()
 required_keys = {keyboard.Key.ctrl_l, keyboard.Key.shift_l, keyboard.Key.alt_l}
+fast_mode_keys = {keyboard.Key.ctrl_l, keyboard.Key.shift_l}  # 高速モード用キー
 audio_frames = []
 audio_stream = None
 pyaudio_instance = None
+current_mode = "full_search"  # デフォルトは通常モード
 
 # システムコンポーネント
 voice_synthesizer = None
@@ -145,12 +147,21 @@ def stop_recording_and_recognize():
 
 def on_key_press(key):
     """キー押下処理"""
-    global listening, recording
+    global listening, recording, current_mode
     current_keys.add(key)
     
+    # 通常モード（Ctrl+Shift+Alt）
     if required_keys.issubset(current_keys) and not listening and not recording:
         listening = True
-        print("🎮 ホットキー検出: Ctrl+Shift+Alt")
+        current_mode = "full_search"
+        print("🎮 [通常モード] ホットキー検出: Ctrl+Shift+Alt - YouTube検索実行")
+        start_recording()
+    
+    # 高速モード（Shift+Ctrl）
+    elif fast_mode_keys.issubset(current_keys) and keyboard.Key.alt_l not in current_keys and not listening and not recording:
+        listening = True
+        current_mode = "fast_response"
+        print("⚡ [高速モード] ホットキー検出: Shift+Ctrl - 既存知識で応答")
         start_recording()
 
 def on_key_release(key):
@@ -160,14 +171,15 @@ def on_key_release(key):
         current_keys.remove(key)
     
     # メインキーが離されたら録音停止・認識開始
-    if key in required_keys and recording:
+    if (key in required_keys or key in fast_mode_keys) and recording:
         listening = False
         # 録音停止と音声認識を別スレッドで実行
         threading.Thread(target=handle_voice_recognition, daemon=True).start()
 
 def handle_voice_recognition():
     """音声認識・対話処理"""
-    print("🗣️ 音声対話開始")
+    global current_mode
+    print(f"🗣️ 音声対話開始 - {current_mode}モード")
     
     # 音声認識実行
     user_input = stop_recording_and_recognize()
@@ -175,10 +187,13 @@ def handle_voice_recognition():
     if user_input and user_input not in ["音声が聞き取れませんでした", "音声認識サービスエラー", "録音に失敗しました", "録音されていません", "録音データがありません", "音声認識に失敗しました"]:
         print(f"👤 あなた: {user_input}")
         
-        # GPT-4応答生成
+        # GPT-4応答生成（モード情報を渡す）
         if setsuna_chat:
-            print("🤖 せつな思考中...")
-            response = setsuna_chat.get_response(user_input)
+            if current_mode == "fast_response":
+                print("⚡ せつな思考中（高速モード）...")
+            else:
+                print("🤖 せつな思考中（通常モード）...")
+            response = setsuna_chat.get_response(user_input, mode=current_mode)
             print(f"🤖 せつな: {response}")
             
             # 音声合成実行

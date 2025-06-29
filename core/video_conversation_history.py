@@ -422,6 +422,52 @@ class VideoConversationHistory:
         self._save_history()
         print("[動画履歴] 🗑️ 全動画履歴をクリア")
 
+    def get_conversation_stats(self) -> Dict[str, Any]:
+        """会話統計情報を取得（高速モード用）"""
+        try:
+            # 最近の会話履歴を取得
+            recent_conversations = []
+            
+            # 全動画を最後の会話日時でソート
+            sorted_videos = []
+            for video_id, video_data in self.video_conversations.items():
+                last_talked = video_data.get("last_talked")
+                if last_talked:
+                    try:
+                        last_date = datetime.fromisoformat(last_talked)
+                        sorted_videos.append((video_id, video_data, last_date))
+                    except ValueError:
+                        continue
+            
+            # 日時でソート（新しい順）
+            sorted_videos.sort(key=lambda x: x[2], reverse=True)
+            
+            # 最近の会話データを構築
+            for video_id, video_data, last_date in sorted_videos[:5]:  # 最新5件
+                recent_conversations.append({
+                    "video_id": video_id,
+                    "video_title": video_data.get("video_title", ""),
+                    "last_discussed": last_date.isoformat(),
+                    "count": video_data.get("conversation_count", 1),
+                    "familiarity_score": video_data.get("familiarity_score", 0.0)
+                })
+            
+            stats = {
+                "total_videos": len(self.video_conversations),
+                "recent_conversations": recent_conversations,
+                "session_videos": len(self.session_videos)
+            }
+            
+            return stats
+            
+        except Exception as e:
+            print(f"[動画履歴] ⚠️ 統計取得エラー: {e}")
+            return {
+                "total_videos": 0,
+                "recent_conversations": [],
+                "session_videos": 0
+            }
+
 # 使用例・テスト
 if __name__ == "__main__":
     print("=== 動画会話履歴システムテスト ===")
