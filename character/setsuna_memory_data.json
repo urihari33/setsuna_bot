@@ -3,42 +3,6 @@
   "conversation_history": [
     {
       "date": "2025-06-17",
-      "conversation_count": 3,
-      "topics": [],
-      "timestamp": "2025-06-17T22:14:01.199072"
-    },
-    {
-      "date": "2025-06-17",
-      "conversation_count": 3,
-      "topics": [],
-      "timestamp": "2025-06-17T22:14:36.335049"
-    },
-    {
-      "date": "2025-06-17",
-      "conversation_count": 0,
-      "topics": [],
-      "timestamp": "2025-06-17T22:23:32.201758"
-    },
-    {
-      "date": "2025-06-17",
-      "conversation_count": 0,
-      "topics": [],
-      "timestamp": "2025-06-17T22:23:35.064372"
-    },
-    {
-      "date": "2025-06-17",
-      "conversation_count": 0,
-      "topics": [],
-      "timestamp": "2025-06-17T22:23:37.749953"
-    },
-    {
-      "date": "2025-06-17",
-      "conversation_count": 0,
-      "topics": [],
-      "timestamp": "2025-06-17T22:23:41.050639"
-    },
-    {
-      "date": "2025-06-17",
       "conversation_count": 0,
       "topics": [],
       "timestamp": "2025-06-17T22:23:43.938395"
@@ -120,6 +84,42 @@
       "conversation_count": 0,
       "topics": [],
       "timestamp": "2025-06-18T00:11:42.504395"
+    },
+    {
+      "date": "2025-06-30",
+      "conversation_count": 4,
+      "topics": [],
+      "timestamp": "2025-06-30T22:00:24.815287"
+    },
+    {
+      "date": "2025-06-30",
+      "conversation_count": 3,
+      "topics": [],
+      "timestamp": "2025-06-30T22:18:44.443474"
+    },
+    {
+      "date": "2025-06-30",
+      "conversation_count": 1,
+      "topics": [],
+      "timestamp": "2025-06-30T22:34:24.597333"
+    },
+    {
+      "date": "2025-06-30",
+      "conversation_count": 2,
+      "topics": [],
+      "timestamp": "2025-06-30T22:38:02.043218"
+    },
+    {
+      "date": "2025-06-30",
+      "conversation_count": 1,
+      "topics": [],
+      "timestamp": "2025-06-30T22:49:08.609280"
+    },
+    {
+      "date": "2025-06-30",
+      "conversation_count": 3,
+      "topics": [],
+      "timestamp": "2025-06-30T22:58:59.984988"
     }
   ],
   "learned_facts": [

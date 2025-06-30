@@ -2,15 +2,16 @@
   "genre_preferences": {
     "その他": {
       "score": 1.0,
-      "interaction_count": 64,
+      "interaction_count": 81,
       "positive_count": 9,
       "negative_count": 0,
-      "last_interaction": "2025-06-30T00:07:54.875487"
+      "last_interaction": "2025-06-30T22:57:03.387336"
     }
   },
   "creator_preferences": {},
   "time_patterns": {
-    "late_night": {}
+    "late_night": {},
+    "night": {}
   },
   "topic_clusters": {},
   "mood_patterns": {},
@@ -22,5 +23,5 @@
     "max_history_days": 90,
     "min_interactions_for_pattern": 3
   },
-  "last_updated": "2025-06-30T00:07:54.875516"
+  "last_updated": "2025-06-30T22:57:03.387336"
 }

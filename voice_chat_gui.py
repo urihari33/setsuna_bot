@@ -41,6 +41,8 @@ class SetsunaGUI:
         self.listening = False
         self.current_keys = set()
         self.required_keys = {keyboard.Key.ctrl_l, keyboard.Key.shift_l, keyboard.Key.alt_l}
+        self.fast_mode_keys = {keyboard.Key.ctrl_l, keyboard.Key.shift_l}  # 高速モード用キー
+        self.current_mode = "full_search"  # デフォルトは通常モード
         self.hotkey_listener = None
         
         self._create_widgets()
@@ -107,7 +109,7 @@ class SetsunaGUI:
         )
         self.hotkey_info_label = ttk.Label(
             self.status_frame,
-            text="📌 Ctrl+Shift+Alt: 音声入力",
+            text="📌 Ctrl+Shift+Alt: 通常モード | Shift+Ctrl: 高速モード",
             font=('Arial', 10),
             foreground='blue'
         )
@@ -151,6 +153,26 @@ class SetsunaGUI:
             spacing1=2,  # 段落前の間隔
             spacing2=0,  # 行間隔
             spacing3=2   # 段落後の間隔
+        )
+        
+        # モード選択エリア
+        self.mode_frame = ttk.LabelFrame(self.chat_tab, text="応答モード選択", padding=10)
+        
+        # モード選択用変数
+        self.response_mode = tk.StringVar(value="full_search")
+        
+        # ラジオボタン
+        self.mode_normal_radio = ttk.Radiobutton(
+            self.mode_frame,
+            text="🔍 通常モード（YouTube検索あり）",
+            variable=self.response_mode,
+            value="full_search"
+        )
+        self.mode_fast_radio = ttk.Radiobutton(
+            self.mode_frame,
+            text="⚡ 高速モード（既存知識のみ）",
+            variable=self.response_mode,
+            value="fast_response"
         )
         
         # テキスト入力エリア（高さを固定）
@@ -459,9 +481,14 @@ class SetsunaGUI:
         self._setup_chat_layout()
     
     def _setup_chat_layout(self):
-        """チャットタブのレイアウト設定"""
+        """チャットタブのレイアウト設定（モード選択対応）"""
         
-        # テキスト入力エリアを先に配置（下部固定）
+        # モード選択エリア（上部に配置）
+        self.mode_frame.pack(fill=tk.X, padx=5, pady=5, side=tk.TOP)
+        self.mode_normal_radio.pack(side=tk.LEFT, padx=(0, 10))
+        self.mode_fast_radio.pack(side=tk.LEFT)
+        
+        # テキスト入力エリア（下部固定）
         self.input_frame.pack(fill=tk.X, padx=5, pady=5, side=tk.BOTTOM)
         
         # テキスト入力フィールドを上部に配置（高さを固定）
@@ -544,9 +571,38 @@ class SetsunaGUI:
         try:
             self.update_voice_status("思考中...")
             
-            # GPT-4応答生成
+            # GPT-4応答生成（モード選択対応）
             if self.setsuna_chat:
-                response = self.setsuna_chat.get_response(message)
+                # テキスト入力では選択されたモードを使用
+                selected_mode = getattr(self, 'response_mode', 'full_search')
+                response = self.setsuna_chat.get_response(message, mode=selected_mode)
+                
+                # Phase 1: URL表示機能 - テキスト入力時のURL表示（応答フィルター付き）
+                try:
+                    print(f"🔍 [URL表示デバッグ] テキスト入力処理開始")
+                    print(f"🔍 [URL表示デバッグ] context_builder存在: {self.setsuna_chat.context_builder is not None}")
+                    
+                    from url_display_manager import show_recommended_urls
+                    if self.setsuna_chat.context_builder and hasattr(self.setsuna_chat.context_builder, 'get_last_context'):
+                        last_context = self.setsuna_chat.context_builder.get_last_context()
+                        print(f"🔍 [URL表示デバッグ] last_context: {last_context is not None}")
+                        if last_context:
+                            videos = last_context.get('videos', [])
+                            print(f"🔍 [URL表示デバッグ] 動画数: {len(videos)}")
+                            if videos:
+                                print(f"🔗 [URL表示] テキスト入力: {len(videos)}件の動画から応答言及分をフィルター中...")
+                                # せつなの応答文を渡してフィルタリング
+                                show_recommended_urls(last_context, response)
+                            else:
+                                print(f"⚠️ [URL表示] 動画推薦結果が空です")
+                        else:
+                            print(f"⚠️ [URL表示] last_contextがNullです")
+                    else:
+                        print(f"⚠️ [URL表示] context_builderまたはget_last_contextメソッドが存在しません")
+                except ImportError as e:
+                    print(f"⚠️ [URL表示] Import エラー: {e}")
+                except Exception as e:
+                    print(f"⚠️ [テキストURL表示] エラー: {e}")
             else:
                 response = f"申し訳ありません。システムが初期化されていません。"
             
@@ -607,21 +663,30 @@ class SetsunaGUI:
             print(f"⚠️ ホットキーリスナー開始失敗: {e}")
     
     def _on_key_press(self, key):
-        """キー押下処理"""
+        """キー押下処理（高速モード対応）"""
         self.current_keys.add(key)
         
+        # 通常モード（Ctrl+Shift+Alt）
         if self.required_keys.issubset(self.current_keys) and not self.listening:
             self.listening = True
-            self.update_voice_status("録音中")
+            self.current_mode = "full_search"
+            self.update_voice_status("録音中（通常モード）")
+            threading.Thread(target=self._handle_voice_input, daemon=True).start()
+        
+        # 高速モード（Shift+Ctrl）
+        elif self.fast_mode_keys.issubset(self.current_keys) and keyboard.Key.alt_l not in self.current_keys and not self.listening:
+            self.listening = True
+            self.current_mode = "fast_response"
+            self.update_voice_status("録音中（高速モード）")
             threading.Thread(target=self._handle_voice_input, daemon=True).start()
     
     def _on_key_release(self, key):
-        """キー離上処理"""
+        """キー離上処理（高速モード対応）"""
         if key in self.current_keys:
             self.current_keys.remove(key)
         
         # メインキーが離されたら停止
-        if key in self.required_keys:
+        if (key in self.required_keys or key in self.fast_mode_keys):
             self.listening = False
     
     def _handle_voice_input(self):
@@ -690,11 +755,41 @@ class SetsunaGUI:
     def _process_voice_message(self, message):
         """音声メッセージ処理"""
         try:
-            self.update_voice_status("思考中...")
+            mode_display = "高速モード" if self.current_mode == "fast_response" else "通常モード"
+            self.update_voice_status(f"思考中（{mode_display}）...")
+            print(f"🤖 音声入力処理開始 - {mode_display}")
             
-            # GPT-4応答生成
+            # GPT-4応答生成（音声モード対応）
             if self.setsuna_chat:
-                response = self.setsuna_chat.get_response(message)
+                # 音声入力では current_mode を使用
+                response = self.setsuna_chat.get_response(message, mode=self.current_mode)
+                
+                # Phase 1: URL表示機能 - 音声入力時のURL表示（応答フィルター付き）
+                try:
+                    print(f"🔍 [URL表示デバッグ] 音声入力処理開始")
+                    print(f"🔍 [URL表示デバッグ] context_builder存在: {self.setsuna_chat.context_builder is not None}")
+                    
+                    from url_display_manager import show_recommended_urls
+                    if self.setsuna_chat.context_builder and hasattr(self.setsuna_chat.context_builder, 'get_last_context'):
+                        last_context = self.setsuna_chat.context_builder.get_last_context()
+                        print(f"🔍 [URL表示デバッグ] last_context: {last_context is not None}")
+                        if last_context:
+                            videos = last_context.get('videos', [])
+                            print(f"🔍 [URL表示デバッグ] 動画数: {len(videos)}")
+                            if videos:
+                                print(f"🔗 [URL表示] 音声入力: {len(videos)}件の動画から応答言及分をフィルター中...")
+                                # せつなの応答文を渡してフィルタリング
+                                show_recommended_urls(last_context, response)
+                            else:
+                                print(f"⚠️ [URL表示] 動画推薦結果が空です")
+                        else:
+                            print(f"⚠️ [URL表示] last_contextがNullです")
+                    else:
+                        print(f"⚠️ [URL表示] context_builderまたはget_last_contextメソッドが存在しません")
+                except ImportError as e:
+                    print(f"⚠️ [URL表示] Import エラー: {e}")
+                except Exception as e:
+                    print(f"⚠️ [音声URL表示] エラー: {e}")
             else:
                 response = "申し訳ありません。システムが初期化されていません。"
             

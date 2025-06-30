@@ -1,51 +1,48 @@
 {
   "current_session": {
-    "session_id": "session_20250630_000738",
-    "start_time": "2025-06-30T00:07:38.871531",
-    "state": "topic_established",
+    "session_id": "session_20250630_225652",
+    "start_time": "2025-06-30T22:56:52.814483",
+    "state": "initial",
     "turns": [
       {
         "turn_number": 1,
-        "timestamp": "2025-06-30T00:07:49.452424",
-        "user_input": "YOASOBI知ってる？",
+        "timestamp": "2025-06-30T22:57:03.388337",
+        "user_input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
         "context_analysis": {
-          "input": "YOASOBI知ってる？",
-          "timestamp": "2025-06-30T00:07:49.417793",
-          "pronoun_references": [],
-          "continuity_indicators": [],
+          "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
+          "timestamp": "2025-06-30T22:57:03.362661",
+          "pronoun_references": [
+            {
+              "type": "temporal",
+              "text": "最近見た",
+              "position": [
+                18,
+                22
+              ],
+              "confidence": 0.8
+            }
+          ],
+          "continuity_indicators": [
+            {
+              "type": "disagreement",
+              "text": "けど",
+              "position": [
+                24,
+                26
+              ],
+              "strength": "strong"
+            }
+          ],
           "emotional_signals": {
             "positive": 0.0,
             "negative": 0.0,
             "excitement": 0.0,
-            "curiosity": 0.7,
+            "curiosity": 0.0,
             "satisfaction": 0.0,
-            "detected_emotions": [
-              {
-                "emotion": "curiosity",
-                "strength": 0.7
-              }
-            ]
+            "detected_emotions": []
           },
-          "topic_relevance": {
-            "N4PtDsU2iSU": {
-              "relevance_score": 1.0,
-              "topic_data": {
-                "video_id": "N4PtDsU2iSU",
-                "title": "YOASOBI",
-                "channel": "Raon",
-                "genre": "",
-                "keywords": [
-                  "Raon"
-                ],
-                "last_mentioned": "2025-06-29T23:41:24.993061",
-                "mention_count": 1
-              },
-              "related_keywords": [
-                "YOASOBI"
-              ]
-            }
-          },
-          "requires_resolution": false
+          "topic_relevance": {},
+          "requires_resolution": true
         },
         "system_response": "",
         "mentioned_videos": [
@@ -76,95 +73,17 @@
           "positive": 0.0,
           "negative": 0.0,
           "excitement": 0.0,
-          "curiosity": 0.7,
+          "curiosity": 0.0,
           "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "curiosity",
-              "strength": 0.7
-            }
-          ]
-        },
-        "state_transition": {
-          "should_transition": true,
-          "new_state": "topic_established",
-          "confidence": 0.85,
-          "reasons": [
-            "条件満足: to_topic_established (信頼度: 0.85)"
-          ]
-        },
-        "new_state": "topic_established"
-      },
-      {
-        "turn_number": 2,
-        "timestamp": "2025-06-30T00:07:54.879179",
-        "user_input": "最新のVTuber動画教えて",
-        "context_analysis": {
-          "input": "最新のVTuber動画教えて",
-          "timestamp": "2025-06-30T00:07:54.849587",
-          "pronoun_references": [],
-          "continuity_indicators": [],
-          "emotional_signals": {
-            "positive": 0.0,
-            "negative": 0.0,
-            "excitement": 0.0,
-            "curiosity": 0.7,
-            "satisfaction": 0.0,
-            "detected_emotions": [
-              {
-                "emotion": "curiosity",
-                "strength": 0.7
-              }
-            ]
-          },
-          "topic_relevance": {},
-          "requires_resolution": false
-        },
-        "system_response": "",
-        "mentioned_videos": [
-          {
-            "video_id": "TMeaXo1rpsY",
-            "title": "ADAMAS",
-            "channel": "巫てんり / Kannagi Tenri ",
-            "genre": "",
-            "search_score": 65
-          },
-          {
-            "video_id": "afpbZTjqW4M",
-            "title": "Ado",
-            "channel": "巫てんり / Kannagi Tenri ",
-            "genre": "",
-            "search_score": 65
-          },
-          {
-            "video_id": "fTtJAf0KWBQ",
-            "title": "original",
-            "channel": "合法‼︎バツ子ﾁｬﾝBatsuko",
-            "genre": "",
-            "search_score": 65
-          }
-        ],
-        "previous_state": "topic_established",
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.7,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "curiosity",
-              "strength": 0.7
-            }
-          ]
+          "detected_emotions": []
         },
         "state_transition": {
           "should_transition": false,
-          "new_state": "topic_established",
+          "new_state": "initial",
           "confidence": 0.0,
           "reasons": []
         },
-        "new_state": "topic_established"
+        "new_state": "initial"
       }
     ],
     "active_topics": {
@@ -176,10 +95,10 @@
           "genre": "",
           "search_score": 86
         },
-        "first_mentioned": "2025-06-30T00:07:49.452481",
+        "first_mentioned": "2025-06-30T22:57:03.388337",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T00:07:49.452483"
+        "last_mentioned": "2025-06-30T22:57:03.388337"
       },
       "Av3xaZkVpJs": {
         "video_info": {
@@ -189,10 +108,10 @@
           "genre": "",
           "search_score": 77
         },
-        "first_mentioned": "2025-06-30T00:07:49.452485",
+        "first_mentioned": "2025-06-30T22:57:03.388337",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T00:07:49.452486"
+        "last_mentioned": "2025-06-30T22:57:03.388337"
       },
       "Jj1_mfUzjOs": {
         "video_info": {
@@ -202,77 +121,15 @@
           "genre": "",
           "search_score": 77
         },
-        "first_mentioned": "2025-06-30T00:07:49.452487",
+        "first_mentioned": "2025-06-30T22:57:03.388337",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T00:07:49.452488"
-      },
-      "TMeaXo1rpsY": {
-        "video_info": {
-          "video_id": "TMeaXo1rpsY",
-          "title": "ADAMAS",
-          "channel": "巫てんり / Kannagi Tenri ",
-          "genre": "",
-          "search_score": 65
-        },
-        "first_mentioned": "2025-06-30T00:07:54.879225",
-        "mention_count": 1,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T00:07:54.879227"
-      },
-      "afpbZTjqW4M": {
-        "video_info": {
-          "video_id": "afpbZTjqW4M",
-          "title": "Ado",
-          "channel": "巫てんり / Kannagi Tenri ",
-          "genre": "",
-          "search_score": 65
-        },
-        "first_mentioned": "2025-06-30T00:07:54.879229",
-        "mention_count": 1,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T00:07:54.879230"
-      },
-      "fTtJAf0KWBQ": {
-        "video_info": {
-          "video_id": "fTtJAf0KWBQ",
-          "title": "original",
-          "channel": "合法‼︎バツ子ﾁｬﾝBatsuko",
-          "genre": "",
-          "search_score": 65
-        },
-        "first_mentioned": "2025-06-30T00:07:54.879231",
-        "mention_count": 1,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T00:07:54.879232"
+        "last_mentioned": "2025-06-30T22:57:03.388337"
       }
     },
     "user_preferences": {},
     "conversation_goals": [],
-    "emotional_trajectory": [
-      {
-        "timestamp": "2025-06-30T00:07:49.452491",
-        "turn_number": 1,
-        "emotions": [
-          {
-            "emotion": "curiosity",
-            "strength": 0.7
-          }
-        ],
-        "dominant_emotion": "curiosity"
-      },
-      {
-        "timestamp": "2025-06-30T00:07:54.879235",
-        "turn_number": 2,
-        "emotions": [
-          {
-            "emotion": "curiosity",
-            "strength": 0.7
-          }
-        ],
-        "dominant_emotion": "curiosity"
-      }
-    ]
+    "emotional_trajectory": []
   },
   "session_history": [],
   "config": {
@@ -281,5 +138,5 @@
     "min_turns_for_deep_discussion": 3,
     "preference_confidence_threshold": 0.7
   },
-  "last_updated": "2025-06-30T00:07:54.879251"
+  "last_updated": "2025-06-30T22:57:03.388337"
 }

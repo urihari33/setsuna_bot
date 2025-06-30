@@ -170,9 +170,9 @@
     },
     "Av3xaZkVpJs": {
       "video_title": "アドベンチャー",
-      "conversation_count": 16,
+      "conversation_count": 17,
       "first_talked": "2025-06-26T22:59:19.583808",
-      "last_talked": "2025-06-30T00:07:49.435713",
+      "last_talked": "2025-06-30T22:57:03.384293",
       "user_reactions": [
         "neutral",
         "neutral",
@@ -181,11 +181,6 @@
         "neutral"
       ],
       "conversation_contexts": [
-        {
-          "date": "2025-06-27T00:00:08.427819",
-          "input": "この曲すごい好きなんだよね 私も",
-          "reaction": "positive"
-        },
         {
           "date": "2025-06-27T00:00:24.585143",
           "input": "また アドベンチャー 聞こうか",
@@ -230,33 +225,28 @@
           "date": "2025-06-30T00:07:49.435713",
           "input": "YOASOBI知ってる？",
           "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T22:57:03.384293",
+          "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
+          "reaction": "neutral"
         }
       ],
       "familiarity_score": 0.7
     },
     "2Z_qydIQGG4": {
       "video_title": "アオペラの「ア」-introduction song-",
-      "conversation_count": 9,
+      "conversation_count": 12,
       "first_talked": "2025-06-26T22:59:19.585314",
-      "last_talked": "2025-06-27T00:01:52.972902",
+      "last_talked": "2025-06-30T22:37:37.989827",
       "user_reactions": [
         "neutral",
         "neutral",
-        "positive",
+        "neutral",
         "neutral",
         "neutral"
       ],
       "conversation_contexts": [
-        {
-          "date": "2025-06-26T22:59:19.585314",
-          "input": "アドベンチャーについて教えて",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T22:59:19.602500",
-          "input": "アドベンチャーについて教えて",
-          "reaction": "neutral"
-        },
         {
           "date": "2025-06-26T23:00:49.797082",
           "input": "アドベンチャーって知ってる",
@@ -291,9 +281,24 @@
           "date": "2025-06-27T00:01:52.972902",
           "input": "似たような曲って",
           "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T21:59:23.163945",
+          "input": "元気だよ 最近 おすすめの動画とかある",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T22:33:31.248323",
+          "input": "こんにちは 最近見た おすすめの動画とかあります",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T22:37:37.989827",
+          "input": "じゃ 初音ミクの動画でなんか面白いのある",
+          "reaction": "neutral"
         }
       ],
-      "familiarity_score": 0.7599999999999999
+      "familiarity_score": 0.7
     },
     "z6c-5qYMRO0": {
       "video_title": "青く青く光る",
@@ -471,10 +476,11 @@
     },
     "bh7oZ9WU8vg": {
       "video_title": "いちプロ",
-      "conversation_count": 1,
+      "conversation_count": 2,
       "first_talked": "2025-06-27T00:03:26.317568",
-      "last_talked": "2025-06-27T00:03:26.317568",
+      "last_talked": "2025-06-30T22:18:30.690494",
       "user_reactions": [
+        "neutral",
         "neutral"
       ],
       "conversation_contexts": [
@@ -482,15 +488,20 @@
           "date": "2025-06-27T00:03:26.317568",
           "input": "プロトディスク ヨルシカの曲じゃなく",
           "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T22:18:30.690494",
+          "input": "プロポーズって動画なんだけど",
+          "reaction": "neutral"
         }
       ],
-      "familiarity_score": 0.2
+      "familiarity_score": 0.30000000000000004
     },
     "N4PtDsU2iSU": {
       "video_title": "YOASOBI",
-      "conversation_count": 6,
+      "conversation_count": 7,
       "first_talked": "2025-06-29T23:08:48.191366",
-      "last_talked": "2025-06-30T00:07:49.429805",
+      "last_talked": "2025-06-30T22:57:03.381752",
       "user_reactions": [
         "neutral",
         "neutral",
@@ -528,15 +539,20 @@
           "date": "2025-06-30T00:07:49.429805",
           "input": "YOASOBI知ってる？",
           "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T22:57:03.381752",
+          "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
+          "reaction": "neutral"
         }
       ],
       "familiarity_score": 0.7
     },
     "Jj1_mfUzjOs": {
       "video_title": "〈物語〉シリーズ オフ&モンスターシーズン",
-      "conversation_count": 6,
+      "conversation_count": 7,
       "first_talked": "2025-06-29T23:08:48.195366",
-      "last_talked": "2025-06-30T00:07:49.446099",
+      "last_talked": "2025-06-30T22:57:03.385342",
       "user_reactions": [
         "neutral",
         "neutral",
@@ -573,6 +589,11 @@
         {
           "date": "2025-06-30T00:07:49.446099",
           "input": "YOASOBI知ってる？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-06-30T22:57:03.385342",
+          "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
           "reaction": "neutral"
         }
       ],
@@ -784,7 +805,177 @@
         }
       ],
       "familiarity_score": 0.2
+    },
+    "zBePOfn5FIg": {
+      "video_title": "フォニイ",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T21:59:23.166461",
+      "last_talked": "2025-06-30T21:59:23.166461",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T21:59:23.166461",
+          "input": "元気だよ 最近 おすすめの動画とかある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "QfQhyDBSGG0": {
+      "video_title": "プロポーズ",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:18:30.687493",
+      "last_talked": "2025-06-30T22:18:30.687493",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:18:30.687493",
+          "input": "プロポーズって動画なんだけど",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "DaWbq6KeJq4": {
+      "video_title": "Beat Eater",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:33:31.251837",
+      "last_talked": "2025-06-30T22:33:31.251837",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:33:31.251837",
+          "input": "こんにちは 最近見た おすすめの動画とかあります",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "C5buQLyRel8": {
+      "video_title": "TH ANNIVERSARY MOVIE",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:37:37.992827",
+      "last_talked": "2025-06-30T22:37:37.992827",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:37:37.992827",
+          "input": "じゃ 初音ミクの動画でなんか面白いのある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "D7xjC200qxo": {
+      "video_title": "XOXO",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:45:38.118899",
+      "last_talked": "2025-06-30T22:45:38.118899",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:45:38.118899",
+          "input": "TRiNITYの動画知ってる？",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "mW76Jis85LE": {
+      "video_title": "Trinity",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:45:38.121900",
+      "last_talked": "2025-06-30T22:45:38.121900",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:45:38.121900",
+          "input": "TRiNITYの動画知ってる？",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "483yXOP4I80": {
+      "video_title": "Dissolving in blue",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:45:38.123900",
+      "last_talked": "2025-06-30T22:45:38.123900",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:45:38.123900",
+          "input": "TRiNITYの動画知ってる？",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "lMXlOPGjwUI": {
+      "video_title": "Iなんです",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:48:47.039767",
+      "last_talked": "2025-06-30T22:48:47.039767",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:48:47.039767",
+          "input": "こんにちは初音ミクの動画でおすすめってある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "YkP0JMByjRM": {
+      "video_title": "ray",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:48:47.042278",
+      "last_talked": "2025-06-30T22:48:47.042278",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:48:47.042278",
+          "input": "こんにちは初音ミクの動画でおすすめってある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "M_ijFuoASt0": {
+      "video_title": "トリコロージュ",
+      "conversation_count": 1,
+      "first_talked": "2025-06-30T22:48:47.044276",
+      "last_talked": "2025-06-30T22:48:47.044276",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-06-30T22:48:47.044276",
+          "input": "こんにちは初音ミクの動画でおすすめってある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
     }
   },
-  "last_updated": "2025-06-30T00:07:54.871233"
+  "last_updated": "2025-06-30T22:57:03.385342"
 }

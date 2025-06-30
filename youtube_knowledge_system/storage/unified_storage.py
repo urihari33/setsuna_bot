@@ -396,11 +396,20 @@ class UnifiedStorage:
                 except Exception as e:
                     print(f"プレイリストファイル移行エラー {playlist_file}: {e}")
         
-        # 分析結果を統合（後で実装）
+        # 分析結果を統合
         if 'analysis' in legacy_files:
             for analysis_file in legacy_files['analysis']:
-                # TODO: 分析結果の統合処理
-                pass
+                try:
+                    print(f"分析結果ファイルを統合中: {analysis_file}")
+                    self._integrate_analysis_data(analysis_file, db)
+                    
+                    # レガシーファイルを移動
+                    legacy_target = self.legacy_dir / analysis_file.name
+                    shutil.move(str(analysis_file), str(legacy_target))
+                    print(f"レガシー分析ファイルを移動しました: {legacy_target}")
+                    
+                except Exception as e:
+                    print(f"分析結果統合エラー {analysis_file}: {e}")
         
         return db
     
@@ -434,6 +443,353 @@ class UnifiedStorage:
             'videos_with_lyrics': total_with_lyrics,
             'popular_genres': dict(sorted(popular_genres.items(), key=lambda x: x[1], reverse=True)[:10])
         }
+    
+    def _integrate_analysis_data(self, analysis_file: Path, db: KnowledgeDatabase) -> None:
+        """分析結果ファイルをデータベースに統合"""
+        try:
+            with open(analysis_file, 'r', encoding='utf-8') as f:
+                analysis_data = json.load(f)
+            
+            print(f"   📊 分析データ統合開始: {len(analysis_data)}件")
+            
+            integrated_count = 0
+            for video_id, analysis_result in analysis_data.items():
+                if video_id in db.videos:
+                    video = db.videos[video_id]
+                    
+                    # 既存の分析結果を更新・強化
+                    if self._enhance_video_analysis(video, analysis_result):
+                        integrated_count += 1
+                else:
+                    print(f"   ⚠️  動画が見つかりません: {video_id}")
+            
+            print(f"   ✅ 分析データ統合完了: {integrated_count}件")
+            
+        except Exception as e:
+            print(f"   ❌ 分析データ統合エラー: {e}")
+            raise
+    
+    def _enhance_video_analysis(self, video: Video, analysis_result: Dict[str, Any]) -> bool:
+        """動画の分析結果を強化"""
+        try:
+            from core.data_models import CreativeInsight, CreatorInfo, MusicInfo
+            
+            # 既存の分析結果を取得
+            current_insight = video.creative_insight
+            
+            # 新しい分析結果から情報を抽出
+            enhanced_creators = self._extract_creators_from_analysis(analysis_result)
+            enhanced_themes = self._extract_themes_from_analysis(analysis_result)
+            enhanced_music = self._extract_music_from_analysis(analysis_result)
+            
+            # 既存データと統合
+            if current_insight:
+                # 既存のクリエイター情報と統合
+                existing_creators = {c.name: c for c in current_insight.creators}
+                for new_creator in enhanced_creators:
+                    if new_creator.name not in existing_creators:
+                        existing_creators[new_creator.name] = new_creator
+                    else:
+                        # 信頼度の高い方を採用
+                        if new_creator.confidence > existing_creators[new_creator.name].confidence:
+                            existing_creators[new_creator.name] = new_creator
+                
+                # テーマ情報を統合
+                existing_themes = set(current_insight.themes)
+                existing_themes.update(enhanced_themes)
+                
+                # 音楽情報を統合
+                music_info = current_insight.music_info or enhanced_music
+                
+                # 統合結果で更新
+                video.creative_insight = CreativeInsight(
+                    creators=list(existing_creators.values()),
+                    music_info=music_info,
+                    tools_used=current_insight.tools_used,
+                    themes=list(existing_themes),
+                    visual_elements=current_insight.visual_elements,
+                    analysis_confidence=max(current_insight.analysis_confidence, 0.8),
+                    analysis_timestamp=datetime.now(),
+                    analysis_model=current_insight.analysis_model,
+                    insights=current_insight.insights
+                )
+            else:
+                # 新規分析結果を作成
+                video.creative_insight = CreativeInsight(
+                    creators=enhanced_creators,
+                    music_info=enhanced_music,
+                    tools_used=[],
+                    themes=enhanced_themes,
+                    visual_elements=[],
+                    analysis_confidence=0.8,
+                    analysis_timestamp=datetime.now(),
+                    analysis_model="GPT-4",
+                    insights=analysis_result.get('insights', '')
+                )
+            
+            # 分析ステータスを更新
+            from core.data_models import AnalysisStatus
+            video.analysis_status = AnalysisStatus.COMPLETED
+            video.updated_at = datetime.now()
+            
+            return True
+            
+        except Exception as e:
+            print(f"   ❌ 動画分析強化エラー {video.metadata.id}: {e}")
+            return False
+    
+    def _extract_creators_from_analysis(self, analysis_result: Dict[str, Any]) -> List:
+        """分析結果からクリエイター情報を抽出"""
+        from core.data_models import CreatorInfo
+        
+        creators = []
+        
+        # 様々な形式の分析結果に対応
+        if 'creators' in analysis_result:
+            for creator_data in analysis_result['creators']:
+                if isinstance(creator_data, dict):
+                    creators.append(CreatorInfo(
+                        name=creator_data.get('name', ''),
+                        role=creator_data.get('role', 'unknown'),
+                        confidence=creator_data.get('confidence', 0.7)
+                    ))
+                elif isinstance(creator_data, str):
+                    creators.append(CreatorInfo(
+                        name=creator_data,
+                        role='unknown',
+                        confidence=0.6
+                    ))
+        
+        # 説明文からクリエイター情報を抽出
+        if 'analysis_text' in analysis_result:
+            extracted_creators = self._parse_creators_from_text(analysis_result['analysis_text'])
+            creators.extend(extracted_creators)
+        
+        return creators
+    
+    def _extract_themes_from_analysis(self, analysis_result: Dict[str, Any]) -> List[str]:
+        """分析結果からテーマ情報を抽出"""
+        themes = []
+        
+        # 直接指定されたテーマ
+        if 'themes' in analysis_result:
+            themes.extend(analysis_result['themes'])
+        
+        # 分析テキストからテーマを抽出
+        if 'analysis_text' in analysis_result:
+            extracted_themes = self._parse_themes_from_text(analysis_result['analysis_text'])
+            themes.extend(extracted_themes)
+        
+        # ジャンルからテーマを推定
+        if 'genre' in analysis_result:
+            themes.append(analysis_result['genre'])
+        
+        return list(set(themes))  # 重複除去
+    
+    def _extract_music_from_analysis(self, analysis_result: Dict[str, Any]) -> Optional:
+        """分析結果から音楽情報を抽出"""
+        from core.data_models import MusicInfo
+        
+        if 'music_info' in analysis_result:
+            music_data = analysis_result['music_info']
+            return MusicInfo(
+                lyrics=music_data.get('lyrics', ''),
+                genre=music_data.get('genre'),
+                bpm=music_data.get('bpm'),
+                key=music_data.get('key'),
+                mood=music_data.get('mood')
+            )
+        
+        # 基本的な音楽情報を抽出
+        lyrics = analysis_result.get('lyrics', '')
+        genre = analysis_result.get('genre')
+        
+        if lyrics or genre:
+            return MusicInfo(
+                lyrics=lyrics,
+                genre=genre
+            )
+        
+        return None
+    
+    def _parse_creators_from_text(self, text: str) -> List:
+        """テキストからクリエイター情報を解析"""
+        from core.data_models import CreatorInfo
+        import re
+        
+        creators = []
+        
+        # 一般的なクリエイター表記パターン
+        patterns = [
+            r'作詞[：:](.*?)(?:\\n|$)',
+            r'作曲[：:](.*?)(?:\\n|$)',
+            r'編曲[：:](.*?)(?:\\n|$)',
+            r'歌[：:](.*?)(?:\\n|$)',
+            r'ボーカル[：:](.*?)(?:\\n|$)',
+            r'イラスト[：:](.*?)(?:\\n|$)',
+            r'動画[：:](.*?)(?:\\n|$)',
+        ]
+        
+        role_mapping = {
+            '作詞': 'lyricist',
+            '作曲': 'composer', 
+            '編曲': 'arranger',
+            '歌': 'vocal',
+            'ボーカル': 'vocal',
+            'イラスト': 'illustrator',
+            '動画': 'movie'
+        }
+        
+        for pattern in patterns:
+            matches = re.findall(pattern, text)
+            for match in matches:
+                names = [name.strip() for name in match.split(',') if name.strip()]
+                role = None
+                for jp_role, en_role in role_mapping.items():
+                    if jp_role in pattern:
+                        role = en_role
+                        break
+                
+                for name in names:
+                    if name and len(name) > 1:  # 短すぎる名前は除外
+                        creators.append(CreatorInfo(
+                            name=name,
+                            role=role or 'unknown',
+                            confidence=0.8
+                        ))
+        
+        return creators
+    
+    def _parse_themes_from_text(self, text: str) -> List[str]:
+        """テキストからテーマを解析"""
+        themes = []
+        
+        # 音楽ジャンル関連キーワード
+        genre_keywords = ['ポップ', 'ロック', 'バラード', 'エレクトロ', 'ダンス', 'フォーク', 'ジャズ', 'クラシック']
+        
+        # 感情・ムード関連キーワード
+        mood_keywords = ['切ない', '元気', '楽しい', '悲しい', '希望', '恋愛', '青春', '成長']
+        
+        # テーマ関連キーワード
+        theme_keywords = ['友情', '恋愛', '別れ', '出会い', '成長', '冒険', '日常', '夢']
+        
+        text_lower = text.lower()
+        
+        for keyword in genre_keywords + mood_keywords + theme_keywords:
+            if keyword in text:
+                themes.append(keyword)
+        
+        return themes
+    
+    def enhance_existing_analysis(self) -> Dict[str, int]:
+        """既存の分析データを強化"""
+        print("\\n🔧 既存分析データの強化を開始します...")
+        
+        db = self.load_database()
+        
+        enhanced_count = 0
+        theme_added_count = 0
+        creator_enhanced_count = 0
+        
+        for video_id, video in db.videos.items():
+            if video.creative_insight:
+                original_enhanced = enhanced_count
+                
+                # テーマ情報が不足している動画の強化
+                if not video.creative_insight.themes:
+                    enhanced_themes = self._analyze_video_for_themes(video)
+                    if enhanced_themes:
+                        video.creative_insight.themes = enhanced_themes
+                        theme_added_count += 1
+                        enhanced_count += 1
+                
+                # クリエイター情報の強化
+                if len(video.creative_insight.creators) < 2:
+                    additional_creators = self._analyze_video_for_creators(video)
+                    if additional_creators:
+                        existing_names = {c.name for c in video.creative_insight.creators}
+                        new_creators = [c for c in additional_creators if c.name not in existing_names]
+                        if new_creators:
+                            video.creative_insight.creators.extend(new_creators)
+                            creator_enhanced_count += 1
+                            enhanced_count += 1
+                
+                # 更新日時を設定
+                if enhanced_count > original_enhanced:
+                    video.updated_at = datetime.now()
+        
+        # データベースを保存
+        if enhanced_count > 0:
+            self.save_database()
+        
+        results = {
+            'total_enhanced': enhanced_count,
+            'themes_added': theme_added_count,
+            'creators_enhanced': creator_enhanced_count
+        }
+        
+        print(f"✅ 分析データ強化完了:")
+        print(f"   強化された動画: {enhanced_count}件")
+        print(f"   テーマ追加: {theme_added_count}件")
+        print(f"   クリエイター強化: {creator_enhanced_count}件")
+        
+        return results
+    
+    def _analyze_video_for_themes(self, video: Video) -> List[str]:
+        """動画からテーマを分析"""
+        themes = []
+        
+        # タイトルと説明文からテーマを抽出
+        text_content = f"{video.metadata.title} {video.metadata.description}"
+        
+        themes.extend(self._parse_themes_from_text(text_content))
+        
+        # タグからテーマを推定
+        tag_themes = self._infer_themes_from_tags(video.metadata.tags)
+        themes.extend(tag_themes)
+        
+        return list(set(themes))[:5]  # 最大5つのテーマ
+    
+    def _analyze_video_for_creators(self, video: Video) -> List:
+        """動画から追加のクリエイター情報を分析"""
+        creators = []
+        
+        # 説明文からクリエイター情報を抽出
+        creators.extend(self._parse_creators_from_text(video.metadata.description))
+        
+        # チャンネル名をクリエイターとして追加
+        if video.metadata.channel_title and video.metadata.channel_title != 'urihari 33':
+            from core.data_models import CreatorInfo
+            creators.append(CreatorInfo(
+                name=video.metadata.channel_title,
+                role='channel',
+                confidence=0.9
+            ))
+        
+        return creators[:3]  # 最大3つの追加クリエイター
+    
+    def _infer_themes_from_tags(self, tags: List[str]) -> List[str]:
+        """タグからテーマを推定"""
+        theme_mapping = {
+            'ボカロ': '音楽',
+            'VOCALOID': '音楽',
+            'ボーカロイド': '音楽',
+            'MV': '音楽',
+            'Music Video': '音楽',
+            'アニメ': 'アニメ',
+            'ゲーム': 'ゲーム',
+            'ゲーム配信': 'ゲーム',
+            'にじさんじ': 'VTuber',
+            'VTuber': 'VTuber',
+            'バーチャルYouTuber': 'VTuber'
+        }
+        
+        themes = []
+        for tag in tags:
+            if tag in theme_mapping:
+                themes.append(theme_mapping[tag])
+        
+        return list(set(themes))
 
 
 # シングルトンインスタンス

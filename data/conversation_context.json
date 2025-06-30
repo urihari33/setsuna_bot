@@ -1,23 +1,23 @@
 {
   "conversation_memory": [
     {
-      "timestamp": "2025-06-29T23:41:34.366823",
-      "user_input": "音楽について話そう",
+      "timestamp": "2025-06-30T22:33:31.252845",
+      "user_input": "こんにちは 最近見た おすすめの動画とかあります",
       "context_analysis": {
-        "input": "音楽について話そう",
-        "timestamp": "2025-06-29T23:41:34.366729",
-        "pronoun_references": [],
-        "continuity_indicators": [
+        "input": "こんにちは 最近見た おすすめの動画とかあります",
+        "timestamp": "2025-06-30T22:33:31.230813",
+        "pronoun_references": [
           {
-            "type": "agreement",
-            "text": "そう",
+            "type": "temporal",
+            "text": "最近見た",
             "position": [
-              7,
-              9
+              6,
+              10
             ],
-            "strength": "strong"
+            "confidence": 0.8
           }
         ],
+        "continuity_indicators": [],
         "emotional_signals": {
           "positive": 0.0,
           "negative": 0.0,
@@ -27,9 +27,24 @@
           "detected_emotions": []
         },
         "topic_relevance": {},
-        "requires_resolution": false
+        "requires_resolution": true
       },
-      "mentioned_videos": [],
+      "mentioned_videos": [
+        {
+          "video_id": "2Z_qydIQGG4",
+          "title": "",
+          "channel": "",
+          "genre": "",
+          "search_score": 50.0
+        },
+        {
+          "video_id": "DaWbq6KeJq4",
+          "title": "Beat Eater",
+          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+          "genre": "",
+          "search_score": 100.0
+        }
+      ],
       "emotional_state": {
         "positive": 0.0,
         "negative": 0.0,
@@ -38,24 +53,14 @@
         "satisfaction": 0.0,
         "detected_emotions": []
       },
-      "continuity_indicators": [
-        {
-          "type": "agreement",
-          "text": "そう",
-          "position": [
-            7,
-            9
-          ],
-          "strength": "strong"
-        }
-      ]
+      "continuity_indicators": []
     },
     {
-      "timestamp": "2025-06-30T00:04:57.788034",
-      "user_input": "こんにちは ドクターファングビートって知ってる",
+      "timestamp": "2025-06-30T22:37:37.993827",
+      "user_input": "じゃ 初音ミクの動画でなんか面白いのある",
       "context_analysis": {
-        "input": "こんにちは ドクターファングビートって知ってる",
-        "timestamp": "2025-06-30T00:04:57.763006",
+        "input": "じゃ 初音ミクの動画でなんか面白いのある",
+        "timestamp": "2025-06-30T22:37:37.978822",
         "pronoun_references": [],
         "continuity_indicators": [],
         "emotional_signals": {
@@ -71,23 +76,130 @@
       },
       "mentioned_videos": [
         {
-          "video_id": "t1XM0ECUqTE",
-          "title": "ドクター＝ファンクビート",
+          "video_id": "2Z_qydIQGG4",
+          "title": "",
+          "channel": "",
+          "genre": "",
+          "search_score": 50.0
+        },
+        {
+          "video_id": "C5buQLyRel8",
+          "title": "TH ANNIVERSARY MOVIE",
+          "channel": "KODANSHA　Books＆Comics",
+          "genre": "",
+          "search_score": 100.0
+        }
+      ],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.0,
+        "satisfaction": 0.0,
+        "detected_emotions": []
+      },
+      "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-06-30T22:45:38.124899",
+      "user_input": "TRiNITYの動画知ってる？",
+      "context_analysis": {
+        "input": "TRiNITYの動画知ってる？",
+        "timestamp": "2025-06-30T22:45:38.100880",
+        "pronoun_references": [],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.7,
+          "satisfaction": 0.0,
+          "detected_emotions": [
+            {
+              "emotion": "curiosity",
+              "strength": 0.7
+            }
+          ]
+        },
+        "topic_relevance": {},
+        "requires_resolution": false
+      },
+      "mentioned_videos": [
+        {
+          "video_id": "D7xjC200qxo",
+          "title": "XOXO",
+          "channel": "にじさんじ",
+          "genre": "",
+          "search_score": 99
+        },
+        {
+          "video_id": "mW76Jis85LE",
+          "title": "Trinity",
+          "channel": "ラピスリライツ公式チャンネル",
+          "genre": "",
+          "search_score": 44
+        },
+        {
+          "video_id": "483yXOP4I80",
+          "title": "Dissolving in blue",
+          "channel": "ちぇるしー",
+          "genre": "",
+          "search_score": 12
+        }
+      ],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.7,
+        "satisfaction": 0.0,
+        "detected_emotions": [
+          {
+            "emotion": "curiosity",
+            "strength": 0.7
+          }
+        ]
+      },
+      "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-06-30T22:48:47.045782",
+      "user_input": "こんにちは初音ミクの動画でおすすめってある",
+      "context_analysis": {
+        "input": "こんにちは初音ミクの動画でおすすめってある",
+        "timestamp": "2025-06-30T22:48:47.019751",
+        "pronoun_references": [],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.0,
+          "satisfaction": 0.0,
+          "detected_emotions": []
+        },
+        "topic_relevance": {},
+        "requires_resolution": false
+      },
+      "mentioned_videos": [
+        {
+          "video_id": "lMXlOPGjwUI",
+          "title": "Iなんです",
           "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
           "genre": "",
           "search_score": 12
         },
         {
-          "video_id": "OhYxV0CL3r0",
-          "title": "フランドール",
-          "channel": "ビートまりお / COOL&CREATE",
+          "video_id": "YkP0JMByjRM",
+          "title": "ray",
+          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
           "genre": "",
           "search_score": 12
         },
         {
-          "video_id": "nYbeAHREKWw",
-          "title": "推しの子",
-          "channel": "TVアニメ【推しの子】公式チャンネル",
+          "video_id": "M_ijFuoASt0",
+          "title": "トリコロージュ",
+          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
           "genre": "",
           "search_score": 12
         }
@@ -103,92 +215,33 @@
       "continuity_indicators": []
     },
     {
-      "timestamp": "2025-06-30T00:05:25.926425",
-      "user_input": "あれ 歌詞が好きなんだよね どう思う",
+      "timestamp": "2025-06-30T22:57:03.387336",
+      "user_input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
       "context_analysis": {
-        "input": "あれ 歌詞が好きなんだよね どう思う",
-        "timestamp": "2025-06-30T00:05:25.926425",
+        "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
+        "timestamp": "2025-06-30T22:57:03.362661",
         "pronoun_references": [
           {
-            "type": "demonstrative",
-            "text": "あれ",
+            "type": "temporal",
+            "text": "最近見た",
             "position": [
-              0,
-              2
+              18,
+              22
             ],
-            "confidence": 0.9
-          },
-          {
-            "type": "implicit",
-            "text": "どう",
-            "position": [
-              14,
-              16
-            ],
-            "confidence": 0.6
+            "confidence": 0.8
           }
         ],
         "continuity_indicators": [
           {
-            "type": "agreement",
-            "text": "好き",
+            "type": "disagreement",
+            "text": "けど",
             "position": [
-              6,
-              8
+              24,
+              26
             ],
             "strength": "strong"
           }
         ],
-        "emotional_signals": {
-          "positive": 1.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "positive",
-              "strength": 1.0
-            }
-          ]
-        },
-        "topic_relevance": {},
-        "requires_resolution": true
-      },
-      "mentioned_videos": [],
-      "emotional_state": {
-        "positive": 1.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "positive",
-            "strength": 1.0
-          }
-        ]
-      },
-      "continuity_indicators": [
-        {
-          "type": "agreement",
-          "text": "好き",
-          "position": [
-            6,
-            8
-          ],
-          "strength": "strong"
-        }
-      ]
-    },
-    {
-      "timestamp": "2025-06-30T00:07:38.877762",
-      "user_input": "こんにちは",
-      "context_analysis": {
-        "input": "こんにちは",
-        "timestamp": "2025-06-30T00:07:38.874679",
-        "pronoun_references": [],
-        "continuity_indicators": [],
         "emotional_signals": {
           "positive": 0.0,
           "negative": 0.0,
@@ -198,188 +251,7 @@
           "detected_emotions": []
         },
         "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [],
-      "emotional_state": {
-        "positive": 0.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": []
-      },
-      "continuity_indicators": []
-    },
-    {
-      "timestamp": "2025-06-30T00:07:41.415838",
-      "user_input": "今日はいい天気ですね",
-      "context_analysis": {
-        "input": "今日はいい天気ですね",
-        "timestamp": "2025-06-30T00:07:41.415711",
-        "pronoun_references": [],
-        "continuity_indicators": [
-          {
-            "type": "agreement",
-            "text": "はい",
-            "position": [
-              2,
-              4
-            ],
-            "strength": "strong"
-          }
-        ],
-        "emotional_signals": {
-          "positive": 1.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "positive",
-              "strength": 1.0
-            }
-          ]
-        },
-        "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [],
-      "emotional_state": {
-        "positive": 1.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "positive",
-            "strength": 1.0
-          }
-        ]
-      },
-      "continuity_indicators": [
-        {
-          "type": "agreement",
-          "text": "はい",
-          "position": [
-            2,
-            4
-          ],
-          "strength": "strong"
-        }
-      ]
-    },
-    {
-      "timestamp": "2025-06-30T00:07:46.849992",
-      "user_input": "あなたの好きな音楽は？",
-      "context_analysis": {
-        "input": "あなたの好きな音楽は？",
-        "timestamp": "2025-06-30T00:07:46.849897",
-        "pronoun_references": [],
-        "continuity_indicators": [
-          {
-            "type": "agreement",
-            "text": "好き",
-            "position": [
-              4,
-              6
-            ],
-            "strength": "strong"
-          }
-        ],
-        "emotional_signals": {
-          "positive": 1.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.7,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "positive",
-              "strength": 1.0
-            },
-            {
-              "emotion": "curiosity",
-              "strength": 0.7
-            }
-          ]
-        },
-        "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [],
-      "emotional_state": {
-        "positive": 1.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.7,
-        "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "positive",
-            "strength": 1.0
-          },
-          {
-            "emotion": "curiosity",
-            "strength": 0.7
-          }
-        ]
-      },
-      "continuity_indicators": [
-        {
-          "type": "agreement",
-          "text": "好き",
-          "position": [
-            4,
-            6
-          ],
-          "strength": "strong"
-        }
-      ]
-    },
-    {
-      "timestamp": "2025-06-30T00:07:49.449434",
-      "user_input": "YOASOBI知ってる？",
-      "context_analysis": {
-        "input": "YOASOBI知ってる？",
-        "timestamp": "2025-06-30T00:07:49.417793",
-        "pronoun_references": [],
-        "continuity_indicators": [],
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.7,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "curiosity",
-              "strength": 0.7
-            }
-          ]
-        },
-        "topic_relevance": {
-          "N4PtDsU2iSU": {
-            "relevance_score": 1.0,
-            "topic_data": {
-              "video_id": "N4PtDsU2iSU",
-              "title": "YOASOBI",
-              "channel": "Raon",
-              "genre": "",
-              "keywords": [
-                "Raon"
-              ],
-              "last_mentioned": "2025-06-29T23:41:24.993061",
-              "mention_count": 1
-            },
-            "related_keywords": [
-              "YOASOBI"
-            ]
-          }
-        },
-        "requires_resolution": false
+        "requires_resolution": true
       },
       "mentioned_videos": [
         {
@@ -408,97 +280,30 @@
         "positive": 0.0,
         "negative": 0.0,
         "excitement": 0.0,
-        "curiosity": 0.7,
+        "curiosity": 0.0,
         "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "curiosity",
-            "strength": 0.7
-          }
-        ]
+        "detected_emotions": []
       },
-      "continuity_indicators": []
+      "continuity_indicators": [
+        {
+          "type": "disagreement",
+          "text": "けど",
+          "position": [
+            24,
+            26
+          ],
+          "strength": "strong"
+        }
+      ]
     },
     {
-      "timestamp": "2025-06-30T00:07:54.876750",
-      "user_input": "最新のVTuber動画教えて",
+      "timestamp": "2025-06-30T22:57:19.704163",
+      "user_input": "初音ミクでおスメってある",
       "context_analysis": {
-        "input": "最新のVTuber動画教えて",
-        "timestamp": "2025-06-30T00:07:54.849587",
+        "input": "初音ミクでおスメってある",
+        "timestamp": "2025-06-30T22:57:19.703163",
         "pronoun_references": [],
         "continuity_indicators": [],
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.7,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "curiosity",
-              "strength": 0.7
-            }
-          ]
-        },
-        "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [
-        {
-          "video_id": "TMeaXo1rpsY",
-          "title": "ADAMAS",
-          "channel": "巫てんり / Kannagi Tenri ",
-          "genre": "",
-          "search_score": 65
-        },
-        {
-          "video_id": "afpbZTjqW4M",
-          "title": "Ado",
-          "channel": "巫てんり / Kannagi Tenri ",
-          "genre": "",
-          "search_score": 65
-        },
-        {
-          "video_id": "fTtJAf0KWBQ",
-          "title": "original",
-          "channel": "合法‼︎バツ子ﾁｬﾝBatsuko",
-          "genre": "",
-          "search_score": 65
-        }
-      ],
-      "emotional_state": {
-        "positive": 0.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.7,
-        "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "curiosity",
-            "strength": 0.7
-          }
-        ]
-      },
-      "continuity_indicators": []
-    },
-    {
-      "timestamp": "2025-06-30T00:07:58.467473",
-      "user_input": "音楽について話そう",
-      "context_analysis": {
-        "input": "音楽について話そう",
-        "timestamp": "2025-06-30T00:07:58.467371",
-        "pronoun_references": [],
-        "continuity_indicators": [
-          {
-            "type": "agreement",
-            "text": "そう",
-            "position": [
-              7,
-              9
-            ],
-            "strength": "strong"
-          }
-        ],
         "emotional_signals": {
           "positive": 0.0,
           "negative": 0.0,
@@ -519,80 +324,109 @@
         "satisfaction": 0.0,
         "detected_emotions": []
       },
-      "continuity_indicators": [
-        {
-          "type": "agreement",
-          "text": "そう",
-          "position": [
-            7,
-            9
-          ],
-          "strength": "strong"
-        }
-      ]
-    },
-    {
-      "timestamp": "2025-06-30T00:09:39.697024",
-      "user_input": "アドについて詳しいなら 新時代とか好き",
-      "context_analysis": {
-        "input": "アドについて詳しいなら 新時代とか好き",
-        "timestamp": "2025-06-30T00:09:39.693024",
-        "pronoun_references": [],
-        "continuity_indicators": [
-          {
-            "type": "agreement",
-            "text": "好き",
-            "position": [
-              17,
-              19
-            ],
-            "strength": "strong"
-          }
-        ],
-        "emotional_signals": {
-          "positive": 1.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "positive",
-              "strength": 1.0
-            }
-          ]
-        },
-        "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [],
-      "emotional_state": {
-        "positive": 1.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "positive",
-            "strength": 1.0
-          }
-        ]
-      },
-      "continuity_indicators": [
-        {
-          "type": "agreement",
-          "text": "好き",
-          "position": [
-            17,
-            19
-          ],
-          "strength": "strong"
-        }
-      ]
+      "continuity_indicators": []
     }
   ],
   "active_topics": {
+    "2Z_qydIQGG4": {
+      "video_id": "2Z_qydIQGG4",
+      "title": "",
+      "channel": "",
+      "genre": "",
+      "keywords": [],
+      "last_mentioned": "2025-06-30T22:37:37.993827",
+      "mention_count": 2
+    },
+    "DaWbq6KeJq4": {
+      "video_id": "DaWbq6KeJq4",
+      "title": "Beat Eater",
+      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+      "genre": "",
+      "keywords": [
+        "プロジェクトセカイ カラフルステージ! feat. 初音ミク"
+      ],
+      "last_mentioned": "2025-06-30T22:33:31.253854",
+      "mention_count": 1
+    },
+    "C5buQLyRel8": {
+      "video_id": "C5buQLyRel8",
+      "title": "TH ANNIVERSARY MOVIE",
+      "channel": "KODANSHA　Books＆Comics",
+      "genre": "",
+      "keywords": [
+        "KODANSHA　Books＆Comics"
+      ],
+      "last_mentioned": "2025-06-30T22:37:37.994827",
+      "mention_count": 1
+    },
+    "D7xjC200qxo": {
+      "video_id": "D7xjC200qxo",
+      "title": "XOXO",
+      "channel": "にじさんじ",
+      "genre": "",
+      "keywords": [
+        "にじさんじ"
+      ],
+      "last_mentioned": "2025-06-30T22:45:38.124899",
+      "mention_count": 1
+    },
+    "mW76Jis85LE": {
+      "video_id": "mW76Jis85LE",
+      "title": "Trinity",
+      "channel": "ラピスリライツ公式チャンネル",
+      "genre": "",
+      "keywords": [
+        "ラピスリライツ公式チャンネル"
+      ],
+      "last_mentioned": "2025-06-30T22:45:38.124899",
+      "mention_count": 1
+    },
+    "483yXOP4I80": {
+      "video_id": "483yXOP4I80",
+      "title": "Dissolving in blue",
+      "channel": "ちぇるしー",
+      "genre": "",
+      "keywords": [
+        "ちぇるしー"
+      ],
+      "last_mentioned": "2025-06-30T22:45:38.124899",
+      "mention_count": 1
+    },
+    "lMXlOPGjwUI": {
+      "video_id": "lMXlOPGjwUI",
+      "title": "Iなんです",
+      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+      "genre": "",
+      "keywords": [
+        "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "なんです"
+      ],
+      "last_mentioned": "2025-06-30T22:48:47.046790",
+      "mention_count": 1
+    },
+    "YkP0JMByjRM": {
+      "video_id": "YkP0JMByjRM",
+      "title": "ray",
+      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+      "genre": "",
+      "keywords": [
+        "プロジェクトセカイ カラフルステージ! feat. 初音ミク"
+      ],
+      "last_mentioned": "2025-06-30T22:48:47.046790",
+      "mention_count": 1
+    },
+    "M_ijFuoASt0": {
+      "video_id": "M_ijFuoASt0",
+      "title": "トリコロージュ",
+      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+      "genre": "",
+      "keywords": [
+        "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "トリコロージュ"
+      ],
+      "last_mentioned": "2025-06-30T22:48:47.046790",
+      "mention_count": 1
+    },
     "N4PtDsU2iSU": {
       "video_id": "N4PtDsU2iSU",
       "title": "YOASOBI",
@@ -601,8 +435,8 @@
       "keywords": [
         "Raon"
       ],
-      "last_mentioned": "2025-06-30T00:07:49.449908",
-      "mention_count": 2
+      "last_mentioned": "2025-06-30T22:57:03.387336",
+      "mention_count": 1
     },
     "Av3xaZkVpJs": {
       "video_id": "Av3xaZkVpJs",
@@ -613,8 +447,8 @@
         "Ayase / YOASOBI",
         "アドベンチャー"
       ],
-      "last_mentioned": "2025-06-30T00:07:49.449915",
-      "mention_count": 2
+      "last_mentioned": "2025-06-30T22:57:03.387336",
+      "mention_count": 1
     },
     "Jj1_mfUzjOs": {
       "video_id": "Jj1_mfUzjOs",
@@ -626,77 +460,7 @@
         "シリーズ",
         "モンスターシーズン"
       ],
-      "last_mentioned": "2025-06-30T00:07:49.449934",
-      "mention_count": 2
-    },
-    "TMeaXo1rpsY": {
-      "video_id": "TMeaXo1rpsY",
-      "title": "ADAMAS",
-      "channel": "巫てんり / Kannagi Tenri ",
-      "genre": "",
-      "keywords": [
-        "巫てんり / Kannagi Tenri "
-      ],
-      "last_mentioned": "2025-06-30T00:07:54.876777",
-      "mention_count": 2
-    },
-    "afpbZTjqW4M": {
-      "video_id": "afpbZTjqW4M",
-      "title": "Ado",
-      "channel": "巫てんり / Kannagi Tenri ",
-      "genre": "",
-      "keywords": [
-        "巫てんり / Kannagi Tenri "
-      ],
-      "last_mentioned": "2025-06-30T00:07:54.876782",
-      "mention_count": 2
-    },
-    "fTtJAf0KWBQ": {
-      "video_id": "fTtJAf0KWBQ",
-      "title": "original",
-      "channel": "合法‼︎バツ子ﾁｬﾝBatsuko",
-      "genre": "",
-      "keywords": [
-        "合法‼︎バツ子ﾁｬﾝBatsuko"
-      ],
-      "last_mentioned": "2025-06-30T00:07:54.876786",
-      "mention_count": 2
-    },
-    "t1XM0ECUqTE": {
-      "video_id": "t1XM0ECUqTE",
-      "title": "ドクター＝ファンクビート",
-      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-      "genre": "",
-      "keywords": [
-        "ファンクビート",
-        "ドクター",
-        "プロジェクトセカイ カラフルステージ! feat. 初音ミク"
-      ],
-      "last_mentioned": "2025-06-30T00:04:57.788034",
-      "mention_count": 1
-    },
-    "OhYxV0CL3r0": {
-      "video_id": "OhYxV0CL3r0",
-      "title": "フランドール",
-      "channel": "ビートまりお / COOL&CREATE",
-      "genre": "",
-      "keywords": [
-        "フランドール",
-        "ビートまりお / COOL&CREATE"
-      ],
-      "last_mentioned": "2025-06-30T00:04:57.788034",
-      "mention_count": 1
-    },
-    "nYbeAHREKWw": {
-      "video_id": "nYbeAHREKWw",
-      "title": "推しの子",
-      "channel": "TVアニメ【推しの子】公式チャンネル",
-      "genre": "",
-      "keywords": [
-        "推しの子",
-        "TVアニメ【推しの子】公式チャンネル"
-      ],
-      "last_mentioned": "2025-06-30T00:04:57.788034",
+      "last_mentioned": "2025-06-30T22:57:03.387336",
       "mention_count": 1
     }
   },
@@ -709,5 +473,5 @@
     "enable_pronoun_resolution": true,
     "enable_topic_tracking": true
   },
-  "last_updated": "2025-06-30T00:09:39.697024"
+  "last_updated": "2025-06-30T22:57:19.704163"
 }

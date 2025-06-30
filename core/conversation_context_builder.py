@@ -69,6 +69,9 @@ class ConversationContextBuilder:
             r'(そっちの|その|あの)(.+)',  # 文脈参照
         ]
         
+        # Phase 1: URL表示機能 - 最後の検索結果保持
+        self.last_search_results = None
+        
         print("[コンテキスト] ✅ 会話コンテキスト構築システム初期化完了")
     
     def _convert_katakana_to_english(self, katakana: str) -> List[str]:
@@ -579,7 +582,16 @@ class ConversationContextBuilder:
                 
                 all_videos.append(video_info)
         
+        # Phase 1: URL表示機能 - 検索結果が空でも基本情報を保存
         if not all_videos:
+            print(f"🔍 [build_video_context デバッグ] 動画が見つかりませんでした。空の結果を保存します。")
+            empty_context = {
+                'search_terms': search_terms,
+                'videos': [],
+                'total_found': 0
+            }
+            # 空の結果でも保存（URL表示機能のデバッグ用）
+            self._store_last_search_results(empty_context)
             return None
         
         # 重複除去とスコア順ソート
@@ -595,11 +607,17 @@ class ConversationContextBuilder:
             reverse=True
         )[:max_videos]
         
-        return {
+        # Phase 1: URL表示機能 - 検索結果を保存
+        context_result = {
             'search_terms': search_terms,
             'videos': sorted_videos,
             'total_found': len(unique_videos)
         }
+        
+        # 最後の検索結果として保存
+        self._store_last_search_results(context_result)
+        
+        return context_result
     
     def format_for_setsuna(self, context: Dict[str, Any]) -> str:
         """
@@ -745,6 +763,7 @@ class ConversationContextBuilder:
             せつな用のコンテキスト文字列（None if 動画関連でない）
         """
         print(f"[コンテキスト] 🔍 入力分析: '{user_input}'")
+        print(f"🔍 [process_user_input デバッグ] 処理開始")
         
         # Phase 2-B-3: 文脈理解分析
         context_analysis = None
@@ -1070,6 +1089,64 @@ class ConversationContextBuilder:
         except Exception as e:
             print(f"[コンテキスト] ❌ 既存コンテキスト取得エラー: {e}")
             return None
+    
+    # Phase 1: URL表示機能のメソッド追加
+    def get_last_context(self) -> Optional[Dict[str, Any]]:
+        """
+        最後に実行された検索結果のコンテキストを取得
+        
+        Returns:
+            最後の検索結果辞書、または None
+        """
+        return self.last_search_results
+    
+    def _store_last_search_results(self, context: Dict[str, Any]):
+        """
+        最後の検索結果を保存
+        
+        Args:
+            context: 検索結果のコンテキスト辞書
+        """
+        print(f"🔍 [検索結果保存デバッグ] _store_last_search_results 呼び出し")
+        print(f"🔍 [検索結果保存デバッグ] context存在: {context is not None}")
+        if context:
+            print(f"🔍 [検索結果保存デバッグ] context型: {type(context)}")
+            print(f"🔍 [検索結果保存デバッグ] videosキー存在: {'videos' in context}")
+            if 'videos' in context:
+                videos = context.get('videos', [])
+                print(f"🔍 [検索結果保存デバッグ] videos数: {len(videos)}")
+        
+        if context and isinstance(context, dict) and context.get('videos'):
+            self.last_search_results = context
+            print(f"[コンテキスト] 🔗 URL表示用に検索結果保存: {len(context.get('videos', []))}件")
+        else:
+            print(f"⚠️ [検索結果保存デバッグ] 保存条件を満たしません")
+    
+    def get_video_urls_from_last_search(self) -> List[Dict[str, str]]:
+        """
+        最後の検索結果からYouTube URLのリストを生成
+        
+        Returns:
+            URL情報のリスト
+        """
+        if not self.last_search_results:
+            return []
+        
+        urls_info = []
+        videos = self.last_search_results.get('videos', [])
+        
+        for video in videos:
+            video_id = video.get('video_id')
+            if video_id:
+                url_info = {
+                    'video_id': video_id,
+                    'url': f"https://www.youtube.com/watch?v={video_id}",
+                    'title': video.get('title', '不明な動画'),
+                    'channel': video.get('channel', '不明なチャンネル')
+                }
+                urls_info.append(url_info)
+        
+        return urls_info
 
 
 if __name__ == "__main__":

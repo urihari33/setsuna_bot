@@ -296,6 +296,9 @@ class SetsunaChat:
             response_time = (datetime.now() - start_time).total_seconds()
             print(f"[チャット] ✅ 応答生成完了: {response_time:.2f}s")
             
+            # Phase 1: URL表示機能 - SetsunaChat内では処理をスキップ
+            # （重複を避けるため、呼び出し元で処理される）
+            
             # 会話履歴に追加
             self.conversation_history.append({
                 "role": "assistant", 

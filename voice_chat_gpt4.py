@@ -196,6 +196,21 @@ def handle_voice_recognition():
             response = setsuna_chat.get_response(user_input, mode=current_mode)
             print(f"🤖 せつな: {response}")
             
+            # Phase 1: URL表示機能 - 動画推薦時のURL表示（応答フィルター付き）
+            try:
+                from url_display_manager import show_recommended_urls
+                if setsuna_chat.context_builder and hasattr(setsuna_chat.context_builder, 'get_last_context'):
+                    last_context = setsuna_chat.context_builder.get_last_context()
+                    if last_context and last_context.get('videos'):
+                        print(f"🔗 [URL表示] 推薦動画から応答言及分をフィルター中...")
+                        # せつなの応答文を渡してフィルタリング
+                        show_recommended_urls(last_context, response)
+            except ImportError:
+                # URL表示機能が利用できない場合はスキップ
+                pass
+            except Exception as e:
+                print(f"⚠️ [URL表示] エラー: {e}")
+            
             # 音声合成実行
             if voice_synthesizer:
                 print("🎵 音声合成中...")
