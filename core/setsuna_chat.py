@@ -160,7 +160,7 @@ class SetsunaChat:
 
     def get_response(self, user_input, mode="full_search"):
         """
-        ユーザー入力に対するせつなの応答を生成
+        ユーザー入力に対するせつなの応答を生成 - 2段階アプローチ
         
         Args:
             user_input: ユーザーの入力テキスト
@@ -176,22 +176,40 @@ class SetsunaChat:
             mode_display = "高速モード" if mode == "fast_response" else "通常モード" 
             print(f"[チャット] 🤔 考え中 ({mode_display}): '{user_input}'")
             
-            # キャッシュから応答をチェック
-            if self.response_cache:
+            # Stage 1: 動画関連判定
+            is_video_query = False
+            video_context_data = None
+            
+            if self.context_builder:
+                is_video_query = self.context_builder.is_video_related_query(user_input)
+                print(f"[チャット] 📊 動画関連判定結果: {is_video_query}")
+                
+                # 動画関連の場合のみコンテキスト検索実行
+                if is_video_query and mode == "full_search":
+                    print(f"[チャット] 🔍 YouTube知識検索実行中...")
+                    video_context = self.context_builder.process_user_input(user_input)
+                    
+                    # コンテキストデータを保存（URL表示用）
+                    if hasattr(self.context_builder, 'last_built_context'):
+                        video_context_data = self.context_builder.last_built_context
+                        self.last_context_data = video_context_data
+                        print(f"[チャット] 🔗 コンテキストデータ保存: DB={len(video_context_data.get('videos', []))}件, 外部={len(video_context_data.get('external_videos', []))}件")
+                elif is_video_query and mode == "fast_response":
+                    print(f"[チャット] ⚡ 高速モード: YouTube検索スキップ")
+                    video_context = None
+                    self.last_context_data = None
+                else:
+                    print(f"[チャット] 🚫 非動画関連: YouTube検索スキップ")
+                    video_context = None
+                    self.last_context_data = None
+            
+            # キャッシュチェック（動画関連でない場合のみ）
+            cached_response = None
+            if self.response_cache and not is_video_query:
                 cached_response = self.response_cache.get_cached_response(user_input)
                 if cached_response:
-                    print(f"[チャット] ⚡ キャッシュから高速応答")
-                    
-                    # 会話履歴に追加
-                    self.conversation_history.append({
-                        "role": "user",
-                        "content": user_input
-                    })
-                    self.conversation_history.append({
-                        "role": "assistant", 
-                        "content": cached_response
-                    })
-                    
+                    print(f"[チャット] ⚡ 非動画クエリ: キャッシュから高速応答")
+                    self._add_to_conversation_history(user_input, cached_response)
                     return cached_response
             
             # 会話履歴に追加
@@ -203,46 +221,20 @@ class SetsunaChat:
             # コンテキスト分析
             context_info = self._analyze_context(user_input)
             
-            # GPTに送信するメッセージを構築
+            # Stage 2: GPT応答生成（コンテキストデータベース）
             system_prompt = self.character_prompt
             
-            # YouTube動画知識コンテキストを追加（高速モードでは既存知識のみ使用）
-            video_context = None
-            video_query_detected = False
-            if self.context_builder and mode == "full_search":
-                # 通常モード: 完全なYouTube検索を実行
-                print(f"[チャット] 🔍 YouTube知識検索実行中...")
-                
-                # 動画関連クエリの検出
-                queries = self.context_builder.detect_video_queries(user_input)
-                video_query_detected = len(queries) > 0
-                
-                video_context = self.context_builder.process_user_input(user_input)
-                if video_context:
-                    system_prompt += f"\n\n【YouTube動画知識】\n{video_context}"
-                    # 実際の動画情報がある場合でも、架空内容防止の注意を追加
-                    system_prompt += f"\n\n【厳重注意】上記の動画情報のみを使用し、存在しない動画や楽曲について話してはいけません。不明な点は「詳しくは分からないけど」と正直に答えてください。"
-                elif video_query_detected:
-                    # 動画関連質問だがDB内に該当なし - 強化版
-                    system_prompt += f"\n\n【厳重警告】動画・楽曲に関する質問ですが、データベースに該当する情報がありません。以下を厳守してください：\n"
-                    system_prompt += f"1. 架空の動画や楽曲について一切話さない\n"
-                    system_prompt += f"2. 知らない場合は素直に「その動画は知らないな」「聞いたことないかも」と答える\n"
-                    system_prompt += f"3. 推測や創作で情報を補わない\n"
-                    system_prompt += f"4. 存在しないクリエイターや楽曲名を作り出さない"
-            elif self.context_builder and mode == "fast_response":
-                # 高速モード: 既存の会話履歴のみを参照（新規検索はスキップ）
-                print(f"[チャット] ⚡ 高速モード: YouTube検索スキップ、既存知識のみ使用")
-                
-                # 既存の会話履歴から動画情報を抽出（簡略版）
-                try:
-                    existing_video_context = self.context_builder.get_existing_conversation_context()
-                    if existing_video_context:
-                        system_prompt += f"\n\n【既存の動画知識】\n{existing_video_context}"
-                        system_prompt += f"\n\n【高速モード制限】新規検索はせず、既存の会話内容と一般的な知識のみで応答してください。"
-                except Exception as e:
-                    print(f"[チャット] ⚠️ 既存コンテキスト取得失敗: {e}")
-                    # 高速モードでは検索処理をスキップ
-                    system_prompt += f"\n\n【高速モード】既存知識と一般的な会話能力のみで応答します。具体的な動画情報が必要な場合は通常モードをご利用ください。"
+            # 動画関連の場合、取得済みのコンテキストを追加
+            if is_video_query and video_context:
+                system_prompt += f"\n\n【YouTube動画知識】\n{video_context}"
+                system_prompt += f"\n\n【厳重注意】上記の動画情報のみを使用し、存在しない動画や楽曲について話してはいけません。不明な点は「詳しくは分からないけど」と正直に答えてください。"
+            elif is_video_query and not video_context:
+                # 動画関連だが情報なし
+                system_prompt += f"\n\n【厳重警告】動画・楽曲に関する質問ですが、データベースに該当する情報がありません。以下を厳守してください：\n"
+                system_prompt += f"1. 架空の動画や楽曲について一切話さない\n"
+                system_prompt += f"2. 知らない場合は素直に「その動画は知らないな」「聞いたことないかも」と答える\n"
+                system_prompt += f"3. 推測や創作で情報を補わない\n"
+                system_prompt += f"4. 存在しないクリエイターや楽曲名を作り出さない"
             
             # 記憶コンテキストを追加
             if self.memory_system:
@@ -263,51 +255,57 @@ class SetsunaChat:
                 {"role": "system", "content": system_prompt}
             ]
             
-            # 最近の会話履歴を追加（最大5往復）
-            recent_history = self.conversation_history[-10:]  # 最新10メッセージ
-            messages.extend(recent_history)
-            
-            # OpenAI API呼び出し（高速モードでは設定を最適化）
-            start_time = datetime.now()
-            
-            if mode == "fast_response":
-                # 高速モード: より短いレスポンス、短いタイムアウト
-                response = self.client.chat.completions.create(
-                    model="gpt-4-turbo",
-                    messages=messages,
-                    max_tokens=100,  # 高速モードでは100に制限
-                    temperature=0.6,  # より安定したレスポンス
-                    timeout=15  # 短いタイムアウト
-                )
+            # GPT応答生成（キャッシュがある場合はスキップ）
+            if cached_response:
+                setsuna_response = cached_response
+                print(f"[チャット] ⚡ キャッシュ応答使用、YouTube検索のみ実行")
             else:
-                # 通常モード: 従来設定
-                response = self.client.chat.completions.create(
-                    model="gpt-4-turbo",
-                    messages=messages,
-                    max_tokens=150,  # 動画情報含む応答のため150に調整
-                    temperature=0.7,  # 少し創造性を下げて安定化
-                    timeout=30  # APIタイムアウト時間（元に戻す）
-                )
-            
-            # 応答取得
-            setsuna_response = response.choices[0].message.content.strip()
-            
-            # 応答時間計算
-            response_time = (datetime.now() - start_time).total_seconds()
-            print(f"[チャット] ✅ 応答生成完了: {response_time:.2f}s")
+                # 最近の会話履歴を追加（最大5往復）
+                recent_history = self.conversation_history[-10:]  # 最新10メッセージ
+                messages.extend(recent_history)
+                
+                # OpenAI API呼び出し（高速モードでは設定を最適化）
+                start_time = datetime.now()
+                
+                if mode == "fast_response":
+                    # 高速モード: より短いレスポンス、短いタイムアウト
+                    response = self.client.chat.completions.create(
+                        model="gpt-4-turbo",
+                        messages=messages,
+                        max_tokens=100,  # 高速モードでは100に制限
+                        temperature=0.6,  # より安定したレスポンス
+                        timeout=15  # 短いタイムアウト
+                    )
+                else:
+                    # 通常モード: 従来設定
+                    response = self.client.chat.completions.create(
+                        model="gpt-4-turbo",
+                        messages=messages,
+                        max_tokens=150,  # 動画情報含む応答のため150に調整
+                        temperature=0.7,  # 少し創造性を下げて安定化
+                        timeout=30  # APIタイムアウト時間（元に戻す）
+                    )
+                
+                # 応答取得
+                setsuna_response = response.choices[0].message.content.strip()
+                
+                # 応答時間計算
+                response_time = (datetime.now() - start_time).total_seconds()
+                print(f"[チャット] ✅ 応答生成完了: {response_time:.2f}s")
             
             # Phase 1: URL表示機能 - SetsunaChat内では処理をスキップ
             # （重複を避けるため、呼び出し元で処理される）
             
-            # 会話履歴に追加
-            self.conversation_history.append({
-                "role": "assistant", 
-                "content": setsuna_response
-            })
-            
-            # 新しい応答をキャッシュに保存
-            if self.response_cache:
-                self.response_cache.cache_response(user_input, setsuna_response)
+            # 会話履歴に追加（キャッシュヒット時は既に追加済みのためスキップ）
+            if not cached_response:
+                self.conversation_history.append({
+                    "role": "assistant", 
+                    "content": setsuna_response
+                })
+                
+                # 新しい応答をキャッシュに保存
+                if self.response_cache:
+                    self.response_cache.cache_response(user_input, setsuna_response)
             
             # 記憶システムに会話を記録
             if self.memory_system:
@@ -450,6 +448,17 @@ class SetsunaChat:
             self.memory_system.save_memory()
             print("🗑️ 全記憶をクリアしました")
     
+    def _add_to_conversation_history(self, user_input: str, response: str):
+        """会話履歴に追加するヘルパーメソッド"""
+        self.conversation_history.append({
+            "role": "user",
+            "content": user_input
+        })
+        self.conversation_history.append({
+            "role": "assistant", 
+            "content": response
+        })
+    
     def add_manual_memory(self, category: str, content: str) -> bool:
         """手動で記憶を追加"""
         if self.memory_system:
@@ -527,6 +536,10 @@ class SetsunaChat:
         """プロジェクトデータを保存"""
         if self.project_system:
             self.project_system.save_project_data()
+    
+    def get_last_context_data(self):
+        """最後のコンテキストデータを取得（URL表示用）"""
+        return getattr(self, 'last_context_data', None)
 
 # 簡単な使用例とテスト
 if __name__ == "__main__":

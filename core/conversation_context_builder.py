@@ -74,6 +74,59 @@ class ConversationContextBuilder:
         
         print("[コンテキスト] ✅ 会話コンテキスト構築システム初期化完了")
     
+    def is_video_related_query(self, user_input: str) -> bool:
+        """
+        ユーザー入力が動画関連かどうかを判定
+        
+        Args:
+            user_input: ユーザーの入力テキスト
+            
+        Returns:
+            動画関連の場合True
+        """
+        if not user_input or not user_input.strip():
+            return False
+        
+        user_input_clean = user_input.strip()
+        
+        # 明確に非動画関連のパターン
+        non_video_patterns = [
+            r'^(おはよう|こんにちは|こんばんは|お疲れ様|ありがとう)$',
+            r'^(今日|明日|昨日).*(天気|気温|予定).*',
+            r'^(時間|時刻|何時).*',
+            r'^(調子|元気|どう).*',
+            r'^(プログラミング|コード|開発|技術).*(?!.*動画).*(?!.*曲).*',
+            r'^(勉強|仕事|学校).*(?!.*動画).*(?!.*曲).*',
+        ]
+        
+        for pattern in non_video_patterns:
+            if re.search(pattern, user_input_clean):
+                print(f"[動画判定] ❌ 非動画関連パターンマッチ: {pattern}")
+                return False
+        
+        # 動画関連キーワード
+        video_keywords = [
+            '動画', '曲', '歌', 'MV', 'ミュージックビデオ', 'アーティスト', 'クリエイター',
+            'チャンネル', 'YOASOBI', 'アドベンチャー', 'ボカロ', 'VOCALOID',
+            'おすすめ', '聞いた', '見た', '知って', 'について', 'って', 'は',
+            'ほかに', '他に', '別の', '次', '違う'
+        ]
+        
+        # キーワードマッチング
+        for keyword in video_keywords:
+            if keyword in user_input_clean:
+                print(f"[動画判定] ✅ 動画関連キーワード検出: {keyword}")
+                return True
+        
+        # パターンマッチング
+        for pattern in self.video_query_patterns:
+            if re.search(pattern, user_input_clean):
+                print(f"[動画判定] ✅ 動画関連パターンマッチ: {pattern}")
+                return True
+        
+        print(f"[動画判定] ❌ 動画関連ではない: {user_input_clean}")
+        return False
+    
     def _convert_katakana_to_english(self, katakana: str) -> List[str]:
         """
         カタカナを可能性のある英語に変換
@@ -306,6 +359,9 @@ class ConversationContextBuilder:
             r'▽▲.*▲▽',       # TRiNITY形式
             r'[A-Z][A-Z]+',    # 大文字の略語（例：XOXO）
             r'[A-Za-z]{4,}',   # 4文字以上の英語（一般的な英語除外）
+            r'YOASOBI|yoasobi|ヨアソビ',  # 人気アーティスト
+            r'アドベンチャー',    # 人気楽曲
+            r'TRiNITY|Trinity|トリニティ',  # TRiNITY
         ]
         
         # 中信頼度固有名詞パターン
@@ -367,8 +423,8 @@ class ConversationContextBuilder:
             print(f"  → 発見パターン: {', '.join(found_patterns)}")
             print(f"  → 信頼度スコア: {confidence_score}")
         
-        # 判定基準: スコア5以上で具体的とみなす
-        is_specific = confidence_score >= 5
+        # 判定基準を緩和: スコア3以上で具体的とみなす（軽い言及も含む）
+        is_specific = confidence_score >= 3
         
         if is_specific:
             print(f"  → 具体的クエリ（スコア: {confidence_score}）")
@@ -414,19 +470,33 @@ class ConversationContextBuilder:
         
         return "neutral"  # デフォルト
 
-    def build_video_context(self, queries: List[Dict[str, Any]], max_videos: int = 3) -> Optional[Dict[str, Any]]:
+    def build_video_context(self, queries: List[Dict[str, Any]], max_videos: int = 3, user_input: str = "") -> Optional[Dict[str, Any]]:
         """
         検出されたクエリから動画コンテキストを構築
         
         Args:
             queries: 検出されたクエリのリスト
             max_videos: 最大動画数
+            user_input: 元のユーザー入力（おすすめ判定用）
             
         Returns:
             構築されたコンテキスト
         """
         if not queries:
             return None
+        
+        # 1. おすすめバイアス修正: おすすめ検索の判定
+        is_recommendation_request = any(word in user_input.lower() for word in [
+            'おすすめ', '推薦', 'ほかに', '他に', '別の', '違う', '新しい'
+        ])
+        
+        # より強い多様性要求の検出
+        is_diversity_request = any(word in user_input.lower() for word in [
+            'ほかに', '他に', '別の', '違う'
+        ])
+        
+        if is_recommendation_request:
+            print(f"[コンテキスト] 🎯 おすすめ検索モード検出: 多様性重視")
         
         # 重複除去
         unique_queries = []
@@ -441,7 +511,10 @@ class ConversationContextBuilder:
         specific_queries = [q for q in unique_queries if self._is_specific_query(q['query'])]
         
         if not specific_queries:
-            print("[コンテキスト] ⚠️ 具体的な固有名詞なし - 個人化推薦を試行")
+            print(f"[コンテキスト] ⚠️ 具体的な固有名詞なし (全クエリ: {len(unique_queries)}件) - 個人化推薦を試行")
+            for q in unique_queries:
+                print(f"  一般クエリ: '{q['query']}'")
+                
             
             # 元の入力からコンテキストヒントを抽出
             context_hint = ""
@@ -497,12 +570,21 @@ class ConversationContextBuilder:
                 except Exception as e:
                     print(f"[コンテキスト] ⚠️ 個人化推薦失敗: {e}")
             
-            # フォールバック: 従来のランダム推薦
-            print("[コンテキスト] 🎲 フォールバック: ランダム推薦を実行")
-            random_recommendations = self.knowledge_manager.get_random_recommendation(
-                context_hint=context_hint.strip(), 
-                limit=2
-            )
+            # フォールバック: ランダム推薦（厳格化）
+            # ランダム推薦発動条件を厳格化：明示的に推薦を求める場合のみ
+            should_recommend = any(word in context_hint.lower() for word in [
+                'おすすめ', '推薦', 'おしえて', '教えて', '何か', 'どんな', '面白い', '最近'
+            ])
+            
+            if should_recommend:
+                print("[コンテキスト] 🎲 推薦要求検出 - ランダム推薦を実行")
+                random_recommendations = self.knowledge_manager.get_random_recommendation(
+                    context_hint=context_hint.strip(), 
+                    limit=2
+                )
+            else:
+                print("[コンテキスト] ⏭️ ランダム推薦スキップ - 明示的な推薦要求なし")
+                return None
             
             if not random_recommendations:
                 print("[コンテキスト] ❌ ランダム推薦も失敗")
@@ -559,6 +641,24 @@ class ConversationContextBuilder:
                 # 低スコア結果を除外（スコア10未満）
                 if result['score'] < 10:
                     continue
+                
+                # 1. おすすめバイアス修正: 会話履歴の多い動画を調整
+                if is_recommendation_request:
+                    video_id = result['video_id']
+                    
+                    # 会話履歴データを取得
+                    if self.conversation_history:
+                        video_conversation_data = self.conversation_history.get_conversation_context(video_id)
+                        conversation_count = video_conversation_data.get('conversation_count', 0) if video_conversation_data else 0
+                        
+                        # 会話回数が10回以上の動画はスコアを大幅減点
+                        if conversation_count >= 10:
+                            result['score'] = max(1, int(result['score'] * 0.3))  # 70%減点
+                            print(f"[コンテキスト] 🎯 おすすめ調整: {result['data']['metadata'].get('title', '')[:30]}... (会話{conversation_count}回 → スコア{result['score']})")
+                        # 会話回数が5回以上でも減点
+                        elif conversation_count >= 5:
+                            result['score'] = max(1, int(result['score'] * 0.6))  # 40%減点
+                            print(f"[コンテキスト] 🎯 おすすめ調整: {result['data']['metadata'].get('title', '')[:30]}... (会話{conversation_count}回 → スコア{result['score']})")
                     
                 video_data = result['data']
                 metadata = video_data.get('metadata', {})
@@ -582,12 +682,64 @@ class ConversationContextBuilder:
                 
                 all_videos.append(video_info)
         
+        # デバッグ: DB検索結果詳細を表示
+        print(f"[コンテキスト] 📊 DB検索完了: {len(all_videos)}件取得")
+        for i, video in enumerate(all_videos):
+            print(f"  DB動画{i+1}: {video['title'][:30]}... (スコア: {video['search_score']})")
+        
+        # Phase 2: YouTube外部検索を実行（条件を厳格化）
+        external_videos = []
+        
+        # 外部検索発動条件を厳格化：DB結果が1件以下 かつ 具体的なクエリが存在
+        should_search_external = (
+            len(all_videos) <= 1 and  # DB検索結果が1件以下
+            len(specific_queries) > 0 and  # 具体的なクエリが存在
+            any(len(q['query']) >= 3 for q in specific_queries)  # 3文字以上のクエリがある
+        )
+        
+        if should_search_external:
+            print(f"[コンテキスト] 🔍 外部検索条件満了 - DB検索結果: {len(all_videos)}件、具体的クエリ: {len(specific_queries)}件")
+            
+            # 最も長いクエリのみで外部検索を実行（1つだけ）
+            best_query = max(specific_queries, key=lambda x: len(x['query']))
+            query = best_query['query']
+            search_limit = min(2, max_videos - len(all_videos))  # 最大2件に制限
+            
+            print(f"[コンテキスト] 🔍 外部検索実行: '{query}' (最大{search_limit}件)")
+            external_results = self.knowledge_manager.search_youtube_external(query, search_limit)
+            
+            for external_video in external_results:
+                # 外部動画を統一フォーマットに変換（スコアを低めに設定）
+                external_video_info = {
+                    'video_id': external_video['video_id'],
+                    'title': external_video['title'],
+                    'channel': external_video['channel'],
+                    'analysis_status': 'external',
+                    'search_score': 8,  # 外部検索結果は低スコア（DB結果を優先）
+                    'query_type': 'external_search',
+                    'matched_query': query,
+                    'source': 'youtube_api',
+                    'description': external_video.get('description', ''),
+                    'published_at': external_video.get('published_at', ''),
+                    'thumbnail_url': external_video.get('thumbnail_url', '')
+                }
+                external_videos.append(external_video_info)
+                print(f"[コンテキスト] 📹 外部動画追加: {external_video['title'][:30]}... (スコア: 8)")
+                
+            print(f"[コンテキスト] ✅ 外部検索完了: {len(external_videos)}件取得")
+        else:
+            print(f"[コンテキスト] ⏭️ 外部検索スキップ - DB結果: {len(all_videos)}件で十分")
+        
+        # DB動画と外部動画を統合
+        all_videos.extend(external_videos)
+        
         # Phase 1: URL表示機能 - 検索結果が空でも基本情報を保存
         if not all_videos:
             print(f"🔍 [build_video_context デバッグ] 動画が見つかりませんでした。空の結果を保存します。")
             empty_context = {
                 'search_terms': search_terms,
                 'videos': [],
+                'external_videos': [],
                 'total_found': 0
             }
             # 空の結果でも保存（URL表示機能のデバッグ用）
@@ -607,11 +759,30 @@ class ConversationContextBuilder:
             reverse=True
         )[:max_videos]
         
-        # Phase 1: URL表示機能 - 検索結果を保存
+        # 課題1対応: 動画表示を1件にピンポイント化
+        if len(sorted_videos) > 1:
+            best_video = sorted_videos[0]
+            print(f"[コンテキスト] 🎯 1件化実行 - 最高スコア動画を選択: {best_video['title'][:30]}... (スコア: {best_video['search_score']})")
+            
+            # 他の候補をログ出力（デバッグ用）
+            for i, video in enumerate(sorted_videos[1:], 1):
+                print(f"  候補{i+1}: {video['title'][:30]}... (スコア: {video['search_score']}) - 除外")
+            
+            sorted_videos = [best_video]  # 強制的に1件のみ
+        
+        # Phase 2: DB動画と外部動画を分離
+        db_videos = [v for v in sorted_videos if v.get('source') != 'youtube_api']
+        external_videos_final = [v for v in sorted_videos if v.get('source') == 'youtube_api']
+        
+        # Phase 1: URL表示機能 - 検索結果を保存（外部動画情報も含む）
         context_result = {
             'search_terms': search_terms,
-            'videos': sorted_videos,
-            'total_found': len(unique_videos)
+            'videos': db_videos,  # DB内動画
+            'external_videos': external_videos_final,  # 外部検索動画
+            'all_videos': sorted_videos,  # 全動画（後方互換用）
+            'total_found': len(unique_videos),
+            'db_count': len(db_videos),
+            'external_count': len(external_videos_final)
         }
         
         # 最後の検索結果として保存
@@ -805,7 +976,7 @@ class ConversationContextBuilder:
             return None
         
         # コンテキスト構築
-        context = self.build_video_context(queries)
+        context = self.build_video_context(queries, user_input=user_input)
         if not context:
             print("[コンテキスト] ❌ マッチする動画なし")
             return None
@@ -1116,11 +1287,14 @@ class ConversationContextBuilder:
                 videos = context.get('videos', [])
                 print(f"🔍 [検索結果保存デバッグ] videos数: {len(videos)}")
         
-        if context and isinstance(context, dict) and context.get('videos'):
+        if context and isinstance(context, dict):
             self.last_search_results = context
-            print(f"[コンテキスト] 🔗 URL表示用に検索結果保存: {len(context.get('videos', []))}件")
+            self.last_built_context = context  # URL表示用の公開プロパティ
+            video_count = len(context.get('videos', []))
+            print(f"[コンテキスト] 🔗 URL表示用に検索結果保存: {video_count}件")
         else:
             print(f"⚠️ [検索結果保存デバッグ] 保存条件を満たしません")
+            self.last_built_context = None
     
     def get_video_urls_from_last_search(self) -> List[Dict[str, str]]:
         """
