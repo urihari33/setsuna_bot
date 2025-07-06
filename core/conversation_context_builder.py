@@ -981,6 +981,9 @@ class ConversationContextBuilder:
             print("[コンテキスト] ❌ マッチする動画なし")
             return None
         
+        # URL表示用に検索結果を保存
+        self._store_last_search_results(context)
+        
         print(f"[コンテキスト] ✅ 動画発見: {len(context['videos'])}件")
         for video in context['videos']:
             print(f"  - {video['title'][:50]}... (スコア: {video['search_score']})")

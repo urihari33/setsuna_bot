@@ -16,10 +16,17 @@ from cache_system import ResponseCache
 from memory_system import SimpleMemorySystem
 from project_system import ProjectSystem
 from core.conversation_context_builder import ConversationContextBuilder
+from logging_system import get_logger, get_monitor
 
 class SetsunaChat:
     def __init__(self):
         """せつなチャットシステムの初期化"""
+        # ログシステム初期化
+        self.logger = get_logger()
+        self.monitor = get_monitor()
+        
+        self.logger.info("setsuna_chat", "__init__", "せつなチャットシステム初期化開始")
+        
         # 環境変数読み込み
         load_dotenv()
         
@@ -158,6 +165,7 @@ class SetsunaChat:
 
 このキャラクターとして、自然で魅力的な会話を心がけてください。"""
 
+    @get_monitor().monitor_function("get_response")
     def get_response(self, user_input, mode="full_search"):
         """
         ユーザー入力に対するせつなの応答を生成 - 2段階アプローチ
@@ -175,6 +183,12 @@ class SetsunaChat:
         try:
             mode_display = "高速モード" if mode == "fast_response" else "通常モード" 
             print(f"[チャット] 🤔 考え中 ({mode_display}): '{user_input}'")
+            
+            self.logger.info("setsuna_chat", "get_response", f"応答生成開始 ({mode_display})", {
+                "user_input": user_input,
+                "mode": mode,
+                "input_length": len(user_input)
+            })
             
             # Stage 1: 動画関連判定
             is_video_query = False
@@ -404,6 +418,243 @@ class SetsunaChat:
         if self.response_cache:
             return self.response_cache.get_cache_stats()
         return {"message": "キャッシュシステムが無効です"}
+    
+    @get_monitor().monitor_function("get_integrated_response")
+    def get_integrated_response(self, integrated_message, mode="full_search"):
+        """
+        統合メッセージ（画像+URL+テキスト）に対するせつなの応答を生成
+        Phase 2C-3: 画像理解統合機能
+        
+        Args:
+            integrated_message: 統合メッセージ辞書
+                - text: テキスト内容
+                - images: 画像ファイル情報リスト
+                - url: URL情報
+            mode: レスポンスモード
+            
+        Returns:
+            str: せつなの応答テキスト
+        """
+        try:
+            print(f"[チャット] 🖼️ 統合メッセージ処理開始")
+            
+            # テキスト部分を取得
+            user_text = integrated_message.get('text', '')
+            images = integrated_message.get('images', [])
+            url_info = integrated_message.get('url')
+            
+            # 画像分析結果を取得（voice_chat_gui.pyで事前に分析済み）
+            image_analysis_results = integrated_message.get('image_analysis_results', [])
+            
+            # 分析結果がない場合は自前で分析を実行（フォールバック）
+            if not image_analysis_results and images and hasattr(self, 'context_builder') and self.context_builder:
+                print(f"[チャット] 🔄 フォールバック: 画像分析を再実行")
+                youtube_manager = getattr(self.context_builder, 'youtube_manager', None)
+                if youtube_manager and hasattr(youtube_manager, 'image_analyzer'):
+                    image_analyzer = youtube_manager.image_analyzer
+                    
+                    for image_info in images:
+                        image_path = image_info.get('path')
+                        if image_path and os.path.exists(image_path):
+                            print(f"[チャット] 📸 画像分析: {image_info.get('name', 'unknown')}")
+                            
+                            try:
+                                # 基本コンテキスト作成
+                                analysis_context = {
+                                    'title': user_text or f"添付画像: {image_info.get('name', 'unknown')}",
+                                    'artist': '不明',
+                                    'description': f"ユーザーから添付された画像ファイル"
+                                }
+                                
+                                # 画像分析実行
+                                analysis_result = image_analyzer.analyze_image(
+                                    image_path,
+                                    analysis_type="general_description", 
+                                    context=analysis_context
+                                )
+                                
+                                if analysis_result and 'description' in analysis_result:
+                                    image_desc = analysis_result['description']
+                                    image_analysis_results.append({
+                                        'name': image_info.get('name', 'unknown'),
+                                        'description': image_desc,
+                                        'size': image_info.get('size', 0)
+                                    })
+                                    print(f"[チャット] ✅ 画像分析完了: {image_info.get('name')}")
+                                
+                            except Exception as e:
+                                print(f"[チャット] ⚠️ 画像分析エラー: {e}")
+                                # フォールバック分析結果
+                                image_analysis_results.append({
+                                    'name': image_info.get('name', 'unknown'),
+                                    'description': f"画像ファイル ({image_info.get('name', 'unknown')}) が添付されています",
+                                    'size': image_info.get('size', 0)
+                                })
+            else:
+                print(f"[チャット] ✅ 事前分析済み画像結果を使用: {len(image_analysis_results)}件")
+            
+            # URL情報を処理
+            url_context = ""
+            if url_info:
+                url_title = url_info.get('title', 'リンク')
+                url_address = url_info.get('url', '')
+                url_context = f"URL: {url_title} ({url_address})"
+            
+            # 統合プロンプトを作成
+            enhanced_input = self._create_integrated_prompt(
+                user_text, 
+                image_analysis_results, 
+                url_context
+            )
+            
+            print(f"[チャット] 🔄 統合プロンプト作成完了")
+            print(f"[チャット] 📝 統合プロンプト内容: {enhanced_input[:200]}...")
+            print(f"[チャット] 📝 画像分析結果数: {len(image_analysis_results)}")
+            for i, result in enumerate(image_analysis_results):
+                print(f"[チャット] 📸 画像{i+1}: {result['name']} - {result['description'][:100]}...")
+            
+            # 統合メッセージ専用の応答生成（動画検索をスキップ）
+            response = self._get_direct_response(enhanced_input, mode, skip_video_search=True)
+            
+            print(f"[チャット] ✅ 統合応答生成完了")
+            return response
+            
+        except Exception as e:
+            print(f"[チャット] ❌ 統合メッセージ処理エラー: {e}")
+            self.logger.error("setsuna_chat", "get_integrated_response", str(e))
+            # フォールバック: 基本テキストのみで応答
+            return self.get_response(integrated_message.get('text', '画像について教えて'), mode)
+    
+    def _create_integrated_prompt(self, user_text, image_analysis_results, url_context):
+        """
+        統合プロンプトを作成
+        画像分析結果とURL情報をテキストに統合
+        """
+        prompt_parts = []
+        
+        # ユーザーテキスト
+        if user_text:
+            prompt_parts.append(f"ユーザーメッセージ: {user_text}")
+        
+        # 画像分析結果
+        if image_analysis_results:
+            prompt_parts.append("\n📸 添付画像の詳細分析結果:")
+            for i, result in enumerate(image_analysis_results, 1):
+                name = result['name']
+                desc = result['description']
+                size_mb = result['size'] / (1024 * 1024) if result['size'] > 0 else 0
+                prompt_parts.append(f"\n画像{i}: {name} ({size_mb:.1f}MB)")
+                prompt_parts.append(f"内容: {desc}")
+                prompt_parts.append("")  # 空行で区切り
+        
+        # URL情報
+        if url_context:
+            prompt_parts.append(f"\n🔗 添付URL: {url_context}")
+        
+        # 応答指示
+        if image_analysis_results or url_context:
+            prompt_parts.append(f"\n【重要】上記の画像分析結果やURL情報を必ず参考にして、具体的で詳細な応答をしてください。分析結果に基づいて画像の内容について話してください。「画像が見えない」「分からない」などの回答は避けてください。")
+        
+        return "\n".join(prompt_parts)
+    
+    def _get_direct_response(self, user_input, mode="full_search", skip_video_search=False):
+        """
+        統合メッセージ用の直接応答生成
+        動画関連処理をスキップして、提供されたプロンプトをそのまま使用
+        """
+        if not user_input.strip():
+            return "何か話してくれますか？"
+        
+        try:
+            print(f"[チャット] 💬 直接応答生成開始: {mode}")
+            print(f"[チャット] 💬 ユーザー入力: {user_input[:300]}...")
+            
+            # 会話履歴に追加
+            self.conversation_history.append({
+                "role": "user",
+                "content": user_input
+            })
+            
+            # システムプロンプト構築
+            system_prompt = self.character_prompt
+            
+            # 記憶コンテキストを追加
+            if self.memory_system:
+                memory_context = self.memory_system.get_memory_context()
+                if memory_context:
+                    system_prompt += f"\n\n【記憶・経験】\n{memory_context}"
+            
+            # プロジェクトコンテキストを追加
+            if self.project_system:
+                project_context = self.project_system.get_project_context()
+                if project_context:
+                    system_prompt += f"\n\n【創作プロジェクト】\n{project_context}"
+            
+            messages = [
+                {"role": "system", "content": system_prompt}
+            ]
+            
+            # 最近の会話履歴を追加（最大5往復）
+            recent_history = self.conversation_history[-10:]  # 最新10メッセージ
+            messages.extend(recent_history)
+            
+            # OpenAI API呼び出し
+            start_time = datetime.now()
+            
+            if mode == "fast_response":
+                response = self.client.chat.completions.create(
+                    model="gpt-4-turbo",
+                    messages=messages,
+                    max_tokens=100,
+                    temperature=0.6,
+                    timeout=15
+                )
+            else:
+                response = self.client.chat.completions.create(
+                    model="gpt-4-turbo",
+                    messages=messages,
+                    max_tokens=150,
+                    temperature=0.7,
+                    timeout=30
+                )
+            
+            # 応答取得
+            setsuna_response = response.choices[0].message.content.strip()
+            
+            # 応答時間計算
+            response_time = (datetime.now() - start_time).total_seconds()
+            print(f"[チャット] ✅ 直接応答生成完了: {response_time:.2f}s")
+            
+            # 会話履歴に追加
+            self.conversation_history.append({
+                "role": "assistant", 
+                "content": setsuna_response
+            })
+            
+            # キャッシュに保存
+            if self.response_cache:
+                self.response_cache.cache_response(user_input, setsuna_response)
+            
+            # 記憶システムに会話を記録
+            if self.memory_system:
+                self.memory_system.process_conversation(user_input, setsuna_response)
+            
+            # プロジェクト関連会話を分析
+            if self.project_system:
+                self.project_system.analyze_conversation_for_projects(user_input, setsuna_response)
+            
+            return setsuna_response
+            
+        except Exception as e:
+            print(f"[チャット] ❌ 直接応答生成エラー: {e}")
+            # フォールバック応答
+            import random
+            fallback_responses = [
+                "すみません、ちょっと考えがまとまらなくて...",
+                "うーん、今うまく答えられないかも。",
+                "少し調子が悪いみたいです。もう一度聞いてもらえますか？"
+            ]
+            return random.choice(fallback_responses)
     
     def get_memory_stats(self):
         """記憶統計情報取得"""

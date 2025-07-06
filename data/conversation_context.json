@@ -1,20 +1,29 @@
 {
   "conversation_memory": [
     {
-      "timestamp": "2025-06-30T22:33:31.252845",
-      "user_input": "こんにちは 最近見た おすすめの動画とかあります",
+      "timestamp": "2025-07-07T01:57:03.325697",
+      "user_input": "さっき 添付した画像 どう思う",
       "context_analysis": {
-        "input": "こんにちは 最近見た おすすめの動画とかあります",
-        "timestamp": "2025-06-30T22:33:31.230813",
+        "input": "さっき 添付した画像 どう思う",
+        "timestamp": "2025-07-07T01:57:03.320699",
         "pronoun_references": [
           {
             "type": "temporal",
-            "text": "最近見た",
+            "text": "さっき",
             "position": [
-              6,
-              10
+              0,
+              3
             ],
             "confidence": 0.8
+          },
+          {
+            "type": "implicit",
+            "text": "どう",
+            "position": [
+              11,
+              13
+            ],
+            "confidence": 0.6
           }
         ],
         "continuity_indicators": [],
@@ -29,22 +38,7 @@
         "topic_relevance": {},
         "requires_resolution": true
       },
-      "mentioned_videos": [
-        {
-          "video_id": "2Z_qydIQGG4",
-          "title": "",
-          "channel": "",
-          "genre": "",
-          "search_score": 50.0
-        },
-        {
-          "video_id": "DaWbq6KeJq4",
-          "title": "Beat Eater",
-          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-          "genre": "",
-          "search_score": 100.0
-        }
-      ],
+      "mentioned_videos": [],
       "emotional_state": {
         "positive": 0.0,
         "negative": 0.0,
@@ -56,56 +50,11 @@
       "continuity_indicators": []
     },
     {
-      "timestamp": "2025-06-30T22:37:37.993827",
-      "user_input": "じゃ 初音ミクの動画でなんか面白いのある",
+      "timestamp": "2025-07-07T01:57:19.420320",
+      "user_input": "分析した内容を教えて",
       "context_analysis": {
-        "input": "じゃ 初音ミクの動画でなんか面白いのある",
-        "timestamp": "2025-06-30T22:37:37.978822",
-        "pronoun_references": [],
-        "continuity_indicators": [],
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [
-        {
-          "video_id": "2Z_qydIQGG4",
-          "title": "",
-          "channel": "",
-          "genre": "",
-          "search_score": 50.0
-        },
-        {
-          "video_id": "C5buQLyRel8",
-          "title": "TH ANNIVERSARY MOVIE",
-          "channel": "KODANSHA　Books＆Comics",
-          "genre": "",
-          "search_score": 100.0
-        }
-      ],
-      "emotional_state": {
-        "positive": 0.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": []
-      },
-      "continuity_indicators": []
-    },
-    {
-      "timestamp": "2025-06-30T22:45:38.124899",
-      "user_input": "TRiNITYの動画知ってる？",
-      "context_analysis": {
-        "input": "TRiNITYの動画知ってる？",
-        "timestamp": "2025-06-30T22:45:38.100880",
+        "input": "分析した内容を教えて",
+        "timestamp": "2025-07-07T01:57:19.420320",
         "pronoun_references": [],
         "continuity_indicators": [],
         "emotional_signals": {
@@ -124,29 +73,7 @@
         "topic_relevance": {},
         "requires_resolution": false
       },
-      "mentioned_videos": [
-        {
-          "video_id": "D7xjC200qxo",
-          "title": "XOXO",
-          "channel": "にじさんじ",
-          "genre": "",
-          "search_score": 99
-        },
-        {
-          "video_id": "mW76Jis85LE",
-          "title": "Trinity",
-          "channel": "ラピスリライツ公式チャンネル",
-          "genre": "",
-          "search_score": 44
-        },
-        {
-          "video_id": "483yXOP4I80",
-          "title": "Dissolving in blue",
-          "channel": "ちぇるしー",
-          "genre": "",
-          "search_score": 12
-        }
-      ],
+      "mentioned_videos": [],
       "emotional_state": {
         "positive": 0.0,
         "negative": 0.0,
@@ -163,85 +90,23 @@
       "continuity_indicators": []
     },
     {
-      "timestamp": "2025-06-30T22:48:47.045782",
-      "user_input": "こんにちは初音ミクの動画でおすすめってある",
+      "timestamp": "2025-07-07T02:04:19.857524",
+      "user_input": "構図的にどう思う",
       "context_analysis": {
-        "input": "こんにちは初音ミクの動画でおすすめってある",
-        "timestamp": "2025-06-30T22:48:47.019751",
-        "pronoun_references": [],
-        "continuity_indicators": [],
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "topic_relevance": {},
-        "requires_resolution": false
-      },
-      "mentioned_videos": [
-        {
-          "video_id": "lMXlOPGjwUI",
-          "title": "Iなんです",
-          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-          "genre": "",
-          "search_score": 12
-        },
-        {
-          "video_id": "YkP0JMByjRM",
-          "title": "ray",
-          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-          "genre": "",
-          "search_score": 12
-        },
-        {
-          "video_id": "M_ijFuoASt0",
-          "title": "トリコロージュ",
-          "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-          "genre": "",
-          "search_score": 12
-        }
-      ],
-      "emotional_state": {
-        "positive": 0.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": []
-      },
-      "continuity_indicators": []
-    },
-    {
-      "timestamp": "2025-06-30T22:57:03.387336",
-      "user_input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
-      "context_analysis": {
-        "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
-        "timestamp": "2025-06-30T22:57:03.362661",
+        "input": "構図的にどう思う",
+        "timestamp": "2025-07-07T02:04:19.857524",
         "pronoun_references": [
           {
-            "type": "temporal",
-            "text": "最近見た",
+            "type": "implicit",
+            "text": "どう",
             "position": [
-              18,
-              22
+              4,
+              6
             ],
-            "confidence": 0.8
+            "confidence": 0.6
           }
         ],
-        "continuity_indicators": [
-          {
-            "type": "disagreement",
-            "text": "けど",
-            "position": [
-              24,
-              26
-            ],
-            "strength": "strong"
-          }
-        ],
+        "continuity_indicators": [],
         "emotional_signals": {
           "positive": 0.0,
           "negative": 0.0,
@@ -253,29 +118,7 @@
         "topic_relevance": {},
         "requires_resolution": true
       },
-      "mentioned_videos": [
-        {
-          "video_id": "N4PtDsU2iSU",
-          "title": "YOASOBI",
-          "channel": "Raon",
-          "genre": "",
-          "search_score": 86
-        },
-        {
-          "video_id": "Av3xaZkVpJs",
-          "title": "アドベンチャー",
-          "channel": "Ayase / YOASOBI",
-          "genre": "",
-          "search_score": 77
-        },
-        {
-          "video_id": "Jj1_mfUzjOs",
-          "title": "〈物語〉シリーズ オフ&モンスターシーズン",
-          "channel": "Ayase / YOASOBI",
-          "genre": "",
-          "search_score": 77
-        }
-      ],
+      "mentioned_videos": [],
       "emotional_state": {
         "positive": 0.0,
         "negative": 0.0,
@@ -284,24 +127,14 @@
         "satisfaction": 0.0,
         "detected_emotions": []
       },
-      "continuity_indicators": [
-        {
-          "type": "disagreement",
-          "text": "けど",
-          "position": [
-            24,
-            26
-          ],
-          "strength": "strong"
-        }
-      ]
+      "continuity_indicators": []
     },
     {
-      "timestamp": "2025-06-30T22:57:19.704163",
-      "user_input": "初音ミクでおスメってある",
+      "timestamp": "2025-07-07T02:04:42.157083",
+      "user_input": "同市線 誘導するの",
       "context_analysis": {
-        "input": "初音ミクでおスメってある",
-        "timestamp": "2025-06-30T22:57:19.703163",
+        "input": "同市線 誘導するの",
+        "timestamp": "2025-07-07T02:04:42.156077",
         "pronoun_references": [],
         "continuity_indicators": [],
         "emotional_signals": {
@@ -325,145 +158,69 @@
         "detected_emotions": []
       },
       "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-07-07T02:27:54.911577",
+      "user_input": "全体的にどんな色合いか教えて",
+      "context_analysis": {
+        "input": "全体的にどんな色合いか教えて",
+        "timestamp": "2025-07-07T02:27:54.905616",
+        "pronoun_references": [],
+        "continuity_indicators": [
+          {
+            "type": "clarification",
+            "text": "どんな",
+            "position": [
+              4,
+              7
+            ],
+            "strength": "medium"
+          }
+        ],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 1.0,
+          "satisfaction": 0.0,
+          "detected_emotions": [
+            {
+              "emotion": "curiosity",
+              "strength": 1.4
+            }
+          ]
+        },
+        "topic_relevance": {},
+        "requires_resolution": false
+      },
+      "mentioned_videos": [],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 1.0,
+        "satisfaction": 0.0,
+        "detected_emotions": [
+          {
+            "emotion": "curiosity",
+            "strength": 1.4
+          }
+        ]
+      },
+      "continuity_indicators": [
+        {
+          "type": "clarification",
+          "text": "どんな",
+          "position": [
+            4,
+            7
+          ],
+          "strength": "medium"
+        }
+      ]
     }
   ],
-  "active_topics": {
-    "2Z_qydIQGG4": {
-      "video_id": "2Z_qydIQGG4",
-      "title": "",
-      "channel": "",
-      "genre": "",
-      "keywords": [],
-      "last_mentioned": "2025-06-30T22:37:37.993827",
-      "mention_count": 2
-    },
-    "DaWbq6KeJq4": {
-      "video_id": "DaWbq6KeJq4",
-      "title": "Beat Eater",
-      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-      "genre": "",
-      "keywords": [
-        "プロジェクトセカイ カラフルステージ! feat. 初音ミク"
-      ],
-      "last_mentioned": "2025-06-30T22:33:31.253854",
-      "mention_count": 1
-    },
-    "C5buQLyRel8": {
-      "video_id": "C5buQLyRel8",
-      "title": "TH ANNIVERSARY MOVIE",
-      "channel": "KODANSHA　Books＆Comics",
-      "genre": "",
-      "keywords": [
-        "KODANSHA　Books＆Comics"
-      ],
-      "last_mentioned": "2025-06-30T22:37:37.994827",
-      "mention_count": 1
-    },
-    "D7xjC200qxo": {
-      "video_id": "D7xjC200qxo",
-      "title": "XOXO",
-      "channel": "にじさんじ",
-      "genre": "",
-      "keywords": [
-        "にじさんじ"
-      ],
-      "last_mentioned": "2025-06-30T22:45:38.124899",
-      "mention_count": 1
-    },
-    "mW76Jis85LE": {
-      "video_id": "mW76Jis85LE",
-      "title": "Trinity",
-      "channel": "ラピスリライツ公式チャンネル",
-      "genre": "",
-      "keywords": [
-        "ラピスリライツ公式チャンネル"
-      ],
-      "last_mentioned": "2025-06-30T22:45:38.124899",
-      "mention_count": 1
-    },
-    "483yXOP4I80": {
-      "video_id": "483yXOP4I80",
-      "title": "Dissolving in blue",
-      "channel": "ちぇるしー",
-      "genre": "",
-      "keywords": [
-        "ちぇるしー"
-      ],
-      "last_mentioned": "2025-06-30T22:45:38.124899",
-      "mention_count": 1
-    },
-    "lMXlOPGjwUI": {
-      "video_id": "lMXlOPGjwUI",
-      "title": "Iなんです",
-      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-      "genre": "",
-      "keywords": [
-        "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-        "なんです"
-      ],
-      "last_mentioned": "2025-06-30T22:48:47.046790",
-      "mention_count": 1
-    },
-    "YkP0JMByjRM": {
-      "video_id": "YkP0JMByjRM",
-      "title": "ray",
-      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-      "genre": "",
-      "keywords": [
-        "プロジェクトセカイ カラフルステージ! feat. 初音ミク"
-      ],
-      "last_mentioned": "2025-06-30T22:48:47.046790",
-      "mention_count": 1
-    },
-    "M_ijFuoASt0": {
-      "video_id": "M_ijFuoASt0",
-      "title": "トリコロージュ",
-      "channel": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-      "genre": "",
-      "keywords": [
-        "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
-        "トリコロージュ"
-      ],
-      "last_mentioned": "2025-06-30T22:48:47.046790",
-      "mention_count": 1
-    },
-    "N4PtDsU2iSU": {
-      "video_id": "N4PtDsU2iSU",
-      "title": "YOASOBI",
-      "channel": "Raon",
-      "genre": "",
-      "keywords": [
-        "Raon"
-      ],
-      "last_mentioned": "2025-06-30T22:57:03.387336",
-      "mention_count": 1
-    },
-    "Av3xaZkVpJs": {
-      "video_id": "Av3xaZkVpJs",
-      "title": "アドベンチャー",
-      "channel": "Ayase / YOASOBI",
-      "genre": "",
-      "keywords": [
-        "Ayase / YOASOBI",
-        "アドベンチャー"
-      ],
-      "last_mentioned": "2025-06-30T22:57:03.387336",
-      "mention_count": 1
-    },
-    "Jj1_mfUzjOs": {
-      "video_id": "Jj1_mfUzjOs",
-      "title": "〈物語〉シリーズ オフ&モンスターシーズン",
-      "channel": "Ayase / YOASOBI",
-      "genre": "",
-      "keywords": [
-        "Ayase / YOASOBI",
-        "シリーズ",
-        "モンスターシーズン"
-      ],
-      "last_mentioned": "2025-06-30T22:57:03.387336",
-      "mention_count": 1
-    }
-  },
+  "active_topics": {},
   "emotional_context": {},
   "config": {
     "max_conversation_memory": 10,
@@ -473,5 +230,5 @@
     "enable_pronoun_resolution": true,
     "enable_topic_tracking": true
   },
-  "last_updated": "2025-06-30T22:57:19.704163"
+  "last_updated": "2025-07-07T02:27:54.911577"
 }

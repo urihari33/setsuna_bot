@@ -1,71 +1,117 @@
 {
   "current_session": {
-    "session_id": "session_20250630_225652",
-    "start_time": "2025-06-30T22:56:52.814483",
-    "state": "initial",
+    "session_id": "session_20250706_215229",
+    "start_time": "2025-07-06T21:52:29.918148",
+    "state": "topic_established",
     "turns": [
       {
         "turn_number": 1,
-        "timestamp": "2025-06-30T22:57:03.388337",
-        "user_input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
+        "timestamp": "2025-07-06T21:56:58.085859",
+        "user_input": "ユーザーメッセージ: この動画のこのシーンについて、どういった印象と効果をもちますか？\n\n🔗 添付URL: URL: YouTube動画 (https://www.youtube.com/watch?v=-ZJiDmzzmgk)\n\n添付された内容を踏まえて、親しみやすく自然な応答をしてください。",
         "context_analysis": {
-          "input": "こんにちは yoasobi の動画 最近見たんだけどなんか おすすめある",
-          "timestamp": "2025-06-30T22:57:03.362661",
+          "input": "ユーザーメッセージ: この動画のこのシーンについて、どういった印象と効果をもちますか？\n\n🔗 添付URL: URL: YouTube動画 (https://www.youtube.com/watch?v=-ZJiDmzzmgk)\n\n添付された内容を踏まえて、親しみやすく自然な応答をしてください。",
+          "timestamp": "2025-07-06T21:56:58.075352",
           "pronoun_references": [
             {
-              "type": "temporal",
-              "text": "最近見た",
+              "type": "demonstrative",
+              "text": "この動画",
               "position": [
-                18,
-                22
+                11,
+                15
               ],
-              "confidence": 0.8
-            }
-          ],
-          "continuity_indicators": [
+              "confidence": 0.9
+            },
             {
-              "type": "disagreement",
-              "text": "けど",
+              "type": "demonstrative",
+              "text": "この",
               "position": [
-                24,
-                26
+                11,
+                13
               ],
-              "strength": "strong"
+              "confidence": 0.9
+            },
+            {
+              "type": "demonstrative",
+              "text": "この",
+              "position": [
+                16,
+                18
+              ],
+              "confidence": 0.9
+            },
+            {
+              "type": "implicit",
+              "text": "どう",
+              "position": [
+                26,
+                28
+              ],
+              "confidence": 0.6
             }
           ],
+          "continuity_indicators": [],
           "emotional_signals": {
             "positive": 0.0,
             "negative": 0.0,
             "excitement": 0.0,
-            "curiosity": 0.0,
+            "curiosity": 1.0,
             "satisfaction": 0.0,
-            "detected_emotions": []
+            "detected_emotions": [
+              {
+                "emotion": "curiosity",
+                "strength": 1.4
+              }
+            ]
           },
-          "topic_relevance": {},
+          "topic_relevance": {
+            "6NJIrxzr-CY": {
+              "relevance_score": 0.8,
+              "topic_data": {
+                "video_id": "6NJIrxzr-CY",
+                "title": "BELIEVE MYSELF",
+                "channel": "AniTone Music Channel",
+                "genre": "",
+                "keywords": [
+                  "AniTone Music Channel"
+                ],
+                "last_mentioned": "2025-07-06T21:31:53.924840",
+                "mention_count": 2
+              },
+              "related_keywords": []
+            },
+            "AOWYIoZh25s": {
+              "relevance_score": 0.8,
+              "topic_data": {
+                "video_id": "AOWYIoZh25s",
+                "title": "unknown color",
+                "channel": "ゆすら ",
+                "genre": "",
+                "keywords": [
+                  "ゆすら "
+                ],
+                "last_mentioned": "2025-07-06T21:49:55.292998",
+                "mention_count": 1
+              },
+              "related_keywords": []
+            }
+          },
           "requires_resolution": true
         },
         "system_response": "",
         "mentioned_videos": [
           {
-            "video_id": "N4PtDsU2iSU",
-            "title": "YOASOBI",
-            "channel": "Raon",
+            "video_id": "6NJIrxzr-CY",
+            "title": "BELIEVE MYSELF",
+            "channel": "AniTone Music Channel",
             "genre": "",
-            "search_score": 86
+            "search_score": 80.0
           },
           {
-            "video_id": "Av3xaZkVpJs",
-            "title": "アドベンチャー",
-            "channel": "Ayase / YOASOBI",
+            "video_id": "AOWYIoZh25s",
+            "title": "unknown color",
+            "channel": "ゆすら ",
             "genre": "",
-            "search_score": 77
-          },
-          {
-            "video_id": "Jj1_mfUzjOs",
-            "title": "〈物語〉シリーズ オフ&モンスターシーズン",
-            "channel": "Ayase / YOASOBI",
-            "genre": "",
-            "search_score": 77
+            "search_score": 80.0
           }
         ],
         "previous_state": "initial",
@@ -73,63 +119,69 @@
           "positive": 0.0,
           "negative": 0.0,
           "excitement": 0.0,
-          "curiosity": 0.0,
+          "curiosity": 1.0,
           "satisfaction": 0.0,
-          "detected_emotions": []
+          "detected_emotions": [
+            {
+              "emotion": "curiosity",
+              "strength": 1.4
+            }
+          ]
         },
         "state_transition": {
-          "should_transition": false,
-          "new_state": "initial",
-          "confidence": 0.0,
-          "reasons": []
+          "should_transition": true,
+          "new_state": "topic_established",
+          "confidence": 1.0,
+          "reasons": [
+            "条件満足: to_topic_established (信頼度: 1.00)"
+          ]
         },
-        "new_state": "initial"
+        "new_state": "topic_established"
       }
     ],
     "active_topics": {
-      "N4PtDsU2iSU": {
+      "6NJIrxzr-CY": {
         "video_info": {
-          "video_id": "N4PtDsU2iSU",
-          "title": "YOASOBI",
-          "channel": "Raon",
+          "video_id": "6NJIrxzr-CY",
+          "title": "BELIEVE MYSELF",
+          "channel": "AniTone Music Channel",
           "genre": "",
-          "search_score": 86
+          "search_score": 80.0
         },
-        "first_mentioned": "2025-06-30T22:57:03.388337",
+        "first_mentioned": "2025-07-06T21:56:58.085859",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T22:57:03.388337"
+        "last_mentioned": "2025-07-06T21:56:58.085859"
       },
-      "Av3xaZkVpJs": {
+      "AOWYIoZh25s": {
         "video_info": {
-          "video_id": "Av3xaZkVpJs",
-          "title": "アドベンチャー",
-          "channel": "Ayase / YOASOBI",
+          "video_id": "AOWYIoZh25s",
+          "title": "unknown color",
+          "channel": "ゆすら ",
           "genre": "",
-          "search_score": 77
+          "search_score": 80.0
         },
-        "first_mentioned": "2025-06-30T22:57:03.388337",
+        "first_mentioned": "2025-07-06T21:56:58.085859",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T22:57:03.388337"
-      },
-      "Jj1_mfUzjOs": {
-        "video_info": {
-          "video_id": "Jj1_mfUzjOs",
-          "title": "〈物語〉シリーズ オフ&モンスターシーズン",
-          "channel": "Ayase / YOASOBI",
-          "genre": "",
-          "search_score": 77
-        },
-        "first_mentioned": "2025-06-30T22:57:03.388337",
-        "mention_count": 1,
-        "last_emotional_response": {},
-        "last_mentioned": "2025-06-30T22:57:03.388337"
+        "last_mentioned": "2025-07-06T21:56:58.085859"
       }
     },
     "user_preferences": {},
     "conversation_goals": [],
-    "emotional_trajectory": []
+    "emotional_trajectory": [
+      {
+        "timestamp": "2025-07-06T21:56:58.085859",
+        "turn_number": 1,
+        "emotions": [
+          {
+            "emotion": "curiosity",
+            "strength": 1.4
+          }
+        ],
+        "dominant_emotion": "curiosity"
+      }
+    ]
   },
   "session_history": [],
   "config": {
@@ -138,5 +190,5 @@
     "min_turns_for_deep_discussion": 3,
     "preference_confidence_threshold": 0.7
   },
-  "last_updated": "2025-06-30T22:57:03.388337"
+  "last_updated": "2025-07-06T21:56:58.085859"
 }
