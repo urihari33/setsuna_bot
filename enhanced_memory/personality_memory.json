@@ -1,0 +1,58 @@
+{
+  "personal_experiences": [
+    {
+      "id": "exp_0001",
+      "date": "2025-07-07T22:27:26.355045",
+      "description": "統合テストでの動作確認",
+      "type": "learning",
+      "emotion": "curious",
+      "learning": "システム統合の確認ができた",
+      "impact_level": 0.7,
+      "references": 0,
+      "last_referenced": null
+    },
+    {
+      "id": "exp_0002",
+      "date": "2025-07-07T22:32:33.914156",
+      "description": "今日はとても創作がはかどりました！... についてcreation的な会話",
+      "type": "creation",
+      "emotion": "creative",
+      "learning": "ユーザーとのcreationについて話した",
+      "impact_level": 0.7,
+      "references": 0,
+      "last_referenced": null
+    }
+  ],
+  "emotional_memories": [
+    {
+      "id": "emo_0001",
+      "date": "2025-07-07T22:27:26.355054",
+      "event": "統合テストでの動作確認",
+      "emotion": "curious",
+      "intensity": 0.7,
+      "decay_factor": 1.0,
+      "associations": []
+    },
+    {
+      "id": "emo_0002",
+      "date": "2025-07-07T22:32:33.914159",
+      "event": "今日はとても創作がはかどりました！... についてcreation的な会話",
+      "emotion": "creative",
+      "intensity": 0.7,
+      "decay_factor": 1.0,
+      "associations": []
+    }
+  ],
+  "learning_experiences": [],
+  "character_evolution": {
+    "confidence_level": 0.535,
+    "technical_knowledge": 0.6699999999999999,
+    "creative_experience": 0.7699999999999999,
+    "social_comfort": 0.5,
+    "last_updated": "2025-07-07T22:32:33.914164"
+  },
+  "relationship_history": [],
+  "memorable_moments": [],
+  "created_at": "2025-07-07T22:27:26.304697",
+  "version": "1.0"
+}

@@ -17,9 +17,15 @@ from memory_system import SimpleMemorySystem
 from project_system import ProjectSystem
 from core.conversation_context_builder import ConversationContextBuilder
 from logging_system import get_logger, get_monitor
+from character.managers.prompt_manager import PromptManager
+from character.managers.character_consistency import CharacterConsistencyChecker
+from test_memory_system import TestMemorySystem
+from enhanced_memory.personality_memory import PersonalityMemory
+from enhanced_memory.collaboration_memory import CollaborationMemory
+from enhanced_memory.memory_integration import MemoryIntegrationSystem
 
 class SetsunaChat:
-    def __init__(self):
+    def __init__(self, memory_mode="normal"):
         """せつなチャットシステムの初期化"""
         # ログシステム初期化
         self.logger = get_logger()
@@ -38,8 +44,24 @@ class SetsunaChat:
         # OpenAIクライアント初期化
         self.client = openai.OpenAI(api_key=self.api_key)
         
-        # せつなのキャラクター設定
-        self.character_prompt = self._load_character_settings()
+        # 新しいプロンプト管理システム初期化
+        try:
+            self.prompt_manager = PromptManager()
+            print("[チャット] ✅ プロンプト管理システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ プロンプト管理システム初期化失敗: {e}")
+            self.prompt_manager = None
+        
+        # キャラクター一貫性チェッカー初期化
+        try:
+            self.consistency_checker = CharacterConsistencyChecker()
+            print("[チャット] ✅ キャラクター一貫性チェッカー初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 一貫性チェッカー初期化失敗: {e}")
+            self.consistency_checker = None
+        
+        # フォールバック用のキャラクター設定
+        self.fallback_character_prompt = self._load_character_settings()
         
         # 会話履歴（シンプル版）
         self.conversation_history = []
@@ -55,13 +77,46 @@ class SetsunaChat:
             print(f"[チャット] ⚠️ キャッシュシステム初期化失敗: {e}")
             self.response_cache = None
         
-        # 記憶システム初期化
+        # 記憶システム初期化（メモリモードに応じて選択）
+        self.memory_mode = memory_mode
         try:
-            self.memory_system = SimpleMemorySystem()
-            print("[チャット] ✅ 記憶システム初期化完了")
+            if memory_mode == "test":
+                self.memory_system = TestMemorySystem()
+                print("[チャット] ✅ テスト用記憶システム初期化完了")
+            else:
+                self.memory_system = SimpleMemorySystem()
+                print("[チャット] ✅ 通常記憶システム初期化完了")
         except Exception as e:
             print(f"[チャット] ⚠️ 記憶システム初期化失敗: {e}")
             self.memory_system = None
+        
+        # Phase A-1: 個人記憶システム初期化
+        try:
+            self.personality_memory = PersonalityMemory(memory_mode)
+            print("[チャット] ✅ 個人記憶システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 個人記憶システム初期化失敗: {e}")
+            self.personality_memory = None
+        
+        # Phase A-2: 協働記憶システム初期化
+        try:
+            self.collaboration_memory = CollaborationMemory(memory_mode)
+            print("[チャット] ✅ 協働記憶システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 協働記憶システム初期化失敗: {e}")
+            self.collaboration_memory = None
+        
+        # Phase A-3: 記憶統合システム初期化
+        try:
+            self.memory_integration = MemoryIntegrationSystem(
+                personality_memory=self.personality_memory,
+                collaboration_memory=self.collaboration_memory,
+                memory_mode=memory_mode
+            )
+            print("[チャット] ✅ 記憶統合システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 記憶統合システム初期化失敗: {e}")
+            self.memory_integration = None
         
         # プロジェクト管理システム初期化
         try:
@@ -166,13 +221,14 @@ class SetsunaChat:
 このキャラクターとして、自然で魅力的な会話を心がけてください。"""
 
     @get_monitor().monitor_function("get_response")
-    def get_response(self, user_input, mode="full_search"):
+    def get_response(self, user_input, mode="full_search", memory_mode=None):
         """
         ユーザー入力に対するせつなの応答を生成 - 2段階アプローチ
         
         Args:
             user_input: ユーザーの入力テキスト
             mode: レスポンスモード ("full_search": 通常モード, "fast_response": 高速モード)
+            memory_mode: 記憶モード ("normal": 通常, "test": テスト)
             
         Returns:
             str: せつなの応答テキスト
@@ -217,12 +273,13 @@ class SetsunaChat:
                     video_context = None
                     self.last_context_data = None
             
-            # キャッシュチェック（動画関連でない場合のみ）
+            # キャッシュチェック（パフォーマンス向上）
             cached_response = None
-            if self.response_cache and not is_video_query:
-                cached_response = self.response_cache.get_cached_response(user_input)
+            if self.response_cache:
+                cache_key = f"{user_input}_{mode}"  # モード別キャッシュ
+                cached_response = self.response_cache.get_cached_response(cache_key)
                 if cached_response:
-                    print(f"[チャット] ⚡ 非動画クエリ: キャッシュから高速応答")
+                    print(f"[チャット] ⚡ キャッシュから高速応答 ({mode}モード)")
                     self._add_to_conversation_history(user_input, cached_response)
                     return cached_response
             
@@ -235,8 +292,21 @@ class SetsunaChat:
             # コンテキスト分析
             context_info = self._analyze_context(user_input)
             
-            # Stage 2: GPT応答生成（コンテキストデータベース）
-            system_prompt = self.character_prompt
+            # Stage 2: GPT応答生成（動的プロンプトシステム）
+            # 新しいプロンプト管理システムを使用
+            if self.prompt_manager:
+                context_info_dict = {
+                    "is_video_query": is_video_query,
+                    "mode": mode,
+                    "user_input": user_input
+                }
+                if is_video_query and video_context:
+                    context_info_dict["video_context"] = video_context
+                
+                system_prompt = self.prompt_manager.generate_dynamic_prompt(mode, context_info_dict)
+            else:
+                # フォールバック
+                system_prompt = self.fallback_character_prompt
             
             # 動画関連の場合、取得済みのコンテキストを追加
             if is_video_query and video_context:
@@ -255,6 +325,28 @@ class SetsunaChat:
                 memory_context = self.memory_system.get_memory_context()
                 if memory_context:
                     system_prompt += f"\n\n【記憶・経験】\n{memory_context}"
+            
+            # 個人記憶コンテキストを追加
+            if self.personality_memory:
+                personality_context = self.personality_memory.get_personality_context_for_prompt()
+                if personality_context:
+                    system_prompt += f"\n\n【個人的記憶・成長】\n{personality_context}"
+            
+            # 協働記憶コンテキストを追加
+            if self.collaboration_memory:
+                collaboration_context = self.collaboration_memory.get_collaboration_context_for_prompt()
+                if collaboration_context:
+                    system_prompt += f"\n\n【協働パートナーシップ】\n{collaboration_context}"
+            
+            # 統合記憶コンテキストを追加
+            if self.memory_integration:
+                # 高速モードでは関連性のみ、通常モードでは完全統合
+                context_type = "relevant" if mode == "fast_response" else "full"
+                integrated_context = self.memory_integration.generate_integrated_context(
+                    user_input=user_input, context_type=context_type
+                )
+                if integrated_context:
+                    system_prompt += f"\n\n【統合記憶分析】\n{integrated_context}"
             
             # プロジェクトコンテキストを追加
             if self.project_system:
@@ -281,27 +373,49 @@ class SetsunaChat:
                 # OpenAI API呼び出し（高速モードでは設定を最適化）
                 start_time = datetime.now()
                 
-                if mode == "fast_response":
+                if mode == "ultra_fast":
+                    # 超高速モード: 最短レスポンス、最短タイムアウト
+                    response = self.client.chat.completions.create(
+                        model="gpt-4-turbo",
+                        messages=messages,
+                        max_tokens=50,  # 最短（瞬間応答）
+                        temperature=0.3,  # 最安定
+                        timeout=5  # 最短タイムアウト
+                    )
+                elif mode == "fast_response":
                     # 高速モード: より短いレスポンス、短いタイムアウト
                     response = self.client.chat.completions.create(
                         model="gpt-4-turbo",
                         messages=messages,
-                        max_tokens=100,  # 高速モードでは100に制限
-                        temperature=0.6,  # より安定したレスポンス
-                        timeout=15  # 短いタイムアウト
+                        max_tokens=80,  # さらに短縮（100→80）
+                        temperature=0.5,  # より安定したレスポンス
+                        timeout=10  # 短縮（15→10秒）
                     )
                 else:
-                    # 通常モード: 従来設定
+                    # 通常モード: 最適化設定
                     response = self.client.chat.completions.create(
                         model="gpt-4-turbo",
                         messages=messages,
-                        max_tokens=150,  # 動画情報含む応答のため150に調整
-                        temperature=0.7,  # 少し創造性を下げて安定化
+                        max_tokens=120,  # 150→120に短縮
+                        temperature=0.6,  # 0.7→0.6に調整
                         timeout=30  # APIタイムアウト時間（元に戻す）
                     )
                 
                 # 応答取得
                 setsuna_response = response.choices[0].message.content.strip()
+                
+                # キャラクター一貫性チェック（デバッグ時のみ）
+                if self.consistency_checker:
+                    try:
+                        consistency_result = self.consistency_checker.check_response_consistency(
+                            user_input, setsuna_response, mode
+                        )
+                        if consistency_result["overall_score"] < 0.6:
+                            print(f"[チャット] ⚠️ 一貫性スコア低下: {consistency_result['overall_score']:.2f}")
+                            if consistency_result["issues"]:
+                                print(f"[チャット] 主な問題: {', '.join(consistency_result['issues'][:2])}")
+                    except Exception as e:
+                        print(f"[チャット] ⚠️ 一貫性チェックエラー: {e}")
                 
                 # 応答時間計算
                 response_time = (datetime.now() - start_time).total_seconds()
@@ -317,13 +431,38 @@ class SetsunaChat:
                     "content": setsuna_response
                 })
                 
-                # 新しい応答をキャッシュに保存
+                # 新しい応答をキャッシュに保存（モード別キャッシュ）
                 if self.response_cache:
-                    self.response_cache.cache_response(user_input, setsuna_response)
+                    cache_key = f"{user_input}_{mode}"
+                    self.response_cache.cache_response(cache_key, setsuna_response)
             
             # 記憶システムに会話を記録
             if self.memory_system:
                 self.memory_system.process_conversation(user_input, setsuna_response)
+            
+            # 個人記憶システムで会話を分析・記録
+            if self.personality_memory:
+                self.personality_memory.analyze_conversation_for_experience(user_input, setsuna_response)
+            
+            # 協働記憶システムで会話を分析
+            if self.collaboration_memory:
+                # 応答品質評価（簡易版）
+                response_quality = self._assess_response_quality(setsuna_response)
+                understanding_level = self._assess_understanding_level(user_input, setsuna_response)
+                self.collaboration_memory.analyze_communication_style(
+                    user_input, response_quality, understanding_level
+                )
+            
+            # 記憶統合分析（新しい関係性発見）
+            if self.memory_integration:
+                # 定期的な記憶関係性分析（10回に1回）
+                if len(self.conversation_history) % 20 == 0:  # 10往復に1回
+                    print("[統合記憶] 🔍 記憶関係性分析実行中...")
+                    analysis_stats = self.memory_integration.analyze_memory_relationships()
+                    if analysis_stats.get("total_relationships", 0) > 0:
+                        print(f"[統合記憶] ✅ 新たな関係性を発見: {analysis_stats['total_relationships']}件")
+                        # 新発見の関係性を保存
+                        self.memory_integration.save_integration_data()
             
             # プロジェクト関連会話を分析
             if self.project_system:
@@ -407,10 +546,28 @@ class SetsunaChat:
         if self.memory_system:
             self.memory_system.save_memory()
     
+    def save_personality_memory(self):
+        """個人記憶をファイルに保存"""
+        if self.personality_memory:
+            self.personality_memory.save_personality_data()
+    
+    def save_collaboration_memory(self):
+        """協働記憶をファイルに保存"""
+        if self.collaboration_memory:
+            self.collaboration_memory.save_collaboration_data()
+    
+    def save_memory_integration(self):
+        """記憶統合データを保存"""
+        if self.memory_integration:
+            self.memory_integration.save_integration_data()
+    
     def save_all_data(self):
         """全データを保存"""
         self.save_cache()
         self.save_memory()
+        self.save_personality_memory()
+        self.save_collaboration_memory()
+        self.save_memory_integration()
         self.save_projects()
     
     def get_cache_stats(self):
@@ -576,7 +733,12 @@ class SetsunaChat:
             })
             
             # システムプロンプト構築
-            system_prompt = self.character_prompt
+            if self.prompt_manager:
+                # 新しいプロンプト管理システムを使用
+                system_prompt = self.prompt_manager.generate_dynamic_prompt(mode)
+            else:
+                # フォールバック用プロンプト
+                system_prompt = self.fallback_character_prompt
             
             # 記憶コンテキストを追加
             if self.memory_system:
@@ -662,6 +824,24 @@ class SetsunaChat:
             return self.memory_system.get_memory_stats()
         return {"message": "記憶システムが無効です"}
     
+    def get_personality_memory_stats(self):
+        """個人記憶統計情報取得"""
+        if self.personality_memory:
+            return self.personality_memory.get_memory_stats()
+        return {"message": "個人記憶システムが無効です"}
+    
+    def get_collaboration_memory_stats(self):
+        """協働記憶統計情報取得"""
+        if self.collaboration_memory:
+            return self.collaboration_memory.get_memory_stats()
+        return {"message": "協働記憶システムが無効です"}
+    
+    def get_memory_integration_stats(self):
+        """記憶統合統計情報取得"""
+        if self.memory_integration:
+            return self.memory_integration.get_memory_stats()
+        return {"message": "記憶統合システムが無効です"}
+    
     def get_learned_facts(self):
         """学習した事実のリストを取得"""
         if self.memory_system:
@@ -709,6 +889,42 @@ class SetsunaChat:
             "role": "assistant", 
             "content": response
         })
+    
+    def _assess_response_quality(self, response: str) -> str:
+        """応答品質を評価（簡易版）"""
+        if not response.strip():
+            return "poor"
+        
+        # 長さによる評価
+        if len(response) < 5:
+            return "poor"
+        elif len(response) < 20:
+            return "fair"
+        elif len(response) < 100:
+            return "good"
+        else:
+            return "excellent"
+    
+    def _assess_understanding_level(self, user_input: str, response: str) -> str:
+        """理解度を評価（簡易版）"""
+        # 応答の関連性チェック（キーワードベース）
+        user_keywords = set(user_input.lower().split())
+        response_keywords = set(response.lower().split())
+        
+        # 共通キーワードの割合
+        if not user_keywords:
+            return "good"
+        
+        common_ratio = len(user_keywords & response_keywords) / len(user_keywords)
+        
+        if common_ratio >= 0.3:
+            return "perfect"
+        elif common_ratio >= 0.2:
+            return "good"
+        elif common_ratio >= 0.1:
+            return "partial"
+        else:
+            return "confused"
     
     def add_manual_memory(self, category: str, content: str) -> bool:
         """手動で記憶を追加"""
@@ -791,6 +1007,56 @@ class SetsunaChat:
     def get_last_context_data(self):
         """最後のコンテキストデータを取得（URL表示用）"""
         return getattr(self, 'last_context_data', None)
+    
+    # 協働記憶システム用メソッド
+    def record_work_session(self, activity_type: str, duration_minutes: int, 
+                           user_satisfaction: str, outcome_quality: str, notes: str = ""):
+        """作業セッションを記録"""
+        if self.collaboration_memory:
+            return self.collaboration_memory.record_work_pattern(
+                activity_type, duration_minutes, user_satisfaction, outcome_quality, notes
+            )
+        return None
+    
+    def record_success(self, success_type: str, context: str, key_factors: list, 
+                      outcome: str, replicability: str = "medium"):
+        """成功パターンを記録"""
+        if self.collaboration_memory:
+            return self.collaboration_memory.record_success_pattern(
+                success_type, context, key_factors, outcome, replicability
+            )
+        return None
+    
+    def get_collaboration_insights(self):
+        """協働洞察を取得"""
+        if self.collaboration_memory:
+            return self.collaboration_memory.get_collaboration_insights()
+        return {"message": "協働記憶システムが無効です"}
+    
+    # 記憶統合システム用メソッド
+    def analyze_memory_relationships(self):
+        """記憶間関係性を分析"""
+        if self.memory_integration:
+            return self.memory_integration.analyze_memory_relationships()
+        return {"message": "記憶統合システムが無効です"}
+    
+    def get_integrated_context(self, user_input: str = "", context_type: str = "full"):
+        """統合記憶コンテキストを取得"""
+        if self.memory_integration:
+            return self.memory_integration.generate_integrated_context(user_input, context_type)
+        return ""
+    
+    def suggest_adaptive_responses(self, user_input: str):
+        """適応的応答提案を取得"""
+        if self.memory_integration:
+            return self.memory_integration.suggest_adaptive_responses(user_input)
+        return []
+    
+    def find_related_memories(self, memory_id: str, memory_type: str, max_results: int = 5):
+        """関連記憶を検索"""
+        if self.memory_integration:
+            return self.memory_integration.find_related_memories(memory_id, memory_type, max_results)
+        return []
 
 # 簡単な使用例とテスト
 if __name__ == "__main__":

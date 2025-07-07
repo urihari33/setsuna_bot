@@ -1,0 +1,54 @@
+# せつなBot - キャラクター設定管理
+
+# プロンプト生成の動的調整設定
+dynamic_adjustments:
+  auto_reload: true  # 設定ファイルの自動再読み込み
+  cache_prompts: true  # プロンプトキャッシュ
+  debug_mode: false  # デバッグ情報の出力
+
+# コンテキスト認識の重み設定
+context_weights:
+  user_mood: 0.4      # ユーザーの気分への重み
+  conversation_flow: 0.3  # 会話の流れへの重み
+  music_context: 0.2   # 楽曲コンテキストへの重み
+  time_context: 0.1    # 時間コンテキストへの重み
+
+# 感情表現の強度調整
+emotion_intensity:
+  default: 0.6        # デフォルトの感情強度
+  video_related: 0.7  # 動画関連時の感情強度
+  technical_issues: 0.5  # 技術的問題時の感情強度
+  praise_received: 0.8   # 褒められた時の感情強度
+
+# 応答品質の管理設定
+quality_control:
+  max_response_length:
+    full_search: 120    # 通常モードの最大文字数
+    fast_response: 80   # 高速モードの最大文字数
+    ultra_fast: 50      # 超高速モードの最大文字数
+  
+  minimum_emotion_level: 0.3  # 最低限の感情表現レベル
+  character_consistency_check: true  # キャラクター一貫性チェック
+
+# モード別の特別設定
+mode_specific_settings:
+  full_search:
+    allow_detailed_analysis: true
+    enable_video_references: true
+    use_full_personality: true
+  
+  fast_response:
+    prioritize_empathy: true
+    simplify_explanations: true
+    maintain_warmth: true
+  
+  ultra_fast:
+    focus_on_core_emotion: true
+    minimize_thinking_expressions: true
+    direct_responses_only: true
+
+# 学習・適応設定
+learning_settings:
+  remember_user_preferences: true
+  adapt_to_conversation_style: true
+  improve_response_patterns: true

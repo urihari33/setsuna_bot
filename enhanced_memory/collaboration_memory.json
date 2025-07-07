@@ -1,0 +1,36 @@
+{
+  "work_patterns": [],
+  "success_patterns": [],
+  "communication_styles": [
+    {
+      "id": "comm_0001",
+      "date": "2025-07-07T22:32:33.914179",
+      "message_length": 17,
+      "message_type": "exclamation",
+      "formality": "casual",
+      "directness": "moderate",
+      "response_quality": "good",
+      "understanding_level": "confused",
+      "effectiveness_score": 0.5
+    }
+  ],
+  "project_preferences": {},
+  "workflow_analysis": {
+    "preferred_schedule": "未設定",
+    "work_pace": "中程度",
+    "feedback_style": "建設的",
+    "collaboration_mode": "対等",
+    "last_analyzed": "2025-07-07T22:32:31.056716"
+  },
+  "partnership_evolution": {
+    "trust_level": 0.5,
+    "sync_efficiency": 0.4,
+    "creative_compatibility": 0.6,
+    "communication_clarity": 0.5,
+    "last_updated": "2025-07-07T22:32:31.056724"
+  },
+  "shared_achievements": [],
+  "lesson_learned": [],
+  "created_at": "2025-07-07T22:32:31.056725",
+  "version": "1.0"
+}
