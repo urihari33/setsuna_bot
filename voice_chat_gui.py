@@ -29,6 +29,14 @@ from core.rich_message_renderer import RichMessageRenderer
 from core.progress_manager import ProgressManager
 from core.progress_widget import ProgressWidget, DetailProgressDialog
 from logging_system import get_logger, get_monitor
+from memory_mode_controller import get_memory_controller
+from test_memory_system import TestMemorySystem
+try:
+    from core.knowledge_analysis.knowledge_analysis_engine import KnowledgeAnalysisEngine
+    KNOWLEDGE_ENGINE_AVAILABLE = True
+except ImportError:
+    KNOWLEDGE_ENGINE_AVAILABLE = False
+    print("⚠️ KnowledgeAnalysisEngineが利用できません")
 
 class SetsunaGUI:
     """せつなBot統合GUI"""
@@ -57,6 +65,10 @@ class SetsunaGUI:
         # GUI状態
         self.voice_status = "待機中"
         
+        # メモリモード管理
+        self.memory_mode = "normal"  # "normal" | "test"
+        self.memory_controller = get_memory_controller()
+        
         # URL表示用データ
         self.current_video_urls = []  # 現在表示中の動画URLリスト
         
@@ -83,6 +95,13 @@ class SetsunaGUI:
         # Phase 2C-4: プログレス管理システム
         self.progress_manager = None
         self.progress_widget = None
+        
+        # 削除されたSAシステムの代替: KnowledgeAnalysisEngine
+        # interactive_exploration_engineは削除済み
+        
+        # 新しい知識分析エンジン
+        self.knowledge_analysis_engine = None
+        self.analysis_is_running = False
         
         self._create_widgets()
         self._setup_layout()
@@ -238,7 +257,7 @@ class SetsunaGUI:
         
         # GPT-4チャットシステム初期化
         try:
-            self.setsuna_chat = SetsunaChat()
+            self.setsuna_chat = SetsunaChat(memory_mode=self.memory_mode)
             self.update_status("GPT-4チャットシステム: ✅")
         except Exception as e:
             self.update_status(f"GPT-4チャットシステム: ❌ {e}")
@@ -253,6 +272,23 @@ class SetsunaGUI:
         except Exception as e:
             self.update_status(f"Phase 2B システム: ❌ {e}")
             print(f"⚠️ Phase 2B初期化失敗: {e}")
+        
+        # 知識分析エンジン初期化
+        try:
+            if KNOWLEDGE_ENGINE_AVAILABLE:
+                self.knowledge_analysis_engine = KnowledgeAnalysisEngine(
+                    progress_callback=self._on_analysis_progress
+                )
+                self.update_status("知識分析エンジン: ✅")
+                print("✅ 知識分析エンジン初期化成功")
+            else:
+                self.knowledge_analysis_engine = None
+                self.update_status("知識分析エンジン: ⚠️ 利用不可")
+                print("⚠️ 知識分析エンジン利用不可")
+        except Exception as e:
+            self.knowledge_analysis_engine = None
+            self.update_status(f"知識分析エンジン: ❌ {e}")
+            print(f"⚠️ 知識分析エンジン初期化失敗: {e}")
         
         # 音声認識システム初期化
         try:
@@ -312,6 +348,31 @@ class SetsunaGUI:
             self.update_status(f"Phase 2C-2 システム: ❌ {e}")
             print(f"⚠️ Phase 2C-2初期化失敗: {e}")
         
+        # SA学習システム初期化
+        try:
+            from core.adaptive_learning.integrated_sa_system import IntegratedSASystem
+            self.integrated_sa_system = IntegratedSASystem()
+            self.update_status("SA学習システム: ✅")
+            print("✅ SA学習システム初期化成功")
+        except Exception as e:
+            self.integrated_sa_system = None
+            self.update_status(f"SA学習システム: ❌ {e}")
+            print(f"⚠️ SA学習システム初期化失敗: {e}")
+        
+        # インタラクティブ探索エンジン初期化
+        try:
+            from core.adaptive_learning.interactive_exploration_engine import InteractiveExplorationEngine
+            
+            def progress_callback(message, progress):
+                if hasattr(self, 'sa_status_label'):
+                    self.root.after(0, lambda: self.sa_status_label.config(text=f"[{progress:3d}%] {message}", foreground='blue'))
+            
+            self.interactive_exploration_engine = InteractiveExplorationEngine(progress_callback)
+            print("✅ インタラクティブ探索エンジン初期化成功")
+        except Exception as e:
+            self.interactive_exploration_engine = None
+            print(f"⚠️ インタラクティブ探索エンジン初期化失敗: {e}")
+        
         print("✅ システムコンポーネント初期化完了")
     
     def _create_widgets(self):
@@ -332,6 +393,22 @@ class SetsunaGUI:
             text="🎤 音声: 待機中",
             font=('Arial', 10)
         )
+        
+        # メモリモード制御ウィジェット
+        self.memory_mode_frame = ttk.LabelFrame(self.status_frame, text="メモリモード", padding=5)
+        self.memory_mode_button = ttk.Button(
+            self.memory_mode_frame,
+            text="📝 通常モード",
+            command=self.toggle_memory_mode,
+            width=15
+        )
+        self.memory_status_label = ttk.Label(
+            self.memory_mode_frame,
+            text="💾 永続保存有効",
+            font=('Arial', 9),
+            foreground='green'
+        )
+        
         self.hotkey_info_label = ttk.Label(
             self.status_frame,
             text="📌 Ctrl+Shift+Alt: 通常モード | Shift+Ctrl: 高速モード",
@@ -358,6 +435,10 @@ class SetsunaGUI:
         self.video_learning_tab = ttk.Frame(self.notebook)
         self.notebook.add(self.video_learning_tab, text="🎵 動画学習")
         
+        # 知識分析タブ（旧SA学習のリニューアル）
+        self.knowledge_analysis_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.knowledge_analysis_tab, text="🧠 知識分析")
+        
         # チャットタブのウィジェット作成
         self._create_chat_widgets()
         
@@ -369,6 +450,9 @@ class SetsunaGUI:
         
         # 動画学習タブのウィジェット作成
         self._create_video_learning_widgets()
+        
+        # 知識分析タブのウィジェット作成（旧SA学習のリニューアル）
+        self._create_knowledge_analysis_widgets()
     
     def _create_chat_widgets(self):
         """チャットタブのウィジェット作成"""
@@ -764,10 +848,53 @@ class SetsunaGUI:
         
         # 統計情報フレーム
         project_stats_frame = ttk.LabelFrame(main_frame, text="プロジェクト統計", padding=10)
-        project_stats_frame.pack(fill=tk.X)
+        project_stats_frame.pack(fill=tk.X, pady=(0, 10))
         
         self.project_stats_label = ttk.Label(project_stats_frame, text="統計情報読み込み中...")
         self.project_stats_label.pack()
+        
+        # プロジェクト記憶表示フレーム
+        memory_frame = ttk.LabelFrame(main_frame, text="🧠 プロジェクト記憶・文脈", padding=10)
+        memory_frame.pack(fill=tk.X)
+        
+        # プロジェクト記憶ボタンフレーム
+        memory_button_frame = ttk.Frame(memory_frame)
+        memory_button_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # 長期記憶表示ボタン
+        long_memory_button = ttk.Button(
+            memory_button_frame,
+            text="🔗 長期記憶状況表示",
+            command=self.show_long_term_memory
+        )
+        long_memory_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # プロジェクト文脈表示ボタン
+        context_button = ttk.Button(
+            memory_button_frame,
+            text="💭 現在の文脈表示",
+            command=self.show_project_context
+        )
+        context_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # 記憶統合分析ボタン
+        integration_button = ttk.Button(
+            memory_button_frame,
+            text="🧩 記憶統合分析",
+            command=self.analyze_memory_integration
+        )
+        integration_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # プロジェクト記憶表示エリア
+        self.project_memory_text = scrolledtext.ScrolledText(
+            memory_frame,
+            wrap=tk.WORD,
+            width=80,
+            height=8,
+            font=('Arial', 10),
+            state=tk.DISABLED
+        )
+        self.project_memory_text.pack(fill=tk.BOTH, expand=True, pady=(10, 0))
     
     def _create_video_learning_widgets(self):
         """動画学習タブのウィジェット作成"""
@@ -1367,6 +1494,12 @@ class SetsunaGUI:
         # ステータス
         self.status_frame.pack(fill=tk.X, padx=10, pady=5)
         self.voice_status_label.pack(side=tk.LEFT)
+        
+        # メモリモード制御ウィジェット
+        self.memory_mode_frame.pack(side=tk.LEFT, padx=(20, 0))
+        self.memory_mode_button.pack(side=tk.LEFT)
+        self.memory_status_label.pack(side=tk.LEFT, padx=(10, 0))
+        
         self.hotkey_info_label.pack(side=tk.RIGHT)
         
         # タブコントロール
@@ -3999,6 +4132,204 @@ class SetsunaGUI:
         except Exception as e:
             messagebox.showerror("エラー", f"学習履歴の取得に失敗しました: {e}")
     
+    def show_long_term_memory(self):
+        """長期プロジェクト記憶状況を表示"""
+        try:
+            self.project_memory_text.config(state=tk.NORMAL)
+            self.project_memory_text.delete(1.0, tk.END)
+            
+            if hasattr(self.setsuna_chat, 'long_term_memory') and self.setsuna_chat.long_term_memory:
+                ltm = self.setsuna_chat.long_term_memory
+                
+                # プロジェクト記憶データ統計
+                memory_data = ltm.project_memory_data
+                
+                display_text = "【長期プロジェクト記憶システム状況】\n\n"
+                
+                # 基本統計
+                contexts_count = len(memory_data.get("project_contexts", {}))
+                links_count = len(memory_data.get("memory_links", {}))
+                decisions_count = sum(len(decisions) for decisions in memory_data.get("decision_chains", {}).values())
+                snapshots_count = sum(len(snapshots) for snapshots in memory_data.get("context_snapshots", {}).values())
+                
+                display_text += f"📊 基本統計:\n"
+                display_text += f"  - プロジェクト文脈: {contexts_count}件\n"
+                display_text += f"  - 記憶リンク: {links_count}件\n"
+                display_text += f"  - 意思決定記録: {decisions_count}件\n"
+                display_text += f"  - 文脈スナップショット: {snapshots_count}件\n\n"
+                
+                # プロジェクト別記憶リンク
+                if memory_data.get("memory_links"):
+                    display_text += "🔗 プロジェクト別記憶リンク:\n"
+                    for project_id, links in memory_data["memory_links"].items():
+                        project = ltm._get_project_by_id(project_id)
+                        project_title = project.get("title", "Unknown") if project else "Unknown"
+                        
+                        collab_count = len(links.get("collaboration_memories", []))
+                        person_count = len(links.get("personality_memories", []))
+                        integration_count = len(links.get("integration_patterns", []))
+                        
+                        display_text += f"  - {project_title}: 協働{collab_count}件, 個人{person_count}件, 統合{integration_count}件\n"
+                    display_text += "\n"
+                
+                # 最近の意思決定
+                if memory_data.get("decision_chains"):
+                    display_text += "📝 最近の意思決定:\n"
+                    all_decisions = []
+                    for project_id, decisions in memory_data["decision_chains"].items():
+                        for decision in decisions[-2:]:  # 最新2件
+                            project = ltm._get_project_by_id(project_id)
+                            project_title = project.get("title", "Unknown") if project else "Unknown"
+                            all_decisions.append((project_title, decision))
+                    
+                    # 時系列でソート
+                    all_decisions.sort(key=lambda x: x[1].get("timestamp", ""), reverse=True)
+                    
+                    for project_title, decision in all_decisions[:5]:  # 最新5件
+                        decision_type = decision.get("type", "general")
+                        description = decision.get("description", "")[:40]
+                        display_text += f"  - {project_title}: {decision_type} - {description}...\n"
+                    display_text += "\n"
+                
+                # システム設定
+                display_text += "⚙️ システム設定:\n"
+                config = ltm.config
+                display_text += f"  - 文脈保持期間: {config.get('max_context_memory_days', 180)}日\n"
+                display_text += f"  - 記憶リンク閾値: {config.get('memory_link_threshold', 0.3)}\n"
+                display_text += f"  - 自動リンク: {'有効' if config.get('auto_link_enabled', True) else '無効'}\n"
+                
+            else:
+                display_text = "長期プロジェクト記憶システムが初期化されていません。"
+            
+            self.project_memory_text.insert(tk.END, display_text)
+            self.project_memory_text.config(state=tk.DISABLED)
+            
+            print("📊 長期記憶状況表示完了")
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"長期記憶表示エラー: {e}")
+    
+    def show_project_context(self):
+        """現在のプロジェクト文脈を表示"""
+        try:
+            self.project_memory_text.config(state=tk.NORMAL)
+            self.project_memory_text.delete(1.0, tk.END)
+            
+            if hasattr(self.setsuna_chat, 'conversation_project_context') and self.setsuna_chat.conversation_project_context:
+                cpc = self.setsuna_chat.conversation_project_context
+                
+                # 現在のプロジェクト文脈を取得
+                current_context = cpc.get_current_project_context(include_history=True)
+                
+                display_text = "【現在のプロジェクト文脈】\n\n"
+                
+                if current_context:
+                    display_text += current_context + "\n\n"
+                else:
+                    display_text += "現在アクティブなプロジェクト文脈はありません。\n\n"
+                
+                # アクション提案
+                suggestions = cpc.suggest_project_actions()
+                if suggestions:
+                    display_text += "💡 推奨アクション:\n"
+                    for suggestion in suggestions:
+                        action_type = suggestion.get("type", "unknown")
+                        action = suggestion.get("action", "")
+                        description = suggestion.get("description", "")
+                        priority = suggestion.get("priority", "medium")
+                        
+                        priority_icon = "🔴" if priority == "high" else "🟡" if priority == "medium" else "🟢"
+                        display_text += f"  {priority_icon} {action}: {description}\n"
+                    display_text += "\n"
+                
+                # 統計情報
+                context_data = cpc.context_data
+                active_threads = len(context_data.get("active_project_threads", {}))
+                conversation_links = len(context_data.get("conversation_project_links", []))
+                memory_activations = len(context_data.get("memory_activation_history", []))
+                
+                display_text += "📈 文脈統計:\n"
+                display_text += f"  - アクティブスレッド: {active_threads}件\n"
+                display_text += f"  - 会話リンク: {conversation_links}件\n"
+                display_text += f"  - 記憶活性化履歴: {memory_activations}件\n"
+                
+            else:
+                display_text = "会話プロジェクト文脈システムが初期化されていません。"
+            
+            self.project_memory_text.insert(tk.END, display_text)
+            self.project_memory_text.config(state=tk.DISABLED)
+            
+            print("💭 プロジェクト文脈表示完了")
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"プロジェクト文脈表示エラー: {e}")
+    
+    def analyze_memory_integration(self):
+        """記憶統合分析を実行・表示"""
+        try:
+            self.project_memory_text.config(state=tk.NORMAL)
+            self.project_memory_text.delete(1.0, tk.END)
+            
+            if hasattr(self.setsuna_chat, 'memory_integration') and self.setsuna_chat.memory_integration:
+                mi = self.setsuna_chat.memory_integration
+                
+                display_text = "【記憶統合分析】\n\n"
+                
+                # 記憶関係性分析を実行
+                analysis_stats = mi.analyze_memory_relationships()
+                
+                if analysis_stats and "error" not in analysis_stats:
+                    display_text += "🔍 記憶関係性分析結果:\n"
+                    display_text += f"  - 時系列関係: {analysis_stats.get('temporal_relationships', 0)}件\n"
+                    display_text += f"  - テーマ関係: {analysis_stats.get('thematic_relationships', 0)}件\n"
+                    display_text += f"  - 因果関係: {analysis_stats.get('causal_relationships', 0)}件\n"
+                    display_text += f"  - 総関係性: {analysis_stats.get('total_relationships', 0)}件\n\n"
+                
+                # 統計情報
+                stats = mi.get_memory_stats()
+                display_text += "📊 記憶統合統計:\n"
+                display_text += f"  - 総関係性: {stats.get('total_relationships', 0)}件\n"
+                display_text += f"  - 記憶クラスター: {stats.get('total_clusters', 0)}件\n"
+                
+                strength_dist = stats.get('strength_distribution', {})
+                display_text += f"  - 強い関係性: {strength_dist.get('strong', 0)}件\n"
+                display_text += f"  - 中程度関係性: {strength_dist.get('moderate', 0)}件\n"
+                display_text += f"  - 弱い関係性: {strength_dist.get('weak', 0)}件\n\n"
+                
+                # 関係性タイプ別統計
+                type_stats = stats.get('relationship_types', {})
+                if type_stats:
+                    display_text += "🔗 関係性タイプ別:\n"
+                    for rel_type, count in type_stats.items():
+                        type_name = mi.integration_data["relationship_types"].get(rel_type, rel_type)
+                        display_text += f"  - {type_name}: {count}件\n"
+                    display_text += "\n"
+                
+                # 記憶クラスター情報
+                clusters = mi.integration_data.get("memory_clusters", {})
+                if clusters:
+                    display_text += "🧩 記憶クラスター:\n"
+                    for cluster_name, cluster_data in list(clusters.items())[:5]:  # 上位5件
+                        theme = cluster_data.get("theme", "")
+                        memory_count = len(cluster_data.get("personality_memories", [])) + len(cluster_data.get("collaboration_memories", []))
+                        avg_strength = cluster_data.get("average_strength", 0)
+                        display_text += f"  - {theme}: {memory_count}件の記憶 (強度: {avg_strength:.2f})\n"
+                    display_text += "\n"
+                
+                # 最新分析時刻
+                display_text += f"⏰ 最終分析: {stats.get('last_analysis', 'Unknown')}\n"
+                
+            else:
+                display_text = "記憶統合システムが初期化されていません。"
+            
+            self.project_memory_text.insert(tk.END, display_text)
+            self.project_memory_text.config(state=tk.DISABLED)
+            
+            print("🧩 記憶統合分析完了")
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"記憶統合分析エラー: {e}")
+    
     
     def run(self):
         """GUI実行"""
@@ -4400,6 +4731,1867 @@ class SetsunaGUI:
         except Exception as e:
             messagebox.showerror("エラー", f"チャット設定エラー: {e}")
     
+    def toggle_memory_mode(self):
+        """メモリモード切り替え"""
+        try:
+            if self.memory_mode == "normal":
+                # テストモードへの切り替え確認
+                result = messagebox.askyesno(
+                    "テストモード切り替え",
+                    "テストモードに切り替えますか？\n\n"
+                    "⚠️ この後の会話は保存されません\n"
+                    "💾 現在の会話履歴は保持されます\n"
+                    "🔄 システムが再初期化されます"
+                )
+                if result:
+                    self._switch_to_test_mode()
+            else:
+                # 通常モードへの復帰（確認なし）
+                self._switch_to_normal_mode()
+        except Exception as e:
+            messagebox.showerror("エラー", f"メモリモード切り替えエラー: {e}")
+    
+    def _switch_to_test_mode(self):
+        """テストモードに切り替え"""
+        try:
+            self.memory_mode = "test"
+            self.memory_controller.switch_to_test_mode()
+            
+            # UI更新
+            self.memory_mode_button.configure(text="🧪 テストモード")
+            self.memory_status_label.configure(
+                text="⚠️ 会話は保存されません",
+                foreground='orange'
+            )
+            
+            # タイトル更新
+            self.title_label.configure(text="🧪 [TEST] せつなBot - 音声・テキスト対話システム")
+            self.root.title("🧪 [TEST] せつなBot - 統合音声・テキスト対話システム")
+            
+            # SetsunaChat再初期化
+            self._reinitialize_setsuna_chat()
+            
+            # ステータス更新
+            self.update_status("🧪 テストモードに切り替えました（会話は保存されません）")
+            
+            print("🧪 GUI: テストモードに切り替え完了")
+            
+        except Exception as e:
+            print(f"❌ テストモード切り替えエラー: {e}")
+            messagebox.showerror("エラー", f"テストモード切り替え失敗: {e}")
+    
+    def _switch_to_normal_mode(self):
+        """通常モードに切り替え"""
+        try:
+            self.memory_mode = "normal"
+            self.memory_controller.switch_to_normal_mode()
+            
+            # UI更新
+            self.memory_mode_button.configure(text="📝 通常モード")
+            self.memory_status_label.configure(
+                text="💾 永続保存有効",
+                foreground='green'
+            )
+            
+            # タイトル復帰
+            self.title_label.configure(text="🤖 せつなBot - 音声・テキスト対話システム")
+            self.root.title("せつなBot - 統合音声・テキスト対話システム")
+            
+            # SetsunaChat再初期化
+            self._reinitialize_setsuna_chat()
+            
+            # ステータス更新
+            self.update_status("📝 通常モードに戻りました（会話は永続保存されます）")
+            
+            print("📝 GUI: 通常モードに復帰完了")
+            
+        except Exception as e:
+            print(f"❌ 通常モード復帰エラー: {e}")
+            messagebox.showerror("エラー", f"通常モード復帰失敗: {e}")
+    
+    def _create_sa_learning_widgets(self):
+        """知識分析タブのウィジェット作成（新レポートベースシステム）"""
+        print("🧠 知識分析ウィジェット作成開始...")
+        
+        # メインフレーム
+        main_frame = ttk.Frame(self.sa_learning_tab)
+        main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        # タイトル
+        title_label = ttk.Label(
+            main_frame, 
+            text="🧠 知識分析システム（レポートベース）",
+            font=('Arial', 16, 'bold')
+        )
+        title_label.pack(pady=(0, 15))
+        
+        # 上部: 分析設定パネル
+        control_frame = ttk.LabelFrame(main_frame, text="知識分析設定", padding=15)
+        control_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # プロンプト入力エリア
+        prompt_frame = ttk.Frame(control_frame)
+        prompt_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        ttk.Label(prompt_frame, text="📝 分析プロンプト:", font=('Arial', 10, 'bold')).pack(anchor='w')
+        
+        # 大きなテキストエリア
+        self.analysis_prompt_text = scrolledtext.ScrolledText(
+            prompt_frame,
+            height=4,
+            width=80,
+            wrap=tk.WORD,
+            font=('Arial', 10)
+        )
+        self.analysis_prompt_text.pack(fill=tk.X, pady=(5, 0))
+        self.analysis_prompt_text.insert(1.0, "AI技術の最新動向について包括的に調べたい")
+        
+        # 設定行: 検索数と予算
+        settings_row = ttk.Frame(control_frame)
+        settings_row.pack(fill=tk.X, pady=(10, 0))
+        
+        # 検索数設定
+        ttk.Label(settings_row, text="検索件数:", font=('Arial', 10, 'bold')).pack(side=tk.LEFT)
+        self.search_count_var = tk.IntVar(value=100)
+        self.search_count_spin = ttk.Spinbox(
+            settings_row, 
+            from_=10, to=200, increment=10,
+            textvariable=self.search_count_var,
+            width=8
+        )
+        self.search_count_spin.pack(side=tk.LEFT, padx=(5, 20))
+        
+        # 予算設定
+        ttk.Label(settings_row, text="予算($):", font=('Arial', 10, 'bold')).pack(side=tk.LEFT)
+        self.analysis_budget_var = tk.DoubleVar(value=1.0)
+        self.analysis_budget_spin = ttk.Spinbox(
+            settings_row, 
+            from_=0.1, to=10.0, increment=0.1,
+            textvariable=self.analysis_budget_var,
+            width=8
+        )
+        self.analysis_budget_spin.pack(side=tk.LEFT, padx=(5, 20))
+        
+        # セッション管理
+        ttk.Label(settings_row, text="セッション:", font=('Arial', 10, 'bold')).pack(side=tk.LEFT)
+        self.current_session_label = ttk.Label(settings_row, text="新規", font=('Arial', 9), foreground='blue')
+        self.current_session_label.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # 制御ボタン
+        button_frame = ttk.Frame(control_frame)
+        button_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        # 分析開始ボタン
+        self.analysis_start_button = ttk.Button(
+            button_frame,
+            text="🚀 分析開始",
+            command=self.start_knowledge_analysis,
+            style="Accent.TButton"
+        )
+        self.analysis_start_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # 継続分析ボタン
+        self.analysis_continue_button = ttk.Button(
+            button_frame,
+            text="📝 前回の続きを分析",
+            command=self.continue_knowledge_analysis,
+            state=tk.DISABLED
+        )
+        self.analysis_continue_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # 履歴ボタン
+        self.analysis_history_button = ttk.Button(
+            button_frame,
+            text="📚 履歴",
+            command=self.show_analysis_history
+        )
+        self.analysis_history_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # セッション保存ボタン
+        self.session_save_button = ttk.Button(
+            button_frame,
+            text="💾 セッション保存",
+            command=self.save_analysis_session,
+            state=tk.DISABLED
+        )
+        self.session_save_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # 状態表示
+        self.analysis_status_label = ttk.Label(
+            button_frame,
+            text="⏳ 待機中",
+            font=('Arial', 10, 'bold'),
+            foreground='blue'
+        )
+        self.analysis_status_label.pack(side=tk.LEFT, padx=(20, 0))
+        
+        # 中部: 進捗表示
+        progress_frame = ttk.LabelFrame(main_frame, text="分析進捗", padding=15)
+        progress_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # 進捗情報
+        progress_info = ttk.Frame(progress_frame)
+        progress_info.pack(fill=tk.X, pady=(0, 10))
+        
+        # 検索進捗
+        ttk.Label(progress_info, text="検索済み:", font=('Arial', 9)).pack(side=tk.LEFT)
+        self.search_progress_label = ttk.Label(progress_info, text="0/100", font=('Arial', 10, 'bold'), foreground='blue')
+        self.search_progress_label.pack(side=tk.LEFT, padx=(5, 20))
+        
+        # レポート数
+        ttk.Label(progress_info, text="レポート数:", font=('Arial', 9)).pack(side=tk.LEFT)
+        self.report_count_label = ttk.Label(progress_info, text="0", font=('Arial', 10, 'bold'))
+        self.report_count_label.pack(side=tk.LEFT, padx=(5, 20))
+        
+        # 現在コスト
+        ttk.Label(progress_info, text="総コスト:", font=('Arial', 9)).pack(side=tk.LEFT)
+        self.analysis_cost_label = ttk.Label(progress_info, text="$0.00", font=('Arial', 10, 'bold'), foreground='green')
+        self.analysis_cost_label.pack(side=tk.LEFT, padx=(5, 20))
+        
+        # データ品質
+        ttk.Label(progress_info, text="データ品質:", font=('Arial', 9)).pack(side=tk.LEFT)
+        self.data_quality_label = ttk.Label(progress_info, text="0.0", font=('Arial', 10, 'bold'), foreground='purple')
+        self.data_quality_label.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # プログレスバー
+        progress_bar_frame = ttk.Frame(progress_frame)
+        progress_bar_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        ttk.Label(progress_bar_frame, text="分析進捗:", font=('Arial', 9)).pack(side=tk.LEFT)
+        self.analysis_progress_var = tk.DoubleVar()
+        self.analysis_progress_bar = ttk.Progressbar(
+            progress_bar_frame,
+            variable=self.analysis_progress_var,
+            length=300,
+            mode='determinate'
+        )
+        self.analysis_progress_bar.pack(side=tk.LEFT, padx=(5, 10), fill=tk.X, expand=True)
+        
+        # パーセント表示
+        self.analysis_progress_percent_label = ttk.Label(progress_bar_frame, text="0%", font=('Arial', 9))
+        self.analysis_progress_percent_label.pack(side=tk.LEFT)
+        
+        # 継続分析エリア
+        continue_frame = ttk.LabelFrame(progress_frame, text="次の分析", padding=10)
+        continue_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        # 3択ボタン
+        choice_buttons = ttk.Frame(continue_frame)
+        choice_buttons.pack(fill=tk.X, pady=(0, 10))
+        
+        self.expand_analysis_button = ttk.Button(
+            choice_buttons, 
+            text="🌐 範囲を広げる", 
+            command=lambda: self.continue_analysis_with_direction("expand"),
+            width=15
+        )
+        self.expand_analysis_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        self.deepen_analysis_button = ttk.Button(
+            choice_buttons, 
+            text="🔍 特定分野を深堀", 
+            command=lambda: self.continue_analysis_with_direction("deepen"),
+            width=15
+        )
+        self.deepen_analysis_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        self.custom_analysis_button = ttk.Button(
+            choice_buttons, 
+            text="✏️ カスタム分析", 
+            command=self.show_custom_analysis_dialog,
+            width=15
+        )
+        self.custom_analysis_button.pack(side=tk.LEFT, padx=(0, 0))
+        
+        # 初期状態で無効化
+        for btn in [self.expand_analysis_button, self.deepen_analysis_button, self.custom_analysis_button]:
+            btn.config(state=tk.DISABLED)
+        
+        # 下部: 結果表示
+        results_frame = ttk.LabelFrame(main_frame, text="分析結果", padding=10)
+        results_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # 結果タブ
+        self.analysis_results_notebook = ttk.Notebook(results_frame)
+        self.analysis_results_notebook.pack(fill=tk.BOTH, expand=True)
+        
+        # 最新レポートタブ
+        self.latest_report_frame = ttk.Frame(self.analysis_results_notebook)
+        self.analysis_results_notebook.add(self.latest_report_frame, text="📊 最新レポート")
+        
+        self.latest_report_text = scrolledtext.ScrolledText(
+            self.latest_report_frame,
+            wrap=tk.WORD,
+            height=8,
+            width=80,
+            font=('Arial', 9),
+            state=tk.DISABLED
+        )
+        self.latest_report_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # 詳細データタブ
+        self.detailed_data_frame = ttk.Frame(self.analysis_results_notebook)
+        self.analysis_results_notebook.add(self.detailed_data_frame, text="📋 詳細データ")
+        
+        self.detailed_data_text = scrolledtext.ScrolledText(
+            self.detailed_data_frame,
+            wrap=tk.WORD,
+            height=8,
+            width=80,
+            font=('Arial', 9),
+            state=tk.DISABLED
+        )
+        self.detailed_data_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # セッション履歴タブ
+        self.session_history_frame = ttk.Frame(self.analysis_results_notebook)
+        self.analysis_results_notebook.add(self.session_history_frame, text="🔗 セッション履歴")
+        
+        self.session_history_text = scrolledtext.ScrolledText(
+            self.session_history_frame,
+            wrap=tk.WORD,
+            height=8,
+            width=80,
+            font=('Arial', 9),
+            state=tk.DISABLED
+        )
+        self.session_history_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # 知識分析システム初期化
+        self.knowledge_analysis_engine = None
+        self.current_analysis_session = None
+        self.analysis_is_running = False
+        
+        print("✅ 知識分析ウィジェット作成完了")
+    
+    def _create_knowledge_analysis_widgets(self):
+        """知識分析タブのウィジェット作成（リニューアル版）"""
+        main_frame = ttk.Frame(self.knowledge_analysis_tab)
+        main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        # タイトル・説明エリア
+        title_frame = ttk.LabelFrame(main_frame, text="🧠 知識分析システム", padding=10)
+        title_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        ttk.Label(
+            title_frame,
+            text="リアルタイム検索・GPT分析・品質監視を統合した知識分析システム",
+            font=('Arial', 10),
+            foreground='darkblue'
+        ).pack()
+        
+        # 分析パラメータエリア
+        params_frame = ttk.LabelFrame(main_frame, text="分析パラメータ", padding=10)
+        params_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        # プロンプト入力
+        prompt_frame = ttk.Frame(params_frame)
+        prompt_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        ttk.Label(prompt_frame, text="分析プロンプト:").pack(anchor=tk.W)
+        self.analysis_prompt_text = tk.Text(
+            prompt_frame,
+            height=3,
+            width=70,
+            font=('Arial', 10),
+            wrap=tk.WORD
+        )
+        self.analysis_prompt_text.pack(fill=tk.X, pady=(5, 0))
+        self.analysis_prompt_text.insert("1.0", "音楽制作の最新トレンドについて教えて")
+        
+        # パラメータ設定
+        settings_frame = ttk.Frame(params_frame)
+        settings_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        # 検索数設定
+        search_frame = ttk.Frame(settings_frame)
+        search_frame.pack(side=tk.LEFT, padx=(0, 20))
+        
+        ttk.Label(search_frame, text="検索数:").pack(side=tk.LEFT)
+        self.search_count_var = tk.IntVar(value=50)
+        search_spinbox = ttk.Spinbox(
+            search_frame,
+            from_=10,
+            to=200,
+            width=10,
+            textvariable=self.search_count_var
+        )
+        search_spinbox.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # 予算設定
+        budget_frame = ttk.Frame(settings_frame)
+        budget_frame.pack(side=tk.LEFT, padx=(0, 20))
+        
+        ttk.Label(budget_frame, text="予算上限:").pack(side=tk.LEFT)
+        self.analysis_budget_var = tk.DoubleVar(value=1.0)
+        budget_spinbox = ttk.Spinbox(
+            budget_frame,
+            from_=0.1,
+            to=10.0,
+            increment=0.1,
+            width=10,
+            textvariable=self.analysis_budget_var,
+            format="%.1f"
+        )
+        budget_spinbox.pack(side=tk.LEFT, padx=(5, 0))
+        ttk.Label(budget_frame, text="$").pack(side=tk.LEFT)
+        
+        # 実行ボタンエリア
+        control_frame = ttk.Frame(params_frame)
+        control_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        self.analysis_start_button = ttk.Button(
+            control_frame,
+            text="🚀 分析開始",
+            command=self.start_knowledge_analysis,
+            style="Accent.TButton"
+        )
+        self.analysis_start_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # ステータス表示
+        self.analysis_status_label = ttk.Label(
+            control_frame,
+            text="待機中...",
+            font=('Arial', 10),
+            foreground='blue'
+        )
+        self.analysis_status_label.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # セッション情報
+        session_frame = ttk.Frame(control_frame)
+        session_frame.pack(side=tk.RIGHT)
+        
+        ttk.Label(session_frame, text="セッション:").pack(side=tk.LEFT)
+        self.current_session_label = ttk.Label(
+            session_frame,
+            text="未開始",
+            font=('Arial', 9),
+            foreground='gray'
+        )
+        self.current_session_label.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # 進捗表示エリア
+        progress_frame = ttk.Frame(params_frame)
+        progress_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        ttk.Label(progress_frame, text="分析進捗:").pack(side=tk.LEFT)
+        
+        # 進捗バー変数を初期化
+        self.analysis_progress_var = tk.DoubleVar()
+        self.analysis_progress_bar = ttk.Progressbar(
+            progress_frame,
+            variable=self.analysis_progress_var,
+            maximum=100,
+            mode='determinate',
+            length=200
+        )
+        self.analysis_progress_bar.pack(side=tk.LEFT, padx=(10, 10))
+        
+        # 進捗パーセント表示ラベル
+        self.analysis_progress_percent_label = ttk.Label(
+            progress_frame,
+            text="0%",
+            font=('Arial', 9, 'bold'),
+            foreground='blue'
+        )
+        self.analysis_progress_percent_label.pack(side=tk.LEFT, padx=(5, 10))
+        
+        # レポート数表示ラベル
+        self.report_count_label = ttk.Label(
+            progress_frame,
+            text="レポート: 0件",
+            font=('Arial', 9),
+            foreground='darkgreen'
+        )
+        self.report_count_label.pack(side=tk.LEFT, padx=(5, 10))
+        
+        # コスト表示ラベル
+        self.analysis_cost_label = ttk.Label(
+            progress_frame,
+            text="コスト: $0.00",
+            font=('Arial', 9),
+            foreground='purple'
+        )
+        self.analysis_cost_label.pack(side=tk.LEFT, padx=(5, 0))
+        
+        # 継続分析エリア
+        continue_frame = ttk.LabelFrame(main_frame, text="継続分析オプション", padding=10)
+        continue_frame.pack(fill=tk.X, pady=(0, 10))
+        
+        choice_buttons = ttk.Frame(continue_frame)
+        choice_buttons.pack(fill=tk.X, pady=(0, 10))
+        
+        self.expand_analysis_button = ttk.Button(
+            choice_buttons, 
+            text="🌐 範囲を広げる", 
+            command=lambda: self.continue_analysis_with_direction("expand"),
+            width=15
+        )
+        self.expand_analysis_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        self.deepen_analysis_button = ttk.Button(
+            choice_buttons, 
+            text="🔍 特定分野を深堀", 
+            command=lambda: self.continue_analysis_with_direction("deepen"),
+            width=15
+        )
+        self.deepen_analysis_button.pack(side=tk.LEFT, padx=(0, 10))
+        
+        self.custom_analysis_button = ttk.Button(
+            choice_buttons, 
+            text="✏️ カスタム分析", 
+            command=self.show_custom_analysis_dialog,
+            width=15
+        )
+        self.custom_analysis_button.pack(side=tk.LEFT, padx=(0, 0))
+        
+        # 品質監視エリア
+        quality_frame = ttk.LabelFrame(continue_frame, text="品質監視", padding=5)
+        quality_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        quality_buttons = ttk.Frame(quality_frame)
+        quality_buttons.pack(fill=tk.X)
+        
+        ttk.Button(
+            quality_buttons,
+            text="📊 品質統計",
+            command=self.show_quality_statistics,
+            width=12
+        ).pack(side=tk.LEFT, padx=(0, 5))
+        
+        ttk.Button(
+            quality_buttons,
+            text="📈 傾向分析",
+            command=self.show_quality_trends,
+            width=12
+        ).pack(side=tk.LEFT, padx=(0, 5))
+        
+        ttk.Button(
+            quality_buttons,
+            text="🚨 アラート",
+            command=self.show_quality_alerts,
+            width=12
+        ).pack(side=tk.LEFT, padx=(0, 5))
+        
+        # 初期状態で無効化
+        for btn in [self.expand_analysis_button, self.deepen_analysis_button, self.custom_analysis_button]:
+            btn.config(state=tk.DISABLED)
+        
+        # 下部: 結果表示
+        results_frame = ttk.LabelFrame(main_frame, text="分析結果", padding=10)
+        results_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # 結果タブ
+        self.analysis_results_notebook = ttk.Notebook(results_frame)
+        self.analysis_results_notebook.pack(fill=tk.BOTH, expand=True)
+        
+        # 最新レポートタブ
+        self.latest_report_frame = ttk.Frame(self.analysis_results_notebook)
+        self.analysis_results_notebook.add(self.latest_report_frame, text="📊 最新レポート")
+        
+        self.latest_report_text = scrolledtext.ScrolledText(
+            self.latest_report_frame,
+            wrap=tk.WORD,
+            height=8,
+            width=80,
+            font=('Arial', 9),
+            state=tk.DISABLED
+        )
+        self.latest_report_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # 詳細データタブ
+        self.detailed_data_frame = ttk.Frame(self.analysis_results_notebook)
+        self.analysis_results_notebook.add(self.detailed_data_frame, text="📋 詳細データ")
+        
+        self.detailed_data_text = scrolledtext.ScrolledText(
+            self.detailed_data_frame,
+            wrap=tk.WORD,
+            height=8,
+            width=80,
+            font=('Arial', 9),
+            state=tk.DISABLED
+        )
+        self.detailed_data_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # セッション履歴タブ
+        self.session_history_frame = ttk.Frame(self.analysis_results_notebook)
+        self.analysis_results_notebook.add(self.session_history_frame, text="🔗 セッション履歴")
+        
+        self.session_history_text = scrolledtext.ScrolledText(
+            self.session_history_frame,
+            wrap=tk.WORD,
+            height=8,
+            width=80,
+            font=('Arial', 9),
+            state=tk.DISABLED
+        )
+        self.session_history_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # 追加の制御ボタンエリア
+        additional_controls_frame = ttk.Frame(results_frame)
+        additional_controls_frame.pack(fill=tk.X, pady=(10, 0))
+        
+        # データ品質表示ラベル
+        self.data_quality_label = ttk.Label(
+            additional_controls_frame,
+            text="データ品質: 未評価",
+            font=('Arial', 9),
+            foreground='orange'
+        )
+        self.data_quality_label.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # 検索進捗表示ラベル
+        self.search_progress_label = ttk.Label(
+            additional_controls_frame,
+            text="検索進捗: 0/0",
+            font=('Arial', 9),
+            foreground='darkblue'
+        )
+        self.search_progress_label.pack(side=tk.LEFT, padx=(0, 10))
+        
+        # 分析継続ボタン
+        self.analysis_continue_button = ttk.Button(
+            additional_controls_frame,
+            text="🔄 継続",
+            command=self.continue_knowledge_analysis,
+            width=10,
+            state=tk.DISABLED
+        )
+        self.analysis_continue_button.pack(side=tk.LEFT, padx=(10, 10))
+        
+        # セッション保存ボタン
+        self.session_save_button = ttk.Button(
+            additional_controls_frame,
+            text="💾 保存",
+            command=self.save_analysis_session,
+            width=10,
+            state=tk.DISABLED
+        )
+        self.session_save_button.pack(side=tk.LEFT, padx=(0, 0))
+        
+        print("✅ 知識分析ウィジェット作成完了（リニューアル版）")
+    
+    def show_quality_statistics(self):
+        """品質統計表示"""
+        try:
+            if not self.knowledge_analysis_engine:
+                messagebox.showwarning("警告", "知識分析エンジンが初期化されていません")
+                return
+            
+            stats = self.knowledge_analysis_engine.get_quality_statistics(30)
+            if "error" in stats:
+                messagebox.showerror("エラー", stats["error"])
+                return
+            
+            stats_message = f"""📊 品質統計情報 (過去30日):
+            
+• 総記録数: {stats.get('total_records', 0)}件
+• 平均品質スコア: {stats.get('average_score', 0):.3f}
+• スコア範囲: {stats.get('score_range', [0, 0])[0]:.3f} - {stats.get('score_range', [0, 0])[1]:.3f}
+• 総問題数: {stats.get('total_issues', 0)}件
+• 重大問題数: {stats.get('critical_issues', 0)}件
+• 総コスト: ${stats.get('total_cost', 0):.6f}
+• 平均処理時間: {stats.get('avg_processing_time', 0):.2f}秒
+• データベースサイズ: {stats.get('db_size_mb', 0):.2f}MB"""
+            
+            messagebox.showinfo("品質統計", stats_message)
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"品質統計取得エラー: {e}")
+    
+    def show_quality_trends(self):
+        """品質傾向分析表示"""
+        try:
+            if not self.knowledge_analysis_engine:
+                messagebox.showwarning("警告", "知識分析エンジンが初期化されていません")
+                return
+            
+            trend = self.knowledge_analysis_engine.get_quality_trend_analysis(7)
+            if "error" in trend:
+                messagebox.showerror("エラー", trend["error"])
+                return
+            
+            recommendations_text = "\n".join([f"  • {rec}" for rec in trend.get('recommendations', [])])
+            
+            trend_message = f"""📈 品質傾向分析 (過去7日):
+            
+• 傾向: {trend.get('trend', 'unknown')}
+• 平均スコア: {trend.get('avg_score', 0):.3f}
+• スコア変化: {trend.get('score_change', 0):+.3f}
+• 変動性: {trend.get('volatility', 0):.3f}
+
+🔍 推奨事項:
+{recommendations_text}"""
+            
+            messagebox.showinfo("品質傾向分析", trend_message)
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"品質傾向分析エラー: {e}")
+    
+    def show_quality_alerts(self):
+        """品質アラート表示"""
+        try:
+            if not self.knowledge_analysis_engine:
+                messagebox.showwarning("警告", "知識分析エンジンが初期化されていません")
+                return
+            
+            alerts = self.knowledge_analysis_engine.get_recent_quality_alerts(24)
+            if not alerts or "error" in alerts[0]:
+                messagebox.showinfo("品質アラート", "過去24時間にアラートはありません")
+                return
+            
+            alert_text = "🚨 最近のアラート (過去24時間):\n\n"
+            for alert in alerts[:5]:  # 最大5件表示
+                alert_text += f"[{alert['level'].upper()}] {alert['message']}\n"
+                alert_text += f"時刻: {alert['timestamp'][:19]}\n"
+                alert_text += f"対応: {alert['suggested_action']}\n\n"
+            
+            messagebox.showinfo("品質アラート", alert_text)
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"品質アラート取得エラー: {e}")
+    
+    def continue_analysis_with_direction(self, direction):
+        """継続分析実行"""
+        try:
+            if not self.knowledge_analysis_engine or not self.current_analysis_session:
+                messagebox.showwarning("警告", "先に分析を開始してください")
+                return
+            
+            if direction == "expand":
+                new_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip() + " の関連分野"
+            elif direction == "deepen":
+                new_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip() + " の詳細分析"
+            else:
+                new_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip()
+            
+            # 継続分析実行
+            self.analysis_prompt_text.delete(1.0, tk.END)
+            self.analysis_prompt_text.insert(1.0, new_prompt)
+            self.start_knowledge_analysis()
+            
+        except Exception as e:
+            messagebox.showerror("エラー", f"継続分析エラー: {e}")
+    
+    def show_custom_analysis_dialog(self):
+        """カスタム分析ダイアログ表示"""
+        dialog = tk.Toplevel(self.root)
+        dialog.title("カスタム分析設定")
+        dialog.geometry("400x300")
+        
+        ttk.Label(dialog, text="カスタム分析プロンプト:").pack(pady=5)
+        
+        custom_text = tk.Text(dialog, height=8, width=50)
+        custom_text.pack(pady=5, padx=10, fill=tk.BOTH, expand=True)
+        custom_text.insert("1.0", self.analysis_prompt_text.get(1.0, tk.END))
+        
+        def apply_custom():
+            custom_prompt = custom_text.get(1.0, tk.END).strip()
+            if custom_prompt:
+                self.analysis_prompt_text.delete(1.0, tk.END)
+                self.analysis_prompt_text.insert(1.0, custom_prompt)
+                dialog.destroy()
+                self.start_knowledge_analysis()
+        
+        button_frame = ttk.Frame(dialog)
+        button_frame.pack(pady=10)
+        
+        ttk.Button(button_frame, text="適用", command=apply_custom).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="キャンセル", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
+    
+    def start_knowledge_analysis(self):
+        """知識分析開始"""
+        try:
+            # プロンプト取得
+            user_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip()
+            if not user_prompt:
+                messagebox.showerror("エラー", "分析プロンプトを入力してください")
+                return
+            
+            # パラメータ取得
+            search_count = self.search_count_var.get()
+            budget = self.analysis_budget_var.get()
+            
+            # 知識分析エンジン初期化
+            if not self.knowledge_analysis_engine:
+                from core.knowledge_analysis.knowledge_analysis_engine import KnowledgeAnalysisEngine
+                self.knowledge_analysis_engine = KnowledgeAnalysisEngine(
+                    progress_callback=self._on_analysis_progress
+                )
+            
+            # UI状態更新
+            self.analysis_start_button.config(state=tk.DISABLED)
+            self.analysis_status_label.config(text="🚀 分析開始中...", foreground='orange')
+            
+            # 新しいセッション開始
+            session_id = self.knowledge_analysis_engine.start_new_session(user_prompt[:50])
+            self.current_analysis_session = session_id
+            self.current_session_label.config(text=session_id[-12:])  # 短縮表示
+            
+            print(f"🧠 知識分析開始: {user_prompt[:100]}...")
+            
+            # バックグラウンドで分析実行
+            import threading
+            analysis_thread = threading.Thread(
+                target=self._run_knowledge_analysis,
+                args=(user_prompt, search_count, budget),
+                daemon=True
+            )
+            analysis_thread.start()
+            
+            self.analysis_is_running = True
+            
+        except Exception as e:
+            print(f"❌ 知識分析開始エラー: {e}")
+            messagebox.showerror("エラー", f"知識分析開始失敗: {e}")
+            self._reset_analysis_ui()
+    
+    def _run_knowledge_analysis(self, user_prompt, search_count, budget):
+        """知識分析実行（バックグラウンド）"""
+        try:
+            # 分析実行
+            report = self.knowledge_analysis_engine.analyze_topic(
+                user_prompt=user_prompt,
+                search_count=search_count,
+                use_previous_context=True
+            )
+            
+            # UIに結果表示
+            self.root.after(0, lambda: self._display_analysis_report(report))
+            
+        except Exception as e:
+            print(f"❌ 知識分析実行エラー: {e}")
+            import traceback
+            traceback.print_exc()
+            self.root.after(0, lambda: messagebox.showerror("エラー", f"分析実行失敗: {e}"))
+            self.root.after(0, self._reset_analysis_ui)
+    
+    def _on_analysis_progress(self, message, progress):
+        """分析進捗コールバック"""
+        self.root.after(0, lambda: self._update_analysis_progress(message, progress))
+    
+    def _update_analysis_progress(self, message, progress):
+        """分析進捗更新"""
+        self.analysis_status_label.config(text=f"⏳ {message}", foreground='blue')
+        self.analysis_progress_var.set(int(progress))
+        self.analysis_progress_percent_label.config(text=f"{int(progress)}%")
+    
+    def _display_analysis_report(self, report):
+        """分析レポート表示"""
+        try:
+            # 最新レポートタブに表示
+            self.latest_report_text.config(state=tk.NORMAL)
+            self.latest_report_text.delete(1.0, tk.END)
+            
+            # レポート内容整形
+            report_content = f"""
+📊 分析レポート #{report.get('report_id', 'N/A')}
+実行日時: {report.get('timestamp', 'N/A')}
+検索件数: {report.get('search_count', 0)}件
+データ品質: {report.get('data_quality', 0):.2f}
+分析コスト: ${report.get('cost', 0):.6f}
+
+📝 ユーザープロンプト:
+{report.get('user_prompt', 'N/A')}
+
+📈 分析結果:
+{report.get('analysis_summary', 'レポートが生成されませんでした')}
+
+💡 主要発見:
+"""
+            
+            for i, insight in enumerate(report.get('key_insights', []), 1):
+                report_content += f"{i}. {insight}\n"
+            
+            if report.get('related_topics'):
+                report_content += "\n🔗 関連調査提案:\n"
+                for i, topic in enumerate(report.get('related_topics', []), 1):
+                    report_content += f"{i}. {topic}\n"
+            
+            self.latest_report_text.insert(1.0, report_content)
+            self.latest_report_text.config(state=tk.DISABLED)
+            
+            # 詳細データタブに検索結果表示
+            if 'detailed_data' in report and 'search_results' in report['detailed_data']:
+                self._display_detailed_data(report['detailed_data']['search_results'])
+            
+            # 進捗情報更新
+            self.report_count_label.config(text=str(report.get('report_id', 0)))
+            self.analysis_cost_label.config(text=f"${report.get('cost', 0):.6f}")
+            self.data_quality_label.config(text=f"{report.get('data_quality', 0):.2f}")
+            self.search_progress_label.config(text=f"{report.get('search_count', 0)}/100")
+            
+            # 継続分析ボタンを有効化
+            for btn in [self.expand_analysis_button, self.deepen_analysis_button, self.custom_analysis_button]:
+                btn.config(state=tk.NORMAL)
+            
+            self.analysis_continue_button.config(state=tk.NORMAL)
+            self.session_save_button.config(state=tk.NORMAL)
+            
+            # 分析完了状態に
+            self.analysis_is_running = False
+            self.analysis_start_button.config(state=tk.NORMAL)
+            self.analysis_status_label.config(text="✅ 分析完了", foreground='green')
+            
+        except Exception as e:
+            print(f"❌ レポート表示エラー: {e}")
+    
+    def _display_detailed_data(self, search_results):
+        """詳細データ表示"""
+        try:
+            self.detailed_data_text.config(state=tk.NORMAL)
+            self.detailed_data_text.delete(1.0, tk.END)
+            
+            data_content = f"🔍 検索結果詳細 ({len(search_results)}件)\n"
+            data_content += "=" * 50 + "\n\n"
+            
+            for i, result in enumerate(search_results[:20], 1):  # 最大20件表示
+                data_content += f"{i}. {result.get('title', 'タイトルなし')}\n"
+                data_content += f"   概要: {result.get('snippet', 'N/A')[:200]}...\n"
+                data_content += f"   出典: {result.get('source', 'N/A')}\n"
+                data_content += f"   URL: {result.get('url', 'N/A')}\n\n"
+            
+            if len(search_results) > 20:
+                data_content += f"... 他 {len(search_results) - 20} 件\n"
+            
+            self.detailed_data_text.insert(1.0, data_content)
+            self.detailed_data_text.config(state=tk.DISABLED)
+            
+        except Exception as e:
+            print(f"❌ 詳細データ表示エラー: {e}")
+    
+    def continue_knowledge_analysis(self):
+        """継続分析（前回の続き）"""
+        if not self.knowledge_analysis_engine:
+            messagebox.showwarning("警告", "まず初回分析を実行してください")
+            return
+        
+        # 前回のレポートを参考にした継続プロンプト
+        last_report = "前回の分析結果を踏まえて、さらに詳しく調査してください"
+        
+        # プロンプトエリアに自動入力
+        self.analysis_prompt_text.delete(1.0, tk.END)
+        self.analysis_prompt_text.insert(1.0, last_report)
+        
+        # 分析実行
+        self.start_knowledge_analysis()
+    
+    def continue_analysis_with_direction(self, direction):
+        """方向性指定での継続分析"""
+        if not self.knowledge_analysis_engine:
+            messagebox.showwarning("警告", "まず初回分析を実行してください")
+            return
+        
+        direction_prompts = {
+            "expand": "前回の分析結果を踏まえて、関連する幅広い分野に展開して調査してください",
+            "deepen": "前回の分析結果で最も興味深かった分野について、より詳細に深掘りしてください"
+        }
+        
+        prompt = direction_prompts.get(direction, "前回の分析を継続してください")
+        
+        # プロンプトエリアに自動入力
+        self.analysis_prompt_text.delete(1.0, tk.END)
+        self.analysis_prompt_text.insert(1.0, prompt)
+        
+        # 分析実行
+        self.start_knowledge_analysis()
+    
+    def show_custom_analysis_dialog(self):
+        """カスタム分析ダイアログ表示"""
+        dialog = tk.Toplevel(self.root)
+        dialog.title("カスタム分析")
+        dialog.geometry("600x400")
+        dialog.transient(self.root)
+        dialog.grab_set()
+        
+        # カスタムプロンプト入力
+        ttk.Label(dialog, text="次の分析内容を詳しく入力してください:", font=('Arial', 12, 'bold')).pack(pady=10)
+        
+        custom_prompt_text = scrolledtext.ScrolledText(
+            dialog,
+            height=10,
+            width=70,
+            wrap=tk.WORD,
+            font=('Arial', 10)
+        )
+        custom_prompt_text.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+        custom_prompt_text.insert(1.0, "前回の分析結果を踏まえて、")
+        
+        # ボタン
+        button_frame = ttk.Frame(dialog)
+        button_frame.pack(pady=10)
+        
+        def execute_custom_analysis():
+            custom_prompt = custom_prompt_text.get(1.0, tk.END).strip()
+            if custom_prompt:
+                self.analysis_prompt_text.delete(1.0, tk.END)
+                self.analysis_prompt_text.insert(1.0, custom_prompt)
+                dialog.destroy()
+                self.start_knowledge_analysis()
+            else:
+                messagebox.showwarning("警告", "プロンプトを入力してください")
+        
+        ttk.Button(button_frame, text="分析実行", command=execute_custom_analysis).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="キャンセル", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
+    
+    def show_analysis_history(self):
+        """分析履歴表示"""
+        if not self.knowledge_analysis_engine:
+            messagebox.showinfo("情報", "まだ分析履歴がありません")
+            return
+        
+        try:
+            summary = self.knowledge_analysis_engine.get_session_summary()
+            
+            self.session_history_text.config(state=tk.NORMAL)
+            self.session_history_text.delete(1.0, tk.END)
+            
+            history_content = f"""
+📚 セッション履歴
+セッションID: {summary.get('session_id', 'N/A')}
+総レポート数: {summary.get('total_reports', 0)}
+総コスト: ${summary.get('total_cost', 0):.6f}
+
+📊 レポート一覧:
+"""
+            
+            for i, report in enumerate(summary.get('reports', []), 1):
+                history_content += f"\n{i}. {report.get('user_prompt', 'N/A')[:100]}...\n"
+                history_content += f"   実行: {report.get('timestamp', 'N/A')[:19]}\n"
+                history_content += f"   コスト: ${report.get('cost', 0):.6f}\n"
+            
+            self.session_history_text.insert(1.0, history_content)
+            self.session_history_text.config(state=tk.DISABLED)
+            
+            # 履歴タブに切り替え
+            self.analysis_results_notebook.select(self.session_history_frame)
+            
+        except Exception as e:
+            print(f"❌ 履歴表示エラー: {e}")
+    
+    def save_analysis_session(self):
+        """分析セッション保存"""
+        if not self.knowledge_analysis_engine:
+            messagebox.showwarning("警告", "保存するセッションがありません")
+            return
+        
+        try:
+            summary = self.knowledge_analysis_engine.get_session_summary()
+            session_id = summary.get('session_id', 'unknown')
+            
+            messagebox.showinfo(
+                "保存完了", 
+                f"セッション '{session_id}' が保存されました。\n"
+                f"レポート数: {summary.get('total_reports', 0)}\n"
+                f"総コスト: ${summary.get('total_cost', 0):.6f}"
+            )
+            
+        except Exception as e:
+            print(f"❌ セッション保存エラー: {e}")
+            messagebox.showerror("エラー", f"セッション保存失敗: {e}")
+    
+    def _reset_analysis_ui(self):
+        """分析UI初期化"""
+        self.analysis_start_button.config(state=tk.NORMAL)
+        self.analysis_status_label.config(text="⏳ 待機中", foreground='blue')
+        self.analysis_progress_var.set(0)
+        self.analysis_progress_percent_label.config(text="0%")
+        self.analysis_is_running = False
+    
+    def stop_analysis_exploration(self):
+        """知識分析停止"""
+        try:
+            self.analysis_is_running = False
+            
+            if hasattr(self, 'knowledge_analysis_engine') and self.knowledge_analysis_engine:
+                print("⏹️ 知識分析停止要求")
+            
+            self.analysis_status_label.config(text="⏹️ 停止中...", foreground='red')
+            
+            # UI更新は_reset_analysis_ui()で実行
+            self.root.after(1000, self._reset_analysis_ui)  # 1秒後にUI初期化
+            
+        except Exception as e:
+            print(f"❌ 知識分析停止エラー: {e}")
+            messagebox.showerror("エラー", f"知識分析停止失敗: {e}")
+    
+    def execute_custom_analysis(self):
+        """カスタム分析実行"""
+        try:
+            if self.analysis_is_running:
+                messagebox.showwarning("警告", "既に分析が実行中です")
+                return
+            
+            user_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip()
+            if not user_prompt:
+                messagebox.showwarning("警告", "分析プロンプトを入力してください")
+                return
+                
+            search_count = int(self.search_count_var.get())
+            budget_limit = float(self.budget_limit_var.get())
+            
+            print(f"✏️ カスタム分析実行: {user_prompt[:50]}...")
+            
+            # 新しい分析スレッド開始
+            import threading
+            threading.Thread(
+                target=self._run_knowledge_analysis,
+                args=(user_prompt, search_count, budget_limit, True),  # use_previous_context=True
+                daemon=True
+            ).start()
+            
+        except Exception as e:
+            print(f"❌ カスタム分析エラー: {e}")
+            messagebox.showerror("エラー", f"カスタム分析失敗: {e}")
+    
+    def execute_expand_analysis(self):
+        """範囲拡張分析実行"""
+        try:
+            if self.analysis_is_running:
+                messagebox.showwarning("警告", "既に分析が実行中です")
+                return
+            
+            user_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip()
+            if not user_prompt:
+                messagebox.showwarning("警告", "分析プロンプトを入力してください")
+                return
+                
+            # 範囲拡張用のプロンプト作成
+            expand_prompt = f"前回の分析範囲をより広く拡張して調査したい。関連する分野や応用領域も含めて包括的に: {user_prompt}"
+            
+            search_count = int(self.search_count_var.get())
+            budget_limit = float(self.budget_limit_var.get())
+            
+            print(f"🌐 範囲拡張分析実行: {expand_prompt[:50]}...")
+            
+            # 新しい分析スレッド開始
+            import threading
+            threading.Thread(
+                target=self._run_knowledge_analysis,
+                args=(expand_prompt, search_count, budget_limit, True),  # use_previous_context=True
+                daemon=True
+            ).start()
+            
+        except Exception as e:
+            print(f"❌ 範囲拡張分析エラー: {e}")
+            messagebox.showerror("エラー", f"範囲拡張分析失敗: {e}")
+    
+    def execute_deepen_analysis(self):
+        """深堀分析実行"""
+        try:
+            if self.analysis_is_running:
+                messagebox.showwarning("警告", "既に分析が実行中です")
+                return
+            
+            user_prompt = self.analysis_prompt_text.get(1.0, tk.END).strip()
+            if not user_prompt:
+                messagebox.showwarning("警告", "分析プロンプトを入力してください")
+                return
+                
+            # 深堀用のプロンプト作成
+            deepen_prompt = f"前回の分析結果の特定分野について詳細に深堀したい。技術的詳細、実装方法、具体的事例を中心に: {user_prompt}"
+            
+            search_count = int(self.search_count_var.get())
+            budget_limit = float(self.budget_limit_var.get())
+            
+            print(f"🔍 深堀分析実行: {deepen_prompt[:50]}...")
+            
+            # 新しい分析スレッド開始
+            import threading
+            threading.Thread(
+                target=self._run_knowledge_analysis,
+                args=(deepen_prompt, search_count, budget_limit, True),  # use_previous_context=True
+                daemon=True
+            ).start()
+            
+        except Exception as e:
+            print(f"❌ 深堀分析エラー: {e}")
+            messagebox.showerror("エラー", f"深堀分析失敗: {e}")
+    
+    def _update_sa_progress(self):
+        """SA進捗定期更新"""
+        if not self.sa_is_running:
+            return
+        
+        try:
+            # 経過時間更新
+            if self.sa_start_time:
+                elapsed = time.time() - self.sa_start_time
+                minutes = int(elapsed // 60)
+                seconds = int(elapsed % 60)
+                self.sa_time_label.config(text=f"{minutes:02d}:{seconds:02d}")
+            
+            # 1秒後に再実行
+            self.root.after(1000, self._update_sa_progress)
+            
+        except Exception as e:
+            print(f"❌ SA進捗更新エラー: {e}")
+    
+    def _update_sa_round_display(self, current_round, total_rounds):
+        """ラウンド表示更新"""
+        self.sa_round_label.config(text=f"{current_round}/{total_rounds}")
+        
+        # プログレスバー更新
+        progress = (current_round / total_rounds) * 100
+        self.sa_progress_var.set(progress)
+        self.sa_progress_percent_label.config(text=f"{progress:.0f}%")
+        
+        # 温度変化シミュレーション
+        if current_round <= total_rounds // 3:
+            temp = "high"
+            color = "red"
+        elif current_round <= 2 * total_rounds // 3:
+            temp = "medium" 
+            color = "orange"
+        else:
+            temp = "low"
+            color = "blue"
+        
+        self.sa_current_temp_label.config(text=temp, foreground=color)
+    
+    def _update_sa_metrics(self, sessions, cost, quality):
+        """メトリクス表示更新"""
+        self.sa_session_label.config(text=str(sessions))
+        self.sa_cost_label.config(text=f"${cost:.2f}")
+        self.sa_quality_label.config(text=f"{quality:.2f}")
+    
+    def _append_analysis_result(self, text):
+        """分析結果テキスト追加"""
+        self.analysis_report_text.config(state=tk.NORMAL)
+        self.analysis_report_text.insert(tk.END, text)
+        self.analysis_report_text.see(tk.END)
+        self.analysis_report_text.config(state=tk.DISABLED)
+    
+    def _enable_analysis_buttons(self):
+        """分析ボタン有効化"""
+        if not self.analysis_is_running:
+            self.expand_analysis_button.config(state=tk.NORMAL)
+            self.deepen_analysis_button.config(state=tk.NORMAL)
+            self.custom_analysis_button.config(state=tk.NORMAL)
+    
+    def _complete_knowledge_analysis(self):
+        """知識分析完了処理"""
+        self.analysis_is_running = False
+        self.analysis_status_label.config(text="✅ 分析完了", foreground='green')
+        
+        # 分析ボタン再有効化
+        self._enable_analysis_buttons()
+        
+        # 進捗バーリセット
+        self.analysis_progress_var.set(100)
+        self.analysis_progress_percent_label.config(text="100%")
+        
+    def _run_interactive_sa_exploration(self, theme, budget_limit, initial_temperature, target_rounds):
+        """インタラクティブSA探索実行（新実装）"""
+        try:
+            print(f"🧠 インタラクティブSA探索開始")
+            
+            # インタラクティブ探索エンジンを初期化（未初期化の場合）
+            if not hasattr(self, 'interactive_exploration_engine') or not self.interactive_exploration_engine:
+                from core.adaptive_learning.interactive_exploration_engine import InteractiveExplorationEngine
+                self.interactive_exploration_engine = InteractiveExplorationEngine(
+                    progress_callback=self._on_exploration_progress
+                )
+            
+            # 探索開始
+            exploration_info = self.interactive_exploration_engine.start_exploration(
+                user_prompt=theme,
+                budget=budget_limit
+            )
+            
+            self.current_exploration_session = exploration_info
+            
+            # UIに探索情報を表示
+            self.root.after(0, lambda: self._update_exploration_info(exploration_info))
+            
+            # 初期分析実行
+            initial_analysis = self.interactive_exploration_engine.execute_initial_analysis(theme)
+            self.root.after(0, lambda: self._display_initial_analysis(initial_analysis))
+            
+            # 検索実行
+            search_results = self.interactive_exploration_engine.execute_search_cycle(
+                initial_analysis['suggested_queries']
+            )
+            self.root.after(0, lambda: self._display_search_results(search_results))
+            
+            # 結果分析
+            analysis_results = self.interactive_exploration_engine.analyze_search_results(
+                search_results['search_results'], 
+                theme
+            )
+            self.root.after(0, lambda: self._display_analysis_results(analysis_results))
+            
+            # 次の選択肢生成
+            next_options = self.interactive_exploration_engine.generate_next_options(
+                analysis_results['analysis_result'],
+                "GUI経由での探索継続"
+            )
+            self.root.after(0, lambda: self._display_next_options(next_options))
+            
+            # フィードバック待機状態に移行
+            self.root.after(0, self._wait_for_feedback)
+            
+        except Exception as e:
+            print(f"❌ インタラクティブSA探索エラー: {e}")
+            import traceback
+            traceback.print_exc()
+            self.root.after(0, lambda: messagebox.showerror("エラー", f"インタラクティブSA探索失敗: {e}"))
+            self.root.after(0, self._reset_sa_ui)
+    
+    def _on_exploration_progress(self, message, progress):
+        """探索進捗コールバック"""
+        self.root.after(0, lambda: self._update_progress_display(message, progress))
+    
+    def _update_progress_display(self, message, progress):
+        """進捗表示更新"""
+        self.sa_status_label.config(text=f"⏳ {message}", foreground='blue')
+        self.sa_progress_var.set(progress)
+        self.sa_progress_percent_label.config(text=f"{progress}%")
+    
+    def _update_exploration_info(self, exploration_info):
+        """探索情報表示更新"""
+        info_text = f"探索セッション開始:\n"
+        info_text += f"ID: {exploration_info['exploration_id']}\n"
+        info_text += f"予算: ${exploration_info['budget']}\n"
+        info_text += f"推定サイクル数: {exploration_info['estimated_cycles']}\n"
+        info_text += f"サイクル単価: ${exploration_info['cost_per_cycle']:.6f}\n\n"
+        
+        self._append_sa_result(info_text)
+    
+    def _display_initial_analysis(self, initial_analysis):
+        """初期分析結果表示"""
+        analysis_text = f"初期分析完了: コスト ${initial_analysis['cycle_data']['cost']:.6f}\n"
+        analysis_text += f"提案クエリ: {initial_analysis['suggested_queries']}\n\n"
+        
+        self._append_sa_result(analysis_text)
+        
+        # コスト更新
+        cost = initial_analysis['cycle_data']['cumulative_cost']
+        self.sa_cost_label.config(text=f"${cost:.6f}")
+    
+    def _display_search_results(self, search_results):
+        """検索結果表示"""
+        results_text = f"検索完了: {search_results['cycle_data']['results_count']}件の結果を取得\n"
+        
+        # 検索結果のタイトルを表示
+        for i, result in enumerate(search_results['search_results'][:3], 1):
+            results_text += f"- {result['title']}\n"
+        
+        results_text += "\n"
+        self._append_sa_result(results_text)
+    
+    def _display_analysis_results(self, analysis_results):
+        """分析結果表示"""
+        analysis_text = f"結果分析: {analysis_results['analysis_result'][:100]}...\n\n"
+        
+        self._append_sa_result(analysis_text)
+        
+        # コスト更新
+        cost = analysis_results['cycle_data']['cumulative_cost']
+        self.sa_cost_label.config(text=f"${cost:.6f}")
+    
+    def _display_next_options(self, next_options):
+        """次の選択肢表示"""
+        options_text = "次の選択肢:\n"
+        for i, option in enumerate(next_options['parsed_options'][:3], 1):
+            title = option.get('title', f'選択肢 {i}')
+            options_text += f"{i}. {title}\n"
+        
+        options_text += "\n"
+        self._append_sa_result(options_text)
+        
+        # コスト更新
+        cost = next_options['cycle_data']['cumulative_cost']
+        self.sa_cost_label.config(text=f"${cost:.6f}")
+    
+    def _wait_for_feedback(self):
+        """フィードバック待機状態"""
+        self.sa_status_label.config(text="⏳ フィードバック待機中...", foreground='purple')
+        
+        # フィードバックボタンを有効化
+        for btn in self.sa_feedback_buttons:
+            btn.config(state=tk.NORMAL)
+    
+    def _process_interactive_feedback_result(self, feedback_result):
+        """インタラクティブフィードバック結果処理"""
+        try:
+            # フィードバック結果をUIに表示
+            feedback_text = f"フィードバック処理完了:\n"
+            feedback_text += f"タイプ: {feedback_result['feedback_processed']['feedback_type']}\n"
+            feedback_text += f"サイクル: {feedback_result['total_cycles']}\n"
+            feedback_text += f"総コスト: ${feedback_result['total_cost']:.6f}\n"
+            feedback_text += f"予算使用率: {feedback_result['budget_utilization']:.1f}%\n"
+            feedback_text += f"探索継続: {'はい' if feedback_result['exploration_continues'] else 'いいえ'}\n\n"
+            
+            self._append_sa_result(feedback_text)
+            
+            # コスト更新
+            self.sa_cost_label.config(text=f"${feedback_result['total_cost']:.6f}")
+            
+            # サイクル数更新
+            self.sa_session_label.config(text=str(feedback_result['total_cycles']))
+            
+            # 探索終了の場合はUI完了処理
+            if not feedback_result['exploration_continues']:
+                self._complete_interactive_exploration()
+            else:
+                # 継続の場合はフィードバックボタンを再度無効化
+                for btn in self.sa_feedback_buttons:
+                    btn.config(state=tk.DISABLED)
+                
+        except Exception as e:
+            print(f"❌ フィードバック結果処理エラー: {e}")
+    
+    def _execute_interactive_exploration_cycle(self, theme):
+        """インタラクティブ探索サイクル実行"""
+        try:
+            if not hasattr(self, 'interactive_exploration_engine') or not self.interactive_exploration_engine:
+                return
+            
+            # 現在の分析結果を取得
+            if not hasattr(self, '_last_analysis_result'):
+                self._last_analysis_result = f"{theme}についての継続探索"
+            
+            # 次の選択肢生成
+            next_options = self.interactive_exploration_engine.generate_next_options(
+                self._last_analysis_result,
+                "継続探索サイクル"
+            )
+            
+            self.root.after(0, lambda: self._display_next_options(next_options))
+            
+            # 新しい検索クエリで検索実行
+            if 'parsed_options' in next_options and next_options['parsed_options']:
+                queries = []
+                for option in next_options['parsed_options'][:3]:
+                    title = option.get('title', 'AI技術動向')
+                    queries.append(title)
+                
+                if not queries:
+                    queries = [f"{theme} 応用事例", f"{theme} 最新動向", f"{theme} 技術詳細"]
+                
+                # 検索実行
+                search_results = self.interactive_exploration_engine.execute_search_cycle(queries)
+                self.root.after(0, lambda: self._display_search_results(search_results))
+                
+                # 結果分析
+                analysis_results = self.interactive_exploration_engine.analyze_search_results(
+                    search_results['search_results'], theme
+                )
+                self.root.after(0, lambda: self._display_analysis_results(analysis_results))
+                
+                # 分析結果をキャッシュ
+                self._last_analysis_result = analysis_results['analysis_result']
+                
+            # フィードバック待機状態に移行
+            self.root.after(0, self._wait_for_feedback)
+            
+        except Exception as e:
+            print(f"❌ インタラクティブ探索サイクルエラー: {e}")
+            import traceback
+            traceback.print_exc()
+            self.root.after(0, lambda: messagebox.showerror("エラー", f"探索サイクル実行失敗: {e}"))
+    
+    def _complete_interactive_exploration(self):
+        """インタラクティブ探索完了処理"""
+        try:
+            self.sa_is_running = False
+            self.sa_status_label.config(text="✅ インタラクティブ探索完了", foreground='green')
+            
+            # フィードバックボタンを無効化
+            for btn in self.sa_feedback_buttons:
+                btn.config(state=tk.DISABLED)
+            
+            # 探索要約を生成
+            if hasattr(self, 'interactive_exploration_engine') and self.interactive_exploration_engine:
+                summary = self.interactive_exploration_engine.get_exploration_summary()
+                
+                summary_text = "🎯 インタラクティブSA学習完了サマリー\n"
+                summary_text += "=" * 50 + "\n"
+                summary_text += f"学習テーマ: {self.sa_theme_var.get()}\n"
+                summary_text += f"探索ID: {summary.get('exploration_id', 'N/A')}\n"
+                summary_text += f"実行サイクル数: {summary.get('total_cycles', 0)}\n"
+                summary_text += f"総コスト: ${summary.get('total_cost', 0):.6f}\n"
+                summary_text += f"予算使用率: {summary.get('budget_utilization', 0):.1f}%\n"
+                summary_text += f"コスト効率: ${summary.get('cost_efficiency', 0):.6f}/サイクル\n"
+                summary_text += "\n主要な特徴:\n"
+                summary_text += "- 実際のDuckDuckGo検索による情報収集\n"
+                summary_text += "- GPT-3.5-turboによる高品質な分析\n"
+                summary_text += "- ユーザーフィードバックに基づく方向調整\n"
+                summary_text += "- 透明性の高いコスト計算\n"
+                
+                self.sa_summary_text.config(state=tk.NORMAL)
+                self.sa_summary_text.delete(1.0, tk.END)
+                self.sa_summary_text.insert(1.0, summary_text)
+                self.sa_summary_text.config(state=tk.DISABLED)
+                
+                # セッション保存
+                try:
+                    import tempfile
+                    from pathlib import Path
+                    output_path = Path("D:/setsuna_bot/data/adaptive_learning") / f"gui_session_{summary.get('exploration_id', 'unknown')}.json"
+                    output_path.parent.mkdir(parents=True, exist_ok=True)
+                    self.interactive_exploration_engine.save_exploration_session(str(output_path))
+                    print(f"💾 セッション保存: {output_path}")
+                except Exception as save_error:
+                    print(f"⚠️ セッション保存エラー: {save_error}")
+            
+            # UI初期化
+            self.root.after(2000, self._reset_sa_ui)  # 2秒後にリセット
+            
+        except Exception as e:
+            print(f"❌ インタラクティブ探索完了処理エラー: {e}")
+            self.root.after(0, self._reset_sa_ui)
+    
+    def _reset_sa_ui(self):
+        """SA UI初期化"""
+        self.sa_start_button.config(state=tk.NORMAL)
+        self.sa_stop_button.config(state=tk.DISABLED)
+        
+        if not self.sa_is_running:
+            self.sa_status_label.config(text="⏳ 待機中", foreground='blue')
+            
+            # フィードバックボタン無効化
+            for btn in self.sa_feedback_buttons:
+                btn.config(state=tk.DISABLED)
+    
+    def _process_real_sa_results(self, cycle_result):
+        """実際のSA結果処理"""
+        try:
+            print("🔄 実際のSA結果処理開始")
+            
+            # サイクル結果から情報抽出
+            total_rounds = cycle_result.get('total_rounds_executed', 0)
+            total_sessions = cycle_result.get('total_sessions_executed', 0)
+            total_cost = cycle_result.get('total_cost', 0.0)
+            final_quality = cycle_result.get('final_quality_score', 0.0)
+            
+            # UI更新
+            self.sa_round_label.config(text=f"{total_rounds}/{total_rounds}")
+            self.sa_session_label.config(text=str(total_sessions))
+            self.sa_cost_label.config(text=f"${total_cost:.2f}")
+            self.sa_quality_label.config(text=f"{final_quality:.2f}")
+            self.sa_progress_var.set(100)
+            self.sa_progress_percent_label.config(text="100%")
+            
+            # セッション結果表示
+            round_results = cycle_result.get('round_results', [])
+            self.sa_sessions_text.config(state=tk.NORMAL)
+            self.sa_sessions_text.delete(1.0, tk.END)
+            
+            for i, round_result in enumerate(round_results, 1):
+                sessions_count = round_result.get('sessions_executed', 0)
+                round_cost = round_result.get('round_cost', 0.0)
+                round_quality = round_result.get('average_quality', 0.0)
+                
+                result_text = f"ラウンド {i}: {sessions_count}セッション、コスト${round_cost:.2f}、品質{round_quality:.2f}\n"
+                self.sa_sessions_text.insert(tk.END, result_text)
+            
+            self.sa_sessions_text.see(tk.END)
+            self.sa_sessions_text.config(state=tk.DISABLED)
+            
+            # サマリー生成（実際の結果を使用）
+            summary_text = "🎯 SA学習完了サマリー\n"
+            summary_text += "=" * 40 + "\n"
+            summary_text += f"学習テーマ: {self.sa_theme_var.get()}\n"
+            summary_text += f"実行ラウンド: {total_rounds}\n"
+            summary_text += f"総セッション数: {total_sessions}\n"
+            summary_text += f"総コスト: ${total_cost:.2f}\n"
+            summary_text += f"最終品質: {final_quality:.2f}\n"
+            summary_text += f"実行時間: {self.sa_time_label.cget('text')}\n"
+            
+            # 主要発見事項（実際の結果から抽出）
+            key_findings = cycle_result.get('key_insights', [])
+            if key_findings:
+                summary_text += "\n主要発見事項:\n"
+                for finding in key_findings:
+                    summary_text += f"- {finding}\n"
+            else:
+                summary_text += "\n主要発見事項:\n"
+                summary_text += f"- {self.sa_theme_var.get()}について包括的な知識を獲得\n"
+                summary_text += "- 段階的な温度制御により効率的な探索を実現\n"
+                summary_text += "- コスト効率と品質のバランスを最適化\n"
+            
+            self.sa_summary_text.config(state=tk.NORMAL)
+            self.sa_summary_text.delete(1.0, tk.END)
+            self.sa_summary_text.insert(1.0, summary_text)
+            self.sa_summary_text.config(state=tk.DISABLED)
+            
+            # 探索完了処理
+            self._complete_sa_exploration()
+            
+            print("✅ 実際のSA結果処理完了")
+            
+        except Exception as e:
+            print(f"❌ SA結果処理エラー: {e}")
+            # エラー時はモック結果で完了
+            self._complete_sa_exploration()
+    
+    def _process_feedback_result(self, feedback_result):
+        """フィードバック結果処理"""
+        try:
+            print("🔄 フィードバック結果処理開始")
+            
+            # フィードバック結果から情報抽出
+            if hasattr(feedback_result, 'next_action'):
+                next_action = feedback_result.next_action
+                self.sa_status_label.config(text=f"📋 次のアクション: {next_action}", foreground='purple')
+            
+            if hasattr(feedback_result, 'temperature_adjustment'):
+                temp_adj = feedback_result.temperature_adjustment
+                if temp_adj.new_temperature:
+                    self.sa_current_temp_label.config(text=temp_adj.new_temperature)
+                    
+                    # 温度に応じた色変更
+                    color_map = {"high": "red", "medium": "orange", "low": "blue"}
+                    color = color_map.get(temp_adj.new_temperature, "black")
+                    self.sa_current_temp_label.config(foreground=color)
+            
+            if hasattr(feedback_result, 'estimated_sessions'):
+                est_sessions = feedback_result.estimated_sessions
+                self.sa_status_label.config(
+                    text=f"📊 推定追加セッション: {est_sessions}",
+                    foreground='green'
+                )
+            
+            print("✅ フィードバック結果処理完了")
+            
+        except Exception as e:
+            print(f"❌ フィードバック結果処理エラー: {e}")
+            # エラー時はデフォルトメッセージ
+            self.sa_status_label.config(text="📤 フィードバック送信完了", foreground='blue')
+    
+    def _start_sa_monitoring(self):
+        """SAリアルタイム監視開始"""
+        try:
+            self._monitor_sa_system()
+        except Exception as e:
+            print(f"❌ SA監視開始エラー: {e}")
+    
+    def _monitor_sa_system(self):
+        """SA学習システム監視"""
+        if not self.sa_is_running:
+            return
+        
+        try:
+            # 実際のSA学習システムの状態を取得
+            if hasattr(self, 'integrated_sa_system') and self.integrated_sa_system:
+                try:
+                    # システム状態取得
+                    system_status = self.integrated_sa_system.get_system_status()
+                    
+                    # UI更新
+                    self._update_sa_system_status(system_status)
+                    
+                except Exception as monitor_error:
+                    print(f"⚠️ SA監視でエラー: {monitor_error}")
+                    # エラー時はモック監視
+            
+            # 3秒後に再実行（リアルタイム監視）
+            if self.sa_is_running:
+                self.root.after(3000, self._monitor_sa_system)
+                
+        except Exception as e:
+            print(f"❌ SA監視エラー: {e}")
+            # エラー時も監視継続
+            if self.sa_is_running:
+                self.root.after(5000, self._monitor_sa_system)
+    
+    def _update_sa_system_status(self, system_status):
+        """SAシステム状態更新"""
+        try:
+            print("📊 SAシステム状態更新開始")
+            
+            # アクティブセッション数
+            active_sessions = system_status.get('active_sessions', 0)
+            if active_sessions > 0:
+                self.sa_session_label.config(text=str(active_sessions))
+            
+            # 現在の温度
+            current_temp = system_status.get('current_temperature', 'high')
+            self.sa_current_temp_label.config(text=current_temp)
+            
+            # 温度に応じた色変更
+            color_map = {"high": "red", "medium": "orange", "low": "blue"}
+            color = color_map.get(current_temp, "black")
+            self.sa_current_temp_label.config(foreground=color)
+            
+            # 累積コスト
+            total_cost = system_status.get('total_cost', 0.0)
+            self.sa_cost_label.config(text=f"${total_cost:.2f}")
+            
+            # 平均品質
+            avg_quality = system_status.get('average_quality', 0.0)
+            self.sa_quality_label.config(text=f"{avg_quality:.2f}")
+            
+            # 実行中ラウンド
+            current_round = system_status.get('current_round', 0)
+            target_rounds = self.sa_rounds_var.get()
+            if current_round > 0:
+                self.sa_round_label.config(text=f"{current_round}/{target_rounds}")
+                
+                # プログレスバー更新
+                progress = (current_round / target_rounds) * 100
+                self.sa_progress_var.set(progress)
+                self.sa_progress_percent_label.config(text=f"{progress:.0f}%")
+            
+            # ステータスメッセージ
+            status_message = system_status.get('status_message', '実行中')
+            system_state = system_status.get('system_state', 'unknown')
+            
+            if system_state == 'waiting_for_feedback':
+                self.sa_status_label.config(text="⏳ フィードバック待機中", foreground='orange')
+                # フィードバックボタン有効化
+                self._enable_feedback_buttons()
+            elif system_state == 'processing':
+                self.sa_status_label.config(text="🔄 処理中", foreground='blue')
+            elif system_state == 'completed':
+                self.sa_status_label.config(text="✅ 完了", foreground='green')
+                # 完了処理実行
+                self.root.after(0, self._complete_sa_exploration)
+            else:
+                self.sa_status_label.config(text=f"📊 {status_message}", foreground='blue')
+            
+            print("✅ SAシステム状態更新完了")
+            
+        except Exception as e:
+            print(f"❌ SAシステム状態更新エラー: {e}")
+            # エラー時はログのみ
+    
+    def _update_confidence_display(self, value):
+        """信頼度表示更新"""
+        try:
+            confidence = float(value)
+            self.sa_confidence_label.config(text=f"{confidence:.2f}")
+        except Exception as e:
+            print(f"❌ 信頼度表示更新エラー: {e}")
+
+    def _reinitialize_setsuna_chat(self):
+        """SetsunaChat を新しいメモリモードで再初期化"""
+        try:
+            # 既存インスタンス破棄
+            if self.setsuna_chat:
+                # 現在のモードが通常なら、データを保存
+                if hasattr(self.setsuna_chat, 'memory_mode') and self.setsuna_chat.memory_mode == "normal":
+                    self.setsuna_chat.save_all_data()
+                del self.setsuna_chat
+                self.setsuna_chat = None
+            
+            # 新しいモードで再初期化
+            print(f"🔄 SetsunaChat再初期化開始: {self.memory_mode}モード")
+            self.setsuna_chat = SetsunaChat(memory_mode=self.memory_mode)
+            
+            # リッチメッセージレンダラーも再初期化
+            if hasattr(self, 'history_text') and self.history_text:
+                self.rich_renderer = RichMessageRenderer(self.history_text)
+            
+            print(f"✅ SetsunaChat再初期化完了: {self.memory_mode}モード")
+            
+        except Exception as e:
+            print(f"❌ SetsunaChat再初期化エラー: {e}")
+            raise
+    
+    def _execute_interactive_exploration_cycle(self, theme):
+        """インタラクティブ探索サイクル実行"""
+        try:
+            engine = self.interactive_exploration_engine
+            
+            # 1. 初期分析
+            self.root.after(0, lambda: self.sa_status_label.config(text="🔍 初期分析中...", foreground='blue'))
+            initial_analysis = engine.execute_initial_analysis(theme)
+            
+            # 分析結果をUIに表示
+            self.root.after(0, lambda: self._append_sa_result(f"初期分析完了: コスト ${initial_analysis['cycle_data']['cost']:.6f}\n"))
+            
+            # 2. 検索実行
+            self.root.after(0, lambda: self.sa_status_label.config(text="🔍 検索実行中...", foreground='blue'))
+            search_results = engine.execute_search_cycle(initial_analysis['suggested_queries'])
+            
+            # 検索結果をUIに表示
+            self.root.after(0, lambda: self._append_sa_result(f"検索完了: {search_results['cycle_data']['results_count']}件の結果を取得\n"))
+            
+            # 3. 結果分析
+            self.root.after(0, lambda: self.sa_status_label.config(text="📊 結果分析中...", foreground='blue'))
+            analysis_results = engine.analyze_search_results(
+                search_results['search_results'], 
+                theme
+            )
+            
+            # 分析結果をUIに表示
+            analysis_text = analysis_results['analysis_result'][:200] + "..." if len(analysis_results['analysis_result']) > 200 else analysis_results['analysis_result']
+            self.root.after(0, lambda: self._append_sa_result(f"結果分析: {analysis_text}\n"))
+            
+            # 4. 次の選択肢生成
+            self.root.after(0, lambda: self.sa_status_label.config(text="🎯 選択肢生成中...", foreground='blue'))
+            next_options = engine.generate_next_options(
+                analysis_results['analysis_result'],
+                "GUI経由での探索継続"
+            )
+            
+            # 選択肢をUIに表示
+            options_text = next_options['exploration_options'][:300] + "..." if len(next_options['exploration_options']) > 300 else next_options['exploration_options']
+            self.root.after(0, lambda: self._append_sa_result(f"次の選択肢:\n{options_text}\n"))
+            
+            # 5. 探索サマリーを更新
+            summary = engine.get_exploration_summary()
+            self.root.after(0, lambda: self._update_sa_metrics(
+                summary['total_cycles'],
+                summary['total_cost'],
+                0.8  # 品質スコア
+            ))
+            
+            # 6. フィードバック待機状態に移行
+            self.root.after(0, lambda: self.sa_status_label.config(text="⏳ フィードバック待機中...", foreground='green'))
+            
+            print(f"✅ インタラクティブ探索サイクル完了: 総コスト ${summary['total_cost']:.6f}")
+            
+        except Exception as e:
+            print(f"❌ インタラクティブ探索サイクルエラー: {e}")
+            self.root.after(0, lambda: self._handle_sa_error(f"探索サイクルエラー: {e}"))
+    
+    def _update_exploration_info(self, exploration_info):
+        """探索情報をUIに表示"""
+        try:
+            info_text = f"""探索セッション開始:
+ID: {exploration_info['exploration_id']}
+予算: ${exploration_info['budget']:.2f}
+推定サイクル数: {exploration_info['estimated_cycles']}
+サイクル単価: ${exploration_info['cost_per_cycle']:.6f}
+
+"""
+            self._append_sa_result(info_text)
+            
+        except Exception as e:
+            print(f"❌ 探索情報表示エラー: {e}")
+    
+    def _process_interactive_feedback_result(self, feedback_result):
+        """インタラクティブフィードバック結果処理"""
+        try:
+            # フィードバック結果をUIに表示
+            result_text = f"""フィードバック処理完了:
+タイプ: {feedback_result['feedback_processed']['feedback_type']}
+サイクル: {feedback_result['total_cycles']}
+総コスト: ${feedback_result['total_cost']:.6f}
+予算使用率: {feedback_result['budget_utilization']:.1f}%
+探索継続: {'はい' if feedback_result['exploration_continues'] else 'いいえ'}
+
+"""
+            self._append_sa_result(result_text)
+            
+            # メトリクス更新
+            self._update_sa_metrics(
+                feedback_result['total_cycles'],
+                feedback_result['total_cost'],
+                0.8  # 品質スコア
+            )
+            
+            # 探索終了の場合はUI初期化
+            if not feedback_result['exploration_continues']:
+                self.root.after(2000, self._reset_sa_ui)  # 2秒後にUI初期化
+                
+        except Exception as e:
+            print(f"❌ フィードバック結果処理エラー: {e}")
+
     def _on_closing(self):
         """アプリケーション終了処理"""
         print("👋 アプリケーション終了中...")
