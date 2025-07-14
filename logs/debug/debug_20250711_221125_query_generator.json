@@ -1,0 +1,126 @@
+[
+  {
+    "timestamp": "2025-07-11T22:11:25.625004",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_221125",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:25.625] [INFO] [QUERY_GENERATOR] デバッグログシステム初期化完了: debug_20250711_221125"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:25.629398",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:25.629] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:26.062807",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:26.062] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:27.761319",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:27.761] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:28.261976",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:28.261] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:28.410905",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:28.410] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:28.858892",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:28.858] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:31.445326",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:31.445] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:31.871723",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:31.871] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T22:11:32.031497",
+    "session_id": "debug_20250711_221125",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "Phase3A統合テスト",
+      "learning_type": "概要",
+      "depth_level": 2
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134186253697856,
+    "formatted_message": "[2025-07-11 22:11:32.031] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"Phase3A統合テスト\", \"learning_type\": \"概要\", \"depth_level\": 2}"
+  }
+]

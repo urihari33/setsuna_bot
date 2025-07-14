@@ -821,6 +821,256 @@ class MemoryIntegrationSystem:
         
         return suggestions
     
+    def analyze_project_memory_integration(self, project_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        プロジェクト関連記憶の統合分析
+        
+        Args:
+            project_data: プロジェクトデータ
+            
+        Returns:
+            Dict[str, Any]: プロジェクト記憶統合分析結果
+        """
+        try:
+            print(f"🔍 プロジェクト記憶統合分析: {project_data.get('title', 'Unknown')}")
+            
+            # プロジェクトキーワード抽出
+            project_keywords = self._extract_project_keywords(project_data)
+            
+            # 関連記憶の検索
+            related_memories = self._find_project_related_memories(project_keywords)
+            
+            # 統合パターンの分析
+            integration_patterns = self._analyze_project_integration_patterns(project_data, related_memories)
+            
+            # 記憶クラスターとの関連性分析
+            cluster_relevance = self._analyze_project_cluster_relevance(project_keywords)
+            
+            analysis_result = {
+                "project_id": project_data.get("id"),
+                "project_title": project_data.get("title"),
+                "related_memories": related_memories,
+                "integration_patterns": integration_patterns,
+                "cluster_relevance": cluster_relevance,
+                "memory_support_level": self._calculate_memory_support_level(related_memories),
+                "recommendations": self._generate_project_memory_recommendations(project_data, related_memories),
+                "analyzed_at": datetime.now().isoformat()
+            }
+            
+            print(f"✅ プロジェクト記憶統合分析完了: {len(related_memories)}件の関連記憶")
+            return analysis_result
+            
+        except Exception as e:
+            print(f"❌ プロジェクト記憶統合分析エラー: {e}")
+            return {}
+    
+    def _extract_project_keywords(self, project_data: Dict[str, Any]) -> List[str]:
+        """プロジェクトからキーワードを抽出"""
+        keywords = []
+        
+        # タイトル・説明・タイプからキーワード抽出
+        text_fields = ["title", "description", "type"]
+        for field in text_fields:
+            if field in project_data:
+                keywords.extend(self._extract_keywords(project_data[field]))
+        
+        # ノート・次のステップからも抽出
+        if "notes" in project_data:
+            for note in project_data["notes"]:
+                if isinstance(note, str):
+                    keywords.extend(self._extract_keywords(note))
+        
+        if "next_steps" in project_data:
+            for step in project_data["next_steps"]:
+                if isinstance(step, str):
+                    keywords.extend(self._extract_keywords(step))
+        
+        return list(set(keywords))
+    
+    def _find_project_related_memories(self, project_keywords: List[str]) -> List[Dict[str, Any]]:
+        """プロジェクト関連記憶を検索"""
+        related_memories = []
+        
+        for rel in self.integration_data["memory_relationships"]:
+            metadata = rel.get("metadata", {})
+            common_themes = metadata.get("common_themes", [])
+            
+            # キーワード一致度計算
+            if project_keywords and common_themes:
+                match_score = len(set(project_keywords) & set(common_themes)) / max(len(project_keywords), 1)
+                
+                if match_score > 0.2:  # 20%以上の一致で関連性あり
+                    related_memories.append({
+                        "relationship": rel,
+                        "match_score": match_score,
+                        "relevance": match_score * rel["strength"],
+                        "memory_source": rel["source_memory"],
+                        "memory_target": rel["target_memory"]
+                    })
+        
+        # 関連度順でソート
+        related_memories.sort(key=lambda x: x["relevance"], reverse=True)
+        return related_memories
+    
+    def _analyze_project_integration_patterns(self, project_data: Dict[str, Any], 
+                                           related_memories: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """プロジェクトの統合パターンを分析"""
+        patterns = []
+        
+        if not related_memories:
+            return patterns
+        
+        # パターン1: 学習-創作パターン
+        learning_memories = [m for m in related_memories 
+                           if "learning" in m["relationship"].get("metadata", {}).get("exp_type", "")]
+        creative_memories = [m for m in related_memories 
+                           if "creative" in m["relationship"].get("metadata", {}).get("success_type", "")]
+        
+        if learning_memories and creative_memories:
+            patterns.append({
+                "pattern_type": "learning_to_creation",
+                "description": "学習体験から創作成功への流れ",
+                "strength": (sum(m["relevance"] for m in learning_memories) + 
+                           sum(m["relevance"] for m in creative_memories)) / 2,
+                "supporting_memories": len(learning_memories) + len(creative_memories)
+            })
+        
+        # パターン2: 挑戦-習得パターン
+        challenge_memories = [m for m in related_memories 
+                           if "challenge" in m["relationship"].get("metadata", {}).get("exp_type", "")]
+        mastery_memories = [m for m in related_memories 
+                          if "problem_solving" in m["relationship"].get("metadata", {}).get("success_type", "")]
+        
+        if challenge_memories and mastery_memories:
+            patterns.append({
+                "pattern_type": "challenge_to_mastery",
+                "description": "挑戦から習得への成長パターン",
+                "strength": (sum(m["relevance"] for m in challenge_memories) + 
+                           sum(m["relevance"] for m in mastery_memories)) / 2,
+                "supporting_memories": len(challenge_memories) + len(mastery_memories)
+            })
+        
+        return patterns
+    
+    def _analyze_project_cluster_relevance(self, project_keywords: List[str]) -> Dict[str, Any]:
+        """プロジェクトとクラスターの関連性を分析"""
+        cluster_relevance = {}
+        
+        for cluster_name, cluster_data in self.integration_data["memory_clusters"].items():
+            theme = cluster_data.get("theme", "")
+            
+            # テーマとプロジェクトキーワードの関連性
+            relevance_score = 0.0
+            
+            for keyword in project_keywords:
+                if keyword in theme:
+                    relevance_score += 0.3
+            
+            # クラスターの強度も考慮
+            cluster_strength = cluster_data.get("average_strength", 0)
+            final_relevance = relevance_score * cluster_strength
+            
+            if final_relevance > 0.1:
+                cluster_relevance[cluster_name] = {
+                    "relevance_score": final_relevance,
+                    "theme": theme,
+                    "memory_count": len(cluster_data.get("personality_memories", [])) + 
+                                   len(cluster_data.get("collaboration_memories", []))
+                }
+        
+        return cluster_relevance
+    
+    def _calculate_memory_support_level(self, related_memories: List[Dict[str, Any]]) -> float:
+        """記憶サポートレベルを計算"""
+        if not related_memories:
+            return 0.0
+        
+        # 関連記憶数とそれぞれの関連度から総合スコア計算
+        total_relevance = sum(m["relevance"] for m in related_memories)
+        memory_count_factor = min(len(related_memories) / 10, 1.0)  # 最大10件で1.0
+        
+        support_level = (total_relevance * memory_count_factor) / max(len(related_memories), 1)
+        return min(support_level, 1.0)
+    
+    def _generate_project_memory_recommendations(self, project_data: Dict[str, Any], 
+                                               related_memories: List[Dict[str, Any]]) -> List[str]:
+        """プロジェクト記憶活用の推薦を生成"""
+        recommendations = []
+        
+        if not related_memories:
+            recommendations.append("新しい分野のプロジェクトです。積極的に体験を記録しましょう。")
+            return recommendations
+        
+        # 高関連度の記憶から推薦
+        high_relevance_memories = [m for m in related_memories if m["relevance"] >= 0.5]
+        
+        if high_relevance_memories:
+            recommendations.append(
+                f"過去の{len(high_relevance_memories)}件の関連体験を活かせます。"
+            )
+            
+            # 成功パターンから具体的推薦
+            for memory in high_relevance_memories[:2]:
+                rel_metadata = memory["relationship"].get("metadata", {})
+                if rel_metadata.get("success_type"):
+                    recommendations.append(
+                        f"過去の{rel_metadata['success_type']}の経験が参考になります。"
+                    )
+        
+        # 記憶が少ない場合の推薦
+        if len(related_memories) < 3:
+            recommendations.append("このプロジェクトの進捗と学びを積極的に記録し、今後に活かしましょう。")
+        
+        return recommendations
+    
+    def get_project_memory_context(self, project_data: Dict[str, Any]) -> str:
+        """
+        プロジェクト向けの記憶コンテキストを生成
+        
+        Args:
+            project_data: プロジェクトデータ
+            
+        Returns:
+            str: プロジェクト記憶コンテキスト
+        """
+        try:
+            # プロジェクト記憶統合分析
+            analysis = self.analyze_project_memory_integration(project_data)
+            
+            context_parts = []
+            
+            # 関連記憶の要約
+            related_memories = analysis.get("related_memories", [])
+            if related_memories:
+                context_parts.append("【関連する過去の体験】")
+                for memory in related_memories[:3]:  # 上位3件
+                    rel = memory["relationship"]
+                    context_parts.append(
+                        f"- {rel['context']} (関連度: {memory['relevance']:.2f})"
+                    )
+            
+            # 統合パターンの情報
+            patterns = analysis.get("integration_patterns", [])
+            if patterns:
+                context_parts.append("\n【活用可能なパターン】")
+                for pattern in patterns:
+                    context_parts.append(
+                        f"- {pattern['description']} (強度: {pattern['strength']:.2f})"
+                    )
+            
+            # 推薦事項
+            recommendations = analysis.get("recommendations", [])
+            if recommendations:
+                context_parts.append("\n【記憶活用の推薦】")
+                for rec in recommendations[:2]:
+                    context_parts.append(f"- {rec}")
+            
+            return "\n".join(context_parts)
+            
+        except Exception as e:
+            print(f"❌ プロジェクト記憶コンテキスト生成エラー: {e}")
+            return ""
+    
     def get_memory_stats(self) -> Dict[str, Any]:
         """記憶統合統計情報を取得"""
         relationships = self.integration_data["memory_relationships"]

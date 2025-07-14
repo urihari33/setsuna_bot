@@ -1,31 +1,62 @@
 {
   "conversation_memory": [
     {
-      "timestamp": "2025-07-07T01:57:03.325697",
-      "user_input": "さっき 添付した画像 どう思う",
+      "timestamp": "2025-07-15T00:28:26.646530",
+      "user_input": "最近どう？",
       "context_analysis": {
-        "input": "さっき 添付した画像 どう思う",
-        "timestamp": "2025-07-07T01:57:03.320699",
+        "input": "最近どう？",
+        "timestamp": "2025-07-15T00:28:26.642514",
         "pronoun_references": [
-          {
-            "type": "temporal",
-            "text": "さっき",
-            "position": [
-              0,
-              3
-            ],
-            "confidence": 0.8
-          },
           {
             "type": "implicit",
             "text": "どう",
             "position": [
-              11,
-              13
+              2,
+              4
             ],
             "confidence": 0.6
           }
         ],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.7,
+          "satisfaction": 0.0,
+          "detected_emotions": [
+            {
+              "emotion": "curiosity",
+              "strength": 0.7
+            }
+          ]
+        },
+        "topic_relevance": {},
+        "requires_resolution": true
+      },
+      "mentioned_videos": [],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.7,
+        "satisfaction": 0.0,
+        "detected_emotions": [
+          {
+            "emotion": "curiosity",
+            "strength": 0.7
+          }
+        ]
+      },
+      "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-07-15T00:28:33.421611",
+      "user_input": "映像制作のアイデアを考えてる",
+      "context_analysis": {
+        "input": "映像制作のアイデアを考えてる",
+        "timestamp": "2025-07-15T00:28:33.406698",
+        "pronoun_references": [],
         "continuity_indicators": [],
         "emotional_signals": {
           "positive": 0.0,
@@ -36,9 +67,17 @@
           "detected_emotions": []
         },
         "topic_relevance": {},
-        "requires_resolution": true
+        "requires_resolution": false
       },
-      "mentioned_videos": [],
+      "mentioned_videos": [
+        {
+          "video_id": "2Z_qydIQGG4",
+          "title": "アオペラの「ア」-introduction song-",
+          "channel": "アオペラ -aoppella!?- 公式",
+          "genre": "",
+          "search_score": 12
+        }
+      ],
       "emotional_state": {
         "positive": 0.0,
         "negative": 0.0,
@@ -50,11 +89,217 @@
       "continuity_indicators": []
     },
     {
-      "timestamp": "2025-07-07T01:57:19.420320",
-      "user_input": "分析した内容を教えて",
+      "timestamp": "2025-07-15T00:28:38.540323",
+      "user_input": "この楽曲で何か作れないかな？",
       "context_analysis": {
-        "input": "分析した内容を教えて",
-        "timestamp": "2025-07-07T01:57:19.420320",
+        "input": "この楽曲で何か作れないかな？",
+        "timestamp": "2025-07-15T00:28:38.536504",
+        "pronoun_references": [
+          {
+            "type": "demonstrative",
+            "text": "この楽曲",
+            "position": [
+              0,
+              4
+            ],
+            "confidence": 0.9
+          },
+          {
+            "type": "demonstrative",
+            "text": "この",
+            "position": [
+              0,
+              2
+            ],
+            "confidence": 0.9
+          }
+        ],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.7,
+          "satisfaction": 0.0,
+          "detected_emotions": [
+            {
+              "emotion": "curiosity",
+              "strength": 0.7
+            }
+          ]
+        },
+        "topic_relevance": {
+          "2Z_qydIQGG4": {
+            "relevance_score": 0.8,
+            "topic_data": {
+              "video_id": "2Z_qydIQGG4",
+              "title": "アオペラの「ア」-introduction song-",
+              "channel": "アオペラ -aoppella!?- 公式",
+              "genre": "",
+              "keywords": [
+                "アオペラ -aoppella!?- 公式",
+                "アオペラ"
+              ],
+              "last_mentioned": "2025-07-15T00:28:33.422157",
+              "mention_count": 1
+            },
+            "related_keywords": []
+          }
+        },
+        "requires_resolution": true
+      },
+      "mentioned_videos": [
+        {
+          "video_id": "2Z_qydIQGG4",
+          "title": "アオペラの「ア」-introduction song-",
+          "channel": "アオペラ -aoppella!?- 公式",
+          "genre": "",
+          "search_score": 80.0
+        }
+      ],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.7,
+        "satisfaction": 0.0,
+        "detected_emotions": [
+          {
+            "emotion": "curiosity",
+            "strength": 0.7
+          }
+        ]
+      },
+      "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-07-15T00:28:44.425426",
+      "user_input": "この楽曲について教えて",
+      "context_analysis": {
+        "input": "この楽曲について教えて",
+        "timestamp": "2025-07-15T00:28:44.421424",
+        "pronoun_references": [
+          {
+            "type": "demonstrative",
+            "text": "この楽曲",
+            "position": [
+              0,
+              4
+            ],
+            "confidence": 0.9
+          },
+          {
+            "type": "demonstrative",
+            "text": "この",
+            "position": [
+              0,
+              2
+            ],
+            "confidence": 0.9
+          }
+        ],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.7,
+          "satisfaction": 0.0,
+          "detected_emotions": [
+            {
+              "emotion": "curiosity",
+              "strength": 0.7
+            }
+          ]
+        },
+        "topic_relevance": {
+          "2Z_qydIQGG4": {
+            "relevance_score": 0.8,
+            "topic_data": {
+              "video_id": "2Z_qydIQGG4",
+              "title": "アオペラの「ア」-introduction song-",
+              "channel": "アオペラ -aoppella!?- 公式",
+              "genre": "",
+              "keywords": [
+                "アオペラ -aoppella!?- 公式",
+                "アオペラ"
+              ],
+              "last_mentioned": "2025-07-15T00:28:38.540340",
+              "mention_count": 2
+            },
+            "related_keywords": []
+          }
+        },
+        "requires_resolution": true
+      },
+      "mentioned_videos": [
+        {
+          "video_id": "2Z_qydIQGG4",
+          "title": "アオペラの「ア」-introduction song-",
+          "channel": "アオペラ -aoppella!?- 公式",
+          "genre": "",
+          "search_score": 80.0
+        }
+      ],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.7,
+        "satisfaction": 0.0,
+        "detected_emotions": [
+          {
+            "emotion": "curiosity",
+            "strength": 0.7
+          }
+        ]
+      },
+      "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-07-15T00:28:53.698355",
+      "user_input": "映像制作のアイデアを考えてる",
+      "context_analysis": {
+        "input": "映像制作のアイデアを考えてる",
+        "timestamp": "2025-07-15T00:28:53.684406",
+        "pronoun_references": [],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.0,
+          "satisfaction": 0.0,
+          "detected_emotions": []
+        },
+        "topic_relevance": {},
+        "requires_resolution": false
+      },
+      "mentioned_videos": [
+        {
+          "video_id": "2Z_qydIQGG4",
+          "title": "アオペラの「ア」-introduction song-",
+          "channel": "アオペラ -aoppella!?- 公式",
+          "genre": "",
+          "search_score": 12
+        }
+      ],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.0,
+        "satisfaction": 0.0,
+        "detected_emotions": []
+      },
+      "continuity_indicators": []
+    },
+    {
+      "timestamp": "2025-07-15T00:29:01.477041",
+      "user_input": "一緒に何か作らない？",
+      "context_analysis": {
+        "input": "一緒に何か作らない？",
+        "timestamp": "2025-07-15T00:29:01.476963",
         "pronoun_references": [],
         "continuity_indicators": [],
         "emotional_signals": {
@@ -90,53 +335,32 @@
       "continuity_indicators": []
     },
     {
-      "timestamp": "2025-07-07T02:04:19.857524",
-      "user_input": "構図的にどう思う",
+      "timestamp": "2025-07-15T00:31:21.939262",
+      "user_input": "でもさー 教育的な内容とかだとさ なんかあんまり目立ち そうじゃ",
       "context_analysis": {
-        "input": "構図的にどう思う",
-        "timestamp": "2025-07-07T02:04:19.857524",
-        "pronoun_references": [
+        "input": "でもさー 教育的な内容とかだとさ なんかあんまり目立ち そうじゃ",
+        "timestamp": "2025-07-15T00:31:21.938265",
+        "pronoun_references": [],
+        "continuity_indicators": [
           {
-            "type": "implicit",
-            "text": "どう",
+            "type": "agreement",
+            "text": "そう",
             "position": [
-              4,
-              6
+              28,
+              30
             ],
-            "confidence": 0.6
+            "strength": "strong"
+          },
+          {
+            "type": "disagreement",
+            "text": "でも",
+            "position": [
+              0,
+              2
+            ],
+            "strength": "strong"
           }
         ],
-        "continuity_indicators": [],
-        "emotional_signals": {
-          "positive": 0.0,
-          "negative": 0.0,
-          "excitement": 0.0,
-          "curiosity": 0.0,
-          "satisfaction": 0.0,
-          "detected_emotions": []
-        },
-        "topic_relevance": {},
-        "requires_resolution": true
-      },
-      "mentioned_videos": [],
-      "emotional_state": {
-        "positive": 0.0,
-        "negative": 0.0,
-        "excitement": 0.0,
-        "curiosity": 0.0,
-        "satisfaction": 0.0,
-        "detected_emotions": []
-      },
-      "continuity_indicators": []
-    },
-    {
-      "timestamp": "2025-07-07T02:04:42.157083",
-      "user_input": "同市線 誘導するの",
-      "context_analysis": {
-        "input": "同市線 誘導するの",
-        "timestamp": "2025-07-07T02:04:42.156077",
-        "pronoun_references": [],
-        "continuity_indicators": [],
         "emotional_signals": {
           "positive": 0.0,
           "negative": 0.0,
@@ -157,22 +381,116 @@
         "satisfaction": 0.0,
         "detected_emotions": []
       },
+      "continuity_indicators": [
+        {
+          "type": "agreement",
+          "text": "そう",
+          "position": [
+            28,
+            30
+          ],
+          "strength": "strong"
+        },
+        {
+          "type": "disagreement",
+          "text": "でも",
+          "position": [
+            0,
+            2
+          ],
+          "strength": "strong"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-07-15T00:36:21.629021",
+      "user_input": "クリエイターとしての創作プロセスや技術的なこだわり、視聴者との関係性について話し合いたい",
+      "context_analysis": {
+        "input": "クリエイターとしての創作プロセスや技術的なこだわり、視聴者との関係性について話し合いたい",
+        "timestamp": "2025-07-15T00:36:21.567125",
+        "pronoun_references": [],
+        "continuity_indicators": [],
+        "emotional_signals": {
+          "positive": 0.0,
+          "negative": 0.0,
+          "excitement": 0.0,
+          "curiosity": 0.0,
+          "satisfaction": 0.0,
+          "detected_emotions": []
+        },
+        "topic_relevance": {},
+        "requires_resolution": false
+      },
+      "mentioned_videos": [
+        {
+          "video_id": "bh7oZ9WU8vg",
+          "title": "いちプロ",
+          "channel": "FIRST STAGE PRODUCTION",
+          "genre": "",
+          "search_score": 12
+        }
+      ],
+      "emotional_state": {
+        "positive": 0.0,
+        "negative": 0.0,
+        "excitement": 0.0,
+        "curiosity": 0.0,
+        "satisfaction": 0.0,
+        "detected_emotions": []
+      },
       "continuity_indicators": []
     },
     {
-      "timestamp": "2025-07-07T02:27:54.911577",
-      "user_input": "全体的にどんな色合いか教えて",
+      "timestamp": "2025-07-15T00:42:00.784212",
+      "user_input": "前回の続きなんだけどさ 動画でなんか 活動するとしたらなんかどういうのがやりたいとかある",
       "context_analysis": {
-        "input": "全体的にどんな色合いか教えて",
-        "timestamp": "2025-07-07T02:27:54.905616",
-        "pronoun_references": [],
+        "input": "前回の続きなんだけどさ 動画でなんか 活動するとしたらなんかどういうのがやりたいとかある",
+        "timestamp": "2025-07-15T00:42:00.773030",
+        "pronoun_references": [
+          {
+            "type": "temporal",
+            "text": "前",
+            "position": [
+              0,
+              1
+            ],
+            "confidence": 0.8
+          },
+          {
+            "type": "implicit",
+            "text": "続き",
+            "position": [
+              3,
+              5
+            ],
+            "confidence": 0.6
+          },
+          {
+            "type": "implicit",
+            "text": "どう",
+            "position": [
+              30,
+              32
+            ],
+            "confidence": 0.6
+          }
+        ],
         "continuity_indicators": [
           {
-            "type": "clarification",
-            "text": "どんな",
+            "type": "disagreement",
+            "text": "けど",
             "position": [
-              4,
-              7
+              8,
+              10
+            ],
+            "strength": "strong"
+          },
+          {
+            "type": "clarification",
+            "text": "どういう",
+            "position": [
+              30,
+              34
             ],
             "strength": "medium"
           }
@@ -181,46 +499,116 @@
           "positive": 0.0,
           "negative": 0.0,
           "excitement": 0.0,
-          "curiosity": 1.0,
+          "curiosity": 0.0,
           "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "curiosity",
-              "strength": 1.4
-            }
-          ]
+          "detected_emotions": []
         },
-        "topic_relevance": {},
-        "requires_resolution": false
+        "topic_relevance": {
+          "2Z_qydIQGG4": {
+            "relevance_score": 0.8,
+            "topic_data": {
+              "video_id": "2Z_qydIQGG4",
+              "title": "アオペラの「ア」-introduction song-",
+              "channel": "アオペラ -aoppella!?- 公式",
+              "genre": "",
+              "keywords": [
+                "アオペラ -aoppella!?- 公式",
+                "アオペラ"
+              ],
+              "last_mentioned": "2025-07-15T00:28:53.698375",
+              "mention_count": 4
+            },
+            "related_keywords": []
+          },
+          "bh7oZ9WU8vg": {
+            "relevance_score": 0.8,
+            "topic_data": {
+              "video_id": "bh7oZ9WU8vg",
+              "title": "いちプロ",
+              "channel": "FIRST STAGE PRODUCTION",
+              "genre": "",
+              "keywords": [
+                "FIRST STAGE PRODUCTION"
+              ],
+              "last_mentioned": "2025-07-15T00:36:21.629470",
+              "mention_count": 1
+            },
+            "related_keywords": []
+          }
+        },
+        "requires_resolution": true
       },
-      "mentioned_videos": [],
+      "mentioned_videos": [
+        {
+          "video_id": "2Z_qydIQGG4",
+          "title": "アオペラの「ア」-introduction song-",
+          "channel": "アオペラ -aoppella!?- 公式",
+          "genre": "",
+          "search_score": 80.0
+        },
+        {
+          "video_id": "bh7oZ9WU8vg",
+          "title": "いちプロ",
+          "channel": "FIRST STAGE PRODUCTION",
+          "genre": "",
+          "search_score": 80.0
+        }
+      ],
       "emotional_state": {
         "positive": 0.0,
         "negative": 0.0,
         "excitement": 0.0,
-        "curiosity": 1.0,
+        "curiosity": 0.0,
         "satisfaction": 0.0,
-        "detected_emotions": [
-          {
-            "emotion": "curiosity",
-            "strength": 1.4
-          }
-        ]
+        "detected_emotions": []
       },
       "continuity_indicators": [
         {
-          "type": "clarification",
-          "text": "どんな",
+          "type": "disagreement",
+          "text": "けど",
           "position": [
-            4,
-            7
+            8,
+            10
+          ],
+          "strength": "strong"
+        },
+        {
+          "type": "clarification",
+          "text": "どういう",
+          "position": [
+            30,
+            34
           ],
           "strength": "medium"
         }
       ]
     }
   ],
-  "active_topics": {},
+  "active_topics": {
+    "2Z_qydIQGG4": {
+      "video_id": "2Z_qydIQGG4",
+      "title": "アオペラの「ア」-introduction song-",
+      "channel": "アオペラ -aoppella!?- 公式",
+      "genre": "",
+      "keywords": [
+        "アオペラ -aoppella!?- 公式",
+        "アオペラ"
+      ],
+      "last_mentioned": "2025-07-15T00:42:00.785279",
+      "mention_count": 5
+    },
+    "bh7oZ9WU8vg": {
+      "video_id": "bh7oZ9WU8vg",
+      "title": "いちプロ",
+      "channel": "FIRST STAGE PRODUCTION",
+      "genre": "",
+      "keywords": [
+        "FIRST STAGE PRODUCTION"
+      ],
+      "last_mentioned": "2025-07-15T00:42:00.785279",
+      "mention_count": 2
+    }
+  },
   "emotional_context": {},
   "config": {
     "max_conversation_memory": 10,
@@ -230,5 +618,5 @@
     "enable_pronoun_resolution": true,
     "enable_topic_tracking": true
   },
-  "last_updated": "2025-07-07T02:27:54.911577"
+  "last_updated": "2025-07-15T00:42:00.785279"
 }

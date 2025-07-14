@@ -1,0 +1,1503 @@
+[
+  {
+    "timestamp": "2025-07-11T23:23:44.488964",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250711_232342_1ec28d8c",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28324,
+    "formatted_message": "[2025-07-11 23:23:44.488] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250711_232342_1ec28d8c"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.488964",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250711_232342_1ec28d8c",
+      "available_sessions": [
+        "session_20250711_232342_1ec28d8c"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28324,
+    "formatted_message": "[2025-07-11 23:23:44.488] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250711_232342_1ec28d8c\", \"available_sessions\": [\"session_20250711_232342_1ec28d8c\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.488964",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください",
+      "learning_type": "概要",
+      "depth_level": 3,
+      "time_limit": 600,
+      "budget_limit": 1.0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28324,
+    "formatted_message": "[2025-07-11 23:23:44.488] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください\", \"learning_type\": \"概要\", \"depth_level\": 3, \"time_limit\": 600, \"budget_limit\": 1.0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.495069",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション保存成功",
+    "context": {
+      "session_id": "session_20250711_232342_1ec28d8c",
+      "file_size": 1101,
+      "data_keys": [
+        "session_metadata",
+        "last_updated"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28324,
+    "formatted_message": "[2025-07-11 23:23:44.495] [DEBUG] [SESSION] セッション保存成功 | Context: {\"session_id\": \"session_20250711_232342_1ec28d8c\", \"file_size\": 1101, \"data_keys\": [\"session_metadata\", \"last_updated\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.495069",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250711_232342_1ec28d8c",
+      "start_time": "2025-07-11T23:23:44.488964",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28324,
+    "formatted_message": "[2025-07-11 23:23:44.495] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250711_232342_1ec28d8c\", \"start_time\": \"2025-07-11T23:23:44.488964\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.495069",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250711_232342_1ec28d8c",
+      "thread_id": 456
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28324,
+    "formatted_message": "[2025-07-11 23:23:44.495] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250711_232342_1ec28d8c\", \"thread_id\": 456}"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.495069",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250711_232342_1ec28d8c",
+          "theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください",
+          "depth_level": 3
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:23:44.495] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250711_232342_1ec28d8c\", \"theme\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください\", \"depth_level\": 3}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:23:44.496070",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "動的検索クエリ生成開始",
+    "context": {
+      "theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください",
+      "depth_level": 3,
+      "learning_type": "概要"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:23:44.496] [DEBUG] [SESSION] 動的検索クエリ生成開始 | Context: {\"theme\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください\", \"depth_level\": 3, \"learning_type\": \"概要\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.046011",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "動的検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "2025 music influencer trends popular content",
+        "音楽ビデオ制作の基本とコツ 2025",
+        "music video production tools 2025",
+        "successful music influencers marketing strategies 2025",
+        "VTuber活動の成功事例と分析 2025",
+        "how to increase video posting frequency for music channels",
+        "音楽系YouTubeチャンネル成長戦略 2025"
+      ],
+      "total_queries": 7,
+      "generation_method": "gpt4_dynamic"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.046] [INFO] [SESSION] 動的検索クエリ生成完了 | Context: {\"generated_queries\": [\"2025 music influencer trends popular content\", \"音楽ビデオ制作の基本とコツ 2025\", \"music video production tools 2025\", \"successful music influencers marketing strategies 2025\", \"VTuber活動の成功事例と分析 2025\", \"how to increase video posting frequency for music channels\", \"音楽系YouTubeチャンネル成長戦略 2025\"], \"total_queries\": 7, \"generation_method\": \"gpt4_dynamic\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.047019",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 7,
+      "search_queries": [
+        "2025 music influencer trends popular content",
+        "音楽ビデオ制作の基本とコツ 2025",
+        "music video production tools 2025",
+        "successful music influencers marketing strategies 2025",
+        "VTuber活動の成功事例と分析 2025",
+        "how to increase video posting frequency for music channels",
+        "音楽系YouTubeチャンネル成長戦略 2025"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.047] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 7, \"search_queries\": [\"2025 music influencer trends popular content\", \"音楽ビデオ制作の基本とコツ 2025\", \"music video production tools 2025\", \"successful music influencers marketing strategies 2025\", \"VTuber活動の成功事例と分析 2025\", \"how to increase video posting frequency for music channels\", \"音楽系YouTubeチャンネル成長戦略 2025\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.047019",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/7)",
+    "context": {
+      "query": "2025 music influencer trends popular content",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.047] [INFO] [SESSION] 検索実行 (1/7) | Context: {\"query\": \"2025 music influencer trends popular content\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.047019",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "2025 music influencer trends popular content",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.047] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"2025 music influencer trends popular content\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.847257",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "2025 music influencer trends popular content",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.8002381324768066,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.847] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"2025 music influencer trends popular content\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 0.8002381324768066, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "www.instagram.com_8683",
+      "source_type": "web",
+      "url": "https://www.instagram.com/uespiiiiii/",
+      "title_length": 59,
+      "content_length": 155
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"www.instagram.com_8683\", \"source_type\": \"web\", \"url\": \"https://www.instagram.com/uespiiiiii/\", \"title_length\": 59, \"content_length\": 155}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "www.facebook.com_7693",
+      "source_type": "web",
+      "url": "https://www.facebook.com/robertglasper/?locale=ja_JP",
+      "title_length": 14,
+      "content_length": 143
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"www.facebook.com_7693\", \"source_type\": \"web\", \"url\": \"https://www.facebook.com/robertglasper/?locale=ja_JP\", \"title_length\": 14, \"content_length\": 143}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "www.tiktok.com_4092",
+      "source_type": "web",
+      "url": "https://www.tiktok.com/discover/egyptian-trend-2025-music-xiao",
+      "title_length": 39,
+      "content_length": 160
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"www.tiktok.com_4092\", \"source_type\": \"web\", \"url\": \"https://www.tiktok.com/discover/egyptian-trend-2025-music-xiao\", \"title_length\": 39, \"content_length\": 160}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "www.instagram.com_6175",
+      "source_type": "web",
+      "url": "https://www.instagram.com/p/DDbzrY-of2u/",
+      "title_length": 30,
+      "content_length": 163
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"www.instagram.com_6175\", \"source_type\": \"web\", \"url\": \"https://www.instagram.com/p/DDbzrY-of2u/\", \"title_length\": 30, \"content_length\": 163}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "www.tiktok.com_8031",
+      "source_type": "web",
+      "url": "https://www.tiktok.com/discover/tik-tok-billboard-top-50",
+      "title_length": 33,
+      "content_length": 160
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"www.tiktok.com_8031\", \"source_type\": \"web\", \"url\": \"https://www.tiktok.com/discover/tik-tok-billboard-top-50\", \"title_length\": 33, \"content_length\": 160}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: 2025 music influencer trends popular content (5件)",
+    "context": {
+      "web_search": {
+        "query": "2025 music influencer trends popular content",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.8002381324768066,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [INFO] [SESSION] Web検索実行: 2025 music influencer trends popular content (5件) | Context: {\"web_search\": {\"query\": \"2025 music influencer trends popular content\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.8002381324768066, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:03.848258",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/7)",
+    "context": {
+      "query": "2025 music influencer trends popular content",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.8012397289276123,
+      "total_collected": 5,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:03.848] [INFO] [SESSION] 検索結果 (1/7) | Context: {\"query\": \"2025 music influencer trends popular content\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.8012397289276123, \"total_collected\": 5, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:04.850412",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/7)",
+    "context": {
+      "query": "音楽ビデオ制作の基本とコツ 2025",
+      "query_index": 1,
+      "current_sources_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:04.850] [INFO] [SESSION] 検索実行 (2/7) | Context: {\"query\": \"音楽ビデオ制作の基本とコツ 2025\", \"query_index\": 1, \"current_sources_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:04.850412",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "音楽ビデオ制作の基本とコツ 2025",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:04.850] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"音楽ビデオ制作の基本とコツ 2025\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.518132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "音楽ビデオ制作の基本とコツ 2025",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.667719841003418,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.518] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"音楽ビデオ制作の基本とコツ 2025\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 0.667719841003418, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.518132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "imitsu.jp_5457",
+      "source_type": "web",
+      "url": "https://imitsu.jp/matome/movie/how-to-make-mv",
+      "title_length": 37,
+      "content_length": 87
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.518] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"imitsu.jp_5457\", \"source_type\": \"web\", \"url\": \"https://imitsu.jp/matome/movie/how-to-make-mv\", \"title_length\": 37, \"content_length\": 87}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.518132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "note.com_3039",
+      "source_type": "web",
+      "url": "https://note.com/makiodrums/n/na77b94050cd9",
+      "title_length": 33,
+      "content_length": 75
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.518] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"note.com_3039\", \"source_type\": \"web\", \"url\": \"https://note.com/makiodrums/n/na77b94050cd9\", \"title_length\": 33, \"content_length\": 75}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.518132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "douga-kanji.com_7655",
+      "source_type": "web",
+      "url": "https://douga-kanji.com/posts/promotion-movie-making",
+      "title_length": 37,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.518] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"douga-kanji.com_7655\", \"source_type\": \"web\", \"url\": \"https://douga-kanji.com/posts/promotion-movie-making\", \"title_length\": 37, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.518132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "jp.cyberlink.com_5951",
+      "source_type": "web",
+      "url": "https://jp.cyberlink.com/blog/video-effects/1016/how-to-create-music-video",
+      "title_length": 39,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.518] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"jp.cyberlink.com_5951\", \"source_type\": \"web\", \"url\": \"https://jp.cyberlink.com/blog/video-effects/1016/how-to-create-music-video\", \"title_length\": 39, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.518132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "filmora.wondershare.jp_3226",
+      "source_type": "web",
+      "url": "https://filmora.wondershare.jp/video-editing/equipment-make-vocaloid-music-and-video.html",
+      "title_length": 33,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.518] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"filmora.wondershare.jp_3226\", \"source_type\": \"web\", \"url\": \"https://filmora.wondershare.jp/video-editing/equipment-make-vocaloid-music-and-video.html\", \"title_length\": 33, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.519132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: 音楽ビデオ制作の基本とコツ 2025 (5件)",
+    "context": {
+      "web_search": {
+        "query": "音楽ビデオ制作の基本とコツ 2025",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.667719841003418,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.519] [INFO] [SESSION] Web検索実行: 音楽ビデオ制作の基本とコツ 2025 (5件) | Context: {\"web_search\": {\"query\": \"音楽ビデオ制作の基本とコツ 2025\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.667719841003418, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:05.519132",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/7)",
+    "context": {
+      "query": "音楽ビデオ制作の基本とコツ 2025",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.668720006942749,
+      "total_collected": 10,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:05.519] [INFO] [SESSION] 検索結果 (2/7) | Context: {\"query\": \"音楽ビデオ制作の基本とコツ 2025\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.668720006942749, \"total_collected\": 10, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:06.519998",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/7)",
+    "context": {
+      "query": "music video production tools 2025",
+      "query_index": 2,
+      "current_sources_count": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:06.519] [INFO] [SESSION] 検索実行 (3/7) | Context: {\"query\": \"music video production tools 2025\", \"query_index\": 2, \"current_sources_count\": 10}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:06.519998",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "music video production tools 2025",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:06.519] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"music video production tools 2025\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.435179",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "music video production tools 2025",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.9151809215545654,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.435] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"music video production tools 2025\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 0.9151809215545654, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.435179",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "www.adobe.com_3839",
+      "source_type": "web",
+      "url": "https://www.adobe.com/products/firefly.html",
+      "title_length": 48,
+      "content_length": 160
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.435] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"www.adobe.com_3839\", \"source_type\": \"web\", \"url\": \"https://www.adobe.com/products/firefly.html\", \"title_length\": 48, \"content_length\": 160}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.435179",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "www.instagram.com_4176",
+      "source_type": "web",
+      "url": "https://www.instagram.com/gyanriley/",
+      "title_length": 53,
+      "content_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.435] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"www.instagram.com_4176\", \"source_type\": \"web\", \"url\": \"https://www.instagram.com/gyanriley/\", \"title_length\": 53, \"content_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.435179",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "www.adobe.com_2211",
+      "source_type": "web",
+      "url": "https://www.adobe.com/products/premiere-elements/features.html",
+      "title_length": 39,
+      "content_length": 162
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.435] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"www.adobe.com_2211\", \"source_type\": \"web\", \"url\": \"https://www.adobe.com/products/premiere-elements/features.html\", \"title_length\": 39, \"content_length\": 162}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.435179",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "www.tiktok.com_5431",
+      "source_type": "web",
+      "url": "https://www.tiktok.com/discover/ai-music-generators-2025",
+      "title_length": 33,
+      "content_length": 162
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.435] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"www.tiktok.com_5431\", \"source_type\": \"web\", \"url\": \"https://www.tiktok.com/discover/ai-music-generators-2025\", \"title_length\": 33, \"content_length\": 162}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.436188",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "www.homestyler.com_839",
+      "source_type": "web",
+      "url": "https://www.homestyler.com/article/the-ultimate-guide-to-online-video-rendering-tools?lang=ja_JP",
+      "title_length": 68,
+      "content_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.436] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"www.homestyler.com_839\", \"source_type\": \"web\", \"url\": \"https://www.homestyler.com/article/the-ultimate-guide-to-online-video-rendering-tools?lang=ja_JP\", \"title_length\": 68, \"content_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.436188",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: music video production tools 2025 (5件)",
+    "context": {
+      "web_search": {
+        "query": "music video production tools 2025",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.9151809215545654,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.436] [INFO] [SESSION] Web検索実行: music video production tools 2025 (5件) | Context: {\"web_search\": {\"query\": \"music video production tools 2025\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.9151809215545654, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:07.436188",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/7)",
+    "context": {
+      "query": "music video production tools 2025",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.9161901473999023,
+      "total_collected": 15,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:07.436] [INFO] [SESSION] 検索結果 (3/7) | Context: {\"query\": \"music video production tools 2025\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.9161901473999023, \"total_collected\": 15, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:08.436903",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (4/7)",
+    "context": {
+      "query": "successful music influencers marketing strategies 2025",
+      "query_index": 3,
+      "current_sources_count": 15
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:08.436] [INFO] [SESSION] 検索実行 (4/7) | Context: {\"query\": \"successful music influencers marketing strategies 2025\", \"query_index\": 3, \"current_sources_count\": 15}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:08.436903",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "successful music influencers marketing strategies 2025",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:08.436] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"successful music influencers marketing strategies 2025\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "successful music influencers marketing strategies 2025",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 1.022035837173462,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"successful music influencers marketing strategies 2025\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 1.022035837173462, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "www.amazon.jobs_7882",
+      "source_type": "web",
+      "url": "https://www.amazon.jobs/jp/jobs/2972178/marketing-manager-amazon-music",
+      "title_length": 60,
+      "content_length": 157
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"www.amazon.jobs_7882\", \"source_type\": \"web\", \"url\": \"https://www.amazon.jobs/jp/jobs/2972178/marketing-manager-amazon-music\", \"title_length\": 60, \"content_length\": 157}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "pragermetis.com_1924",
+      "source_type": "web",
+      "url": "https://pragermetis.com/news/",
+      "title_length": 19,
+      "content_length": 152
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"pragermetis.com_1924\", \"source_type\": \"web\", \"url\": \"https://pragermetis.com/news/\", \"title_length\": 19, \"content_length\": 152}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "www.facebook.com_5927",
+      "source_type": "web",
+      "url": "https://www.facebook.com/socialvideocreator/?locale=ja_JP",
+      "title_length": 5,
+      "content_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"www.facebook.com_5927\", \"source_type\": \"web\", \"url\": \"https://www.facebook.com/socialvideocreator/?locale=ja_JP\", \"title_length\": 5, \"content_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "www.cov.com_4320",
+      "source_type": "web",
+      "url": "https://www.cov.com/en/practices-and-industries/industries/virtual-and-augmented-reality",
+      "title_length": 55,
+      "content_length": 163
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"www.cov.com_4320\", \"source_type\": \"web\", \"url\": \"https://www.cov.com/en/practices-and-industries/industries/virtual-and-augmented-reality\", \"title_length\": 55, \"content_length\": 163}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "podcasts.apple.com_7664",
+      "source_type": "web",
+      "url": "https://podcasts.apple.com/jp/podcast/the-think-media-podcast/id1492533163",
+      "title_length": 49,
+      "content_length": 158
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"podcasts.apple.com_7664\", \"source_type\": \"web\", \"url\": \"https://podcasts.apple.com/jp/podcast/the-think-media-podcast/id1492533163\", \"title_length\": 49, \"content_length\": 158}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: successful music influencers marketing strategies 2025 (5件)",
+    "context": {
+      "web_search": {
+        "query": "successful music influencers marketing strategies 2025",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 1.022035837173462,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [INFO] [SESSION] Web検索実行: successful music influencers marketing strategies 2025 (5件) | Context: {\"web_search\": {\"query\": \"successful music influencers marketing strategies 2025\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 1.022035837173462, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:09.458939",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (4/7)",
+    "context": {
+      "query": "successful music influencers marketing strategies 2025",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 1.022035837173462,
+      "total_collected": 20,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:09.458] [INFO] [SESSION] 検索結果 (4/7) | Context: {\"query\": \"successful music influencers marketing strategies 2025\", \"success\": true, \"results_count\": 5, \"execution_time\": 1.022035837173462, \"total_collected\": 20, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:10.470768",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (5/7)",
+    "context": {
+      "query": "VTuber活動の成功事例と分析 2025",
+      "query_index": 4,
+      "current_sources_count": 20
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:10.470] [INFO] [SESSION] 検索実行 (5/7) | Context: {\"query\": \"VTuber活動の成功事例と分析 2025\", \"query_index\": 4, \"current_sources_count\": 20}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:10.470768",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "VTuber活動の成功事例と分析 2025",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:10.470] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"VTuber活動の成功事例と分析 2025\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.207460",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "VTuber活動の成功事例と分析 2025",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.736691951751709,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.207] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"VTuber活動の成功事例と分析 2025\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 0.736691951751709, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.207460",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "www.koukoku.jp_3723",
+      "source_type": "web",
+      "url": "https://www.koukoku.jp/service/suketto/marketer/sns/%E3%80%902025%E5%B9%B4%E6%9C%80%E6%96%B0%E3%80%91vtuber%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF%EF%BC%9F%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88%E3%83%BB%E3%83%87/",
+      "title_length": 39,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.207] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"www.koukoku.jp_3723\", \"source_type\": \"web\", \"url\": \"https://www.koukoku.jp/service/suketto/marketer/sns/%E3%80%902025%E5%B9%B4%E6%9C%80%E6%96%B0%E3%80%91vtuber%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF%EF%BC%9F%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88%E3%83%BB%E3%83%87/\", \"title_length\": 39, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.207460",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "www.macromill.com_3010",
+      "source_type": "web",
+      "url": "https://www.macromill.com/service/words/vtuber/",
+      "title_length": 36,
+      "content_length": 101
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.207] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"www.macromill.com_3010\", \"source_type\": \"web\", \"url\": \"https://www.macromill.com/service/words/vtuber/\", \"title_length\": 36, \"content_length\": 101}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.207460",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "regene.org_5873",
+      "source_type": "web",
+      "url": "https://regene.org/p/3169",
+      "title_length": 36,
+      "content_length": 93
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.207] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"regene.org_5873\", \"source_type\": \"web\", \"url\": \"https://regene.org/p/3169\", \"title_length\": 36, \"content_length\": 93}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.207460",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "digital-hacks.jp_5387",
+      "source_type": "web",
+      "url": "https://digital-hacks.jp/blog/archives/7938",
+      "title_length": 40,
+      "content_length": 96
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.207] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"digital-hacks.jp_5387\", \"source_type\": \"web\", \"url\": \"https://digital-hacks.jp/blog/archives/7938\", \"title_length\": 40, \"content_length\": 96}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.208461",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "note.com_323",
+      "source_type": "web",
+      "url": "https://note.com/shibuyahal/n/nf68c2608bee6",
+      "title_length": 34,
+      "content_length": 106
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.208] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"note.com_323\", \"source_type\": \"web\", \"url\": \"https://note.com/shibuyahal/n/nf68c2608bee6\", \"title_length\": 34, \"content_length\": 106}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.208461",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: VTuber活動の成功事例と分析 2025 (5件)",
+    "context": {
+      "web_search": {
+        "query": "VTuber活動の成功事例と分析 2025",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.736691951751709,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.208] [INFO] [SESSION] Web検索実行: VTuber活動の成功事例と分析 2025 (5件) | Context: {\"web_search\": {\"query\": \"VTuber活動の成功事例と分析 2025\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.736691951751709, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:11.208461",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (5/7)",
+    "context": {
+      "query": "VTuber活動の成功事例と分析 2025",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.7376933097839355,
+      "total_collected": 25,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:11.208] [INFO] [SESSION] 検索結果 (5/7) | Context: {\"query\": \"VTuber活動の成功事例と分析 2025\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.7376933097839355, \"total_collected\": 25, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:12.221785",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (6/7)",
+    "context": {
+      "query": "how to increase video posting frequency for music channels",
+      "query_index": 5,
+      "current_sources_count": 25
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:12.221] [INFO] [SESSION] 検索実行 (6/7) | Context: {\"query\": \"how to increase video posting frequency for music channels\", \"query_index\": 5, \"current_sources_count\": 25}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:12.221785",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "how to increase video posting frequency for music channels",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:12.221] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"how to increase video posting frequency for music channels\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "how to increase video posting frequency for music channels",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.7900457382202148,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"how to increase video posting frequency for music channels\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 0.7900457382202148, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "www.instagram.com_8704",
+      "source_type": "web",
+      "url": "https://www.instagram.com/morganamps/",
+      "title_length": 54,
+      "content_length": 161
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"www.instagram.com_8704\", \"source_type\": \"web\", \"url\": \"https://www.instagram.com/morganamps/\", \"title_length\": 54, \"content_length\": 161}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "www.amazon.com_1754",
+      "source_type": "web",
+      "url": "https://www.amazon.com/dbx-231s-Channel-31-Band-Equalizer/dp/B004NDHZTY",
+      "title_length": 62,
+      "content_length": 153
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"www.amazon.com_1754\", \"source_type\": \"web\", \"url\": \"https://www.amazon.com/dbx-231s-Channel-31-Band-Equalizer/dp/B004NDHZTY\", \"title_length\": 62, \"content_length\": 153}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "www.reddit.com_8204",
+      "source_type": "web",
+      "url": "https://www.reddit.com/r/LearnJapanese/comments/1h59vbp/daily_thread_simple_questions_comments_that_dont/",
+      "title_length": 70,
+      "content_length": 153
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"www.reddit.com_8204\", \"source_type\": \"web\", \"url\": \"https://www.reddit.com/r/LearnJapanese/comments/1h59vbp/daily_thread_simple_questions_comments_that_dont/\", \"title_length\": 70, \"content_length\": 153}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "watson.brown.edu_1532",
+      "source_type": "web",
+      "url": "https://watson.brown.edu/ir/files/ir/imce/honors/Kumahira_Final2015.pdf",
+      "title_length": 56,
+      "content_length": 166
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"watson.brown.edu_1532\", \"source_type\": \"web\", \"url\": \"https://watson.brown.edu/ir/files/ir/imce/honors/Kumahira_Final2015.pdf\", \"title_length\": 56, \"content_length\": 166}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "www.youtube.com_7690",
+      "source_type": "web",
+      "url": "https://www.youtube.com/channel/UCFkbPbcw6dXlqK3kGr-HFOQ/community",
+      "title_length": 24,
+      "content_length": 159
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"www.youtube.com_7690\", \"source_type\": \"web\", \"url\": \"https://www.youtube.com/channel/UCFkbPbcw6dXlqK3kGr-HFOQ/community\", \"title_length\": 24, \"content_length\": 159}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: how to increase video posting frequency for music channels (5件)",
+    "context": {
+      "web_search": {
+        "query": "how to increase video posting frequency for music channels",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.7900457382202148,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [INFO] [SESSION] Web検索実行: how to increase video posting frequency for music channels (5件) | Context: {\"web_search\": {\"query\": \"how to increase video posting frequency for music channels\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.7900457382202148, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:13.011831",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (6/7)",
+    "context": {
+      "query": "how to increase video posting frequency for music channels",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.7900457382202148,
+      "total_collected": 30,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:13.011] [INFO] [SESSION] 検索結果 (6/7) | Context: {\"query\": \"how to increase video posting frequency for music channels\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.7900457382202148, \"total_collected\": 30, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.025976",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (7/7)",
+    "context": {
+      "query": "音楽系YouTubeチャンネル成長戦略 2025",
+      "query_index": 6,
+      "current_sources_count": 30
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.025] [INFO] [SESSION] 検索実行 (7/7) | Context: {\"query\": \"音楽系YouTubeチャンネル成長戦略 2025\", \"query_index\": 6, \"current_sources_count\": 30}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.025976",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "音楽系YouTubeチャンネル成長戦略 2025",
+      "search_manager": "MultiSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.025] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"音楽系YouTubeチャンネル成長戦略 2025\", \"search_manager\": \"MultiSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.843803",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "マルチ検索結果",
+    "context": {
+      "query": "音楽系YouTubeチャンネル成長戦略 2025",
+      "engines_used": [
+        "google"
+      ],
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.8178262710571289,
+      "primary_engine": "google"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.843] [INFO] [SESSION] マルチ検索結果 | Context: {\"query\": \"音楽系YouTubeチャンネル成長戦略 2025\", \"engines_used\": [\"google\"], \"success\": true, \"total_results\": 5, \"execution_time\": 0.8178262710571289, \"primary_engine\": \"google\"}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.843803",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "www.no-b.co.jp_9311",
+      "source_type": "web",
+      "url": "https://www.no-b.co.jp/lcm_channel/",
+      "title_length": 33,
+      "content_length": 101
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.843] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"www.no-b.co.jp_9311\", \"source_type\": \"web\", \"url\": \"https://www.no-b.co.jp/lcm_channel/\", \"title_length\": 33, \"content_length\": 101}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.843803",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "digital-hacks.jp_5387",
+      "source_type": "web",
+      "url": "https://digital-hacks.jp/blog/archives/7938",
+      "title_length": 40,
+      "content_length": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.843] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"digital-hacks.jp_5387\", \"source_type\": \"web\", \"url\": \"https://digital-hacks.jp/blog/archives/7938\", \"title_length\": 40, \"content_length\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.843803",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "www.musicman.co.jp_2904",
+      "source_type": "web",
+      "url": "https://www.musicman.co.jp/business/670335",
+      "title_length": 35,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.843] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"www.musicman.co.jp_2904\", \"source_type\": \"web\", \"url\": \"https://www.musicman.co.jp/business/670335\", \"title_length\": 35, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.844809",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "www.tv-tokyo.co.jp_2609",
+      "source_type": "web",
+      "url": "https://www.tv-tokyo.co.jp/broad_bstvtokyo/program/detail/202506/25152_202506290930.html",
+      "title_length": 35,
+      "content_length": 106
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.844] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"www.tv-tokyo.co.jp_2609\", \"source_type\": \"web\", \"url\": \"https://www.tv-tokyo.co.jp/broad_bstvtokyo/program/detail/202506/25152_202506290930.html\", \"title_length\": 35, \"content_length\": 106}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.844809",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "note.com_4579",
+      "source_type": "web",
+      "url": "https://note.com/syuni_academy/n/n17a82b17b286",
+      "title_length": 40,
+      "content_length": 107
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.844] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"note.com_4579\", \"source_type\": \"web\", \"url\": \"https://note.com/syuni_academy/n/n17a82b17b286\", \"title_length\": 40, \"content_length\": 107}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.844809",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: 音楽系YouTubeチャンネル成長戦略 2025 (5件)",
+    "context": {
+      "web_search": {
+        "query": "音楽系YouTubeチャンネル成長戦略 2025",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.8178262710571289,
+          "engines_used": [
+            "google"
+          ],
+          "primary_engine": "google"
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.844] [INFO] [SESSION] Web検索実行: 音楽系YouTubeチャンネル成長戦略 2025 (5件) | Context: {\"web_search\": {\"query\": \"音楽系YouTubeチャンネル成長戦略 2025\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.8178262710571289, \"engines_used\": [\"google\"], \"primary_engine\": \"google\"}}}"
+  },
+  {
+    "timestamp": "2025-07-11T23:24:14.844809",
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (7/7)",
+    "context": {
+      "query": "音楽系YouTubeチャンネル成長戦略 2025",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.8188328742980957,
+      "total_collected": 35,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 456,
+    "formatted_message": "[2025-07-11 23:24:14.844] [INFO] [SESSION] 検索結果 (7/7) | Context: {\"query\": \"音楽系YouTubeチャンネル成長戦略 2025\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.8188328742980957, \"total_collected\": 35, \"error_message\": null}"
+  }
+]

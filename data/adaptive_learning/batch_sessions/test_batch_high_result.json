@@ -1,0 +1,117 @@
+{
+  "batch_id": "test_batch_high",
+  "timestamp": "2025-07-12T20:09:32.569405",
+  "total_execution_time": 1192.8999423980713,
+  "total_cost": 4.8,
+  "success_rate": 1.0,
+  "average_quality": 0.06702289546804384,
+  "session_count": 8,
+  "session_results": [
+    {
+      "session_id": "session_20250712_200931_f891a6",
+      "query": "深層学習の音楽応用",
+      "status": "success",
+      "execution_time": 896.2152138586562,
+      "quality_score": 0.07681651830685968,
+      "cost": 0.6,
+      "themes_found": [
+        "将来性",
+        "ユーザビリティ",
+        "スケーラビリティ"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_fcf78f",
+      "query": "AI音楽生成技術の概要",
+      "status": "success",
+      "execution_time": 908.7319366101538,
+      "quality_score": 0.07179168202515594,
+      "cost": 0.6,
+      "themes_found": [
+        "実用化"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_70ca7e",
+      "query": "機械学習による作曲",
+      "status": "success",
+      "execution_time": 1048.321736343029,
+      "quality_score": 0.06230232365137275,
+      "cost": 0.6,
+      "themes_found": [
+        "リスク要因"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_87d4ea",
+      "query": "音楽生成アルゴリズム",
+      "status": "success",
+      "execution_time": 1053.2116328052452,
+      "quality_score": 0.06661204515379957,
+      "cost": 0.6,
+      "themes_found": [
+        "将来性",
+        "スケーラビリティ",
+        "技術革新"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_85150f",
+      "query": "音楽AIの活用事例",
+      "status": "success",
+      "execution_time": 1054.6630292980658,
+      "quality_score": 0.06608804462065195,
+      "cost": 0.6,
+      "themes_found": [
+        "実用化",
+        "市場動向"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_0da11b",
+      "query": "AI作曲システム",
+      "status": "success",
+      "execution_time": 1093.7289169724768,
+      "quality_score": 0.07195122627484873,
+      "cost": 0.6,
+      "themes_found": [
+        "リスク要因",
+        "投資機会",
+        "ユーザビリティ"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_a92645",
+      "query": "音楽AIの技術動向",
+      "status": "success",
+      "execution_time": 1139.4329694585556,
+      "quality_score": 0.06385625258930062,
+      "cost": 0.6,
+      "themes_found": [
+        "課題解決",
+        "リスク要因",
+        "スケーラビリティ"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200931_1e6672",
+      "query": "音楽技術の未来",
+      "status": "success",
+      "execution_time": 1190.2479342426632,
+      "quality_score": 0.05676507112236149,
+      "cost": 0.6,
+      "themes_found": [
+        "投資機会",
+        "ユーザビリティ"
+      ],
+      "error": null
+    }
+  ]
+}

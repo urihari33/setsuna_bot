@@ -1,0 +1,324 @@
+[
+  {
+    "timestamp": "2025-07-11T01:48:15.769006",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_014815",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:15.769] [INFO] [LEARNING_ENGINE] デバッグログシステム初期化完了: debug_20250711_014815"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:15.769050",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:15.769] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:15.769063",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "API初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:15.769] [INFO] [LEARNING_ENGINE] API初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:15.771374",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI APIキー取得状況",
+    "context": {
+      "key_available": true,
+      "key_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:15.771] [DEBUG] [LEARNING_ENGINE] OpenAI APIキー取得状況 | Context: {\"key_available\": true, \"key_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:15.771415",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI API接続テスト開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:15.771] [DEBUG] [LEARNING_ENGINE] OpenAI API接続テスト開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:16.731870",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "OpenAI API接続テスト成功",
+    "context": {
+      "available_models": 77
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:16.731] [INFO] [LEARNING_ENGINE] OpenAI API接続テスト成功 | Context: {\"available_models\": 77}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:17.616170",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Google検索エンジン初期化完了",
+    "context": {
+      "ready": true,
+      "google_service_available": true,
+      "config_valid": true,
+      "quota_remaining": 100
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:17.616] [INFO] [LEARNING_ENGINE] Google検索エンジン初期化完了 | Context: {\"ready\": true, \"google_service_available\": true, \"config_valid\": true, \"quota_remaining\": 100}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:17.616258",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化完了",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:17.616] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化完了"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:17.634919",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "データフロー追跡テスト",
+      "depth_level": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:17.634] [DEBUG] [LEARNING_ENGINE] Web検索クエリ生成開始 | Context: {\"theme\": \"データフロー追跡テスト\", \"depth_level\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:17.634982",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "データフロー追跡テスト 最新情報",
+        "データフロー追跡テスト トレンド 2024",
+        "データフロー追跡テスト 技術動向"
+      ],
+      "total_queries": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:17.634] [INFO] [LEARNING_ENGINE] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"データフロー追跡テスト 最新情報\", \"データフロー追跡テスト トレンド 2024\", \"データフロー追跡テスト 技術動向\"], \"total_queries\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:17.635061",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "データフロー追跡テスト 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:17.635] [DEBUG] [LEARNING_ENGINE] Web検索リクエスト開始 | Context: {\"query\": \"データフロー追跡テスト 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140069",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "データフロー追跡テスト 最新情報",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5049991607666016,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [INFO] [LEARNING_ENGINE] Google検索結果 | Context: {\"query\": \"データフロー追跡テスト 最新情報\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5049991607666016, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140139",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_41f631a06385",
+      "source_type": "google_search",
+      "url": "https://montecampo.co.jp/8898.html/",
+      "title_length": 33,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 1 | Context: {\"source_id\": \"google_41f631a06385\", \"source_type\": \"google_search\", \"url\": \"https://montecampo.co.jp/8898.html/\", \"title_length\": 33, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140162",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_e807b997564b",
+      "source_type": "google_search",
+      "url": "https://www.blackduck.com/content/dam/black-duck/ja-jp/datasheets/interactive-application-security-testing-jn.pdf",
+      "title_length": 35,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 2 | Context: {\"source_id\": \"google_e807b997564b\", \"source_type\": \"google_search\", \"url\": \"https://www.blackduck.com/content/dam/black-duck/ja-jp/datasheets/interactive-application-security-testing-jn.pdf\", \"title_length\": 35, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140175",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_bc609a621a4e",
+      "source_type": "google_search",
+      "url": "https://pleiades.io/help/idea/analyzing-data-flow.html",
+      "title_length": 34,
+      "content_length": 86
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 3 | Context: {\"source_id\": \"google_bc609a621a4e\", \"source_type\": \"google_search\", \"url\": \"https://pleiades.io/help/idea/analyzing-data-flow.html\", \"title_length\": 34, \"content_length\": 86}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140187",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_d732678cce6e",
+      "source_type": "google_search",
+      "url": "https://www.techmatrix.co.jp/product/understand/understand6.3_newfeature.html",
+      "title_length": 40,
+      "content_length": 106
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 4 | Context: {\"source_id\": \"google_d732678cce6e\", \"source_type\": \"google_search\", \"url\": \"https://www.techmatrix.co.jp/product/understand/understand6.3_newfeature.html\", \"title_length\": 40, \"content_length\": 106}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140198",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_4eee5cfce68d",
+      "source_type": "google_search",
+      "url": "https://www.contrastsecurity.com/hubfs/Japan/Contrast_Whitepaper_ReplaceDASTwithIAST.pdf",
+      "title_length": 16,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 5 | Context: {\"source_id\": \"google_4eee5cfce68d\", \"source_type\": \"google_search\", \"url\": \"https://www.contrastsecurity.com/hubfs/Japan/Contrast_Whitepaper_ReplaceDASTwithIAST.pdf\", \"title_length\": 16, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140211",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Web検索実行: データフロー追跡テスト 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "データフロー追跡テスト 最新情報",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5049991607666016,
+          "engine_used": "google",
+          "quota_remaining": 99
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [INFO] [LEARNING_ENGINE] Web検索実行: データフロー追跡テスト 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"データフロー追跡テスト 最新情報\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5049991607666016, \"engine_used\": \"google\", \"quota_remaining\": 99}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.140522",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "データフロー追跡テスト トレンド 2024",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.140] [DEBUG] [LEARNING_ENGINE] Web検索リクエスト開始 | Context: {\"query\": \"データフロー追跡テスト トレンド 2024\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:48:18.845974",
+    "session_id": "debug_20250711_014815",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "データフロー追跡テスト トレンド 2024",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.7054336071014404,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 138133165650752,
+    "formatted_message": "[2025-07-11 01:48:18.845] [INFO] [LEARNING_ENGINE] Google検索結果 | Context: {\"query\": \"データフロー追跡テスト トレンド 2024\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.7054336071014404, \"quota_remaining\": 98}"
+  }
+]

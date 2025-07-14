@@ -1,0 +1,294 @@
+{
+  "month": "202507",
+  "generated_proposals": [
+    {
+      "proposal_id": "prop_20250709_011906_48a7ae4b",
+      "generated_from": "session_20250709_011906_1d4ff908",
+      "proposal_type": "market_research",
+      "title": "技術分野の技術動向分析",
+      "description": "技術分野の最新技術動向を調査・分析し、将来性を考察",
+      "generated_at": "2025-07-09 01:19:06.304786",
+      "source_sessions": [
+        "session_20250709_011906_1d4ff908"
+      ],
+      "key_knowledge": [
+        "技術",
+        "market_analysis",
+        "ツール"
+      ],
+      "market_opportunity": "既存市場での差別化機会",
+      "technical_feasibility": 0.8,
+      "target_audience": "業界関係者、投資家、技術トレンドに関心のある専門家",
+      "difficulty_level": "medium",
+      "required_resources": [
+        "時間",
+        "調査資料",
+        "技術検証環境"
+      ],
+      "estimated_duration": "1-2週間",
+      "expected_impact": {
+        "audience_growth": 0.7,
+        "expertise_demonstration": 0.9,
+        "community_value": 0.6
+      },
+      "implementation_plan": {
+        "phase1": "調査設計・情報収集（2-3日）",
+        "phase2": "データ分析・考察（2-3日）",
+        "phase3": "レポート作成（1-2日）",
+        "phase4": "結果共有・議論（1日）"
+      },
+      "status": "pending",
+      "user_feedback": null,
+      "acceptance_date": null,
+      "completion_date": null,
+      "setsuna_alignment": {
+        "personality_fit": 0.9,
+        "skill_match": 0.9,
+        "interest_level": 0.9
+      }
+    },
+    {
+      "proposal_id": "prop_20250709_011906_28e577ef",
+      "generated_from": "session_20250709_011906_1d4ff908",
+      "proposal_type": "content_creation",
+      "title": "技術技術解説コンテンツ制作",
+      "description": "技術について詳しく解説する動画コンテンツを制作し、技術的な理解を深めてもらう",
+      "generated_at": "2025-07-09 01:19:06.304811",
+      "source_sessions": [
+        "session_20250709_011906_1d4ff908"
+      ],
+      "key_knowledge": [
+        "技術",
+        "market_analysis",
+        "ツール"
+      ],
+      "market_opportunity": "既存市場での差別化機会",
+      "technical_feasibility": 0.8,
+      "target_audience": "技術に関心のある一般ユーザー",
+      "difficulty_level": "medium",
+      "required_resources": [
+        "時間",
+        "調査資料",
+        "録画環境",
+        "編集ソフト",
+        "技術検証環境"
+      ],
+      "estimated_duration": "1週間",
+      "expected_impact": {
+        "audience_growth": 0.8,
+        "expertise_demonstration": 0.8,
+        "community_value": 0.6
+      },
+      "implementation_plan": {
+        "phase1": "企画・構成設計（1-2日）",
+        "phase2": "コンテンツ制作・収録（2-3日）",
+        "phase3": "編集・最終調整（1-2日）",
+        "phase4": "公開・フィードバック収集（1日）"
+      },
+      "status": "pending",
+      "user_feedback": null,
+      "acceptance_date": null,
+      "completion_date": null,
+      "setsuna_alignment": {
+        "personality_fit": 0.9,
+        "skill_match": 0.9,
+        "interest_level": 0.8
+      }
+    },
+    {
+      "proposal_id": "prop_20250709_011906_57fdbabd",
+      "generated_from": "session_20250709_011906_1d4ff908",
+      "proposal_type": "content_creation",
+      "title": "技術学習シリーズ企画",
+      "description": "技術を体系的に学べる段階的な学習コンテンツシリーズ",
+      "generated_at": "2025-07-09 01:19:06.304824",
+      "source_sessions": [
+        "session_20250709_011906_1d4ff908"
+      ],
+      "key_knowledge": [
+        "技術",
+        "market_analysis",
+        "ツール"
+      ],
+      "market_opportunity": "既存市場での差別化機会",
+      "technical_feasibility": 0.8,
+      "target_audience": "技術に関心のある一般ユーザー",
+      "difficulty_level": "medium",
+      "required_resources": [
+        "時間",
+        "調査資料",
+        "録画環境",
+        "編集ソフト",
+        "技術検証環境"
+      ],
+      "estimated_duration": "1週間",
+      "expected_impact": {
+        "audience_growth": 0.8,
+        "expertise_demonstration": 0.8,
+        "community_value": 0.6
+      },
+      "implementation_plan": {
+        "phase1": "企画・構成設計（1-2日）",
+        "phase2": "コンテンツ制作・収録（2-3日）",
+        "phase3": "編集・最終調整（1-2日）",
+        "phase4": "公開・フィードバック収集（1日）"
+      },
+      "status": "pending",
+      "user_feedback": null,
+      "acceptance_date": null,
+      "completion_date": null,
+      "setsuna_alignment": {
+        "personality_fit": 0.8,
+        "skill_match": 0.8,
+        "interest_level": 0.8
+      }
+    },
+    {
+      "proposal_id": "prop_20250709_011937_ae3caab5",
+      "generated_from": "session_20250709_011937_f4913552",
+      "proposal_type": "market_research",
+      "title": "技術分野の技術動向分析",
+      "description": "技術分野の最新技術動向を調査・分析し、将来性を考察",
+      "generated_at": "2025-07-09 01:19:37.936589",
+      "source_sessions": [
+        "session_20250709_011937_f4913552"
+      ],
+      "key_knowledge": [
+        "技術",
+        "market_analysis",
+        "ツール"
+      ],
+      "market_opportunity": "既存市場での差別化機会",
+      "technical_feasibility": 0.8,
+      "target_audience": "業界関係者、投資家、技術トレンドに関心のある専門家",
+      "difficulty_level": "medium",
+      "required_resources": [
+        "時間",
+        "調査資料",
+        "技術検証環境"
+      ],
+      "estimated_duration": "1-2週間",
+      "expected_impact": {
+        "audience_growth": 0.7,
+        "expertise_demonstration": 0.9,
+        "community_value": 0.6
+      },
+      "implementation_plan": {
+        "phase1": "調査設計・情報収集（2-3日）",
+        "phase2": "データ分析・考察（2-3日）",
+        "phase3": "レポート作成（1-2日）",
+        "phase4": "結果共有・議論（1日）"
+      },
+      "status": "pending",
+      "user_feedback": null,
+      "acceptance_date": null,
+      "completion_date": null,
+      "setsuna_alignment": {
+        "personality_fit": 0.9,
+        "skill_match": 0.9,
+        "interest_level": 0.9
+      }
+    },
+    {
+      "proposal_id": "prop_20250709_011937_f7c1a112",
+      "generated_from": "session_20250709_011937_f4913552",
+      "proposal_type": "content_creation",
+      "title": "技術技術解説コンテンツ制作",
+      "description": "技術について詳しく解説する動画コンテンツを制作し、技術的な理解を深めてもらう",
+      "generated_at": "2025-07-09 01:19:37.936609",
+      "source_sessions": [
+        "session_20250709_011937_f4913552"
+      ],
+      "key_knowledge": [
+        "技術",
+        "market_analysis",
+        "ツール"
+      ],
+      "market_opportunity": "既存市場での差別化機会",
+      "technical_feasibility": 0.8,
+      "target_audience": "技術に関心のある一般ユーザー",
+      "difficulty_level": "medium",
+      "required_resources": [
+        "時間",
+        "調査資料",
+        "録画環境",
+        "編集ソフト",
+        "技術検証環境"
+      ],
+      "estimated_duration": "1週間",
+      "expected_impact": {
+        "audience_growth": 0.8,
+        "expertise_demonstration": 0.8,
+        "community_value": 0.6
+      },
+      "implementation_plan": {
+        "phase1": "企画・構成設計（1-2日）",
+        "phase2": "コンテンツ制作・収録（2-3日）",
+        "phase3": "編集・最終調整（1-2日）",
+        "phase4": "公開・フィードバック収集（1日）"
+      },
+      "status": "pending",
+      "user_feedback": null,
+      "acceptance_date": null,
+      "completion_date": null,
+      "setsuna_alignment": {
+        "personality_fit": 0.9,
+        "skill_match": 0.9,
+        "interest_level": 0.8
+      }
+    },
+    {
+      "proposal_id": "prop_20250709_011937_4e356ef8",
+      "generated_from": "session_20250709_011937_f4913552",
+      "proposal_type": "content_creation",
+      "title": "技術学習シリーズ企画",
+      "description": "技術を体系的に学べる段階的な学習コンテンツシリーズ",
+      "generated_at": "2025-07-09 01:19:37.936620",
+      "source_sessions": [
+        "session_20250709_011937_f4913552"
+      ],
+      "key_knowledge": [
+        "技術",
+        "market_analysis",
+        "ツール"
+      ],
+      "market_opportunity": "既存市場での差別化機会",
+      "technical_feasibility": 0.8,
+      "target_audience": "技術に関心のある一般ユーザー",
+      "difficulty_level": "medium",
+      "required_resources": [
+        "時間",
+        "調査資料",
+        "録画環境",
+        "編集ソフト",
+        "技術検証環境"
+      ],
+      "estimated_duration": "1週間",
+      "expected_impact": {
+        "audience_growth": 0.8,
+        "expertise_demonstration": 0.8,
+        "community_value": 0.6
+      },
+      "implementation_plan": {
+        "phase1": "企画・構成設計（1-2日）",
+        "phase2": "コンテンツ制作・収録（2-3日）",
+        "phase3": "編集・最終調整（1-2日）",
+        "phase4": "公開・フィードバック収集（1日）"
+      },
+      "status": "pending",
+      "user_feedback": null,
+      "acceptance_date": null,
+      "completion_date": null,
+      "setsuna_alignment": {
+        "personality_fit": 0.8,
+        "skill_match": 0.8,
+        "interest_level": 0.8
+      }
+    }
+  ],
+  "proposal_statistics": {
+    "total_generated": 6,
+    "by_type": {},
+    "last_updated": "2025-07-09T01:27:37.683523"
+  }
+}

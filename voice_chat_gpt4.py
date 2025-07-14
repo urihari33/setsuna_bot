@@ -12,6 +12,7 @@ import pyaudio
 from pynput import keyboard
 from voice_synthesizer import VoiceVoxSynthesizer
 from core.setsuna_chat import SetsunaChat
+from memory_mode_controller import get_memory_controller, switch_to_test_mode, switch_to_normal_mode, get_status_display
 
 # グローバル状態
 listening = False
@@ -19,6 +20,9 @@ recording = False
 current_keys = set()
 required_keys = {keyboard.Key.ctrl_l, keyboard.Key.shift_l, keyboard.Key.alt_l}
 fast_mode_keys = {keyboard.Key.ctrl_l, keyboard.Key.shift_l}  # 高速モード用キー
+ultra_fast_keys = {keyboard.Key.ctrl_l}  # 超高速モード用キー
+test_mode_keys = {keyboard.Key.alt_l}  # テストモード切り替え用キー（Alt+T）
+normal_mode_keys = {keyboard.Key.alt_l}  # 通常モード切り替え用キー（Alt+N）
 audio_frames = []
 audio_stream = None
 pyaudio_instance = None
@@ -150,18 +154,42 @@ def on_key_press(key):
     global listening, recording, current_mode
     current_keys.add(key)
     
+    # メモリモード切り替えチェック（録音中でない時のみ）
+    if not listening and not recording:
+        # Alt+T: テストモード切り替え
+        if keyboard.Key.alt_l in current_keys and hasattr(key, 'char') and key.char == 't':
+            switch_to_test_mode()
+            current_keys.clear()
+            return
+        
+        # Alt+N: 通常モード切り替え
+        elif keyboard.Key.alt_l in current_keys and hasattr(key, 'char') and key.char == 'n':
+            switch_to_normal_mode()
+            current_keys.clear()
+            return
+    
     # 通常モード（Ctrl+Shift+Alt）
     if required_keys.issubset(current_keys) and not listening and not recording:
         listening = True
         current_mode = "full_search"
-        print("🎮 [通常モード] ホットキー検出: Ctrl+Shift+Alt - YouTube検索実行")
+        status = get_status_display()
+        print(f"🎮 {status} [通常モード] ホットキー検出: Ctrl+Shift+Alt - YouTube検索実行")
         start_recording()
     
     # 高速モード（Shift+Ctrl）
     elif fast_mode_keys.issubset(current_keys) and keyboard.Key.alt_l not in current_keys and not listening and not recording:
         listening = True
         current_mode = "fast_response"
-        print("⚡ [高速モード] ホットキー検出: Shift+Ctrl - 既存知識で応答")
+        status = get_status_display()
+        print(f"⚡ {status} [高速モード] ホットキー検出: Shift+Ctrl - 既存知識で応答")
+        start_recording()
+    
+    # 超高速モード（Ctrl のみ）
+    elif ultra_fast_keys.issubset(current_keys) and keyboard.Key.shift_l not in current_keys and keyboard.Key.alt_l not in current_keys and not listening and not recording:
+        listening = True
+        current_mode = "ultra_fast"
+        status = get_status_display()
+        print(f"🚀 {status} [超高速モード] ホットキー検出: Ctrl - 瞬間応答")
         start_recording()
 
 def on_key_release(key):
@@ -171,7 +199,7 @@ def on_key_release(key):
         current_keys.remove(key)
     
     # メインキーが離されたら録音停止・認識開始
-    if (key in required_keys or key in fast_mode_keys) and recording:
+    if (key in required_keys or key in fast_mode_keys or key in ultra_fast_keys) and recording:
         listening = False
         # 録音停止と音声認識を別スレッドで実行
         threading.Thread(target=handle_voice_recognition, daemon=True).start()
@@ -189,11 +217,21 @@ def handle_voice_recognition():
         
         # GPT-4応答生成（モード情報を渡す）
         if setsuna_chat:
-            if current_mode == "fast_response":
-                print("⚡ せつな思考中（高速モード）...")
+            status = get_status_display()
+            if current_mode == "ultra_fast":
+                print(f"🚀 {status} せつな思考中（超高速モード）...")
+            elif current_mode == "fast_response":
+                print(f"⚡ {status} せつな思考中（高速モード）...")
             else:
-                print("🤖 せつな思考中（通常モード）...")
-            response = setsuna_chat.get_response(user_input, mode=current_mode)
+                print(f"🤖 {status} せつな思考中（通常モード）...")
+            
+            # 現在のメモリモードを取得して渡す
+            memory_controller = get_memory_controller()
+            response = setsuna_chat.get_response(
+                user_input, 
+                mode=current_mode, 
+                memory_mode=memory_controller.get_current_mode()
+            )
             print(f"🤖 せつな: {response}")
             
             # Phase 1: URL表示機能 - 動画推薦時のURL表示（応答フィルター付き）
@@ -260,7 +298,9 @@ def main():
     # GPT-4チャットシステム初期化
     print("🤖 GPT-4チャットシステム初期化中...")
     try:
-        setsuna_chat = SetsunaChat()
+        # メモリモード制御システム初期化
+        memory_controller = get_memory_controller()
+        setsuna_chat = SetsunaChat(memory_mode=memory_controller.get_current_mode())
         print("✅ GPT-4チャットシステム初期化完了")
     except Exception as e:
         print(f"⚠️ GPT-4チャットシステム初期化失敗: {e}")
@@ -269,11 +309,17 @@ def main():
     
     print("="*60)
     print("🎮 操作方法:")
-    print("   - Ctrl+Shift+Alt を押している間録音")
-    print("   - キーを離すと録音終了・音声認識開始")
+    print("   【音声対話】")
+    print("   - Ctrl+Shift+Alt: 通常モード（YouTube検索込み）")
+    print("   - Shift+Ctrl: 高速モード（既存知識のみ）")
+    print("   - Ctrl: 超高速モード（瞬間応答）")
+    print("   【メモリモード】")
+    print("   - Alt+T: テストモード切り替え（会話は保存されません）")
+    print("   - Alt+N: 通常モード切り替え（会話を永続保存）")
     print("   - Ctrl+C で終了")
     print("="*60)
-    print("🤖 せつな: 準備完了です。お話しください！")
+    status = get_status_display()
+    print(f"🤖 {status} せつな: 準備完了です。お話しください！")
     print("="*60)
     
     # キーボードリスナーを別スレッドで開始

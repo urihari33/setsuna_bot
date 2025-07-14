@@ -1,0 +1,510 @@
+[
+  {
+    "timestamp": "2025-07-11T23:12:03.939315",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_231203",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 52112,
+    "formatted_message": "[2025-07-11 23:12:03.939] [INFO] [MULTI_SEARCH] デバッグログシステム初期化完了: debug_20250711_231203"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:04.405639",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "MultiSearchManager初期化完了",
+    "context": {
+      "available_engines": [
+        "google",
+        "duckduckgo"
+      ],
+      "google_available": true,
+      "duckduckgo_available": true,
+      "dynamic_queries_available": true
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 52112,
+    "formatted_message": "[2025-07-11 23:12:04.405] [INFO] [MULTI_SEARCH] MultiSearchManager初期化完了 | Context: {\"available_engines\": [\"google\", \"duckduckgo\"], \"google_available\": true, \"duckduckgo_available\": true, \"dynamic_queries_available\": true}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:52.511954",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "2025 popular video content trends influencers",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:52.511] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"2025 popular video content trends influencers\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:53.024601",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:53.024] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:53.293957",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:53.293] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:53.294972",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.7830173969268799
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:53.294] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 0.7830173969268799}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:54.305552",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "VTuber コンテンツ 制作のヒント 2025",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:54.305] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"VTuber コンテンツ 制作のヒント 2025\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:54.592601",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:54.592] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:54.919179",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:54.919] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:54.919179",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.61362624168396
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:54.919] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 0.61362624168396}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:55.928691",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "music video production techniques 2025",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:55.928] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"music video production techniques 2025\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:56.555306",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:56.555] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:57.150158",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:57.150] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:57.150158",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 1.2214674949645996
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:57.150] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 1.2214674949645996}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:58.151700",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "歌手インフルエンサー市場動向分析 2025",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:58.151] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"歌手インフルエンサー市場動向分析 2025\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:58.487256",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:58.487] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:58.733310",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:58.733] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:58.734311",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.5826113224029541
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:58.734] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 0.5826113224029541}"
+  },
+  {
+    "timestamp": "2025-07-11T23:12:59.743932",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "successful content strategies for online creators 2025",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:12:59.743] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"successful content strategies for online creators 2025\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:00.621571",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:00.621] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:01.415294",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:01.415] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:01.416294",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 1.6723620891571045
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:01.416] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 1.6723620891571045}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:02.425212",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "チュートリアル MusicVideo 制作 2025",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:02.425] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"チュートリアル MusicVideo 制作 2025\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:02.663050",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:02.663] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:02.989805",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:02.989] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:02.990809",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.5655970573425293
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:02.990] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 0.5655970573425293}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:03.999894",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "解決策 内容制作の課題 VTuber 2025",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:03.999] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"解決策 内容制作の課題 VTuber 2025\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:04.295842",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:04.295] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:04.556105",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:04.556] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T23:13:04.557099",
+    "session_id": "debug_20250711_231203",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.5572042465209961
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 58112,
+    "formatted_message": "[2025-07-11 23:13:04.557] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 0.5572042465209961}"
+  }
+]

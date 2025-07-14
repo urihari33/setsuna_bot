@@ -1,0 +1,53 @@
+{
+  "batch_id": "test_batch_small",
+  "timestamp": "2025-07-12T20:09:31.373929",
+  "total_execution_time": 2454.078435897827,
+  "total_cost": 3.5999999999999996,
+  "success_rate": 1.0,
+  "average_quality": 0.18885747121421037,
+  "session_count": 3,
+  "session_results": [
+    {
+      "session_id": "session_20250712_200928_0634ca",
+      "query": "AI音楽生成の技術動向",
+      "status": "success",
+      "execution_time": 2038.7832174714954,
+      "quality_score": 0.15786746861528395,
+      "cost": 1.2,
+      "themes_found": [
+        "投資機会",
+        "市場動向",
+        "スケーラビリティ",
+        "競合分析"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200928_da8bd7",
+      "query": "音楽AIの市場分析",
+      "status": "success",
+      "execution_time": 2043.049634373172,
+      "quality_score": 0.17188962371007013,
+      "cost": 1.2,
+      "themes_found": [
+        "競合分析",
+        "リスク要因",
+        "技術革新"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200928_f0c516",
+      "query": "機械学習による作曲システム",
+      "status": "success",
+      "execution_time": 2448.9246259792276,
+      "quality_score": 0.23681532131727706,
+      "cost": 1.2,
+      "themes_found": [
+        "将来性",
+        "競合分析"
+      ],
+      "error": null
+    }
+  ]
+}

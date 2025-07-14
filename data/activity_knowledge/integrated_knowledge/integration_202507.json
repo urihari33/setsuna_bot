@@ -1,0 +1,1063 @@
+{
+  "month": "202507",
+  "integrated_knowledge": [
+    {
+      "knowledge_id": "synth_20250709_011906_8485ada3",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「AI」と「音楽生成」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "AI",
+        "音楽生成"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.309937",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_0e0d7c65",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「AI」と「技術」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "AI",
+        "技術"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.309999",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_bb887f12",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「AI」と「トレンド」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "AI",
+        "トレンド"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310004",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_5954ac11",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「AI」と「市場」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "AI",
+        "市場"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310015",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_c1426909",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「音楽生成」と「技術」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "音楽生成",
+        "技術"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310036",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_1b80317f",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「音楽生成」と「トレンド」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "音楽生成",
+        "トレンド"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310041",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_d801fe2b",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「音楽生成」と「市場」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "音楽生成",
+        "市場"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310052",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_68dfdcce",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「トレンド」と「商用化」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "トレンド",
+        "商用化"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310077",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_de9b24d5",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「トレンド」と「市場」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "トレンド",
+        "市場"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310087",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011906_56be46d2",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「商用化」と「市場」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "商用化",
+        "市場"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:06.310102",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_491fa896",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「市場」と「商用化」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "市場",
+        "商用化"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942264",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_b606ed30",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「市場」と「AI」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "市場",
+        "AI"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942275",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_67f984b0",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「市場」と「トレンド」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "市場",
+        "トレンド"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942280",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_e48daff4",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「市場」と「音楽生成」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "市場",
+        "音楽生成"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942296",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_e28bb2ff",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「商用化」と「トレンド」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "商用化",
+        "トレンド"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942506",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_468b906e",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「技術」と「AI」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "技術",
+        "AI"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942646",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_4ac46726",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「技術」と「音楽生成」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "技術",
+        "音楽生成"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942677",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_32278367",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「AI」と「トレンド」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "AI",
+        "トレンド"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942683",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_9e350d60",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「AI」と「音楽生成」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "AI",
+        "音楽生成"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942688",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_011937_70c99ea5",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「トレンド」と「音楽生成」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "トレンド",
+        "音楽生成"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:19:37.942727",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_bca3c06b",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「テスト」と「統合テスト」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "テスト",
+        "統合テスト"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668585",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_d61c1c92",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「テスト」と「統合」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "テスト",
+        "統合"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668591",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_380736d4",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「テスト」と「知識統合」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "テスト",
+        "知識統合"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668597",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_f0eb24ba",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「テスト」と「知識」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "テスト",
+        "知識"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668602",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_5b0add46",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「統合テスト」と「統合」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "統合テスト",
+        "統合"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668607",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_c380ea6d",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「統合テスト」と「知識統合」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "統合テスト",
+        "知識統合"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668613",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_2b01cf8f",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「統合テスト」と「知識」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "統合テスト",
+        "知識"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668619",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_adc7fa5c",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「統合」と「知識統合」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "統合",
+        "知識統合"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668623",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_4c047ae0",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「統合」と「知識」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "統合",
+        "知識"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668628",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    },
+    {
+      "knowledge_id": "synth_20250709_012737_2d75b23a",
+      "integration_type": "concept_synthesis",
+      "source_sessions": [],
+      "source_knowledge_items": [],
+      "synthesized_content": "概念「知識統合」と「知識」の関係性分析",
+      "key_insights": [
+        "概念間関係性強度: 1.00",
+        "関係性タイプ: semantic_association"
+      ],
+      "confidence_score": 1.0,
+      "novelty_score": 0.6,
+      "related_concepts": [
+        "知識統合",
+        "知識"
+      ],
+      "contradiction_analysis": {},
+      "evolution_trends": [],
+      "created_at": "2025-07-09 01:27:37.668633",
+      "integration_method": "network_analysis",
+      "quality_metrics": {
+        "coherence": 0.7,
+        "completeness": 0.6
+      },
+      "application_domains": [
+        "概念マップ",
+        "関係性分析"
+      ],
+      "actionable_insights": [
+        "概念関係性の活用による深い理解"
+      ],
+      "future_research_directions": [
+        "関連概念群の体系的分析"
+      ]
+    }
+  ],
+  "integration_statistics": {
+    "total_integrations": 30,
+    "by_type": {
+      "concept_synthesis": 30
+    },
+    "average_confidence": 1.0,
+    "last_updated": "2025-07-09T01:27:37.671493"
+  }
+}

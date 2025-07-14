@@ -236,9 +236,9 @@
     },
     "2Z_qydIQGG4": {
       "video_title": "アオペラの「ア」-introduction song-",
-      "conversation_count": 13,
+      "conversation_count": 18,
       "first_talked": "2025-06-26T22:59:19.585314",
-      "last_talked": "2025-07-02T23:00:49.460841",
+      "last_talked": "2025-07-15T00:42:00.779210",
       "user_reactions": [
         "neutral",
         "neutral",
@@ -247,31 +247,6 @@
         "neutral"
       ],
       "conversation_contexts": [
-        {
-          "date": "2025-06-26T23:01:31.528436",
-          "input": "さっきのアドベンチャー",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T23:43:44.393147",
-          "input": "アドベンチャーについて教えて",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-26T23:59:48.393110",
-          "input": "アドベンチャーについて教え",
-          "reaction": "neutral"
-        },
-        {
-          "date": "2025-06-27T00:00:08.427819",
-          "input": "この曲すごい好きなんだよね 私も",
-          "reaction": "positive"
-        },
-        {
-          "date": "2025-06-27T00:01:33.702932",
-          "input": "その動画のクリエイター",
-          "reaction": "neutral"
-        },
         {
           "date": "2025-06-27T00:01:52.972902",
           "input": "似たような曲って",
@@ -295,6 +270,31 @@
         {
           "date": "2025-07-02T23:00:49.460841",
           "input": "アドベンチャーって動画 知ってる",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:28:33.416270",
+          "input": "映像制作のアイデアを考えてる",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:28:38.536636",
+          "input": "この楽曲で何か作れないかな？",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:28:44.421507",
+          "input": "この楽曲について教えて",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:28:53.693940",
+          "input": "映像制作のアイデアを考えてる",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:42:00.779210",
+          "input": "前回の続きなんだけどさ 動画でなんか 活動するとしたらなんかどういうのがやりたいとかある",
           "reaction": "neutral"
         }
       ],
@@ -486,10 +486,12 @@
     },
     "bh7oZ9WU8vg": {
       "video_title": "いちプロ",
-      "conversation_count": 3,
+      "conversation_count": 5,
       "first_talked": "2025-06-27T00:03:26.317568",
-      "last_talked": "2025-07-01T22:33:13.625034",
+      "last_talked": "2025-07-15T00:42:00.782211",
       "user_reactions": [
+        "neutral",
+        "neutral",
         "neutral",
         "neutral",
         "neutral"
@@ -509,9 +511,19 @@
           "date": "2025-07-01T22:33:13.625034",
           "input": "プロセカの曲で最近のおすすめある",
           "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:36:21.623698",
+          "input": "クリエイターとしての創作プロセスや技術的なこだわり、視聴者との関係性について話し合いたい",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-15T00:42:00.782211",
+          "input": "前回の続きなんだけどさ 動画でなんか 活動するとしたらなんかどういうのがやりたいとかある",
+          "reaction": "neutral"
         }
       ],
-      "familiarity_score": 0.4
+      "familiarity_score": 0.6
     },
     "N4PtDsU2iSU": {
       "video_title": "YOASOBI",
@@ -1345,7 +1357,98 @@
         }
       ],
       "familiarity_score": 0.30000000000000004
+    },
+    "pKPe48pcHkk": {
+      "video_title": "Netflix Japan",
+      "conversation_count": 2,
+      "first_talked": "2025-07-07T20:43:15.198867",
+      "last_talked": "2025-07-07T20:43:42.113767",
+      "user_reactions": [
+        "neutral",
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-07-07T20:43:15.198867",
+          "input": "何とか それ タイトル思い出せないかな",
+          "reaction": "neutral"
+        },
+        {
+          "date": "2025-07-07T20:43:42.113767",
+          "input": "じゃあ 最近見たタイトルを覚えている中でオススメってある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.30000000000000004
+    },
+    "u8JQL5D4Y9E": {
+      "video_title": "超学生",
+      "conversation_count": 1,
+      "first_talked": "2025-07-07T20:58:08.117880",
+      "last_talked": "2025-07-07T20:58:08.117880",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-07-07T20:58:08.117880",
+          "input": "最近のおすすめの動画とかある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "bof7UD3MJAQ": {
+      "video_title": "PaⅢ.SENSATION",
+      "conversation_count": 1,
+      "first_talked": "2025-07-07T20:59:35.783185",
+      "last_talked": "2025-07-07T20:59:35.783185",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-07-07T20:59:35.783185",
+          "input": "レモンのリンク 出せる",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "rTqYRWcA-Yw": {
+      "video_title": "ゼンゼロ",
+      "conversation_count": 1,
+      "first_talked": "2025-07-07T22:55:52.135123",
+      "last_talked": "2025-07-07T22:55:52.135123",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-07-07T22:55:52.135123",
+          "input": "今日はね ボイチャック ファイアって動画見たよ 知ってる",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
+    },
+    "gr4FAlsibeg": {
+      "video_title": "Flyer!",
+      "conversation_count": 1,
+      "first_talked": "2025-07-14T02:15:30.886027",
+      "last_talked": "2025-07-14T02:15:30.886027",
+      "user_reactions": [
+        "neutral"
+      ],
+      "conversation_contexts": [
+        {
+          "date": "2025-07-14T02:15:30.886027",
+          "input": "こんにちは 最近見た動画でおすすめってある",
+          "reaction": "neutral"
+        }
+      ],
+      "familiarity_score": 0.2
     }
   },
-  "last_updated": "2025-07-06T21:56:58.082857"
+  "last_updated": "2025-07-15T00:42:00.782211"
 }

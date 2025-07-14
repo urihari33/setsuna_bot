@@ -1,0 +1,64 @@
+{
+  "multi_turn_conversations": {
+    "schema_id": "multi_turn_conversations",
+    "file_path": "/mnt/d/setsuna_bot/data/multi_turn_conversations.json",
+    "required_fields": [
+      "current_session",
+      "session_history",
+      "config"
+    ],
+    "optional_fields": [
+      "last_updated"
+    ],
+    "field_types": {
+      "current_session": "object",
+      "session_history": "array",
+      "config": "object",
+      "last_updated": "string"
+    },
+    "validation_rules": {
+      "current_session.session_id": "required",
+      "current_session.turns": "array"
+    },
+    "schema_version": "1.0",
+    "last_updated": "2025-07-15T07:59:02.025699"
+  },
+  "unified_knowledge_db": {
+    "schema_id": "unified_knowledge_db",
+    "file_path": "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json",
+    "required_fields": [
+      "videos",
+      "metadata"
+    ],
+    "optional_fields": [
+      "last_updated",
+      "version"
+    ],
+    "field_types": {
+      "videos": "array",
+      "metadata": "object"
+    },
+    "validation_rules": {
+      "videos[].video_id": "required",
+      "videos[].title": "required"
+    },
+    "schema_version": "1.0",
+    "last_updated": "2025-07-15T07:59:02.025710"
+  },
+  "user_preferences": {
+    "schema_id": "user_preferences",
+    "file_path": "/mnt/d/setsuna_bot/data/user_preferences.json",
+    "required_fields": [],
+    "optional_fields": [
+      "preferences",
+      "last_updated"
+    ],
+    "field_types": {
+      "preferences": "object",
+      "last_updated": "string"
+    },
+    "validation_rules": {},
+    "schema_version": "1.0",
+    "last_updated": "2025-07-15T07:59:02.025713"
+  }
+}

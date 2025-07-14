@@ -1,0 +1,138 @@
+{
+  "contexts": {},
+  "last_context": {
+    "context_id": "context_default_20250715_010118",
+    "session_id": "default",
+    "conversation_flow": [
+      {
+        "turn_number": 0,
+        "timestamp": "2025-07-15T01:01:18.227572",
+        "content_summary": "最近のボカロ曲で何かいいのない？",
+        "flow_type": "opening"
+      },
+      {
+        "turn_number": 1,
+        "timestamp": "2025-07-15T01:01:18.228855",
+        "content_summary": "TRiNITYの曲が好きなんだけど、似たようなアーティストいる？",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 2,
+        "timestamp": "2025-07-15T01:01:18.235514",
+        "content_summary": "昔聞いた懐かしい曲を探してるんだ",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 3,
+        "timestamp": "2025-07-15T01:01:18.241566",
+        "content_summary": "この曲すごく楽しくて最高！",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 4,
+        "timestamp": "2025-07-15T01:01:18.246896",
+        "content_summary": "どんな曲なのか気になるなあ",
+        "flow_type": "exploration"
+      },
+      {
+        "turn_number": 5,
+        "timestamp": "2025-07-15T01:01:18.251505",
+        "content_summary": "昔よく聞いた懐かしい曲だね",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 6,
+        "timestamp": "2025-07-15T01:01:18.255934",
+        "content_summary": "ゆっくりできる癒しの音楽がいい",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 7,
+        "timestamp": "2025-07-15T01:01:18.261379",
+        "content_summary": "もっと詳しく教えて欲しい",
+        "flow_type": "continuation"
+      },
+      {
+        "turn_number": 8,
+        "timestamp": "2025-07-15T01:01:18.267554",
+        "content_summary": "ボカロって何？初めて聞いた",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 9,
+        "timestamp": "2025-07-15T01:01:18.272110",
+        "content_summary": "ボカロはだいたい知ってるけど、もっと詳しく教えて",
+        "flow_type": "continuation"
+      },
+      {
+        "turn_number": 10,
+        "timestamp": "2025-07-15T01:01:18.277673",
+        "content_summary": "ボカロマニアなんだけど、レアな楽曲ない？",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 11,
+        "timestamp": "2025-07-15T01:01:18.283025",
+        "content_summary": "ボカロの明るい曲が聞きたい気分だなあ",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 12,
+        "timestamp": "2025-07-15T01:01:18.348709",
+        "content_summary": "ボカロが好きなんだ",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 13,
+        "timestamp": "2025-07-15T01:01:18.349993",
+        "content_summary": "初音ミクの曲をよく聞く",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 14,
+        "timestamp": "2025-07-15T01:01:18.354901",
+        "content_summary": "アニソンも聞くよ",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 15,
+        "timestamp": "2025-07-15T01:01:18.360470",
+        "content_summary": "ゲーム音楽も面白いよね",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 16,
+        "timestamp": "2025-07-15T01:01:18.368706",
+        "content_summary": "ロック音楽が好き",
+        "flow_type": "general"
+      },
+      {
+        "turn_number": 17,
+        "timestamp": "2025-07-15T01:01:18.373809",
+        "content_summary": "クラシック音楽について",
+        "flow_type": "general"
+      }
+    ],
+    "mentioned_topics": [
+      "ジャンル",
+      "時代",
+      "クラシック"
+    ],
+    "user_preferences": {},
+    "temporal_context": "general",
+    "emotional_state": "neutral",
+    "knowledge_depth": {
+      "ジャンル": 0.5,
+      "時代": 0.5,
+      "クラシック": 0.5
+    },
+    "last_updated": "2025-07-15T01:01:18.373974"
+  },
+  "statistics": {
+    "contexts_processed": 17,
+    "recommendations_generated": 5,
+    "pattern_matches": 0,
+    "transition_predictions": 0
+  },
+  "last_updated": "2025-07-15T01:01:18.374087"
+}

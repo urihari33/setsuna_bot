@@ -1,0 +1,23 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250711_231224_dea9b769",
+    "theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください",
+    "learning_type": "概要",
+    "depth_level": 3,
+    "time_limit": 600,
+    "budget_limit": 1.0,
+    "status": "error",
+    "parent_session": null,
+    "tags": [
+      "GUI作成"
+    ],
+    "start_time": "2025-07-11 23:12:26.088736",
+    "end_time": null,
+    "current_phase": "collection",
+    "collected_items": 35,
+    "processed_items": 0,
+    "important_findings": [],
+    "current_cost": 0.0
+  },
+  "last_updated": "2025-07-11T23:16:58.856671"
+}

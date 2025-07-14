@@ -1,0 +1,464 @@
+[
+  {
+    "timestamp": "2025-07-11T21:45:15.547673",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_214515",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:15.547] [INFO] [MULTI_SEARCH] デバッグログシステム初期化完了: debug_20250711_214515"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:15.983253",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "MultiSearchManager初期化完了",
+    "context": {
+      "available_engines": [
+        "google",
+        "duckduckgo"
+      ],
+      "google_available": true,
+      "duckduckgo_available": false,
+      "dynamic_queries_available": true
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:15.983] [INFO] [MULTI_SEARCH] MultiSearchManager初期化完了 | Context: {\"available_engines\": [\"google\", \"duckduckgo\"], \"google_available\": true, \"duckduckgo_available\": false, \"dynamic_queries_available\": true}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:16.159315",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "Python機械学習",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:16.159] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"Python機械学習\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:16.800217",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:16.800] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:16.800459",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:16.800] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:16.800519",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "DuckDuckGo検索",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:16.800] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"DuckDuckGo検索\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:17.394194",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:17.394] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:17.394617",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:17.394] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:17.394669",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "動的クエリ検索開始",
+    "context": {
+      "theme": "ブロックチェーン",
+      "learning_type": "深掘り",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:17.394] [INFO] [MULTI_SEARCH] 動的クエリ検索開始 | Context: {\"theme\": \"ブロックチェーン\", \"learning_type\": \"深掘り\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:19.908956",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 詳細",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:19.908] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 詳細\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:20.688439",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:20.688] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:20.688664",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:20.688] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:20.688702",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 技術",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:20.688] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 技術\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:21.309938",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:21.309] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:21.310152",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:21.310] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:21.310184",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 仕組み",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:21.310] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 仕組み\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:21.961460",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:21.961] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:21.961684",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:21.961] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:21.961723",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 原理",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:21.961] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 原理\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:22.748237",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:22.748] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:22.748427",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:22.748] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:22.748459",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 最新情報 2025",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:22.748] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 最新情報 2025\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:23.715479",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:23.715] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:23.715737",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:23.715] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:23.715782",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 技術動向",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:23.715] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 技術動向\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:24.205466",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:24.205] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:24.205681",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:24.205] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:24.205717",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 市場分析",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:24.205] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 市場分析\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:24.993505",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:24.993] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:24.993862",
+    "session_id": "debug_20250711_214515",
+    "component": "MULTI_SEARCH",
+    "level": "ERROR",
+    "message": "マルチ検索エラー: 'dict' object has no attribute 'quality_score'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:24.993] [ERROR] [MULTI_SEARCH] マルチ検索エラー: 'dict' object has no attribute 'quality_score'"
+  }
+]

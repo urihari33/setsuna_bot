@@ -1,0 +1,119 @@
+{
+  "batch_id": "session_20250712_201125_f73bfbf8_round_01",
+  "timestamp": "2025-07-12T20:11:26.641407",
+  "total_execution_time": 1229.2659282684326,
+  "total_cost": 4.8,
+  "success_rate": 1.0,
+  "average_quality": 0.15246717246610972,
+  "session_count": 8,
+  "session_results": [
+    {
+      "session_id": "session_20250712_201125_d1fd7c",
+      "query": "AI音楽生成技術の商用化 について詳しく教えて",
+      "status": "success",
+      "execution_time": 705.1005988505217,
+      "quality_score": 0.1572845400451813,
+      "cost": 0.6,
+      "themes_found": [
+        "実用化",
+        "技術革新",
+        "リスク要因"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_d05a79",
+      "query": "AI音楽生成技術の商用化 の全体像",
+      "status": "success",
+      "execution_time": 714.3460512716041,
+      "quality_score": 0.12040791412880515,
+      "cost": 0.6,
+      "themes_found": [
+        "ユーザビリティ",
+        "将来性",
+        "実用化"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_d01895",
+      "query": "AI音楽生成技術の商用化 の実用例",
+      "status": "success",
+      "execution_time": 887.1556851421008,
+      "quality_score": 0.12772710794605147,
+      "cost": 0.6,
+      "themes_found": [
+        "ユーザビリティ",
+        "将来性"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_9c51e2",
+      "query": "AI音楽生成技術の商用化 の新しい発見",
+      "status": "success",
+      "execution_time": 984.04589129899,
+      "quality_score": 0.15346393607851408,
+      "cost": 0.6,
+      "themes_found": [
+        "投資機会"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_b9c123",
+      "query": "AI音楽生成技術の商用化 とは何か",
+      "status": "success",
+      "execution_time": 1104.5542319766657,
+      "quality_score": 0.1243886160039499,
+      "cost": 0.6,
+      "themes_found": [
+        "ユーザビリティ",
+        "技術革新",
+        "競合分析"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_a59196",
+      "query": "AI音楽生成技術の商用化 の性能比較",
+      "status": "success",
+      "execution_time": 1132.5690001356159,
+      "quality_score": 0.14919015518027956,
+      "cost": 0.6,
+      "themes_found": [
+        "リスク要因",
+        "技術革新",
+        "課題解決"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_37d8be",
+      "query": "AI音楽生成技術の商用化 における革新的技術",
+      "status": "success",
+      "execution_time": 1219.5671973207197,
+      "quality_score": 0.14818350513626374,
+      "cost": 0.6,
+      "themes_found": [
+        "投資機会",
+        "スケーラビリティ"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201125_3e4ee9",
+      "query": "AI音楽生成技術の商用化 について詳しく教えて の詳細分析",
+      "status": "success",
+      "execution_time": 1227.2939501201868,
+      "quality_score": 0.23909160520983247,
+      "cost": 0.6,
+      "themes_found": [
+        "実用化",
+        "将来性",
+        "スケーラビリティ"
+      ],
+      "error": null
+    }
+  ]
+}

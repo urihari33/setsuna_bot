@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": "2025-07-11T21:41:30.335619",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_214130",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] デバッグログシステム初期化完了: debug_20250711_214130"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335669",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "OpenAI初期化エラー: 'ConfigManager' object has no attribute 'get_openai_api_key'",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [ERROR] [QUERY_GENERATOR] OpenAI初期化エラー: 'ConfigManager' object has no attribute 'get_openai_api_key'"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335732",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "人工知能",
+      "learning_type": "概要",
+      "depth_level": 2
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"人工知能\", \"learning_type\": \"概要\", \"depth_level\": 2}"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335766",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335788",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "クエリ生成完了: 4件",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] クエリ生成完了: 4件"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335806",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "機械学習",
+      "learning_type": "深掘り",
+      "depth_level": 4
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"機械学習\", \"learning_type\": \"深掘り\", \"depth_level\": 4}"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335819",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335834",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "クエリ生成完了: 7件",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] クエリ生成完了: 7件"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335849",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "Python",
+      "learning_type": "実用",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"Python\", \"learning_type\": \"実用\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T21:41:30.335883",
+    "session_id": "debug_20250711_214130",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126942163579712,
+    "formatted_message": "[2025-07-11 21:41:30.335] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  }
+]

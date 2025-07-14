@@ -1,95 +1,101 @@
 {
   "current_session": {
-    "session_id": "session_20250706_215229",
-    "start_time": "2025-07-06T21:52:29.918148",
-    "state": "topic_established",
+    "session_id": "session_20250715_004146",
+    "start_time": "2025-07-15T00:41:46.138688",
+    "state": "initial",
     "turns": [
       {
         "turn_number": 1,
-        "timestamp": "2025-07-06T21:56:58.085859",
-        "user_input": "ユーザーメッセージ: この動画のこのシーンについて、どういった印象と効果をもちますか？\n\n🔗 添付URL: URL: YouTube動画 (https://www.youtube.com/watch?v=-ZJiDmzzmgk)\n\n添付された内容を踏まえて、親しみやすく自然な応答をしてください。",
+        "timestamp": "2025-07-15T00:42:00.785279",
+        "user_input": "前回の続きなんだけどさ 動画でなんか 活動するとしたらなんかどういうのがやりたいとかある",
         "context_analysis": {
-          "input": "ユーザーメッセージ: この動画のこのシーンについて、どういった印象と効果をもちますか？\n\n🔗 添付URL: URL: YouTube動画 (https://www.youtube.com/watch?v=-ZJiDmzzmgk)\n\n添付された内容を踏まえて、親しみやすく自然な応答をしてください。",
-          "timestamp": "2025-07-06T21:56:58.075352",
+          "input": "前回の続きなんだけどさ 動画でなんか 活動するとしたらなんかどういうのがやりたいとかある",
+          "timestamp": "2025-07-15T00:42:00.773030",
           "pronoun_references": [
             {
-              "type": "demonstrative",
-              "text": "この動画",
+              "type": "temporal",
+              "text": "前",
               "position": [
-                11,
-                15
+                0,
+                1
               ],
-              "confidence": 0.9
+              "confidence": 0.8
             },
             {
-              "type": "demonstrative",
-              "text": "この",
+              "type": "implicit",
+              "text": "続き",
               "position": [
-                11,
-                13
+                3,
+                5
               ],
-              "confidence": 0.9
-            },
-            {
-              "type": "demonstrative",
-              "text": "この",
-              "position": [
-                16,
-                18
-              ],
-              "confidence": 0.9
+              "confidence": 0.6
             },
             {
               "type": "implicit",
               "text": "どう",
               "position": [
-                26,
-                28
+                30,
+                32
               ],
               "confidence": 0.6
             }
           ],
-          "continuity_indicators": [],
+          "continuity_indicators": [
+            {
+              "type": "disagreement",
+              "text": "けど",
+              "position": [
+                8,
+                10
+              ],
+              "strength": "strong"
+            },
+            {
+              "type": "clarification",
+              "text": "どういう",
+              "position": [
+                30,
+                34
+              ],
+              "strength": "medium"
+            }
+          ],
           "emotional_signals": {
             "positive": 0.0,
             "negative": 0.0,
             "excitement": 0.0,
-            "curiosity": 1.0,
+            "curiosity": 0.0,
             "satisfaction": 0.0,
-            "detected_emotions": [
-              {
-                "emotion": "curiosity",
-                "strength": 1.4
-              }
-            ]
+            "detected_emotions": []
           },
           "topic_relevance": {
-            "6NJIrxzr-CY": {
+            "2Z_qydIQGG4": {
               "relevance_score": 0.8,
               "topic_data": {
-                "video_id": "6NJIrxzr-CY",
-                "title": "BELIEVE MYSELF",
-                "channel": "AniTone Music Channel",
+                "video_id": "2Z_qydIQGG4",
+                "title": "アオペラの「ア」-introduction song-",
+                "channel": "アオペラ -aoppella!?- 公式",
                 "genre": "",
                 "keywords": [
-                  "AniTone Music Channel"
+                  "アオペラ -aoppella!?- 公式",
+                  "アオペラ"
                 ],
-                "last_mentioned": "2025-07-06T21:31:53.924840",
-                "mention_count": 2
+                "last_mentioned": "2025-07-15T00:28:53.698375",
+                "mention_count": 4
               },
               "related_keywords": []
             },
-            "AOWYIoZh25s": {
+            "bh7oZ9WU8vg": {
               "relevance_score": 0.8,
               "topic_data": {
-                "video_id": "AOWYIoZh25s",
-                "title": "unknown color",
-                "channel": "ゆすら ",
+                "video_id": "bh7oZ9WU8vg",
+                "title": "いちプロ",
+                "channel": "FIRST STAGE PRODUCTION",
                 "genre": "",
                 "keywords": [
-                  "ゆすら "
+                  "FIRST STAGE PRODUCTION"
                 ],
-                "last_mentioned": "2025-07-06T21:49:55.292998",
+                "last_mentioned": "2025-07-15T00:36:21.629470",
                 "mention_count": 1
               },
               "related_keywords": []
@@ -100,16 +106,16 @@
         "system_response": "",
         "mentioned_videos": [
           {
-            "video_id": "6NJIrxzr-CY",
-            "title": "BELIEVE MYSELF",
-            "channel": "AniTone Music Channel",
+            "video_id": "2Z_qydIQGG4",
+            "title": "アオペラの「ア」-introduction song-",
+            "channel": "アオペラ -aoppella!?- 公式",
             "genre": "",
             "search_score": 80.0
           },
           {
-            "video_id": "AOWYIoZh25s",
-            "title": "unknown color",
-            "channel": "ゆすら ",
+            "video_id": "bh7oZ9WU8vg",
+            "title": "いちプロ",
+            "channel": "FIRST STAGE PRODUCTION",
             "genre": "",
             "search_score": 80.0
           }
@@ -119,69 +125,50 @@
           "positive": 0.0,
           "negative": 0.0,
           "excitement": 0.0,
-          "curiosity": 1.0,
+          "curiosity": 0.0,
           "satisfaction": 0.0,
-          "detected_emotions": [
-            {
-              "emotion": "curiosity",
-              "strength": 1.4
-            }
-          ]
+          "detected_emotions": []
         },
         "state_transition": {
-          "should_transition": true,
-          "new_state": "topic_established",
-          "confidence": 1.0,
-          "reasons": [
-            "条件満足: to_topic_established (信頼度: 1.00)"
-          ]
+          "should_transition": false,
+          "new_state": "initial",
+          "confidence": 0.0,
+          "reasons": []
         },
-        "new_state": "topic_established"
+        "new_state": "initial"
       }
     ],
     "active_topics": {
-      "6NJIrxzr-CY": {
+      "2Z_qydIQGG4": {
         "video_info": {
-          "video_id": "6NJIrxzr-CY",
-          "title": "BELIEVE MYSELF",
-          "channel": "AniTone Music Channel",
+          "video_id": "2Z_qydIQGG4",
+          "title": "アオペラの「ア」-introduction song-",
+          "channel": "アオペラ -aoppella!?- 公式",
           "genre": "",
           "search_score": 80.0
         },
-        "first_mentioned": "2025-07-06T21:56:58.085859",
+        "first_mentioned": "2025-07-15T00:42:00.785279",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-07-06T21:56:58.085859"
+        "last_mentioned": "2025-07-15T00:42:00.785279"
       },
-      "AOWYIoZh25s": {
+      "bh7oZ9WU8vg": {
         "video_info": {
-          "video_id": "AOWYIoZh25s",
-          "title": "unknown color",
-          "channel": "ゆすら ",
+          "video_id": "bh7oZ9WU8vg",
+          "title": "いちプロ",
+          "channel": "FIRST STAGE PRODUCTION",
           "genre": "",
           "search_score": 80.0
         },
-        "first_mentioned": "2025-07-06T21:56:58.085859",
+        "first_mentioned": "2025-07-15T00:42:00.785279",
         "mention_count": 1,
         "last_emotional_response": {},
-        "last_mentioned": "2025-07-06T21:56:58.085859"
+        "last_mentioned": "2025-07-15T00:42:00.786282"
       }
     },
     "user_preferences": {},
     "conversation_goals": [],
-    "emotional_trajectory": [
-      {
-        "timestamp": "2025-07-06T21:56:58.085859",
-        "turn_number": 1,
-        "emotions": [
-          {
-            "emotion": "curiosity",
-            "strength": 1.4
-          }
-        ],
-        "dominant_emotion": "curiosity"
-      }
-    ]
+    "emotional_trajectory": []
   },
   "session_history": [],
   "config": {
@@ -190,5 +177,5 @@
     "min_turns_for_deep_discussion": 3,
     "preference_confidence_threshold": 0.7
   },
-  "last_updated": "2025-07-06T21:56:58.085859"
+  "last_updated": "2025-07-15T00:42:00.786282"
 }

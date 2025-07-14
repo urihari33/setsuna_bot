@@ -1,0 +1,32 @@
+{
+  "default_quality_policy": {
+    "policy_id": "default_quality_policy",
+    "policy_name": "標準品質管理ポリシー",
+    "quality_thresholds": {
+      "minimum_quality": 0.6,
+      "target_quality": 0.8,
+      "excellence_threshold": 0.9,
+      "degradation_alert": 0.15
+    },
+    "monitoring_interval": 3600,
+    "auto_fix_enabled": true,
+    "alert_conditions": {
+      "quality_below_minimum": true,
+      "significant_degradation": true,
+      "consistency_issues": true,
+      "outdated_knowledge": true
+    },
+    "retention_period": 90,
+    "escalation_rules": [
+      {
+        "condition": "critical_quality_drop",
+        "action": "immediate_review"
+      },
+      {
+        "condition": "multiple_failures",
+        "action": "system_check"
+      }
+    ],
+    "created_at": "2025-07-15T07:59:02.015844"
+  }
+}

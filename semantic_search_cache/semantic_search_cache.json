@@ -1,0 +1,432 @@
+{
+  "searches": {
+    "91b1ae22ffa0a729a6d0c2fd8a50d7eb": [
+      {
+        "video_id": "D7xjC200qxo",
+        "title": "XOXO",
+        "artist": "TRiNITY",
+        "relevance_score": 0.35,
+        "semantic_matches": [],
+        "content_type": "music",
+        "confidence": 0.42,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "mW76Jis85LE",
+        "title": "【ラピスリライツ】supernova「Trinity」MV（フルサイズver）",
+        "artist": "ラピスリライツ公式チャンネル",
+        "relevance_score": 0.35,
+        "semantic_matches": [],
+        "content_type": "music",
+        "confidence": 0.42,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "3c03d01b38e2ddc58d6415182d538caf": [
+      {
+        "video_id": "9_hG6FjOHH4",
+        "title": "サマー シンドローム / Ray feat. 初音ミク　【ボカロオリジナル】【プロセカNEXT】",
+        "artist": "雨沢レイ(Ray)",
+        "relevance_score": 0.6000000000000001,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.7200000000000001,
+        "matched_keywords": [
+          "ボカロ"
+        ],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "lMXlOPGjwUI",
+        "title": "Iなんです / 25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "t1XM0ECUqTE",
+        "title": "ドクター＝ファンクビート / Vivid BAD SQUAD × KAITO",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "YkP0JMByjRM",
+        "title": "ray / Leo/need × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "M_ijFuoASt0",
+        "title": "トリコロージュ/25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "0830de5fc81e02e6a15188dc4548ad2f": [
+      {
+        "video_id": "TMeaXo1rpsY",
+        "title": "【#歌ってみた】ADAMAS /LiSA (ソードアート・オンライン アリシゼーションOP) covered by 巫てんり【#vtuber】",
+        "artist": "巫てんり / Kannagi Tenri ",
+        "relevance_score": 0.45,
+        "semantic_matches": [
+          "ロック (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.54,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "afpbZTjqW4M",
+        "title": "【歌ってみた】新時代 /Ado (ウタ from ONE PIECE FILM RED) covered by 巫てんり【#新人vtuber】",
+        "artist": "巫てんり / Kannagi Tenri ",
+        "relevance_score": 0.45,
+        "semantic_matches": [
+          "ロック (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.54,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "kqQ-DYhQbY8",
+        "title": "Amber's『生馴れNight』Music Video",
+        "artist": "Amber's Official Channel",
+        "relevance_score": 0.45,
+        "semantic_matches": [
+          "ロック (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.54,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "HxWicZD0m8Y",
+        "title": "ここでまた会えるから / 市瀬るぽ feat.鏡音リン",
+        "artist": "市瀬るぽ/ Ichinose LUPO",
+        "relevance_score": 0.45,
+        "semantic_matches": [
+          "ロック (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.54,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "Br_pFvVXGWc",
+        "title": "QUARIA 「永遠のいのち」Sophia version",
+        "artist": "QUARIA",
+        "relevance_score": 0.45,
+        "semantic_matches": [
+          "ロック (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.54,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "30d8f46713ff139dfd587ea8aac923ef": [
+      {
+        "video_id": "Gnsu_rgiGwQ",
+        "title": "Gic「春景色」 - Official Video",
+        "artist": "gic",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "アップテンポ (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "bgal_zCI1VQ",
+        "title": "amazarashi 『ヒーロー』Music Video",
+        "artist": "amazarashi Official YouTube Channel",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "アップテンポ (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "MbxxocZ5RQo",
+        "title": "七人のカリスマ「めちゃめちゃカリスマ」MV",
+        "artist": "カリスマ Official Channel",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "アップテンポ (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "tZ7f5s9wBIk",
+        "title": "伊藤ふみや feat. 六人のカリスマ「Charisma Battle Anthem」Trailer",
+        "artist": "カリスマ Official Channel",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "アップテンポ (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "zReSvTXeOZI",
+        "title": "【オリジナルMV】Night Sea Journey／天月-あまつき-",
+        "artist": "天月-あまつき-YouTube Official Channel",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "アップテンポ (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "89aaf5dcb007dbddbe75e077ce677a21": [
+      {
+        "video_id": "D7xjC200qxo",
+        "title": "XOXO",
+        "artist": "TRiNITY",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "ゲーム (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "lMXlOPGjwUI",
+        "title": "Iなんです / 25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "ゲーム (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "t1XM0ECUqTE",
+        "title": "ドクター＝ファンクビート / Vivid BAD SQUAD × KAITO",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "ゲーム (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "YkP0JMByjRM",
+        "title": "ray / Leo/need × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "ゲーム (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "M_ijFuoASt0",
+        "title": "トリコロージュ/25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.375,
+        "semantic_matches": [
+          "ゲーム (意味的一致)",
+          "音楽 (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.44999999999999996,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "29ded44c002296079eab6edeac891185": [
+      {
+        "video_id": "D7xjC200qxo",
+        "title": "XOXO",
+        "artist": "TRiNITY",
+        "relevance_score": 0.35,
+        "semantic_matches": [],
+        "content_type": "music",
+        "confidence": 0.42,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "mW76Jis85LE",
+        "title": "【ラピスリライツ】supernova「Trinity」MV（フルサイズver）",
+        "artist": "ラピスリライツ公式チャンネル",
+        "relevance_score": 0.35,
+        "semantic_matches": [],
+        "content_type": "music",
+        "confidence": 0.42,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "e6fd90d0aa56ccf4ee369e1d2b8c9454": [],
+    "cf19565de954ccc0aa5af81e31319419": [],
+    "3cea9cbeae5593df466422ab38a98f3c": [
+      {
+        "video_id": "lMXlOPGjwUI",
+        "title": "Iなんです / 25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "t1XM0ECUqTE",
+        "title": "ドクター＝ファンクビート / Vivid BAD SQUAD × KAITO",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "YkP0JMByjRM",
+        "title": "ray / Leo/need × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "5d84cd3909e1e02f210e2b361c82f0e4": [],
+    "13eaf06d6f9ed212e663c81a0471776b": [],
+    "8dd2568685883b50cd1a2d4c5ab7b0f6": [
+      {
+        "video_id": "lMXlOPGjwUI",
+        "title": "Iなんです / 25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      },
+      {
+        "video_id": "t1XM0ECUqTE",
+        "title": "ドクター＝ファンクビート / Vivid BAD SQUAD × KAITO",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ],
+    "a84b9d1a86b39c521ddc576874f9dd12": [],
+    "e2c15af52b249aa9ad7697bc909fe5d2": [],
+    "a2bbbaec6155081e3bdff4b4530eb62f": [],
+    "3ba5b33809e51d0079a13d9bc190966e": [
+      {
+        "video_id": "lMXlOPGjwUI",
+        "title": "Iなんです / 25時、ナイトコードで。 × 初音ミク",
+        "artist": "プロジェクトセカイ カラフルステージ! feat. 初音ミク",
+        "relevance_score": 0.3,
+        "semantic_matches": [
+          "ボカロ (意味的一致)"
+        ],
+        "content_type": "music",
+        "confidence": 0.36,
+        "matched_keywords": [],
+        "context_relevance": 0.5
+      }
+    ]
+  },
+  "statistics": {
+    "total_searches": 16,
+    "cache_hits": 0,
+    "average_results": 0,
+    "query_types": {
+      "search": 16
+    }
+  },
+  "last_updated": "2025-07-15T01:01:18.347125"
+}

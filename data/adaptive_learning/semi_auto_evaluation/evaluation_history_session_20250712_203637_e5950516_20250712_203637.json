@@ -1,0 +1,47 @@
+{
+  "session_id": "session_20250712_203637_e5950516",
+  "evaluation_count": 2,
+  "created_timestamp": "2025-07-12T20:36:37.385286",
+  "strategy": {
+    "mode": "semi_auto",
+    "trigger_conditions": [
+      "round_completion",
+      "quality_threshold"
+    ],
+    "human_eval_frequency": 0.6
+  },
+  "evaluations": [
+    {
+      "evaluation_id": "hybrid_eval_9c2e0f17",
+      "timestamp": "2025-07-12T20:36:37.382137",
+      "final_direction": "continue",
+      "final_confidence": 0.5,
+      "consensus_level": 1.0,
+      "evaluation_time": 0.000526,
+      "human_override": false,
+      "override_reason": "",
+      "auto_evaluation": {
+        "predicted_quality": 0.7454602184087363,
+        "prediction_confidence": 0.796708,
+        "recommended_direction": "continue",
+        "direction_confidence": 0.5
+      }
+    },
+    {
+      "evaluation_id": "hybrid_eval_a2bb11d2",
+      "timestamp": "2025-07-12T20:36:37.385091",
+      "final_direction": "continue",
+      "final_confidence": 0.5,
+      "consensus_level": 1.0,
+      "evaluation_time": 0.001082,
+      "human_override": false,
+      "override_reason": "",
+      "auto_evaluation": {
+        "predicted_quality": 0.8361680011237533,
+        "prediction_confidence": 0.7595333333333334,
+        "recommended_direction": "continue",
+        "direction_confidence": 0.5
+      }
+    }
+  ]
+}

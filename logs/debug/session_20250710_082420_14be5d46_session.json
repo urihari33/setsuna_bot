@@ -1,0 +1,711 @@
+[
+  {
+    "timestamp": "2025-07-10T08:24:23.151155",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250710_082420_14be5d46",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 57084,
+    "formatted_message": "[2025-07-10 08:24:23.151] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250710_082420_14be5d46"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.151155",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250710_082420_14be5d46",
+      "available_sessions": [
+        "session_20250710_082420_14be5d46"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 57084,
+    "formatted_message": "[2025-07-10 08:24:23.151] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250710_082420_14be5d46\", \"available_sessions\": [\"session_20250710_082420_14be5d46\"]}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.151155",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "活動方針のための前段階情報収集",
+      "learning_type": "概要",
+      "depth_level": 3,
+      "time_limit": 1800,
+      "budget_limit": 1.0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 57084,
+    "formatted_message": "[2025-07-10 08:24:23.151] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"活動方針のための前段階情報収集\", \"learning_type\": \"概要\", \"depth_level\": 3, \"time_limit\": 1800, \"budget_limit\": 1.0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.152156",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250710_082420_14be5d46",
+      "start_time": "2025-07-10T08:24:23.152156",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 57084,
+    "formatted_message": "[2025-07-10 08:24:23.152] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250710_082420_14be5d46\", \"start_time\": \"2025-07-10T08:24:23.152156\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.152156",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250710_082420_14be5d46",
+          "theme": "活動方針のための前段階情報収集",
+          "depth_level": 3
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.152] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250710_082420_14be5d46\", \"theme\": \"活動方針のための前段階情報収集\", \"depth_level\": 3}}}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.152156",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250710_082420_14be5d46",
+      "thread_id": 28924
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 57084,
+    "formatted_message": "[2025-07-10 08:24:23.152] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250710_082420_14be5d46\", \"thread_id\": 28924}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.153158",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "活動方針のための前段階情報収集",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.153] [DEBUG] [SESSION] Web検索クエリ生成開始 | Context: {\"theme\": \"活動方針のための前段階情報収集\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.153158",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "活動方針のための前段階情報収集 最新情報",
+        "活動方針のための前段階情報収集 トレンド 2024",
+        "活動方針のための前段階情報収集 技術動向",
+        "活動方針のための前段階情報収集 市場分析",
+        "活動方針のための前段階情報収集 課題",
+        "活動方針のための前段階情報収集 将来性"
+      ],
+      "total_queries": 6
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.153] [INFO] [SESSION] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"活動方針のための前段階情報収集 最新情報\", \"活動方針のための前段階情報収集 トレンド 2024\", \"活動方針のための前段階情報収集 技術動向\", \"活動方針のための前段階情報収集 市場分析\", \"活動方針のための前段階情報収集 課題\", \"活動方針のための前段階情報収集 将来性\"], \"total_queries\": 6}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.153158",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 6,
+      "search_queries": [
+        "活動方針のための前段階情報収集 最新情報",
+        "活動方針のための前段階情報収集 トレンド 2024",
+        "活動方針のための前段階情報収集 技術動向",
+        "活動方針のための前段階情報収集 市場分析",
+        "活動方針のための前段階情報収集 課題",
+        "活動方針のための前段階情報収集 将来性"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.153] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 6, \"search_queries\": [\"活動方針のための前段階情報収集 最新情報\", \"活動方針のための前段階情報収集 トレンド 2024\", \"活動方針のための前段階情報収集 技術動向\", \"活動方針のための前段階情報収集 市場分析\", \"活動方針のための前段階情報収集 課題\", \"活動方針のための前段階情報収集 将来性\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.153158",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 最新情報",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.153] [INFO] [SESSION] 検索実行 (1/6) | Context: {\"query\": \"活動方針のための前段階情報収集 最新情報\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.153158",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "活動方針のための前段階情報収集 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.153] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"活動方針のための前段階情報収集 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.389321",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "活動方針のための前段階情報収集 最新情報",
+      "engine_used": "google",
+      "success": false,
+      "total_results": 0,
+      "execution_time": 0.23616361618041992,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.389] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"活動方針のための前段階情報収集 最新情報\", \"engine_used\": \"google\", \"success\": false, \"total_results\": 0, \"execution_time\": 0.23616361618041992, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.389321",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "WARNING",
+    "message": "Google検索失敗",
+    "context": {
+      "query": "活動方針のための前段階情報収集 最新情報",
+      "engine_used": "google",
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"customsearch.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+      "execution_time": 0.23616361618041992,
+      "quota_exceeded": false,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.389] [WARNING] [SESSION] Google検索失敗 | Context: {\"query\": \"活動方針のための前段階情報収集 最新情報\", \"engine_used\": \"google\", \"error\": \"HTTP 400: {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n    \\\"errors\\\": [\\n      {\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n        \\\"domain\\\": \\\"global\\\",\\n        \\\"reason\\\": \\\"badRequest\\\"\\n      }\\n    ],\\n    \\\"status\\\": \\\"INVALID_ARGUMENT\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.ErrorInfo\\\",\\n        \\\"reason\\\": \\\"API_KEY_INVALID\\\",\\n        \\\"domain\\\": \\\"googleapis.com\\\",\\n        \\\"metadata\\\": {\\n          \\\"service\\\": \\\"customsearch.googleapis.com\\\"\\n        }\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.LocalizedMessage\\\",\\n        \\\"locale\\\": \\\"en-US\\\",\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\"\\n      }\\n    ]\\n  }\\n}\\n\", \"execution_time\": 0.23616361618041992, \"quota_exceeded\": false, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:23.389321",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 最新情報",
+      "results_count": 0,
+      "execution_time": 0.23616361618041992,
+      "total_collected": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:23.389] [INFO] [SESSION] 検索結果 (1/6) | Context: {\"query\": \"活動方針のための前段階情報収集 最新情報\", \"results_count\": 0, \"execution_time\": 0.23616361618041992, \"total_collected\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:24.390092",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 トレンド 2024",
+      "query_index": 1,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:24.390] [INFO] [SESSION] 検索実行 (2/6) | Context: {\"query\": \"活動方針のための前段階情報収集 トレンド 2024\", \"query_index\": 1, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:24.390092",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "活動方針のための前段階情報収集 トレンド 2024",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:24.390] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"活動方針のための前段階情報収集 トレンド 2024\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:24.631199",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "活動方針のための前段階情報収集 トレンド 2024",
+      "engine_used": "google",
+      "success": false,
+      "total_results": 0,
+      "execution_time": 0.24110651016235352,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:24.631] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"活動方針のための前段階情報収集 トレンド 2024\", \"engine_used\": \"google\", \"success\": false, \"total_results\": 0, \"execution_time\": 0.24110651016235352, \"quota_remaining\": 98}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:24.631199",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "WARNING",
+    "message": "Google検索失敗",
+    "context": {
+      "query": "活動方針のための前段階情報収集 トレンド 2024",
+      "engine_used": "google",
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"customsearch.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+      "execution_time": 0.24110651016235352,
+      "quota_exceeded": false,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:24.631] [WARNING] [SESSION] Google検索失敗 | Context: {\"query\": \"活動方針のための前段階情報収集 トレンド 2024\", \"engine_used\": \"google\", \"error\": \"HTTP 400: {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n    \\\"errors\\\": [\\n      {\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n        \\\"domain\\\": \\\"global\\\",\\n        \\\"reason\\\": \\\"badRequest\\\"\\n      }\\n    ],\\n    \\\"status\\\": \\\"INVALID_ARGUMENT\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.ErrorInfo\\\",\\n        \\\"reason\\\": \\\"API_KEY_INVALID\\\",\\n        \\\"domain\\\": \\\"googleapis.com\\\",\\n        \\\"metadata\\\": {\\n          \\\"service\\\": \\\"customsearch.googleapis.com\\\"\\n        }\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.LocalizedMessage\\\",\\n        \\\"locale\\\": \\\"en-US\\\",\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\"\\n      }\\n    ]\\n  }\\n}\\n\", \"execution_time\": 0.24110651016235352, \"quota_exceeded\": false, \"quota_remaining\": 98}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:24.632199",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 トレンド 2024",
+      "results_count": 0,
+      "execution_time": 0.24210739135742188,
+      "total_collected": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:24.632] [INFO] [SESSION] 検索結果 (2/6) | Context: {\"query\": \"活動方針のための前段階情報収集 トレンド 2024\", \"results_count\": 0, \"execution_time\": 0.24210739135742188, \"total_collected\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:25.639032",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 技術動向",
+      "query_index": 2,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:25.639] [INFO] [SESSION] 検索実行 (3/6) | Context: {\"query\": \"活動方針のための前段階情報収集 技術動向\", \"query_index\": 2, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:25.639032",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "活動方針のための前段階情報収集 技術動向",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:25.639] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"活動方針のための前段階情報収集 技術動向\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:25.857176",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "活動方針のための前段階情報収集 技術動向",
+      "engine_used": "google",
+      "success": false,
+      "total_results": 0,
+      "execution_time": 0.21814441680908203,
+      "quota_remaining": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:25.857] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"活動方針のための前段階情報収集 技術動向\", \"engine_used\": \"google\", \"success\": false, \"total_results\": 0, \"execution_time\": 0.21814441680908203, \"quota_remaining\": 97}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:25.857176",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "WARNING",
+    "message": "Google検索失敗",
+    "context": {
+      "query": "活動方針のための前段階情報収集 技術動向",
+      "engine_used": "google",
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"customsearch.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+      "execution_time": 0.21814441680908203,
+      "quota_exceeded": false,
+      "quota_remaining": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:25.857] [WARNING] [SESSION] Google検索失敗 | Context: {\"query\": \"活動方針のための前段階情報収集 技術動向\", \"engine_used\": \"google\", \"error\": \"HTTP 400: {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n    \\\"errors\\\": [\\n      {\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n        \\\"domain\\\": \\\"global\\\",\\n        \\\"reason\\\": \\\"badRequest\\\"\\n      }\\n    ],\\n    \\\"status\\\": \\\"INVALID_ARGUMENT\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.ErrorInfo\\\",\\n        \\\"reason\\\": \\\"API_KEY_INVALID\\\",\\n        \\\"domain\\\": \\\"googleapis.com\\\",\\n        \\\"metadata\\\": {\\n          \\\"service\\\": \\\"customsearch.googleapis.com\\\"\\n        }\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.LocalizedMessage\\\",\\n        \\\"locale\\\": \\\"en-US\\\",\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\"\\n      }\\n    ]\\n  }\\n}\\n\", \"execution_time\": 0.21814441680908203, \"quota_exceeded\": false, \"quota_remaining\": 97}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:25.857176",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 技術動向",
+      "results_count": 0,
+      "execution_time": 0.21814441680908203,
+      "total_collected": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:25.857] [INFO] [SESSION] 検索結果 (3/6) | Context: {\"query\": \"活動方針のための前段階情報収集 技術動向\", \"results_count\": 0, \"execution_time\": 0.21814441680908203, \"total_collected\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:26.866408",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (4/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 市場分析",
+      "query_index": 3,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:26.866] [INFO] [SESSION] 検索実行 (4/6) | Context: {\"query\": \"活動方針のための前段階情報収集 市場分析\", \"query_index\": 3, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:26.866408",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "活動方針のための前段階情報収集 市場分析",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:26.866] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"活動方針のための前段階情報収集 市場分析\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:27.135248",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "活動方針のための前段階情報収集 市場分析",
+      "engine_used": "google",
+      "success": false,
+      "total_results": 0,
+      "execution_time": 0.26783299446105957,
+      "quota_remaining": 96
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:27.135] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"活動方針のための前段階情報収集 市場分析\", \"engine_used\": \"google\", \"success\": false, \"total_results\": 0, \"execution_time\": 0.26783299446105957, \"quota_remaining\": 96}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:27.135248",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "WARNING",
+    "message": "Google検索失敗",
+    "context": {
+      "query": "活動方針のための前段階情報収集 市場分析",
+      "engine_used": "google",
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"customsearch.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+      "execution_time": 0.26783299446105957,
+      "quota_exceeded": false,
+      "quota_remaining": 96
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:27.135] [WARNING] [SESSION] Google検索失敗 | Context: {\"query\": \"活動方針のための前段階情報収集 市場分析\", \"engine_used\": \"google\", \"error\": \"HTTP 400: {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n    \\\"errors\\\": [\\n      {\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n        \\\"domain\\\": \\\"global\\\",\\n        \\\"reason\\\": \\\"badRequest\\\"\\n      }\\n    ],\\n    \\\"status\\\": \\\"INVALID_ARGUMENT\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.ErrorInfo\\\",\\n        \\\"reason\\\": \\\"API_KEY_INVALID\\\",\\n        \\\"domain\\\": \\\"googleapis.com\\\",\\n        \\\"metadata\\\": {\\n          \\\"service\\\": \\\"customsearch.googleapis.com\\\"\\n        }\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.LocalizedMessage\\\",\\n        \\\"locale\\\": \\\"en-US\\\",\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\"\\n      }\\n    ]\\n  }\\n}\\n\", \"execution_time\": 0.26783299446105957, \"quota_exceeded\": false, \"quota_remaining\": 96}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:27.135248",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (4/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 市場分析",
+      "results_count": 0,
+      "execution_time": 0.26883912086486816,
+      "total_collected": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:27.135] [INFO] [SESSION] 検索結果 (4/6) | Context: {\"query\": \"活動方針のための前段階情報収集 市場分析\", \"results_count\": 0, \"execution_time\": 0.26883912086486816, \"total_collected\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:28.143464",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (5/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 課題",
+      "query_index": 4,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:28.143] [INFO] [SESSION] 検索実行 (5/6) | Context: {\"query\": \"活動方針のための前段階情報収集 課題\", \"query_index\": 4, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:28.143464",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "活動方針のための前段階情報収集 課題",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:28.143] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"活動方針のための前段階情報収集 課題\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:28.354189",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "活動方針のための前段階情報収集 課題",
+      "engine_used": "google",
+      "success": false,
+      "total_results": 0,
+      "execution_time": 0.2107253074645996,
+      "quota_remaining": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:28.354] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"活動方針のための前段階情報収集 課題\", \"engine_used\": \"google\", \"success\": false, \"total_results\": 0, \"execution_time\": 0.2107253074645996, \"quota_remaining\": 95}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:28.354189",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "WARNING",
+    "message": "Google検索失敗",
+    "context": {
+      "query": "活動方針のための前段階情報収集 課題",
+      "engine_used": "google",
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"customsearch.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+      "execution_time": 0.2107253074645996,
+      "quota_exceeded": false,
+      "quota_remaining": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:28.355] [WARNING] [SESSION] Google検索失敗 | Context: {\"query\": \"活動方針のための前段階情報収集 課題\", \"engine_used\": \"google\", \"error\": \"HTTP 400: {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n    \\\"errors\\\": [\\n      {\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n        \\\"domain\\\": \\\"global\\\",\\n        \\\"reason\\\": \\\"badRequest\\\"\\n      }\\n    ],\\n    \\\"status\\\": \\\"INVALID_ARGUMENT\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.ErrorInfo\\\",\\n        \\\"reason\\\": \\\"API_KEY_INVALID\\\",\\n        \\\"domain\\\": \\\"googleapis.com\\\",\\n        \\\"metadata\\\": {\\n          \\\"service\\\": \\\"customsearch.googleapis.com\\\"\\n        }\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.LocalizedMessage\\\",\\n        \\\"locale\\\": \\\"en-US\\\",\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\"\\n      }\\n    ]\\n  }\\n}\\n\", \"execution_time\": 0.2107253074645996, \"quota_exceeded\": false, \"quota_remaining\": 95}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:28.355189",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (5/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 課題",
+      "results_count": 0,
+      "execution_time": 0.21172523498535156,
+      "total_collected": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:28.355] [INFO] [SESSION] 検索結果 (5/6) | Context: {\"query\": \"活動方針のための前段階情報収集 課題\", \"results_count\": 0, \"execution_time\": 0.21172523498535156, \"total_collected\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:29.359306",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (6/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 将来性",
+      "query_index": 5,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:29.359] [INFO] [SESSION] 検索実行 (6/6) | Context: {\"query\": \"活動方針のための前段階情報収集 将来性\", \"query_index\": 5, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:29.359306",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "活動方針のための前段階情報収集 将来性",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:29.359] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"活動方針のための前段階情報収集 将来性\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:29.591732",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "活動方針のための前段階情報収集 将来性",
+      "engine_used": "google",
+      "success": false,
+      "total_results": 0,
+      "execution_time": 0.23242592811584473,
+      "quota_remaining": 94
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:29.591] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"活動方針のための前段階情報収集 将来性\", \"engine_used\": \"google\", \"success\": false, \"total_results\": 0, \"execution_time\": 0.23242592811584473, \"quota_remaining\": 94}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:29.592732",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "WARNING",
+    "message": "Google検索失敗",
+    "context": {
+      "query": "活動方針のための前段階情報収集 将来性",
+      "engine_used": "google",
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"customsearch.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+      "execution_time": 0.23242592811584473,
+      "quota_exceeded": false,
+      "quota_remaining": 94
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:29.592] [WARNING] [SESSION] Google検索失敗 | Context: {\"query\": \"活動方針のための前段階情報収集 将来性\", \"engine_used\": \"google\", \"error\": \"HTTP 400: {\\n  \\\"error\\\": {\\n    \\\"code\\\": 400,\\n    \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n    \\\"errors\\\": [\\n      {\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\",\\n        \\\"domain\\\": \\\"global\\\",\\n        \\\"reason\\\": \\\"badRequest\\\"\\n      }\\n    ],\\n    \\\"status\\\": \\\"INVALID_ARGUMENT\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.ErrorInfo\\\",\\n        \\\"reason\\\": \\\"API_KEY_INVALID\\\",\\n        \\\"domain\\\": \\\"googleapis.com\\\",\\n        \\\"metadata\\\": {\\n          \\\"service\\\": \\\"customsearch.googleapis.com\\\"\\n        }\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.LocalizedMessage\\\",\\n        \\\"locale\\\": \\\"en-US\\\",\\n        \\\"message\\\": \\\"API key not valid. Please pass a valid API key.\\\"\\n      }\\n    ]\\n  }\\n}\\n\", \"execution_time\": 0.23242592811584473, \"quota_exceeded\": false, \"quota_remaining\": 94}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:29.592732",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (6/6)",
+    "context": {
+      "query": "活動方針のための前段階情報収集 将来性",
+      "results_count": 0,
+      "execution_time": 0.23342609405517578,
+      "total_collected": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:29.592] [INFO] [SESSION] 検索結果 (6/6) | Context: {\"query\": \"活動方針のための前段階情報収集 将来性\", \"results_count\": 0, \"execution_time\": 0.23342609405517578, \"total_collected\": 0}"
+  },
+  {
+    "timestamp": "2025-07-10T08:24:30.614470",
+    "session_id": "session_20250710_082420_14be5d46",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - completed",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "completed",
+        "progress": 0.4,
+        "details": {
+          "final_sources_count": 0,
+          "raw_sources_count": 0,
+          "execution_time": 7.455796003341675,
+          "preprocessing_enabled": true
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 28924,
+    "formatted_message": "[2025-07-10 08:24:30.614] [INFO] [SESSION] セッションフェーズ: information_collection - completed | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"completed\", \"progress\": 0.4, \"details\": {\"final_sources_count\": 0, \"raw_sources_count\": 0, \"execution_time\": 7.455796003341675, \"preprocessing_enabled\": true}}}"
+  }
+]

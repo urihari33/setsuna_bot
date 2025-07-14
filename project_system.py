@@ -8,7 +8,7 @@
 import json
 import os
 from datetime import datetime, timedelta
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 
 class ProjectSystem:
     """創作プロジェクト管理システム"""
@@ -21,7 +21,10 @@ class ProjectSystem:
             "active_projects": [],     # 進行中プロジェクト
             "idea_stock": [],          # アイデアストック
             "completed_projects": [],  # 完了プロジェクト
-            "project_counter": 0       # プロジェクトID用カウンター
+            "project_counter": 0,      # プロジェクトID用カウンター
+            "memory_links": {},        # プロジェクト-記憶リンク (新規追加)
+            "decision_history": {},    # プロジェクト別意思決定履歴 (新規追加)
+            "context_snapshots": {}    # プロジェクト別文脈スナップショット (新規追加)
         }
         
         self._load_project_data()
@@ -58,7 +61,10 @@ class ProjectSystem:
                 "last_updated": datetime.now().isoformat(),
                 "next_steps": [],
                 "notes": [],
-                "milestones": []
+                "milestones": [],
+                "memory_links": [],        # 関連記憶へのリンク (新規追加)
+                "decision_history": [],    # 意思決定履歴 (新規追加)
+                "context_snapshots": []    # 文脈スナップショット (新規追加)
             }
             
             self.project_data["active_projects"].append(project)
@@ -256,6 +262,153 @@ class ProjectSystem:
                     
         except Exception as e:
             print(f"❌ 会話分析エラー: {e}")
+    
+    def add_decision_record(self, project_id: str, decision_data: Dict) -> bool:
+        """プロジェクトに意思決定記録を追加"""
+        try:
+            project = self.get_project_by_id(project_id)
+            if not project:
+                print(f"⚠️ プロジェクトが見つかりません: {project_id}")
+                return False
+            
+            # 意思決定記録構造
+            decision_record = {
+                "id": f"decision_{len(project.get('decision_history', [])) + 1:03d}",
+                "timestamp": datetime.now().isoformat(),
+                "type": decision_data.get("type", "general"),
+                "description": decision_data.get("description", ""),
+                "options_considered": decision_data.get("options", []),
+                "chosen_option": decision_data.get("chosen", ""),
+                "reasoning": decision_data.get("reasoning", ""),
+                "confidence_level": decision_data.get("confidence", 0.5),
+                "risk_level": decision_data.get("risk", 0.3),
+                "expected_outcome": decision_data.get("expected", ""),
+                "outcome_success": None,  # 後で評価
+                "actual_outcome": None,   # 後で記録
+                "lessons_learned": None   # 後で記録
+            }
+            
+            # プロジェクトの意思決定履歴に追加
+            if "decision_history" not in project:
+                project["decision_history"] = []
+            project["decision_history"].append(decision_record)
+            project["last_updated"] = datetime.now().isoformat()
+            
+            self.save_project_data()
+            print(f"📝 意思決定記録追加: {decision_record['id']} - {decision_data.get('type', 'general')}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ 意思決定記録追加エラー: {e}")
+            return False
+    
+    def link_memory_to_project(self, project_id: str, memory_ref: Dict) -> bool:
+        """記憶をプロジェクトにリンク"""
+        try:
+            project = self.get_project_by_id(project_id)
+            if not project:
+                print(f"⚠️ プロジェクトが見つかりません: {project_id}")
+                return False
+            
+            # 記憶リンク構造
+            memory_link = {
+                "memory_type": memory_ref.get("memory_type", "unknown"),
+                "memory_id": memory_ref.get("memory_id", ""),
+                "relevance": memory_ref.get("relevance", 0.5),
+                "linked_at": datetime.now().isoformat(),
+                "description": memory_ref.get("description", "")
+            }
+            
+            # 記憶リンクフィールドの初期化
+            if "memory_links" not in project:
+                project["memory_links"] = []
+            
+            # 重複チェック
+            existing_links = project["memory_links"]
+            for link in existing_links:
+                if (link.get("memory_type") == memory_link["memory_type"] and 
+                    link.get("memory_id") == memory_link["memory_id"]):
+                    print(f"⚠️ 記憶リンク既存: {memory_link['memory_id']}")
+                    return False
+            
+            # プロジェクトの記憶リンクに追加
+            project["memory_links"].append(memory_link)
+            project["last_updated"] = datetime.now().isoformat()
+            
+            self.save_project_data()
+            print(f"🔗 記憶リンク追加: {memory_link['memory_type']} - {memory_link['memory_id']}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ 記憶リンク追加エラー: {e}")
+            return False
+    
+    def capture_context_snapshot(self, project_id: str, snapshot_type: str = "auto", context_data: Dict = None) -> bool:
+        """プロジェクトの現在の文脈スナップショットを保存"""
+        try:
+            project = self.get_project_by_id(project_id)
+            if not project:
+                print(f"⚠️ プロジェクトが見つかりません: {project_id}")
+                return False
+            
+            # 文脈スナップショットフィールドの初期化
+            if "context_snapshots" not in project:
+                project["context_snapshots"] = []
+            
+            # 文脈スナップショット構造
+            snapshot = {
+                "id": f"snapshot_{len(project['context_snapshots']) + 1:03d}",
+                "timestamp": datetime.now().isoformat(),
+                "type": snapshot_type,
+                "project_state": {
+                    "status": project.get("status"),
+                    "progress": project.get("progress"),
+                    "next_steps": project.get("next_steps", [])
+                },
+                "context_data": context_data or {},
+                "memory_links_count": len(project.get("memory_links", [])),
+                "decisions_count": len(project.get("decision_history", []))
+            }
+            
+            # プロジェクトの文脈スナップショットに追加
+            project["context_snapshots"].append(snapshot)
+            project["last_updated"] = datetime.now().isoformat()
+            
+            # 古いスナップショットのクリーンアップ（最新20件まで保持）
+            if len(project["context_snapshots"]) > 20:
+                project["context_snapshots"] = project["context_snapshots"][-20:]
+            
+            self.save_project_data()
+            print(f"📸 文脈スナップショット保存: {snapshot['id']} ({snapshot_type})")
+            return True
+            
+        except Exception as e:
+            print(f"❌ 文脈スナップショット保存エラー: {e}")
+            return False
+    
+    def get_project_memory_context(self, project_id: str) -> Dict[str, Any]:
+        """プロジェクトの記憶コンテキストを取得"""
+        try:
+            project = self.get_project_by_id(project_id)
+            if not project:
+                return {}
+            
+            memory_context = {
+                "project_id": project_id,
+                "project_title": project.get("title"),
+                "memory_links": project.get("memory_links", []),
+                "recent_decisions": project.get("decision_history", [])[-5:],  # 最新5件
+                "latest_snapshot": project.get("context_snapshots", [])[-1:],  # 最新1件
+                "total_links": len(project.get("memory_links", [])),
+                "total_decisions": len(project.get("decision_history", [])),
+                "last_updated": project.get("last_updated")
+            }
+            
+            return memory_context
+            
+        except Exception as e:
+            print(f"❌ プロジェクト記憶コンテキスト取得エラー: {e}")
+            return {}
     
     def save_project_data(self):
         """プロジェクトデータをファイルに保存"""

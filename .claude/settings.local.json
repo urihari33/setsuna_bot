@@ -45,7 +45,13 @@
       "Bash(true)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(for file in test_*.py)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then mv \"$file\" \"archive/test_files/\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(source:*)"
     ],
     "deny": []
   }

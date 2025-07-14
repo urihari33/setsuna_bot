@@ -1,6 +1,27 @@
 {
-  "active_projects": [],
+  "active_projects": [
+    {
+      "id": "proj_003",
+      "title": "テスト動画制作",
+      "description": "Phase 1統合テスト用のテストプロジェクト",
+      "type": "動画",
+      "status": "計画中",
+      "progress": 0,
+      "created_date": "2025-07-08T02:10:13.941618",
+      "deadline": null,
+      "last_updated": "2025-07-08T02:10:13.941621",
+      "next_steps": [],
+      "notes": [],
+      "milestones": [],
+      "memory_links": [],
+      "decision_history": [],
+      "context_snapshots": []
+    }
+  ],
   "idea_stock": [],
   "completed_projects": [],
-  "project_counter": 2
+  "project_counter": 3,
+  "memory_links": {},
+  "decision_history": {},
+  "context_snapshots": {}
 }

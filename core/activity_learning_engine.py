@@ -21,7 +21,8 @@ import hashlib
 from .preprocessing_engine import PreProcessingEngine
 from .config_manager import get_config_manager
 from .debug_logger import get_debug_logger, debug_function
-from .mock_search_service import SearchEngineManager
+from .multi_search_manager import MultiSearchManager
+from .dynamic_query_generator import DynamicQueryGenerator, QueryGenerationRequest
 
 # Windows環境のパス設定（CLAUDE.mdの指示に従いWindowsパスを使用）
 # WSL2環境でもファイル保存・読み込みはWindows側で行う
@@ -103,15 +104,20 @@ class ActivityLearningEngine:
         self.preprocessing_engine = PreProcessingEngine()
         
         # 検索エンジン管理
-        self.search_manager = SearchEngineManager()
+        self.search_manager = MultiSearchManager()
+        
+        # 動的クエリ生成エンジン初期化
+        self.query_generator = DynamicQueryGenerator()
         
         # 検索エンジン状態確認
-        search_status = self.search_manager.get_status()
-        self.debug_logger.info("Google検索エンジン初期化完了", {
-            "ready": search_status["ready"],
-            "google_service_available": search_status["google_service_available"],
-            "config_valid": search_status["config_valid"],
-            "quota_remaining": search_status["quota_remaining"]
+        search_status = self.search_manager.get_engine_status()
+        google_status = search_status.get("google")
+        duckduckgo_status = search_status.get("duckduckgo")
+        
+        self.debug_logger.info("マルチ検索エンジン初期化完了", {
+            "google_available": google_status.available if google_status else False,
+            "duckduckgo_available": duckduckgo_status.available if duckduckgo_status else False,
+            "dynamic_queries_available": self.query_generator.is_available()
         })
         
         # 段階的分析設定
@@ -242,6 +248,76 @@ class ActivityLearningEngine:
     def get_preprocessing_statistics(self) -> Dict[str, Any]:
         """前処理統計情報取得"""
         return self.preprocessing_engine.get_statistics()
+    
+    def configure_lightweight_mode(self, enable: bool = True):
+        """
+        軽量モード設定
+        
+        Args:
+            enable: 軽量モード有効/無効
+        """
+        if enable:
+            # 軽量モード: 前処理無効、制限的設定
+            self.staged_analysis_config.update({
+                "enable_preprocessing": False,
+                "max_detailed_analysis": 5,
+                "gpt35_batch_size": 3,
+                "gpt4_batch_size": 2
+            })
+            print("[学習エンジン] ⚙️ 軽量モード有効: 前処理無効、分析件数制限")
+        else:
+            # 標準モード: 前処理有効、通常設定
+            self.staged_analysis_config.update({
+                "enable_preprocessing": True,
+                "max_detailed_analysis": 15,
+                "gpt35_batch_size": 10,
+                "gpt4_batch_size": 5
+            })
+            print("[学習エンジン] ⚙️ 標準モード有効: 前処理有効、通常分析件数")
+    
+    def configure_safe_mode(self, enable: bool = True):
+        """
+        安全モード設定（Rate Limiting対策）
+        
+        Args:
+            enable: 安全モード有効/無効
+        """
+        if enable:
+            # 安全モード: 更に制限的、長い間隔
+            self.staged_analysis_config.update({
+                "enable_preprocessing": True,
+                "max_detailed_analysis": 8,
+                "gpt35_batch_size": 3,
+                "gpt4_batch_size": 2
+            })
+            
+            # PreProcessingEngineの間隔も調整
+            self.preprocessing_engine.rate_limiting.update({
+                "request_interval": 3.0,
+                "batch_size": 3
+            })
+            print("[学習エンジン] ⚙️ 安全モード有効: 長間隔、小バッチサイズ")
+        else:
+            # 標準設定に戻す
+            self.configure_lightweight_mode(False)
+            self.preprocessing_engine.rate_limiting.update({
+                "request_interval": 2.0,
+                "batch_size": 5
+            })
+            print("[学習エンジン] ⚙️ 安全モード無効: 標準設定")
+    
+    def get_current_mode(self) -> str:
+        """現在のモード取得"""
+        preprocessing_enabled = self.staged_analysis_config["enable_preprocessing"]
+        max_analysis = self.staged_analysis_config["max_detailed_analysis"]
+        request_interval = self.preprocessing_engine.rate_limiting["request_interval"]
+        
+        if not preprocessing_enabled:
+            return "軽量モード"
+        elif request_interval >= 3.0 and max_analysis <= 8:
+            return "安全モード"
+        else:
+            return "標準モード"
     
     def _notify_progress(self, phase: str, progress: float, message: str):
         """プログレス通知"""
@@ -447,7 +523,7 @@ class ActivityLearningEngine:
         self._notify_progress("collection", 0.1, "情報収集開始")
         
         # 検索クエリ生成
-        search_queries = self._generate_search_queries(session.theme, session.depth_level)
+        search_queries = self._generate_search_queries(session.theme, session.depth_level, session.learning_type)
         
         collected_sources = []
         search_errors = []  # 検索エラーを記録
@@ -533,11 +609,12 @@ class ActivityLearningEngine:
             # 前処理エンジンで閾値設定
             self.preprocessing_engine.set_thresholds(**self.staged_analysis_config["preprocessing_thresholds"])
             
-            # 前処理実行
+            # 前処理実行（安全モードで実行）
             preprocessing_results = self.preprocessing_engine.preprocess_content_batch(
                 sources=collected_sources,
                 theme=session.theme,
-                target_categories=["技術", "市場", "トレンド", "実用"]
+                target_categories=["技術", "市場", "トレンド", "実用"],
+                safe_mode=True  # Rate Limiting対策で安全モード使用
             )
             
             preprocessing_execution_time = time.time() - preprocessing_start_time
@@ -698,16 +775,51 @@ class ActivityLearningEngine:
         
         print(f"[学習エンジン] ✅ 知識統合完了")
     
-    def _generate_search_queries(self, theme: str, depth_level: int) -> List[str]:
-        """検索クエリ生成"""
-        self.debug_logger.debug("Web検索クエリ生成開始", {
+    def _generate_search_queries(self, theme: str, depth_level: int, learning_type: str = "深掘り") -> List[str]:
+        """検索クエリ生成（動的クエリ生成エンジン使用）"""
+        self.debug_logger.debug("動的検索クエリ生成開始", {
             "theme": theme,
-            "depth_level": depth_level
+            "depth_level": depth_level,
+            "learning_type": learning_type
         })
+        
+        try:
+            # 動的クエリ生成リクエスト作成
+            query_request = QueryGenerationRequest(
+                theme=theme,
+                learning_type=learning_type,
+                depth_level=depth_level,
+                language_preference="mixed",
+                target_engines=["google", "duckduckgo"]
+            )
+            
+            # GPT-4-turbo活用動的クエリ生成
+            generated_queries = self.query_generator.generate_queries(query_request)
+            
+            # クエリ文字列のみ抽出
+            query_strings = [q.query for q in generated_queries]
+            
+            self.debug_logger.info("動的検索クエリ生成完了", {
+                "generated_queries": query_strings,
+                "total_queries": len(query_strings),
+                "generation_method": "gpt4_dynamic" if self.query_generator.is_available() else "fallback"
+            })
+            
+            return query_strings
+            
+        except Exception as e:
+            self.debug_logger.error(f"動的クエリ生成エラー: {e}")
+            
+            # フォールバック: 従来の固定クエリ
+            return self._generate_fallback_queries(theme, depth_level)
+    
+    def _generate_fallback_queries(self, theme: str, depth_level: int) -> List[str]:
+        """フォールバック用固定クエリ生成"""
+        self.debug_logger.warning("フォールバック固定クエリ生成実行")
         
         base_queries = [
             f"{theme} 最新情報",
-            f"{theme} トレンド 2024",
+            f"{theme} トレンド 2025",
             f"{theme} 技術動向",
         ]
         
@@ -724,11 +836,6 @@ class ActivityLearningEngine:
                 f"{theme} 実装方法",
                 f"{theme} ベストプラクティス",
             ])
-        
-        self.debug_logger.info("Web検索クエリ生成完了", {
-            "generated_queries": base_queries,
-            "total_queries": len(base_queries)
-        })
         
         return base_queries
     
@@ -747,21 +854,35 @@ class ActivityLearningEngine:
         })
         
         try:
-            # 統合検索エンジンで検索実行
+            # マルチ検索エンジンで検索実行
             search_result = self.search_manager.search(query, max_results=5)
             execution_time = time.time() - start_time
             
-            self.debug_logger.info("Google検索結果", {
+            self.debug_logger.info("マルチ検索結果", {
                 "query": query,
-                "engine_used": search_result["engine_used"],
-                "success": search_result["success"],
-                "total_results": search_result["total_results"],
+                "engines_used": search_result.engines_used,
+                "success": search_result.success,
+                "total_results": search_result.total_unique_results,
                 "execution_time": execution_time,
-                "quota_remaining": search_result.get("quota_remaining", "不明")
+                "primary_engine": search_result.primary_engine
             })
             
-            if search_result["success"] and search_result["results"]:
-                sources = search_result["results"]
+            if search_result.success and search_result.combined_results:
+                # 統一データ形式を従来形式に変換
+                sources = []
+                for item in search_result.combined_results:
+                    # SearchItemオブジェクトを従来形式に変換
+                    source = {
+                        "source_id": f"{item.source_domain}_{hash(item.url) % 10000}",
+                        "source_type": item.source_type,
+                        "url": item.url,
+                        "title": item.title,
+                        "content": item.snippet,
+                        "domain": item.source_domain,
+                        "quality_score": item.quality_score,
+                        "relevance_score": item.relevance_score
+                    }
+                    sources.append(source)
                 
                 # 結果の詳細ログ
                 for i, source in enumerate(sources, 1):
@@ -775,11 +896,11 @@ class ActivityLearningEngine:
                 
                 # 成功ログ
                 self.debug_logger.log_web_search(
-                    query, f"{search_result['engine_used']}_engine", 200, 
+                    query, f"{search_result.primary_engine}_engine", 200, 
                     len(sources), {
                         "execution_time": execution_time,
-                        "engine_used": search_result["engine_used"],
-                        "quota_remaining": search_result.get("quota_remaining", "不明")
+                        "engines_used": search_result.engines_used,
+                        "primary_engine": search_result.primary_engine
                     }
                 )
                 
@@ -787,29 +908,29 @@ class ActivityLearningEngine:
                     "success": True,
                     "sources": sources,
                     "execution_time": execution_time,
-                    "engine_used": search_result["engine_used"],
-                    "quota_remaining": search_result.get("quota_remaining")
+                    "engine_used": search_result.primary_engine,
+                    "engines_used": search_result.engines_used,
+                    "quota_remaining": None  # マルチエンジンでは個別管理
                 }
             
             else:
                 # 検索失敗の場合
-                error_message = search_result.get("error", "検索結果が空")
-                quota_exceeded = search_result.get("quota_exceeded", False)
+                error_message = "検索結果が空" if search_result.success else "検索エンジンエラー"
+                quota_exceeded = False  # マルチエンジンでは個別管理
                 
-                self.debug_logger.warning("Google検索失敗", {
+                self.debug_logger.warning("マルチ検索失敗", {
                     "query": query,
-                    "engine_used": search_result["engine_used"],
+                    "engines_used": search_result.engines_used,
                     "error": error_message,
                     "execution_time": execution_time,
-                    "quota_exceeded": quota_exceeded,
-                    "quota_remaining": search_result.get("quota_remaining", "不明")
+                    "quota_exceeded": quota_exceeded
                 })
                 
                 if quota_exceeded:
-                    print(f"[学習エンジン] ⚠️ Google検索制限到達: {error_message}")
-                    print(f"[学習エンジン] 💡 明日まで待つか、別のAPIの追加を検討してください")
+                    print(f"[学習エンジン] ⚠️ 検索制限到達: {error_message}")
+                    print(f"[学習エンジン] 💡 DuckDuckGoフォールバック実行中")
                 else:
-                    print(f"[学習エンジン] ⚠️ Google検索失敗: {error_message}")
+                    print(f"[学習エンジン] ⚠️ マルチ検索失敗: {error_message}")
                 
                 return {
                     "success": False,

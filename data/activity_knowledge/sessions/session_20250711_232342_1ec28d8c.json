@@ -1,0 +1,978 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250711_232342_1ec28d8c",
+    "theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください",
+    "learning_type": "概要",
+    "depth_level": 3,
+    "time_limit": 600,
+    "budget_limit": 1.0,
+    "status": "completed",
+    "parent_session": null,
+    "tags": [
+      "GUI作成"
+    ],
+    "start_time": "2025-07-11 23:23:44.488964",
+    "end_time": "2025-07-11 23:29:04.293991",
+    "current_phase": "completed",
+    "collected_items": 35,
+    "processed_items": 15,
+    "important_findings": [],
+    "current_cost": 0.013000000000000001
+  },
+  "last_updated": "2025-07-11T23:29:04.299498",
+  "collection_results": {
+    "information_sources": [
+      {
+        "source_id": "www.instagram.com_8683",
+        "source_type": "web",
+        "url": "https://www.instagram.com/uespiiiiii/",
+        "title": "ウエスP(WES-P/Mr Uekusa) BGT2018 (@uespiiiiii) · Instagram ...",
+        "content": "3M followers · 423 following · 1202 posts · @uespiiiiii: “Come to my Youtube from Stories Highlights!! Business enquiry→mr-uekusa@yoshimoto.co.jp or DM ...",
+        "domain": "www.instagram.com",
+        "quality_score": 0.9,
+        "relevance_score": 1.0,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "音楽生成",
+            "動画投稿",
+            "インフルエンサー"
+          ],
+          "confidence": 0.9,
+          "reason": "ウエスP（WES-P/Mr Uekusa）は音楽系の活動者であり、活動内容や人気を調査する上で関連性が高い。Instagramの情報は信頼性があり、具体的な活動内容が記載されている。音楽系インフルエンサーや動画投稿者の活動を分析する上で重要な情報源となる。学習素材としての価値が高いため、技術カテゴリに分類される。"
+        }
+      },
+      {
+        "source_id": "www.facebook.com_7693",
+        "source_type": "web",
+        "url": "https://www.facebook.com/robertglasper/?locale=ja_JP",
+        "title": "Robert Glasper",
+        "content": "2025/06/24󰞋󱟠. 󰟝. ✨ BIG NEWS✨ Blue Note LA @bluenotelosangeles is ... Herbie has been such a huge influence on my musical journey - from his ...",
+        "domain": "www.facebook.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.9,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "音楽",
+            "動画投稿",
+            "VTuber"
+          ],
+          "confidence": 0.9,
+          "reason": "Robert Glasperは音楽活動家であり、活動内容が音楽に関連している。情報はFacebookページから提供されており、信頼性がある。音楽活動家としての活動方針や人気を知ることで、歌系活動者の活動方針に影響を与える可能性があるため、学習価値が高い。"
+        }
+      },
+      {
+        "source_id": "www.tiktok.com_4092",
+        "source_type": "web",
+        "url": "https://www.tiktok.com/discover/egyptian-trend-2025-music-xiao",
+        "title": "Egyptian Trend 2025 Music Xiao | TikTok",
+        "content": "Apr 3, 2025 ... ... Trend 2025 Song, Top Music in 2025 Egypt, 2025 Egyptian Trends ... popular Egypt trends for VTubers, engaging VTuber content. 7956 Likes ...",
+        "domain": "www.tiktok.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.8,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "VTuber",
+            "音楽",
+            "動画投稿"
+          ],
+          "confidence": 0.9,
+          "reason": "このコンテンツは、歌系活動者が人気や知名度を獲得するための戦略として、VTuberや動画投稿者の活動内容を調査し、参考にすることが重要である。情報は信頼性があり、具体的な内容が提供されている。学習素材として価値があり、技術カテゴリに該当する。"
+        }
+      },
+      {
+        "source_id": "www.instagram.com_6175",
+        "source_type": "web",
+        "url": "https://www.instagram.com/p/DDbzrY-of2u/",
+        "title": "Miss B | Instagram - Instagram",
+        "content": "Dec 11, 2024 ... Fashion trends personal branding lifestyle inspiration creative content influencer marketing collaborative projetcs blogging tips professional ...",
+        "domain": "www.instagram.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.7,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "インフルエンサーマーケティング",
+            "ブログ運営",
+            "プロフェッショナルコンテンツ"
+          ],
+          "confidence": 0.9,
+          "reason": "Miss BのInstagramは、インフルエンサーマーケティングやブログ運営に関する情報を提供しており、活動方針やコンテンツ制作に関する参考になる情報が含まれている。"
+        }
+      },
+      {
+        "source_id": "www.tiktok.com_8031",
+        "source_type": "web",
+        "url": "https://www.tiktok.com/discover/tik-tok-billboard-top-50",
+        "title": "Tik Tok Billboard Top 50 | TikTok",
+        "content": "Bad Bunny DtMF Billboard chart, capture memorable moments, TikTok music trends, influence of Bad Bunny on TikTok, top songs this week, music inspiration for ...",
+        "domain": "www.tiktok.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.7,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "音楽トレンド",
+            "ソーシャルメディア",
+            "インフルエンサー"
+          ],
+          "confidence": 0.9,
+          "reason": "TikTok Billboard Top 50 は音楽トレンドやインフルエンサーの影響力に焦点を当てた情報を提供しており、活動方針の判断材料として有用であると考えられる。"
+        }
+      },
+      {
+        "source_id": "imitsu.jp_5457",
+        "source_type": "web",
+        "url": "https://imitsu.jp/matome/movie/how-to-make-mv",
+        "title": "MVの作り方｜PVとの違いや作成時のコツをご紹介！【2025年最新 ...",
+        "content": "MV（ミュージックビデオ）の作り方についてや、PV（プロモーションビデオ）との違いについて解説していきます。作成時のコツも紹介していくので、MVを制作しようと検討中の ...",
+        "domain": "imitsu.jp",
+        "quality_score": 0.9,
+        "relevance_score": 1.0,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "MV制作",
+            "PV制作",
+            "活動方針"
+          ],
+          "confidence": 0.9,
+          "reason": "MV制作に関する具体的な情報を提供しており、活動方針を考える上で重要な学習素材となる。"
+        }
+      },
+      {
+        "source_id": "note.com_3039",
+        "source_type": "web",
+        "url": "https://note.com/makiodrums/n/na77b94050cd9",
+        "title": "【2025年追記】ミュージックビデオの作り方 演奏シーンの ...",
+        "content": "Apr 18, 2020 ... こんにちは。 僕は普段、バンド活動をしながら、映像制作の仕事も行っております。 元々音楽畑ということで、依頼 ...",
+        "domain": "note.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.9,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "ミュージックビデオ制作",
+            "演奏シーンの撮影"
+          ],
+          "confidence": 0.9,
+          "reason": "この記事はミュージックビデオの作り方や演奏シーンの撮影に関する具体的な情報を提供しており、テーマとの関連性が高い。情報の信頼性は一定程度あり、学習素材としての重要性もある。技術カテゴリに該当し、活動者が自身の投稿内容を向上させるための参考になる。"
+        }
+      },
+      {
+        "source_id": "douga-kanji.com_7655",
+        "source_type": "web",
+        "url": "https://douga-kanji.com/posts/promotion-movie-making",
+        "title": "プロモーションビデオの作り方を4つのポイントや事例で解説【2025 ...",
+        "content": "Jul 1, 2025 ... テーマソング・CMソング・各種BGMや、アーティスト向けの音楽作品も制作しており、映像制作と音楽制作を組み合わせての依頼も可能。 ... 構成を作る際のコツ ...",
+        "domain": "douga-kanji.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.8,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "映像制作",
+            "音楽制作"
+          ],
+          "confidence": 0.9,
+          "reason": "プロモーションビデオの作り方に関する情報は活動者が音楽と映像を組み合わせて活動する上で重要であり、具体的なポイントや事例が提供されているため信頼性が高いと判断される。"
+        }
+      },
+      {
+        "source_id": "jp.cyberlink.com_5951",
+        "source_type": "web",
+        "url": "https://jp.cyberlink.com/blog/video-effects/1016/how-to-create-music-video",
+        "title": "【2025年最新版】MVとは？MV や PV の作り方とおすすめアプリ ...",
+        "content": "Dec 29, 2023 ... 【スマホ編】PV/MV作成におすすめ動画編集アプリ3選. 1位.テキストや ... 無料で使える BGM やスタンプがデフォルトで用意されており、基本的な ...",
+        "domain": "jp.cyberlink.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.7,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "動画編集アプリ",
+            "PV/MV作成",
+            "BGM"
+          ],
+          "confidence": 0.9,
+          "reason": "音楽活動者がMVやPVを作成する際に必要な情報を提供しており、関連性が高い。情報の信頼性や具体性は一定程度あり、学習素材として価値がある。技術カテゴリに分類され、MV制作に役立つ情報を提供している。"
+        }
+      },
+      {
+        "source_id": "filmora.wondershare.jp_3226",
+        "source_type": "web",
+        "url": "https://filmora.wondershare.jp/video-editing/equipment-make-vocaloid-music-and-video.html",
+        "title": "【2025年】ボカロの作り方や必要な機材からMV作成まで徹底解説！",
+        "content": "... MV制作は実際に手を動かすことが重要. ホーム · 動画編集の基本とコツ; 【2025年】ボカロの作り方MV作成についてを徹底解説. 【2025年】ボカロの作り方MV作成についてを ...",
+        "domain": "filmora.wondershare.jp",
+        "quality_score": 0.9,
+        "relevance_score": 0.7,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "ボカロ",
+            "MV制作",
+            "音楽制作"
+          ],
+          "confidence": 0.9,
+          "reason": "ボカロやMV制作に関する具体的な情報が提供されており、活動者が今後の活動に役立つ学習素材となるため。"
+        }
+      },
+      {
+        "source_id": "www.adobe.com_3839",
+        "source_type": "web",
+        "url": "https://www.adobe.com/products/firefly.html",
+        "title": "Adobe Firefly - Free Generative AI for creatives",
+        "content": "Create stunning images, audio, and now video, all in one place, with Adobe Firefly. Go from ideation to production seamlessly with commercially safe Firefly ...",
+        "domain": "www.adobe.com",
+        "quality_score": 0.9,
+        "relevance_score": 1.0,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "AI",
+            "音楽生成"
+          ],
+          "confidence": 0.9,
+          "reason": "Adobe FireflyはAIを活用したクリエイティブな画像、音声、動画生成ツールであり、音楽生成にも関連があるため、活動者が新しいコンテンツを制作する際に参考になる可能性が高い。情報の信頼性は高いが、学習価値や重要度はやや低い。"
+        }
+      },
+      {
+        "source_id": "www.instagram.com_4176",
+        "source_type": "web",
+        "url": "https://www.instagram.com/gyanriley/",
+        "title": "Gyan Riley (@gyanriley) • Instagram photos and videos",
+        "content": "Photo by Gyan Riley on February 07, 2025. It's release day! Winter Sun (full album) is now available everywhere you get your music (Spotify, Apple Music, iTunes ...",
+        "domain": "www.instagram.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.9,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "音楽生成",
+            "インフルエンサー",
+            "活動方針"
+          ],
+          "confidence": 0.9,
+          "reason": "Gyan RileyのInstagramは音楽関連のコンテンツを発信しており、活動方針やインフルエンサーの情報を得るための参考になる。情報の信頼性は高いが、学習価値や重要度はやや低めと評価される。"
+        }
+      },
+      {
+        "source_id": "www.adobe.com_2211",
+        "source_type": "web",
+        "url": "https://www.adobe.com/products/premiere-elements/features.html",
+        "title": "Features | Adobe Premiere Elements 2025",
+        "content": "Easily do everything from trimming and resizing to adding music and animation with the power of AI and automation. ... Premiere Elements 2025 is video editing ...",
+        "domain": "www.adobe.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.8,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "AI",
+            "音楽生成"
+          ],
+          "confidence": 0.9,
+          "reason": "Adobe Premiere Elements 2025はAIと自動化の力を活用してビデオ編集を容易にする機能を提供しており、音楽やアニメーションの追加も可能です。この情報は、歌系活動者がMusicVideoの制作に活かすことができるため、関連性が高いと評価されます。また、AIや音楽生成といったキートピックも含まれており、技術カテゴリに分類されます。信頼度も高いです。"
+        }
+      },
+      {
+        "source_id": "www.tiktok.com_5431",
+        "source_type": "web",
+        "url": "https://www.tiktok.com/discover/ai-music-generators-2025",
+        "title": "Ai Music Generators 2025 | TikTok",
+        "content": "Apr 20, 2025 ... ... 2025, music production AI tools, AI song generation software ... 2025 updates, technology in video production, innovations in AI video tools.",
+        "domain": "www.tiktok.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.7,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "AI",
+            "音楽生成"
+          ],
+          "confidence": 0.9,
+          "reason": "AIを活用した音楽生成に関する情報が提供されており、活動者が今後の活動方針を考える上で参考になる内容である。情報の信頼性や具体性にはやや改善の余地があるが、学習の価値は高いと言える。"
+        }
+      },
+      {
+        "source_id": "www.homestyler.com_839",
+        "source_type": "web",
+        "url": "https://www.homestyler.com/article/the-ultimate-guide-to-online-video-rendering-tools?lang=ja_JP",
+        "title": "The Ultimate Guide to Online Video Rendering Tools: Elevate Your ...",
+        "content": "Jul 3, 2025 ... The use of online video rendering tools is a game-changer for your design practice, as they streamline the video creation workflow. By selecting ...",
+        "domain": "www.homestyler.com",
+        "quality_score": 0.9,
+        "relevance_score": 0.7,
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "AI",
+            "音楽生成"
+          ],
+          "confidence": 0.9,
+          "reason": "この記事はオンラインビデオレンダリングツールに関するガイドであり、活動者が音楽ビデオの制作に活用する際に役立つ情報を提供している。情報の信頼性は高く、具体的なツールや手法について解説されている。音楽系活動者にとって重要な技術情報を学ぶ上で価値がある。"
+        }
+      }
+    ],
+    "raw_content_count": 35,
+    "filtered_content_count": 15,
+    "search_queries": [
+      "2025 music influencer trends popular content",
+      "音楽ビデオ制作の基本とコツ 2025",
+      "music video production tools 2025",
+      "successful music influencers marketing strategies 2025",
+      "VTuber活動の成功事例と分析 2025",
+      "how to increase video posting frequency for music channels",
+      "音楽系YouTubeチャンネル成長戦略 2025"
+    ],
+    "preprocessing_enabled": true,
+    "execution_time": 251.2624020576477,
+    "queries_executed": 7,
+    "search_engine_status": {
+      "engines": {
+        "google": "SearchEngineStatus(engine_name='Google Custom Search', available=False, quota_remaining=None, daily_limit=None, error_message=\"'GoogleSearchService' object has no attribute 'get_status'\", last_used=None)",
+        "duckduckgo": "SearchEngineStatus(engine_name='DuckDuckGo', available=False, quota_remaining=None, daily_limit=None, error_message=None, last_used=None)"
+      },
+      "available_engines": [],
+      "total_available_engines": 0,
+      "stats": {
+        "total_searches": 7,
+        "google_searches": 7,
+        "duckduckgo_searches": 0,
+        "successful_searches": 7,
+        "failed_searches": 0,
+        "total_results": 35,
+        "unique_results": 35,
+        "last_search_time": "2025-07-11 23:24:14.025976"
+      },
+      "dynamic_queries_enabled": true,
+      "last_updated": "2025-07-11T23:27:56.325736"
+    },
+    "collection_timestamp": "2025-07-11T23:27:56.325736",
+    "collection_success": true,
+    "search_errors": []
+  },
+  "preprocessing_summary": {
+    "total_processed": 35,
+    "passed_count": 34,
+    "filtered_count": 1,
+    "pass_rate": 97.14285714285714,
+    "category_breakdown": {
+      "技術": {
+        "total": 34,
+        "passed": 34
+      },
+      "実用": {
+        "total": 1,
+        "passed": 0
+      }
+    },
+    "score_averages": {
+      "relevance": 0.7914285714285718,
+      "quality": 0.691428571428571,
+      "importance": 0.5914285714285716
+    },
+    "total_tokens_used": 26225,
+    "estimated_cost": 0.05245,
+    "average_processing_time": 2.389711959021432
+  },
+  "analysis_results": {
+    "analyzed_content": [
+      {
+        "source": {
+          "source_id": "www.instagram.com_8683",
+          "source_type": "web",
+          "url": "https://www.instagram.com/uespiiiiii/",
+          "title": "ウエスP(WES-P/Mr Uekusa) BGT2018 (@uespiiiiii) · Instagram ...",
+          "content": "3M followers · 423 following · 1202 posts · @uespiiiiii: “Come to my Youtube from Stories Highlights!! Business enquiry→mr-uekusa@yoshimoto.co.jp or DM ...",
+          "domain": "www.instagram.com",
+          "quality_score": 0.9,
+          "relevance_score": 1.0,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "音楽生成",
+              "動画投稿",
+              "インフルエンサー"
+            ],
+            "confidence": 0.9,
+            "reason": "ウエスP（WES-P/Mr Uekusa）は音楽系の活動者であり、活動内容や人気を調査する上で関連性が高い。Instagramの情報は信頼性があり、具体的な活動内容が記載されている。音楽系インフルエンサーや動画投稿者の活動を分析する上で重要な情報源となる。学習素材としての価値が高いため、技術カテゴリに分類される。"
+          }
+        },
+        "analysis": "記事1の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.facebook.com_7693",
+          "source_type": "web",
+          "url": "https://www.facebook.com/robertglasper/?locale=ja_JP",
+          "title": "Robert Glasper",
+          "content": "2025/06/24󰞋󱟠. 󰟝. ✨ BIG NEWS✨ Blue Note LA @bluenotelosangeles is ... Herbie has been such a huge influence on my musical journey - from his ...",
+          "domain": "www.facebook.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.9,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "音楽",
+              "動画投稿",
+              "VTuber"
+            ],
+            "confidence": 0.9,
+            "reason": "Robert Glasperは音楽活動家であり、活動内容が音楽に関連している。情報はFacebookページから提供されており、信頼性がある。音楽活動家としての活動方針や人気を知ることで、歌系活動者の活動方針に影響を与える可能性があるため、学習価値が高い。"
+          }
+        },
+        "analysis": "記事2の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.tiktok.com_4092",
+          "source_type": "web",
+          "url": "https://www.tiktok.com/discover/egyptian-trend-2025-music-xiao",
+          "title": "Egyptian Trend 2025 Music Xiao | TikTok",
+          "content": "Apr 3, 2025 ... ... Trend 2025 Song, Top Music in 2025 Egypt, 2025 Egyptian Trends ... popular Egypt trends for VTubers, engaging VTuber content. 7956 Likes ...",
+          "domain": "www.tiktok.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.8,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "VTuber",
+              "音楽",
+              "動画投稿"
+            ],
+            "confidence": 0.9,
+            "reason": "このコンテンツは、歌系活動者が人気や知名度を獲得するための戦略として、VTuberや動画投稿者の活動内容を調査し、参考にすることが重要である。情報は信頼性があり、具体的な内容が提供されている。学習素材として価値があり、技術カテゴリに該当する。"
+          }
+        },
+        "analysis": "記事3の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.instagram.com_6175",
+          "source_type": "web",
+          "url": "https://www.instagram.com/p/DDbzrY-of2u/",
+          "title": "Miss B | Instagram - Instagram",
+          "content": "Dec 11, 2024 ... Fashion trends personal branding lifestyle inspiration creative content influencer marketing collaborative projetcs blogging tips professional ...",
+          "domain": "www.instagram.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.7,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "インフルエンサーマーケティング",
+              "ブログ運営",
+              "プロフェッショナルコンテンツ"
+            ],
+            "confidence": 0.9,
+            "reason": "Miss BのInstagramは、インフルエンサーマーケティングやブログ運営に関する情報を提供しており、活動方針やコンテンツ制作に関する参考になる情報が含まれている。"
+          }
+        },
+        "analysis": "記事4の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.tiktok.com_8031",
+          "source_type": "web",
+          "url": "https://www.tiktok.com/discover/tik-tok-billboard-top-50",
+          "title": "Tik Tok Billboard Top 50 | TikTok",
+          "content": "Bad Bunny DtMF Billboard chart, capture memorable moments, TikTok music trends, influence of Bad Bunny on TikTok, top songs this week, music inspiration for ...",
+          "domain": "www.tiktok.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.7,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "音楽トレンド",
+              "ソーシャルメディア",
+              "インフルエンサー"
+            ],
+            "confidence": 0.9,
+            "reason": "TikTok Billboard Top 50 は音楽トレンドやインフルエンサーの影響力に焦点を当てた情報を提供しており、活動方針の判断材料として有用であると考えられる。"
+          }
+        },
+        "analysis": "記事5の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "imitsu.jp_5457",
+          "source_type": "web",
+          "url": "https://imitsu.jp/matome/movie/how-to-make-mv",
+          "title": "MVの作り方｜PVとの違いや作成時のコツをご紹介！【2025年最新 ...",
+          "content": "MV（ミュージックビデオ）の作り方についてや、PV（プロモーションビデオ）との違いについて解説していきます。作成時のコツも紹介していくので、MVを制作しようと検討中の ...",
+          "domain": "imitsu.jp",
+          "quality_score": 0.9,
+          "relevance_score": 1.0,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "MV制作",
+              "PV制作",
+              "活動方針"
+            ],
+            "confidence": 0.9,
+            "reason": "MV制作に関する具体的な情報を提供しており、活動方針を考える上で重要な学習素材となる。"
+          }
+        },
+        "analysis": "記事1の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "note.com_3039",
+          "source_type": "web",
+          "url": "https://note.com/makiodrums/n/na77b94050cd9",
+          "title": "【2025年追記】ミュージックビデオの作り方 演奏シーンの ...",
+          "content": "Apr 18, 2020 ... こんにちは。 僕は普段、バンド活動をしながら、映像制作の仕事も行っております。 元々音楽畑ということで、依頼 ...",
+          "domain": "note.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.9,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "ミュージックビデオ制作",
+              "演奏シーンの撮影"
+            ],
+            "confidence": 0.9,
+            "reason": "この記事はミュージックビデオの作り方や演奏シーンの撮影に関する具体的な情報を提供しており、テーマとの関連性が高い。情報の信頼性は一定程度あり、学習素材としての重要性もある。技術カテゴリに該当し、活動者が自身の投稿内容を向上させるための参考になる。"
+          }
+        },
+        "analysis": "記事2の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "douga-kanji.com_7655",
+          "source_type": "web",
+          "url": "https://douga-kanji.com/posts/promotion-movie-making",
+          "title": "プロモーションビデオの作り方を4つのポイントや事例で解説【2025 ...",
+          "content": "Jul 1, 2025 ... テーマソング・CMソング・各種BGMや、アーティスト向けの音楽作品も制作しており、映像制作と音楽制作を組み合わせての依頼も可能。 ... 構成を作る際のコツ ...",
+          "domain": "douga-kanji.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.8,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "映像制作",
+              "音楽制作"
+            ],
+            "confidence": 0.9,
+            "reason": "プロモーションビデオの作り方に関する情報は活動者が音楽と映像を組み合わせて活動する上で重要であり、具体的なポイントや事例が提供されているため信頼性が高いと判断される。"
+          }
+        },
+        "analysis": "記事3の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "jp.cyberlink.com_5951",
+          "source_type": "web",
+          "url": "https://jp.cyberlink.com/blog/video-effects/1016/how-to-create-music-video",
+          "title": "【2025年最新版】MVとは？MV や PV の作り方とおすすめアプリ ...",
+          "content": "Dec 29, 2023 ... 【スマホ編】PV/MV作成におすすめ動画編集アプリ3選. 1位.テキストや ... 無料で使える BGM やスタンプがデフォルトで用意されており、基本的な ...",
+          "domain": "jp.cyberlink.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.7,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "動画編集アプリ",
+              "PV/MV作成",
+              "BGM"
+            ],
+            "confidence": 0.9,
+            "reason": "音楽活動者がMVやPVを作成する際に必要な情報を提供しており、関連性が高い。情報の信頼性や具体性は一定程度あり、学習素材として価値がある。技術カテゴリに分類され、MV制作に役立つ情報を提供している。"
+          }
+        },
+        "analysis": "記事4の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "filmora.wondershare.jp_3226",
+          "source_type": "web",
+          "url": "https://filmora.wondershare.jp/video-editing/equipment-make-vocaloid-music-and-video.html",
+          "title": "【2025年】ボカロの作り方や必要な機材からMV作成まで徹底解説！",
+          "content": "... MV制作は実際に手を動かすことが重要. ホーム · 動画編集の基本とコツ; 【2025年】ボカロの作り方MV作成についてを徹底解説. 【2025年】ボカロの作り方MV作成についてを ...",
+          "domain": "filmora.wondershare.jp",
+          "quality_score": 0.9,
+          "relevance_score": 0.7,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "ボカロ",
+              "MV制作",
+              "音楽制作"
+            ],
+            "confidence": 0.9,
+            "reason": "ボカロやMV制作に関する具体的な情報が提供されており、活動者が今後の活動に役立つ学習素材となるため。"
+          }
+        },
+        "analysis": "記事5の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.adobe.com_3839",
+          "source_type": "web",
+          "url": "https://www.adobe.com/products/firefly.html",
+          "title": "Adobe Firefly - Free Generative AI for creatives",
+          "content": "Create stunning images, audio, and now video, all in one place, with Adobe Firefly. Go from ideation to production seamlessly with commercially safe Firefly ...",
+          "domain": "www.adobe.com",
+          "quality_score": 0.9,
+          "relevance_score": 1.0,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "AI",
+              "音楽生成"
+            ],
+            "confidence": 0.9,
+            "reason": "Adobe FireflyはAIを活用したクリエイティブな画像、音声、動画生成ツールであり、音楽生成にも関連があるため、活動者が新しいコンテンツを制作する際に参考になる可能性が高い。情報の信頼性は高いが、学習価値や重要度はやや低い。"
+          }
+        },
+        "analysis": "記事1の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.instagram.com_4176",
+          "source_type": "web",
+          "url": "https://www.instagram.com/gyanriley/",
+          "title": "Gyan Riley (@gyanriley) • Instagram photos and videos",
+          "content": "Photo by Gyan Riley on February 07, 2025. It's release day! Winter Sun (full album) is now available everywhere you get your music (Spotify, Apple Music, iTunes ...",
+          "domain": "www.instagram.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.9,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "音楽生成",
+              "インフルエンサー",
+              "活動方針"
+            ],
+            "confidence": 0.9,
+            "reason": "Gyan RileyのInstagramは音楽関連のコンテンツを発信しており、活動方針やインフルエンサーの情報を得るための参考になる。情報の信頼性は高いが、学習価値や重要度はやや低めと評価される。"
+          }
+        },
+        "analysis": "記事2の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.adobe.com_2211",
+          "source_type": "web",
+          "url": "https://www.adobe.com/products/premiere-elements/features.html",
+          "title": "Features | Adobe Premiere Elements 2025",
+          "content": "Easily do everything from trimming and resizing to adding music and animation with the power of AI and automation. ... Premiere Elements 2025 is video editing ...",
+          "domain": "www.adobe.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.8,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "AI",
+              "音楽生成"
+            ],
+            "confidence": 0.9,
+            "reason": "Adobe Premiere Elements 2025はAIと自動化の力を活用してビデオ編集を容易にする機能を提供しており、音楽やアニメーションの追加も可能です。この情報は、歌系活動者がMusicVideoの制作に活かすことができるため、関連性が高いと評価されます。また、AIや音楽生成といったキートピックも含まれており、技術カテゴリに分類されます。信頼度も高いです。"
+          }
+        },
+        "analysis": "記事3の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.tiktok.com_5431",
+          "source_type": "web",
+          "url": "https://www.tiktok.com/discover/ai-music-generators-2025",
+          "title": "Ai Music Generators 2025 | TikTok",
+          "content": "Apr 20, 2025 ... ... 2025, music production AI tools, AI song generation software ... 2025 updates, technology in video production, innovations in AI video tools.",
+          "domain": "www.tiktok.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.7,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "AI",
+              "音楽生成"
+            ],
+            "confidence": 0.9,
+            "reason": "AIを活用した音楽生成に関する情報が提供されており、活動者が今後の活動方針を考える上で参考になる内容である。情報の信頼性や具体性にはやや改善の余地があるが、学習の価値は高いと言える。"
+          }
+        },
+        "analysis": "記事4の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "www.homestyler.com_839",
+          "source_type": "web",
+          "url": "https://www.homestyler.com/article/the-ultimate-guide-to-online-video-rendering-tools?lang=ja_JP",
+          "title": "The Ultimate Guide to Online Video Rendering Tools: Elevate Your ...",
+          "content": "Jul 3, 2025 ... The use of online video rendering tools is a game-changer for your design practice, as they streamline the video creation workflow. By selecting ...",
+          "domain": "www.homestyler.com",
+          "quality_score": 0.9,
+          "relevance_score": 0.7,
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "AI",
+              "音楽生成"
+            ],
+            "confidence": 0.9,
+            "reason": "この記事はオンラインビデオレンダリングツールに関するガイドであり、活動者が音楽ビデオの制作に活用する際に役立つ情報を提供している。情報の信頼性は高く、具体的なツールや手法について解説されている。音楽系活動者にとって重要な技術情報を学ぶ上で価値がある。"
+          }
+        },
+        "analysis": "記事5の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      }
+    ],
+    "key_findings": [],
+    "extracted_entities": [],
+    "identified_relationships": []
+  },
+  "generated_knowledge": {
+    "structured_knowledge": [],
+    "integration_knowledge": [],
+    "activity_implications": []
+  },
+  "session_statistics": {
+    "total_cost": 0.013000000000000001,
+    "total_items_processed": 15,
+    "processing_time": 0
+  }
+}

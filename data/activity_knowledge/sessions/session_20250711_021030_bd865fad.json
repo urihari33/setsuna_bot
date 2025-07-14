@@ -1,0 +1,23 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250711_021030_bd865fad",
+    "theme": "ファイル監視テスト",
+    "learning_type": "概要",
+    "depth_level": 1,
+    "time_limit": 45,
+    "budget_limit": 0.2,
+    "status": "running",
+    "parent_session": null,
+    "tags": [
+      "監視テスト"
+    ],
+    "start_time": "2025-07-11 02:10:30.503109",
+    "end_time": null,
+    "current_phase": "collection",
+    "collected_items": 0,
+    "processed_items": 0,
+    "important_findings": [],
+    "current_cost": 0.0
+  },
+  "last_updated": "2025-07-11T02:10:30.508300"
+}

@@ -1,0 +1,19 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250713_000812_a969b80b",
+    "theme": "ブロックチェーン技術の産業応用",
+    "start_time": "2025-07-13T00:08:12.924382",
+    "initial_temperature": "high",
+    "budget_limit": 15.0,
+    "session_limit": 1000,
+    "status": "active",
+    "current_temperature": "high",
+    "rounds_completed": 0,
+    "total_cost": 0.0,
+    "sessions_executed": 0,
+    "created_by": "adaptive_learning_system",
+    "tags": [],
+    "notes": ""
+  },
+  "last_updated": "2025-07-13T00:08:12.924402"
+}

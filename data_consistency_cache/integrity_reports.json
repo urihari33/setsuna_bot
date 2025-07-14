@@ -1,0 +1,170 @@
+{
+  "integrity_check_20250715_075902": {
+    "report_id": "integrity_check_20250715_075902",
+    "check_timestamp": "2025-07-15T07:59:02.025726",
+    "total_files_checked": 5,
+    "total_entities_checked": 14,
+    "issues_found": 8,
+    "issues_by_severity": {
+      "low": 0,
+      "medium": 7,
+      "high": 1,
+      "critical": 0
+    },
+    "issues_by_type": {
+      "missing_required_field": 1,
+      "type_mismatch": 1,
+      "missing_reference": 6
+    },
+    "auto_fixed_issues": 0,
+    "integrity_score": 0.8142857142857143,
+    "recommendations": [
+      "良好：データ整合性は適切なレベルを維持しています。",
+      "参照整合性の修正: 6件の不正な参照を修正してください。"
+    ],
+    "detailed_results": {
+      "file_existence": {
+        "check_type": "file_existence",
+        "entities_checked": 5,
+        "issues": []
+      },
+      "schema_validation": {
+        "check_type": "schema_validation",
+        "entities_checked": 3,
+        "issues": [
+          {
+            "issue_type": "missing_required_field",
+            "severity": "high",
+            "description": "必須フィールドが不足: metadata in unified_knowledge_db.json",
+            "affected_files": [
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "metadata"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "フィールド metadata を追加してください"
+          },
+          {
+            "issue_type": "type_mismatch",
+            "severity": "medium",
+            "description": "型不一致: videos (期待値: array, 実際: dict)",
+            "affected_files": [
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "videos"
+            ],
+            "auto_fixable": true,
+            "suggested_resolution": "フィールド videos の型を array に修正"
+          }
+        ]
+      },
+      "reference_integrity": {
+        "check_type": "reference_integrity",
+        "entities_checked": 6,
+        "issues": [
+          {
+            "issue_type": "missing_reference",
+            "severity": "medium",
+            "description": "存在しない動画IDが参照されています: 2Z_qydIQGG4 in multi_turn_conversations",
+            "affected_files": [
+              "multi_turn_conversations",
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "2Z_qydIQGG4"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "動画IDを修正するか、参照を削除してください"
+          },
+          {
+            "issue_type": "missing_reference",
+            "severity": "medium",
+            "description": "存在しない動画IDが参照されています: bh7oZ9WU8vg in multi_turn_conversations",
+            "affected_files": [
+              "multi_turn_conversations",
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "bh7oZ9WU8vg"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "動画IDを修正するか、参照を削除してください"
+          },
+          {
+            "issue_type": "missing_reference",
+            "severity": "medium",
+            "description": "存在しない動画IDが参照されています: 2Z_qydIQGG4 in multi_turn_conversations",
+            "affected_files": [
+              "multi_turn_conversations",
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "2Z_qydIQGG4"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "動画IDを修正するか、参照を削除してください"
+          },
+          {
+            "issue_type": "missing_reference",
+            "severity": "medium",
+            "description": "存在しない動画IDが参照されています: bh7oZ9WU8vg in multi_turn_conversations",
+            "affected_files": [
+              "multi_turn_conversations",
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "bh7oZ9WU8vg"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "動画IDを修正するか、参照を削除してください"
+          },
+          {
+            "issue_type": "missing_reference",
+            "severity": "medium",
+            "description": "存在しない動画IDが参照されています: 2Z_qydIQGG4 in multi_turn_conversations",
+            "affected_files": [
+              "multi_turn_conversations",
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "2Z_qydIQGG4"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "動画IDを修正するか、参照を削除してください"
+          },
+          {
+            "issue_type": "missing_reference",
+            "severity": "medium",
+            "description": "存在しない動画IDが参照されています: bh7oZ9WU8vg in multi_turn_conversations",
+            "affected_files": [
+              "multi_turn_conversations",
+              "/mnt/d/setsuna_bot/youtube_knowledge_system/data/unified_knowledge_db.json"
+            ],
+            "affected_entities": [
+              "bh7oZ9WU8vg"
+            ],
+            "auto_fixable": false,
+            "suggested_resolution": "動画IDを修正するか、参照を削除してください"
+          }
+        ]
+      },
+      "duplication_check": {
+        "check_type": "duplication_detection",
+        "entities_checked": 0,
+        "issues": []
+      },
+      "conflict_detection": {
+        "check_type": "conflict_detection",
+        "entities_checked": 0,
+        "issues": []
+      },
+      "orphaned_data": {
+        "check_type": "orphaned_data_detection",
+        "entities_checked": 0,
+        "issues": []
+      }
+    }
+  }
+}

@@ -1,0 +1,733 @@
+[
+  {
+    "timestamp": "2025-07-11T02:10:30.503023",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250711_021030_bd865fad",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651437028160,
+    "formatted_message": "[2025-07-11 02:10:30.503] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250711_021030_bd865fad"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.503065",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250711_021030_bd865fad",
+      "available_sessions": [
+        "session_20250711_021030_bd865fad"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651437028160,
+    "formatted_message": "[2025-07-11 02:10:30.503] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250711_021030_bd865fad\", \"available_sessions\": [\"session_20250711_021030_bd865fad\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.503094",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "ファイル監視テスト",
+      "learning_type": "概要",
+      "depth_level": 1,
+      "time_limit": 45,
+      "budget_limit": 0.2
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651437028160,
+    "formatted_message": "[2025-07-11 02:10:30.503] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"ファイル監視テスト\", \"learning_type\": \"概要\", \"depth_level\": 1, \"time_limit\": 45, \"budget_limit\": 0.2}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.510960",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション保存成功",
+    "context": {
+      "session_id": "session_20250711_021030_bd865fad",
+      "file_size": 586,
+      "data_keys": [
+        "session_metadata",
+        "last_updated"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651437028160,
+    "formatted_message": "[2025-07-11 02:10:30.510] [DEBUG] [SESSION] セッション保存成功 | Context: {\"session_id\": \"session_20250711_021030_bd865fad\", \"file_size\": 586, \"data_keys\": [\"session_metadata\", \"last_updated\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511030",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250711_021030_bd865fad",
+      "start_time": "2025-07-11T02:10:30.503109",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651437028160,
+    "formatted_message": "[2025-07-11 02:10:30.511] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250711_021030_bd865fad\", \"start_time\": \"2025-07-11T02:10:30.503109\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511244",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250711_021030_bd865fad",
+          "theme": "ファイル監視テスト",
+          "depth_level": 1
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:30.511] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250711_021030_bd865fad\", \"theme\": \"ファイル監視テスト\", \"depth_level\": 1}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511298",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "ファイル監視テスト",
+      "depth_level": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:30.511] [DEBUG] [SESSION] Web検索クエリ生成開始 | Context: {\"theme\": \"ファイル監視テスト\", \"depth_level\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511313",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "ファイル監視テスト 最新情報",
+        "ファイル監視テスト トレンド 2024",
+        "ファイル監視テスト 技術動向"
+      ],
+      "total_queries": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:30.511] [INFO] [SESSION] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"ファイル監視テスト 最新情報\", \"ファイル監視テスト トレンド 2024\", \"ファイル監視テスト 技術動向\"], \"total_queries\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511325",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 3,
+      "search_queries": [
+        "ファイル監視テスト 最新情報",
+        "ファイル監視テスト トレンド 2024",
+        "ファイル監視テスト 技術動向"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:30.511] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 3, \"search_queries\": [\"ファイル監視テスト 最新情報\", \"ファイル監視テスト トレンド 2024\", \"ファイル監視テスト 技術動向\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511347",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/3)",
+    "context": {
+      "query": "ファイル監視テスト 最新情報",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:30.511] [INFO] [SESSION] 検索実行 (1/3) | Context: {\"query\": \"ファイル監視テスト 最新情報\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511362",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "ファイル監視テスト 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:30.511] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"ファイル監視テスト 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:30.511625",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250711_021030_bd865fad",
+      "thread_id": 131651361482496
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651437028160,
+    "formatted_message": "[2025-07-11 02:10:30.511] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250711_021030_bd865fad\", \"thread_id\": 131651361482496}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062059",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "ファイル監視テスト 最新情報",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5506901741027832,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"ファイル監視テスト 最新情報\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5506901741027832, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062128",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_eb9ac1aba8f9",
+      "source_type": "google_search",
+      "url": "https://www.tele.soumu.go.jp/j/adm/monitoring/illegal/result/",
+      "title_length": 34,
+      "content_length": 83
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_eb9ac1aba8f9\", \"source_type\": \"google_search\", \"url\": \"https://www.tele.soumu.go.jp/j/adm/monitoring/illegal/result/\", \"title_length\": 34, \"content_length\": 83}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062149",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_f74e3fedd05c",
+      "source_type": "google_search",
+      "url": "https://support.knowbe4.com/hc/ja/articles/217841868-%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%81%AE%E7%9B%A3%E8%A6%96%E3%81%A8%E7%A2%BA%E8%AA%8D",
+      "title_length": 36,
+      "content_length": 88
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_f74e3fedd05c\", \"source_type\": \"google_search\", \"url\": \"https://support.knowbe4.com/hc/ja/articles/217841868-%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%81%AE%E7%9B%A3%E8%A6%96%E3%81%A8%E7%A2%BA%E8%AA%8D\", \"title_length\": 36, \"content_length\": 88}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062163",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_fb7b0e2e5a06",
+      "source_type": "google_search",
+      "url": "https://atomitech.jp/hinemos/study/introduction/resource_load_testing/",
+      "title_length": 36,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_fb7b0e2e5a06\", \"source_type\": \"google_search\", \"url\": \"https://atomitech.jp/hinemos/study/introduction/resource_load_testing/\", \"title_length\": 36, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062174",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_bb3cabd873e9",
+      "source_type": "google_search",
+      "url": "https://www.manageengine.jp/products/OpManager/help/add-file-monitoring-template.html",
+      "title_length": 24,
+      "content_length": 87
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_bb3cabd873e9\", \"source_type\": \"google_search\", \"url\": \"https://www.manageengine.jp/products/OpManager/help/add-file-monitoring-template.html\", \"title_length\": 24, \"content_length\": 87}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062184",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_c62898e24aeb",
+      "source_type": "google_search",
+      "url": "https://manual.iij.jp/uom/usersguide-monitoring/17892582.html",
+      "title_length": 11,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_c62898e24aeb\", \"source_type\": \"google_search\", \"url\": \"https://manual.iij.jp/uom/usersguide-monitoring/17892582.html\", \"title_length\": 11, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062198",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: ファイル監視テスト 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "ファイル監視テスト 最新情報",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5506901741027832,
+          "engine_used": "google",
+          "quota_remaining": 99
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [INFO] [SESSION] Web検索実行: ファイル監視テスト 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"ファイル監視テスト 最新情報\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5506901741027832, \"engine_used\": \"google\", \"quota_remaining\": 99}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:31.062215",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/3)",
+    "context": {
+      "query": "ファイル監視テスト 最新情報",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5508522987365723,
+      "total_collected": 5,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:31.062] [INFO] [SESSION] 検索結果 (1/3) | Context: {\"query\": \"ファイル監視テスト 最新情報\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5508522987365723, \"total_collected\": 5, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.063348",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/3)",
+    "context": {
+      "query": "ファイル監視テスト トレンド 2024",
+      "query_index": 1,
+      "current_sources_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.063] [INFO] [SESSION] 検索実行 (2/3) | Context: {\"query\": \"ファイル監視テスト トレンド 2024\", \"query_index\": 1, \"current_sources_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.063574",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "ファイル監視テスト トレンド 2024",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.063] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"ファイル監視テスト トレンド 2024\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598095",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "ファイル監視テスト トレンド 2024",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.534520149230957,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"ファイル監視テスト トレンド 2024\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.534520149230957, \"quota_remaining\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598171",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_3c887c9a8e7d",
+      "source_type": "google_search",
+      "url": "https://support.knowbe4.com/hc/ja/articles/217841868-%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%81%AE%E7%9B%A3%E8%A6%96%E3%81%A8%E7%A2%BA%E8%AA%8D",
+      "title_length": 36,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_3c887c9a8e7d\", \"source_type\": \"google_search\", \"url\": \"https://support.knowbe4.com/hc/ja/articles/217841868-%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%9A%E3%83%BC%E3%83%B3%E3%81%AE%E7%9B%A3%E8%A6%96%E3%81%A8%E7%A2%BA%E8%AA%8D\", \"title_length\": 36, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598194",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_5bba41021aa8",
+      "source_type": "google_search",
+      "url": "https://success.trendmicro.com/ja-JP/solution/KA-0015701",
+      "title_length": 49,
+      "content_length": 115
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_5bba41021aa8\", \"source_type\": \"google_search\", \"url\": \"https://success.trendmicro.com/ja-JP/solution/KA-0015701\", \"title_length\": 49, \"content_length\": 115}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598210",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_494e1e7b6922",
+      "source_type": "google_search",
+      "url": "https://blog.y2s.net/techblog/entry/2024/10/448/",
+      "title_length": 39,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_494e1e7b6922\", \"source_type\": \"google_search\", \"url\": \"https://blog.y2s.net/techblog/entry/2024/10/448/\", \"title_length\": 39, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598220",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_e138342dd2f5",
+      "source_type": "google_search",
+      "url": "https://www.hitachi-solutions.co.jp/defensics/",
+      "title_length": 32,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_e138342dd2f5\", \"source_type\": \"google_search\", \"url\": \"https://www.hitachi-solutions.co.jp/defensics/\", \"title_length\": 32, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598230",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_153031a9af07",
+      "source_type": "google_search",
+      "url": "https://cloudone.trendmicro.com/docs/jp/workload-security/intrusion-prevention-set-up/",
+      "title_length": 55,
+      "content_length": 93
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_153031a9af07\", \"source_type\": \"google_search\", \"url\": \"https://cloudone.trendmicro.com/docs/jp/workload-security/intrusion-prevention-set-up/\", \"title_length\": 55, \"content_length\": 93}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598242",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: ファイル監視テスト トレンド 2024 (5件)",
+    "context": {
+      "web_search": {
+        "query": "ファイル監視テスト トレンド 2024",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.534520149230957,
+          "engine_used": "google",
+          "quota_remaining": 98
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [INFO] [SESSION] Web検索実行: ファイル監視テスト トレンド 2024 (5件) | Context: {\"web_search\": {\"query\": \"ファイル監視テスト トレンド 2024\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.534520149230957, \"engine_used\": \"google\", \"quota_remaining\": 98}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:32.598260",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/3)",
+    "context": {
+      "query": "ファイル監視テスト トレンド 2024",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5346910953521729,
+      "total_collected": 10,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:32.598] [INFO] [SESSION] 検索結果 (2/3) | Context: {\"query\": \"ファイル監視テスト トレンド 2024\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5346910953521729, \"total_collected\": 10, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:33.599376",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/3)",
+    "context": {
+      "query": "ファイル監視テスト 技術動向",
+      "query_index": 2,
+      "current_sources_count": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:33.599] [INFO] [SESSION] 検索実行 (3/3) | Context: {\"query\": \"ファイル監視テスト 技術動向\", \"query_index\": 2, \"current_sources_count\": 10}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:33.599487",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "ファイル監視テスト 技術動向",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:33.599] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"ファイル監視テスト 技術動向\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117323",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "ファイル監視テスト 技術動向",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5178334712982178,
+      "quota_remaining": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"ファイル監視テスト 技術動向\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5178334712982178, \"quota_remaining\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117400",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_c8b9bf6a00d1",
+      "source_type": "google_search",
+      "url": "https://kobaweb.ei.st.gunma-u.ac.jp/lecture/2018-2-5hatayama.pdf",
+      "title_length": 19,
+      "content_length": 94
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_c8b9bf6a00d1\", \"source_type\": \"google_search\", \"url\": \"https://kobaweb.ei.st.gunma-u.ac.jp/lecture/2018-2-5hatayama.pdf\", \"title_length\": 19, \"content_length\": 94}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117423",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_c699de848156",
+      "source_type": "google_search",
+      "url": "https://appswingby.com/it-pickupit-trend/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E6%88%90%E5%8A%9F%E3%81%AE%E3%82%AB%E3%82%AE/",
+      "title_length": 34,
+      "content_length": 74
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_c699de848156\", \"source_type\": \"google_search\", \"url\": \"https://appswingby.com/it-pickupit-trend/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E6%88%90%E5%8A%9F%E3%81%AE%E3%82%AB%E3%82%AE/\", \"title_length\": 34, \"content_length\": 74}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117437",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_ff8ffbd4d498",
+      "source_type": "google_search",
+      "url": "https://docs.trendmicro.com/ja-jp/documentation/article/trend-micro-cloud-one-workload-security-integrity-monitoring-set-up",
+      "title_length": 28,
+      "content_length": 84
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_ff8ffbd4d498\", \"source_type\": \"google_search\", \"url\": \"https://docs.trendmicro.com/ja-jp/documentation/article/trend-micro-cloud-one-workload-security-integrity-monitoring-set-up\", \"title_length\": 28, \"content_length\": 84}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117448",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_4c9faab39d7b",
+      "source_type": "google_search",
+      "url": "https://study-sec.com/heuristic-analysis/",
+      "title_length": 30,
+      "content_length": 88
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_4c9faab39d7b\", \"source_type\": \"google_search\", \"url\": \"https://study-sec.com/heuristic-analysis/\", \"title_length\": 30, \"content_length\": 88}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117458",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_9e89a7655052",
+      "source_type": "google_search",
+      "url": "https://www.jpea.gr.jp/wp-content/uploads/sw2024_seminar4_doc8.pdf",
+      "title_length": 36,
+      "content_length": 96
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_9e89a7655052\", \"source_type\": \"google_search\", \"url\": \"https://www.jpea.gr.jp/wp-content/uploads/sw2024_seminar4_doc8.pdf\", \"title_length\": 36, \"content_length\": 96}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117469",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: ファイル監視テスト 技術動向 (5件)",
+    "context": {
+      "web_search": {
+        "query": "ファイル監視テスト 技術動向",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5178334712982178,
+          "engine_used": "google",
+          "quota_remaining": 97
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [INFO] [SESSION] Web検索実行: ファイル監視テスト 技術動向 (5件) | Context: {\"web_search\": {\"query\": \"ファイル監視テスト 技術動向\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5178334712982178, \"engine_used\": \"google\", \"quota_remaining\": 97}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:10:34.117487",
+    "session_id": "session_20250711_021030_bd865fad",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/3)",
+    "context": {
+      "query": "ファイル監視テスト 技術動向",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.518002986907959,
+      "total_collected": 15,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 131651361482496,
+    "formatted_message": "[2025-07-11 02:10:34.117] [INFO] [SESSION] 検索結果 (3/3) | Context: {\"query\": \"ファイル監視テスト 技術動向\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.518002986907959, \"total_collected\": 15, \"error_message\": null}"
+  }
+]

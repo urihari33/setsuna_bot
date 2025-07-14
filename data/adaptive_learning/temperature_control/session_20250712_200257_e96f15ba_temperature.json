@@ -1,0 +1,17 @@
+{
+  "session_id": "session_20250712_200257_e96f15ba",
+  "current_temperature": "low",
+  "temperature_history": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "rounds_at_current_temp": 1,
+  "total_temperature_changes": 2,
+  "last_temperature_change": "2025-07-12T20:02:57.798519",
+  "accepted_changes": 2,
+  "rejected_changes": 0,
+  "improvement_rate": 0.0,
+  "predicted_next_temperature": null,
+  "confidence_score": 1.0
+}

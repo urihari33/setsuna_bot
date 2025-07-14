@@ -1,0 +1,735 @@
+[
+  {
+    "timestamp": "2025-07-09T23:12:53.666262",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250709_231253_999dd8b2",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063294894912,
+    "formatted_message": "[2025-07-09 23:12:53.666] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250709_231253_999dd8b2"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.666324",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250709_231253_999dd8b2",
+      "available_sessions": [
+        "session_20250709_231253_999dd8b2"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063294894912,
+    "formatted_message": "[2025-07-09 23:12:53.666] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250709_231253_999dd8b2\", \"available_sessions\": [\"session_20250709_231253_999dd8b2\"]}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.666359",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "デバッグテスト",
+      "learning_type": "概要",
+      "depth_level": 2,
+      "time_limit": 30,
+      "budget_limit": 0.1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063294894912,
+    "formatted_message": "[2025-07-09 23:12:53.666] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"デバッグテスト\", \"learning_type\": \"概要\", \"depth_level\": 2, \"time_limit\": 30, \"budget_limit\": 0.1}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672178",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250709_231253_999dd8b2",
+      "start_time": "2025-07-09T23:12:53.666378",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063294894912,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250709_231253_999dd8b2\", \"start_time\": \"2025-07-09T23:12:53.666378\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672413",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250709_231253_999dd8b2",
+          "theme": "デバッグテスト",
+          "depth_level": 2
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250709_231253_999dd8b2\", \"theme\": \"デバッグテスト\", \"depth_level\": 2}}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672462",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "デバッグテスト",
+      "depth_level": 2
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索クエリ生成開始 | Context: {\"theme\": \"デバッグテスト\", \"depth_level\": 2}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672478",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "デバッグテスト 最新情報",
+        "デバッグテスト トレンド 2024",
+        "デバッグテスト 技術動向"
+      ],
+      "total_queries": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"デバッグテスト 最新情報\", \"デバッグテスト トレンド 2024\", \"デバッグテスト 技術動向\"], \"total_queries\": 3}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672491",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 3,
+      "search_queries": [
+        "デバッグテスト 最新情報",
+        "デバッグテスト トレンド 2024",
+        "デバッグテスト 技術動向"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 3, \"search_queries\": [\"デバッグテスト 最新情報\", \"デバッグテスト トレンド 2024\", \"デバッグテスト 技術動向\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672556",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/3)",
+    "context": {
+      "query": "デバッグテスト 最新情報",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] 検索実行 (1/3) | Context: {\"query\": \"デバッグテスト 最新情報\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672582",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "デバッグテスト 最新情報",
+      "search_manager": "SearchEngineManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"デバッグテスト 最新情報\", \"search_manager\": \"SearchEngineManager\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672673",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "統合検索結果",
+    "context": {
+      "query": "デバッグテスト 最新情報",
+      "engine_used": "mock",
+      "fallback_used": true,
+      "success": true,
+      "total_results": 5,
+      "execution_time": 9.179115295410156e-05
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] 統合検索結果 | Context: {\"query\": \"デバッグテスト 最新情報\", \"engine_used\": \"mock\", \"fallback_used\": true, \"success\": true, \"total_results\": 5, \"execution_time\": 9.179115295410156e-05}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672693",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "mock_8e53de8c",
+      "source_type": "mock_search",
+      "url": "https://example.com/basics/8e53de8c",
+      "title_length": 21,
+      "content_length": 69
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"mock_8e53de8c\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/basics/8e53de8c\", \"title_length\": 21, \"content_length\": 69}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672709",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "mock_022191ee",
+      "source_type": "mock_search",
+      "url": "https://example.com/applications/022191ee",
+      "title_length": 21,
+      "content_length": 63
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"mock_022191ee\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/applications/022191ee\", \"title_length\": 21, \"content_length\": 63}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672719",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "mock_ed7b9f43",
+      "source_type": "mock_search",
+      "url": "https://example.com/solutions/ed7b9f43",
+      "title_length": 19,
+      "content_length": 63
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"mock_ed7b9f43\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/solutions/ed7b9f43\", \"title_length\": 19, \"content_length\": 63}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672729",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "mock_8de23d6a",
+      "source_type": "mock_search",
+      "url": "https://example.com/basics/8de23d6a",
+      "title_length": 21,
+      "content_length": 69
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"mock_8de23d6a\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/basics/8de23d6a\", \"title_length\": 21, \"content_length\": 69}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672738",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "mock_1fc7a109",
+      "source_type": "mock_search",
+      "url": "https://example.com/applications/1fc7a109",
+      "title_length": 21,
+      "content_length": 63
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"mock_1fc7a109\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/applications/1fc7a109\", \"title_length\": 21, \"content_length\": 63}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672748",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: デバッグテスト 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "デバッグテスト 最新情報",
+        "search_url": "mock_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 9.179115295410156e-05,
+          "engine_used": "mock",
+          "fallback_used": true
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] Web検索実行: デバッグテスト 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"デバッグテスト 最新情報\", \"search_url\": \"mock_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 9.179115295410156e-05, \"engine_used\": \"mock\", \"fallback_used\": true}}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672763",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/3)",
+    "context": {
+      "query": "デバッグテスト 最新情報",
+      "results_count": 5,
+      "execution_time": 0.00018215179443359375,
+      "total_collected": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:53.672] [INFO] [SESSION] 検索結果 (1/3) | Context: {\"query\": \"デバッグテスト 最新情報\", \"results_count\": 5, \"execution_time\": 0.00018215179443359375, \"total_collected\": 5}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:53.672810",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250709_231253_999dd8b2",
+      "thread_id": 134063160538880
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063294894912,
+    "formatted_message": "[2025-07-09 23:12:53.672] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250709_231253_999dd8b2\", \"thread_id\": 134063160538880}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.673898",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/3)",
+    "context": {
+      "query": "デバッグテスト トレンド 2024",
+      "query_index": 1,
+      "current_sources_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.673] [INFO] [SESSION] 検索実行 (2/3) | Context: {\"query\": \"デバッグテスト トレンド 2024\", \"query_index\": 1, \"current_sources_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.673983",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "デバッグテスト トレンド 2024",
+      "search_manager": "SearchEngineManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.673] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"デバッグテスト トレンド 2024\", \"search_manager\": \"SearchEngineManager\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674168",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "統合検索結果",
+    "context": {
+      "query": "デバッグテスト トレンド 2024",
+      "engine_used": "mock",
+      "fallback_used": true,
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.00018644332885742188
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [INFO] [SESSION] 統合検索結果 | Context: {\"query\": \"デバッグテスト トレンド 2024\", \"engine_used\": \"mock\", \"fallback_used\": true, \"success\": true, \"total_results\": 5, \"execution_time\": 0.00018644332885742188}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674200",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "mock_ab844004",
+      "source_type": "mock_search",
+      "url": "https://example.com/market-analysis/ab844004",
+      "title_length": 27,
+      "content_length": 71
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"mock_ab844004\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/market-analysis/ab844004\", \"title_length\": 27, \"content_length\": 71}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674213",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "mock_af4cf8c5",
+      "source_type": "mock_search",
+      "url": "https://example.com/trends/af4cf8c5",
+      "title_length": 27,
+      "content_length": 71
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"mock_af4cf8c5\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/trends/af4cf8c5\", \"title_length\": 27, \"content_length\": 71}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674223",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "mock_2a4e467e",
+      "source_type": "mock_search",
+      "url": "https://example.com/market-analysis/2a4e467e",
+      "title_length": 27,
+      "content_length": 71
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"mock_2a4e467e\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/market-analysis/2a4e467e\", \"title_length\": 27, \"content_length\": 71}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674233",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "mock_88b73f20",
+      "source_type": "mock_search",
+      "url": "https://example.com/trends/88b73f20",
+      "title_length": 27,
+      "content_length": 71
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"mock_88b73f20\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/trends/88b73f20\", \"title_length\": 27, \"content_length\": 71}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674242",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "mock_d80d0092",
+      "source_type": "mock_search",
+      "url": "https://example.com/market-analysis/d80d0092",
+      "title_length": 27,
+      "content_length": 71
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"mock_d80d0092\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/market-analysis/d80d0092\", \"title_length\": 27, \"content_length\": 71}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674253",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: デバッグテスト トレンド 2024 (5件)",
+    "context": {
+      "web_search": {
+        "query": "デバッグテスト トレンド 2024",
+        "search_url": "mock_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.00018644332885742188,
+          "engine_used": "mock",
+          "fallback_used": true
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [INFO] [SESSION] Web検索実行: デバッグテスト トレンド 2024 (5件) | Context: {\"web_search\": {\"query\": \"デバッグテスト トレンド 2024\", \"search_url\": \"mock_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.00018644332885742188, \"engine_used\": \"mock\", \"fallback_used\": true}}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:54.674268",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/3)",
+    "context": {
+      "query": "デバッグテスト トレンド 2024",
+      "results_count": 5,
+      "execution_time": 0.00028777122497558594,
+      "total_collected": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:54.674] [INFO] [SESSION] 検索結果 (2/3) | Context: {\"query\": \"デバッグテスト トレンド 2024\", \"results_count\": 5, \"execution_time\": 0.00028777122497558594, \"total_collected\": 10}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675357",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/3)",
+    "context": {
+      "query": "デバッグテスト 技術動向",
+      "query_index": 2,
+      "current_sources_count": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [INFO] [SESSION] 検索実行 (3/3) | Context: {\"query\": \"デバッグテスト 技術動向\", \"query_index\": 2, \"current_sources_count\": 10}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675444",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "デバッグテスト 技術動向",
+      "search_manager": "SearchEngineManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"デバッグテスト 技術動向\", \"search_manager\": \"SearchEngineManager\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675522",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "統合検索結果",
+    "context": {
+      "query": "デバッグテスト 技術動向",
+      "engine_used": "mock",
+      "fallback_used": true,
+      "success": true,
+      "total_results": 5,
+      "execution_time": 8.058547973632812e-05
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [INFO] [SESSION] 統合検索結果 | Context: {\"query\": \"デバッグテスト 技術動向\", \"engine_used\": \"mock\", \"fallback_used\": true, \"success\": true, \"total_results\": 5, \"execution_time\": 8.058547973632812e-05}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675544",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "mock_363b8eaf",
+      "source_type": "mock_search",
+      "url": "https://example.com/tech-trends/363b8eaf",
+      "title_length": 26,
+      "content_length": 90
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"mock_363b8eaf\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/tech-trends/363b8eaf\", \"title_length\": 26, \"content_length\": 90}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675567",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "mock_7ea5cd72",
+      "source_type": "mock_search",
+      "url": "https://example.com/best-practices/7ea5cd72",
+      "title_length": 24,
+      "content_length": 67
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"mock_7ea5cd72\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/best-practices/7ea5cd72\", \"title_length\": 24, \"content_length\": 67}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675579",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "mock_16538826",
+      "source_type": "mock_search",
+      "url": "https://example.com/implementation/16538826",
+      "title_length": 20,
+      "content_length": 68
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"mock_16538826\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/implementation/16538826\", \"title_length\": 20, \"content_length\": 68}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675588",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "mock_04c8b259",
+      "source_type": "mock_search",
+      "url": "https://example.com/tech-trends/04c8b259",
+      "title_length": 26,
+      "content_length": 90
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"mock_04c8b259\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/tech-trends/04c8b259\", \"title_length\": 26, \"content_length\": 90}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675597",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "mock_cfd71eb0",
+      "source_type": "mock_search",
+      "url": "https://example.com/best-practices/cfd71eb0",
+      "title_length": 24,
+      "content_length": 67
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"mock_cfd71eb0\", \"source_type\": \"mock_search\", \"url\": \"https://example.com/best-practices/cfd71eb0\", \"title_length\": 24, \"content_length\": 67}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675608",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: デバッグテスト 技術動向 (5件)",
+    "context": {
+      "web_search": {
+        "query": "デバッグテスト 技術動向",
+        "search_url": "mock_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 8.058547973632812e-05,
+          "engine_used": "mock",
+          "fallback_used": true
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [INFO] [SESSION] Web検索実行: デバッグテスト 技術動向 (5件) | Context: {\"web_search\": {\"query\": \"デバッグテスト 技術動向\", \"search_url\": \"mock_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 8.058547973632812e-05, \"engine_used\": \"mock\", \"fallback_used\": true}}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:55.675629",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/3)",
+    "context": {
+      "query": "デバッグテスト 技術動向",
+      "results_count": 5,
+      "execution_time": 0.000186920166015625,
+      "total_collected": 15
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:55.675] [INFO] [SESSION] 検索結果 (3/3) | Context: {\"query\": \"デバッグテスト 技術動向\", \"results_count\": 5, \"execution_time\": 0.000186920166015625, \"total_collected\": 15}"
+  },
+  {
+    "timestamp": "2025-07-09T23:12:56.676788",
+    "session_id": "session_20250709_231253_999dd8b2",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: preprocessing - started",
+    "context": {
+      "session_phase": {
+        "phase": "preprocessing",
+        "status": "started",
+        "progress": 0.35,
+        "details": {
+          "collected_sources_count": 15,
+          "preprocessing_thresholds": {
+            "relevance_min": 0.4,
+            "quality_min": 0.5,
+            "combined_min": 0.6
+          },
+          "max_detailed_analysis": 15
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063160538880,
+    "formatted_message": "[2025-07-09 23:12:56.676] [INFO] [SESSION] セッションフェーズ: preprocessing - started | Context: {\"session_phase\": {\"phase\": \"preprocessing\", \"status\": \"started\", \"progress\": 0.35, \"details\": {\"collected_sources_count\": 15, \"preprocessing_thresholds\": {\"relevance_min\": 0.4, \"quality_min\": 0.5, \"combined_min\": 0.6}, \"max_detailed_analysis\": 15}}}"
+  }
+]

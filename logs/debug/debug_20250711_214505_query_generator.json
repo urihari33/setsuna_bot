@@ -1,0 +1,258 @@
+[
+  {
+    "timestamp": "2025-07-11T21:45:05.487458",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_214505",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:05.487] [INFO] [QUERY_GENERATOR] デバッグログシステム初期化完了: debug_20250711_214505"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:05.508846",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:05.508] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:05.508917",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "人工知能",
+      "learning_type": "概要",
+      "depth_level": 2
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:05.508] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"人工知能\", \"learning_type\": \"概要\", \"depth_level\": 2}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:08.882589",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:08.882] [ERROR] [QUERY_GENERATOR] GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:08.882679",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:08.882] [ERROR] [QUERY_GENERATOR] クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:08.882697",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:08.882] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:08.882754",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "機械学習",
+      "learning_type": "深掘り",
+      "depth_level": 4
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:08.882] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"機械学習\", \"learning_type\": \"深掘り\", \"depth_level\": 4}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:12.704833",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:12.704] [ERROR] [QUERY_GENERATOR] GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:12.704900",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:12.704] [ERROR] [QUERY_GENERATOR] クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:12.704915",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:12.704] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:12.704966",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "Python",
+      "learning_type": "実用",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:12.704] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"Python\", \"learning_type\": \"実用\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:15.546131",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:15.546] [ERROR] [QUERY_GENERATOR] GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:15.546202",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:15.546] [ERROR] [QUERY_GENERATOR] クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:15.546217",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:15.546] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:15.551843",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:15.551] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:17.394693",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "動的クエリ生成開始",
+    "context": {
+      "theme": "ブロックチェーン",
+      "learning_type": "深掘り",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:17.394] [INFO] [QUERY_GENERATOR] 動的クエリ生成開始 | Context: {\"theme\": \"ブロックチェーン\", \"learning_type\": \"深掘り\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:19.908755",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:19.908] [ERROR] [QUERY_GENERATOR] GPT-4クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:19.908897",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "ERROR",
+    "message": "クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:19.908] [ERROR] [QUERY_GENERATOR] クエリ生成エラー: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:19.908918",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "フォールバッククエリ生成実行",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:19.908] [INFO] [QUERY_GENERATOR] フォールバッククエリ生成実行"
+  },
+  {
+    "timestamp": "2025-07-11T21:45:27.068326",
+    "session_id": "debug_20250711_214505",
+    "component": "QUERY_GENERATOR",
+    "level": "INFO",
+    "message": "OpenAI GPT-4-turbo初期化成功",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 139718809170752,
+    "formatted_message": "[2025-07-11 21:45:27.068] [INFO] [QUERY_GENERATOR] OpenAI GPT-4-turbo初期化成功"
+  }
+]

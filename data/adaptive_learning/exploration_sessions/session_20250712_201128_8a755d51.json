@@ -1,0 +1,19 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250712_201128_8a755d51",
+    "theme": "AI",
+    "start_time": "2025-07-12T20:11:28.960686",
+    "initial_temperature": "high",
+    "budget_limit": 20.0,
+    "session_limit": 1000,
+    "status": "active",
+    "current_temperature": "high",
+    "rounds_completed": 0,
+    "total_cost": 0.0,
+    "sessions_executed": 0,
+    "created_by": "adaptive_learning_system",
+    "tags": [],
+    "notes": ""
+  },
+  "last_updated": "2025-07-12T20:11:28.960706"
+}

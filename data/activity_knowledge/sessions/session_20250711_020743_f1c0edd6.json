@@ -1,0 +1,1455 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "theme": "データ永続化テスト",
+    "learning_type": "概要",
+    "depth_level": 1,
+    "time_limit": 60,
+    "budget_limit": 0.3,
+    "status": "completed",
+    "parent_session": null,
+    "tags": [
+      "修正テスト",
+      "データ保持"
+    ],
+    "start_time": "2025-07-11 02:07:43.583776",
+    "end_time": "2025-07-11 02:08:46.049558",
+    "current_phase": "completed",
+    "collected_items": 15,
+    "processed_items": 5,
+    "important_findings": [],
+    "current_cost": 0.0039299999999999995
+  },
+  "last_updated": "2025-07-11T02:08:46.057395",
+  "collection_results": {
+    "information_sources": [
+      {
+        "source_id": "google_eee0433dc3a0",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 最新情報",
+        "url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+        "title": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順 ...",
+        "content": "Mar 29, 2023 ... MySQLの公式イメージ（最新）を取得します。 docker image pull mysql:latest. 「test」という名前のボリューム(Data Volume)を作成します。 docker ...",
+        "collected_at": "2025-07-11T02:07:44.349725",
+        "reliability_score": 0.9,
+        "relevance_score": 1.0,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbJD4pJBc7vMEmSJPskvfsWmbIdKTl3EOEr5NOJIBLyQqFw7y4V0I4Zg&s",
+                "width": "310",
+                "height": "163"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://www.kagoya.jp/howto/wp-content/uploads/dockermysql_catch.png",
+                "og:type": "article",
+                "article:published_time": "2023-03-29T01:00:00+00:00",
+                "og:image:width": "1200",
+                "twitter:card": "summary_large_image",
+                "og:site_name": "カゴヤのサーバー研究室",
+                "author": "小泉 健太郎",
+                "og:title": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ - カゴヤのサーバー研究室",
+                "og:image:height": "630",
+                "twitter:label1": "執筆者",
+                "twitter:label2": "推定読み取り時間",
+                "og:image:type": "image/png",
+                "msapplication-tileimage": "https://www.kagoya.jp/howto/wp-content/uploads/cropped-favicon-270x270.png",
+                "og:description": "昨今ではアプリケーションの実行環境として採用されることが多いDockerは、MySQL環境の構築にも適しています。Dockerを使えば、比較的簡単に使い勝手のよ 昨今ではアプリケーションの実行環境として採用されることが多いDockerは、MySQL環境の構築にも適しています。Dockerを使えば、比較的簡単に使い勝手のよいMySQL環境を構築可能です。この記事では、そもそもDockerとは何かといった基本から、DockerでMySQL環境を構築する方法を解説します。データベースを継続的に利用するための、「データ永続化」についても解説しているのであわせて参考にして下さい。",
+                "twitter:data1": "小泉 健太郎",
+                "twitter:data2": "1分",
+                "article:modified_time": "2023-04-13T23:51:56+00:00",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "og:locale": "ja_JP",
+                "og:url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+                "format-detection": "telephone=no"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://www.kagoya.jp/howto/wp-content/uploads/dockermysql_catch.png"
+              }
+            ],
+            "listitem": [
+              {
+                "item": "カゴヤのサーバー研究室",
+                "name": "カゴヤのサーバー研究室",
+                "position": "1"
+              },
+              {
+                "item": "仮想化技術研究室",
+                "name": "仮想化技術研究室",
+                "position": "2"
+              },
+              {
+                "item": "コンテナ仮想化",
+                "name": "コンテナ仮想化",
+                "position": "3"
+              },
+              {
+                "item": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ",
+                "name": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ",
+                "position": "4"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+          "display_link": "www.kagoya.jp",
+          "html_title": "【入門】DockerでMySQL環境を構築する方法と<b>データ</b>の<b>永続化</b>手順 ...",
+          "html_snippet": "Mar 29, 2023 <b>...</b> MySQLの公式イメージ（<b>最新</b>）を取得します。 docker image pull mysql:latest. 「<b>test</b>」という名前のボリューム(Data Volume)を作成します。 docker&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "Docker",
+            "MySQL",
+            "データ永続化"
+          ],
+          "confidence": 0.9,
+          "reason": "DockerとMySQLの環境構築方法やデータ永続化手順に関する具体的な情報が提供されており、学習に適している。"
+        }
+      },
+      {
+        "source_id": "google_c31e0bb474eb",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 最新情報",
+        "url": "https://www.netone.co.jp/media/detail/20191206-1/",
+        "title": "Kubernetesのデータ永続化入門 | ネットワンシステムズ",
+        "content": "Dec 6, 2019 ... また、Kubernetesの開発者は、テスト、メンテナンスの対応が減り結果としてシステムの安全性や信頼性が高まります。過去に紹介した、Cisco Container ...",
+        "collected_at": "2025-07-11T02:07:44.349741",
+        "reliability_score": 0.9,
+        "relevance_score": 0.9,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnVFFFaJ94SfmSLfaz68eLfaxh9a8VYnwUI9hOhBJFdkeEmdkW_VF78em&s",
+                "width": "310",
+                "height": "163"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://www.netone.co.jp/media/files/ogimage_Cloud_1200x630_1.jpg",
+                "og:type": "article",
+                "twitter:card": "summary_large_image",
+                "skype_toolbar": "SKYPE_TOOLBAR_PARSER_COMPATIBLE",
+                "og:site_name": "ネットワンシステムズ",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "og:title": "Kubernetesのデータ永続化入門 | ネットワンシステムズ",
+                "og:locale": "ja_JP",
+                "og:url": "https://www.netone.co.jp/media/detail/20191206-1/",
+                "og:description": "コンテナ技術のトレンド、オーケストレーションツール：#Kubernetes のストレージ技術、Volume、Persistent Volume、Persistent Volume Claim、Storage Classを用いたPodデータ永続化の仕組みをわかりやすく解説。また、CNCFで注目されているContainer Storage Interfaceの概要についてもご紹介します。",
+                "format-detection": "telephone=no,email=no,address=no"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://www.netone.co.jp/media/files/ogimage_Cloud_1200x630_1.jpg"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.netone.co.jp/media/detail/20191206-1/",
+          "display_link": "www.netone.co.jp",
+          "html_title": "Kubernetesの<b>データ永続化</b>入門 | ネットワンシステムズ",
+          "html_snippet": "Dec 6, 2019 <b>...</b> また、Kubernetesの開発者は、<b>テスト</b>、メンテナンスの対応が減り結果としてシステムの安全性や信頼性が高まります。過去に紹介した、Cisco Container&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "Kubernetes",
+            "データ永続化"
+          ],
+          "confidence": 0.9,
+          "reason": "Kubernetesのデータ永続化に関する入門情報が提供されており、関連性が高い。情報の信頼性は一定程度あり、学習価値もあるが、より詳細な内容が欲しいという点で重要度はやや低い。"
+        }
+      },
+      {
+        "source_id": "google_a54abf6d1958",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 最新情報",
+        "url": "https://developer.android.com/training/data-storage/sqlite?hl=ja",
+        "title": "SQLite を使用してデータを保存する | App data and files | Android ...",
+        "content": "Nov 4, 2024 ... 選択引数はテスト対象となる値であり、選択句にバインドされます。結果は、通常の SQL ステートメントとは扱いが異なり、SQL インジェクションの影響を ...",
+        "collected_at": "2025-07-11T02:07:44.349744",
+        "reliability_score": 0.9,
+        "relevance_score": 0.8,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyLiHo12_OAiFqemoE4s0aj0mBCuNcP0QvqIvY-XOgF3EFTXKC3ZJsdFs&s",
+                "width": "299",
+                "height": "168"
+              }
+            ],
+            "document": [
+              {
+                "keywords": "E__category__OperatingSystem E__language__Kotlin E__product__Android E__category__Android E__category__Mobile E__category__Interest E__language__Java K__language__Java K__language__Kotlin K__product__Android",
+                "keyword": "E__category__OperatingSystem"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://developer.android.com/static/images/social/android-developers.png?hl=ja",
+                "og:type": "website",
+                "theme-color": "#34a853",
+                "og:image:width": "1200",
+                "twitter:card": "summary_large_image",
+                "google-signin-client-id": "721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com",
+                "og:site_name": "Android Developers",
+                "og:title": "SQLite を使用してデータを保存する  |  App data and files  |  Android Developers",
+                "og:image:height": "675",
+                "viewport": "width=device-width, initial-scale=1",
+                "og:locale": "ja",
+                "google-signin-scope": "profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award",
+                "og:url": "https://developer.android.com/training/data-storage/sqlite?hl=ja"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://developer.android.com/static/images/social/android-developers.png?hl=ja"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://developer.android.com/training/data-storage/sqlite?hl=ja",
+          "display_link": "developer.android.com",
+          "html_title": "SQLite を使用して<b>データ</b>を保存する | App data and files | Android ...",
+          "html_snippet": "Nov 4, 2024 <b>...</b> 選択引数は<b>テスト</b>対象となる値であり、選択句にバインドされます。結果は、通常の SQL ステートメントとは扱いが異なり、SQL インジェクションの影響を&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "データ永続化",
+            "SQLite",
+            "Android"
+          ],
+          "confidence": 0.9,
+          "reason": "Androidアプリ開発におけるデータ永続化方法としてSQLiteを使用する内容であり、関連性が高い。情報は具体的で信頼性があり、学習価値もある。技術カテゴリに該当し、学習に適している。"
+        }
+      },
+      {
+        "source_id": "google_e63b51d74e84",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 最新情報",
+        "url": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/",
+        "title": "令和版語彙数推定テスト",
+        "content": "個人情報を含まないテスト結果のデータが保存されます。このテスト結果を分析し ... またNTTの研究活動の広報目的で、統計化されたテスト結果を公表することがあります。",
+        "collected_at": "2025-07-11T02:07:44.349746",
+        "reliability_score": 0.9,
+        "relevance_score": 0.7,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWV-Yeyl-b4NLiWCQoKDSgailxzOLxaXGJbb3nHBqN_Oxk3MV_pezYYMlq&s",
+                "width": "266",
+                "height": "189"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/image/title_logo_01.png"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/",
+          "display_link": "www.kecl.ntt.co.jp",
+          "html_title": "令和版語彙数推定<b>テスト</b>",
+          "html_snippet": "個人<b>情報</b>を含まない<b>テスト</b>結果の<b>データ</b>が保存されます。この<b>テスト</b>結果を分析し ... またNTTの研究活動の広報目的で、統計化された<b>テスト</b>結果を公表することがあります。"
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "データ永続化",
+            "言語処理"
+          ],
+          "confidence": 0.9,
+          "reason": "テスト結果のデータ永続化に関する学習素材として関連性が高く、信頼性もありますが、学習価値がやや低いため重要度は中程度と判定しました。"
+        }
+      },
+      {
+        "source_id": "google_e44ad704f4d9",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 最新情報",
+        "url": "https://developer.android.com/training/data-storage/room?hl=ja",
+        "title": "Room を使用してローカル データベースにデータを保存する | App ...",
+        "content": "最新情報を確認する; 最新情報 · 試験運用版の最新情報 · Android Studio プレビュー ... テスト; 品質; 概要 · コアバリュー · ユーザー エクスペリエンス · ユーザー補助 ...",
+        "collected_at": "2025-07-11T02:07:44.349757",
+        "reliability_score": 0.9,
+        "relevance_score": 0.7,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyLiHo12_OAiFqemoE4s0aj0mBCuNcP0QvqIvY-XOgF3EFTXKC3ZJsdFs&s",
+                "width": "299",
+                "height": "168"
+              }
+            ],
+            "document": [
+              {
+                "keywords": "E__language__Java E__language__Kotlin E__category__Android E__category__Mobile E__category__Interest E__category__OperatingSystem E__product__Android K__language__Java K__language__Kotlin K__product__Android",
+                "keyword": "E__language__Java"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://developer.android.com/static/images/social/android-developers.png?hl=ja",
+                "og:type": "website",
+                "theme-color": "#34a853",
+                "og:image:width": "1200",
+                "twitter:card": "summary_large_image",
+                "google-signin-client-id": "721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com",
+                "og:site_name": "Android Developers",
+                "og:title": "Room を使用してローカル データベースにデータを保存する  |  App data and files  |  Android Developers",
+                "og:image:height": "675",
+                "og:description": "Room ライブラリを使用してデータを永続化する方法について学びます。",
+                "viewport": "width=device-width, initial-scale=1",
+                "og:locale": "ja",
+                "google-signin-scope": "profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award",
+                "og:url": "https://developer.android.com/training/data-storage/room?hl=ja"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://developer.android.com/static/images/social/android-developers.png?hl=ja"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://developer.android.com/training/data-storage/room?hl=ja",
+          "display_link": "developer.android.com",
+          "html_title": "Room を使用してローカル データベースに<b>データ</b>を保存する | App ...",
+          "html_snippet": "<b>最新情報</b>を確認する; <b>最新情報</b> &middot; 試験運用版の<b>最新情報</b> &middot; Android Studio プレビュー ... <b>テスト</b>; 品質; 概要 &middot; コアバリュー &middot; ユーザー エクスペリエンス &middot; ユーザー補助&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "データ永続化",
+            "Room",
+            "ローカルデータベース"
+          ],
+          "confidence": 0.9,
+          "reason": "Androidアプリ開発におけるデータ永続化の重要性を示すRoomを使用したローカルデータベース保存方法に関する信頼性の高い情報が提供されている。"
+        }
+      },
+      {
+        "source_id": "google_6f2185deacb1",
+        "source_type": "google_search",
+        "query": "データ永続化テスト トレンド 2024",
+        "url": "https://circleci.com/ja/blog/ci-for-machine-learning/",
+        "title": "機械学習に CI を活用する: ビルド、テスト、トレーニング",
+        "content": "Feb 7, 2024 ... ... テスト、パッケージ化を行うものです。本チュートリアルでは、この ... env にあるデータとツールが変更時にワークスペースに永続化されます。 - ...",
+        "collected_at": "2025-07-11T02:07:45.917718",
+        "reliability_score": 0.9,
+        "relevance_score": 1.0,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5TyLyjU_d5PMDpJLkJxnlCZdTjshJf3dWP5I-E4IYvZifvKwug9nA2jLR&s",
+                "width": "311",
+                "height": "162"
+              }
+            ],
+            "metatags": [
+              {
+                "application-name": "CircleCI",
+                "msapplication-tilecolor": "#161616",
+                "og:image": "https://images.ctfassets.net/il1yandlcjgk/3NJSDelkFaAtnyFOJNghjQ/df5d4218a3ca83233e471c7eab072b90/circleci-og-morph.png",
+                "theme-color": "#ffffff",
+                "og:type": "article",
+                "article:published_time": "2024-02-07T23:00:00-08:00",
+                "twitter:card": "summary_large_image",
+                "og:site_name": "CircleCI",
+                "apple-mobile-web-app-title": "CircleCI",
+                "og:title": "機械学習に CI を活用する: ビルド、テスト、トレーニング",
+                "msapplication-square150x150logo": "https://d2qm0z2kzhiwa.cloudfront.net/blog/assets/blog/meta/mstile-150x150-126d37f348480d7ae2b632e3033a2f25.png",
+                "og:description": "CircleCIの継続的インテグレーションパイプラインを構築する方法を学びましょう。これにより、モデルのビルド、トレーニング、テストから使用のためのパッケージングまで、機械学習のワークフローが自動化されます。",
+                "twitter:creator": "@",
+                "facebook-domain-verification": "nnlbym6zbwhtcivy2t5hbes5vvvjpu",
+                "apple-mobile-web-app-status-bar-style": "black",
+                "twitter:site": "@circleci",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "mobile-web-app-capable": "yes",
+                "og:url": "https://circleci.com/ja/blog/ci-for-machine-learning/"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://images.ctfassets.net/il1yandlcjgk/3NJSDelkFaAtnyFOJNghjQ/df5d4218a3ca83233e471c7eab072b90/circleci-og-morph.png"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://circleci.com/ja/blog/ci-for-machine-learning/",
+          "display_link": "circleci.com",
+          "html_title": "機械学習に CI を活用する: ビルド、<b>テスト</b>、トレーニング",
+          "html_snippet": "Feb 7, 2024 <b>...</b> ... <b>テスト</b>、パッケージ化を行うものです。本チュートリアルでは、この ... env にある<b>データ</b>とツールが変更時にワークスペースに<b>永続化</b>されます。 -&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "機械学習",
+            "CI",
+            "データ永続化"
+          ],
+          "confidence": 0.9,
+          "reason": "機械学習におけるCI活用に関する具体的な情報が提供されており、学習価値が高いと判断された。"
+        }
+      },
+      {
+        "source_id": "google_d42eda2ca77c",
+        "source_type": "google_search",
+        "query": "データ永続化テスト トレンド 2024",
+        "url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+        "title": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順 ...",
+        "content": "Mar 29, 2023 ... 公式イメージを基にMySQLのコンテナを作成します。 docker container run --name test-mysql -v test:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=hogehoge -d ...",
+        "collected_at": "2025-07-11T02:07:45.917737",
+        "reliability_score": 0.9,
+        "relevance_score": 0.9,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbJD4pJBc7vMEmSJPskvfsWmbIdKTl3EOEr5NOJIBLyQqFw7y4V0I4Zg&s",
+                "width": "310",
+                "height": "163"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://www.kagoya.jp/howto/wp-content/uploads/dockermysql_catch.png",
+                "og:type": "article",
+                "article:published_time": "2023-03-29T01:00:00+00:00",
+                "og:image:width": "1200",
+                "twitter:card": "summary_large_image",
+                "og:site_name": "カゴヤのサーバー研究室",
+                "author": "小泉 健太郎",
+                "og:title": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ - カゴヤのサーバー研究室",
+                "og:image:height": "630",
+                "twitter:label1": "執筆者",
+                "twitter:label2": "推定読み取り時間",
+                "og:image:type": "image/png",
+                "msapplication-tileimage": "https://www.kagoya.jp/howto/wp-content/uploads/cropped-favicon-270x270.png",
+                "og:description": "昨今ではアプリケーションの実行環境として採用されることが多いDockerは、MySQL環境の構築にも適しています。Dockerを使えば、比較的簡単に使い勝手のよ 昨今ではアプリケーションの実行環境として採用されることが多いDockerは、MySQL環境の構築にも適しています。Dockerを使えば、比較的簡単に使い勝手のよいMySQL環境を構築可能です。この記事では、そもそもDockerとは何かといった基本から、DockerでMySQL環境を構築する方法を解説します。データベースを継続的に利用するための、「データ永続化」についても解説しているのであわせて参考にして下さい。",
+                "twitter:data1": "小泉 健太郎",
+                "twitter:data2": "1分",
+                "article:modified_time": "2023-04-13T23:51:56+00:00",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "og:locale": "ja_JP",
+                "og:url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+                "format-detection": "telephone=no"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://www.kagoya.jp/howto/wp-content/uploads/dockermysql_catch.png"
+              }
+            ],
+            "listitem": [
+              {
+                "item": "カゴヤのサーバー研究室",
+                "name": "カゴヤのサーバー研究室",
+                "position": "1"
+              },
+              {
+                "item": "仮想化技術研究室",
+                "name": "仮想化技術研究室",
+                "position": "2"
+              },
+              {
+                "item": "コンテナ仮想化",
+                "name": "コンテナ仮想化",
+                "position": "3"
+              },
+              {
+                "item": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ",
+                "name": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ",
+                "position": "4"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+          "display_link": "www.kagoya.jp",
+          "html_title": "【入門】DockerでMySQL環境を構築する方法と<b>データ</b>の<b>永続化</b>手順 ...",
+          "html_snippet": "Mar 29, 2023 <b>...</b> 公式イメージを基にMySQLのコンテナを作成します。 docker container run --name <b>test</b>-mysql -v <b>test</b>:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=hogehoge -d&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "Docker",
+            "MySQL",
+            "データ永続化"
+          ],
+          "confidence": 0.9,
+          "reason": "DockerとMySQLの環境構築方法やデータ永続化手順に関する具体的な情報が提供されており、学習に適している。"
+        }
+      },
+      {
+        "source_id": "google_5eea71681499",
+        "source_type": "google_search",
+        "query": "データ永続化テスト トレンド 2024",
+        "url": "https://engineering.mobalab.net/2024/10/04/localstack%E7%84%A1%E6%96%99%E3%81%A7aws%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%86%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B/",
+        "title": "[LocalStack]無料でAWSサービスを開発・テストする – もばらぶ ...",
+        "content": "Oct 4, 2024 ... データ永続化はどうやら有料版のみらしいですが、Community版でも対応 ... \"2024/09/25/[$LATEST]0b4cc733d291d4a3cc4ff54151732e47\" ...",
+        "collected_at": "2025-07-11T02:07:45.917740",
+        "reliability_score": 0.9,
+        "relevance_score": 0.8,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc5RMY2_tqgDQa_NhOV286q2locngXstre0xD1sb1WTtitQASJYB1LW5R&s",
+                "width": "310",
+                "height": "162"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://i0.wp.com/engineering-wp.mobalab.net/wp-content/uploads/2020/04/aws_logo_smile_1200x630.png?fit=768%2C403&ssl=1",
+                "og:type": "website",
+                "og:site_name": "もばらぶエンジニアブログ",
+                "twitter:site": "@mobalab",
+                "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+                "og:title": "[LocalStack]無料でAWSサービスを開発・テストする",
+                "og:locale": "ja_JP",
+                "og:url": "https://engineering.mobalab.net/2024/10/04/localstack%E7%84%A1%E6%96%99%E3%81%A7aws%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%86%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B/",
+                "twitter:creator": "@mobalab",
+                "og:description": "AWSのサービスをローカルで利用できると聞いたので、空き時間に導入してみました。 LocalStackとは LocalStackは、AWSの環境をローカルでエミュレートするツールです。クラウドに接続せずにAWSサービスの ..."
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://i0.wp.com/engineering-wp.mobalab.net/wp-content/uploads/2020/04/aws_logo_smile_1200x630.png?fit=768%2C403&ssl=1"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://engineering.mobalab.net/2024/.../localstack無料でawsサービスを開...",
+          "display_link": "engineering.mobalab.net",
+          "html_title": "[LocalStack]無料でAWSサービスを開発・<b>テスト</b>する – もばらぶ ...",
+          "html_snippet": "Oct 4, 2024 <b>...</b> <b>データ永続化</b>はどうやら有料版のみらしいですが、Community版でも対応 ... &quot;<b>2024</b>/09/25/[$LATEST]0b4cc733d291d4a3cc4ff54151732e47&quot;&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.9,
+          "quality_score": 0.8,
+          "importance_score": 0.7,
+          "category": "技術",
+          "key_topics": [
+            "AWS",
+            "データ永続化",
+            "テスト"
+          ],
+          "confidence": 0.9,
+          "reason": "AWSサービスを開発・テストする際に無料で利用できるLocalStackに関する情報が具体的で信頼性が高い。データ永続化テストに関する学習素材として適切である。"
+        }
+      },
+      {
+        "source_id": "google_3f5e51503bc5",
+        "source_type": "google_search",
+        "query": "データ永続化テスト トレンド 2024",
+        "url": "https://offers.jp/media/programming/a_3994",
+        "title": "【2024年11月最新】Flutterライブラリのおすすめは？目的別に ...",
+        "content": "Jul 15, 2024 ... データ永続化が重要なモバイルアプリケーションで特に有用です。 出典 ... ツールを提供し、視覚的なリグレッションテストを容易にします。 出典 ...",
+        "collected_at": "2025-07-11T02:07:45.917742",
+        "reliability_score": 0.9,
+        "relevance_score": 0.7,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQJ27W1jSppzjMQ-LFceKHWPYW9p60QQWrX6NHp5RwBAvHNutDBjw6_sc&s",
+                "width": "275",
+                "height": "183"
+              }
+            ],
+            "imageobject": [
+              {
+                "url": "https://offers.jp/assets/media/image_logo-4a39d8d86551d77e64a19b7b8ea3d81a22d7c42da7e6f60cee3b7ef9be62686c.png"
+              }
+            ],
+            "organization": [
+              {
+                "name": "Offers Magazine"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://assets.offers.jp/media/wp-content/uploads/2020/12/22173850/christina-wocintechchat-com-tYVkjjMYFBo-unsplash.jpg",
+                "og:type": "website",
+                "twitter:card": "summary",
+                "twitter:title": "【2024年11月最新】Flutterライブラリのおすすめは？目的別にライブラリを紹介",
+                "og:site_name": "Offers Magazine",
+                "og:title": "【2024年11月最新】Flutterライブラリのおすすめは？目的別にライブラリを紹介 | Offers Magazine",
+                "og:description": "こんにちは。エンジニア、PM、デザイナーの副業・転職採用サービス「Offers（オファーズ）」のOffers Magazine編集部です。\n\nモバイルアプリ開発の世界で注目を集めている...",
+                "twitter:image": "https://assets.offers.jp/media/wp-content/uploads/2020/12/22173850/christina-wocintechchat-com-tYVkjjMYFBo-unsplash.jpg",
+                "fb:app_id": "615236925209818",
+                "twitter:site": "@Offers_jp",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "twitter:description": "こんにちは。エンジニア、PM、デザイナーの副業・転職採用サービス「Offers（オファーズ）」のOffers Magazine編集部です。\n\nモバイルアプリ開発の世界で注目を集めている...",
+                "og:locale": "ja_JP",
+                "og:url": "https://offers.jp/media/programming/a_3994"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://assets.offers.jp/media/wp-content/uploads/2020/12/22173850/christina-wocintechchat-com-tYVkjjMYFBo-unsplash.jpg"
+              }
+            ],
+            "article": [
+              {
+                "articlebody": "Flutterでおすすめのライブラリ Flutterの世界では、適切なライブラリの選択が開発効率と最終製品の品質を大きく左右します。2024年の最新動向を踏...",
+                "datemodified": "2024-07-15 22:28:42",
+                "articlesection": "プログラミング",
+                "author": "Offers Magazine",
+                "name": "【2024年11月最新】Flutterライブラリのおすすめは？目的別にライブラリを紹介",
+                "text": "【2024年11月最新】Flutterライブラリのおすすめは？目的別にライブラリを紹介 プログラミング 2024-07-15 更新日 2024-07-26 株式会社overflow Offers Magazine編...",
+                "headline": "【2024年11月最新】Flutterライブラリのおすすめは？目的別にライブラリを紹介",
+                "datepublished": "2024-07-15 22:28:42"
+              }
+            ],
+            "listitem": [
+              {
+                "item": "Offers",
+                "name": "Offers",
+                "position": "1"
+              },
+              {
+                "item": "Offers Magazine",
+                "name": "Offers Magazine",
+                "position": "2"
+              },
+              {
+                "item": "プログラミング",
+                "name": "プログラミング",
+                "position": "3"
+              },
+              {
+                "name": "【2024年11月最新】Flutterライブラリのおすすめは？目的別にライブラリを紹介",
+                "position": "4"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://offers.jp/media/programming/a_3994",
+          "display_link": "offers.jp",
+          "html_title": "【<b>2024</b>年11月最新】Flutterライブラリのおすすめは？目的別に ...",
+          "html_snippet": "Jul 15, 2024 <b>...</b> <b>データ永続化</b>が重要なモバイルアプリケーションで特に有用です。 出典 ... ツールを提供し、視覚的なリグレッション<b>テスト</b>を容易にします。 出典&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "データ永続化",
+            "モバイルアプリケーション",
+            "Flutterライブラリ"
+          ],
+          "confidence": 0.9,
+          "reason": "データ永続化に関する情報が具体的で信頼性があり、Flutterライブラリのおすすめについて学習する上で重要な情報を提供している。"
+        }
+      },
+      {
+        "source_id": "google_13124700db4f",
+        "source_type": "google_search",
+        "query": "データ永続化テスト トレンド 2024",
+        "url": "https://www.oracle.com/contracts/docs/cloud_hosting_delivery_policies_jp_5023328.pdf",
+        "title": "Oracle Cloud Hosting and Delivery Policies",
+        "content": "2 お客様のモニタリング・ツールおよびテスト・ツール. 13. 4. Oracle Cloud Change ... お客様は、かかるオラクル・クラウド・サービスがデータ保存の. 面で別個の ...",
+        "collected_at": "2025-07-11T02:07:45.917744",
+        "reliability_score": 0.9,
+        "relevance_score": 0.7,
+        "google_metadata": {
+          "page_map": {
+            "metatags": [
+              {
+                "moddate": "D:20250221162941-05'00'",
+                "creationdate": "D:20240830182841+09'00'",
+                "creator": "Microsoft® Word for Microsoft 365",
+                "author": "Oracle Corporation",
+                "subject": "Oracle Cloud Hosting and Delivery Policies",
+                "producer": "Microsoft® Word for Microsoft 365",
+                "title": "Oracle Cloud Hosting and Delivery Policies - Japanese"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.oracle.com/.../cloud_hosting_delivery_policies_jp_5023328.p...",
+          "display_link": "www.oracle.com",
+          "html_title": "Oracle Cloud Hosting and Delivery Policies",
+          "html_snippet": "2 お客様のモニタリング・ツールおよび<b>テスト</b>・ツール. 13. 4. Oracle Cloud Change ... お客様は、かかるオラクル・クラウド・サービスが<b>データ</b>保存の. 面で別個の&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.9,
+          "quality_score": 0.8,
+          "importance_score": 0.7,
+          "category": "技術",
+          "key_topics": [
+            "データ永続化",
+            "クラウドホスティング",
+            "データ保存"
+          ],
+          "confidence": 0.9,
+          "reason": "Oracle Cloud Hosting and Delivery Policiesの内容はデータ永続化テストに関連し、信頼性が高く具体的な情報が提供されている。学習価値も高いため、技術カテゴリに分類される。"
+        }
+      },
+      {
+        "source_id": "google_d2be02d4b876",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 技術動向",
+        "url": "https://www.netone.co.jp/media/detail/20191206-1/",
+        "title": "Kubernetesのデータ永続化入門 | ネットワンシステムズ",
+        "content": "Dec 6, 2019 ... コンテナ技術のトレンド、オーケストレーションツール：#Kubernetes のストレージ技術、Volume、Persistent Volume、Persistent Volume Claim、Storage ...",
+        "collected_at": "2025-07-11T02:07:47.378976",
+        "reliability_score": 0.9,
+        "relevance_score": 1.0,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnVFFFaJ94SfmSLfaz68eLfaxh9a8VYnwUI9hOhBJFdkeEmdkW_VF78em&s",
+                "width": "310",
+                "height": "163"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://www.netone.co.jp/media/files/ogimage_Cloud_1200x630_1.jpg",
+                "og:type": "article",
+                "twitter:card": "summary_large_image",
+                "skype_toolbar": "SKYPE_TOOLBAR_PARSER_COMPATIBLE",
+                "og:site_name": "ネットワンシステムズ",
+                "viewport": "width=device-width, initial-scale=1.0",
+                "og:title": "Kubernetesのデータ永続化入門 | ネットワンシステムズ",
+                "og:locale": "ja_JP",
+                "og:url": "https://www.netone.co.jp/media/detail/20191206-1/",
+                "og:description": "コンテナ技術のトレンド、オーケストレーションツール：#Kubernetes のストレージ技術、Volume、Persistent Volume、Persistent Volume Claim、Storage Classを用いたPodデータ永続化の仕組みをわかりやすく解説。また、CNCFで注目されているContainer Storage Interfaceの概要についてもご紹介します。",
+                "format-detection": "telephone=no,email=no,address=no"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://www.netone.co.jp/media/files/ogimage_Cloud_1200x630_1.jpg"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.netone.co.jp/media/detail/20191206-1/",
+          "display_link": "www.netone.co.jp",
+          "html_title": "Kubernetesの<b>データ永続化</b>入門 | ネットワンシステムズ",
+          "html_snippet": "Dec 6, 2019 <b>...</b> コンテナ<b>技術</b>のトレンド、オーケストレーションツール：#Kubernetes のストレージ<b>技術</b>、Volume、Persistent Volume、Persistent Volume Claim、Storage&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "Kubernetes",
+            "データ永続化"
+          ],
+          "confidence": 0.9,
+          "reason": "Kubernetesのデータ永続化に関する具体的な情報が提供されており、学習価値が高いと判断された。"
+        }
+      },
+      {
+        "source_id": "google_f385a6fad2e9",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 技術動向",
+        "url": "https://www.nistep.go.jp/research/science-and-technology-foresight-and-science-and-technology-trends/sttbacknumbers",
+        "title": "「科学技術動向」誌 バックナンバー一覧 | 科学技術・学術政策研究 ...",
+        "content": "レポート2 オープンサイエンスをめぐる新しい潮流（その2）オープンデータのためのデータ保存・管理体制; レポート3 国際災害チャーターの活動動向; レポート4 青年千人 ...",
+        "collected_at": "2025-07-11T02:07:47.378992",
+        "reliability_score": 0.9,
+        "relevance_score": 0.9,
+        "google_metadata": {
+          "page_map": {},
+          "cache_id": "",
+          "formatted_url": "https://www.nistep.go.jp/research/science-and...and.../sttbacknumbers",
+          "display_link": "www.nistep.go.jp",
+          "html_title": "「科学<b>技術動向</b>」誌 バックナンバー一覧 | 科学技術・学術政策研究 ...",
+          "html_snippet": "レポート2 オープンサイエンスをめぐる新しい潮流（その2）オープン<b>データ</b>のための<b>データ</b>保存・管理体制; レポート3 国際災害チャーターの活動<b>動向</b>; レポート4 青年千人&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "オープンサイエンス",
+            "データ保存・管理体制",
+            "国際災害チャーター"
+          ],
+          "confidence": 0.9,
+          "reason": "テーマに関連した情報が具体的に記載されており、信頼性が高い情報源から提供されているため、学習に適していると判断した。"
+        }
+      },
+      {
+        "source_id": "google_9bcfc1ce85ec",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 技術動向",
+        "url": "https://www.jri.co.jp/file/advanced/advanced-technology/pdf/14496.pdf",
+        "title": "AI公平性・説明可能AI（XAI）の 概説と動向",
+        "content": "Dec 9, 2022 ... 特徴量分布(例: テストの得点). がセンシティブ属性(例: 性別). 間で類似するように編集(ただ. し、同性内での順位は保存)。 • これにより Disparate.",
+        "collected_at": "2025-07-11T02:07:47.378995",
+        "reliability_score": 0.9,
+        "relevance_score": 0.8,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx1NEqQSnaunVraZfv8J47BIqO1xF06qaszS0vtjOm-axEQuLIx-2oPMU&s",
+                "width": "232",
+                "height": "217"
+              }
+            ],
+            "metatags": [
+              {
+                "moddate": "D:20221207210434+09'00'",
+                "creationdate": "D:20221207210434+09'00'",
+                "creator": "Microsoft® PowerPoint® for Microsoft 365",
+                "author": "mase.hideyuki@jri.co.jp",
+                "producer": "Microsoft® PowerPoint® for Microsoft 365",
+                "title": "AI公平性・説明可能AI（XAI）の概説と動向"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "x-raw-image:///ffda6742625b9052e1aae2ee5653c421096f169d332add3b9091388f48c987ba"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.jri.co.jp/file/advanced/advanced-technology/pdf/14496.pdf",
+          "display_link": "www.jri.co.jp",
+          "html_title": "AI公平性・説明可能AI（XAI）の 概説と<b>動向</b>",
+          "html_snippet": "Dec 9, 2022 <b>...</b> 特徴量分布(例: <b>テスト</b>の得点). がセンシティブ属性(例: 性別). 間で類似するように編集(ただ. し、同性内での順位は保存)。 • これにより Disparate."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "AI",
+            "XAI",
+            "データ永続化テスト"
+          ],
+          "confidence": 0.9,
+          "reason": "提供された学習素材はAI公平性や説明可能AI（XAI）に関する概説と動向を示しており、テーマとの関連度が高い。情報の信頼性は一定程度あり、学習価値もあるが、重要度はやや低い。技術カテゴリに該当し、AIやXAIに関するキーワードが含まれている。判定の確信度は高い。"
+        }
+      },
+      {
+        "source_id": "google_cde0acdbfd77",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 技術動向",
+        "url": "https://www.gartner.co.jp/ja/articles/top-technology-trends-2025",
+        "title": "【2025年最新版】先進テクノロジのトレンドと今後の展望を一覧で ...",
+        "content": "Jun 1, 2025 ... これは暗号化データを盗取・保存し、将来的に量子コンピュータで暗号解読することを目的とします。この脅威に対抗するため、ポスト耐量子暗号（PQC ...",
+        "collected_at": "2025-07-11T02:07:47.378998",
+        "reliability_score": 0.9,
+        "relevance_score": 0.7,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZU2djlAacecc1oOQfV9jkC3uPI6Xh0laMptGikdlWbXm7kpWPjY3axFKf&s",
+                "width": "299",
+                "height": "168"
+              }
+            ],
+            "metatags": [
+              {
+                "template": "campaign-article",
+                "og:image": "https://emt.gartnerweb.com/ngw/globalassets/ja/smarter-with-gartner/images/2025-top-10-strategic-technology-trends-jp.png",
+                "og:type": "website",
+                "twitter:card": "summary_large_image",
+                "twitter:title": "【2025年最新版】先進テクノロジのトレンドと今後の展望を一覧で解説  | ガートナージャパン（Gartner）",
+                "og:site_name": "Gartner",
+                "og:title": "【2025年最新版】先進テクノロジのトレンドと今後の展望を一覧で解説  | ガートナージャパン（Gartner）",
+                "og:description": "ガートナーが発表した2025年テクノロジのトップトレンドを解説。AIガバナンス、量子暗号、空間コンピューティングなど10の革新的技術を詳しく紹介。企業のデジタル戦略に必要不可欠な最新技術動向を網羅的に説明しています。",
+                "twitter:image": "https://emt.gartnerweb.com/ngw/globalassets/ja/smarter-with-gartner/images/2025-top-10-strategic-technology-trends-jp.png",
+                "twitter:site": "@Gartner_inc",
+                "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+                "designtype": "newViz",
+                "twitter:description": "ガートナーが発表した2025年テクノロジのトップトレンドを解説。AIガバナンス、量子暗号、空間コンピューティングなど10の革新的技術を詳しく紹介。企業のデジタル戦略に必要不可欠な最新技術動向を網羅的に説明しています。",
+                "page": "siteCode | Public Marketing Site - Gartner Japan, hasMultiMedia | false, type | type/pillar, contentType | content-type/articles, function | function/cio, gatedAsset | false",
+                "og:url": "https://www.gartner.co.jp/ja/articles/top-technology-trends-2025"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://emt.gartnerweb.com/ngw/globalassets/ja/smarter-with-gartner/images/2025-top-10-strategic-technology-trends-jp.png"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.gartner.co.jp/ja/articles/top-technology-trends-2025",
+          "display_link": "www.gartner.co.jp",
+          "html_title": "【2025年最新版】先進テクノロジのトレンドと今後の展望を一覧で ...",
+          "html_snippet": "Jun 1, 2025 <b>...</b> これは暗号化<b>データ</b>を盗取・保存し、将来的に量子コンピュータで暗号解読することを目的とします。この脅威に対抗するため、ポスト耐量子暗号（PQC&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "暗号化データ",
+            "量子コンピュータ",
+            "ポスト耐量子暗号"
+          ],
+          "confidence": 0.9,
+          "reason": "提供されたコンテンツはデータ永続化テストに関連する暗号化データと量子コンピュータのトレンドについて具体的な情報を提供しており、学習の価値が高いと判断されました。"
+        }
+      },
+      {
+        "source_id": "google_0ba33b9a491e",
+        "source_type": "google_search",
+        "query": "データ永続化テスト 技術動向",
+        "url": "https://www.nttdata.com/jp/ja/trends/data-insight/2021/0204/",
+        "title": "バグ密度・テスト密度に依存しない品質保証への挑戦 | NTTデータ ...",
+        "content": "Feb 4, 2021 ... ソフトウェア開発の品質保証では、定量的な品質管理の指標としてバグ密度・テスト密度を利用することが多い。しかし、昨今は開発方法の多様化により、 ...",
+        "collected_at": "2025-07-11T02:07:47.379000",
+        "reliability_score": 0.9,
+        "relevance_score": 0.7,
+        "google_metadata": {
+          "page_map": {
+            "cse_thumbnail": [
+              {
+                "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwJl_mO8oY32EUVnE1B1hOuYCImNKZHkYguPp7iES9g4qXn476TGA5-SY&s",
+                "width": "300",
+                "height": "168"
+              }
+            ],
+            "metatags": [
+              {
+                "og:image": "https://www.nttdata.com/jp/ja/-/media/nttdatajapan/images/data-insight/2021/0204/index_list.jpg?rev=635fc5fc290a41e394b9272733194554",
+                "og:type": "article",
+                "twitter:card": "summary",
+                "og:site_name": "NTTデータ | Trusted Global Innovator",
+                "viewport": "width=device-width, initial-scale=1",
+                "og:title": "バグ密度・テスト密度に依存しない品質保証への挑戦 | NTTデータ",
+                "og:locale": "ja-JP",
+                "google": "notranslate",
+                "og:url": "https://www.nttdata.com/jp/ja/trends/data-insight/2021/0204/",
+                "og:description": "ソフトウェア開発の品質保証では、定量的な品質管理の指標としてバグ密度・テスト密度を利用することが多い。しかし、昨今は開発方法の多様化により、従来のままでは品質管理が複雑になり、対応工数も増加する傾向にある。これに対するNTTデータの新しい品質管理の取り組みを紹介する。",
+                "format-detection": "telephone=no, address=no, email=no"
+              }
+            ],
+            "cse_image": [
+              {
+                "src": "https://www.nttdata.com/jp/ja/-/media/nttdatajapan/images/data-insight/2021/0204/index_list.jpg?rev=635fc5fc290a41e394b9272733194554"
+              }
+            ]
+          },
+          "cache_id": "",
+          "formatted_url": "https://www.nttdata.com/jp/ja/trends/data-insight/2021/0204/",
+          "display_link": "www.nttdata.com",
+          "html_title": "バグ密度・<b>テスト</b>密度に依存しない品質保証への挑戦 | NTT<b>データ</b> ...",
+          "html_snippet": "Feb 4, 2021 <b>...</b> ソフトウェア開発の品質保証では、定量的な品質管理の指標としてバグ密度・<b>テスト</b>密度を利用することが多い。しかし、昨今は開発方法の多様化により、&nbsp;..."
+        },
+        "preprocessing_result": {
+          "relevance_score": 0.8,
+          "quality_score": 0.7,
+          "importance_score": 0.6,
+          "category": "技術",
+          "key_topics": [
+            "品質保証",
+            "ソフトウェア開発",
+            "データ永続化"
+          ],
+          "confidence": 0.9,
+          "reason": "記事はデータ永続化テストに関する品質保証の重要性に焦点を当てており、関連性が高い。情報は信頼性があり、具体的な内容が含まれている。学習者にとって重要な情報を提供しているが、他の学習素材と比較するとやや低い評価となっている。"
+        }
+      }
+    ],
+    "raw_content_count": 15,
+    "filtered_content_count": 15,
+    "search_queries": [
+      "データ永続化テスト 最新情報",
+      "データ永続化テスト トレンド 2024",
+      "データ永続化テスト 技術動向"
+    ],
+    "preprocessing_enabled": true,
+    "execution_time": 40.113797426223755,
+    "queries_executed": 3,
+    "search_engine_status": {
+      "ready": true,
+      "google_service_available": true,
+      "config_valid": true,
+      "searches_used_today": 3,
+      "quota_remaining": 97,
+      "max_daily_searches": 100,
+      "not_ready_reason": null
+    },
+    "collection_timestamp": "2025-07-11T02:08:23.706029",
+    "collection_success": true,
+    "search_errors": []
+  },
+  "preprocessing_summary": {
+    "total_processed": 15,
+    "passed_count": 15,
+    "filtered_count": 0,
+    "pass_rate": 100.0,
+    "category_breakdown": {
+      "技術": {
+        "total": 15,
+        "passed": 15
+      }
+    },
+    "score_averages": {
+      "relevance": 0.8133333333333336,
+      "quality": 0.7133333333333332,
+      "importance": 0.6133333333333333
+    },
+    "total_tokens_used": 8909,
+    "estimated_cost": 0.017818,
+    "average_processing_time": 1.8544193744659423
+  },
+  "analysis_results": {
+    "analyzed_content": [
+      {
+        "source": {
+          "source_id": "google_eee0433dc3a0",
+          "source_type": "google_search",
+          "query": "データ永続化テスト 最新情報",
+          "url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+          "title": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順 ...",
+          "content": "Mar 29, 2023 ... MySQLの公式イメージ（最新）を取得します。 docker image pull mysql:latest. 「test」という名前のボリューム(Data Volume)を作成します。 docker ...",
+          "collected_at": "2025-07-11T02:07:44.349725",
+          "reliability_score": 0.9,
+          "relevance_score": 1.0,
+          "google_metadata": {
+            "page_map": {
+              "cse_thumbnail": [
+                {
+                  "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbJD4pJBc7vMEmSJPskvfsWmbIdKTl3EOEr5NOJIBLyQqFw7y4V0I4Zg&s",
+                  "width": "310",
+                  "height": "163"
+                }
+              ],
+              "metatags": [
+                {
+                  "og:image": "https://www.kagoya.jp/howto/wp-content/uploads/dockermysql_catch.png",
+                  "og:type": "article",
+                  "article:published_time": "2023-03-29T01:00:00+00:00",
+                  "og:image:width": "1200",
+                  "twitter:card": "summary_large_image",
+                  "og:site_name": "カゴヤのサーバー研究室",
+                  "author": "小泉 健太郎",
+                  "og:title": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ - カゴヤのサーバー研究室",
+                  "og:image:height": "630",
+                  "twitter:label1": "執筆者",
+                  "twitter:label2": "推定読み取り時間",
+                  "og:image:type": "image/png",
+                  "msapplication-tileimage": "https://www.kagoya.jp/howto/wp-content/uploads/cropped-favicon-270x270.png",
+                  "og:description": "昨今ではアプリケーションの実行環境として採用されることが多いDockerは、MySQL環境の構築にも適しています。Dockerを使えば、比較的簡単に使い勝手のよ 昨今ではアプリケーションの実行環境として採用されることが多いDockerは、MySQL環境の構築にも適しています。Dockerを使えば、比較的簡単に使い勝手のよいMySQL環境を構築可能です。この記事では、そもそもDockerとは何かといった基本から、DockerでMySQL環境を構築する方法を解説します。データベースを継続的に利用するための、「データ永続化」についても解説しているのであわせて参考にして下さい。",
+                  "twitter:data1": "小泉 健太郎",
+                  "twitter:data2": "1分",
+                  "article:modified_time": "2023-04-13T23:51:56+00:00",
+                  "viewport": "width=device-width, initial-scale=1.0",
+                  "og:locale": "ja_JP",
+                  "og:url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+                  "format-detection": "telephone=no"
+                }
+              ],
+              "cse_image": [
+                {
+                  "src": "https://www.kagoya.jp/howto/wp-content/uploads/dockermysql_catch.png"
+                }
+              ],
+              "listitem": [
+                {
+                  "item": "カゴヤのサーバー研究室",
+                  "name": "カゴヤのサーバー研究室",
+                  "position": "1"
+                },
+                {
+                  "item": "仮想化技術研究室",
+                  "name": "仮想化技術研究室",
+                  "position": "2"
+                },
+                {
+                  "item": "コンテナ仮想化",
+                  "name": "コンテナ仮想化",
+                  "position": "3"
+                },
+                {
+                  "item": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ",
+                  "name": "【入門】DockerでMySQL環境を構築する方法とデータの永続化手順まとめ",
+                  "position": "4"
+                }
+              ]
+            },
+            "cache_id": "",
+            "formatted_url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+            "display_link": "www.kagoya.jp",
+            "html_title": "【入門】DockerでMySQL環境を構築する方法と<b>データ</b>の<b>永続化</b>手順 ...",
+            "html_snippet": "Mar 29, 2023 <b>...</b> MySQLの公式イメージ（<b>最新</b>）を取得します。 docker image pull mysql:latest. 「<b>test</b>」という名前のボリューム(Data Volume)を作成します。 docker&nbsp;..."
+          },
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "Docker",
+              "MySQL",
+              "データ永続化"
+            ],
+            "confidence": 0.9,
+            "reason": "DockerとMySQLの環境構築方法やデータ永続化手順に関する具体的な情報が提供されており、学習に適している。"
+          }
+        },
+        "analysis": "記事1の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "google_c31e0bb474eb",
+          "source_type": "google_search",
+          "query": "データ永続化テスト 最新情報",
+          "url": "https://www.netone.co.jp/media/detail/20191206-1/",
+          "title": "Kubernetesのデータ永続化入門 | ネットワンシステムズ",
+          "content": "Dec 6, 2019 ... また、Kubernetesの開発者は、テスト、メンテナンスの対応が減り結果としてシステムの安全性や信頼性が高まります。過去に紹介した、Cisco Container ...",
+          "collected_at": "2025-07-11T02:07:44.349741",
+          "reliability_score": 0.9,
+          "relevance_score": 0.9,
+          "google_metadata": {
+            "page_map": {
+              "cse_thumbnail": [
+                {
+                  "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnVFFFaJ94SfmSLfaz68eLfaxh9a8VYnwUI9hOhBJFdkeEmdkW_VF78em&s",
+                  "width": "310",
+                  "height": "163"
+                }
+              ],
+              "metatags": [
+                {
+                  "og:image": "https://www.netone.co.jp/media/files/ogimage_Cloud_1200x630_1.jpg",
+                  "og:type": "article",
+                  "twitter:card": "summary_large_image",
+                  "skype_toolbar": "SKYPE_TOOLBAR_PARSER_COMPATIBLE",
+                  "og:site_name": "ネットワンシステムズ",
+                  "viewport": "width=device-width, initial-scale=1.0",
+                  "og:title": "Kubernetesのデータ永続化入門 | ネットワンシステムズ",
+                  "og:locale": "ja_JP",
+                  "og:url": "https://www.netone.co.jp/media/detail/20191206-1/",
+                  "og:description": "コンテナ技術のトレンド、オーケストレーションツール：#Kubernetes のストレージ技術、Volume、Persistent Volume、Persistent Volume Claim、Storage Classを用いたPodデータ永続化の仕組みをわかりやすく解説。また、CNCFで注目されているContainer Storage Interfaceの概要についてもご紹介します。",
+                  "format-detection": "telephone=no,email=no,address=no"
+                }
+              ],
+              "cse_image": [
+                {
+                  "src": "https://www.netone.co.jp/media/files/ogimage_Cloud_1200x630_1.jpg"
+                }
+              ]
+            },
+            "cache_id": "",
+            "formatted_url": "https://www.netone.co.jp/media/detail/20191206-1/",
+            "display_link": "www.netone.co.jp",
+            "html_title": "Kubernetesの<b>データ永続化</b>入門 | ネットワンシステムズ",
+            "html_snippet": "Dec 6, 2019 <b>...</b> また、Kubernetesの開発者は、<b>テスト</b>、メンテナンスの対応が減り結果としてシステムの安全性や信頼性が高まります。過去に紹介した、Cisco Container&nbsp;..."
+          },
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "Kubernetes",
+              "データ永続化"
+            ],
+            "confidence": 0.9,
+            "reason": "Kubernetesのデータ永続化に関する入門情報が提供されており、関連性が高い。情報の信頼性は一定程度あり、学習価値もあるが、より詳細な内容が欲しいという点で重要度はやや低い。"
+          }
+        },
+        "analysis": "記事2の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "google_a54abf6d1958",
+          "source_type": "google_search",
+          "query": "データ永続化テスト 最新情報",
+          "url": "https://developer.android.com/training/data-storage/sqlite?hl=ja",
+          "title": "SQLite を使用してデータを保存する | App data and files | Android ...",
+          "content": "Nov 4, 2024 ... 選択引数はテスト対象となる値であり、選択句にバインドされます。結果は、通常の SQL ステートメントとは扱いが異なり、SQL インジェクションの影響を ...",
+          "collected_at": "2025-07-11T02:07:44.349744",
+          "reliability_score": 0.9,
+          "relevance_score": 0.8,
+          "google_metadata": {
+            "page_map": {
+              "cse_thumbnail": [
+                {
+                  "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyLiHo12_OAiFqemoE4s0aj0mBCuNcP0QvqIvY-XOgF3EFTXKC3ZJsdFs&s",
+                  "width": "299",
+                  "height": "168"
+                }
+              ],
+              "document": [
+                {
+                  "keywords": "E__category__OperatingSystem E__language__Kotlin E__product__Android E__category__Android E__category__Mobile E__category__Interest E__language__Java K__language__Java K__language__Kotlin K__product__Android",
+                  "keyword": "E__category__OperatingSystem"
+                }
+              ],
+              "metatags": [
+                {
+                  "og:image": "https://developer.android.com/static/images/social/android-developers.png?hl=ja",
+                  "og:type": "website",
+                  "theme-color": "#34a853",
+                  "og:image:width": "1200",
+                  "twitter:card": "summary_large_image",
+                  "google-signin-client-id": "721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com",
+                  "og:site_name": "Android Developers",
+                  "og:title": "SQLite を使用してデータを保存する  |  App data and files  |  Android Developers",
+                  "og:image:height": "675",
+                  "viewport": "width=device-width, initial-scale=1",
+                  "og:locale": "ja",
+                  "google-signin-scope": "profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award",
+                  "og:url": "https://developer.android.com/training/data-storage/sqlite?hl=ja"
+                }
+              ],
+              "cse_image": [
+                {
+                  "src": "https://developer.android.com/static/images/social/android-developers.png?hl=ja"
+                }
+              ]
+            },
+            "cache_id": "",
+            "formatted_url": "https://developer.android.com/training/data-storage/sqlite?hl=ja",
+            "display_link": "developer.android.com",
+            "html_title": "SQLite を使用して<b>データ</b>を保存する | App data and files | Android ...",
+            "html_snippet": "Nov 4, 2024 <b>...</b> 選択引数は<b>テスト</b>対象となる値であり、選択句にバインドされます。結果は、通常の SQL ステートメントとは扱いが異なり、SQL インジェクションの影響を&nbsp;..."
+          },
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "データ永続化",
+              "SQLite",
+              "Android"
+            ],
+            "confidence": 0.9,
+            "reason": "Androidアプリ開発におけるデータ永続化方法としてSQLiteを使用する内容であり、関連性が高い。情報は具体的で信頼性があり、学習価値もある。技術カテゴリに該当し、学習に適している。"
+          }
+        },
+        "analysis": "記事3の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "google_e63b51d74e84",
+          "source_type": "google_search",
+          "query": "データ永続化テスト 最新情報",
+          "url": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/",
+          "title": "令和版語彙数推定テスト",
+          "content": "個人情報を含まないテスト結果のデータが保存されます。このテスト結果を分析し ... またNTTの研究活動の広報目的で、統計化されたテスト結果を公表することがあります。",
+          "collected_at": "2025-07-11T02:07:44.349746",
+          "reliability_score": 0.9,
+          "relevance_score": 0.7,
+          "google_metadata": {
+            "page_map": {
+              "cse_thumbnail": [
+                {
+                  "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWV-Yeyl-b4NLiWCQoKDSgailxzOLxaXGJbb3nHBqN_Oxk3MV_pezYYMlq&s",
+                  "width": "266",
+                  "height": "189"
+                }
+              ],
+              "cse_image": [
+                {
+                  "src": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/image/title_logo_01.png"
+                }
+              ]
+            },
+            "cache_id": "",
+            "formatted_url": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/",
+            "display_link": "www.kecl.ntt.co.jp",
+            "html_title": "令和版語彙数推定<b>テスト</b>",
+            "html_snippet": "個人<b>情報</b>を含まない<b>テスト</b>結果の<b>データ</b>が保存されます。この<b>テスト</b>結果を分析し ... またNTTの研究活動の広報目的で、統計化された<b>テスト</b>結果を公表することがあります。"
+          },
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "データ永続化",
+              "言語処理"
+            ],
+            "confidence": 0.9,
+            "reason": "テスト結果のデータ永続化に関する学習素材として関連性が高く、信頼性もありますが、学習価値がやや低いため重要度は中程度と判定しました。"
+          }
+        },
+        "analysis": "記事4の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      },
+      {
+        "source": {
+          "source_id": "google_e44ad704f4d9",
+          "source_type": "google_search",
+          "query": "データ永続化テスト 最新情報",
+          "url": "https://developer.android.com/training/data-storage/room?hl=ja",
+          "title": "Room を使用してローカル データベースにデータを保存する | App ...",
+          "content": "最新情報を確認する; 最新情報 · 試験運用版の最新情報 · Android Studio プレビュー ... テスト; 品質; 概要 · コアバリュー · ユーザー エクスペリエンス · ユーザー補助 ...",
+          "collected_at": "2025-07-11T02:07:44.349757",
+          "reliability_score": 0.9,
+          "relevance_score": 0.7,
+          "google_metadata": {
+            "page_map": {
+              "cse_thumbnail": [
+                {
+                  "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyLiHo12_OAiFqemoE4s0aj0mBCuNcP0QvqIvY-XOgF3EFTXKC3ZJsdFs&s",
+                  "width": "299",
+                  "height": "168"
+                }
+              ],
+              "document": [
+                {
+                  "keywords": "E__language__Java E__language__Kotlin E__category__Android E__category__Mobile E__category__Interest E__category__OperatingSystem E__product__Android K__language__Java K__language__Kotlin K__product__Android",
+                  "keyword": "E__language__Java"
+                }
+              ],
+              "metatags": [
+                {
+                  "og:image": "https://developer.android.com/static/images/social/android-developers.png?hl=ja",
+                  "og:type": "website",
+                  "theme-color": "#34a853",
+                  "og:image:width": "1200",
+                  "twitter:card": "summary_large_image",
+                  "google-signin-client-id": "721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com",
+                  "og:site_name": "Android Developers",
+                  "og:title": "Room を使用してローカル データベースにデータを保存する  |  App data and files  |  Android Developers",
+                  "og:image:height": "675",
+                  "og:description": "Room ライブラリを使用してデータを永続化する方法について学びます。",
+                  "viewport": "width=device-width, initial-scale=1",
+                  "og:locale": "ja",
+                  "google-signin-scope": "profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award",
+                  "og:url": "https://developer.android.com/training/data-storage/room?hl=ja"
+                }
+              ],
+              "cse_image": [
+                {
+                  "src": "https://developer.android.com/static/images/social/android-developers.png?hl=ja"
+                }
+              ]
+            },
+            "cache_id": "",
+            "formatted_url": "https://developer.android.com/training/data-storage/room?hl=ja",
+            "display_link": "developer.android.com",
+            "html_title": "Room を使用してローカル データベースに<b>データ</b>を保存する | App ...",
+            "html_snippet": "<b>最新情報</b>を確認する; <b>最新情報</b> &middot; 試験運用版の<b>最新情報</b> &middot; Android Studio プレビュー ... <b>テスト</b>; 品質; 概要 &middot; コアバリュー &middot; ユーザー エクスペリエンス &middot; ユーザー補助&nbsp;..."
+          },
+          "preprocessing_result": {
+            "relevance_score": 0.8,
+            "quality_score": 0.7,
+            "importance_score": 0.6,
+            "category": "技術",
+            "key_topics": [
+              "データ永続化",
+              "Room",
+              "ローカルデータベース"
+            ],
+            "confidence": 0.9,
+            "reason": "Androidアプリ開発におけるデータ永続化の重要性を示すRoomを使用したローカルデータベース保存方法に関する信頼性の高い情報が提供されている。"
+          }
+        },
+        "analysis": "記事5の分析結果",
+        "importance": 7,
+        "category": "技術",
+        "key_points": [
+          "ポイント1",
+          "ポイント2"
+        ],
+        "related_entities": [
+          "エンティティ1",
+          "エンティティ2"
+        ]
+      }
+    ],
+    "key_findings": [],
+    "extracted_entities": [],
+    "identified_relationships": []
+  },
+  "generated_knowledge": {
+    "structured_knowledge": [],
+    "integration_knowledge": [],
+    "activity_implications": []
+  },
+  "session_statistics": {
+    "total_cost": 0.0039299999999999995,
+    "total_items_processed": 5,
+    "processing_time": 0
+  }
+}

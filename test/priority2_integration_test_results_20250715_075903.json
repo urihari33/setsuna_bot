@@ -1,0 +1,135 @@
+{
+  "test_start_time": "2025-07-15T07:59:01.209166",
+  "phase_2d_results": {
+    "conversation_history_analyzer": {
+      "initialization": "success",
+      "data_loaded": true,
+      "multi_turn_data_size": 4,
+      "video_conversation_data_size": 2
+    },
+    "user_interest_tracker": {
+      "initialization": "success",
+      "interaction_tracking": "success",
+      "detected_topics": [
+        "動画制作"
+      ],
+      "interest_metrics_count": 1
+    },
+    "preference_evolution_engine": {
+      "initialization": "success",
+      "evolution_analysis": "success",
+      "detected_evolutions": 0,
+      "emerging_interests_count": 0
+    }
+  },
+  "phase_2e_results": {
+    "real_time_knowledge_updater": {
+      "initialization": "success",
+      "information_processing": "success",
+      "detected_info_count": 3,
+      "new_information_count": 3
+    },
+    "incremental_learning_engine": {
+      "initialization": "success",
+      "session_management": "success",
+      "updates_processed": 1,
+      "successful_integrations": 0,
+      "session_id": "session_20250715_075901"
+    },
+    "knowledge_validation_system": {
+      "initialization": "success",
+      "validation_execution": "success",
+      "validation_score": 0.22625,
+      "validation_passed": false,
+      "confidence_level": "low"
+    }
+  },
+  "phase_2f_results": {
+    "knowledge_quality_manager": {
+      "initialization": "success",
+      "quality_monitoring": "success",
+      "monitored_entities": 0,
+      "quality_alerts": 0,
+      "overall_quality_score": 0.0
+    },
+    "data_consistency_checker": {
+      "initialization": "success",
+      "integrity_check": "success",
+      "files_checked": 5,
+      "entities_checked": 14,
+      "issues_found": 8,
+      "integrity_score": 0.8142857142857143
+    },
+    "performance_monitor": {
+      "initialization": "success",
+      "snapshot_capture": "success",
+      "cpu_usage": 0.4,
+      "memory_usage": 9.1,
+      "dashboard_generation": "success"
+    }
+  },
+  "integration_results": {
+    "data_flow_test": {},
+    "cross_system_communication": {},
+    "end_to_end_workflow": {
+      "steps_completed": 7,
+      "total_steps": 7,
+      "step_results": [
+        "ユーザー興味追跡完了",
+        "新情報検出完了",
+        "情報検証完了",
+        "学習セッション開始完了",
+        "好み進化分析完了",
+        "品質監視完了",
+        "整合性チェック完了"
+      ]
+    }
+  },
+  "performance_results": {
+    "system_response_times": {
+      "analyzer": 1.430511474609375e-06,
+      "interest_tracker": 7.152557373046875e-07,
+      "evolution_engine": 7.152557373046875e-07,
+      "knowledge_updater": 4.76837158203125e-07,
+      "learning_engine": 7.152557373046875e-07,
+      "validation_system": 2.384185791015625e-07,
+      "quality_manager": 2.384185791015625e-07,
+      "consistency_checker": 2.384185791015625e-07,
+      "performance_monitor": 7.152557373046875e-07
+    },
+    "memory_usage": {},
+    "error_rates": {},
+    "average_response_time": 6.092919243706597e-07,
+    "performance_grade": "good"
+  },
+  "test_summary": {
+    "overall_status": "excellent",
+    "phase_results": {
+      "phase_2d_results": {
+        "total_systems": 3,
+        "successful_systems": 3,
+        "success_rate": 1.0
+      },
+      "phase_2e_results": {
+        "total_systems": 3,
+        "successful_systems": 3,
+        "success_rate": 1.0
+      },
+      "phase_2f_results": {
+        "total_systems": 3,
+        "successful_systems": 3,
+        "success_rate": 1.0
+      }
+    },
+    "system_counts": {
+      "total_systems": 9,
+      "successful_systems": 9,
+      "success_rate": 1.0
+    },
+    "critical_issues": [],
+    "recommendations": [
+      "すべてのシステムが正常に動作しています。定期的な監視を継続してください。"
+    ]
+  },
+  "test_end_time": "2025-07-15T07:59:03.130469"
+}

@@ -1,0 +1,73 @@
+{
+  "session_relationships": [
+    {
+      "session_id": "session_20250708_210708_16a87a3e",
+      "parent_session": null,
+      "child_sessions": [
+        "session_20250708_210708_8edfef89"
+      ],
+      "related_sessions": [],
+      "relationship_type": "independent",
+      "relevance_score": 0.0,
+      "inherited_knowledge": [],
+      "focus_areas": [
+        "統合テスト",
+        "AI",
+        "音楽生成",
+        "AI音楽生成技術の統合テスト",
+        "概要"
+      ],
+      "avoided_duplicates": [],
+      "knowledge_evolution": {
+        "new_concepts": [],
+        "updated_concepts": [],
+        "deprecated_concepts": []
+      },
+      "created_at": "2025-07-08 21:07:08.570628",
+      "updated_at": "2025-07-08 21:07:08.577945"
+    },
+    {
+      "session_id": "session_20250708_210708_8edfef89",
+      "parent_session": "session_20250708_210708_16a87a3e",
+      "child_sessions": [],
+      "related_sessions": [],
+      "relationship_type": "deep_dive",
+      "relevance_score": 0.0,
+      "inherited_knowledge": [],
+      "focus_areas": [
+        "Transformer",
+        "深掘り",
+        "Transformer音楽生成詳細調査",
+        "深掘り調査"
+      ],
+      "avoided_duplicates": [
+        "概要情報",
+        "一般的説明"
+      ],
+      "knowledge_evolution": {
+        "new_concepts": [],
+        "updated_concepts": [],
+        "deprecated_concepts": []
+      },
+      "created_at": "2025-07-08 21:07:08.577942",
+      "updated_at": "2025-07-08 21:07:08.577944"
+    }
+  ],
+  "session_lineage": {
+    "root_sessions": [
+      "session_20250708_210708_16a87a3e"
+    ],
+    "lineage_trees": [
+      {
+        "session": "session_20250708_210708_16a87a3e",
+        "branches": [
+          {
+            "session": "session_20250708_210708_8edfef89",
+            "branches": []
+          }
+        ]
+      }
+    ]
+  },
+  "last_updated": "2025-07-08T21:07:08.578017"
+}

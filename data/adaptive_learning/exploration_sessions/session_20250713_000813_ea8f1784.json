@@ -1,0 +1,19 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250713_000813_ea8f1784",
+    "theme": "緊急停止テスト",
+    "start_time": "2025-07-13T00:08:13.114996",
+    "initial_temperature": "high",
+    "budget_limit": 100.0,
+    "session_limit": 1000,
+    "status": "active",
+    "current_temperature": "high",
+    "rounds_completed": 0,
+    "total_cost": 0.0,
+    "sessions_executed": 0,
+    "created_by": "adaptive_learning_system",
+    "tags": [],
+    "notes": ""
+  },
+  "last_updated": "2025-07-13T00:08:13.115015"
+}

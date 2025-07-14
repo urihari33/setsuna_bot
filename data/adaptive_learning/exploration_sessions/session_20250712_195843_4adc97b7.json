@@ -1,0 +1,19 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250712_195843_4adc97b7",
+    "theme": "AI音楽生成技術",
+    "start_time": "2025-07-12T19:58:43.417116",
+    "initial_temperature": "high",
+    "budget_limit": 30.0,
+    "session_limit": 1000,
+    "status": "completed",
+    "current_temperature": "medium",
+    "rounds_completed": 2,
+    "total_cost": 9.0,
+    "sessions_executed": 10,
+    "created_by": "adaptive_learning_system",
+    "tags": [],
+    "notes": ""
+  },
+  "last_updated": "2025-07-12T19:58:43.433817"
+}

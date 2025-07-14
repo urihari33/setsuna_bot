@@ -1,0 +1,19 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250712_201128_3681b0cb",
+    "theme": "テスト技術",
+    "start_time": "2025-07-12T20:11:28.958643",
+    "initial_temperature": "low",
+    "budget_limit": 5.0,
+    "session_limit": 1000,
+    "status": "active",
+    "current_temperature": "low",
+    "rounds_completed": 0,
+    "total_cost": 0.0,
+    "sessions_executed": 0,
+    "created_by": "adaptive_learning_system",
+    "tags": [],
+    "notes": ""
+  },
+  "last_updated": "2025-07-12T20:11:28.958662"
+}

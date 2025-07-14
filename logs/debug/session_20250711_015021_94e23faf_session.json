@@ -1,0 +1,741 @@
+[
+  {
+    "timestamp": "2025-07-11T01:50:21.979717",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250711_015021_94e23faf",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727972442944,
+    "formatted_message": "[2025-07-11 01:50:21.979] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250711_015021_94e23faf"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.979777",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250711_015021_94e23faf",
+      "available_sessions": [
+        "session_20250711_015021_94e23faf"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727972442944,
+    "formatted_message": "[2025-07-11 01:50:21.979] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250711_015021_94e23faf\", \"available_sessions\": [\"session_20250711_015021_94e23faf\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.979819",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "セッション完了テスト",
+      "learning_type": "概要",
+      "depth_level": 1,
+      "time_limit": 90,
+      "budget_limit": 0.3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727972442944,
+    "formatted_message": "[2025-07-11 01:50:21.979] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"セッション完了テスト\", \"learning_type\": \"概要\", \"depth_level\": 1, \"time_limit\": 90, \"budget_limit\": 0.3}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.985659",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250711_015021_94e23faf",
+      "start_time": "2025-07-11T01:50:21.979838",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727972442944,
+    "formatted_message": "[2025-07-11 01:50:21.985] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250711_015021_94e23faf\", \"start_time\": \"2025-07-11T01:50:21.979838\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986029",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250711_015021_94e23faf",
+          "theme": "セッション完了テスト",
+          "depth_level": 1
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:21.986] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250711_015021_94e23faf\", \"theme\": \"セッション完了テスト\", \"depth_level\": 1}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986095",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "セッション完了テスト",
+      "depth_level": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:21.986] [DEBUG] [SESSION] Web検索クエリ生成開始 | Context: {\"theme\": \"セッション完了テスト\", \"depth_level\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986111",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "セッション完了テスト 最新情報",
+        "セッション完了テスト トレンド 2024",
+        "セッション完了テスト 技術動向"
+      ],
+      "total_queries": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:21.986] [INFO] [SESSION] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"セッション完了テスト 最新情報\", \"セッション完了テスト トレンド 2024\", \"セッション完了テスト 技術動向\"], \"total_queries\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986124",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 3,
+      "search_queries": [
+        "セッション完了テスト 最新情報",
+        "セッション完了テスト トレンド 2024",
+        "セッション完了テスト 技術動向"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:21.986] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 3, \"search_queries\": [\"セッション完了テスト 最新情報\", \"セッション完了テスト トレンド 2024\", \"セッション完了テスト 技術動向\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986145",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/3)",
+    "context": {
+      "query": "セッション完了テスト 最新情報",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:21.986] [INFO] [SESSION] 検索実行 (1/3) | Context: {\"query\": \"セッション完了テスト 最新情報\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986162",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "セッション完了テスト 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:21.986] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"セッション完了テスト 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:21.986408",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250711_015021_94e23faf",
+      "thread_id": 126727833511680
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727972442944,
+    "formatted_message": "[2025-07-11 01:50:21.986] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250711_015021_94e23faf\", \"thread_id\": 126727833511680}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654643",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "セッション完了テスト 最新情報",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.6684746742248535,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"セッション完了テスト 最新情報\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.6684746742248535, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654710",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_e8f297331b36",
+      "source_type": "google_search",
+      "url": "https://support.ptc.com/help/windchillrvs/r13.2.0.0/ja/IntegrityHelp/int-user/client_test_testing_process.mif-52.html",
+      "title_length": 16,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_e8f297331b36\", \"source_type\": \"google_search\", \"url\": \"https://support.ptc.com/help/windchillrvs/r13.2.0.0/ja/IntegrityHelp/int-user/client_test_testing_process.mif-52.html\", \"title_length\": 16, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654731",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_140d559666e1",
+      "source_type": "google_search",
+      "url": "https://help.zscaler.com/ja/zdx/viewing-diagnostics-session-results",
+      "title_length": 23,
+      "content_length": 83
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_140d559666e1\", \"source_type\": \"google_search\", \"url\": \"https://help.zscaler.com/ja/zdx/viewing-diagnostics-session-results\", \"title_length\": 23, \"content_length\": 83}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654744",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_0282a12bd038",
+      "source_type": "google_search",
+      "url": "https://learn.microsoft.com/ja-jp/azure/devops/test/insights-exploratory-testing?view=azure-devops",
+      "title_length": 41,
+      "content_length": 88
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_0282a12bd038\", \"source_type\": \"google_search\", \"url\": \"https://learn.microsoft.com/ja-jp/azure/devops/test/insights-exploratory-testing?view=azure-devops\", \"title_length\": 41, \"content_length\": 88}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654754",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_70d52f6e7cf3",
+      "source_type": "google_search",
+      "url": "https://support.docusign.com/s/articles/Common-signing-issues?language=ja&rsc_301",
+      "title_length": 22,
+      "content_length": 90
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_70d52f6e7cf3\", \"source_type\": \"google_search\", \"url\": \"https://support.docusign.com/s/articles/Common-signing-issues?language=ja&rsc_301\", \"title_length\": 22, \"content_length\": 90}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654765",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_e6bbf3d80430",
+      "source_type": "google_search",
+      "url": "https://developer.amazon.com/ja/docs/amazon-pay-api-v2/checkout-session.html",
+      "title_length": 29,
+      "content_length": 120
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_e6bbf3d80430\", \"source_type\": \"google_search\", \"url\": \"https://developer.amazon.com/ja/docs/amazon-pay-api-v2/checkout-session.html\", \"title_length\": 29, \"content_length\": 120}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654776",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: セッション完了テスト 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "セッション完了テスト 最新情報",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.6684746742248535,
+          "engine_used": "google",
+          "quota_remaining": 99
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [INFO] [SESSION] Web検索実行: セッション完了テスト 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"セッション完了テスト 最新情報\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.6684746742248535, \"engine_used\": \"google\", \"quota_remaining\": 99}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:22.654793",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/3)",
+    "context": {
+      "query": "セッション完了テスト 最新情報",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.6686313152313232,
+      "total_collected": 5,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:22.654] [INFO] [SESSION] 検索結果 (1/3) | Context: {\"query\": \"セッション完了テスト 最新情報\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.6686313152313232, \"total_collected\": 5, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:23.655874",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/3)",
+    "context": {
+      "query": "セッション完了テスト トレンド 2024",
+      "query_index": 1,
+      "current_sources_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:23.655] [INFO] [SESSION] 検索実行 (2/3) | Context: {\"query\": \"セッション完了テスト トレンド 2024\", \"query_index\": 1, \"current_sources_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:23.655961",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "セッション完了テスト トレンド 2024",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:23.655] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"セッション完了テスト トレンド 2024\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488562",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "セッション完了テスト トレンド 2024",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.832597017288208,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"セッション完了テスト トレンド 2024\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.832597017288208, \"quota_remaining\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488678",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_077015ccfe3c",
+      "source_type": "google_search",
+      "url": "https://it.expo.it-trend.jp/",
+      "title_length": 40,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_077015ccfe3c\", \"source_type\": \"google_search\", \"url\": \"https://it.expo.it-trend.jp/\", \"title_length\": 40, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488703",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_3cc651bfe651",
+      "source_type": "google_search",
+      "url": "https://zoom.us/ja/test",
+      "title_length": 22,
+      "content_length": 62
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_3cc651bfe651\", \"source_type\": \"google_search\", \"url\": \"https://zoom.us/ja/test\", \"title_length\": 22, \"content_length\": 62}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488719",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_a4f412241360",
+      "source_type": "google_search",
+      "url": "https://thinkit.co.jp/article/37718",
+      "title_length": 43,
+      "content_length": 106
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_a4f412241360\", \"source_type\": \"google_search\", \"url\": \"https://thinkit.co.jp/article/37718\", \"title_length\": 43, \"content_length\": 106}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488730",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_e95d7df840b6",
+      "source_type": "google_search",
+      "url": "https://archive.interop.jp/2024/shownet/session/",
+      "title_length": 50,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_e95d7df840b6\", \"source_type\": \"google_search\", \"url\": \"https://archive.interop.jp/2024/shownet/session/\", \"title_length\": 50, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488765",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_f237662b124d",
+      "source_type": "google_search",
+      "url": "https://click.zoom.us/zoomexperienceday-2024-summer",
+      "title_length": 45,
+      "content_length": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_f237662b124d\", \"source_type\": \"google_search\", \"url\": \"https://click.zoom.us/zoomexperienceday-2024-summer\", \"title_length\": 45, \"content_length\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488779",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: セッション完了テスト トレンド 2024 (5件)",
+    "context": {
+      "web_search": {
+        "query": "セッション完了テスト トレンド 2024",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.832597017288208,
+          "engine_used": "google",
+          "quota_remaining": 98
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [INFO] [SESSION] Web検索実行: セッション完了テスト トレンド 2024 (5件) | Context: {\"web_search\": {\"query\": \"セッション完了テスト トレンド 2024\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.832597017288208, \"engine_used\": \"google\", \"quota_remaining\": 98}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:24.488797",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/3)",
+    "context": {
+      "query": "セッション完了テスト トレンド 2024",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.8328385353088379,
+      "total_collected": 10,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:24.488] [INFO] [SESSION] 検索結果 (2/3) | Context: {\"query\": \"セッション完了テスト トレンド 2024\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.8328385353088379, \"total_collected\": 10, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:25.489890",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/3)",
+    "context": {
+      "query": "セッション完了テスト 技術動向",
+      "query_index": 2,
+      "current_sources_count": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:25.489] [INFO] [SESSION] 検索実行 (3/3) | Context: {\"query\": \"セッション完了テスト 技術動向\", \"query_index\": 2, \"current_sources_count\": 10}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:25.489981",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "セッション完了テスト 技術動向",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:25.489] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"セッション完了テスト 技術動向\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039193",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "セッション完了テスト 技術動向",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5492074489593506,
+      "quota_remaining": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"セッション完了テスト 技術動向\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5492074489593506, \"quota_remaining\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039262",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_f51ae58d8801",
+      "source_type": "google_search",
+      "url": "https://www.semiconjapan.org/jp/programs/2024-c703",
+      "title_length": 11,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_f51ae58d8801\", \"source_type\": \"google_search\", \"url\": \"https://www.semiconjapan.org/jp/programs/2024-c703\", \"title_length\": 11, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039283",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_467e7b5ea35b",
+      "source_type": "google_search",
+      "url": "https://www.youtube.com/c/InteropTokyo30",
+      "title_length": 23,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_467e7b5ea35b\", \"source_type\": \"google_search\", \"url\": \"https://www.youtube.com/c/InteropTokyo30\", \"title_length\": 23, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039296",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_ce39744af11c",
+      "source_type": "google_search",
+      "url": "https://www.it-book.co.jp/EMC/forum/2024/index.html",
+      "title_length": 28,
+      "content_length": 94
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_ce39744af11c\", \"source_type\": \"google_search\", \"url\": \"https://www.it-book.co.jp/EMC/forum/2024/index.html\", \"title_length\": 28, \"content_length\": 94}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039307",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_e02d9b00c579",
+      "source_type": "google_search",
+      "url": "https://www.thousandeyes.com/ja-jp/blog/innovations-support-hybrid-workers",
+      "title_length": 37,
+      "content_length": 86
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_e02d9b00c579\", \"source_type\": \"google_search\", \"url\": \"https://www.thousandeyes.com/ja-jp/blog/innovations-support-hybrid-workers\", \"title_length\": 37, \"content_length\": 86}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039316",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_2407e139c7fa",
+      "source_type": "google_search",
+      "url": "https://juas.or.jp/sq2024/",
+      "title_length": 27,
+      "content_length": 79
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_2407e139c7fa\", \"source_type\": \"google_search\", \"url\": \"https://juas.or.jp/sq2024/\", \"title_length\": 27, \"content_length\": 79}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039329",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: セッション完了テスト 技術動向 (5件)",
+    "context": {
+      "web_search": {
+        "query": "セッション完了テスト 技術動向",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5492074489593506,
+          "engine_used": "google",
+          "quota_remaining": 97
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [INFO] [SESSION] Web検索実行: セッション完了テスト 技術動向 (5件) | Context: {\"web_search\": {\"query\": \"セッション完了テスト 技術動向\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5492074489593506, \"engine_used\": \"google\", \"quota_remaining\": 97}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:26.039346",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/3)",
+    "context": {
+      "query": "セッション完了テスト 技術動向",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5493667125701904,
+      "total_collected": 15,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:26.039] [INFO] [SESSION] 検索結果 (3/3) | Context: {\"query\": \"セッション完了テスト 技術動向\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5493667125701904, \"total_collected\": 15, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:50:27.040475",
+    "session_id": "session_20250711_015021_94e23faf",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: preprocessing - started",
+    "context": {
+      "session_phase": {
+        "phase": "preprocessing",
+        "status": "started",
+        "progress": 0.35,
+        "details": {
+          "collected_sources_count": 15,
+          "preprocessing_thresholds": {
+            "relevance_min": 0.4,
+            "quality_min": 0.5,
+            "combined_min": 0.6
+          },
+          "max_detailed_analysis": 15
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126727833511680,
+    "formatted_message": "[2025-07-11 01:50:27.040] [INFO] [SESSION] セッションフェーズ: preprocessing - started | Context: {\"session_phase\": {\"phase\": \"preprocessing\", \"status\": \"started\", \"progress\": 0.35, \"details\": {\"collected_sources_count\": 15, \"preprocessing_thresholds\": {\"relevance_min\": 0.4, \"quality_min\": 0.5, \"combined_min\": 0.6}, \"max_detailed_analysis\": 15}}}"
+  }
+]

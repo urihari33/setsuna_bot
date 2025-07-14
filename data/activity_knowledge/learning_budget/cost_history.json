@@ -1,0 +1,32 @@
+{
+  "cost_records": [
+    {
+      "record_id": "cost_20250708_210708_d864065b",
+      "session_id": "session_20250708_210708_16a87a3e",
+      "timestamp": "2025-07-08 21:07:08.560750",
+      "api_type": "openai",
+      "operation": "text_analysis",
+      "input_tokens": 1000,
+      "output_tokens": 300,
+      "cost": 0.019,
+      "details": {
+        "model": "gpt-4-turbo"
+      }
+    },
+    {
+      "record_id": "cost_20250708_210708_bc70167a",
+      "session_id": "session_20250708_210708_16a87a3e",
+      "timestamp": "2025-07-08 21:07:08.563236",
+      "api_type": "search",
+      "operation": "web_search",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost": 0.015,
+      "details": {
+        "query": "AI音楽生成"
+      }
+    }
+  ],
+  "total_records": 2,
+  "last_updated": "2025-07-08T21:07:08.563301"
+}

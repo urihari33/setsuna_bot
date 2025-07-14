@@ -1,0 +1,59 @@
+{
+  "batch_id": "test_batch_low",
+  "timestamp": "2025-07-12T20:09:37.362561",
+  "total_execution_time": 4790.937185287476,
+  "total_cost": 8.399999999999999,
+  "success_rate": 1.0,
+  "average_quality": 0.34968868012015375,
+  "session_count": 3,
+  "session_results": [
+    {
+      "session_id": "session_20250712_200932_d638fa",
+      "query": "AI音楽生成の専門的技術分析",
+      "status": "success",
+      "execution_time": 3153.533034932834,
+      "quality_score": 0.38535197401934734,
+      "cost": 2.8,
+      "themes_found": [
+        "将来性",
+        "リスク要因",
+        "課題解決"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200932_27e9e7",
+      "query": "音楽AI技術の最新研究動向",
+      "status": "success",
+      "execution_time": 3582.9128444073813,
+      "quality_score": 0.29950414489936766,
+      "cost": 2.8,
+      "themes_found": [
+        "課題解決",
+        "リスク要因",
+        "市場動向",
+        "将来性",
+        "技術革新",
+        "競合分析"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200932_1f1dd9",
+      "query": "機械学習作曲システムの詳細実装",
+      "status": "success",
+      "execution_time": 4785.791310937949,
+      "quality_score": 0.3642099214417462,
+      "cost": 2.8,
+      "themes_found": [
+        "実用化",
+        "競合分析",
+        "課題解決",
+        "ユーザビリティ",
+        "将来性",
+        "スケーラビリティ"
+      ],
+      "error": null
+    }
+  ]
+}

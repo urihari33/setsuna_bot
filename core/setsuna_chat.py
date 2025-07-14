@@ -19,7 +19,7 @@ from core.conversation_context_builder import ConversationContextBuilder
 from logging_system import get_logger, get_monitor
 from character.managers.prompt_manager import PromptManager
 from character.managers.character_consistency import CharacterConsistencyChecker
-from test_memory_system import TestMemorySystem
+from memory_system import SimpleMemorySystem
 from enhanced_memory.personality_memory import PersonalityMemory
 from enhanced_memory.collaboration_memory import CollaborationMemory
 from enhanced_memory.memory_integration import MemoryIntegrationSystem
@@ -81,7 +81,7 @@ class SetsunaChat:
         self.memory_mode = memory_mode
         try:
             if memory_mode == "test":
-                self.memory_system = TestMemorySystem()
+                self.memory_system = SimpleMemorySystem()
                 print("[チャット] ✅ テスト用記憶システム初期化完了")
             else:
                 self.memory_system = SimpleMemorySystem()
@@ -133,6 +133,84 @@ class SetsunaChat:
         except Exception as e:
             print(f"[チャット] ⚠️ YouTube知識統合システム初期化失敗: {e}")
             self.context_builder = None
+        
+        # Phase 4: 会話知識プロバイダー初期化
+        try:
+            from core.conversation_knowledge_provider import ConversationKnowledgeProvider
+            self.knowledge_provider = ConversationKnowledgeProvider()
+            print("[チャット] ✅ 会話知識プロバイダー初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 会話知識プロバイダー初期化失敗: {e}")
+            self.knowledge_provider = None
+        
+        # Phase B-1: 長期プロジェクト記憶システム初期化
+        try:
+            from core.long_term_project_memory import LongTermProjectMemory
+            self.long_term_memory = LongTermProjectMemory(
+                project_system=self.project_system,
+                memory_integration=self.memory_integration,
+                collaboration_memory=self.collaboration_memory,
+                personality_memory=self.personality_memory,
+                memory_mode=memory_mode
+            )
+            print("[チャット] ✅ 長期プロジェクト記憶システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 長期プロジェクト記憶システム初期化失敗: {e}")
+            self.long_term_memory = None
+        
+        # Phase B-2: 会話プロジェクト文脈システム初期化
+        try:
+            from core.conversation_project_context import ConversationProjectContext
+            self.conversation_project_context = ConversationProjectContext(
+                long_term_memory=self.long_term_memory,
+                memory_integration=self.memory_integration,
+                memory_mode=memory_mode
+            )
+            print("[チャット] ✅ 会話プロジェクト文脈システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 会話プロジェクト文脈システム初期化失敗: {e}")
+            self.conversation_project_context = None
+        
+        # === 新しい主体性強化システム初期化 ===
+        try:
+            from core.preference_analyzer import PreferenceAnalyzer
+            self.preference_analyzer = PreferenceAnalyzer()
+            print("[チャット] ✅ 好み推測システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 好み推測システム初期化失敗: {e}")
+            self.preference_analyzer = None
+        
+        try:
+            from core.database_preference_mapper import DatabasePreferenceMapper
+            self.preference_mapper = DatabasePreferenceMapper()
+            print("[チャット] ✅ 価値観マッピングシステム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 価値観マッピングシステム初期化失敗: {e}")
+            self.preference_mapper = None
+        
+        try:
+            from core.opinion_generator import OpinionGenerator
+            self.opinion_generator = OpinionGenerator()
+            print("[チャット] ✅ 意見・提案生成システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 意見・提案生成システム初期化失敗: {e}")
+            self.opinion_generator = None
+        
+        try:
+            from core.proactive_response_engine import ProactiveResponseEngine
+            self.proactive_engine = ProactiveResponseEngine()
+            print("[チャット] ✅ プロアクティブ応答システム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ プロアクティブ応答システム初期化失敗: {e}")
+            self.proactive_engine = None
+        
+        try:
+            from core.personality_consistency_checker import PersonalityConsistencyChecker
+            self.new_consistency_checker = PersonalityConsistencyChecker()
+            print("[チャット] ✅ 新一貫性チェックシステム初期化完了")
+        except Exception as e:
+            print(f"[チャット] ⚠️ 新一貫性チェックシステム初期化失敗: {e}")
+            self.new_consistency_checker = None
         
         print("[チャット] ✅ せつなチャットシステム初期化完了")
     
@@ -246,10 +324,28 @@ class SetsunaChat:
                 "input_length": len(user_input)
             })
             
-            # Stage 1: 動画関連判定
+            # === Stage 0: プロアクティブ応答判定 ===
+            proactive_suggestion = self._check_proactive_opportunity(user_input, mode)
+            
+            # === Stage 0.5: 会話コンテキスト構築 ===
+            conversation_context = self._build_conversation_context(user_input, mode)
+            
+            # Stage 1: 知識コンテキスト取得（Phase 4統合）
+            knowledge_context = None
             is_video_query = False
             video_context_data = None
             
+            # Phase 4: 知識プロバイダーによるコンテキスト取得
+            if self.knowledge_provider:
+                try:
+                    knowledge_context = self.knowledge_provider.get_knowledge_context(user_input, mode)
+                    print(f"[チャット] 🧠 知識コンテキスト取得: {knowledge_context['has_knowledge']}")
+                    if knowledge_context.get("processing_time"):
+                        print(f"[チャット] ⏱️ 知識処理時間: {knowledge_context['processing_time']:.2f}秒")
+                except Exception as e:
+                    print(f"[チャット] ⚠️ 知識コンテキスト取得エラー: {e}")
+            
+            # 既存のYouTube動画関連処理（互換性維持）
             if self.context_builder:
                 is_video_query = self.context_builder.is_video_related_query(user_input)
                 print(f"[チャット] 📊 動画関連判定結果: {is_video_query}")
@@ -289,24 +385,63 @@ class SetsunaChat:
                 "content": user_input
             })
             
+            # Stage 1.5: プロジェクト文脈分析
+            project_context = ""
+            project_analysis = None
+            
+            if self.conversation_project_context and mode == "full_search":
+                print(f"[チャット] 🎯 プロジェクト文脈分析実行中...")
+                try:
+                    project_analysis = self.conversation_project_context.analyze_project_relevance(user_input, "")
+                    project_relevance = project_analysis.get("overall_relevance", 0.0)
+                    
+                    if project_relevance > 0.3:
+                        project_context = self.conversation_project_context.get_current_project_context()
+                        print(f"[チャット] 🎯 プロジェクト関連度: {project_relevance:.2f}")
+                    else:
+                        print(f"[チャット] 🚫 プロジェクト関連度低: {project_relevance:.2f}")
+                        
+                except Exception as e:
+                    print(f"[チャット] ⚠️ プロジェクト文脈分析エラー: {e}")
+            elif mode == "fast_response":
+                print(f"[チャット] ⚡ 高速モード: プロジェクト分析スキップ")
+            
             # コンテキスト分析
             context_info = self._analyze_context(user_input)
             
-            # Stage 2: GPT応答生成（動的プロンプトシステム）
+            # Stage 2: GPT応答生成（動的プロンプトシステム + Phase 4知識統合）
             # 新しいプロンプト管理システムを使用
             if self.prompt_manager:
                 context_info_dict = {
                     "is_video_query": is_video_query,
                     "mode": mode,
-                    "user_input": user_input
+                    "user_input": user_input,
+                    "project_context": project_context,
+                    "project_relevance": project_analysis.get("overall_relevance", 0.0) if project_analysis else 0.0
                 }
                 if is_video_query and video_context:
                     context_info_dict["video_context"] = video_context
+                
+                # Phase 4: 知識コンテキストを追加
+                if knowledge_context and knowledge_context.get("has_knowledge"):
+                    context_info_dict["knowledge_context"] = knowledge_context
+                
+                # === Stage 1.7: 主体性判定・意見生成コンテキスト ===
+                opinion_context = self._generate_opinion_context(user_input, context_info_dict)
+                if opinion_context:
+                    context_info_dict["opinion_context"] = opinion_context
                 
                 system_prompt = self.prompt_manager.generate_dynamic_prompt(mode, context_info_dict)
             else:
                 # フォールバック
                 system_prompt = self.fallback_character_prompt
+            
+            # Phase 4: 知識コンテキスト注入
+            if knowledge_context and knowledge_context.get("has_knowledge"):
+                context_injection = knowledge_context.get("context_injection_text", "")
+                if context_injection:
+                    system_prompt += f"\n\n【検索・分析知識】\n{context_injection}"
+                    print(f"[チャット] 🧠 知識コンテキスト注入完了")
             
             # 動画関連の場合、取得済みのコンテキストを追加
             if is_video_query and video_context:
@@ -348,11 +483,15 @@ class SetsunaChat:
                 if integrated_context:
                     system_prompt += f"\n\n【統合記憶分析】\n{integrated_context}"
             
-            # プロジェクトコンテキストを追加
-            if self.project_system:
-                project_context = self.project_system.get_project_context()
-                if project_context:
-                    system_prompt += f"\n\n【創作プロジェクト】\n{project_context}"
+            # 長期プロジェクト文脈を追加
+            if project_context:
+                system_prompt += f"\n\n【長期プロジェクト文脈】\n{project_context}"
+            
+            # 基本プロジェクト情報も追加（プロジェクト文脈がない場合）
+            if not project_context and self.project_system:
+                basic_project_context = self.project_system.get_project_context()
+                if basic_project_context:
+                    system_prompt += f"\n\n【創作プロジェクト】\n{basic_project_context}"
             
             if context_info:
                 system_prompt += f"\n\n【現在の会話コンテキスト】\n{context_info}"
@@ -374,29 +513,29 @@ class SetsunaChat:
                 start_time = datetime.now()
                 
                 if mode == "ultra_fast":
-                    # 超高速モード: 最短レスポンス、最短タイムアウト
+                    # 超高速モード: 短い完結応答（テスト結果に基づく最適化）
                     response = self.client.chat.completions.create(
                         model="gpt-4-turbo",
                         messages=messages,
-                        max_tokens=50,  # 最短（瞬間応答）
+                        max_tokens=90,  # せつなの短い自然な応答に最適
                         temperature=0.3,  # 最安定
                         timeout=5  # 最短タイムアウト
                     )
                 elif mode == "fast_response":
-                    # 高速モード: より短いレスポンス、短いタイムアウト
+                    # 高速モード: せつなの標準的な会話長
                     response = self.client.chat.completions.create(
                         model="gpt-4-turbo",
                         messages=messages,
-                        max_tokens=80,  # さらに短縮（100→80）
+                        max_tokens=110,  # 完結性とキャラクター性の両立
                         temperature=0.5,  # より安定したレスポンス
                         timeout=10  # 短縮（15→10秒）
                     )
                 else:
-                    # 通常モード: 最適化設定
+                    # 通常モード: せつなの自然で完全な表現
                     response = self.client.chat.completions.create(
                         model="gpt-4-turbo",
                         messages=messages,
-                        max_tokens=120,  # 150→120に短縮
+                        max_tokens=140,  # 自然で完結、文章途中切断を防止
                         temperature=0.6,  # 0.7→0.6に調整
                         timeout=30  # APIタイムアウト時間（元に戻す）
                     )
@@ -416,6 +555,33 @@ class SetsunaChat:
                                 print(f"[チャット] 主な問題: {', '.join(consistency_result['issues'][:2])}")
                     except Exception as e:
                         print(f"[チャット] ⚠️ 一貫性チェックエラー: {e}")
+                
+                # === Stage 2.5: 新一貫性チェック・修正 ===
+                if self.new_consistency_checker:
+                    try:
+                        consistency_result = self.new_consistency_checker.check_response_consistency(
+                            user_input, setsuna_response, conversation_context
+                        )
+                        
+                        if consistency_result.get("needs_correction", False):
+                            print(f"[チャット] 🔧 主体性一貫性修正実行中...")
+                            original_response = setsuna_response
+                            setsuna_response = self.new_consistency_checker.correct_response_if_needed(
+                                setsuna_response, consistency_result
+                            )
+                            if setsuna_response != original_response:
+                                print(f"[チャット] ✅ 応答修正完了")
+                        
+                        print(f"[チャット] 📊 主体性スコア: {consistency_result.get('overall_score', 0):.2f}")
+                        
+                    except Exception as e:
+                        print(f"[チャット] ⚠️ 新一貫性チェックエラー: {e}")
+                
+                # === Stage 2.7: プロアクティブ要素の追加 ===
+                if proactive_suggestion:
+                    setsuna_response = self._enhance_response_with_proactive_elements(
+                        setsuna_response, proactive_suggestion
+                    )
                 
                 # 応答時間計算
                 response_time = (datetime.now() - start_time).total_seconds()
@@ -467,6 +633,35 @@ class SetsunaChat:
             # プロジェクト関連会話を分析
             if self.project_system:
                 self.project_system.analyze_conversation_for_projects(user_input, setsuna_response)
+            
+            # 会話プロジェクト文脈を更新
+            if self.conversation_project_context and not cached_response:
+                try:
+                    # プロジェクト分析結果を使って文脈更新
+                    update_success = self.conversation_project_context.update_conversation_context(
+                        user_input, setsuna_response, project_analysis
+                    )
+                    if update_success:
+                        print("[プロジェクト文脈] ✅ 会話文脈更新完了")
+                        # 文脈データを保存
+                        self.conversation_project_context.save_context_data()
+                    
+                    # 長期プロジェクト記憶への記録
+                    if self.long_term_memory and project_analysis and project_analysis.get("overall_relevance", 0) > 0.5:
+                        # プロジェクト関連の会話として記憶に記録
+                        active_matches = project_analysis.get("active_project_matches", [])
+                        for match in active_matches[:1]:  # 最も関連度の高いプロジェクトのみ
+                            project_id = match["project_id"]
+                            
+                            # 文脈スナップショット保存
+                            snapshot_success = self.long_term_memory.capture_context_snapshot(
+                                project_id, "conversation"
+                            )
+                            if snapshot_success:
+                                print(f"[長期記憶] ✅ プロジェクト文脈スナップショット保存: {project_id}")
+                
+                except Exception as e:
+                    print(f"[プロジェクト文脈] ⚠️ 文脈更新エラー: {e}")
             
             return setsuna_response
             
@@ -1086,3 +1281,183 @@ if __name__ == "__main__":
         print("OPENAI_API_KEY が正しく設定されているか確認してください")
     
     print("\nせつなチャットテスト完了")
+
+# === 新しい主体性強化システム用メソッド（SetsunaChat クラス外） ===
+# これらのメソッドをSetsunaChat クラス内に追加
+
+def add_proactivity_methods_to_setsuna_chat():
+    """SetsunaChat クラスに主体性強化メソッドを追加する関数"""
+    
+    def _check_proactive_opportunity(self, user_input: str, mode: str) -> dict:
+        """プロアクティブ応答の機会をチェック"""
+        try:
+            if not self.proactive_engine or mode == "fast_response":
+                return None
+            
+            # 会話コンテキストを構築
+            conversation_context = {
+                "last_user_input": user_input,
+                "conversation_history": self.conversation_history[-5:],  # 最新5件
+                "music_mentioned": any(keyword in user_input.lower() 
+                                     for keyword in ["楽曲", "音楽", "歌", "アーティスト"]),
+                "technical_discussion": any(keyword in user_input.lower() 
+                                          for keyword in ["技術", "分析", "構成", "制作"]),
+                "creative_context": any(keyword in user_input.lower() 
+                                      for keyword in ["映像", "ビジュアル", "創作", "アイデア"]),
+                "collaborative_context": any(keyword in user_input.lower() 
+                                           for keyword in ["一緒", "共同", "配信", "共有"])
+            }
+            
+            # プロアクティブ応答判定
+            suggestion_decision = self.proactive_engine.should_suggest_proactive_response(conversation_context)
+            
+            if suggestion_decision.get("should_suggest", False):
+                # 具体的な提案を生成
+                proactive_suggestion = self.proactive_engine.generate_proactive_suggestion(
+                    conversation_context, suggestion_decision.get("suggested_type")
+                )
+                return proactive_suggestion
+            
+            return None
+            
+        except Exception as e:
+            print(f"[チャット] ⚠️ プロアクティブ判定エラー: {e}")
+            return None
+    
+    def _build_conversation_context(self, user_input: str, mode: str) -> dict:
+        """会話コンテキストを構築"""
+        try:
+            context = {
+                "user_input": user_input,
+                "mode": mode,
+                "conversation_length": len(self.conversation_history),
+                "recent_topics": [],
+                "emotional_context": "neutral"
+            }
+            
+            # 最近の話題を抽出
+            recent_messages = self.conversation_history[-6:]  # 最新3往復
+            for msg in recent_messages:
+                if msg.get("role") == "user":
+                    content = msg.get("content", "")
+                    # 簡単なキーワード抽出
+                    if any(keyword in content.lower() for keyword in ["楽曲", "音楽", "歌"]):
+                        context["recent_topics"].append("music")
+                    if any(keyword in content.lower() for keyword in ["映像", "制作", "創作"]):
+                        context["recent_topics"].append("creative")
+                    if any(keyword in content.lower() for keyword in ["技術", "分析"]):
+                        context["recent_topics"].append("technical")
+            
+            return context
+            
+        except Exception as e:
+            print(f"[チャット] ⚠️ 会話コンテキスト構築エラー: {e}")
+            return {"user_input": user_input, "mode": mode}
+    
+    def _generate_opinion_context(self, user_input: str, context_info_dict: dict) -> dict:
+        """意見生成コンテキストを生成"""
+        try:
+            if not self.opinion_generator:
+                return None
+            
+            # ユーザー入力から提案や質問を検出
+            has_proposal = any(keyword in user_input.lower() 
+                             for keyword in ["しよう", "やろう", "どう", "いかが", "してみ"])
+            has_question = any(keyword in user_input.lower() 
+                             for keyword in ["？", "?", "教えて", "どんな", "なに"])
+            
+            if has_proposal or has_question:
+                # 意見生成の準備
+                conversation_context = {
+                    "last_user_input": user_input,
+                    "music_mentioned": context_info_dict.get("is_video_query", False),
+                    "technical_discussion": "技術" in user_input.lower() or "分析" in user_input.lower(),
+                    "creative_context": any(keyword in user_input.lower() 
+                                          for keyword in ["映像", "創作", "制作"]),
+                    "has_proposal": has_proposal,
+                    "has_question": has_question
+                }
+                
+                # 意見を生成
+                opinion_result = self.opinion_generator.generate_opinion(user_input, conversation_context)
+                
+                if opinion_result and opinion_result.get("opinion"):
+                    return {
+                        "generated_opinion": opinion_result["opinion"],
+                        "opinion_type": opinion_result.get("opinion_type", "general"),
+                        "confidence": opinion_result.get("confidence", 0.5),
+                        "reasoning": opinion_result.get("reasoning", "")
+                    }
+            
+            return None
+            
+        except Exception as e:
+            print(f"[チャット] ⚠️ 意見生成コンテキストエラー: {e}")
+            return None
+    
+    def _enhance_response_with_proactive_elements(self, response: str, proactive_suggestion: dict) -> str:
+        """応答にプロアクティブ要素を追加"""
+        try:
+            if not proactive_suggestion:
+                return response
+            
+            suggestion_content = proactive_suggestion.get("suggestion", "")
+            suggestion_type = proactive_suggestion.get("type", "")
+            
+            if suggestion_content:
+                # 提案タイプに応じて追加方法を調整
+                if suggestion_type == "creative_project_proposal":
+                    enhanced_response = f"{response} {suggestion_content}"
+                elif suggestion_type == "technical_exploration":
+                    enhanced_response = f"{response} ところで、{suggestion_content}"
+                else:
+                    enhanced_response = f"{response} {suggestion_content}"
+                
+                # 長すぎる場合は元の応答を返す
+                if len(enhanced_response) > 200:
+                    return response
+                
+                return enhanced_response
+            
+            return response
+            
+        except Exception as e:
+            print(f"[チャット] ⚠️ プロアクティブ要素追加エラー: {e}")
+            return response
+    
+    def get_proactivity_stats(self) -> dict:
+        """主体性システムの統計情報を取得"""
+        stats = {
+            "proactive_suggestions": 0,
+            "opinion_generations": 0,
+            "consistency_checks": 0,
+            "average_proactivity_score": 0.0
+        }
+        
+        try:
+            if self.proactive_engine and hasattr(self.proactive_engine, 'suggestion_history'):
+                stats["proactive_suggestions"] = len(self.proactive_engine.suggestion_history)
+            
+            if self.new_consistency_checker and hasattr(self.new_consistency_checker, 'check_history'):
+                stats["consistency_checks"] = len(self.new_consistency_checker.check_history)
+                
+                # 平均スコアを計算
+                recent_checks = self.new_consistency_checker.check_history[-10:]
+                if recent_checks:
+                    scores = [check["result"]["overall_score"] for check in recent_checks]
+                    stats["average_proactivity_score"] = sum(scores) / len(scores)
+            
+        except Exception as e:
+            print(f"[チャット] ⚠️ 主体性統計取得エラー: {e}")
+        
+        return stats
+    
+    # メソッドをSetsunaChat クラスに追加
+    SetsunaChat._check_proactive_opportunity = _check_proactive_opportunity
+    SetsunaChat._build_conversation_context = _build_conversation_context
+    SetsunaChat._generate_opinion_context = _generate_opinion_context
+    SetsunaChat._enhance_response_with_proactive_elements = _enhance_response_with_proactive_elements
+    SetsunaChat.get_proactivity_stats = get_proactivity_stats
+
+# メソッドを追加
+add_proactivity_methods_to_setsuna_chat()

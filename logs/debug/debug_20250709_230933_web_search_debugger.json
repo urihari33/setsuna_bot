@@ -1,0 +1,242 @@
+[
+  {
+    "timestamp": "2025-07-09T23:09:33.813773",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250709_230933",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:33.813] [INFO] [WEB_SEARCH_DEBUGGER] デバッグログシステム初期化完了: debug_20250709_230933"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:33.813820",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "INFO",
+    "message": "WebSearchDebugger初期化完了",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:33.813] [INFO] [WEB_SEARCH_DEBUGGER] WebSearchDebugger初期化完了"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:33.813861",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "INFO",
+    "message": "DuckDuckGo API テスト開始: AI技術 最新情報",
+    "context": {
+      "query": "AI技術 最新情報",
+      "search_url": "https://api.duckduckgo.com/?q=AI%E6%8A%80%E8%A1%93%20%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1&format=json&no_html=1"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:33.813] [INFO] [WEB_SEARCH_DEBUGGER] DuckDuckGo API テスト開始: AI技術 最新情報 | Context: {\"query\": \"AI技術 最新情報\", \"search_url\": \"https://api.duckduckgo.com/?q=AI%E6%8A%80%E8%A1%93%20%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1&format=json&no_html=1\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:34.315194",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "DEBUG",
+    "message": "HTTP レスポンス受信",
+    "context": {
+      "status_code": 202,
+      "response_time": 0.5012528896331787,
+      "content_length": 1252,
+      "content_type": "application/x-javascript",
+      "response_headers": {
+        "Server": "nginx",
+        "Date": "Wed, 09 Jul 2025 14:09:35 GMT",
+        "Content-Type": "application/x-javascript",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Server-Timing": "total;dur=87;desc=\"Backend Total [n]\"",
+        "X-Robots-Tag": "noindex",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "origin",
+        "Expect-CT": "max-age=0"
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:34.315] [DEBUG] [WEB_SEARCH_DEBUGGER] HTTP レスポンス受信 | Context: {\"status_code\": 202, \"response_time\": 0.5012528896331787, \"content_length\": 1252, \"content_type\": \"application/x-javascript\", \"response_headers\": {\"Server\": \"nginx\", \"Date\": \"Wed, 09 Jul 2025 14:09:35 GMT\", \"Content-Type\": \"application/x-javascript\", \"Transfer-Encoding\": \"chunked\", \"Connection\": \"keep-alive\", \"Access-Control-Allow-Origin\": \"*\", \"Server-Timing\": \"total;dur=87;desc=\\\"Backend Total [n]\\\"\", \"X-Robots-Tag\": \"noindex\", \"Strict-Transport-Security\": \"max-age=31536000\", \"Permissions-Policy\": \"interest-cohort=()\", \"Content-Security-Policy\": \"default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;\", \"X-Frame-Options\": \"SAMEORIGIN\", \"X-XSS-Protection\": \"1;mode=block\", \"X-Content-Type-Options\": \"nosniff\", \"Referrer-Policy\": \"origin\", \"Expect-CT\": \"max-age=0\"}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:34.315547",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "WARNING",
+    "message": "HTTP エラーレスポンス",
+    "context": {
+      "status_code": 202,
+      "response_text": "{\"Abstract\":\"\",\"AbstractSource\":\"\",\"AbstractText\":\"\",\"AbstractURL\":\"\",\"Answer\":\"\",\"AnswerType\":\"\",\"Definition\":\"\",\"DefinitionSource\":\"\",\"DefinitionURL\":\"\",\"Entity\":\"\",\"Heading\":\"\",\"Image\":\"\",\"ImageHei",
+      "response_headers": {
+        "Server": "nginx",
+        "Date": "Wed, 09 Jul 2025 14:09:35 GMT",
+        "Content-Type": "application/x-javascript",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Server-Timing": "total;dur=87;desc=\"Backend Total [n]\"",
+        "X-Robots-Tag": "noindex",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "origin",
+        "Expect-CT": "max-age=0"
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:34.315] [WARNING] [WEB_SEARCH_DEBUGGER] HTTP エラーレスポンス | Context: {\"status_code\": 202, \"response_text\": \"{\\\"Abstract\\\":\\\"\\\",\\\"AbstractSource\\\":\\\"\\\",\\\"AbstractText\\\":\\\"\\\",\\\"AbstractURL\\\":\\\"\\\",\\\"Answer\\\":\\\"\\\",\\\"AnswerType\\\":\\\"\\\",\\\"Definition\\\":\\\"\\\",\\\"DefinitionSource\\\":\\\"\\\",\\\"DefinitionURL\\\":\\\"\\\",\\\"Entity\\\":\\\"\\\",\\\"Heading\\\":\\\"\\\",\\\"Image\\\":\\\"\\\",\\\"ImageHei\", \"response_headers\": {\"Server\": \"nginx\", \"Date\": \"Wed, 09 Jul 2025 14:09:35 GMT\", \"Content-Type\": \"application/x-javascript\", \"Transfer-Encoding\": \"chunked\", \"Connection\": \"keep-alive\", \"Access-Control-Allow-Origin\": \"*\", \"Server-Timing\": \"total;dur=87;desc=\\\"Backend Total [n]\\\"\", \"X-Robots-Tag\": \"noindex\", \"Strict-Transport-Security\": \"max-age=31536000\", \"Permissions-Policy\": \"interest-cohort=()\", \"Content-Security-Policy\": \"default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;\", \"X-Frame-Options\": \"SAMEORIGIN\", \"X-XSS-Protection\": \"1;mode=block\", \"X-Content-Type-Options\": \"nosniff\", \"Referrer-Policy\": \"origin\", \"Expect-CT\": \"max-age=0\"}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:35.316770",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "INFO",
+    "message": "DuckDuckGo API テスト開始: Python プログラミング",
+    "context": {
+      "query": "Python プログラミング",
+      "search_url": "https://api.duckduckgo.com/?q=Python%20%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&format=json&no_html=1"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:35.316] [INFO] [WEB_SEARCH_DEBUGGER] DuckDuckGo API テスト開始: Python プログラミング | Context: {\"query\": \"Python プログラミング\", \"search_url\": \"https://api.duckduckgo.com/?q=Python%20%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&format=json&no_html=1\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:35.788733",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "DEBUG",
+    "message": "HTTP レスポンス受信",
+    "context": {
+      "status_code": 202,
+      "response_time": 0.4719808101654053,
+      "content_length": 1252,
+      "content_type": "application/x-javascript",
+      "response_headers": {
+        "Server": "nginx",
+        "Date": "Wed, 09 Jul 2025 14:09:37 GMT",
+        "Content-Type": "application/x-javascript",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Server-Timing": "total;dur=53;desc=\"Backend Total [n]\"",
+        "X-Robots-Tag": "noindex",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "origin",
+        "Expect-CT": "max-age=0"
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:35.788] [DEBUG] [WEB_SEARCH_DEBUGGER] HTTP レスポンス受信 | Context: {\"status_code\": 202, \"response_time\": 0.4719808101654053, \"content_length\": 1252, \"content_type\": \"application/x-javascript\", \"response_headers\": {\"Server\": \"nginx\", \"Date\": \"Wed, 09 Jul 2025 14:09:37 GMT\", \"Content-Type\": \"application/x-javascript\", \"Transfer-Encoding\": \"chunked\", \"Connection\": \"keep-alive\", \"Access-Control-Allow-Origin\": \"*\", \"Server-Timing\": \"total;dur=53;desc=\\\"Backend Total [n]\\\"\", \"X-Robots-Tag\": \"noindex\", \"Strict-Transport-Security\": \"max-age=31536000\", \"Permissions-Policy\": \"interest-cohort=()\", \"Content-Security-Policy\": \"default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;\", \"X-Frame-Options\": \"SAMEORIGIN\", \"X-XSS-Protection\": \"1;mode=block\", \"X-Content-Type-Options\": \"nosniff\", \"Referrer-Policy\": \"origin\", \"Expect-CT\": \"max-age=0\"}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:35.789050",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "WARNING",
+    "message": "HTTP エラーレスポンス",
+    "context": {
+      "status_code": 202,
+      "response_text": "{\"Abstract\":\"\",\"AbstractSource\":\"\",\"AbstractText\":\"\",\"AbstractURL\":\"\",\"Answer\":\"\",\"AnswerType\":\"\",\"Definition\":\"\",\"DefinitionSource\":\"\",\"DefinitionURL\":\"\",\"Entity\":\"\",\"Heading\":\"\",\"Image\":\"\",\"ImageHei",
+      "response_headers": {
+        "Server": "nginx",
+        "Date": "Wed, 09 Jul 2025 14:09:37 GMT",
+        "Content-Type": "application/x-javascript",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Server-Timing": "total;dur=53;desc=\"Backend Total [n]\"",
+        "X-Robots-Tag": "noindex",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "origin",
+        "Expect-CT": "max-age=0"
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:35.789] [WARNING] [WEB_SEARCH_DEBUGGER] HTTP エラーレスポンス | Context: {\"status_code\": 202, \"response_text\": \"{\\\"Abstract\\\":\\\"\\\",\\\"AbstractSource\\\":\\\"\\\",\\\"AbstractText\\\":\\\"\\\",\\\"AbstractURL\\\":\\\"\\\",\\\"Answer\\\":\\\"\\\",\\\"AnswerType\\\":\\\"\\\",\\\"Definition\\\":\\\"\\\",\\\"DefinitionSource\\\":\\\"\\\",\\\"DefinitionURL\\\":\\\"\\\",\\\"Entity\\\":\\\"\\\",\\\"Heading\\\":\\\"\\\",\\\"Image\\\":\\\"\\\",\\\"ImageHei\", \"response_headers\": {\"Server\": \"nginx\", \"Date\": \"Wed, 09 Jul 2025 14:09:37 GMT\", \"Content-Type\": \"application/x-javascript\", \"Transfer-Encoding\": \"chunked\", \"Connection\": \"keep-alive\", \"Access-Control-Allow-Origin\": \"*\", \"Server-Timing\": \"total;dur=53;desc=\\\"Backend Total [n]\\\"\", \"X-Robots-Tag\": \"noindex\", \"Strict-Transport-Security\": \"max-age=31536000\", \"Permissions-Policy\": \"interest-cohort=()\", \"Content-Security-Policy\": \"default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;\", \"X-Frame-Options\": \"SAMEORIGIN\", \"X-XSS-Protection\": \"1;mode=block\", \"X-Content-Type-Options\": \"nosniff\", \"Referrer-Policy\": \"origin\", \"Expect-CT\": \"max-age=0\"}}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:36.790199",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "INFO",
+    "message": "DuckDuckGo API テスト開始: 機械学習 トレンド 2024",
+    "context": {
+      "query": "機械学習 トレンド 2024",
+      "search_url": "https://api.duckduckgo.com/?q=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%20%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89%202024&format=json&no_html=1"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:36.790] [INFO] [WEB_SEARCH_DEBUGGER] DuckDuckGo API テスト開始: 機械学習 トレンド 2024 | Context: {\"query\": \"機械学習 トレンド 2024\", \"search_url\": \"https://api.duckduckgo.com/?q=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%20%E3%83%88%E3%83%AC%E3%83%B3%E3%83%89%202024&format=json&no_html=1\"}"
+  },
+  {
+    "timestamp": "2025-07-09T23:09:37.226955",
+    "session_id": "debug_20250709_230933",
+    "component": "WEB_SEARCH_DEBUGGER",
+    "level": "DEBUG",
+    "message": "HTTP レスポンス受信",
+    "context": {
+      "status_code": 202,
+      "response_time": 0.43676185607910156,
+      "content_length": 1252,
+      "content_type": "application/x-javascript",
+      "response_headers": {
+        "Server": "nginx",
+        "Date": "Wed, 09 Jul 2025 14:09:38 GMT",
+        "Content-Type": "application/x-javascript",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Server-Timing": "total;dur=64;desc=\"Backend Total [n]\"",
+        "X-Robots-Tag": "noindex",
+        "Strict-Transport-Security": "max-age=31536000",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "origin",
+        "Expect-CT": "max-age=0"
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 125450711778112,
+    "formatted_message": "[2025-07-09 23:09:37.226] [DEBUG] [WEB_SEARCH_DEBUGGER] HTTP レスポンス受信 | Context: {\"status_code\": 202, \"response_time\": 0.43676185607910156, \"content_length\": 1252, \"content_type\": \"application/x-javascript\", \"response_headers\": {\"Server\": \"nginx\", \"Date\": \"Wed, 09 Jul 2025 14:09:38 GMT\", \"Content-Type\": \"application/x-javascript\", \"Transfer-Encoding\": \"chunked\", \"Connection\": \"keep-alive\", \"Access-Control-Allow-Origin\": \"*\", \"Server-Timing\": \"total;dur=64;desc=\\\"Backend Total [n]\\\"\", \"X-Robots-Tag\": \"noindex\", \"Strict-Transport-Security\": \"max-age=31536000\", \"Permissions-Policy\": \"interest-cohort=()\", \"Content-Security-Policy\": \"default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;\", \"X-Frame-Options\": \"SAMEORIGIN\", \"X-XSS-Protection\": \"1;mode=block\", \"X-Content-Type-Options\": \"nosniff\", \"Referrer-Policy\": \"origin\", \"Expect-CT\": \"max-age=0\"}}"
+  }
+]

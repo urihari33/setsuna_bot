@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2025-07-09T23:12:48.126037",
+    "session_id": "test_session",
+    "component": "DEBUG_TEST",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: test_session",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134063294894912,
+    "formatted_message": "[2025-07-09 23:12:48.126] [INFO] [DEBUG_TEST] デバッグログシステム初期化完了: test_session"
+  }
+]

@@ -1,0 +1,733 @@
+[
+  {
+    "timestamp": "2025-07-11T02:07:43.583673",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250711_020743_f1c0edd6",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086421369664,
+    "formatted_message": "[2025-07-11 02:07:43.583] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250711_020743_f1c0edd6"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.583729",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250711_020743_f1c0edd6",
+      "available_sessions": [
+        "session_20250711_020743_f1c0edd6"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086421369664,
+    "formatted_message": "[2025-07-11 02:07:43.583] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250711_020743_f1c0edd6\", \"available_sessions\": [\"session_20250711_020743_f1c0edd6\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.583760",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "データ永続化テスト",
+      "learning_type": "概要",
+      "depth_level": 1,
+      "time_limit": 60,
+      "budget_limit": 0.3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086421369664,
+    "formatted_message": "[2025-07-11 02:07:43.583] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"データ永続化テスト\", \"learning_type\": \"概要\", \"depth_level\": 1, \"time_limit\": 60, \"budget_limit\": 0.3}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.591928",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション保存成功",
+    "context": {
+      "session_id": "session_20250711_020743_f1c0edd6",
+      "file_size": 611,
+      "data_keys": [
+        "session_metadata",
+        "last_updated"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086421369664,
+    "formatted_message": "[2025-07-11 02:07:43.591] [DEBUG] [SESSION] セッション保存成功 | Context: {\"session_id\": \"session_20250711_020743_f1c0edd6\", \"file_size\": 611, \"data_keys\": [\"session_metadata\", \"last_updated\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592004",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250711_020743_f1c0edd6",
+      "start_time": "2025-07-11T02:07:43.583776",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086421369664,
+    "formatted_message": "[2025-07-11 02:07:43.592] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250711_020743_f1c0edd6\", \"start_time\": \"2025-07-11T02:07:43.583776\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592240",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250711_020743_f1c0edd6",
+          "theme": "データ永続化テスト",
+          "depth_level": 1
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:43.592] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250711_020743_f1c0edd6\", \"theme\": \"データ永続化テスト\", \"depth_level\": 1}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592319",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "データ永続化テスト",
+      "depth_level": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:43.592] [DEBUG] [SESSION] Web検索クエリ生成開始 | Context: {\"theme\": \"データ永続化テスト\", \"depth_level\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592338",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "データ永続化テスト 最新情報",
+        "データ永続化テスト トレンド 2024",
+        "データ永続化テスト 技術動向"
+      ],
+      "total_queries": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:43.592] [INFO] [SESSION] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"データ永続化テスト 最新情報\", \"データ永続化テスト トレンド 2024\", \"データ永続化テスト 技術動向\"], \"total_queries\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592351",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 3,
+      "search_queries": [
+        "データ永続化テスト 最新情報",
+        "データ永続化テスト トレンド 2024",
+        "データ永続化テスト 技術動向"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:43.592] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 3, \"search_queries\": [\"データ永続化テスト 最新情報\", \"データ永続化テスト トレンド 2024\", \"データ永続化テスト 技術動向\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592374",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/3)",
+    "context": {
+      "query": "データ永続化テスト 最新情報",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:43.592] [INFO] [SESSION] 検索実行 (1/3) | Context: {\"query\": \"データ永続化テスト 最新情報\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592409",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "データ永続化テスト 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:43.592] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"データ永続化テスト 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:43.592718",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250711_020743_f1c0edd6",
+      "thread_id": 133086354167552
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086421369664,
+    "formatted_message": "[2025-07-11 02:07:43.592] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250711_020743_f1c0edd6\", \"thread_id\": 133086354167552}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349799",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "データ永続化テスト 最新情報",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.7573833465576172,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"データ永続化テスト 最新情報\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.7573833465576172, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349876",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_eee0433dc3a0",
+      "source_type": "google_search",
+      "url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+      "title_length": 39,
+      "content_length": 121
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_eee0433dc3a0\", \"source_type\": \"google_search\", \"url\": \"https://www.kagoya.jp/howto/cloud/container/dockermysql/\", \"title_length\": 39, \"content_length\": 121}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349898",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_c31e0bb474eb",
+      "source_type": "google_search",
+      "url": "https://www.netone.co.jp/media/detail/20191206-1/",
+      "title_length": 32,
+      "content_length": 102
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_c31e0bb474eb\", \"source_type\": \"google_search\", \"url\": \"https://www.netone.co.jp/media/detail/20191206-1/\", \"title_length\": 32, \"content_length\": 102}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349911",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_a54abf6d1958",
+      "source_type": "google_search",
+      "url": "https://developer.android.com/training/data-storage/sqlite?hl=ja",
+      "title_length": 55,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_a54abf6d1958\", \"source_type\": \"google_search\", \"url\": \"https://developer.android.com/training/data-storage/sqlite?hl=ja\", \"title_length\": 55, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349923",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_e63b51d74e84",
+      "source_type": "google_search",
+      "url": "https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/",
+      "title_length": 11,
+      "content_length": 83
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_e63b51d74e84\", \"source_type\": \"google_search\", \"url\": \"https://www.kecl.ntt.co.jp/icl/lirg/resources/goitokusei/vocabulary_test/\", \"title_length\": 11, \"content_length\": 83}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349932",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_e44ad704f4d9",
+      "source_type": "google_search",
+      "url": "https://developer.android.com/training/data-storage/room?hl=ja",
+      "title_length": 40,
+      "content_length": 105
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_e44ad704f4d9\", \"source_type\": \"google_search\", \"url\": \"https://developer.android.com/training/data-storage/room?hl=ja\", \"title_length\": 40, \"content_length\": 105}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349945",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: データ永続化テスト 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "データ永続化テスト 最新情報",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.7573833465576172,
+          "engine_used": "google",
+          "quota_remaining": 99
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [INFO] [SESSION] Web検索実行: データ永続化テスト 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"データ永続化テスト 最新情報\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.7573833465576172, \"engine_used\": \"google\", \"quota_remaining\": 99}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:44.349964",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/3)",
+    "context": {
+      "query": "データ永続化テスト 最新情報",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.7575545310974121,
+      "total_collected": 5,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:44.349] [INFO] [SESSION] 検索結果 (1/3) | Context: {\"query\": \"データ永続化テスト 最新情報\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.7575545310974121, \"total_collected\": 5, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.351084",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/3)",
+    "context": {
+      "query": "データ永続化テスト トレンド 2024",
+      "query_index": 1,
+      "current_sources_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.351] [INFO] [SESSION] 検索実行 (2/3) | Context: {\"query\": \"データ永続化テスト トレンド 2024\", \"query_index\": 1, \"current_sources_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.351187",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "データ永続化テスト トレンド 2024",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.351] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"データ永続化テスト トレンド 2024\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917778",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "データ永続化テスト トレンド 2024",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5665867328643799,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"データ永続化テスト トレンド 2024\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5665867328643799, \"quota_remaining\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917854",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_6f2185deacb1",
+      "source_type": "google_search",
+      "url": "https://circleci.com/ja/blog/ci-for-machine-learning/",
+      "title_length": 30,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_6f2185deacb1\", \"source_type\": \"google_search\", \"url\": \"https://circleci.com/ja/blog/ci-for-machine-learning/\", \"title_length\": 30, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917875",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_d42eda2ca77c",
+      "source_type": "google_search",
+      "url": "https://www.kagoya.jp/howto/cloud/container/dockermysql/",
+      "title_length": 39,
+      "content_length": 144
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_d42eda2ca77c\", \"source_type\": \"google_search\", \"url\": \"https://www.kagoya.jp/howto/cloud/container/dockermysql/\", \"title_length\": 39, \"content_length\": 144}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917892",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_5eea71681499",
+      "source_type": "google_search",
+      "url": "https://engineering.mobalab.net/2024/10/04/localstack%E7%84%A1%E6%96%99%E3%81%A7aws%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%86%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B/",
+      "title_length": 42,
+      "content_length": 116
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_5eea71681499\", \"source_type\": \"google_search\", \"url\": \"https://engineering.mobalab.net/2024/10/04/localstack%E7%84%A1%E6%96%99%E3%81%A7aws%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%86%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B/\", \"title_length\": 42, \"content_length\": 116}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917904",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_3f5e51503bc5",
+      "source_type": "google_search",
+      "url": "https://offers.jp/media/programming/a_3994",
+      "title_length": 39,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_3f5e51503bc5\", \"source_type\": \"google_search\", \"url\": \"https://offers.jp/media/programming/a_3994\", \"title_length\": 39, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917915",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_13124700db4f",
+      "source_type": "google_search",
+      "url": "https://www.oracle.com/contracts/docs/cloud_hosting_delivery_policies_jp_5023328.pdf",
+      "title_length": 42,
+      "content_length": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_13124700db4f\", \"source_type\": \"google_search\", \"url\": \"https://www.oracle.com/contracts/docs/cloud_hosting_delivery_policies_jp_5023328.pdf\", \"title_length\": 42, \"content_length\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917928",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: データ永続化テスト トレンド 2024 (5件)",
+    "context": {
+      "web_search": {
+        "query": "データ永続化テスト トレンド 2024",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5665867328643799,
+          "engine_used": "google",
+          "quota_remaining": 98
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [INFO] [SESSION] Web検索実行: データ永続化テスト トレンド 2024 (5件) | Context: {\"web_search\": {\"query\": \"データ永続化テスト トレンド 2024\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5665867328643799, \"engine_used\": \"google\", \"quota_remaining\": 98}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:45.917947",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/3)",
+    "context": {
+      "query": "データ永続化テスト トレンド 2024",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5667626857757568,
+      "total_collected": 10,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:45.917] [INFO] [SESSION] 検索結果 (2/3) | Context: {\"query\": \"データ永続化テスト トレンド 2024\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5667626857757568, \"total_collected\": 10, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:46.919153",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/3)",
+    "context": {
+      "query": "データ永続化テスト 技術動向",
+      "query_index": 2,
+      "current_sources_count": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:46.919] [INFO] [SESSION] 検索実行 (3/3) | Context: {\"query\": \"データ永続化テスト 技術動向\", \"query_index\": 2, \"current_sources_count\": 10}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:46.919258",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "データ永続化テスト 技術動向",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:46.919] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"データ永続化テスト 技術動向\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379034",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "データ永続化テスト 技術動向",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.45977187156677246,
+      "quota_remaining": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"データ永続化テスト 技術動向\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.45977187156677246, \"quota_remaining\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379104",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_d2be02d4b876",
+      "source_type": "google_search",
+      "url": "https://www.netone.co.jp/media/detail/20191206-1/",
+      "title_length": 32,
+      "content_length": 123
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_d2be02d4b876\", \"source_type\": \"google_search\", \"url\": \"https://www.netone.co.jp/media/detail/20191206-1/\", \"title_length\": 32, \"content_length\": 123}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379138",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_f385a6fad2e9",
+      "source_type": "google_search",
+      "url": "https://www.nistep.go.jp/research/science-and-technology-foresight-and-science-and-technology-trends/sttbacknumbers",
+      "title_length": 37,
+      "content_length": 88
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_f385a6fad2e9\", \"source_type\": \"google_search\", \"url\": \"https://www.nistep.go.jp/research/science-and-technology-foresight-and-science-and-technology-trends/sttbacknumbers\", \"title_length\": 37, \"content_length\": 88}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379150",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_9bcfc1ce85ec",
+      "source_type": "google_search",
+      "url": "https://www.jri.co.jp/file/advanced/advanced-technology/pdf/14496.pdf",
+      "title_length": 24,
+      "content_length": 101
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_9bcfc1ce85ec\", \"source_type\": \"google_search\", \"url\": \"https://www.jri.co.jp/file/advanced/advanced-technology/pdf/14496.pdf\", \"title_length\": 24, \"content_length\": 101}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379160",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_cde0acdbfd77",
+      "source_type": "google_search",
+      "url": "https://www.gartner.co.jp/ja/articles/top-technology-trends-2025",
+      "title_length": 36,
+      "content_length": 90
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_cde0acdbfd77\", \"source_type\": \"google_search\", \"url\": \"https://www.gartner.co.jp/ja/articles/top-technology-trends-2025\", \"title_length\": 36, \"content_length\": 90}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379170",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_0ba33b9a491e",
+      "source_type": "google_search",
+      "url": "https://www.nttdata.com/jp/ja/trends/data-insight/2021/0204/",
+      "title_length": 37,
+      "content_length": 90
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_0ba33b9a491e\", \"source_type\": \"google_search\", \"url\": \"https://www.nttdata.com/jp/ja/trends/data-insight/2021/0204/\", \"title_length\": 37, \"content_length\": 90}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379183",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: データ永続化テスト 技術動向 (5件)",
+    "context": {
+      "web_search": {
+        "query": "データ永続化テスト 技術動向",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.45977187156677246,
+          "engine_used": "google",
+          "quota_remaining": 97
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [INFO] [SESSION] Web検索実行: データ永続化テスト 技術動向 (5件) | Context: {\"web_search\": {\"query\": \"データ永続化テスト 技術動向\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.45977187156677246, \"engine_used\": \"google\", \"quota_remaining\": 97}}}"
+  },
+  {
+    "timestamp": "2025-07-11T02:07:47.379202",
+    "session_id": "session_20250711_020743_f1c0edd6",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/3)",
+    "context": {
+      "query": "データ永続化テスト 技術動向",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.4599466323852539,
+      "total_collected": 15,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 133086354167552,
+    "formatted_message": "[2025-07-11 02:07:47.379] [INFO] [SESSION] 検索結果 (3/3) | Context: {\"query\": \"データ永続化テスト 技術動向\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.4599466323852539, \"total_collected\": 15, \"error_message\": null}"
+  }
+]

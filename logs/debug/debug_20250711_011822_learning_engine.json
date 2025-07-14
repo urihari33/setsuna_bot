@@ -1,0 +1,314 @@
+[
+  {
+    "timestamp": "2025-07-11T01:18:22.115949",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_011822",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:22.115] [INFO] [LEARNING_ENGINE] デバッグログシステム初期化完了: debug_20250711_011822"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:22.115995",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:22.115] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:22.116007",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "API初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:22.116] [INFO] [LEARNING_ENGINE] API初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:22.116019",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI APIキー取得状況",
+    "context": {
+      "key_available": true,
+      "key_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:22.116] [DEBUG] [LEARNING_ENGINE] OpenAI APIキー取得状況 | Context: {\"key_available\": true, \"key_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:22.116044",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI API接続テスト開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:22.116] [DEBUG] [LEARNING_ENGINE] OpenAI API接続テスト開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:23.372853",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "OpenAI API接続テスト成功",
+    "context": {
+      "available_models": 77
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:23.372] [INFO] [LEARNING_ENGINE] OpenAI API接続テスト成功 | Context: {\"available_models\": 77}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:24.333952",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Google検索エンジン初期化完了",
+    "context": {
+      "ready": true,
+      "google_service_available": true,
+      "config_valid": true,
+      "quota_remaining": 100
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:24.333] [INFO] [LEARNING_ENGINE] Google検索エンジン初期化完了 | Context: {\"ready\": true, \"google_service_available\": true, \"config_valid\": true, \"quota_remaining\": 100}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:24.334049",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化完了",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:24.334] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化完了"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:24.337710",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "Google検索テスト",
+      "depth_level": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:24.337] [DEBUG] [LEARNING_ENGINE] Web検索クエリ生成開始 | Context: {\"theme\": \"Google検索テスト\", \"depth_level\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:24.337756",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "Google検索テスト 最新情報",
+        "Google検索テスト トレンド 2024",
+        "Google検索テスト 技術動向"
+      ],
+      "total_queries": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:24.337] [INFO] [LEARNING_ENGINE] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"Google検索テスト 最新情報\", \"Google検索テスト トレンド 2024\", \"Google検索テスト 技術動向\"], \"total_queries\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:24.337784",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "Google検索テスト 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:24.337] [DEBUG] [LEARNING_ENGINE] Web検索リクエスト開始 | Context: {\"query\": \"Google検索テスト 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479686",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "Google検索テスト 最新情報",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 1.1418840885162354,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [INFO] [LEARNING_ENGINE] Google検索結果 | Context: {\"query\": \"Google検索テスト 最新情報\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 1.1418840885162354, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479773",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_f2e8343ed877",
+      "source_type": "google_search",
+      "url": "https://support.google.com/sa360/answer/13486148?hl=ja",
+      "title_length": 57,
+      "content_length": 101
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 1 | Context: {\"source_id\": \"google_f2e8343ed877\", \"source_type\": \"google_search\", \"url\": \"https://support.google.com/sa360/answer/13486148?hl=ja\", \"title_length\": 57, \"content_length\": 101}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479798",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_2b1a7052ada1",
+      "source_type": "google_search",
+      "url": "https://gemini.google.com/updates?hl=ja",
+      "title_length": 20,
+      "content_length": 107
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 2 | Context: {\"source_id\": \"google_2b1a7052ada1\", \"source_type\": \"google_search\", \"url\": \"https://gemini.google.com/updates?hl=ja\", \"title_length\": 20, \"content_length\": 107}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479810",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_ee3739a38216",
+      "source_type": "google_search",
+      "url": "https://www.plan-b.co.jp/blog/seo/73945/",
+      "title_length": 37,
+      "content_length": 73
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 3 | Context: {\"source_id\": \"google_ee3739a38216\", \"source_type\": \"google_search\", \"url\": \"https://www.plan-b.co.jp/blog/seo/73945/\", \"title_length\": 37, \"content_length\": 73}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479821",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_668f1cf8c663",
+      "source_type": "google_search",
+      "url": "https://www.google.com/intl/ja_ALL/search/howsearchworks/how-search-works/rigorous-testing",
+      "title_length": 25,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 4 | Context: {\"source_id\": \"google_668f1cf8c663\", \"source_type\": \"google_search\", \"url\": \"https://www.google.com/intl/ja_ALL/search/howsearchworks/how-search-works/rigorous-testing\", \"title_length\": 25, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479844",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_8fae2ece81b3",
+      "source_type": "google_search",
+      "url": "https://www.plan-b.co.jp/blog/seo/74311/",
+      "title_length": 45,
+      "content_length": 88
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [DEBUG] [LEARNING_ENGINE] Web検索結果処理: 5 | Context: {\"source_id\": \"google_8fae2ece81b3\", \"source_type\": \"google_search\", \"url\": \"https://www.plan-b.co.jp/blog/seo/74311/\", \"title_length\": 45, \"content_length\": 88}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.479866",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "Web検索実行: Google検索テスト 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "Google検索テスト 最新情報",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 1.1418840885162354,
+          "engine_used": "google",
+          "quota_remaining": 99
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.479] [INFO] [LEARNING_ENGINE] Web検索実行: Google検索テスト 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"Google検索テスト 最新情報\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 1.1418840885162354, \"engine_used\": \"google\", \"quota_remaining\": 99}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.482372",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.482] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T01:18:25.482406",
+    "session_id": "debug_20250711_011822",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "API初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 135233390388032,
+    "formatted_message": "[2025-07-11 01:18:25.482] [INFO] [LEARNING_ENGINE] API初期化開始"
+  }
+]

@@ -1,0 +1,1296 @@
+[
+  {
+    "timestamp": "2025-07-11T01:53:29.523124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: session_20250711_015327_c9ca35d3",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 2144,
+    "formatted_message": "[2025-07-11 01:53:29.523] [INFO] [SESSION] デバッグログシステム初期化完了: session_20250711_015327_c9ca35d3"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.523124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始処理開始",
+    "context": {
+      "session_id": "session_20250711_015327_c9ca35d3",
+      "available_sessions": [
+        "session_20250711_015327_c9ca35d3"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 2144,
+    "formatted_message": "[2025-07-11 01:53:29.523] [INFO] [SESSION] セッション開始処理開始 | Context: {\"session_id\": \"session_20250711_015327_c9ca35d3\", \"available_sessions\": [\"session_20250711_015327_c9ca35d3\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.523124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "セッション情報確認",
+    "context": {
+      "session_status": "ready",
+      "session_theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。",
+      "learning_type": "深掘り",
+      "depth_level": 3,
+      "time_limit": 1800,
+      "budget_limit": 1.0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 2144,
+    "formatted_message": "[2025-07-11 01:53:29.523] [DEBUG] [SESSION] セッション情報確認 | Context: {\"session_status\": \"ready\", \"session_theme\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。\", \"learning_type\": \"深掘り\", \"depth_level\": 3, \"time_limit\": 1800, \"budget_limit\": 1.0}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッション開始成功",
+    "context": {
+      "session_id": "session_20250711_015327_c9ca35d3",
+      "start_time": "2025-07-11T01:53:29.523124",
+      "initial_phase": "collection"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 2144,
+    "formatted_message": "[2025-07-11 01:53:29.524] [INFO] [SESSION] セッション開始成功 | Context: {\"session_id\": \"session_20250711_015327_c9ca35d3\", \"start_time\": \"2025-07-11T01:53:29.523124\", \"initial_phase\": \"collection\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "学習スレッド開始",
+    "context": {
+      "thread_name": "learning_session_session_20250711_015327_c9ca35d3",
+      "thread_id": 3228
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 2144,
+    "formatted_message": "[2025-07-11 01:53:29.524] [DEBUG] [SESSION] 学習スレッド開始 | Context: {\"thread_name\": \"learning_session_session_20250711_015327_c9ca35d3\", \"thread_id\": 3228}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: information_collection - started",
+    "context": {
+      "session_phase": {
+        "phase": "information_collection",
+        "status": "started",
+        "progress": 0.1,
+        "details": {
+          "session_id": "session_20250711_015327_c9ca35d3",
+          "theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。",
+          "depth_level": 3
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:29.524] [INFO] [SESSION] セッションフェーズ: information_collection - started | Context: {\"session_phase\": {\"phase\": \"information_collection\", \"status\": \"started\", \"progress\": 0.1, \"details\": {\"session_id\": \"session_20250711_015327_c9ca35d3\", \"theme\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。\", \"depth_level\": 3}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索クエリ生成開始",
+    "context": {
+      "theme": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:29.524] [DEBUG] [SESSION] Web検索クエリ生成開始 | Context: {\"theme\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性"
+      ],
+      "total_queries": 6
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:29.524] [INFO] [SESSION] Web検索クエリ生成完了 | Context: {\"generated_queries\": [\"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\"], \"total_queries\": 6}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "情報収集フェーズ詳細",
+    "context": {
+      "total_queries": 6,
+      "search_queries": [
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+        "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性"
+      ],
+      "collection_config": {
+        "web_search_enabled": true,
+        "news_search_enabled": true,
+        "social_search_enabled": false,
+        "max_sources_per_query": 10,
+        "quality_threshold": 0.6,
+        "relevance_threshold": 0.7
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:29.524] [INFO] [SESSION] 情報収集フェーズ詳細 | Context: {\"total_queries\": 6, \"search_queries\": [\"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\"], \"collection_config\": {\"web_search_enabled\": true, \"news_search_enabled\": true, \"social_search_enabled\": false, \"max_sources_per_query\": 10, \"quality_threshold\": 0.6, \"relevance_threshold\": 0.7}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (1/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+      "query_index": 0,
+      "current_sources_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:29.524] [INFO] [SESSION] 検索実行 (1/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"query_index\": 0, \"current_sources_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:29.524124",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:29.524] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.4857044219970703,
+      "quota_remaining": 99
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.4857044219970703, \"quota_remaining\": 99}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_88a9782f191e",
+      "source_type": "google_search",
+      "url": "https://note.com/toku123/n/neb384ae68fc9",
+      "title_length": 42,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_88a9782f191e\", \"source_type\": \"google_search\", \"url\": \"https://note.com/toku123/n/neb384ae68fc9\", \"title_length\": 42, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_554365c13be9",
+      "source_type": "google_search",
+      "url": "https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729",
+      "title_length": 38,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_554365c13be9\", \"source_type\": \"google_search\", \"url\": \"https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729\", \"title_length\": 38, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_bc7e5530b4a8",
+      "source_type": "google_search",
+      "url": "https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot",
+      "title_length": 38,
+      "content_length": 49
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_bc7e5530b4a8\", \"source_type\": \"google_search\", \"url\": \"https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot\", \"title_length\": 38, \"content_length\": 49}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_8d7ce83b573e",
+      "source_type": "google_search",
+      "url": "https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/",
+      "title_length": 28,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_8d7ce83b573e\", \"source_type\": \"google_search\", \"url\": \"https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/\", \"title_length\": 28, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_1890b6fa05f2",
+      "source_type": "google_search",
+      "url": "http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf",
+      "title_length": 8,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_1890b6fa05f2\", \"source_type\": \"google_search\", \"url\": \"http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf\", \"title_length\": 8, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報 (5件)",
+    "context": {
+      "web_search": {
+        "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.4857044219970703,
+          "engine_used": "google",
+          "quota_remaining": 99
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [INFO] [SESSION] Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報 (5件) | Context: {\"web_search\": {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.4857044219970703, \"engine_used\": \"google\", \"quota_remaining\": 99}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:30.009828",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (1/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.4857044219970703,
+      "total_collected": 5,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:30.009] [INFO] [SESSION] 検索結果 (1/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 最新情報\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.4857044219970703, \"total_collected\": 5, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.016941",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (2/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+      "query_index": 1,
+      "current_sources_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.016] [INFO] [SESSION] 検索実行 (2/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"query_index\": 1, \"current_sources_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.016941",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.016] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.497574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.480633020401001,
+      "quota_remaining": 98
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.497] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.480633020401001, \"quota_remaining\": 98}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.497574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_88a9782f191e",
+      "source_type": "google_search",
+      "url": "https://note.com/toku123/n/neb384ae68fc9",
+      "title_length": 42,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.497] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_88a9782f191e\", \"source_type\": \"google_search\", \"url\": \"https://note.com/toku123/n/neb384ae68fc9\", \"title_length\": 42, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.497574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_554365c13be9",
+      "source_type": "google_search",
+      "url": "https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729",
+      "title_length": 38,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.497] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_554365c13be9\", \"source_type\": \"google_search\", \"url\": \"https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729\", \"title_length\": 38, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.497574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_bc7e5530b4a8",
+      "source_type": "google_search",
+      "url": "https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot",
+      "title_length": 38,
+      "content_length": 49
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.497] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_bc7e5530b4a8\", \"source_type\": \"google_search\", \"url\": \"https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot\", \"title_length\": 38, \"content_length\": 49}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.497574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_8d7ce83b573e",
+      "source_type": "google_search",
+      "url": "https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/",
+      "title_length": 28,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.497] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_8d7ce83b573e\", \"source_type\": \"google_search\", \"url\": \"https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/\", \"title_length\": 28, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.498574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_1890b6fa05f2",
+      "source_type": "google_search",
+      "url": "http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf",
+      "title_length": 8,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.498] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_1890b6fa05f2\", \"source_type\": \"google_search\", \"url\": \"http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf\", \"title_length\": 8, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.498574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024 (5件)",
+    "context": {
+      "web_search": {
+        "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.480633020401001,
+          "engine_used": "google",
+          "quota_remaining": 98
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.498] [INFO] [SESSION] Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024 (5件) | Context: {\"web_search\": {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.480633020401001, \"engine_used\": \"google\", \"quota_remaining\": 98}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:31.498574",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (2/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.48163318634033203,
+      "total_collected": 10,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:31.498] [INFO] [SESSION] 検索結果 (2/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 トレンド 2024\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.48163318634033203, \"total_collected\": 10, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:32.502116",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (3/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+      "query_index": 2,
+      "current_sources_count": 10
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:32.502] [INFO] [SESSION] 検索実行 (3/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"query_index\": 2, \"current_sources_count\": 10}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:32.502116",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:32.502] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.009494",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.507378101348877,
+      "quota_remaining": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.009] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.507378101348877, \"quota_remaining\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.009494",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_88a9782f191e",
+      "source_type": "google_search",
+      "url": "https://note.com/toku123/n/neb384ae68fc9",
+      "title_length": 42,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.009] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_88a9782f191e\", \"source_type\": \"google_search\", \"url\": \"https://note.com/toku123/n/neb384ae68fc9\", \"title_length\": 42, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.009494",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_554365c13be9",
+      "source_type": "google_search",
+      "url": "https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729",
+      "title_length": 38,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.009] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_554365c13be9\", \"source_type\": \"google_search\", \"url\": \"https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729\", \"title_length\": 38, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.009494",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_bc7e5530b4a8",
+      "source_type": "google_search",
+      "url": "https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot",
+      "title_length": 38,
+      "content_length": 49
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.009] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_bc7e5530b4a8\", \"source_type\": \"google_search\", \"url\": \"https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot\", \"title_length\": 38, \"content_length\": 49}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.009494",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_8d7ce83b573e",
+      "source_type": "google_search",
+      "url": "https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/",
+      "title_length": 28,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.009] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_8d7ce83b573e\", \"source_type\": \"google_search\", \"url\": \"https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/\", \"title_length\": 28, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.010823",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_1890b6fa05f2",
+      "source_type": "google_search",
+      "url": "http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf",
+      "title_length": 8,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.010] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_1890b6fa05f2\", \"source_type\": \"google_search\", \"url\": \"http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf\", \"title_length\": 8, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.010823",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向 (5件)",
+    "context": {
+      "web_search": {
+        "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.507378101348877,
+          "engine_used": "google",
+          "quota_remaining": 97
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.010] [INFO] [SESSION] Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向 (5件) | Context: {\"web_search\": {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.507378101348877, \"engine_used\": \"google\", \"quota_remaining\": 97}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:33.010823",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (3/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5087075233459473,
+      "total_collected": 15,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:33.010] [INFO] [SESSION] 検索結果 (3/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 技術動向\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5087075233459473, \"total_collected\": 15, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.021033",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (4/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+      "query_index": 3,
+      "current_sources_count": 15
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.021] [INFO] [SESSION] 検索実行 (4/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"query_index\": 3, \"current_sources_count\": 15}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.021033",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.021] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.553788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5327548980712891,
+      "quota_remaining": 96
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.553] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5327548980712891, \"quota_remaining\": 96}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.553788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_88a9782f191e",
+      "source_type": "google_search",
+      "url": "https://note.com/toku123/n/neb384ae68fc9",
+      "title_length": 42,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.553] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_88a9782f191e\", \"source_type\": \"google_search\", \"url\": \"https://note.com/toku123/n/neb384ae68fc9\", \"title_length\": 42, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.554788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_554365c13be9",
+      "source_type": "google_search",
+      "url": "https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729",
+      "title_length": 38,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.554] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_554365c13be9\", \"source_type\": \"google_search\", \"url\": \"https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729\", \"title_length\": 38, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.554788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_bc7e5530b4a8",
+      "source_type": "google_search",
+      "url": "https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot",
+      "title_length": 38,
+      "content_length": 49
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.554] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_bc7e5530b4a8\", \"source_type\": \"google_search\", \"url\": \"https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot\", \"title_length\": 38, \"content_length\": 49}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.554788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_8d7ce83b573e",
+      "source_type": "google_search",
+      "url": "https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/",
+      "title_length": 28,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.554] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_8d7ce83b573e\", \"source_type\": \"google_search\", \"url\": \"https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/\", \"title_length\": 28, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.554788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_1890b6fa05f2",
+      "source_type": "google_search",
+      "url": "http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf",
+      "title_length": 8,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.554] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_1890b6fa05f2\", \"source_type\": \"google_search\", \"url\": \"http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf\", \"title_length\": 8, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.554788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析 (5件)",
+    "context": {
+      "web_search": {
+        "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5327548980712891,
+          "engine_used": "google",
+          "quota_remaining": 96
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.554] [INFO] [SESSION] Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析 (5件) | Context: {\"web_search\": {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5327548980712891, \"engine_used\": \"google\", \"quota_remaining\": 96}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:34.554788",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (4/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5337550640106201,
+      "total_collected": 20,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:34.554] [INFO] [SESSION] 検索結果 (4/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 市場分析\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5337550640106201, \"total_collected\": 20, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:35.564588",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (5/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+      "query_index": 4,
+      "current_sources_count": 20
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:35.564] [INFO] [SESSION] 検索実行 (5/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"query_index\": 4, \"current_sources_count\": 20}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:35.564588",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:35.564] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247426",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.682837963104248,
+      "quota_remaining": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.682837963104248, \"quota_remaining\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247426",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_ccdb71167e6e",
+      "source_type": "google_search",
+      "url": "https://note.com/sight/n/nff7c26550916",
+      "title_length": 33,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_ccdb71167e6e\", \"source_type\": \"google_search\", \"url\": \"https://note.com/sight/n/nff7c26550916\", \"title_length\": 33, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247426",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_554365c13be9",
+      "source_type": "google_search",
+      "url": "https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729",
+      "title_length": 38,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_554365c13be9\", \"source_type\": \"google_search\", \"url\": \"https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729\", \"title_length\": 38, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247426",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_0255918153d0",
+      "source_type": "google_search",
+      "url": "https://note.com/toku123/n/neb384ae68fc9",
+      "title_length": 42,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_0255918153d0\", \"source_type\": \"google_search\", \"url\": \"https://note.com/toku123/n/neb384ae68fc9\", \"title_length\": 42, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247426",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_8d7ce83b573e",
+      "source_type": "google_search",
+      "url": "https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/",
+      "title_length": 28,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_8d7ce83b573e\", \"source_type\": \"google_search\", \"url\": \"https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/\", \"title_length\": 28, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247426",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_1890b6fa05f2",
+      "source_type": "google_search",
+      "url": "http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf",
+      "title_length": 8,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_1890b6fa05f2\", \"source_type\": \"google_search\", \"url\": \"http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf\", \"title_length\": 8, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247929",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題 (5件)",
+    "context": {
+      "web_search": {
+        "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.682837963104248,
+          "engine_used": "google",
+          "quota_remaining": 95
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [INFO] [SESSION] Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題 (5件) | Context: {\"web_search\": {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.682837963104248, \"engine_used\": \"google\", \"quota_remaining\": 95}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:36.247929",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (5/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.6833415031433105,
+      "total_collected": 25,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:36.247] [INFO] [SESSION] 検索結果 (5/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 課題\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.6833415031433105, \"total_collected\": 25, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.262051",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索実行 (6/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性",
+      "query_index": 5,
+      "current_sources_count": 25
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.262] [INFO] [SESSION] 検索実行 (6/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\", \"query_index\": 5, \"current_sources_count\": 25}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.262051",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索リクエスト開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性",
+      "search_manager": "GoogleSearchManager"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.262] [DEBUG] [SESSION] Web検索リクエスト開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\", \"search_manager\": \"GoogleSearchManager\"}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.834697",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Google検索結果",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性",
+      "engine_used": "google",
+      "success": true,
+      "total_results": 5,
+      "execution_time": 0.5726461410522461,
+      "quota_remaining": 94
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.834] [INFO] [SESSION] Google検索結果 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\", \"engine_used\": \"google\", \"success\": true, \"total_results\": 5, \"execution_time\": 0.5726461410522461, \"quota_remaining\": 94}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 1",
+    "context": {
+      "source_id": "google_88a9782f191e",
+      "source_type": "google_search",
+      "url": "https://note.com/toku123/n/neb384ae68fc9",
+      "title_length": 42,
+      "content_length": 97
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [DEBUG] [SESSION] Web検索結果処理: 1 | Context: {\"source_id\": \"google_88a9782f191e\", \"source_type\": \"google_search\", \"url\": \"https://note.com/toku123/n/neb384ae68fc9\", \"title_length\": 42, \"content_length\": 97}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 2",
+    "context": {
+      "source_id": "google_554365c13be9",
+      "source_type": "google_search",
+      "url": "https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729",
+      "title_length": 38,
+      "content_length": 92
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [DEBUG] [SESSION] Web検索結果処理: 2 | Context: {\"source_id\": \"google_554365c13be9\", \"source_type\": \"google_search\", \"url\": \"https://ystmokzk.hatenablog.jp/entry/2024/04/21/173729\", \"title_length\": 38, \"content_length\": 92}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 3",
+    "context": {
+      "source_id": "google_bc7e5530b4a8",
+      "source_type": "google_search",
+      "url": "https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot",
+      "title_length": 38,
+      "content_length": 49
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [DEBUG] [SESSION] Web検索結果処理: 3 | Context: {\"source_id\": \"google_bc7e5530b4a8\", \"source_type\": \"google_search\", \"url\": \"https://note.com/hashtag/%E6%96%87%E5%AD%A6%E3%83%95%E3%83%AA%E3%83%9E?f=hot\", \"title_length\": 38, \"content_length\": 49}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 4",
+    "context": {
+      "source_id": "google_8d7ce83b573e",
+      "source_type": "google_search",
+      "url": "https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/",
+      "title_length": 28,
+      "content_length": 85
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [DEBUG] [SESSION] Web検索結果処理: 4 | Context: {\"source_id\": \"google_8d7ce83b573e\", \"source_type\": \"google_search\", \"url\": \"https://cm-marketinglab.mynavi.jp/categorys_info/%E8%AA%BF%E6%9F%BB%E8%A8%98%E4%BA%8B/\", \"title_length\": 28, \"content_length\": 85}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "DEBUG",
+    "message": "Web検索結果処理: 5",
+    "context": {
+      "source_id": "google_1890b6fa05f2",
+      "source_type": "google_search",
+      "url": "http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf",
+      "title_length": 8,
+      "content_length": 95
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [DEBUG] [SESSION] Web検索結果処理: 5 | Context: {\"source_id\": \"google_1890b6fa05f2\", \"source_type\": \"google_search\", \"url\": \"http://www.nara-wu.ac.jp/bungaku/kyouikuningen/2014.pdf\", \"title_length\": 8, \"content_length\": 95}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性 (5件)",
+    "context": {
+      "web_search": {
+        "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性",
+        "search_url": "google_engine",
+        "response_status": 200,
+        "results_count": 5,
+        "response_data": {
+          "execution_time": 0.5726461410522461,
+          "engine_used": "google",
+          "quota_remaining": 94
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [INFO] [SESSION] Web検索実行: せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性 (5件) | Context: {\"web_search\": {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\", \"search_url\": \"google_engine\", \"response_status\": 200, \"results_count\": 5, \"response_data\": {\"execution_time\": 0.5726461410522461, \"engine_used\": \"google\", \"quota_remaining\": 94}}}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:37.835696",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "検索結果 (6/6)",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性",
+      "success": true,
+      "results_count": 5,
+      "execution_time": 0.5736451148986816,
+      "total_collected": 30,
+      "error_message": null
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:37.835] [INFO] [SESSION] 検索結果 (6/6) | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください。 将来性\", \"success\": true, \"results_count\": 5, \"execution_time\": 0.5736451148986816, \"total_collected\": 30, \"error_message\": null}"
+  },
+  {
+    "timestamp": "2025-07-11T01:53:38.839843",
+    "session_id": "session_20250711_015327_c9ca35d3",
+    "component": "SESSION",
+    "level": "INFO",
+    "message": "セッションフェーズ: preprocessing - started",
+    "context": {
+      "session_phase": {
+        "phase": "preprocessing",
+        "status": "started",
+        "progress": 0.35,
+        "details": {
+          "collected_sources_count": 30,
+          "preprocessing_thresholds": {
+            "relevance_min": 0.4,
+            "quality_min": 0.5,
+            "combined_min": 0.6
+          },
+          "max_detailed_analysis": 15
+        }
+      }
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3228,
+    "formatted_message": "[2025-07-11 01:53:38.839] [INFO] [SESSION] セッションフェーズ: preprocessing - started | Context: {\"session_phase\": {\"phase\": \"preprocessing\", \"status\": \"started\", \"progress\": 0.35, \"details\": {\"collected_sources_count\": 30, \"preprocessing_thresholds\": {\"relevance_min\": 0.4, \"quality_min\": 0.5, \"combined_min\": 0.6}, \"max_detailed_analysis\": 15}}}"
+  }
+]

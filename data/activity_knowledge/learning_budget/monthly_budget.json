@@ -1,0 +1,43 @@
+{
+  "budget_period": "2025-07",
+  "budget_config": {
+    "monthly_limit": 50.0,
+    "daily_limit": 5.0,
+    "session_limits": {
+      "light": 2.0,
+      "standard": 5.0,
+      "thorough": 10.0,
+      "unlimited": 25.0,
+      "test": 2.0
+    },
+    "alert_thresholds": {
+      "session_50percent": true,
+      "session_80percent": true,
+      "daily_80percent": true,
+      "monthly_80percent": true
+    },
+    "auto_stop": {
+      "session_limit": true,
+      "daily_limit": true,
+      "monthly_limit": true
+    }
+  },
+  "usage_tracking": {
+    "current_month_total": 0.0,
+    "daily_usage": {},
+    "session_usage": []
+  },
+  "cost_optimization": {
+    "total_savings": 0.0,
+    "optimization_methods": {
+      "batch_processing": 0.0,
+      "cache_utilization": 0.0,
+      "api_efficiency": 0.0
+    },
+    "efficiency_trends": {
+      "average_session_efficiency": 0.42,
+      "improving_trend": true
+    }
+  },
+  "last_updated": "2025-07-09T01:27:37.677486"
+}

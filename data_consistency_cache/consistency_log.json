@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2025-07-15T07:59:02.102568",
+    "report_id": "integrity_check_20250715_075902",
+    "integrity_score": 0.8142857142857143,
+    "issues_found": 8,
+    "auto_fixed_issues": 0,
+    "check_duration_files": 5,
+    "check_duration_entities": 14
+  }
+]

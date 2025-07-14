@@ -1,0 +1,19 @@
+{
+  "session_metadata": {
+    "session_id": "session_20250712_201125_f73bfbf8",
+    "theme": "AI音楽生成技術の商用化",
+    "start_time": "2025-07-12T20:11:25.405520",
+    "initial_temperature": "high",
+    "budget_limit": 50.0,
+    "session_limit": 1000,
+    "status": "completed",
+    "current_temperature": "high",
+    "rounds_completed": 3,
+    "total_cost": 10.8,
+    "sessions_executed": 18,
+    "created_by": "adaptive_learning_system",
+    "tags": [],
+    "notes": ""
+  },
+  "last_updated": "2025-07-12T20:11:28.954565"
+}

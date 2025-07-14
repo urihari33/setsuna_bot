@@ -1,0 +1,170 @@
+[
+  {
+    "timestamp": "2025-07-11T22:33:23.737739",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_223323",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 60808,
+    "formatted_message": "[2025-07-11 22:33:23.737] [INFO] [MULTI_SEARCH] デバッグログシステム初期化完了: debug_20250711_223323"
+  },
+  {
+    "timestamp": "2025-07-11T22:33:24.200663",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "MultiSearchManager初期化完了",
+    "context": {
+      "available_engines": [
+        "google",
+        "duckduckgo"
+      ],
+      "google_available": true,
+      "duckduckgo_available": true,
+      "dynamic_queries_available": true
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 60808,
+    "formatted_message": "[2025-07-11 22:33:24.200] [INFO] [MULTI_SEARCH] MultiSearchManager初期化完了 | Context: {\"available_engines\": [\"google\", \"duckduckgo\"], \"google_available\": true, \"duckduckgo_available\": true, \"dynamic_queries_available\": true}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:14.282142",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください とは",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:14.282] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください とは\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:15.050557",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:15.051] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:15.114251",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:15.114] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:15.114251",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google",
+        "duckduckgo"
+      ],
+      "total_results": 5,
+      "execution_time": 0.832108736038208
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:15.114] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\", \"duckduckgo\"], \"total_results\": 5, \"execution_time\": 0.832108736038208}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:16.128108",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください 基本",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:16.128] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"せつなは歌系の活動者です。主な活動として歌を用いたMusicVideoの投稿を考えていますが、それだけだと投稿頻度に難があるとも考えています。\\n今後人気や知名度を獲得していくにあたって、既存の歌系インフルエンサー、動画投稿者、VTuberなどがどのようなコンテンツを制作しているか人気なのかを調査し、自身がどのような方針で活動していくかの判断材料を集めて、分析してください 基本\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:16.531777",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "duckduckgo検索完了",
+    "context": {
+      "success": true,
+      "results_count": 0
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:16.531] [DEBUG] [MULTI_SEARCH] duckduckgo検索完了 | Context: {\"success\": true, \"results_count\": 0}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:16.748053",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:16.748] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T22:34:16.749053",
+    "session_id": "debug_20250711_223323",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "duckduckgo",
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.6209454536437988
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 3128,
+    "formatted_message": "[2025-07-11 22:34:16.749] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"duckduckgo\", \"google\"], \"total_results\": 5, \"execution_time\": 0.6209454536437988}"
+  }
+]

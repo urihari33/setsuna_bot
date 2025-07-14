@@ -30,7 +30,7 @@ from core.progress_manager import ProgressManager
 from core.progress_widget import ProgressWidget, DetailProgressDialog
 from logging_system import get_logger, get_monitor
 from memory_mode_controller import get_memory_controller
-from test_memory_system import TestMemorySystem
+# from test_memory_system import TestMemorySystem  # アーカイブ済み
 try:
     from core.knowledge_analysis.knowledge_analysis_engine import KnowledgeAnalysisEngine
     KNOWLEDGE_ENGINE_AVAILABLE = True
@@ -6614,14 +6614,14 @@ ID: {exploration_info['exploration_id']}
 # テスト実行
 if __name__ == "__main__":
     print("="*60)
-    print("🎮 Phase 3: 完全統合システムテスト")
+    print("Phase 3: 完全統合システムテスト")
     print("="*60)
     
     gui = SetsunaGUI()
     
     # システム起動完了（システムメッセージは表示しない）
-    print("🎉 統合音声・テキスト対話システム起動完了！")
-    print("📝 テキスト入力: テキストフィールドで入力・送信")
-    print("🎤 音声入力: Ctrl+Shift+Alt を押しながら話す")
+    print("統合音声・テキスト対話システム起動完了！")
+    print("テキスト入力: テキストフィールドで入力・送信")
+    print("音声入力: Ctrl+Shift+Alt を押しながら話す")
     
     gui.run()

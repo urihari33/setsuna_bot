@@ -1,0 +1,31 @@
+{
+  "session_id": "session_20250712_203352_ef22b005",
+  "evaluation_count": 1,
+  "created_timestamp": "2025-07-12T20:33:52.149868",
+  "strategy": {
+    "mode": "semi_auto",
+    "trigger_conditions": [
+      "round_completion",
+      "quality_threshold"
+    ],
+    "human_eval_frequency": 0.5
+  },
+  "evaluations": [
+    {
+      "evaluation_id": "persist_test_eval",
+      "timestamp": "2025-07-12T20:33:52.149856",
+      "final_direction": "deeper",
+      "final_confidence": 0.7,
+      "consensus_level": 1.0,
+      "evaluation_time": 45.0,
+      "human_override": false,
+      "override_reason": "",
+      "auto_evaluation": {
+        "predicted_quality": 0.75,
+        "prediction_confidence": 0.8,
+        "recommended_direction": "deeper",
+        "direction_confidence": 0.7
+      }
+    }
+  ]
+}

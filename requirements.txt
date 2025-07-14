@@ -1,0 +1,90 @@
+# OpenAI API
+openai>=1.0.0
+tiktoken>=0.5.0
+
+# 環境変数管理
+python-dotenv>=1.0.0
+
+# 音声処理
+speechrecognition>=3.10.0
+pyaudio>=0.2.11
+
+# GUI
+tkinter  # 通常はPythonに含まれる
+
+# HTTP リクエスト
+requests>=2.31.0
+
+# データ処理
+pandas>=2.0.0
+numpy>=1.24.0
+
+# 非同期処理
+asyncio  # Python標準ライブラリ
+
+# ユーティリティ
+python-dateutil>=2.8.0
+uuid  # Python標準ライブラリ
+
+# ネットワーク分析
+networkx>=3.0
+
+# 数値計算
+scipy>=1.10.0
+
+# ファイル処理
+pathlib  # Python標準ライブラリ
+
+# JSON処理
+json  # Python標準ライブラリ
+
+# 正規表現
+re  # Python標準ライブラリ
+
+# 文字列操作
+difflib  # Python標準ライブラリ
+
+# コレクション
+collections  # Python標準ライブラリ
+
+# 時間処理
+datetime  # Python標準ライブラリ
+time  # Python標準ライブラリ
+
+# システム
+os  # Python標準ライブラリ
+sys  # Python標準ライブラリ
+
+# スレッド処理
+threading  # Python標準ライブラリ
+
+# キューイング
+queue  # Python標準ライブラリ
+
+# URL処理
+urllib3>=1.26.0
+
+# ハッシュ処理
+hashlib  # Python標準ライブラリ
+
+# データクラス
+dataclasses  # Python標準ライブラリ
+
+# 型ヒント
+typing  # Python標準ライブラリ
+
+# ホットキー処理
+pynput>=1.7.6
+
+# 音楽・音声
+# VOICEVOXは外部アプリケーションとして起動する必要があります
+
+# HTMLパースィング (DuckDuckGo検索用)
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# HTTP リクエスト強化
+urllib3>=1.26.0
+
+# 並行処理
+concurrent.futures  # Python標準ライブラリ

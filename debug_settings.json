@@ -1,0 +1,67 @@
+{
+  "debug_settings": {
+    "enabled": true,
+    "log_level": "DEBUG",
+    "console_output": true,
+    "file_output": true,
+    "json_output": true,
+    "component_settings": {
+      "LEARNING_ENGINE": {
+        "enabled": true,
+        "log_level": "DEBUG",
+        "log_web_search": true,
+        "log_api_requests": true,
+        "log_session_phases": true,
+        "log_data_processing": true
+      },
+      "SESSION": {
+        "enabled": true,
+        "log_level": "DEBUG",
+        "log_session_lifecycle": true,
+        "log_progress_updates": true
+      },
+      "PREPROCESSING": {
+        "enabled": true,
+        "log_level": "INFO",
+        "log_filtering_results": true,
+        "log_gpt_analysis": true
+      },
+      "SYSTEM": {
+        "enabled": true,
+        "log_level": "INFO",
+        "log_initialization": true,
+        "log_configuration": true
+      }
+    },
+    "web_search_debug": {
+      "log_request_details": true,
+      "log_response_headers": true,
+      "log_response_content": true,
+      "log_parsing_details": true,
+      "log_empty_results": true
+    },
+    "api_debug": {
+      "log_openai_requests": true,
+      "log_openai_responses": true,
+      "log_token_usage": true,
+      "log_cost_calculation": true
+    },
+    "performance_monitoring": {
+      "log_execution_times": true,
+      "log_memory_usage": false,
+      "log_thread_info": true
+    }
+  },
+  "output_settings": {
+    "log_directory": "D:/setsuna_bot/logs/debug",
+    "max_log_file_size": 10485760,
+    "log_rotation": true,
+    "compress_old_logs": true,
+    "keep_logs_days": 30
+  },
+  "environment_overrides": {
+    "DEBUG_MODE": "true",
+    "VERBOSE_LOGGING": "true",
+    "LOG_LEVEL": "DEBUG"
+  }
+}

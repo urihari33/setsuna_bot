@@ -1,0 +1,518 @@
+[
+  {
+    "timestamp": "2025-07-11T21:50:53.384555",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_215053",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:53.384] [INFO] [MULTI_SEARCH] デバッグログシステム初期化完了: debug_20250711_215053"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:53.881311",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "MultiSearchManager初期化完了",
+    "context": {
+      "available_engines": [
+        "google",
+        "duckduckgo"
+      ],
+      "google_available": true,
+      "duckduckgo_available": false,
+      "dynamic_queries_available": true
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:53.881] [INFO] [MULTI_SEARCH] MultiSearchManager初期化完了 | Context: {\"available_engines\": [\"google\", \"duckduckgo\"], \"google_available\": true, \"duckduckgo_available\": false, \"dynamic_queries_available\": true}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:54.066848",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "Python機械学習",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:54.066] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"Python機械学習\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:54.715056",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:54.715] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:54.715285",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.6484315395355225
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:54.715] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 5, \"execution_time\": 0.6484315395355225}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:54.715348",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "DuckDuckGo検索",
+      "max_results": 5,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:54.715] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"DuckDuckGo検索\", \"max_results\": 5, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:55.209591",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 5
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:55.209] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 5}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:55.209851",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 5,
+      "execution_time": 0.4944925308227539
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:55.209] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 5, \"execution_time\": 0.4944925308227539}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:55.209957",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "動的クエリ検索開始",
+    "context": {
+      "theme": "ブロックチェーン",
+      "learning_type": "深掘り",
+      "depth_level": 3
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:55.209] [INFO] [MULTI_SEARCH] 動的クエリ検索開始 | Context: {\"theme\": \"ブロックチェーン\", \"learning_type\": \"深掘り\", \"depth_level\": 3}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:57.460730",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 詳細",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:57.460] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 詳細\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:58.269525",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:58.269] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:58.269748",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.809004545211792
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:58.269] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.809004545211792}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:58.269833",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 技術",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:58.269] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 技術\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:58.943344",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:58.943] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:58.943579",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.6737565994262695
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:58.943] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.6737565994262695}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:58.943629",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 仕組み",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:58.943] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 仕組み\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:59.388564",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:59.388] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:59.389014",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.4453730583190918
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:59.389] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.4453730583190918}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:59.389056",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 原理",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:59.389] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 原理\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:59.841263",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:59.841] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:59.841530",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.45245909690856934
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:59.841] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.45245909690856934}"
+  },
+  {
+    "timestamp": "2025-07-11T21:50:59.841580",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 最新情報 2025",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:50:59.841] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 最新情報 2025\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:00.591079",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:00.591] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:00.591331",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.7497341632843018
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:00.591] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.7497341632843018}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:00.591384",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 技術動向",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:00.591] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 技術動向\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:01.119032",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:01.119] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:01.119450",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.5280532836914062
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:01.119] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.5280532836914062}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:01.119507",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索開始",
+    "context": {
+      "query": "ブロックチェーン 市場分析",
+      "max_results": 1,
+      "primary_engine": "google",
+      "fallback_engines": [
+        "duckduckgo"
+      ]
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:01.119] [INFO] [MULTI_SEARCH] マルチ検索開始 | Context: {\"query\": \"ブロックチェーン 市場分析\", \"max_results\": 1, \"primary_engine\": \"google\", \"fallback_engines\": [\"duckduckgo\"]}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:01.543294",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "DEBUG",
+    "message": "google検索完了",
+    "context": {
+      "success": true,
+      "results_count": 1
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:01.543] [DEBUG] [MULTI_SEARCH] google検索完了 | Context: {\"success\": true, \"results_count\": 1}"
+  },
+  {
+    "timestamp": "2025-07-11T21:51:01.543616",
+    "session_id": "debug_20250711_215053",
+    "component": "MULTI_SEARCH",
+    "level": "INFO",
+    "message": "マルチ検索完了",
+    "context": {
+      "engines_used": [
+        "google"
+      ],
+      "total_results": 1,
+      "execution_time": 0.4240705966949463
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 126579029074752,
+    "formatted_message": "[2025-07-11 21:51:01.543] [INFO] [MULTI_SEARCH] マルチ検索完了 | Context: {\"engines_used\": [\"google\"], \"total_results\": 1, \"execution_time\": 0.4240705966949463}"
+  }
+]

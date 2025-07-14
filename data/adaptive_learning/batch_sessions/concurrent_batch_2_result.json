@@ -1,0 +1,65 @@
+{
+  "batch_id": "concurrent_batch_2",
+  "timestamp": "2025-07-12T20:09:44.392949",
+  "total_execution_time": 2595.1619148254395,
+  "total_cost": 4.8,
+  "success_rate": 1.0,
+  "average_quality": 0.18730066944633364,
+  "session_count": 4,
+  "session_results": [
+    {
+      "session_id": "session_20250712_200941_228525",
+      "query": "並列テストクエリ 2-3",
+      "status": "success",
+      "execution_time": 2332.9566830553213,
+      "quality_score": 0.20419518866864558,
+      "cost": 1.2,
+      "themes_found": [
+        "投資機会",
+        "将来性"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200941_8c295b",
+      "query": "並列テストクエリ 2-2",
+      "status": "success",
+      "execution_time": 2341.627281489731,
+      "quality_score": 0.17798087823247682,
+      "cost": 1.2,
+      "themes_found": [
+        "技術革新",
+        "ユーザビリティ"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200941_c2669c",
+      "query": "並列テストクエリ 2-1",
+      "status": "success",
+      "execution_time": 2422.7927115742596,
+      "quality_score": 0.20868315270516566,
+      "cost": 1.2,
+      "themes_found": [
+        "市場動向",
+        "リスク要因",
+        "ユーザビリティ"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_200941_714d28",
+      "query": "並列テストクエリ 2-0",
+      "status": "success",
+      "execution_time": 2592.284458121622,
+      "quality_score": 0.1583434581790465,
+      "cost": 1.2,
+      "themes_found": [
+        "ユーザビリティ",
+        "課題解決",
+        "投資機会"
+      ],
+      "error": null
+    }
+  ]
+}

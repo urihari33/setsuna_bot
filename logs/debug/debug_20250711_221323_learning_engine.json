@@ -1,0 +1,279 @@
+[
+  {
+    "timestamp": "2025-07-11T22:13:23.901764",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "デバッグログシステム初期化完了: debug_20250711_221323",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:23.901] [INFO] [LEARNING_ENGINE] デバッグログシステム初期化完了: debug_20250711_221323"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:23.901901",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:23.901] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:23.901916",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "API初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:23.901] [INFO] [LEARNING_ENGINE] API初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:23.901926",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI APIキー取得状況",
+    "context": {
+      "key_available": true,
+      "key_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:23.901] [DEBUG] [LEARNING_ENGINE] OpenAI APIキー取得状況 | Context: {\"key_available\": true, \"key_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:23.901950",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI API接続テスト開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:23.901] [DEBUG] [LEARNING_ENGINE] OpenAI API接続テスト開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:25.825297",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "OpenAI API接続テスト成功",
+    "context": {
+      "available_models": 77
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:25.825] [INFO] [LEARNING_ENGINE] OpenAI API接続テスト成功 | Context: {\"available_models\": 77}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:26.968715",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "マルチ検索エンジン初期化完了",
+    "context": {
+      "google_available": false,
+      "duckduckgo_available": false,
+      "dynamic_queries_available": true
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:26.968] [INFO] [LEARNING_ENGINE] マルチ検索エンジン初期化完了 | Context: {\"google_available\": false, \"duckduckgo_available\": false, \"dynamic_queries_available\": true}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:26.968796",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化完了",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:26.968] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化完了"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:26.976623",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:26.976] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:26.977173",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "API初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:26.977] [INFO] [LEARNING_ENGINE] API初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:26.977188",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI APIキー取得状況",
+    "context": {
+      "key_available": true,
+      "key_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:26.977] [DEBUG] [LEARNING_ENGINE] OpenAI APIキー取得状況 | Context: {\"key_available\": true, \"key_length\": 164}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:26.977214",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI API接続テスト開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:26.977] [DEBUG] [LEARNING_ENGINE] OpenAI API接続テスト開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:28.438525",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "OpenAI API接続テスト成功",
+    "context": {
+      "available_models": 77
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:28.438] [INFO] [LEARNING_ENGINE] OpenAI API接続テスト成功 | Context: {\"available_models\": 77}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:29.447372",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "マルチ検索エンジン初期化完了",
+    "context": {
+      "google_available": false,
+      "duckduckgo_available": false,
+      "dynamic_queries_available": true
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:29.447] [INFO] [LEARNING_ENGINE] マルチ検索エンジン初期化完了 | Context: {\"google_available\": false, \"duckduckgo_available\": false, \"dynamic_queries_available\": true}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:29.447441",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化完了",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:29.447] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化完了"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:33.342881",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "動的検索クエリ生成開始",
+    "context": {
+      "theme": "ブロックチェーン技術",
+      "depth_level": 3,
+      "learning_type": "深掘り"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:33.342] [DEBUG] [LEARNING_ENGINE] 動的検索クエリ生成開始 | Context: {\"theme\": \"ブロックチェーン技術\", \"depth_level\": 3, \"learning_type\": \"深掘り\"}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:35.877170",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "動的検索クエリ生成完了",
+    "context": {
+      "generated_queries": [
+        "ブロックチェーン技術 詳細",
+        "ブロックチェーン技術 技術",
+        "ブロックチェーン技術 仕組み",
+        "ブロックチェーン技術 原理",
+        "ブロックチェーン技術 最新情報 2025",
+        "ブロックチェーン技術 技術動向",
+        "ブロックチェーン技術 市場分析"
+      ],
+      "total_queries": 7,
+      "generation_method": "gpt4_dynamic"
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:35.877] [INFO] [LEARNING_ENGINE] 動的検索クエリ生成完了 | Context: {\"generated_queries\": [\"ブロックチェーン技術 詳細\", \"ブロックチェーン技術 技術\", \"ブロックチェーン技術 仕組み\", \"ブロックチェーン技術 原理\", \"ブロックチェーン技術 最新情報 2025\", \"ブロックチェーン技術 技術動向\", \"ブロックチェーン技術 市場分析\"], \"total_queries\": 7, \"generation_method\": \"gpt4_dynamic\"}"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:35.958201",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "ActivityLearningEngine初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:35.958] [INFO] [LEARNING_ENGINE] ActivityLearningEngine初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:35.958265",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "INFO",
+    "message": "API初期化開始",
+    "context": {},
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:35.958] [INFO] [LEARNING_ENGINE] API初期化開始"
+  },
+  {
+    "timestamp": "2025-07-11T22:13:35.958283",
+    "session_id": "debug_20250711_221323",
+    "component": "LEARNING_ENGINE",
+    "level": "DEBUG",
+    "message": "OpenAI APIキー取得状況",
+    "context": {
+      "key_available": true,
+      "key_length": 164
+    },
+    "exception": null,
+    "traceback": null,
+    "thread_id": 134183891600192,
+    "formatted_message": "[2025-07-11 22:13:35.958] [DEBUG] [LEARNING_ENGINE] OpenAI APIキー取得状況 | Context: {\"key_available\": true, \"key_length\": 164}"
+  }
+]

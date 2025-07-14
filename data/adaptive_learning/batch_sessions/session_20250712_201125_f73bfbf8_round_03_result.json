@@ -1,0 +1,60 @@
+{
+  "batch_id": "session_20250712_201125_f73bfbf8_round_03",
+  "timestamp": "2025-07-12T20:11:28.952196",
+  "total_execution_time": 1067.9445266723633,
+  "total_cost": 2.4,
+  "success_rate": 1.0,
+  "average_quality": 0.19404648706562336,
+  "session_count": 4,
+  "session_results": [
+    {
+      "session_id": "session_20250712_201127_46418e",
+      "query": "AI音楽生成技術の商用化 の基本概念 の課題と解決策",
+      "status": "success",
+      "execution_time": 734.0314505094184,
+      "quality_score": 0.2053500542487152,
+      "cost": 0.6,
+      "themes_found": [
+        "市場動向"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201127_ca1b1e",
+      "query": "AI音楽生成技術の商用化 の応用分野",
+      "status": "success",
+      "execution_time": 818.7235745393173,
+      "quality_score": 0.13843255312942,
+      "cost": 0.6,
+      "themes_found": [
+        "技術革新"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201127_6fd775",
+      "query": "AI音楽生成技術の商用化 のアーキテクチャ の最新動向",
+      "status": "success",
+      "execution_time": 956.5139397898286,
+      "quality_score": 0.19100112589128693,
+      "cost": 0.6,
+      "themes_found": [
+        "投資機会"
+      ],
+      "error": null
+    },
+    {
+      "session_id": "session_20250712_201127_206283",
+      "query": "AI音楽生成技術の商用化 の定義と概要 の課題と解決策",
+      "status": "success",
+      "execution_time": 1066.5038388270607,
+      "quality_score": 0.24140221499307132,
+      "cost": 0.6,
+      "themes_found": [
+        "市場動向",
+        "将来性"
+      ],
+      "error": null
+    }
+  ]
+}
