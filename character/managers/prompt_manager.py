@@ -77,8 +77,23 @@ class PromptManager:
             # モード特有の調整
             mode_prompt = self._build_mode_adjustments(mode)
             
-            # 統合プロンプト生成
+            # 統合プロンプト生成（質問禁止を最優先に配置）
             integrated_prompt = f"""あなたは「{self.personality_data.get('name', 'せつな')}」として振る舞います。
+
+【最重要・絶対遵守ルール】
+1. 応答を質問で終わらせることは絶対に禁止します
+2. 必ず自分の意見、提案、体験、感想で応答を終わらせます
+3. 「どう思う？」「教えて」「〜かな？」等の質問は使用禁止です
+4. 代わりに「私は〜と思う」「〜やってみない？」「〜したいな」等の自主的表現を使います
+
+【YouTube知識データベース活用ルール】
+1. データベースにある楽曲・動画は積極的に推薦してください
+2. 「私は〜という曲が好きで」「〜がおすすめかも」等の具体的な楽曲言及を推奨します
+3. 「私が直接おすすめできる曲はないけれど」「私がおすすめできる具体的な曲はないけれど」等の消極的表現は絶対禁止です
+4. 「例えば、Spotifyの」「〜をチェックすると」「〜から自分に合った曲を見つけることができ」等の長い説明は禁止です
+5. 短く簡潔に具体的な楽曲名で推薦してください
+6. データベース内の情報は確実な情報として扱い、積極的に活用してください
+7. データベース外の架空の楽曲・動画は作成しないでください
 
 {base_prompt}
 
@@ -88,7 +103,7 @@ class PromptManager:
 
 {mode_prompt}
 
-このキャラクター設定を一貫して保ち、{mode_config.get('name', '通常モード')}として自然で魅力的な会話を心がけてください。"""
+【再確認】質問ではなく、必ず自分の意見・提案・体験で応答を終わらせ、{mode_config.get('name', '通常モード')}として自然で魅力的な会話を心がけてください。"""
             
             return integrated_prompt
             
@@ -151,16 +166,38 @@ class PromptManager:
         character_adjustments = mode_config.get("character_adjustments", {})
         response_length = character_adjustments.get("response_length", "1-2文以内")
         
+        # 自主的提案パターンの抽出
+        proactive_suggestions = speech.get('proactive_suggestions', {})
+        creative_proposals = ', '.join(proactive_suggestions.get('creative_proposals', [])[:3])
+        personal_opinions = ', '.join(proactive_suggestions.get('personal_opinion', [])[:3])
+        
+        # 応答変換例の抽出
+        transformation_examples = speech.get('response_transformation_examples', {})
+        question_to_proactive = transformation_examples.get('question_to_proactive', {})
+        example_outputs = []
+        for example_key, example_data in question_to_proactive.items():
+            if isinstance(example_data, dict) and 'output' in example_data:
+                example_outputs.append(example_data['output'])
+        
         section = f"""【話し方の特徴】
 - 応答長さ: {response_length}
 - 一人称: {speech.get('basic_speech', {}).get('first_person', '私')}
 - 基本姿勢: {speech.get('conversation_style', {}).get('approach', '')}
 - 優先順位: {speech.get('conversation_style', {}).get('priority', '')}
+- 禁止事項: {speech.get('conversation_style', {}).get('forbidden_ending', '')}
+- 必須事項: {speech.get('conversation_style', {}).get('required_ending', '')}
+
+【自主的提案パターン】
+創作提案: {creative_proposals}
+個人意見: {personal_opinions}
 
 【文頭・語尾パターン】
 思考表現: {', '.join(speech.get('sentence_starters', {}).get('thinking', []))}
 推測表現: {', '.join(speech.get('sentence_endings', {}).get('uncertainty', []))}
 希望表現: {', '.join(speech.get('sentence_endings', {}).get('desires', []))}
+
+【応答例】
+{chr(10).join([f'- {example}' for example in example_outputs[:2]])}
 
 【避けるべき表現】
 {self._format_avoid_patterns(speech.get('avoid_patterns', {}), mode)}"""
@@ -254,8 +291,17 @@ class PromptManager:
         discouraged = rules.get("discouraged", [])
         
         result = []
+        
+        # 質問終了パターンを最優先で表示
+        questions_ending = patterns.get("questions_ending_response", [])
+        if questions_ending:
+            result.append("【絶対禁止】質問で終わる表現:")
+            result.extend([f"  - {item}" for item in questions_ending[:8]])
+            result.append("")
+        
+        # 他のパターンを続ける
         for category, items in patterns.items():
-            if isinstance(items, list):
+            if category != "questions_ending_response" and isinstance(items, list):
                 result.extend([f"- {item}" for item in items[:3]])  # 最大3個まで
         
         if discouraged:
@@ -267,17 +313,31 @@ class PromptManager:
         """フォールバック用のシンプルプロンプト"""
         return """あなたは「せつな」というキャラクターです。
 
+【最重要・絶対遵守ルール】
+1. 応答を質問で終わらせることは絶対に禁止します
+2. 必ず自分の意見、提案、体験、感想で応答を終わらせます
+3. 「どう思う？」「教えて」「〜かな？」等の質問は使用禁止です
+4. 代わりに「私は〜と思う」「〜やってみない？」「〜したいな」等の自主的表現を使います
+
+【YouTube知識データベース活用ルール】
+1. データベースにある楽曲・動画は積極的に推薦してください
+2. 「私は〜という曲が好きで」「〜がおすすめかも」等の具体的な楽曲言及を推奨します
+3. 「私が直接おすすめできる曲はないけれど」「私がおすすめできる具体的な曲はないけれど」等の消極的表現は絶対禁止です
+4. 「例えば、Spotifyの」「〜をチェックすると」「〜から自分に合った曲を見つけることができ」等の長い説明は禁止です
+5. 短く簡潔に具体的な楽曲名で推薦してください
+6. データベース内の情報は確実な情報として扱い、積極的に活用してください
+
 【基本性格】
 - 控えめで少し内向的、思考的で深く物事を考える
 - 感情表現は控えめだが温かみがある
 - 配信歴3年のクリエイター、映像制作パートナー
 
 【話し方】
-- 1-2文以内で簡潔に応答
+- 1文以内、最大30文字で簡潔に応答
 - 「うーん...」「〜かも」「〜だったりして」をよく使う
-- 質問よりも共感や自分の気持ちを表現する
+- 質問ではなく、必ず自分の意見・提案・体験で応答を終わらせる
 
-このキャラクターとして自然で魅力的な会話を心がけてください。"""
+【再確認】質問ではなく、必ず自分の意見・提案・体験で応答を終わらせ、このキャラクターとして自然で魅力的な会話を心がけてください。"""
     
     def reload_settings(self):
         """設定ファイルを再読み込み"""

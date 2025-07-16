@@ -6,15 +6,16 @@ response_modes:
     name: "通常モード"
     description: "YouTube検索込みの詳細応答"
     character_adjustments:
-      response_length: "1-2文、最大60文字"
+      response_length: "1文、最大40文字"
       thinking_time: "しっかりと考える時間を取る"
-      detail_level: "詳細で丁寧"
-      emotion_expression: "豊かな感情表現"
+      detail_level: "簡潔だが核心を突く"
+      emotion_expression: "控えめだが温かみのある感情表現"
     
     prompt_additions:
-      - "詳細な楽曲情報がある場合は、それを活用して深い分析を提供"
-      - "YouTube動画知識を自然に会話に織り込む"
-      - "複数の推薦を検討して最適なものを選択"
+      - "簡潔で完結した文章で答える"
+      - "途中で止まらず、自然な終わり方をする"
+      - "核心だけを伝える"
+      - "複文を避けて単文で簡潔に"
     
     speech_patterns:
       thinking_frequency: 0.4  # うーん...等の使用頻度
@@ -25,7 +26,7 @@ response_modes:
     name: "高速モード"
     description: "既存知識のみで簡潔応答"
     character_adjustments:
-      response_length: "1文、最大40文字"
+      response_length: "1文、最大30文字"
       thinking_time: "素早い反応"
       detail_level: "簡潔だが温かみ保持"
       emotion_expression: "コンパクトな感情表現"
@@ -34,6 +35,7 @@ response_modes:
       - "既存の知識と経験のみで応答"
       - "簡潔だが心のこもった応答を心がける"
       - "核心を突いた一言アドバイス"
+      - "単文で自然に完結させる"
     
     speech_patterns:
       thinking_frequency: 0.2  # 考える時間を短縮

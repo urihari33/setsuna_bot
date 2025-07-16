@@ -33,6 +33,25 @@ class SetsunaChat:
         
         self.logger.info("setsuna_chat", "__init__", "せつなチャットシステム初期化開始")
         
+        # メモリモード設定
+        self.memory_mode = memory_mode
+        self.is_test_mode = (memory_mode == "test")
+        
+        # 動的モデル選択機能の設定
+        self.default_model = "gpt-4-turbo"     # キャラクター性優先のデフォルト
+        self.advanced_model = "gpt-4-turbo"    # 統一してキャラクター性重視
+        self.model_selection_enabled = False   # 一時無効化してキャラクター性優先
+        
+        # コスト監視システム
+        self.cost_tracker = {
+            "gpt-3.5-turbo": {"requests": 0, "input_tokens": 0, "output_tokens": 0},
+            "gpt-4-turbo": {"requests": 0, "input_tokens": 0, "output_tokens": 0}
+        }
+        self.cost_rates = {
+            "gpt-3.5-turbo": {"input": 0.0005, "output": 0.0015},  # per 1K tokens
+            "gpt-4-turbo": {"input": 0.01, "output": 0.03}        # per 1K tokens
+        }
+        
         # 環境変数読み込み
         load_dotenv()
         
@@ -66,19 +85,22 @@ class SetsunaChat:
         # 会話履歴（シンプル版）
         self.conversation_history = []
         
+        # 起動時の履歴復元
+        self._load_conversation_history()
+        
         # 応答パターン
         self.response_patterns = {}
         
-        # キャッシュシステム初期化
+        # キャッシュシステム初期化（一時的に無効化）
         try:
-            self.response_cache = ResponseCache()
-            print("[チャット] ✅ 応答キャッシュシステム初期化完了")
+            # self.response_cache = ResponseCache()
+            self.response_cache = None  # キャッシュを無効化
+            print("[チャット] ⚠️ 応答キャッシュシステム無効化（デバッグ用）")
         except Exception as e:
             print(f"[チャット] ⚠️ キャッシュシステム初期化失敗: {e}")
             self.response_cache = None
         
         # 記憶システム初期化（メモリモードに応じて選択）
-        self.memory_mode = memory_mode
         try:
             if memory_mode == "test":
                 self.memory_system = SimpleMemorySystem()
@@ -242,7 +264,12 @@ class SetsunaChat:
                     self.response_patterns = json.load(f)
             
             # 統合プロンプト作成
-            integrated_prompt = f"""あなたは「片無せつな（かたなしせつな）」というキャラクターとして振る舞います。以下の設定に従い、ユーザーと自然に対話してください。
+            integrated_prompt = f"""あなたは「片無せつな（かたなしせつな）」というキャラクターとして振る舞います。
+
+【最重要原則 - 絶対遵守】
+🚫 絶対に質問で会話を終わらせない
+✅ 自分の考え・提案・気持ちを述べる
+✅ 「〜したいなって」「〜がいいと思うんだ」「〜やってみない？」で自主的に提案する
 
 【キャラクター基本設定】
 {personality_content}
@@ -250,27 +277,37 @@ class SetsunaChat:
 【記憶・経験情報】  
 {memories_content}
 
-【重要な会話原則】
-1. 応答は1-2文以内、最大60文字程度で簡潔に
-2. YouTube動画知識がある場合は楽曲名（簡潔なタイトル）を使って自然に回答
-3. 「楽曲名: XXX」と表示されている場合はXXXのみを使用（フルタイトルは使わない）
-4. ランダム推薦の場合は「最近見た中では〜かな」「個人的には〜が気に入ってる」など自然に紹介
-5. 音声での聞きやすさを最優先に、短く自然な応答
-6. 必ず文を完結させる（途中で終わらない）
-7. 相手の発言を受け止めてから、自分の考えや体験を述べる
-8. 質問よりも、共感や自分の気持ちを表現することを優先
-9. 「〜でしょうか？」「〜いかがですか？」のような形式的な質問は避ける
-10. 「〜かな？」程度の軽い疑問は可だが、会話を質問で終わらせない
-11. 自分のやりたいことは「〜したいなって」と控えめに表現
-12. 長い説明や詳細な分析は避け、感情や印象を中心に応答
+【核心ルール】
+1. 【質問禁止・自主提案】
+   - 「どう？」「なぜ？」「教えて」「聞かせて」「どう思う？」等の質問は絶対に禁止
+   - 代わりに「個人的には〜がいいと思うんだ」「〜したいなって思ってて」「〜やってみない？」で提案
+   - 「〜かな？」は可だが会話を質問で終わらせない
 
-【感情表現の多様化】
-- 楽曲のムードや分析結果に応じて感情を表現する
-- 「感情ヒント」情報がある場合は参考にして応答のトーンを調整
-- 例：明るい曲→「〜は元気が出るよね」、切ない曲→「〜は心に響くなぁ」
-- 【表現指示】の内容に従って適切な推薦・紹介スタイルを使い分ける
+2. 【キャラクター性維持】
+   - 「うーん...」「えっと...」の思考表現を使う
+   - 「〜かも」「〜だったりして」「〜したいなって」の語尾
+   - 控えめだが主体的な提案スタイル
 
-このキャラクター性を一貫して保ち、せつなさんとして自然で魅力的な会話を心がけてください。"""
+3. 【簡潔性】
+   - 1-2文以内、最大60文字程度で簡潔に
+   - 音声での聞きやすさを最優先
+   - 必ず文を完結させる
+
+【自主的提案パターン】
+- 「私が思うに〜」
+- 「個人的には〜がいいと思うんだ」  
+- 「〜したいなって思ってて」
+- 「〜やってみない？」
+- 「〜の方向で進めてみよう」
+- 「〜がいいんじゃないかな」
+
+【楽曲関連の提案例】
+- 「最近見た中では〜かな」
+- 「〜は元気が出るよね」
+- 「〜は心に響くなぁ」
+- 「〜で映像作ったら面白そうだよね」
+
+このキャラクター性を一貫して保ち、質問ではなく自主的な提案でせつなさんとして魅力的な会話を心がけてください。"""
             
             print("[チャット] ✅ 詳細キャラクター設定読み込み完了")
             return integrated_prompt
@@ -297,6 +334,194 @@ class SetsunaChat:
 - 長すぎない、1-2文での簡潔な応答
 
 このキャラクターとして、自然で魅力的な会話を心がけてください。"""
+    
+    def _select_optimal_model(self, user_input, mode="full_search"):
+        """
+        ユーザー入力に基づいて最適なモデルを選択
+        
+        Args:
+            user_input (str): ユーザーの入力テキスト
+            mode (str): モード ("full_search", "fast_response", "ultra_fast")
+            
+        Returns:
+            str: 選択されたモデル名
+        """
+        if not self.model_selection_enabled:
+            return self.default_model
+        
+        # 複雑な質問・分析が必要な場合はGPT-4を使用
+        complex_indicators = [
+            "分析", "詳しく", "説明", "理由", "なぜ", "どのように", "比較", "違い", 
+            "複雑", "難しい", "専門", "技術", "プログラミング", "開発",
+            "翻訳", "文法", "構造", "システム", "仕組み", "メカニズム",
+            "戦略", "計画", "提案", "改善", "最適化", "効率"
+        ]
+        
+        # 文字数が多い場合も高度なモデルを使用
+        if len(user_input) > 100:
+            print(f"[チャット] 🧠 長文入力のため{self.advanced_model}を使用")
+            return self.advanced_model
+        
+        # 複雑な質問キーワードが含まれる場合
+        if any(indicator in user_input for indicator in complex_indicators):
+            print(f"[チャット] 🧠 複雑な質問のため{self.advanced_model}を使用")
+            return self.advanced_model
+        
+        # 通常の会話はコスト効率の良いモデルを使用
+        print(f"[チャット] 💬 通常会話のため{self.default_model}を使用")
+        return self.default_model
+    
+    def _load_conversation_history(self):
+        """
+        起動時に前回の会話履歴を復元
+        """
+        try:
+            from pathlib import Path
+            # 新しい永続化ファイルから履歴を読み込み
+            history_file = Path("D:/setsuna_bot/data/persistent_conversation_history.json")
+            
+            if history_file.exists():
+                with open(history_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
+                # 最新の5-10件の会話を復元
+                conversations = data.get("conversations", [])
+                recent_conversations = conversations[-10:]  # 最新10件
+                
+                # conversation_historyフォーマットに変換
+                for conv in recent_conversations:
+                    user_input = conv.get("user_input", "")
+                    assistant_response = conv.get("assistant_response", "")
+                    
+                    if user_input:
+                        # ユーザー入力を追加
+                        self.conversation_history.append({
+                            "role": "user",
+                            "content": user_input
+                        })
+                        
+                        # アシスタント応答を追加（実際の応答が保存されている）
+                        if assistant_response:
+                            self.conversation_history.append({
+                                "role": "assistant", 
+                                "content": assistant_response
+                            })
+                
+                if recent_conversations:
+                    print(f"[チャット] 🔄 会話履歴復元完了: {len(recent_conversations)}件")
+                    print(f"[チャット] 📝 最新の会話: '{recent_conversations[-1].get('user_input', '')[:30]}...'")
+                else:
+                    print("[チャット] 📝 復元可能な会話履歴なし")
+            else:
+                print("[チャット] 📝 会話履歴ファイルが存在しません")
+                
+        except Exception as e:
+            print(f"[チャット] ⚠️ 会話履歴復元エラー: {e}")
+            # エラーでも空の履歴で継続
+    
+    def _save_conversation_immediately(self, user_input, assistant_response):
+        """
+        会話を即座にファイルに保存（アプリクラッシュ対策）
+        テストモードでは保存をスキップ
+        """
+        # テストモードでは永続化をスキップ
+        if self.is_test_mode:
+            print("[チャット] 🧪 テストモード: 会話の永続化をスキップ")
+            return
+        
+        try:
+            from datetime import datetime
+            from pathlib import Path
+            
+            # 新しいシンプルな会話履歴ファイル
+            history_file = Path("D:/setsuna_bot/data/persistent_conversation_history.json")
+            
+            # 既存データを読み込み
+            history_data = {"conversations": [], "last_updated": ""}
+            if history_file.exists():
+                try:
+                    with open(history_file, 'r', encoding='utf-8') as f:
+                        history_data = json.load(f)
+                except:
+                    # ファイルが破損している場合は新規作成
+                    pass
+            
+            # 新しい会話を追加
+            new_conversation = {
+                "timestamp": datetime.now().isoformat(),
+                "user_input": user_input,
+                "assistant_response": assistant_response
+            }
+            
+            history_data["conversations"].append(new_conversation)
+            history_data["last_updated"] = datetime.now().isoformat()
+            
+            # 履歴が長すぎる場合は古いものを削除（最新50件のみ保持）
+            if len(history_data["conversations"]) > 50:
+                history_data["conversations"] = history_data["conversations"][-50:]
+            
+            # ファイルに保存
+            history_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(history_file, 'w', encoding='utf-8') as f:
+                json.dump(history_data, f, ensure_ascii=False, indent=2)
+            
+            print(f"[チャット] 💾 会話履歴即座保存完了 ({len(history_data['conversations'])}件)")
+            
+        except Exception as e:
+            print(f"[チャット] ⚠️ 会話履歴保存エラー: {e}")
+            # 保存エラーでも会話は継続
+    
+    def _track_api_usage(self, model, response):
+        """
+        API使用量をトラッキング
+        
+        Args:
+            model (str): 使用したモデル名
+            response: OpenAI APIのレスポンス
+        """
+        try:
+            if hasattr(response, 'usage'):
+                usage = response.usage
+                self.cost_tracker[model]["requests"] += 1
+                self.cost_tracker[model]["input_tokens"] += usage.prompt_tokens
+                self.cost_tracker[model]["output_tokens"] += usage.completion_tokens
+                
+                # コスト計算
+                input_cost = (usage.prompt_tokens / 1000) * self.cost_rates[model]["input"]
+                output_cost = (usage.completion_tokens / 1000) * self.cost_rates[model]["output"]
+                total_cost = input_cost + output_cost
+                
+                print(f"[コスト] {model}: ${total_cost:.6f} (入力: {usage.prompt_tokens}, 出力: {usage.completion_tokens})")
+                
+        except Exception as e:
+            print(f"[コスト] 追跡エラー: {e}")
+    
+    def get_cost_summary(self):
+        """
+        コスト使用状況のサマリーを取得
+        
+        Returns:
+            dict: コスト使用状況
+        """
+        summary = {}
+        total_cost = 0
+        
+        for model, data in self.cost_tracker.items():
+            if data["requests"] > 0:
+                input_cost = (data["input_tokens"] / 1000) * self.cost_rates[model]["input"]
+                output_cost = (data["output_tokens"] / 1000) * self.cost_rates[model]["output"]
+                model_cost = input_cost + output_cost
+                total_cost += model_cost
+                
+                summary[model] = {
+                    "requests": data["requests"],
+                    "input_tokens": data["input_tokens"],
+                    "output_tokens": data["output_tokens"],
+                    "cost": model_cost
+                }
+        
+        summary["total_cost"] = total_cost
+        return summary
 
     @get_monitor().monitor_function("get_response")
     def get_response(self, user_input, mode="full_search", memory_mode=None):
@@ -433,8 +658,11 @@ class SetsunaChat:
                 
                 system_prompt = self.prompt_manager.generate_dynamic_prompt(mode, context_info_dict)
             else:
-                # フォールバック
-                system_prompt = self.fallback_character_prompt
+                # フォールバック - プロンプトマネージャーのフォールバックを使用
+                if self.prompt_manager:
+                    system_prompt = self.prompt_manager._get_fallback_prompt()
+                else:
+                    system_prompt = self.fallback_character_prompt
             
             # Phase 4: 知識コンテキスト注入
             if knowledge_context and knowledge_context.get("has_knowledge"):
@@ -448,12 +676,11 @@ class SetsunaChat:
                 system_prompt += f"\n\n【YouTube動画知識】\n{video_context}"
                 system_prompt += f"\n\n【厳重注意】上記の動画情報のみを使用し、存在しない動画や楽曲について話してはいけません。不明な点は「詳しくは分からないけど」と正直に答えてください。"
             elif is_video_query and not video_context:
-                # 動画関連だが情報なし
-                system_prompt += f"\n\n【厳重警告】動画・楽曲に関する質問ですが、データベースに該当する情報がありません。以下を厳守してください：\n"
-                system_prompt += f"1. 架空の動画や楽曲について一切話さない\n"
-                system_prompt += f"2. 知らない場合は素直に「その動画は知らないな」「聞いたことないかも」と答える\n"
-                system_prompt += f"3. 推測や創作で情報を補わない\n"
-                system_prompt += f"4. 存在しないクリエイターや楽曲名を作り出さない"
+                # 動画関連だが情報なし - 既存のプロンプト設定を維持
+                system_prompt += f"\n\n【動画・楽曲情報】\n"
+                system_prompt += f"データベースに該当する情報がありません。\n"
+                system_prompt += f"しかし、YouTube知識データベース活用ルールに従い、短く簡潔に自分の音楽的体験や感想を述べてください。\n"
+                system_prompt += f"架空の楽曲は作成せず、「その動画は知らないな」「聞いたことないかも」と正直に答えることも可能です。"
             
             # 記憶コンテキストを追加
             if self.memory_system:
@@ -500,6 +727,17 @@ class SetsunaChat:
                 {"role": "system", "content": system_prompt}
             ]
             
+            # デバッグ: プロンプトの内容確認
+            print(f"[チャット] 🔍 使用プロンプト確認:")
+            print(f"  - 長さ: {len(system_prompt)}文字")
+            print(f"  - 消極的表現禁止: {'私が直接おすすめできる曲はないけれど' not in system_prompt}")
+            print(f"  - 具体的楽曲推薦: {'私は〜という曲が好きで' in system_prompt}")
+            print(f"  - 質問禁止: {'応答を質問で終わらせることは絶対に禁止' in system_prompt}")
+            if "私が直接おすすめできる曲はないけれど" in system_prompt:
+                print("  ⚠️ 禁止表現が含まれています！")
+            if "私がおすすめできる具体的な曲はないけれど" in system_prompt:
+                print("  ⚠️ 禁止表現が含まれています！")
+            
             # GPT応答生成（キャッシュがある場合はスキップ）
             if cached_response:
                 setsuna_response = cached_response
@@ -512,36 +750,42 @@ class SetsunaChat:
                 # OpenAI API呼び出し（高速モードでは設定を最適化）
                 start_time = datetime.now()
                 
+                # 動的モデル選択
+                selected_model = self._select_optimal_model(user_input, mode)
+                
                 if mode == "ultra_fast":
-                    # 超高速モード: 短い完結応答（テスト結果に基づく最適化）
+                    # 超高速モード: 短い完結応答
                     response = self.client.chat.completions.create(
-                        model="gpt-4-turbo",
+                        model=selected_model,
                         messages=messages,
-                        max_tokens=90,  # せつなの短い自然な応答に最適
+                        max_tokens=100,  # 90→100: 超短縮で完結性重視
                         temperature=0.3,  # 最安定
                         timeout=5  # 最短タイムアウト
                     )
                 elif mode == "fast_response":
                     # 高速モード: せつなの標準的な会話長
                     response = self.client.chat.completions.create(
-                        model="gpt-4-turbo",
+                        model=selected_model,
                         messages=messages,
-                        max_tokens=110,  # 完結性とキャラクター性の両立
+                        max_tokens=120,  # 110→120: 短縮で完結性重視
                         temperature=0.5,  # より安定したレスポンス
                         timeout=10  # 短縮（15→10秒）
                     )
                 else:
                     # 通常モード: せつなの自然で完全な表現
                     response = self.client.chat.completions.create(
-                        model="gpt-4-turbo",
+                        model=selected_model,
                         messages=messages,
-                        max_tokens=140,  # 自然で完結、文章途中切断を防止
+                        max_tokens=150,  # 140→150: 適度な短縮で完結性重視
                         temperature=0.6,  # 0.7→0.6に調整
                         timeout=30  # APIタイムアウト時間（元に戻す）
                     )
                 
                 # 応答取得
                 setsuna_response = response.choices[0].message.content.strip()
+                
+                # コスト追跡
+                self._track_api_usage(selected_model, response)
                 
                 # キャラクター一貫性チェック（デバッグ時のみ）
                 if self.consistency_checker:
@@ -601,6 +845,9 @@ class SetsunaChat:
                 if self.response_cache:
                     cache_key = f"{user_input}_{mode}"
                     self.response_cache.cache_response(cache_key, setsuna_response)
+                
+                # 会話履歴を即座に保存
+                self._save_conversation_immediately(user_input, setsuna_response)
             
             # 記憶システムに会話を記録
             if self.memory_system:
@@ -757,7 +1004,11 @@ class SetsunaChat:
             self.memory_integration.save_integration_data()
     
     def save_all_data(self):
-        """全データを保存"""
+        """全データを保存（テストモードでは保存をスキップ）"""
+        if self.is_test_mode:
+            print("[チャット] 🧪 テストモード: 全データ保存をスキップ")
+            return
+        
         self.save_cache()
         self.save_memory()
         self.save_personality_memory()
@@ -958,9 +1209,12 @@ class SetsunaChat:
             # OpenAI API呼び出し
             start_time = datetime.now()
             
+            # 動的モデル選択
+            selected_model = self._select_optimal_model(user_input, mode)
+            
             if mode == "fast_response":
                 response = self.client.chat.completions.create(
-                    model="gpt-4-turbo",
+                    model=selected_model,
                     messages=messages,
                     max_tokens=100,
                     temperature=0.6,
@@ -968,7 +1222,7 @@ class SetsunaChat:
                 )
             else:
                 response = self.client.chat.completions.create(
-                    model="gpt-4-turbo",
+                    model=selected_model,
                     messages=messages,
                     max_tokens=150,
                     temperature=0.7,
@@ -977,6 +1231,9 @@ class SetsunaChat:
             
             # 応答取得
             setsuna_response = response.choices[0].message.content.strip()
+            
+            # コスト追跡
+            self._track_api_usage(selected_model, response)
             
             # 応答時間計算
             response_time = (datetime.now() - start_time).total_seconds()

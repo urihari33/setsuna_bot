@@ -375,6 +375,29 @@ class SetsunaGUI:
         
         print("✅ システムコンポーネント初期化完了")
     
+    def _delayed_startup_history(self):
+        """遅延実行による起動時履歴表示（RichMessageRenderer初期化待ち）"""
+        print("🕐 遅延実行による起動時履歴表示開始...")
+        
+        # RichMessageRendererの初期化完了を確認
+        if hasattr(self, 'rich_renderer') and self.rich_renderer:
+            print("✅ RichMessageRenderer初期化完了、履歴表示実行")
+            self._display_startup_history()
+        elif hasattr(self, 'history_text') and self.history_text:
+            print("⚠️ RichMessageRenderer未初期化、フォールバック使用")
+            self._display_startup_history()
+        else:
+            print("⏳ GUI未完成、200ms後に再試行")
+            # 再試行（最大5回まで）
+            if not hasattr(self, '_startup_retry_count'):
+                self._startup_retry_count = 0
+            
+            self._startup_retry_count += 1
+            if self._startup_retry_count < 5:
+                self.root.after(200, self._delayed_startup_history)
+            else:
+                print("❌ 起動時履歴表示を諦めました（GUI初期化不完全）")
+    
     def _create_widgets(self):
         """ウィジェット作成"""
         
@@ -453,6 +476,9 @@ class SetsunaGUI:
         
         # 知識分析タブのウィジェット作成（旧SA学習のリニューアル）
         self._create_knowledge_analysis_widgets()
+        
+        # 全体レイアウト設定
+        self._setup_main_layout()
     
     def _create_chat_widgets(self):
         """チャットタブのウィジェット作成"""
@@ -584,6 +610,67 @@ class SetsunaGUI:
         # URL表示エリアは後でレイアウト設定時に表示
         # （初期化時は非表示のまま）
         print("🔧 URL表示エリア: ウィジェット作成完了（レイアウトは後で設定）")
+        
+        # チャットタブのレイアウト設定
+        self._setup_chat_layout()
+    
+    def _setup_chat_layout(self):
+        """チャットタブのレイアウト設定"""
+        
+        # 1. 会話履歴エリア
+        self.history_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=(5, 2))
+        self.history_text.pack(fill=tk.BOTH, expand=True)
+        
+        # 2. モード選択エリア
+        self.mode_frame.pack(fill=tk.X, padx=5, pady=2)
+        self.mode_normal_radio.pack(side=tk.LEFT, padx=(0, 10))
+        self.mode_fast_radio.pack(side=tk.LEFT)
+        
+        # 3. 統合チャット入力エリア
+        self.input_frame.pack(fill=tk.X, padx=5, pady=2)
+        
+        # 3-1. 添付ボタンエリア
+        self.attachment_frame.pack(fill=tk.X, pady=(0, 3))
+        self.image_attach_button.pack(side=tk.LEFT, padx=(0, 5))
+        self.url_attach_button.pack(side=tk.LEFT, padx=(0, 5))
+        self.clear_attachments_button.pack(side=tk.LEFT)
+        
+        # 3-2. 添付プレビューエリア（初期は非表示）
+        # self.preview_frame.pack() は必要時のみ表示
+        
+        # 3-3. テキスト入力エリア
+        self.text_input_frame.pack(fill=tk.X, pady=(3, 0))
+        self.text_input.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 5))
+        self.send_button.pack(side=tk.RIGHT)
+        
+        # 4. URL表示エリア（初期は非表示）
+        # self.url_frame.pack() は動画URL検出時のみ表示
+        
+        print("✅ チャットタブレイアウト設定完了")
+    
+    def _setup_main_layout(self):
+        """メインレイアウト設定"""
+        
+        # タイトルフレーム
+        self.title_frame.pack(fill=tk.X, padx=10, pady=(5, 2))
+        self.title_label.pack()
+        
+        # ステータスフレーム
+        self.status_frame.pack(fill=tk.X, padx=10, pady=2)
+        self.voice_status_label.pack(side=tk.LEFT)
+        
+        # メモリモードフレーム
+        self.memory_mode_frame.pack(side=tk.RIGHT, padx=(10, 0))
+        self.memory_mode_button.pack(side=tk.LEFT, padx=(0, 5))
+        self.memory_status_label.pack(side=tk.LEFT)
+        
+        # ホットキー情報
+        self.hotkey_info_label.pack(side=tk.RIGHT, padx=(20, 0))
+        
+        # メインタブ
+        self.notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=(2, 5))
+        
+        print("✅ メインレイアウト設定完了")
     
     def _create_memory_widgets(self):
         """記憶編集タブのウィジェット作成"""
@@ -1507,6 +1594,9 @@ class SetsunaGUI:
         
         # チャットタブのレイアウト
         self._setup_chat_layout()
+        
+        # GUI初期化完了後に起動時履歴を表示（確実な実行のために遅延実行）
+        self.root.after(100, self._delayed_startup_history)
     
     def _setup_chat_layout(self):
         """チャットタブのレイアウト設定（モード選択対応）"""
@@ -1585,8 +1675,14 @@ class SetsunaGUI:
         self.text_input.bind('<Control-Return>', lambda event: self.send_integrated_message())
     
     def add_message_to_history(self, speaker, message, message_type="text"):
-        """会話履歴にメッセージを追加（Phase 2C-2: リッチメッセージ対応）"""
+        """会話履歴にメッセージを追加（デバッグ機能強化版）"""
         timestamp = datetime.now().strftime("%H:%M:%S")
+        print(f"🔍 add_message_to_history: {speaker} -> {message[:50]}... (type: {message_type})")
+        
+        # GUIコンポーネントの確認
+        if not hasattr(self, 'history_text') or not self.history_text:
+            print("❌ history_textが利用できません")
+            return
         
         # 履歴データに追加
         history_entry = {
@@ -1598,45 +1694,72 @@ class SetsunaGUI:
         self.conversation_history.append(history_entry)
         
         # Phase 2C-2: RichMessageRendererを使用
-        if self.rich_renderer:
-            self.rich_renderer.render_message(speaker, message, message_type)
+        if hasattr(self, 'rich_renderer') and self.rich_renderer:
+            print(f"🎨 RichMessageRenderer使用: {speaker}")
+            try:
+                self.rich_renderer.render_message(speaker, message, message_type)
+                print(f"✅ RichMessageRendererメッセージ表示成功: {speaker}")
+                return
+            except Exception as e:
+                print(f"❌ RichMessageRendererエラー: {e}")
         else:
+            print(f"⚠️ RichMessageRendererが利用できません: hasattr={hasattr(self, 'rich_renderer')}, value={getattr(self, 'rich_renderer', None)}")
+            
             # RichMessageRendererが利用できない場合、初期化を試行
             if hasattr(self, 'history_text') and self.history_text:
                 try:
+                    print("🔄 RichMessageRenderer再初期化を試行...")
                     self.rich_renderer = RichMessageRenderer(self.history_text)
-                    print("🔄 RichMessageRenderer再初期化成功")
+                    print("✅ RichMessageRenderer再初期化成功")
                     self.rich_renderer.render_message(speaker, message, message_type)
+                    print(f"✅ 再初期化後メッセージ表示成功: {speaker}")
                     return
                 except Exception as e:
-                    print(f"⚠️ RichMessageRenderer再初期化失敗: {e}")
-            
-            # フォールバック: 従来の表示方法
-            self._fallback_message_display(speaker, message, message_type, timestamp)
+                    print(f"❌ RichMessageRenderer再初期化失敗: {e}")
+        
+        # フォールバック: 従来の表示方法
+        print(f"🔄 フォールバック表示を使用: {speaker}")
+        self._fallback_message_display(speaker, message, message_type, timestamp)
     
     def _fallback_message_display(self, speaker, message, message_type, timestamp):
-        """フォールバック: 従来のメッセージ表示"""
-        # GUI表示更新
-        self.history_text.config(state=tk.NORMAL)
-        
-        # 発言者によって色分け
-        if speaker == "あなた":
-            speaker_color = "blue"
-            type_icon = "🗣️" if message_type == "voice" else "💬"
-        else:  # せつな
-            speaker_color = "green"
-            type_icon = "🤖"
-        
-        # メッセージを追加（行間を詰める）
-        self.history_text.insert(tk.END, f"[{timestamp}] {type_icon} {speaker}: ", (speaker_color,))
-        self.history_text.insert(tk.END, f"{message}\n")
-        
-        # タグ設定
-        self.history_text.tag_config(speaker_color, foreground=speaker_color, font=('Arial', 10, 'bold'))
-        
-        # 最下部にスクロール
-        self.history_text.see(tk.END)
-        self.history_text.config(state=tk.DISABLED)
+        """フォールバック: 従来のメッセージ表示（デバッグ機能強化版）"""
+        try:
+            print(f"🔄 フォールバック表示実行: {speaker} -> {message[:30]}...")
+            
+            # GUI表示更新
+            self.history_text.config(state=tk.NORMAL)
+            
+            # 発言者によって色分けとアイコン設定
+            if speaker == "あなた" or "ユーザー" in speaker:
+                speaker_color = "blue"
+                type_icon = "🗣️" if message_type == "voice" else "💬"
+            elif "せつな" in speaker:
+                speaker_color = "green"
+                type_icon = "🤖"
+            elif "システム" in speaker:
+                speaker_color = "purple"
+                type_icon = "📊"
+            else:
+                speaker_color = "black"
+                type_icon = "💬"
+            
+            # メッセージを追加
+            self.history_text.insert(tk.END, f"[{timestamp}] {type_icon} {speaker}: ", (speaker_color,))
+            self.history_text.insert(tk.END, f"{message}\n")
+            
+            # タグ設定
+            self.history_text.tag_config(speaker_color, foreground=speaker_color, font=('Arial', 10, 'bold'))
+            
+            # 最下部にスクロール
+            self.history_text.see(tk.END)
+            self.history_text.config(state=tk.DISABLED)
+            
+            print(f"✅ フォールバック表示成功: {speaker}")
+            
+        except Exception as e:
+            print(f"❌ フォールバック表示エラー: {e}")
+            import traceback
+            traceback.print_exc()
     
     def send_text_message(self):
         """テキストメッセージ送信"""
@@ -4331,6 +4454,183 @@ class SetsunaGUI:
             messagebox.showerror("エラー", f"記憶統合分析エラー: {e}")
     
     
+    def _display_startup_history(self):
+        """起動時に前回の会話履歴を表示（デバッグ機能強化版）"""
+        try:
+            print("📜 起動時履歴表示開始...")
+            print(f"🔍 GUIコンポーネント状態: history_text={hasattr(self, 'history_text')}, rich_renderer={hasattr(self, 'rich_renderer')}")
+            
+            # GUIコンポーネントの確認
+            if not hasattr(self, 'history_text') or not self.history_text:
+                print("❌ history_textが初期化されていません")
+                return
+            
+            # 複数のJSONファイルから履歴を取得
+            recent_conversations = self._load_recent_conversations()
+            print(f"📜 取得した会話数: {len(recent_conversations)}件")
+            
+            if not recent_conversations:
+                print("📝 履歴データなし、新規セッション開始")
+                self.add_message_to_history("システム", "新しいセッションを開始します。お気軽にお話しください！", "info")
+                return
+            
+            # 履歴表示開始
+            print("📄 履歴表示開始...")
+            self.add_message_to_history("システム", "=== 前回の続き ===", "info")
+            
+            # 最新の3件の会話を表示
+            display_conversations = recent_conversations[-3:]  # 最新の3件
+            print(f"📄 表示対象の会話: {len(display_conversations)}件")
+            
+            for i, conv in enumerate(display_conversations):
+                user_msg = conv.get('user_input', '')
+                assistant_msg = conv.get('assistant_response', '')
+                timestamp = conv.get('timestamp', '')
+                
+                print(f"🔍 会話{i+1}: user='{user_msg[:50]}...', assistant='{assistant_msg[:50]}...', timestamp='{timestamp}'")
+                
+                if user_msg:
+                    # タイムスタンプを整形
+                    if timestamp:
+                        try:
+                            from datetime import datetime
+                            dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+                            time_str = dt.strftime('%m/%d %H:%M')
+                        except:
+                            time_str = timestamp[:16] if len(timestamp) > 16 else timestamp
+                    else:
+                        time_str = ""
+                    
+                    # ユーザー入力を表示
+                    if time_str:
+                        user_display = f"[{time_str}] {user_msg}"
+                    else:
+                        user_display = user_msg
+                    
+                    print(f"💬 ユーザーメッセージ追加: {user_display[:50]}...")
+                    self.add_message_to_history("ユーザー（前回）", user_display, "user")
+                    
+                    # せつなの応答を表示（ある場合のみ）
+                    if assistant_msg and assistant_msg.strip():
+                        # 応答が長い場合は省略
+                        if len(assistant_msg) > 100:
+                            assistant_display = assistant_msg[:100] + "..."
+                        else:
+                            assistant_display = assistant_msg
+                        
+                        print(f"🤖 せつなメッセージ追加: {assistant_display[:50]}...")
+                        self.add_message_to_history("せつな（前回）", assistant_display, "assistant")
+                    else:
+                        print("⚠️ せつなの応答なし、スキップ")
+            
+            self.add_message_to_history("システム", "=== 続きからどうぞ ===", "info")
+            print(f"✅ 起動時履歴表示完了: {len(recent_conversations)}件の会話を処理")
+                
+        except Exception as e:
+            print(f"❌ 起動時履歴表示エラー: {e}")
+            import traceback
+            traceback.print_exc()
+            # エラー時でも基本メッセージを表示
+            try:
+                self.add_message_to_history("システム", "セッションを開始します", "info")
+            except Exception as e2:
+                print(f"❌ エラー時のメッセージ表示も失敗: {e2}")
+    
+    def _load_recent_conversations(self):
+        """最近の会話を複数のJSONファイルから取得（ユーザー入力とせつな応答をペアで）"""
+        import json
+        from pathlib import Path
+        
+        conversations = []
+        
+        # 1. persistent_conversation_history.json から取得（ユーザー入力とせつな応答をペアで取得）
+        try:
+            history_file = Path("D:/setsuna_bot/data/persistent_conversation_history.json")
+            if history_file.exists():
+                with open(history_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                persistent_convs = data.get("conversations", [])
+                
+                # ユーザー入力とせつな応答が両方あるものだけを取得
+                for conv in persistent_convs:
+                    if conv.get('user_input') and conv.get('assistant_response'):
+                        conversations.append(conv)
+                
+                print(f"📜 persistent_conversation_history.json: {len(conversations)}件")
+        except Exception as e:
+            print(f"⚠️ persistent_conversation_history.json読み込みエラー: {e}")
+        
+        # 2. conversation_context.json から取得（ユーザー入力のみで、応答はない）
+        try:
+            context_file = Path("D:/setsuna_bot/data/conversation_context.json")
+            if context_file.exists():
+                with open(context_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                context_convs = data.get("conversation_memory", [])
+                
+                # このファイルにはせつなの応答がないため、既存の会話と重複しないものだけ追加
+                for conv in context_convs:
+                    if conv.get('user_input'):
+                        # 重複チェック
+                        duplicate = False
+                        for existing in conversations:
+                            if (existing.get('user_input') == conv.get('user_input') and 
+                                existing.get('timestamp') == conv.get('timestamp')):
+                                duplicate = True
+                                break
+                        
+                        if not duplicate:
+                            # 応答がないので、ダミーを設定
+                            conv['assistant_response'] = ''
+                            conversations.append(conv)
+                
+                print(f"📜 conversation_context.json: {len(context_convs)}件を確認")
+        except Exception as e:
+            print(f"⚠️ conversation_context.json読み込みエラー: {e}")
+        
+        # 3. multi_turn_conversations.json から取得（ユーザー入力のみで、応答はない）
+        try:
+            multi_file = Path("D:/setsuna_bot/data/multi_turn_conversations.json")
+            if multi_file.exists():
+                with open(multi_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                current_session = data.get("current_session", {})
+                turns = current_session.get("turns", [])
+                
+                # 重複チェックして追加
+                for turn in turns:
+                    if turn.get('user_input'):
+                        duplicate = False
+                        for existing in conversations:
+                            if (existing.get('user_input') == turn.get('user_input') and 
+                                existing.get('timestamp') == turn.get('timestamp')):
+                                duplicate = True
+                                break
+                        
+                        if not duplicate:
+                            # system_responseがある場合はそれを使用、ない場合は空文字列
+                            turn['assistant_response'] = turn.get('system_response', '')
+                            conversations.append(turn)
+                
+                print(f"📜 multi_turn_conversations.json: {len(turns)}件を確認")
+        except Exception as e:
+            print(f"⚠️ multi_turn_conversations.json読み込みエラー: {e}")
+        
+        # タイムスタンプでソート（最新順）
+        conversations.sort(key=lambda x: x.get('timestamp', ''), reverse=False)
+        
+        # 重複除去（user_inputとtimestampで判定）
+        unique_conversations = []
+        seen = set()
+        for conv in conversations:
+            key = (conv.get('user_input', ''), conv.get('timestamp', ''))
+            if key not in seen and conv.get('user_input'):
+                seen.add(key)
+                unique_conversations.append(conv)
+        
+        print(f"📜 総取得会話数: {len(unique_conversations)}件")
+        return unique_conversations
+    
     def run(self):
         """GUI実行"""
         print("🚀 GUI開始")
@@ -4757,10 +5057,14 @@ class SetsunaGUI:
             self.memory_mode = "test"
             self.memory_controller.switch_to_test_mode()
             
+            # GUI履歴の分離処理
+            self._backup_normal_history()
+            self._switch_to_test_history()
+            
             # UI更新
             self.memory_mode_button.configure(text="🧪 テストモード")
             self.memory_status_label.configure(
-                text="⚠️ 会話は保存されません",
+                text="⚠️ 会話は保存されません（テスト専用履歴）",
                 foreground='orange'
             )
             
@@ -4785,6 +5089,10 @@ class SetsunaGUI:
         try:
             self.memory_mode = "normal"
             self.memory_controller.switch_to_normal_mode()
+            
+            # GUI履歴の復帰処理
+            self._clear_test_history()
+            self._restore_normal_history()
             
             # UI更新
             self.memory_mode_button.configure(text="📝 通常モード")
@@ -6481,6 +6789,17 @@ class SetsunaGUI:
             print(f"🔄 SetsunaChat再初期化開始: {self.memory_mode}モード")
             self.setsuna_chat = SetsunaChat(memory_mode=self.memory_mode)
             
+            # 【重要】プロンプト設定の強制再読み込み（テストモード対応）
+            if hasattr(self.setsuna_chat, 'prompt_manager') and self.setsuna_chat.prompt_manager:
+                reload_success = self.setsuna_chat.prompt_manager.reload_settings()
+                if reload_success:
+                    print("✅ プロンプト設定を強制再読み込みしました")
+                    # フォールバックプロンプトも更新
+                    self.setsuna_chat.fallback_character_prompt = self.setsuna_chat.prompt_manager._get_fallback_prompt()
+                    print("✅ フォールバックプロンプトも更新しました")
+                else:
+                    print("⚠️ プロンプト設定の再読み込みに失敗しました")
+            
             # リッチメッセージレンダラーも再初期化
             if hasattr(self, 'history_text') and self.history_text:
                 self.rich_renderer = RichMessageRenderer(self.history_text)
@@ -6490,6 +6809,71 @@ class SetsunaGUI:
         except Exception as e:
             print(f"❌ SetsunaChat再初期化エラー: {e}")
             raise
+    
+    def _backup_normal_history(self):
+        """通常モードの履歴をバックアップ"""
+        try:
+            if hasattr(self, 'history_text') and self.history_text:
+                # 現在の履歴内容を保存
+                current_content = self.history_text.get("1.0", tk.END)
+                self.normal_mode_history_backup = current_content
+                print("✅ 通常モードの履歴をバックアップしました")
+            else:
+                self.normal_mode_history_backup = ""
+                print("⚠️ 履歴テキストウィジェットが見つかりません")
+        except Exception as e:
+            print(f"❌ 履歴バックアップエラー: {e}")
+            self.normal_mode_history_backup = ""
+    
+    def _switch_to_test_history(self):
+        """テストモード用の空の履歴に切り替え"""
+        try:
+            if hasattr(self, 'history_text') and self.history_text:
+                # 履歴を完全クリア
+                self.history_text.configure(state=tk.NORMAL)
+                self.history_text.delete("1.0", tk.END)
+                
+                # テストモード開始メッセージを追加
+                test_start_msg = "🧪 === テストモード開始 ===\n⚠️ この履歴は保存されません\n\n"
+                self.history_text.insert(tk.END, test_start_msg)
+                self.history_text.configure(state=tk.DISABLED)
+                
+                print("✅ テストモード用履歴に切り替えました")
+            else:
+                print("⚠️ 履歴テキストウィジェットが見つかりません")
+        except Exception as e:
+            print(f"❌ テスト履歴切り替えエラー: {e}")
+    
+    def _clear_test_history(self):
+        """テストモードの履歴を完全削除"""
+        try:
+            if hasattr(self, 'history_text') and self.history_text:
+                # テスト履歴を完全クリア
+                self.history_text.configure(state=tk.NORMAL)
+                self.history_text.delete("1.0", tk.END)
+                print("✅ テストモード履歴を完全削除しました")
+            else:
+                print("⚠️ 履歴テキストウィジェットが見つかりません")
+        except Exception as e:
+            print(f"❌ テスト履歴削除エラー: {e}")
+    
+    def _restore_normal_history(self):
+        """通常モードの履歴を復元"""
+        try:
+            if hasattr(self, 'history_text') and self.history_text and hasattr(self, 'normal_mode_history_backup'):
+                # バックアップした履歴を復元
+                self.history_text.configure(state=tk.NORMAL)
+                self.history_text.insert(tk.END, self.normal_mode_history_backup)
+                self.history_text.configure(state=tk.DISABLED)
+                
+                # 最下部にスクロール
+                self.history_text.see(tk.END)
+                
+                print("✅ 通常モードの履歴を復元しました")
+            else:
+                print("⚠️ 履歴バックアップが見つかりません")
+        except Exception as e:
+            print(f"❌ 履歴復元エラー: {e}")
     
     def _execute_interactive_exploration_cycle(self, theme):
         """インタラクティブ探索サイクル実行"""
